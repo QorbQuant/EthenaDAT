@@ -8,7 +8,11 @@
     "market_cap":89207001.0,
     "ena_nav":249272365.0,
     "nav_per_share":10.339,
-    "mnav":0.3579
+    "mnav":0.3579,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":72647887.0,
+    "nav_unlocked_per_share":3.0132,
+    "mnav_unlocked":1.2279
   },
   {
     "date":"2026-06-29",
@@ -19,7 +23,11 @@
     "market_cap":80286298.0,
     "ena_nav":232362245.0,
     "nav_per_share":9.6376,
-    "mnav":0.3455
+    "mnav":0.3455,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":67719605.0,
+    "nav_unlocked_per_share":2.8088,
+    "mnav_unlocked":1.1856
   },
   {
     "date":"2026-06-30",
@@ -30,7 +38,11 @@
     "market_cap":66302500.0,
     "ena_nav":238086946.0,
     "nav_per_share":9.875,
-    "mnav":0.2785
+    "mnav":0.2785,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":69388010.0,
+    "nav_unlocked_per_share":2.878,
+    "mnav_unlocked":0.9555
   },
   {
     "date":"2026-07-01",
@@ -41,7 +53,11 @@
     "market_cap":50148798.0,
     "ena_nav":218236463.0,
     "nav_per_share":9.0517,
-    "mnav":0.2298
+    "mnav":0.2298,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":63602790.0,
+    "nav_unlocked_per_share":2.638,
+    "mnav_unlocked":0.7885
   },
   {
     "date":"2026-07-02",
@@ -52,7 +68,11 @@
     "market_cap":67025799.0,
     "ena_nav":215728013.0,
     "nav_per_share":8.9477,
-    "mnav":0.3107
+    "mnav":0.3107,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":62871728.0,
+    "nav_unlocked_per_share":2.6077,
+    "mnav_unlocked":1.0661
   },
   {
     "date":"2026-07-06",
@@ -63,7 +83,11 @@
     "market_cap":63168197.0,
     "ena_nav":244027641.0,
     "nav_per_share":10.1214,
-    "mnav":0.2589
+    "mnav":0.2589,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":71119366.0,
+    "nav_unlocked_per_share":2.9498,
+    "mnav_unlocked":0.8882
   },
   {
     "date":"2026-07-07",
@@ -74,7 +98,11 @@
     "market_cap":56899597.0,
     "ena_nav":237153841.0,
     "nav_per_share":9.8363,
-    "mnav":0.2399
+    "mnav":0.2399,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":69116066.0,
+    "nav_unlocked_per_share":2.8667,
+    "mnav_unlocked":0.8232
   },
   {
     "date":"2026-07-08",
@@ -85,7 +113,11 @@
     "market_cap":48943299.0,
     "ena_nav":229837357.0,
     "nav_per_share":9.5329,
-    "mnav":0.2129
+    "mnav":0.2129,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":66983752.0,
+    "nav_unlocked_per_share":2.7783,
+    "mnav_unlocked":0.7307
   },
   {
     "date":"2026-07-09",
@@ -96,7 +128,11 @@
     "market_cap":52800901.0,
     "ena_nav":226207269.0,
     "nav_per_share":9.3823,
-    "mnav":0.2334
+    "mnav":0.2334,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":65925800.0,
+    "nav_unlocked_per_share":2.7344,
+    "mnav_unlocked":0.8009
   },
   {
     "date":"2026-07-10",
@@ -107,7 +143,11 @@
     "market_cap":47255601.0,
     "ena_nav":231374632.0,
     "nav_per_share":9.5966,
-    "mnav":0.2042
+    "mnav":0.2042,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":67431775.0,
+    "nav_unlocked_per_share":2.7968,
+    "mnav_unlocked":0.7008
   },
   {
     "date":"2026-07-13",
@@ -118,7 +158,11 @@
     "market_cap":45808999.0,
     "ena_nav":241950067.0,
     "nav_per_share":10.0353,
-    "mnav":0.1893
+    "mnav":0.1893,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":70513878.0,
+    "nav_unlocked_per_share":2.9247,
+    "mnav_unlocked":0.6496
   },
   {
     "date":"2026-07-14",
@@ -129,7 +173,11 @@
     "market_cap":42915799.0,
     "ena_nav":237788325.0,
     "nav_per_share":9.8626,
-    "mnav":0.1805
+    "mnav":0.1805,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":69300981.0,
+    "nav_unlocked_per_share":2.8744,
+    "mnav_unlocked":0.6193
   },
   {
     "date":"2026-07-15",
@@ -140,7 +188,11 @@
     "market_cap":43880201.0,
     "ena_nav":254431915.0,
     "nav_per_share":10.553,
-    "mnav":0.1725
+    "mnav":0.1725,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":74151585.0,
+    "nav_unlocked_per_share":3.0756,
+    "mnav_unlocked":0.5918
   },
   {
     "date":"2026-07-16",
@@ -151,7 +203,11 @@
     "market_cap":46291199.0,
     "ena_nav":252864679.0,
     "nav_per_share":10.488,
-    "mnav":0.1831
+    "mnav":0.1831,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":73694830.0,
+    "nav_unlocked_per_share":3.0566,
+    "mnav_unlocked":0.6281
   },
   {
     "date":"2026-07-17",
@@ -162,7 +218,11 @@
     "market_cap":41951400.0,
     "ena_nav":249137591.0,
     "nav_per_share":10.3334,
-    "mnav":0.1684
+    "mnav":0.1684,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":72608608.0,
+    "nav_unlocked_per_share":3.0116,
+    "mnav_unlocked":0.5778
   },
   {
     "date":"2026-07-20",
@@ -173,7 +233,11 @@
     "market_cap":41710300.0,
     "ena_nav":241704506.0,
     "nav_per_share":10.0251,
-    "mnav":0.1726
+    "mnav":0.1726,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":70442312.0,
+    "nav_unlocked_per_share":2.9217,
+    "mnav_unlocked":0.5921
   },
   {
     "date":"2026-07-21",
@@ -184,7 +248,11 @@
     "market_cap":45085700.0,
     "ena_nav":250806871.0,
     "nav_per_share":10.4026,
-    "mnav":0.1798
+    "mnav":0.1798,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":73095103.0,
+    "nav_unlocked_per_share":3.0317,
+    "mnav_unlocked":0.6168
   },
   {
     "date":"2026-07-22",
@@ -195,7 +263,11 @@
     "market_cap":45085700.0,
     "ena_nav":262454896.0,
     "nav_per_share":10.8857,
-    "mnav":0.1718
+    "mnav":0.1718,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":76489801.0,
+    "nav_unlocked_per_share":3.1725,
+    "mnav_unlocked":0.5894
   },
   {
     "date":"2026-07-23",
@@ -206,7 +278,11 @@
     "market_cap":41951400.0,
     "ena_nav":272975716.0,
     "nav_per_share":11.3221,
-    "mnav":0.1537
+    "mnav":0.1537,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":79555986.0,
+    "nav_unlocked_per_share":3.2997,
+    "mnav_unlocked":0.5273
   },
   {
     "date":"2026-07-24",
@@ -217,7 +293,11 @@
     "market_cap":34477299.0,
     "ena_nav":269032233.0,
     "nav_per_share":11.1585,
-    "mnav":0.1282
+    "mnav":0.1282,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":78406698.0,
+    "nav_unlocked_per_share":3.252,
+    "mnav_unlocked":0.4397
   },
   {
     "date":"2026-07-27",
@@ -228,7 +308,11 @@
     "market_cap":36647200.0,
     "ena_nav":272716510.0,
     "nav_per_share":11.3113,
-    "mnav":0.1344
+    "mnav":0.1344,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":79480443.0,
+    "nav_unlocked_per_share":3.2966,
+    "mnav_unlocked":0.4611
   },
   {
     "date":"2026-07-28",
@@ -239,7 +323,11 @@
     "market_cap":40745901.0,
     "ena_nav":248979185.0,
     "nav_per_share":10.3268,
-    "mnav":0.1637
+    "mnav":0.1637,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":72562442.0,
+    "nav_unlocked_per_share":3.0096,
+    "mnav_unlocked":0.5615
   },
   {
     "date":"2026-07-29",
@@ -250,7 +338,11 @@
     "market_cap":36406100.0,
     "ena_nav":253000052.0,
     "nav_per_share":10.4936,
-    "mnav":0.1439
+    "mnav":0.1439,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":73734283.0,
+    "nav_unlocked_per_share":3.0582,
+    "mnav_unlocked":0.4937
   },
   {
     "date":"2026-07-30",
@@ -261,7 +353,11 @@
     "market_cap":39540400.0,
     "ena_nav":236315032.0,
     "nav_per_share":9.8015,
-    "mnav":0.1673
+    "mnav":0.1673,
+    "ena_unlocked":882771136.0,
+    "nav_unlocked":68871604.0,
+    "nav_unlocked_per_share":2.8566,
+    "mnav_unlocked":0.5741
   },
   {
     "date":"2026-07-31",
@@ -272,7 +368,11 @@
     "market_cap":37852701.0,
     "ena_nav":245970053.0,
     "nav_per_share":10.202,
-    "mnav":0.1539
+    "mnav":0.1539,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":96694319.0,
+    "nav_unlocked_per_share":4.0105,
+    "mnav_unlocked":0.3915
   },
   {
     "date":"2026-08-03",
@@ -283,7 +383,11 @@
     "market_cap":41469201.0,
     "ena_nav":270721049.0,
     "nav_per_share":11.2286,
-    "mnav":0.1532
+    "mnav":0.1532,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":106424287.0,
+    "nav_unlocked_per_share":4.4141,
+    "mnav_unlocked":0.3897
   },
   {
     "date":"2026-08-04",
@@ -294,7 +398,11 @@
     "market_cap":47737800.0,
     "ena_nav":281056233.0,
     "nav_per_share":11.6572,
-    "mnav":0.1699
+    "mnav":0.1699,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":110487195.0,
+    "nav_unlocked_per_share":4.5826,
+    "mnav_unlocked":0.4321
   },
   {
     "date":"2026-08-05",
@@ -305,7 +413,11 @@
     "market_cap":59310601.0,
     "ena_nav":279489394.0,
     "nav_per_share":11.5923,
-    "mnav":0.2122
+    "mnav":0.2122,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":109871248.0,
+    "nav_unlocked_per_share":4.5571,
+    "mnav_unlocked":0.5398
   },
   {
     "date":"2026-08-06",
@@ -316,17 +428,25 @@
     "market_cap":53765300.0,
     "ena_nav":279631957.0,
     "nav_per_share":11.5982,
-    "mnav":0.1923
+    "mnav":0.1923,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":109927292.0,
+    "nav_unlocked_per_share":4.5594,
+    "mnav_unlocked":0.4891
   },
   {
     "date":"2026-08-07",
     "usde_close":2.07,
     "shares_outstanding":24110000.0,
-    "ena_price":0.09418,
+    "ena_price":0.093813,
     "ena_holdings":3029000000.0,
     "market_cap":49907698.0,
-    "ena_nav":285270429.0,
-    "nav_per_share":11.832,
-    "mnav":0.1749
+    "ena_nav":284160697.0,
+    "nav_per_share":11.786,
+    "mnav":0.1756,
+    "ena_unlocked":1190742896.0,
+    "nav_unlocked":111707603.0,
+    "nav_unlocked_per_share":4.6332,
+    "mnav_unlocked":0.4468
   }
 ]

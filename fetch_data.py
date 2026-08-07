@@ -52,6 +52,36 @@ def load_events(name: str, column: str, index: pd.DatetimeIndex) -> pd.Series:
     return s.reindex(index.union(s.index)).ffill().reindex(index)
 
 
+def unlocked_fraction(purchase_date: pd.Timestamp, d: pd.Timestamp) -> float:
+    """Locked ENA schedule per the Token Purchase Agreements (424B3):
+    48-month lock-up — 25% unlocks on the 12-month anniversary of purchase,
+    the remaining 75% in 36 equal monthly installments."""
+    cliff = purchase_date + pd.DateOffset(months=12)
+    if d < cliff:
+        return 0.0
+    months = (d.year - cliff.year) * 12 + (d.month - cliff.month)
+    if d.day < cliff.day:
+        months -= 1
+    return min(1.0, 0.25 + 0.75 * min(36, months) / 36)
+
+
+def locked_remaining(index: pd.DatetimeIndex) -> pd.Series:
+    """Total still-locked tokens across the locked tranches, per date."""
+    tranches = pd.read_csv(ROOT / "inputs" / "ena_tranches.csv", parse_dates=["purchase_date"])
+    tranches = tranches[tranches["locked"]]
+    return pd.Series(
+        [
+            sum(
+                tr.tokens * (1 - unlocked_fraction(tr.purchase_date, d))
+                for tr in tranches.itertuples()
+            )
+            for d in index
+        ],
+        index=index,
+        name="ena_locked",
+    )
+
+
 def main() -> None:
     usde = fetch_usde()
     days = (pd.Timestamp.today().normalize() - pd.Timestamp(LISTING_DATE)).days + 5
@@ -67,10 +97,17 @@ def main() -> None:
     df["nav_per_share"] = df["ena_nav"] / df["shares_outstanding"]
     df["mnav"] = df["market_cap"] / df["ena_nav"]
 
+    # Realizable view: only tokens past their contractual unlock schedule.
+    df["ena_unlocked"] = df["ena_holdings"] - locked_remaining(df.index)
+    df["nav_unlocked"] = df["ena_price"] * df["ena_unlocked"]
+    df["nav_unlocked_per_share"] = df["nav_unlocked"] / df["shares_outstanding"]
+    df["mnav_unlocked"] = df["market_cap"] / df["nav_unlocked"]
+
     df.index.name = "date"
     df = df.round(
         {"usde_close": 4, "market_cap": 0, "ena_price": 6, "ena_nav": 0,
-         "nav_per_share": 4, "mnav": 4}
+         "nav_per_share": 4, "mnav": 4, "ena_unlocked": 0, "nav_unlocked": 0,
+         "nav_unlocked_per_share": 4, "mnav_unlocked": 4}
     )
 
     out = ROOT / "output"
