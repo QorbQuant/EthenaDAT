@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>EthenaDAT — StablecoinX (USDE) NAV Tracker</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1d1b21;
+    --glow: #39363c;
+    --panel: #26232c;
+    --panel-edge: #35323c;
+    --ink: #e8e5e3;
+    --ink-2: #8a8794;
+    --ink-3: #5f5c68;
+    --nav: #93a8f0;
+    --unl: #4ed69e;
+    --mcap: #c3f53c;
+    --grid: #2e2b35;
+  }
+  * { box-sizing: border-box; margin: 0; }
+  body {
+    background:
+      radial-gradient(140% 150% at 0% 0%, rgba(57,54,60,.85) 0%, rgba(57,54,60,.18) 45%, rgba(57,54,60,0) 100%),
+      radial-gradient(60% 55% at 108% 104%, rgba(42,39,46,.6) 0%, rgba(42,39,46,0) 100%),
+      var(--bg);
+    color: var(--ink);
+    font-family: "Courier Prime", "Courier New", monospace;
+    min-height: 100vh;
+    position: relative;
+  }
+  body::after {  /* grain */
+    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    opacity: .05; mix-blend-mode: screen;
+  }
+  main { max-width: 1240px; margin: 0 auto; padding: 40px 28px 60px; position: relative; z-index: 2; }
+  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
+  h1 { font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; letter-spacing: .5px; line-height: 1.25; max-width: 720px; }
+  .badges { text-align: right; font-weight: 700; white-space: nowrap; }
+  .badge-mnav { color: var(--mcap); font-size: 18px; }
+  .badge-unl { color: var(--unl); font-size: 14px; margin-top: 6px; }
+  .sub { color: var(--ink-2); margin-top: 12px; font-size: 14px; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--unl); margin-right: 6px; animation: pulse 2s infinite; }
+  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 30px 0 34px; }
+  .tile { background: rgba(38,35,44,.72); border: 1px solid var(--panel-edge); border-radius: 8px; padding: 14px 16px; }
+  .tile .k { color: var(--ink-2); font-size: 12px; letter-spacing: .4px; }
+  .tile .v { font-size: clamp(18px, 2vw, 24px); font-weight: 700; margin-top: 6px; }
+  .tile .d { font-size: 12px; margin-top: 4px; color: var(--ink-3); }
+  .tile .up { color: var(--unl); } .tile .down { color: #e07a7a; }
+  .v.c-nav { color: var(--nav); } .v.c-unl { color: var(--unl); } .v.c-mcap { color: var(--mcap); }
+
+  section { margin-top: 40px; }
+  h2 { font-size: 16px; letter-spacing: .5px; color: var(--ink); }
+  .chart-note { color: var(--ink-2); font-size: 12px; margin: 6px 0 10px; }
+  .chart-wrap { position: relative; }
+  .chart-wrap svg { width: 100%; height: auto; display: block; }
+  .tooltip {
+    position: absolute; pointer-events: none; display: none; z-index: 3;
+    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 6px;
+    padding: 8px 12px; font-size: 12px; line-height: 1.7; white-space: nowrap;
+  }
+  .tooltip b { font-weight: 700; }
+  .legend { display: flex; gap: 22px; justify-content: center; margin-top: 8px; color: var(--ink-2); font-size: 13px; flex-wrap: wrap; }
+  .legend span::before { content: "●"; margin-right: 7px; }
+  .legend .l-nav::before { color: var(--nav); } .legend .l-unl::before { color: var(--unl); }
+  .legend .l-mcap::before { color: var(--mcap); } .legend .l-mnav::before { color: var(--ink); }
+
+  table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; }
+  th, td { text-align: right; padding: 7px 12px; border-bottom: 1px solid var(--grid); }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--ink-2); font-weight: 400; }
+  .prog { height: 10px; background: var(--panel); border-radius: 5px; overflow: hidden; margin-top: 12px; display: flex; }
+  .prog > div { height: 100%; }
+  .prog .p-unl { background: var(--unl); }
+  .prog .p-lock { background: var(--panel-edge); }
+  details { margin-top: 16px; color: var(--ink-2); font-size: 13px; }
+  summary { cursor: pointer; }
+  footer { margin-top: 48px; color: var(--ink-2); font-size: 12px; line-height: 1.8; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
+  a { color: var(--unl); }
+</style>
+</head>
+<body>
+<main>
+  <header>
+    <div>
+      <h1 id="title">StablecoinX (USDE) vs. Its ENA Treasury</h1>
+      <div class="sub"><span class="live-dot"></span><span id="sub">loading…</span></div>
+    </div>
+    <div class="badges">
+      <div class="badge-mnav" id="badge-mnav">mNAV: –</div>
+      <div class="badge-unl" id="badge-unl">unlocked mNAV: –</div>
+    </div>
+  </header>
+
+  <div class="tiles" id="tiles"></div>
+
+  <section>
+    <h2>Market cap vs. NAV</h2>
+    <div class="chart-note">Daily since the Jun 26, 2026 Nasdaq listing. Hover for values.</div>
+    <div class="chart-wrap" id="chart-nav"></div>
+    <div class="legend">
+      <span class="l-nav">Total ENA NAV</span>
+      <span class="l-unl">Unlocked ENA NAV*</span>
+      <span class="l-mcap">USDE market cap</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>mNAV ratio</h2>
+    <div class="chart-note">Market cap ÷ NAV. 1.0× = market pays full spot value.</div>
+    <div class="chart-wrap" id="chart-mnav"></div>
+    <div class="legend">
+      <span class="l-mnav">mNAV (total)</span>
+      <span class="l-unl">mNAV (unlocked only)</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Unlock schedule</h2>
+    <div class="chart-note">48-month contractual lock-up on cash-PIPE tranches: 25% at the 12-month cliff, the rest in 36 monthly installments (per the 424B3).</div>
+    <div class="prog" id="prog"></div>
+    <div class="chart-note" id="prog-label" style="margin-top:6px"></div>
+    <table id="unlocks"><thead><tr><th>Unlock date</th><th>ENA tokens</th><th>Tranche</th><th>% of treasury</th></tr></thead><tbody></tbody></table>
+  </section>
+
+  <details>
+    <summary>Data table (last 10 sessions)</summary>
+    <table id="dtable"></table>
+  </details>
+
+  <footer>
+    <div>
+      *Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line.<br>
+      Source: SEC filings, Yahoo Finance, CoinGecko · <a href="https://github.com/QorbQuant/EthenaDAT">github.com/QorbQuant/EthenaDAT</a> · Not investment advice.
+    </div>
+    <div>@degenerate_defi</div>
+  </footer>
+</main>
+
+<script>
+const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#8a8794", grid: "#2e2b35" };
+const fmtM = v => v == null ? "–" : "$" + (v / 1e6).toFixed(1) + "M";
+const fmtX = v => v == null ? "–" : v.toFixed(2) + "x";
+const fmt$ = v => v == null ? "–" : "$" + v.toFixed(v < 1 ? 4 : 2);
+const fmtB = v => (v / 1e9).toFixed(2) + "B";
+const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+const fmtD = iso => { const [y,m,d] = iso.split("-").map(Number); return MON[m-1] + " " + d; };
+
+let D = null;          // data.json payload
+let enaLive = null;    // {price, at}
+
+function monthAdd(base, months) {
+  const y = base.getUTCFullYear(), m = base.getUTCMonth() + months;
+  const lastDay = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
+  return new Date(Date.UTC(y, m, Math.min(base.getUTCDate(), lastDay)));
+}
+
+function unlockedTokens(atDate) {
+  let unlocked = D.ena_holdings;
+  for (const t of D.tranches) {
+    if (!t.locked && t.locked !== "true") continue;
+    if (t.locked === false || t.locked === "false") continue;
+    const p = new Date(t.purchase_date + "T00:00:00Z");
+    const cliff = new Date(Date.UTC(p.getUTCFullYear() + 1, p.getUTCMonth(), p.getUTCDate()));
+    let frac = 0;
+    if (atDate >= cliff) {
+      let months = (atDate.getUTCFullYear() - cliff.getUTCFullYear()) * 12 + (atDate.getUTCMonth() - cliff.getUTCMonth());
+      if (atDate.getUTCDate() < cliff.getUTCDate()) months -= 1;
+      frac = Math.min(1, 0.25 + 0.75 * Math.min(36, months) / 36);
+    }
+    unlocked -= t.tokens * (1 - frac);
+  }
+  return unlocked;
+}
+
+function upcomingUnlocks(n) {
+  const out = [], now = new Date();
+  for (const t of D.tranches) {
+    if (t.locked === false || t.locked === "false") continue;
+    const p = new Date(t.purchase_date + "T00:00:00Z");
+    const cliff = monthAdd(p, 12);
+    if (cliff > now) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche });
+    for (let m = 1; m <= 36; m++) {
+      const d = monthAdd(p, 12 + m);
+      if (d > now) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche });
+    }
+  }
+  return out.sort((a, b) => a.date - b.date).slice(0, n);
+}
+
+function tile(k, v, cls, d) {
+  return `<div class="tile"><div class="k">${k}</div><div class="v ${cls || ""}">${v}</div><div class="d">${d || ""}</div></div>`;
+}
+
+function renderTiles() {
+  const s = D.series, i = s.date.length - 1;
+  const mcap = D.usde.price * D.shares_outstanding;
+  const ena = enaLive ? enaLive.price : s.ena_price[i];
+  const nav = ena * D.ena_holdings;
+  const unlTok = unlockedTokens(new Date());
+  const unlNav = ena * unlTok;
+  const chg = D.usde.prev_close ? (D.usde.price / D.usde.prev_close - 1) * 100 : null;
+  const chgHtml = chg == null ? "" : `<span class="${chg >= 0 ? "up" : "down"}">${chg >= 0 ? "+" : ""}${chg.toFixed(1)}% today</span>`;
+  const enaSrc = enaLive ? "live · CoinGecko" : "last daily close";
+  document.getElementById("tiles").innerHTML =
+    tile("USDE price", fmt$(D.usde.price), "", chgHtml) +
+    tile("Market cap", fmtM(mcap), "c-mcap", (D.shares_outstanding / 1e6).toFixed(1) + "M shares") +
+    tile("ENA price", fmt$(ena), "", enaSrc) +
+    tile("Total ENA NAV", fmtM(nav), "c-nav", fmtB(D.ena_holdings) + " ENA") +
+    tile("Unlocked NAV", fmtM(unlNav), "c-unl", fmtB(unlTok) + " ENA liquid") +
+    tile("mNAV / unlocked", fmtX(mcap / nav) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV");
+  document.getElementById("badge-mnav").textContent = "mNAV: " + fmtX(mcap / nav);
+  document.getElementById("badge-unl").textContent = "unlocked mNAV: " + fmtX(mcap / unlNav);
+  const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC");
+  document.getElementById("sub").textContent =
+    `USDE quote ${D.usde.market_state === "REGULAR" ? "intraday" : "as of"} ${t} · ENA ${enaLive ? "live" : "daily"} · auto-refreshes every 30 min on trading days`;
+}
+
+function lineChart(el, seriesDefs, opts) {
+  const W = 1160, H = 420, L = 64, R = 130, T = 18, B = 34;
+  const n = D.series.date.length;
+  const all = seriesDefs.flatMap(s => s.data).filter(v => v != null);
+  const vmax = (opts.vmax || Math.max(...all)) * 1.06;
+  const vmin = opts.zero ? 0 : Math.min(...all) * 0.94;
+  const x = i => L + i * (W - L - R) / (n - 1);
+  const y = v => T + (H - T - B) * (1 - (v - vmin) / (vmax - vmin));
+  const ticks = opts.ticks(vmin, vmax);
+  let g = "";
+  for (const tv of ticks) {
+    g += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1" ${opts.ref === tv ? `stroke-dasharray="5 4" stroke="${C.ink2}"` : ""}/>`;
+    g += `<text x="${L - 10}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="12">${opts.fmt(tv)}</text>`;
+  }
+  const step = Math.ceil(n / 5);
+  for (let i = 0; i < n; i += step) {
+    g += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" fill="${C.ink2}" font-size="12">${fmtD(D.series.date[i])}</text>`;
+  }
+  g += `<text x="${x(n - 1)}" y="${H - 10}" text-anchor="middle" fill="${C.ink2}" font-size="12">${fmtD(D.series.date[n - 1])}</text>`;
+  for (const s of seriesDefs) {
+    const pts = s.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
+    g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    const lastV = s.data[n - 1];
+    g += `<text x="${W - R + 10}" y="${y(lastV) + 4}" fill="${s.color}" font-size="12" font-weight="bold">${opts.fmt(lastV)} ${s.short}</text>`;
+  }
+  g += `<line id="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label}">${g}</svg><div class="tooltip"></div>`;
+  const svg = el.querySelector("svg"), tip = el.querySelector(".tooltip"), xh = el.querySelector("#xh");
+  svg.addEventListener("mousemove", ev => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) * W / r.width;
+    const i = Math.max(0, Math.min(n - 1, Math.round((px - L) * (n - 1) / (W - L - R))));
+    xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
+    tip.style.display = "block";
+    const rows = seriesDefs.map(s => `<span style="color:${s.color}">●</span> ${s.name}: <b>${opts.fmt(s.data[i])}</b>`).join("<br>");
+    tip.innerHTML = `<b>${D.series.date[i]}</b><br>${rows}`;
+    const tx = (x(i) / W) * r.width;
+    tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
+    tip.style.top = (ev.clientY - r.top + 14) + "px";
+  });
+  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.setAttribute("visibility", "hidden"); });
+}
+
+function renderCharts() {
+  const s = D.series;
+  lineChart(document.getElementById("chart-nav"), [
+    { name: "Total ENA NAV", short: "NAV", data: s.ena_nav, color: C.nav },
+    { name: "Unlocked ENA NAV", short: "unlocked", data: s.nav_unlocked, color: C.unl },
+    { name: "USDE market cap", short: "mcap", data: s.market_cap, color: C.mcap },
+  ], {
+    zero: true, fmt: fmtM, label: "Market cap versus NAV over time",
+    ticks: (lo, hi) => { const st = hi > 3.5e8 ? 1e8 : 5e7; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
+  });
+  lineChart(document.getElementById("chart-mnav"), [
+    { name: "mNAV (total)", short: "mNAV", data: s.mnav, color: C.ink },
+    { name: "mNAV (unlocked)", short: "unlocked", data: s.mnav_unlocked, color: C.unl },
+  ], {
+    zero: true, ref: 1, fmt: fmtX, label: "mNAV ratio over time",
+    ticks: () => [0, 0.25, 0.5, 0.75, 1, 1.25],
+    vmax: Math.max(1.25, ...s.mnav_unlocked.filter(v => v != null)),
+  });
+}
+
+function renderUnlocks() {
+  const unlTok = unlockedTokens(new Date());
+  const pctUnl = unlTok / D.ena_holdings * 100;
+  document.getElementById("prog").innerHTML =
+    `<div class="p-unl" style="width:${pctUnl}%"></div><div class="p-lock" style="width:${100 - pctUnl}%"></div>`;
+  document.getElementById("prog-label").textContent =
+    `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked, vesting monthly through Sep 2029`;
+  const tb = document.querySelector("#unlocks tbody");
+  tb.innerHTML = upcomingUnlocks(8).map(u =>
+    `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${u.tranche.replace(/_/g, " ")}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td></tr>`
+  ).join("");
+}
+
+function renderTable() {
+  const s = D.series, n = s.date.length;
+  let h = "<tr><th>date</th><th>USDE</th><th>mcap</th><th>ENA</th><th>NAV</th><th>unlocked NAV</th><th>mNAV</th><th>unl. mNAV</th></tr>";
+  for (let i = n - 1; i >= Math.max(0, n - 10); i--) {
+    h += `<tr><td>${s.date[i]}</td><td>${fmt$(s.usde_close[i])}</td><td>${fmtM(s.market_cap[i])}</td><td>${fmt$(s.ena_price[i])}</td><td>${fmtM(s.ena_nav[i])}</td><td>${fmtM(s.nav_unlocked[i])}</td><td>${fmtX(s.mnav[i])}</td><td>${fmtX(s.mnav_unlocked[i])}</td></tr>`;
+  }
+  document.getElementById("dtable").innerHTML = h;
+}
+
+async function refreshEna() {
+  try {
+    const r = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethena&vs_currencies=usd");
+    const j = await r.json();
+    if (j.ethena && j.ethena.usd) { enaLive = { price: j.ethena.usd, at: Date.now() }; renderTiles(); }
+  } catch (e) { /* keep daily close */ }
+}
+
+(async () => {
+  D = await (await fetch("data.json?t=" + Date.now())).json();
+  renderTiles(); renderCharts(); renderUnlocks(); renderTable();
+  refreshEna();
+  setInterval(refreshEna, 60000);
+})();
+</script>
+</body>
+</html>
