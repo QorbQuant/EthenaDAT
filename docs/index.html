@@ -511,7 +511,16 @@ async function refreshEna() {
 
 (async () => {
   try {
-    D = await (await fetch("data.json?t=" + Date.now())).json();
+    // Data refreshes land in the GitHub repo every 30 min; prefer the raw
+    // feed so the Cloudflare-hosted page updates without a redeploy.
+    const DATA_URLS = [
+      "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/data.json",
+      "data.json",
+    ];
+    for (const u of DATA_URLS) {
+      try { D = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
+    }
+    if (!D) throw new Error("no data source reachable");
     renderTiles(); renderCharts(); renderUnlocks(); renderTable();
     document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
     refreshEna();
