@@ -214,7 +214,14 @@ function renderTiles() {
     tile("ENA price", fmt$(ena), "", enaSrc) +
     tile("Total ENA NAV", fmtM(nav), "c-nav", fmtB(D.ena_holdings) + " ENA") +
     tile("Unlocked NAV", fmtM(unlNav), "c-unl", fmtB(unlTok) + " ENA liquid") +
-    tile("mNAV / unlocked", fmtX(mcap / nav) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV");
+    tile("mNAV / unlocked", fmtX(mcap / nav) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV") +
+    (() => {
+      const imp = nav / D.shares_outstanding, up = (imp / D.usde.price - 1) * 100;
+      const impU = unlNav / D.shares_outstanding, upU = (impU / D.usde.price - 1) * 100;
+      const sign = v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%";
+      return tile("Implied @ 1:1 NAV", `${fmt$(imp)} <span class="${up >= 0 ? "up" : "down"}" style="font-size:14px">${sign(up)}</span>`, "",
+        `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
+    })();
   document.getElementById("badge-mnav").textContent = "mNAV: " + fmtX(mcap / nav);
   document.getElementById("badge-unl").textContent = "unlocked mNAV: " + fmtX(mcap / unlNav);
   const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC");
