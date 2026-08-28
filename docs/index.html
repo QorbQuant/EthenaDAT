@@ -116,8 +116,26 @@
   footer { border-top: 1px solid var(--panel-edge); margin-top: 52px; padding-top: 16px; color: var(--ink-2); font-size: 12px; line-height: 1.8; }
   footer .frow { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
 
+  .toast {
+    position: fixed; right: 20px; bottom: 20px; z-index: 10;
+    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 6px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.5); padding: 12px 38px 12px 16px;
+    font-size: 13px; color: var(--ink); display: flex; align-items: center; gap: 8px;
+    transform: translateY(120%); opacity: 0; transition: transform .45s ease, opacity .45s ease;
+  }
+  .toast.show { transform: none; opacity: 1; }
+  .toast .heart { display: inline-block; animation: heartbeat 1.6s infinite; }
+  @keyframes heartbeat { 0%,100% { transform: scale(1) } 12% { transform: scale(1.25) } 24% { transform: scale(1) } }
+  .toast a { color: var(--unl); font-weight: 700; text-decoration: none; }
+  .toast a:hover { text-decoration: underline; }
+  .toast .x-close {
+    position: absolute; top: 4px; right: 8px; background: none; border: none;
+    color: var(--ink-3); font: inherit; font-size: 15px; cursor: pointer; padding: 2px;
+  }
+  .toast .x-close:hover { color: var(--ink); }
   @media (prefers-reduced-motion: reduce) {
-    .live-dot, .tiles:empty, .chart-wrap:empty { animation: none; }
+    .live-dot, .tiles:empty, .chart-wrap:empty, .toast .heart { animation: none; }
+    .toast { transition: none; }
   }
   @media print {
     body { background: #fff; color: #111; }
@@ -241,6 +259,12 @@
     </div>
   </footer>
 </main>
+
+<div class="toast" id="toast" role="status">
+  made with <span class="heart" aria-hidden="true">❤️</span> by
+  <a href="https://x.com/Degenerate_DeFi" target="_blank" rel="noopener">@Degenerate_DeFi</a>
+  <button class="x-close" id="toast-close" aria-label="Dismiss">×</button>
+</div>
 
 <script>
 const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#9a97a6", ink3: "#757280", grid: "#2e2b35" };
@@ -527,6 +551,22 @@ async function refreshEna() {
     setInterval(refreshEna, 60000);
     let rt;
     window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderCharts, 150); });
+    // credit toast — once per day per browser
+    try {
+      const KEY = "credit-toast-at";
+      let lastShown = 0;
+      try { lastShown = +localStorage.getItem(KEY) || 0; } catch (e) {}
+      if (Date.now() - lastShown > 86400e3) {
+        const toast = document.getElementById("toast");
+        const hide = () => toast.classList.remove("show");
+        setTimeout(() => {
+          toast.classList.add("show");
+          try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
+          setTimeout(hide, 10000);
+        }, 1500);
+        document.getElementById("toast-close").addEventListener("click", hide);
+      }
+    } catch (e) { /* cosmetic only */ }
   } catch (e) {
     document.getElementById("sub").textContent = "data unavailable — retry shortly";
     document.querySelector(".live-dot").classList.add("err");
