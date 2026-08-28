@@ -28,10 +28,11 @@ def usde_snapshot(df: pd.DataFrame) -> dict:
             }
     except Exception:
         pass
-    last = df.iloc[-1]
+    valid = df.dropna(subset=["usde_close"])
+    last = valid.iloc[-1]
     return {
         "price": float(last.usde_close),
-        "prev_close": float(df.iloc[-2].usde_close) if len(df) > 1 else None,
+        "prev_close": float(valid.iloc[-2].usde_close) if len(valid) > 1 else None,
         "market_state": "FROM_DAILY_CLOSE",
         "quote_time": str(last.date.date()),
     }
@@ -61,7 +62,7 @@ def main() -> None:
 
     out = ROOT / "docs" / "data.json"
     out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":")))
+    out.write_text(json.dumps(payload, separators=(",", ":"), allow_nan=False))
     print(f"wrote {out} ({out.stat().st_size:,} bytes, {len(df)} rows)")
 
 

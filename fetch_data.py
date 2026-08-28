@@ -60,7 +60,9 @@ def unlocked_fraction(purchase_date: pd.Timestamp, d: pd.Timestamp) -> float:
     if d < cliff:
         return 0.0
     months = (d.year - cliff.year) * 12 + (d.month - cliff.month)
-    if d.day < cliff.day:
+    # compare against the clamped installment date so month-end tranches
+    # (e.g. purchased Jul 31) vest on Sep 30, not Oct 1
+    if d < purchase_date + pd.DateOffset(months=12 + months):
         months -= 1
     return min(1.0, 0.25 + 0.75 * min(36, months) / 36)
 
@@ -84,8 +86,14 @@ def locked_remaining(index: pd.DatetimeIndex) -> pd.Series:
 
 def main() -> None:
     usde = fetch_usde()
-    days = (pd.Timestamp.today().normalize() - pd.Timestamp(LISTING_DATE)).days + 5
+    # CoinGecko's keyless tier caps history at 365 days; older dates are
+    # backfilled from the previously committed output below.
+    days = min((pd.Timestamp.today().normalize() - pd.Timestamp(LISTING_DATE)).days + 5, 360)
     ena = fetch_ena(days)
+    prev_path = ROOT / "output" / "ethena_dat.csv"
+    if prev_path.exists():
+        prev = pd.read_csv(prev_path, parse_dates=["date"]).set_index("date")["ena_price"]
+        ena = ena.combine_first(prev)
 
     df = pd.DataFrame(usde)
     df["shares_outstanding"] = load_events("shares_out.csv", "shares_outstanding", df.index)

@@ -4,6 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>EthenaDAT — StablecoinX (USDE) NAV Tracker</title>
+<meta name="description" content="Live NAV and mNAV tracker for StablecoinX (Nasdaq: USDE) vs. its 3.03B ENA treasury. Sourced from SEC filings, Yahoo Finance, CoinGecko.">
+<meta name="theme-color" content="#1d1b21">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d1b21'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%234ed69e'/%3E%3C/svg%3E">
+<meta property="og:title" content="EthenaDAT — USDE mNAV Tracker">
+<meta property="og:description" content="Live NAV and mNAV tracker for StablecoinX (Nasdaq: USDE) vs. its 3.03B ENA treasury.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://ethenadash.com/">
+<meta name="twitter:card" content="summary">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
@@ -14,11 +22,12 @@
     --panel: #26232c;
     --panel-edge: #35323c;
     --ink: #e8e5e3;
-    --ink-2: #8a8794;
-    --ink-3: #5f5c68;
+    --ink-2: #9a97a6;
+    --ink-3: #757280;
     --nav: #93a8f0;
     --unl: #4ed69e;
     --mcap: #c3f53c;
+    --red: #e07a7a;
     --grid: #2e2b35;
   }
   * { box-sizing: border-box; margin: 0; }
@@ -37,73 +46,112 @@
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
     opacity: .05; mix-blend-mode: screen;
   }
-  main { max-width: 1240px; margin: 0 auto; padding: 40px 28px 60px; position: relative; z-index: 2; }
-  header { display: flex; justify-content: space-between; align-items: flex-start; gap: 20px; flex-wrap: wrap; }
-  h1 { font-size: clamp(22px, 3.2vw, 34px); font-weight: 700; letter-spacing: .5px; line-height: 1.25; max-width: 720px; }
-  .badges { text-align: right; font-weight: 700; white-space: nowrap; }
-  .badge-mnav { color: var(--mcap); font-size: 18px; }
-  .badge-unl { color: var(--unl); font-size: 14px; margin-top: 6px; }
-  .sub { color: var(--ink-2); margin-top: 12px; font-size: 14px; }
-  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--unl); margin-right: 6px; animation: pulse 2s infinite; }
-  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  main { max-width: 1240px; margin: 0 auto; padding: 36px 28px 60px; position: relative; z-index: 2; }
 
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 12px; margin: 30px 0 34px; }
-  .tile { background: rgba(38,35,44,.72); border: 1px solid var(--panel-edge); border-radius: 8px; padding: 14px 16px; }
-  .tile .k { color: var(--ink-2); font-size: 12px; letter-spacing: .4px; }
-  .tile .v { font-size: clamp(18px, 2vw, 24px); font-weight: 700; margin-top: 6px; }
-  .tile .d { font-size: 12px; margin-top: 4px; color: var(--ink-3); }
-  .tile .up { color: var(--unl); } .tile .down { color: #e07a7a; }
+  .micro { text-transform: uppercase; font-size: 10px; letter-spacing: .13em; color: var(--ink-2); }
+  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid var(--panel-edge); padding-bottom: 18px; }
+  .eyebrow { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 8px; }
+  h1 { font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; letter-spacing: .5px; line-height: 1.3; }
+  .sub { color: var(--ink-2); margin-top: 10px; font-size: 13px; }
+  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--unl); margin-right: 6px; animation: pulse 2s infinite; }
+  .live-dot.err { background: var(--red); animation: none; }
+  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
+  .badges { display: flex; gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); }
+  .badge { background: var(--panel); padding: 10px 16px; text-align: right; min-width: 130px; }
+  .badge .bv { font-size: 20px; font-weight: 700; margin-top: 4px; }
+  .badge .c-mcap { color: var(--mcap); } .badge .c-unl { color: var(--unl); }
+
+  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(172px, 1fr)); gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); border-radius: 2px; overflow: hidden; margin: 28px 0 8px; }
+  .tiles:empty { min-height: 110px; }
+  .tile { background: var(--panel); padding: 14px 16px; }
+  .tile .k { text-transform: uppercase; font-size: 10px; letter-spacing: .12em; color: var(--ink-2); }
+  .tile .v { font-size: clamp(17px, 1.8vw, 22px); font-weight: 700; margin-top: 6px; }
+  .tile .d { font-size: 11px; margin-top: 4px; color: var(--ink-3); }
+  .up { color: var(--unl); } .down { color: var(--red); }
   .v.c-nav { color: var(--nav); } .v.c-unl { color: var(--unl); } .v.c-mcap { color: var(--mcap); }
 
-  section { margin-top: 40px; }
-  h2 { font-size: 16px; letter-spacing: .5px; color: var(--ink); }
-  .chart-note { color: var(--ink-2); font-size: 12px; margin: 6px 0 10px; }
-  .chart-wrap { position: relative; }
+  section { margin-top: 42px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--panel-edge); padding-bottom: 8px; margin-bottom: 14px; flex-wrap: wrap; }
+  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--ink); font-weight: 700; }
+  .chart-note { color: var(--ink-3); font-size: 11px; }
+  .chart-wrap { position: relative; width: 100%; }
+  .chart-wrap:empty { aspect-ratio: 1160/420; min-height: 160px; }
   .chart-wrap svg { width: 100%; height: auto; display: block; }
-  .tooltip {
-    position: absolute; pointer-events: none; display: none; z-index: 3;
-    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 6px;
-    padding: 8px 12px; font-size: 12px; line-height: 1.7; white-space: nowrap;
+  .tiles:empty, .chart-wrap:empty {
+    background: linear-gradient(100deg, var(--panel) 40%, var(--glow) 50%, var(--panel) 60%);
+    background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 2px;
   }
-  .tooltip b { font-weight: 700; }
-  .legend { display: flex; gap: 22px; justify-content: center; margin-top: 8px; color: var(--ink-2); font-size: 13px; flex-wrap: wrap; }
+  @keyframes shimmer { to { background-position: -200% 0 } }
+  .tooltip {
+    position: absolute; pointer-events: none; display: none; z-index: 3; min-width: 190px;
+    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 4px;
+    box-shadow: 0 10px 28px rgba(0,0,0,.5); padding: 9px 12px; font-size: 12px; line-height: 1.7;
+  }
+  .tooltip .th { text-transform: uppercase; font-size: 10px; letter-spacing: .1em; color: var(--ink-2); border-bottom: 1px solid var(--panel-edge); padding-bottom: 4px; margin-bottom: 5px; }
+  .tooltip .tr { display: flex; justify-content: space-between; gap: 16px; }
+  .tooltip .tr b { font-weight: 700; }
+  .legend { display: flex; gap: 22px; justify-content: center; margin-top: 10px; color: var(--ink-2); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; flex-wrap: wrap; }
   .legend span::before { content: "●"; margin-right: 7px; }
   .legend .l-nav::before { color: var(--nav); } .legend .l-unl::before { color: var(--unl); }
-  .legend .l-mcap::before { color: var(--mcap); } .legend .l-mnav::before { color: var(--ink); }
+  .legend .l-mcap::before { color: var(--mcap); } .legend .l-ink::before { color: var(--ink); }
 
-  table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; }
+  .table-scroll { overflow-x: auto; }
+  table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; min-width: 560px; font-variant-numeric: tabular-nums; }
   th, td { text-align: right; padding: 7px 12px; border-bottom: 1px solid var(--grid); }
   th:first-child, td:first-child { text-align: left; }
-  th { color: var(--ink-2); font-weight: 400; }
-  .prog { height: 10px; background: var(--panel); border-radius: 5px; overflow: hidden; margin-top: 12px; display: flex; }
+  th { color: var(--ink-2); font-weight: 400; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; border-bottom: 1px solid var(--panel-edge); }
+  tbody tr:hover td { background: rgba(255,255,255,.03); }
+  #filings th, #filings td { text-align: left; }
+  #filings td:first-child { white-space: nowrap; color: var(--ink-2); }
+  #filings .all-row td { text-align: right; border-bottom: none; }
+  .prog { height: 10px; background: var(--panel); border-radius: 5px; overflow: hidden; margin-top: 14px; display: flex; }
   .prog > div { height: 100%; }
   .prog .p-unl { background: var(--unl); }
   .prog .p-lock { background: var(--panel-edge); }
-  #filings th, #filings td { text-align: left; }
-  details { margin-top: 16px; color: var(--ink-2); font-size: 13px; }
+  details { margin-top: 18px; color: var(--ink-2); font-size: 13px; }
   summary { cursor: pointer; }
-  footer { margin-top: 48px; color: var(--ink-2); font-size: 12px; line-height: 1.8; display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; }
   a { color: var(--unl); }
+  a:focus-visible, summary:focus-visible { outline: 1px dashed var(--unl); outline-offset: 2px; }
+
+  footer { border-top: 1px solid var(--panel-edge); margin-top: 52px; padding-top: 16px; color: var(--ink-2); font-size: 12px; line-height: 1.8; }
+  footer .frow { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
+
+  @media (prefers-reduced-motion: reduce) {
+    .live-dot, .tiles:empty, .chart-wrap:empty { animation: none; }
+  }
+  @media print {
+    body { background: #fff; color: #111; }
+    body::after { display: none; }
+    .tile, .badge { background: #fff; }
+    .tile .k, .sub, .chart-note, th, footer { color: #555; }
+    th, td { border-color: #ddd; }
+    a { color: #0a6b4f; }
+    .tooltip, .live-dot { display: none !important; }
+    section { break-inside: avoid; }
+    main { max-width: none; padding: 0; }
+  }
 </style>
 </head>
 <body>
 <main>
   <header>
     <div>
-      <h1 id="title">StablecoinX (USDE) vs. Its ENA Treasury</h1>
-      <div class="sub"><span class="live-dot"></span><span id="sub">loading…</span></div>
+      <div class="eyebrow">EthenaDAT / NAV Tracker · Nasdaq: USDE</div>
+      <h1>StablecoinX vs. its ENA treasury</h1>
+      <div class="sub"><span class="live-dot" aria-hidden="true"></span><span id="sub">loading…</span></div>
     </div>
     <div class="badges">
-      <div class="badge-mnav" id="badge-mnav">mNAV: –</div>
-      <div class="badge-unl" id="badge-unl">unlocked mNAV: –</div>
+      <div class="badge"><div class="micro">mNAV</div><div class="bv c-mcap" id="badge-mnav">–</div></div>
+      <div class="badge"><div class="micro">Unlocked mNAV</div><div class="bv c-unl" id="badge-unl">–</div></div>
     </div>
   </header>
+  <noscript><p style="color:#9a97a6;font-size:13px;margin-top:12px">This dashboard requires JavaScript to load data.json.</p></noscript>
 
   <div class="tiles" id="tiles"></div>
+  <div class="tiles" id="tiles2"></div>
 
   <section>
-    <h2>Market cap vs. NAV</h2>
-    <div class="chart-note">Daily since the Jun 26, 2026 Nasdaq listing. Hover for values.</div>
+    <div class="sec-head"><h2>Market cap vs. NAV</h2><div class="chart-note">Daily since the Jun 26, 2026 Nasdaq listing · hover for values</div></div>
     <div class="chart-wrap" id="chart-nav"></div>
     <div class="legend">
       <span class="l-nav">Total ENA NAV</span>
@@ -113,63 +161,101 @@
   </section>
 
   <section>
-    <h2>mNAV ratio</h2>
-    <div class="chart-note">Market cap ÷ NAV. 1.0× = market pays full spot value.</div>
+    <div class="sec-head"><h2>NAV per share vs. share price</h2><div class="chart-note">Everything in $/share on one axis — the gap is the discount</div></div>
+    <div class="chart-wrap" id="chart-pershare"></div>
+    <div class="legend">
+      <span class="l-nav">NAV per share</span>
+      <span class="l-unl">Unlocked NAV per share*</span>
+      <span class="l-mcap">USDE share price</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>mNAV ratio</h2><div class="chart-note">Market cap ÷ NAV · 1.0× = market pays full spot value · dashed = historical mean</div></div>
     <div class="chart-wrap" id="chart-mnav"></div>
     <div class="legend">
-      <span class="l-mnav">mNAV (total)</span>
+      <span class="l-ink">mNAV (total)</span>
       <span class="l-unl">mNAV (unlocked only)</span>
     </div>
   </section>
 
   <section>
-    <h2>Unlock schedule</h2>
-    <div class="chart-note">48-month contractual lock-up on cash-PIPE tranches: 25% at the 12-month cliff, the rest in 36 monthly installments (per the 424B3).</div>
-    <div class="prog" id="prog"></div>
-    <div class="chart-note" id="prog-label" style="margin-top:6px"></div>
-    <table id="unlocks"><thead><tr><th>Unlock date</th><th>ENA tokens</th><th>Tranche</th><th>% of treasury</th></tr></thead><tbody></tbody></table>
+    <div class="sec-head"><h2>Indexed performance</h2><div class="chart-note">Rebased to 100 at listing — separates ENA beta from the re-rating</div></div>
+    <div class="chart-wrap" id="chart-indexed"></div>
+    <div class="legend">
+      <span class="l-mcap">USDE</span>
+      <span class="l-ink">ENA</span>
+      <span class="l-nav">NAV per share</span>
+    </div>
   </section>
 
   <section>
-    <h2>SEC filings</h2>
-    <div class="chart-note">Primary sources for the treasury, share count, and lock-up terms. 10-K / 10-Q filings will be added as they're filed.</div>
-    <table id="filings">
-      <thead><tr><th>Date</th><th>Filing</th><th>What's in it</th></tr></thead>
-      <tbody>
-        <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm">8-K — Q2 2026 results</a></td><td>Treasury confirmed at ~3.0B ENA, $18.9M cash, ecosystem updates</td></tr>
-        <tr><td>Jul 2, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm">Super 8-K — closing</a></td><td>Share counts (24.03M Class A + 3.16M Class B), PIPE structure ($893M)</td></tr>
-        <tr><td>Jun 26, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026072231/ea029602401ex99-1.htm">8-K — Nasdaq debut</a></td><td>3,029M ENA at $0.0909 VWAP ($275M), $11.42/share NAV framing</td></tr>
-        <tr><td>May 29, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026062798/ea0258165-06.htm">424B3 — prospectus</a></td><td>Locked ENA purchase terms: 48-month lock-up, 25% cliff, 36 monthly installments</td></tr>
-        <tr><td colspan="3"><a href="https://www.sec.gov/edgar/browse/?CIK=2080215">All StablecoinX filings on EDGAR →</a></td></tr>
-      </tbody>
-    </table>
+    <div class="sec-head"><h2>ENA per share</h2><div class="chart-note">Tokens backing each share — unlocked steps up on each vesting date</div></div>
+    <div class="chart-wrap" id="chart-enapershare"></div>
+    <div class="legend">
+      <span class="l-nav">Total ENA / share</span>
+      <span class="l-unl">Unlocked ENA / share</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Unlock schedule</h2><div class="chart-note">48-month lock-up: 25% at the 12-month cliff, the rest in 36 monthly installments (424B3)</div></div>
+    <div class="prog" id="prog"></div>
+    <div class="chart-note" id="prog-label" style="margin-top:8px"></div>
+    <div class="table-scroll">
+      <table id="unlocks"><thead><tr><th>Unlock date</th><th>ENA tokens</th><th>Tranche</th><th>% of treasury</th><th>Cumulative unlocked</th></tr></thead><tbody></tbody></table>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>SEC filings</h2><div class="chart-note">Primary sources · 10-K / 10-Q filings will be added as filed</div></div>
+    <div class="table-scroll">
+      <table id="filings">
+        <thead><tr><th>Date</th><th>Filing</th><th>What's in it</th></tr></thead>
+        <tbody>
+          <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm">8-K — Q2 2026 results</a></td><td>Treasury confirmed at ~3.0B ENA, $18.9M cash, ecosystem updates</td></tr>
+          <tr><td>Jul 2, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm">Super 8-K — closing</a></td><td>Share counts (24.03M Class A + 3.16M Class B), PIPE structure ($893M)</td></tr>
+          <tr><td>Jun 26, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026072231/ea029602401ex99-1.htm">8-K — Nasdaq debut</a></td><td>3,029M ENA at $0.0909 VWAP ($275M), $11.42/share NAV framing</td></tr>
+          <tr><td>May 29, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026062798/ea0258165-06.htm">424B3 — prospectus</a></td><td>Locked ENA purchase terms: 48-month lock-up, 25% cliff, 36 monthly installments</td></tr>
+          <tr class="all-row"><td colspan="3"><a href="https://www.sec.gov/edgar/browse/?CIK=2080215">All StablecoinX filings on EDGAR →</a></td></tr>
+        </tbody>
+      </table>
+    </div>
   </section>
 
   <details>
     <summary>Data table (last 10 sessions)</summary>
-    <table id="dtable"></table>
+    <div class="table-scroll"><table id="dtable"></table></div>
   </details>
 
   <footer>
-    <div>
-      *Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line.<br>
-      Source: SEC filings, Yahoo Finance, CoinGecko · Not investment advice.
+    <div class="micro">Notes &amp; sources</div>
+    <div style="margin-top:6px">
+      <span id="fn1">*Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line.</span><br>
+      Treasury cost basis ($893M / $0.295 per ENA) per the PIPE terms in the Super 8-K. Source: SEC filings, Yahoo Finance, CoinGecko.<br>
+      <span id="stamp"></span>
     </div>
-    <div>made with ❤️ by <a href="https://x.com/Degenerate_DeFi">@Degenerate_DeFi</a></div>
+    <div class="frow">
+      <div>Not investment advice.</div>
+      <div>made with ❤️ by <a href="https://x.com/Degenerate_DeFi">@Degenerate_DeFi</a></div>
+    </div>
   </footer>
 </main>
 
 <script>
-const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#8a8794", grid: "#2e2b35" };
+const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#9a97a6", ink3: "#757280", grid: "#2e2b35" };
+const PIPE_COST = 893e6;
 const fmtM = v => v == null ? "–" : "$" + (v / 1e6).toFixed(1) + "M";
-const fmtX = v => v == null ? "–" : v.toFixed(2) + "x";
+const fmtX = v => v == null ? "–" : v.toFixed(2) + "×";
 const fmt$ = v => v == null ? "–" : "$" + v.toFixed(v < 1 ? 4 : 2);
 const fmtB = v => (v / 1e9).toFixed(2) + "B";
+const sign = v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%";
 const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
 const fmtD = iso => { const [y,m,d] = iso.split("-").map(Number); return MON[m-1] + " " + d; };
+const TRANCHE_NAMES = { cash_pipe_initial: "Cash PIPE — initial", cash_pipe_additional: "Cash PIPE — additional", ena_paid_pipe_and_contribution: "ENA-paid PIPE + contribution" };
 
-let D = null;          // data.json payload
-let enaLive = null;    // {price, at}
+let D = null;
+let enaLive = null;
 
 function monthAdd(base, months) {
   const y = base.getUTCFullYear(), m = base.getUTCMonth() + months;
@@ -177,17 +263,18 @@ function monthAdd(base, months) {
   return new Date(Date.UTC(y, m, Math.min(base.getUTCDate(), lastDay)));
 }
 
+function isLocked(t) { return !(t.locked === false || t.locked === "false"); }
+
 function unlockedTokens(atDate) {
   let unlocked = D.ena_holdings;
   for (const t of D.tranches) {
-    if (!t.locked && t.locked !== "true") continue;
-    if (t.locked === false || t.locked === "false") continue;
+    if (!isLocked(t)) continue;
     const p = new Date(t.purchase_date + "T00:00:00Z");
-    const cliff = new Date(Date.UTC(p.getUTCFullYear() + 1, p.getUTCMonth(), p.getUTCDate()));
+    const cliff = monthAdd(p, 12);
     let frac = 0;
     if (atDate >= cliff) {
       let months = (atDate.getUTCFullYear() - cliff.getUTCFullYear()) * 12 + (atDate.getUTCMonth() - cliff.getUTCMonth());
-      if (atDate.getUTCDate() < cliff.getUTCDate()) months -= 1;
+      if (atDate < monthAdd(p, 12 + months)) months -= 1;
       frac = Math.min(1, 0.25 + 0.75 * Math.min(36, months) / 36);
     }
     unlocked -= t.tokens * (1 - frac);
@@ -198,13 +285,13 @@ function unlockedTokens(atDate) {
 function upcomingUnlocks(n) {
   const out = [], now = new Date();
   for (const t of D.tranches) {
-    if (t.locked === false || t.locked === "false") continue;
+    if (!isLocked(t)) continue;
     const p = new Date(t.purchase_date + "T00:00:00Z");
     const cliff = monthAdd(p, 12);
-    if (cliff > now) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche });
+    if (cliff > now) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche, cliff: true });
     for (let m = 1; m <= 36; m++) {
       const d = monthAdd(p, 12 + m);
-      if (d > now) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche });
+      if (d > now) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche, cliff: false });
     }
   }
   return out.sort((a, b) => a.date - b.date).slice(0, n);
@@ -212,6 +299,11 @@ function upcomingUnlocks(n) {
 
 function tile(k, v, cls, d) {
   return `<div class="tile"><div class="k">${k}</div><div class="v ${cls || ""}">${v}</div><div class="d">${d || ""}</div></div>`;
+}
+
+function pctile(arr, v) {
+  const clean = arr.filter(x => x != null);
+  return Math.round(clean.filter(x => x <= v).length / clean.length * 100);
 }
 
 function renderTiles() {
@@ -223,73 +315,117 @@ function renderTiles() {
   const unlNav = ena * unlTok;
   const chg = D.usde.prev_close ? (D.usde.price / D.usde.prev_close - 1) * 100 : null;
   const chgHtml = chg == null ? "" : `<span class="${chg >= 0 ? "up" : "down"}">${chg >= 0 ? "+" : ""}${chg.toFixed(1)}% today</span>`;
-  const enaSrc = enaLive ? "live · CoinGecko" : "last daily close";
+  const imp = nav / D.shares_outstanding, up = (imp / D.usde.price - 1) * 100;
+  const impU = unlNav / D.shares_outstanding, upU = (impU / D.usde.price - 1) * 100;
+
   document.getElementById("tiles").innerHTML =
     tile("USDE price", fmt$(D.usde.price), "", chgHtml) +
     tile("Market cap", fmtM(mcap), "c-mcap", (D.shares_outstanding / 1e6).toFixed(1) + "M shares") +
-    tile("ENA price", fmt$(ena), "", enaSrc) +
+    tile("ENA price", fmt$(ena), "", enaLive ? "live · CoinGecko" : "last daily close") +
     tile("Total ENA NAV", fmtM(nav), "c-nav", fmtB(D.ena_holdings) + " ENA") +
     tile("Unlocked NAV", fmtM(unlNav), "c-unl", fmtB(unlTok) + " ENA liquid") +
-    tile("mNAV / unlocked", fmtX(mcap / nav) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV") +
-    (() => {
-      const imp = nav / D.shares_outstanding, up = (imp / D.usde.price - 1) * 100;
-      const impU = unlNav / D.shares_outstanding, upU = (impU / D.usde.price - 1) * 100;
-      const sign = v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%";
-      return tile("Implied @ 1:1 NAV", `${fmt$(imp)} <span class="${up >= 0 ? "up" : "down"}" style="font-size:14px">${sign(up)}</span>`, "",
-        `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
-    })();
-  document.getElementById("badge-mnav").textContent = "mNAV: " + fmtX(mcap / nav);
-  document.getElementById("badge-unl").textContent = "unlocked mNAV: " + fmtX(mcap / unlNav);
+    tile("Implied @ 1:1 NAV", `${fmt$(imp)} <span class="${up >= 0 ? "up" : "down"}" style="font-size:13px">${sign(up)}</span>`, "",
+      `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
+
+  // analytics row
+  const impliedEna = mcap / D.ena_holdings;
+  const enaDisc = (impliedEna / ena - 1) * 100;
+  const lockedTok = D.ena_holdings - unlTok;
+  const lockedVal = nav - unlNav;
+  const lockedPct = lockedVal > 0 ? (mcap - unlNav) / lockedVal * 100 : null;
+  const mnavNow = mcap / nav;
+  const mnavArr = s.mnav;
+  const mnavMin = Math.min(...mnavArr.filter(v => v != null)), mnavMax = Math.max(...mnavArr.filter(v => v != null));
+  const ups = upcomingUnlocks(50);
+  const sameDay = ups.filter(u => +u.date === +ups[0]?.date);
+  const nextU = sameDay.length ? {
+    date: sameDay[0].date,
+    tokens: sameDay.reduce((t, u) => t + u.tokens, 0),
+    cliff: sameDay.some(u => u.cliff),
+  } : null;
+  const pnl = nav - PIPE_COST;
+  document.getElementById("tiles2").innerHTML =
+    tile("Market-implied ENA", fmt$(impliedEna), "", `<span class="${enaDisc >= 0 ? "up" : "down"}">${sign(enaDisc)}</span> vs spot`) +
+    tile("Locked ENA implied value", lockedPct == null ? "—" : lockedPct.toFixed(0) + "% of spot", "", `market's price on the locked ${fmtB(lockedTok)}`) +
+    tile("mNAV percentile", pctile(mnavArr, mnavNow) + "th", "", `range ${fmtX(mnavMin)}–${fmtX(mnavMax)} since listing`) +
+    tile("Next unlock", nextU ? Math.ceil((nextU.date - new Date()) / 86400e3) + "d" : "—", "",
+      nextU ? `${MON[nextU.date.getUTCMonth()]} ${nextU.date.getUTCDate()} · ${(nextU.tokens / 1e6).toFixed(0)}M ENA${nextU.cliff ? " cliff" : ""}` : "fully vested") +
+    tile("Treasury vs cost", `<span class="${pnl >= 0 ? "up" : "down"}">${sign(pnl / PIPE_COST * 100)}</span>`, "", `$893M paid · basis $0.295/ENA`) +
+    tile("mNAV / unlocked", fmtX(mnavNow) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV");
+
+  document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
+  document.getElementById("badge-unl").textContent = fmtX(mcap / unlNav);
   const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC");
   document.getElementById("sub").textContent =
     `USDE quote ${D.usde.market_state === "REGULAR" ? "intraday" : "as of"} ${t} · ENA ${enaLive ? "live" : "daily"} · auto-refreshes every 30 min on trading days`;
 }
 
 function lineChart(el, seriesDefs, opts) {
-  const W = 1160, H = 420, L = 64, R = 130, T = 18, B = 34;
+  const narrow = el.clientWidth < 640;
+  const W = narrow ? 640 : 1160, H = narrow ? 300 : 420;
+  const L = narrow ? 62 : 64, R = narrow ? 70 : 130, T = 18, B = narrow ? 30 : 34;
+  const FS = 12;
   const n = D.series.date.length;
   const all = seriesDefs.flatMap(s => s.data).filter(v => v != null);
   const vmax = (opts.vmax || Math.max(...all)) * 1.06;
   const vmin = opts.zero ? 0 : Math.min(...all) * 0.94;
   const x = i => L + i * (W - L - R) / (n - 1);
   const y = v => T + (H - T - B) * (1 - (v - vmin) / (vmax - vmin));
-  const ticks = opts.ticks(vmin, vmax);
   let g = "";
-  for (const tv of ticks) {
-    g += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1" ${opts.ref === tv ? `stroke-dasharray="5 4" stroke="${C.ink2}"` : ""}/>`;
-    g += `<text x="${L - 10}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="12">${opts.fmt(tv)}</text>`;
+  for (const tv of opts.ticks(vmin, vmax)) {
+    g += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
+    g += `<text x="${L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${FS}">${opts.fmt(tv)}</text>`;
   }
-  const step = Math.ceil(n / 5);
-  for (let i = 0; i < n; i += step) {
-    g += `<text x="${x(i)}" y="${H - 10}" text-anchor="middle" fill="${C.ink2}" font-size="12">${fmtD(D.series.date[i])}</text>`;
+  for (const rl of opts.refLines || []) {
+    if (rl.v > vmax || rl.v < vmin) continue;
+    g += `<line x1="${L}" x2="${W - R}" y1="${y(rl.v)}" y2="${y(rl.v)}" stroke="${rl.color || C.ink2}" stroke-width="1" stroke-dasharray="5 4"/>`;
+    if (rl.label) g += `<text x="${W - R - 6}" y="${y(rl.v) - 5}" text-anchor="end" fill="${rl.color || C.ink2}" font-size="${FS - 1}">${rl.label}</text>`;
   }
-  g += `<text x="${x(n - 1)}" y="${H - 10}" text-anchor="middle" fill="${C.ink2}" font-size="12">${fmtD(D.series.date[n - 1])}</text>`;
+  const step = Math.ceil(n / (narrow ? 3 : 5));
+  for (let i = 0; i < n - step / 2; i += step) {
+    g += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(D.series.date[i])}</text>`;
+  }
+  g += `<text x="${x(n - 1)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(D.series.date[n - 1])}</text>`;
+  const endLabels = seriesDefs.map(s => ({ s, ly: y(s.data[n - 1]) + 4 })).sort((a, b) => a.ly - b.ly);
+  for (let li = 1; li < endLabels.length; li++) {
+    if (endLabels[li].ly - endLabels[li - 1].ly < FS + 4) endLabels[li].ly = endLabels[li - 1].ly + FS + 4;
+  }
   for (const s of seriesDefs) {
     const pts = s.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
     g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-    const lastV = s.data[n - 1];
-    g += `<text x="${W - R + 10}" y="${y(lastV) + 4}" fill="${s.color}" font-size="12" font-weight="bold">${opts.fmt(lastV)} ${s.short}</text>`;
+    const ly = endLabels.find(e => e.s === s).ly;
+    const lbl = narrow ? opts.fmt(s.data[n - 1]) : `${opts.fmt(s.data[n - 1])} ${s.short}`;
+    g += `<text x="${W - R + 8}" y="${ly}" fill="${s.color}" font-size="${FS}" font-weight="bold">${lbl}</text>`;
   }
-  g += `<line id="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  g += `<line class="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  seriesDefs.forEach((s, si) => { g += `<circle class="hd" data-si="${si}" r="3.5" fill="${s.color}" visibility="hidden"/>`; });
   el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label}">${g}</svg><div class="tooltip"></div>`;
-  const svg = el.querySelector("svg"), tip = el.querySelector(".tooltip"), xh = el.querySelector("#xh");
+  const svg = el.querySelector("svg"), tip = el.querySelector(".tooltip"), xh = el.querySelector(".xh");
+  const dots = [...el.querySelectorAll(".hd")];
   svg.addEventListener("mousemove", ev => {
     const r = svg.getBoundingClientRect();
     const px = (ev.clientX - r.left) * W / r.width;
     const i = Math.max(0, Math.min(n - 1, Math.round((px - L) * (n - 1) / (W - L - R))));
     xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
+    dots.forEach((d, si) => {
+      const v = seriesDefs[si].data[i];
+      if (v == null) { d.setAttribute("visibility", "hidden"); return; }
+      d.setAttribute("cx", x(i)); d.setAttribute("cy", y(v)); d.setAttribute("visibility", "visible");
+    });
     tip.style.display = "block";
-    const rows = seriesDefs.map(s => `<span style="color:${s.color}">●</span> ${s.name}: <b>${opts.fmt(s.data[i])}</b>`).join("<br>");
-    tip.innerHTML = `<b>${D.series.date[i]}</b><br>${rows}`;
+    const rows = seriesDefs.map(s => `<div class="tr"><span style="color:${C.ink2}">${s.name}</span><b>${opts.fmt(s.data[i])}</b></div>`).join("");
+    tip.innerHTML = `<div class="th">${fmtD(D.series.date[i])}, ${D.series.date[i].slice(0, 4)}</div>${rows}`;
     const tx = (x(i) / W) * r.width;
     tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
     tip.style.top = (ev.clientY - r.top + 14) + "px";
   });
-  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.setAttribute("visibility", "hidden"); });
+  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); });
 }
 
+function mean(arr) { const a = arr.filter(v => v != null); return a.reduce((s, v) => s + v, 0) / a.length; }
+
 function renderCharts() {
-  const s = D.series;
+  const s = D.series, n = s.date.length;
   lineChart(document.getElementById("chart-nav"), [
     { name: "Total ENA NAV", short: "NAV", data: s.ena_nav, color: C.nav },
     { name: "Unlocked ENA NAV", short: "unlocked", data: s.nav_unlocked, color: C.unl },
@@ -298,36 +434,71 @@ function renderCharts() {
     zero: true, fmt: fmtM, label: "Market cap versus NAV over time",
     ticks: (lo, hi) => { const st = hi > 3.5e8 ? 1e8 : 5e7; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
   });
+  lineChart(document.getElementById("chart-pershare"), [
+    { name: "NAV per share", short: "NAV/sh", data: s.nav_per_share, color: C.nav },
+    { name: "Unlocked NAV / share", short: "unl/sh", data: s.nav_unlocked_per_share, color: C.unl },
+    { name: "USDE share price", short: "USDE", data: s.usde_close, color: C.mcap },
+  ], {
+    zero: true, fmt: v => v == null ? "–" : "$" + v.toFixed(2), label: "NAV per share versus share price",
+    ticks: (lo, hi) => { const st = hi > 12 ? 5 : 2; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
+  });
   lineChart(document.getElementById("chart-mnav"), [
     { name: "mNAV (total)", short: "mNAV", data: s.mnav, color: C.ink },
     { name: "mNAV (unlocked)", short: "unlocked", data: s.mnav_unlocked, color: C.unl },
   ], {
-    zero: true, ref: 1, fmt: fmtX, label: "mNAV ratio over time",
+    zero: true, fmt: fmtX, label: "mNAV ratio over time",
     ticks: () => [0, 0.25, 0.5, 0.75, 1, 1.25],
     vmax: Math.max(1.25, ...s.mnav_unlocked.filter(v => v != null)),
+    refLines: [
+      { v: 1, color: C.ink2, label: "1.0× parity" },
+      { v: mean(s.mnav), color: C.ink3, label: "mean" },
+    ],
+  });
+  const idx = col => col.map(v => v == null ? null : v / col[0] * 100);
+  lineChart(document.getElementById("chart-indexed"), [
+    { name: "USDE", short: "USDE", data: idx(s.usde_close), color: C.mcap },
+    { name: "ENA", short: "ENA", data: idx(s.ena_price), color: C.ink },
+    { name: "NAV per share", short: "NAV/sh", data: idx(s.nav_per_share), color: C.nav },
+  ], {
+    zero: true, fmt: v => v == null ? "–" : v.toFixed(0), label: "Indexed performance since listing",
+    ticks: (lo, hi) => { const st = hi > 300 ? 100 : 50; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
+    refLines: [{ v: 100, color: C.ink3, label: "listing = 100" }],
+  });
+  const enaShare = s.ena_holdings.map((v, i) => v / s.shares_outstanding[i]);
+  const enaShareUnl = s.ena_unlocked.map((v, i) => v / s.shares_outstanding[i]);
+  lineChart(document.getElementById("chart-enapershare"), [
+    { name: "Total ENA / share", short: "total", data: enaShare, color: C.nav },
+    { name: "Unlocked ENA / share", short: "unlocked", data: enaShareUnl, color: C.unl },
+  ], {
+    zero: true, fmt: v => v == null ? "–" : v.toFixed(0) + " ENA", label: "ENA tokens per share",
+    ticks: (lo, hi) => { const out = []; for (let v = 0; v <= hi; v += 25) out.push(v); return out; },
   });
 }
 
 function renderUnlocks() {
   const unlTok = unlockedTokens(new Date());
   const pctUnl = unlTok / D.ena_holdings * 100;
-  document.getElementById("prog").innerHTML =
-    `<div class="p-unl" style="width:${pctUnl}%"></div><div class="p-lock" style="width:${100 - pctUnl}%"></div>`;
-  document.getElementById("prog-label").textContent =
-    `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked, vesting monthly through Sep 2029`;
+  const prog = document.getElementById("prog");
+  prog.innerHTML = `<div class="p-unl" style="width:${pctUnl}%"></div><div class="p-lock" style="width:${100 - pctUnl}%"></div>`;
+  const progText = `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked, vesting monthly through Sep 2029`;
+  prog.setAttribute("role", "img");
+  prog.setAttribute("aria-label", progText);
+  document.getElementById("prog-label").textContent = progText;
+  let cum = unlTok;
   const tb = document.querySelector("#unlocks tbody");
-  tb.innerHTML = upcomingUnlocks(8).map(u =>
-    `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${u.tranche.replace(/_/g, " ")}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td></tr>`
-  ).join("");
+  tb.innerHTML = upcomingUnlocks(8).map(u => {
+    cum += u.tokens;
+    return `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}${u.cliff ? " ◆" : ""}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${TRANCHE_NAMES[u.tranche] || u.tranche}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td><td>${(cum / D.ena_holdings * 100).toFixed(1)}%</td></tr>`;
+  }).join("");
 }
 
 function renderTable() {
   const s = D.series, n = s.date.length;
-  let h = "<tr><th>date</th><th>USDE</th><th>mcap</th><th>ENA</th><th>NAV</th><th>unlocked NAV</th><th>mNAV</th><th>unl. mNAV</th></tr>";
+  let h = "<thead><tr><th>Date</th><th>USDE</th><th>Mcap</th><th>ENA</th><th>NAV</th><th>Unlocked NAV</th><th>mNAV</th><th>Unl. mNAV</th></tr></thead><tbody>";
   for (let i = n - 1; i >= Math.max(0, n - 10); i--) {
     h += `<tr><td>${s.date[i]}</td><td>${fmt$(s.usde_close[i])}</td><td>${fmtM(s.market_cap[i])}</td><td>${fmt$(s.ena_price[i])}</td><td>${fmtM(s.ena_nav[i])}</td><td>${fmtM(s.nav_unlocked[i])}</td><td>${fmtX(s.mnav[i])}</td><td>${fmtX(s.mnav_unlocked[i])}</td></tr>`;
   }
-  document.getElementById("dtable").innerHTML = h;
+  document.getElementById("dtable").innerHTML = h + "</tbody>";
 }
 
 async function refreshEna() {
@@ -339,10 +510,18 @@ async function refreshEna() {
 }
 
 (async () => {
-  D = await (await fetch("data.json?t=" + Date.now())).json();
-  renderTiles(); renderCharts(); renderUnlocks(); renderTable();
-  refreshEna();
-  setInterval(refreshEna, 60000);
+  try {
+    D = await (await fetch("data.json?t=" + Date.now())).json();
+    renderTiles(); renderCharts(); renderUnlocks(); renderTable();
+    document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
+    refreshEna();
+    setInterval(refreshEna, 60000);
+    let rt;
+    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderCharts, 150); });
+  } catch (e) {
+    document.getElementById("sub").textContent = "data unavailable — retry shortly";
+    document.querySelector(".live-dot").classList.add("err");
+  }
 })();
 </script>
 </body>
