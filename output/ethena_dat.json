@@ -2,6 +2,7 @@
   {
     "date":"2026-06-26",
     "usde_close":3.7,
+    "usdew_close":0.5,
     "shares_outstanding":24110000.0,
     "ena_price":0.082295,
     "ena_holdings":3029000000.0,
@@ -17,6 +18,7 @@
   {
     "date":"2026-06-29",
     "usde_close":3.33,
+    "usdew_close":0.6800000072,
     "shares_outstanding":24110000.0,
     "ena_price":0.076713,
     "ena_holdings":3029000000.0,
@@ -32,6 +34,7 @@
   {
     "date":"2026-06-30",
     "usde_close":2.75,
+    "usdew_close":0.4099999964,
     "shares_outstanding":24110000.0,
     "ena_price":0.078602,
     "ena_holdings":3029000000.0,
@@ -47,6 +50,7 @@
   {
     "date":"2026-07-01",
     "usde_close":2.08,
+    "usdew_close":0.4499999881,
     "shares_outstanding":24110000.0,
     "ena_price":0.072049,
     "ena_holdings":3029000000.0,
@@ -62,6 +66,7 @@
   {
     "date":"2026-07-02",
     "usde_close":2.78,
+    "usdew_close":0.6999999881,
     "shares_outstanding":24110000.0,
     "ena_price":0.071221,
     "ena_holdings":3029000000.0,
@@ -77,6 +82,7 @@
   {
     "date":"2026-07-06",
     "usde_close":2.62,
+    "usdew_close":0.7400000095,
     "shares_outstanding":24110000.0,
     "ena_price":0.080564,
     "ena_holdings":3029000000.0,
@@ -92,6 +98,7 @@
   {
     "date":"2026-07-07",
     "usde_close":2.36,
+    "usdew_close":0.6399999857,
     "shares_outstanding":24110000.0,
     "ena_price":0.078294,
     "ena_holdings":3029000000.0,
@@ -107,6 +114,7 @@
   {
     "date":"2026-07-08",
     "usde_close":2.03,
+    "usdew_close":0.5299999714,
     "shares_outstanding":24110000.0,
     "ena_price":0.075879,
     "ena_holdings":3029000000.0,
@@ -122,6 +130,7 @@
   {
     "date":"2026-07-09",
     "usde_close":2.19,
+    "usdew_close":0.6600000262,
     "shares_outstanding":24110000.0,
     "ena_price":0.074681,
     "ena_holdings":3029000000.0,
@@ -137,6 +146,7 @@
   {
     "date":"2026-07-10",
     "usde_close":1.96,
+    "usdew_close":0.6200000048,
     "shares_outstanding":24110000.0,
     "ena_price":0.076386,
     "ena_holdings":3029000000.0,
@@ -152,6 +162,7 @@
   {
     "date":"2026-07-13",
     "usde_close":1.9,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.079878,
     "ena_holdings":3029000000.0,
@@ -167,6 +178,7 @@
   {
     "date":"2026-07-14",
     "usde_close":1.78,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.078504,
     "ena_holdings":3029000000.0,
@@ -182,6 +194,7 @@
   {
     "date":"2026-07-15",
     "usde_close":1.82,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.083999,
     "ena_holdings":3029000000.0,
@@ -197,6 +210,7 @@
   {
     "date":"2026-07-16",
     "usde_close":1.92,
+    "usdew_close":0.5500000119,
     "shares_outstanding":24110000.0,
     "ena_price":0.083481,
     "ena_holdings":3029000000.0,
@@ -212,6 +226,7 @@
   {
     "date":"2026-07-17",
     "usde_close":1.74,
+    "usdew_close":0.5500000119,
     "shares_outstanding":24110000.0,
     "ena_price":0.082251,
     "ena_holdings":3029000000.0,
@@ -227,6 +242,7 @@
   {
     "date":"2026-07-20",
     "usde_close":1.73,
+    "usdew_close":0.5299999714,
     "shares_outstanding":24110000.0,
     "ena_price":0.079797,
     "ena_holdings":3029000000.0,
@@ -242,6 +258,7 @@
   {
     "date":"2026-07-21",
     "usde_close":1.87,
+    "usdew_close":0.6399999857,
     "shares_outstanding":24110000.0,
     "ena_price":0.082802,
     "ena_holdings":3029000000.0,
@@ -257,6 +274,7 @@
   {
     "date":"2026-07-22",
     "usde_close":1.87,
+    "usdew_close":0.5600000024,
     "shares_outstanding":24110000.0,
     "ena_price":0.086647,
     "ena_holdings":3029000000.0,
@@ -272,6 +290,7 @@
   {
     "date":"2026-07-23",
     "usde_close":1.74,
+    "usdew_close":0.5500000119,
     "shares_outstanding":24110000.0,
     "ena_price":0.090121,
     "ena_holdings":3029000000.0,
@@ -287,6 +306,7 @@
   {
     "date":"2026-07-24",
     "usde_close":1.43,
+    "usdew_close":0.5099999905,
     "shares_outstanding":24110000.0,
     "ena_price":0.088795,
     "ena_holdings":3029000000.0,
@@ -302,6 +322,7 @@
   {
     "date":"2026-07-27",
     "usde_close":1.52,
+    "usdew_close":0.4099999964,
     "shares_outstanding":24110000.0,
     "ena_price":0.090213,
     "ena_holdings":3029000000.0,
@@ -317,6 +338,7 @@
   {
     "date":"2026-07-28",
     "usde_close":1.69,
+    "usdew_close":0.5,
     "shares_outstanding":24110000.0,
     "ena_price":0.082125,
     "ena_holdings":3029000000.0,
@@ -332,6 +354,7 @@
   {
     "date":"2026-07-29",
     "usde_close":1.51,
+    "usdew_close":0.3600000143,
     "shares_outstanding":24110000.0,
     "ena_price":0.083383,
     "ena_holdings":3029000000.0,
@@ -347,6 +370,7 @@
   {
     "date":"2026-07-30",
     "usde_close":1.64,
+    "usdew_close":0.3600000143,
     "shares_outstanding":24110000.0,
     "ena_price":0.078047,
     "ena_holdings":3029000000.0,
@@ -362,6 +386,7 @@
   {
     "date":"2026-07-31",
     "usde_close":1.57,
+    "usdew_close":0.3700000048,
     "shares_outstanding":24110000.0,
     "ena_price":0.081063,
     "ena_holdings":3029000000.0,
@@ -377,6 +402,7 @@
   {
     "date":"2026-08-03",
     "usde_close":1.72,
+    "usdew_close":0.400000006,
     "shares_outstanding":24110000.0,
     "ena_price":0.089258,
     "ena_holdings":3029000000.0,
@@ -392,6 +418,7 @@
   {
     "date":"2026-08-04",
     "usde_close":1.98,
+    "usdew_close":0.4499999881,
     "shares_outstanding":24110000.0,
     "ena_price":0.092869,
     "ena_holdings":3029000000.0,
@@ -407,6 +434,7 @@
   {
     "date":"2026-08-05",
     "usde_close":2.46,
+    "usdew_close":0.4699999988,
     "shares_outstanding":24110000.0,
     "ena_price":0.092262,
     "ena_holdings":3029000000.0,
@@ -422,6 +450,7 @@
   {
     "date":"2026-08-06",
     "usde_close":2.23,
+    "usdew_close":0.400000006,
     "shares_outstanding":24110000.0,
     "ena_price":0.092292,
     "ena_holdings":3029000000.0,
@@ -437,6 +466,7 @@
   {
     "date":"2026-08-07",
     "usde_close":2.07,
+    "usdew_close":0.3600000143,
     "shares_outstanding":24110000.0,
     "ena_price":0.092678,
     "ena_holdings":3029000000.0,
@@ -452,6 +482,7 @@
   {
     "date":"2026-08-10",
     "usde_close":2.16,
+    "usdew_close":0.3700000048,
     "shares_outstanding":24110000.0,
     "ena_price":0.086492,
     "ena_holdings":3029000000.0,
@@ -467,6 +498,7 @@
   {
     "date":"2026-08-11",
     "usde_close":2.4,
+    "usdew_close":0.4300000072,
     "shares_outstanding":24110000.0,
     "ena_price":0.087894,
     "ena_holdings":3029000000.0,
@@ -482,6 +514,7 @@
   {
     "date":"2026-08-12",
     "usde_close":2.45,
+    "usdew_close":0.5099999905,
     "shares_outstanding":24110000.0,
     "ena_price":0.090061,
     "ena_holdings":3029000000.0,
@@ -497,6 +530,7 @@
   {
     "date":"2026-08-13",
     "usde_close":2.59,
+    "usdew_close":0.4499999881,
     "shares_outstanding":24110000.0,
     "ena_price":0.086711,
     "ena_holdings":3029000000.0,
@@ -512,6 +546,7 @@
   {
     "date":"2026-08-14",
     "usde_close":2.93,
+    "usdew_close":0.5,
     "shares_outstanding":24110000.0,
     "ena_price":0.085921,
     "ena_holdings":3029000000.0,
@@ -527,6 +562,7 @@
   {
     "date":"2026-08-17",
     "usde_close":3.02,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.082311,
     "ena_holdings":3029000000.0,
@@ -542,6 +578,7 @@
   {
     "date":"2026-08-18",
     "usde_close":2.79,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.083144,
     "ena_holdings":3029000000.0,
@@ -557,6 +594,7 @@
   {
     "date":"2026-08-19",
     "usde_close":3.09,
+    "usdew_close":0.6000000238,
     "shares_outstanding":24110000.0,
     "ena_price":0.082691,
     "ena_holdings":3029000000.0,
@@ -572,6 +610,7 @@
   {
     "date":"2026-08-20",
     "usde_close":4.0,
+    "usdew_close":0.7200000286,
     "shares_outstanding":24110000.0,
     "ena_price":0.093308,
     "ena_holdings":3029000000.0,
@@ -587,6 +626,7 @@
   {
     "date":"2026-08-21",
     "usde_close":7.41,
+    "usdew_close":1.4500000477,
     "shares_outstanding":24110000.0,
     "ena_price":0.116818,
     "ena_holdings":3029000000.0,
@@ -602,6 +642,7 @@
   {
     "date":"2026-08-24",
     "usde_close":6.27,
+    "usdew_close":1.0499999523,
     "shares_outstanding":24110000.0,
     "ena_price":0.161352,
     "ena_holdings":3029000000.0,
@@ -617,6 +658,7 @@
   {
     "date":"2026-08-25",
     "usde_close":6.06,
+    "usdew_close":1.3400000334,
     "shares_outstanding":24110000.0,
     "ena_price":0.152691,
     "ena_holdings":3029000000.0,
@@ -632,6 +674,7 @@
   {
     "date":"2026-08-26",
     "usde_close":5.98,
+    "usdew_close":1.5,
     "shares_outstanding":24110000.0,
     "ena_price":0.142904,
     "ena_holdings":3029000000.0,
@@ -647,6 +690,7 @@
   {
     "date":"2026-08-27",
     "usde_close":8.07,
+    "usdew_close":1.7200000286,
     "shares_outstanding":24110000.0,
     "ena_price":0.147684,
     "ena_holdings":3029000000.0,
@@ -662,6 +706,7 @@
   {
     "date":"2026-08-28",
     "usde_close":6.76,
+    "usdew_close":1.4800000191,
     "shares_outstanding":24110000.0,
     "ena_price":0.170006,
     "ena_holdings":3029000000.0,

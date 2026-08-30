@@ -185,6 +185,7 @@
       <span class="l-nav">NAV per share</span>
       <span class="l-unl">Unlocked NAV per share*</span>
       <span class="l-mcap">USDE share price</span>
+      <span class="l-ink">Warrant breakeven</span>
     </div>
   </section>
 
@@ -213,6 +214,17 @@
     <div class="legend">
       <span class="l-nav">Total ENA / share</span>
       <span class="l-unl">Unlocked ENA / share</span>
+    </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Warrants (USDEW)</h2><div class="chart-note">11.5M public warrants · $11.50 strike · 1:1 · expire Jun 25, 2031</div></div>
+    <div class="tiles" id="tiles-w" style="margin-top:0"></div>
+    <div class="chart-wrap" id="chart-warrant" style="margin-top:22px"></div>
+    <div class="legend">
+      <span class="l-ink">USDEW warrant</span>
+      <span class="l-mcap">USDE stock</span>
+      <span class="l-nav">NAV per share</span>
     </div>
   </section>
 
@@ -377,6 +389,33 @@ function renderTiles() {
     tile("Treasury vs cost", `<span class="${pnl >= 0 ? "up" : "down"}">${sign(pnl / PIPE_COST * 100)}</span>`, "", `$893M paid · basis $0.295/ENA`) +
     tile("mNAV / unlocked", fmtX(mnavNow) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV");
 
+  // warrant tiles
+  const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
+  const wSeries = (s.usdew_close || []).filter(v => v != null);
+  if (wSeries.length) {
+    const w = wSeries[wSeries.length - 1];
+    const wPrev = wSeries.length > 1 ? wSeries[wSeries.length - 2] : null;
+    const wChg = wPrev ? (w / wPrev - 1) * 100 : null;
+    const breakeven = W_.strike + w;
+    const bePrem = (breakeven / D.usde.price - 1) * 100;
+    const navSh = nav / D.shares_outstanding;
+    const mnavBE = breakeven / navSh;
+    const gearing = D.usde.price / w;
+    const proceeds = W_.count * W_.strike;
+    const dilution = W_.count / (D.shares_outstanding + W_.count) * 100;
+    const fdNavSh = (nav + proceeds) / (D.shares_outstanding + W_.count);
+    const fdChg = (fdNavSh / navSh - 1) * 100;
+    const expiry = new Date(W_.expiry + "T00:00:00Z");
+    const yearsLeft = (expiry - new Date()) / 31557600e3;
+    document.getElementById("tiles-w").innerHTML =
+      tile("USDEW price", fmt$(w), "", wChg == null ? "last close" : `<span class="${wChg >= 0 ? "up" : "down"}">${wChg >= 0 ? "+" : ""}${wChg.toFixed(1)}% on the day</span>`) +
+      tile("Breakeven at expiry", fmt$(breakeven), "", `<span class="${bePrem >= 0 ? "down" : "up"}">${sign(bePrem)}</span> vs USDE spot`) +
+      tile("mNAV to break even", fmtX(mnavBE), "", `vs ${fmtX(mcap / nav)} today — a bet on the re-rate`) +
+      tile("Gearing", gearing.toFixed(1) + "×", "", "USDE price ÷ warrant price") +
+      tile("If exercised", fmtM(proceeds), "", `cash in · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
+      tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`);
+  }
+
   document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
   document.getElementById("badge-unl").textContent = fmtX(mcap / unlNav);
   const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC");
@@ -416,7 +455,7 @@ function lineChart(el, seriesDefs, opts) {
   }
   for (const s of seriesDefs) {
     const pts = s.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
-    g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.dash ? 1.5 : 2}" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="6 5"' : ""}/>`;
     const ly = endLabels.find(e => e.s === s).ly;
     const lbl = narrow ? opts.fmt(s.data[n - 1]) : `${opts.fmt(s.data[n - 1])} ${s.short}`;
     g += `<text x="${W - R + 8}" y="${ly}" fill="${s.color}" font-size="${FS}" font-weight="bold">${lbl}</text>`;
@@ -458,13 +497,17 @@ function renderCharts() {
     zero: true, fmt: fmtM, label: "Market cap versus NAV over time",
     ticks: (lo, hi) => { const st = hi > 3.5e8 ? 1e8 : 5e7; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
   });
+  const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
+  const breakeven = (s.usdew_close || []).map(v => v == null ? null : W_.strike + v);
   lineChart(document.getElementById("chart-pershare"), [
     { name: "NAV per share", short: "NAV/sh", data: s.nav_per_share, color: C.nav },
     { name: "Unlocked NAV / share", short: "unl/sh", data: s.nav_unlocked_per_share, color: C.unl },
     { name: "USDE share price", short: "USDE", data: s.usde_close, color: C.mcap },
+    ...(breakeven.some(v => v != null) ? [{ name: "Warrant breakeven", short: "brkeven", data: breakeven, color: C.ink, dash: true }] : []),
   ], {
     zero: true, fmt: v => v == null ? "–" : "$" + v.toFixed(2), label: "NAV per share versus share price",
     ticks: (lo, hi) => { const st = hi > 12 ? 5 : 2; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
+    refLines: [{ v: W_.strike, color: C.ink3, label: "$11.50 strike" }],
   });
   lineChart(document.getElementById("chart-mnav"), [
     { name: "mNAV (total)", short: "mNAV", data: s.mnav, color: C.ink },
@@ -488,6 +531,17 @@ function renderCharts() {
     ticks: (lo, hi) => { const st = hi > 300 ? 100 : 50; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
     refLines: [{ v: 100, color: C.ink3, label: "listing = 100" }],
   });
+  if ((s.usdew_close || []).some(v => v != null)) {
+    lineChart(document.getElementById("chart-warrant"), [
+      { name: "USDEW warrant", short: "USDEW", data: idx(s.usdew_close), color: C.ink },
+      { name: "USDE stock", short: "USDE", data: idx(s.usde_close), color: C.mcap },
+      { name: "NAV per share", short: "NAV/sh", data: idx(s.nav_per_share), color: C.nav },
+    ], {
+      zero: true, fmt: v => v == null ? "–" : v.toFixed(0), label: "Warrant versus stock versus NAV per share, indexed to listing",
+      ticks: (lo, hi) => { const st = hi > 300 ? 100 : 50; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
+      refLines: [{ v: 100, color: C.ink3, label: "listing = 100" }],
+    });
+  }
   const enaShare = s.ena_holdings.map((v, i) => v / s.shares_outstanding[i]);
   const enaShareUnl = s.ena_unlocked.map((v, i) => v / s.shares_outstanding[i]);
   lineChart(document.getElementById("chart-enapershare"), [
@@ -537,10 +591,9 @@ async function refreshEna() {
   try {
     // Data refreshes land in the GitHub repo every 30 min; prefer the raw
     // feed so the Cloudflare-hosted page updates without a redeploy.
-    const DATA_URLS = [
-      "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/data.json",
-      "data.json",
-    ];
+    const RAW = "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/data.json";
+    const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
+    const DATA_URLS = isLocal ? ["data.json", RAW] : [RAW, "data.json"];
     for (const u of DATA_URLS) {
       try { D = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
     }

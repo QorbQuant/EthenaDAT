@@ -49,6 +49,15 @@ def main() -> None:
         "shares_outstanding": float(last.shares_outstanding),
         "ena_holdings": float(last.ena_holdings),
         "ena_unlocked_latest": float(last.ena_unlocked),
+        # Public warrant terms per the Super 8-K (July 2, 2026) and the TLGY
+        # Warrant Agreement (Exhibit 4.1, Dec 6, 2021 8-K)
+        "warrants": {
+            "count": 11499988,
+            "strike": 11.50,
+            "expiry": "2031-06-25",
+            "exercisable_from": "2026-07-25",
+            "redemption": "$0.01 call at $18.00 trigger; $0.10 call at $10.00 trigger (make-whole cashless, max 0.361 sh/warrant)",
+        },
         "tranches": tranches.to_dict(orient="records"),
         "series": {
             "date": df["date"].dt.strftime("%Y-%m-%d").tolist(),

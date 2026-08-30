@@ -19,15 +19,21 @@ LISTING_DATE = "2026-06-26"  # first Nasdaq trading day post TLGY merger
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/ethena/market_chart"
 
 
-def fetch_usde() -> pd.Series:
-    df = yf.download("USDE", start=LISTING_DATE, auto_adjust=False, progress=False)
+def fetch_ticker_close(ticker: str, name: str, required: bool = True) -> pd.Series:
+    df = yf.download(ticker, start=LISTING_DATE, auto_adjust=False, progress=False)
     if df.empty:
-        raise RuntimeError("yfinance returned no data for USDE")
+        if required:
+            raise RuntimeError(f"yfinance returned no data for {ticker}")
+        return pd.Series(dtype=float, name=name)
     close = df["Close"]
     if isinstance(close, pd.DataFrame):  # yfinance>=0.2.4x multi-index columns
         close = close.iloc[:, 0]
     close.index = close.index.tz_localize(None).normalize()
-    return close.rename("usde_close")
+    return close.rename(name)
+
+
+def fetch_usde() -> pd.Series:
+    return fetch_ticker_close("USDE", "usde_close")
 
 
 def fetch_ena(days: int) -> pd.Series:
@@ -96,6 +102,10 @@ def main() -> None:
         ena = ena.combine_first(prev)
 
     df = pd.DataFrame(usde)
+    # USDEW public warrants (strike $11.50); optional so a warrant-data outage
+    # never blocks the equity refresh
+    usdew = fetch_ticker_close("USDEW", "usdew_close", required=False)
+    df["usdew_close"] = usdew.reindex(df.index)
     df["shares_outstanding"] = load_events("shares_out.csv", "shares_outstanding", df.index)
     df["ena_price"] = ena.reindex(df.index)
     df["ena_holdings"] = load_events("ena_holdings.csv", "ena_holdings", df.index)
