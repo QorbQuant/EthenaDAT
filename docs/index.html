@@ -101,6 +101,10 @@
   th:first-child, td:first-child { text-align: left; }
   th { color: var(--ink-2); font-weight: 400; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; border-bottom: 1px solid var(--panel-edge); }
   tbody tr:hover td { background: rgba(255,255,255,.03); }
+  .explainer { background: rgba(38,35,44,.5); border: 1px solid var(--panel-edge); border-radius: 2px; padding: 14px 18px; margin-top: 18px; font-size: 12px; line-height: 1.8; color: var(--ink-2); }
+  .explainer b { color: var(--ink); font-weight: 700; }
+  .explainer ul { margin: 6px 0 0; padding-left: 18px; }
+  .explainer li { margin-top: 4px; }
   #filings th, #filings td { text-align: left; }
   #filings td:first-child { white-space: nowrap; color: var(--ink-2); }
   #filings .all-row td { text-align: right; border-bottom: none; }
@@ -220,6 +224,15 @@
   <section>
     <div class="sec-head"><h2>Warrants (USDEW)</h2><div class="chart-note">11.5M public warrants · $11.50 strike · 1:1 · expire Jun 25, 2031</div></div>
     <div class="tiles" id="tiles-w" style="margin-top:0"></div>
+    <div class="explainer">
+      <div class="micro">What a warrant is</div>
+      Each USDEW warrant is the right to buy <b>1 new USDE share from the company for $11.50</b>, any time until Jun 25, 2031 — a five-year call option that StablecoinX itself wrote. With the stock below the strike, its entire price is time value: a bet the stock clears <b><span id="ex-breakeven">$—</span></b> (strike + warrant price) before expiry.
+      <ul>
+        <li><b>Same thesis, more leverage:</b> USDE only needs to re-rate to <b><span id="ex-mnavbe">—</span> of NAV</b> by 2031 for warrant buyers to break even — the warrant is a geared bet on the discount closing, with a deadline.</li>
+        <li><b>Dilution if they pay off:</b> full exercise mints 11.5M new shares (24.1M → 35.6M, holders own ~32% less per share) but delivers <b>$132M cash</b> to the treasury at $11.50/share. Above the strike, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
+        <li><b>The company holds a kill switch:</b> if USDE holds above <b>$10</b> for 20 of 30 trading days, StablecoinX can force-convert the warrants (capped at 0.361 shares each, or holders get $0.10); above <b>$18</b> the redemption pays just $0.01. A sustained rally likely ends the warrants long before 2031.</li>
+      </ul>
+    </div>
     <div class="chart-wrap" id="chart-warrant" style="margin-top:22px"></div>
     <div class="legend">
       <span class="l-ink">USDEW warrant</span>
@@ -414,6 +427,11 @@ function renderTiles() {
       tile("Gearing", gearing.toFixed(1) + "×", "", "USDE price ÷ warrant price") +
       tile("If exercised", fmtM(proceeds), "", `cash in · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
       tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`);
+    const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
+    setTxt("ex-breakeven", fmt$(breakeven));
+    setTxt("ex-mnavbe", fmtX(mnavBE));
+    setTxt("ex-fdnav", "$" + fdNavSh.toFixed(2));
+    setTxt("ex-nav", "$" + navSh.toFixed(2));
   }
 
   document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
