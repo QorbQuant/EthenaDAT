@@ -5,12 +5,14 @@ on:
     branches: [main]
   workflow_dispatch:
   schedule:
-    # every 30 min through US market hours (13:00–21:00 UTC, Mon–Fri)
-    - cron: "*/30 13-20 * * 1-5"
+    # every 30 min through US market hours (13:00–21:00 UTC, Mon–Fri).
+    # Off-peak minutes (7/37) — GitHub heavily throttles :00/:30 cron slots
+    # and can skip them outright.
+    - cron: "7,37 13-20 * * 1-5"
     # once after the close
-    - cron: "10 21 * * 1-5"
+    - cron: "13 21 * * 1-5"
     # weekends: twice daily (ENA still trades)
-    - cron: "0 12,22 * * 0,6"
+    - cron: "19 12,22 * * 0,6"
 
 permissions:
   contents: write
