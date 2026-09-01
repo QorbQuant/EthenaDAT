@@ -311,6 +311,8 @@ const TRANCHE_NAMES = { cash_pipe_initial: "Cash PIPE — initial", cash_pipe_ad
 
 let D = null;
 let enaLive = null;
+let liveW = null;  // live USDEW quote from the CF worker
+const QUOTES_URL = "https://ethenadash-quotes.creditforagents-keeper.workers.dev/";
 
 function monthAdd(base, months) {
   const y = base.getUTCFullYear(), m = base.getUTCMonth() + months;
@@ -411,9 +413,10 @@ function renderTiles() {
   // warrant tiles
   const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
   const wSeries = (s.usdew_close || []).filter(v => v != null);
-  if (wSeries.length) {
-    const w = wSeries[wSeries.length - 1];
-    const wPrev = wSeries.length > 1 ? wSeries[wSeries.length - 2] : null;
+  if (wSeries.length || liveW) {
+    const w = liveW && liveW.price != null ? liveW.price : wSeries[wSeries.length - 1];
+    const wPrev = liveW && liveW.prev_close != null ? liveW.prev_close
+      : wSeries.length > 1 ? wSeries[wSeries.length - 2] : null;
     const wChg = wPrev ? (w / wPrev - 1) * 100 : null;
     const breakeven = W_.strike + w;
     const bePrem = (breakeven / D.usde.price - 1) * 100;
@@ -442,9 +445,10 @@ function renderTiles() {
 
   document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
   document.getElementById("badge-unl").textContent = fmtX(mcap / unlNav);
-  const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC");
+  const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC").replace(/\.\d+Z$/, " UTC");
+  const stateWord = D.usde.market_state === "LIVE" ? "live" : D.usde.market_state === "REGULAR" ? "intraday" : "as of";
   document.getElementById("sub").textContent =
-    `USDE quote ${D.usde.market_state === "REGULAR" ? "intraday" : "as of"} ${t} · ENA ${enaLive ? "live" : "daily"} · auto-refreshes every 30 min on trading days`;
+    `USDE quote ${stateWord} ${t} · ENA live · charts extend daily`;
 }
 
 function lineChart(el, seriesDefs, opts) {
@@ -670,12 +674,22 @@ function renderTable() {
   document.getElementById("dtable").innerHTML = h + "</tbody>";
 }
 
-async function refreshEna() {
+async function refreshLive() {
+  let changed = false;
   try {
     const r = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethena&vs_currencies=usd");
     const j = await r.json();
-    if (j.ethena && j.ethena.usd) { enaLive = { price: j.ethena.usd, at: Date.now() }; renderTiles(); }
+    if (j.ethena && j.ethena.usd) { enaLive = { price: j.ethena.usd, at: Date.now() }; changed = true; }
   } catch (e) { /* keep daily close */ }
+  try {
+    const q = await (await fetch(QUOTES_URL)).json();
+    if (q.USDE && q.USDE.price != null) {
+      D.usde = { price: q.USDE.price, prev_close: q.USDE.prev_close, market_state: "LIVE", quote_time: q.USDE.t || q.fetched_at };
+      changed = true;
+    }
+    if (q.USDEW && q.USDEW.price != null) { liveW = q.USDEW; changed = true; }
+  } catch (e) { /* keep last pipeline snapshot */ }
+  if (changed) renderTiles();
 }
 
 (async () => {
@@ -691,8 +705,8 @@ async function refreshEna() {
     if (!D) throw new Error("no data source reachable");
     renderTiles(); renderCharts(); renderUnlocks(); renderTable();
     document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
-    refreshEna();
-    setInterval(refreshEna, 60000);
+    refreshLive();
+    setInterval(refreshLive, 60000);
     let rt;
     window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderCharts, 150); });
     // credit toast — once per day per browser
