@@ -10,9 +10,33 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 import pandas as pd
+import requests
 import yfinance as yf
 
 ROOT = Path(__file__).parent
+EDGAR_URL = "https://data.sec.gov/submissions/CIK0002080215.json"
+FILING_FORMS = {"S-1", "S-1/A", "S-3", "10-K", "10-K/A", "10-Q", "8-K", "424B3", "424B5", "DEF 14A", "25"}
+
+
+def recent_filings(limit: int = 15) -> list:
+    """Latest substantive EDGAR filings, so the site can auto-list new ones."""
+    try:
+        r = requests.get(EDGAR_URL, headers={"User-Agent": "ethenadash.com data pipeline"}, timeout=20)
+        r.raise_for_status()
+        rec = r.json()["filings"]["recent"]
+        out = []
+        for form, date, acc, doc in zip(rec["form"], rec["filingDate"], rec["accessionNumber"], rec["primaryDocument"]):
+            if form in FILING_FORMS:
+                out.append({
+                    "date": date,
+                    "form": form,
+                    "url": f"https://www.sec.gov/Archives/edgar/data/2080215/{acc.replace('-', '')}/{doc}",
+                })
+            if len(out) >= limit:
+                break
+        return out
+    except Exception:
+        return []
 
 
 def usde_snapshot(df: pd.DataFrame) -> dict:
@@ -57,8 +81,15 @@ def main() -> None:
             "expiry": "2031-06-25",
             "exercisable_from": "2026-07-25",
             "redemption": "$0.01 call at $18.00 trigger; $0.10 call at $10.00 trigger (make-whole cashless, max 0.361 sh/warrant)",
+            # Sponsor warrants issued Aug 2026 settling $6.9M of SPAC notes
+            # (Aug 24, 2026 8-K); private, unlisted, non-redeemable
+            "sponsor": [
+                {"count": 3267679, "strike": 11.50, "expiry": "2031-06-25", "tranche": "A"},
+                {"count": 4356907, "strike": 15.00, "expiry": "~2034", "tranche": "B"},
+            ],
         },
         "tranches": tranches.to_dict(orient="records"),
+        "recent_filings": recent_filings(),
         "series": {
             "date": df["date"].dt.strftime("%Y-%m-%d").tolist(),
             **{

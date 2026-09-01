@@ -229,7 +229,8 @@
       Each USDEW warrant is the right to buy <b>1 new USDE share from the company for $11.50</b>, any time until Jun 25, 2031 — a five-year call option that StablecoinX itself wrote. With the stock below the strike, its entire price is time value: a bet the stock clears <b><span id="ex-breakeven">$—</span></b> (strike + warrant price) before expiry.
       <ul>
         <li><b>Same thesis, more leverage:</b> USDE only needs to re-rate to <b><span id="ex-mnavbe">—</span> of NAV</b> by 2031 for warrant buyers to break even — the warrant is a geared bet on the discount closing, with a deadline.</li>
-        <li><b>Dilution if they pay off:</b> full exercise mints 11.5M new shares (24.1M → 35.6M, holders own ~32% less per share) but delivers <b>$132M cash</b> to the treasury at $11.50/share. Above the strike, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
+        <li><b>Dilution if they pay off:</b> beyond the 11.5M public warrants, sponsors hold 7.6M private warrants (3.27M at $11.50, 4.36M at $15.00 — issued Aug 2026 to settle $6.9M of SPAC notes). Full exercise of every class mints 19.1M new shares (24.1M → 43.2M, ~44% dilution) but delivers <b>~$235M cash</b> to the treasury. Above the strikes, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
+        <li><b>Supply overhang:</b> an S-1 filed Aug 31, 2026 registers the resale of 12.7M existing shares (~29% of the Class A float) plus the shares under every warrant. Registered doesn't mean sold — but it is the pipe through which insiders and PIPE holders can exit.</li>
         <li><b>The company holds a kill switch:</b> if USDE holds above <b>$10</b> for 20 of 30 trading days, StablecoinX can force-convert the warrants (capped at 0.361 shares each, or holders get $0.10); above <b>$18</b> the redemption pays just $0.01. A sustained rally likely ends the warrants long before 2031.</li>
       </ul>
     </div>
@@ -262,7 +263,10 @@
       <table id="filings">
         <thead><tr><th>Date</th><th>Filing</th><th>What's in it</th></tr></thead>
         <tbody>
-          <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm">8-K — Q2 2026 results</a></td><td>Treasury confirmed at ~3.0B ENA, $18.9M cash, ecosystem updates</td></tr>
+          <tr><td>Aug 31, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026095808/ea0303782-s1_stable.htm">S-1 — resale &amp; warrant shares</a></td><td>Registers 12.7M-share insider resale (~29% of Class A float) plus shares under all warrants (11.5M public + 7.6M sponsor)</td></tr>
+        <tr><td>Aug 24, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026093069/ea0303125-8k_stablecoinx.htm">8-K — sponsor warrants</a></td><td>$6.9M sponsor notes settled with 3.27M warrants @ $11.50 + 4.36M @ $15.00 (private, non-listed)</td></tr>
+        <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026090250/ea0301482-10q_stable.htm">10-Q — Q2 2026</a></td><td>First quarterly report as a public company</td></tr>
+        <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm">8-K — Q2 2026 results</a></td><td>Treasury confirmed at ~3.0B ENA, $18.9M cash, ecosystem updates</td></tr>
           <tr><td>Jul 2, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm">Super 8-K — closing</a></td><td>Share counts (24.03M Class A + 3.16M Class B), PIPE structure ($893M)</td></tr>
           <tr><td>Jun 26, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026072231/ea029602401ex99-1.htm">8-K — Nasdaq debut</a></td><td>3,029M ENA at $0.0909 VWAP ($275M), $11.42/share NAV framing</td></tr>
           <tr><td>May 29, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026062798/ea0258165-06.htm">424B3 — prospectus</a></td><td>Locked ENA purchase terms: 48-month lock-up, 25% cliff, 36 monthly installments</td></tr>
@@ -423,9 +427,11 @@ function renderTiles() {
     const navSh = nav / D.shares_outstanding;
     const mnavBE = breakeven / navSh;
     const gearing = D.usde.price / w;
-    const proceeds = W_.count * W_.strike;
-    const dilution = W_.count / (D.shares_outstanding + W_.count) * 100;
-    const fdNavSh = (nav + proceeds) / (D.shares_outstanding + W_.count);
+    const classes = [{ count: W_.count, strike: W_.strike }, ...(W_.sponsor || [])];
+    const totWarrants = classes.reduce((t, c) => t + c.count, 0);
+    const proceeds = classes.reduce((t, c) => t + c.count * c.strike, 0);
+    const dilution = totWarrants / (D.shares_outstanding + totWarrants) * 100;
+    const fdNavSh = (nav + proceeds) / (D.shares_outstanding + totWarrants);
     const fdChg = (fdNavSh / navSh - 1) * 100;
     const expiry = new Date(W_.expiry + "T00:00:00Z");
     const yearsLeft = (expiry - new Date()) / 31557600e3;
@@ -434,7 +440,7 @@ function renderTiles() {
       tile("Breakeven at expiry", fmt$(breakeven), "", `<span class="${bePrem >= 0 ? "down" : "up"}">${sign(bePrem)}</span> vs USDE spot`) +
       tile("mNAV to break even", fmtX(mnavBE), "", `vs ${fmtX(mcap / nav)} today — a bet on the re-rate`) +
       tile("Gearing", gearing.toFixed(1) + "×", "", "USDE price ÷ warrant price") +
-      tile("If exercised", fmtM(proceeds), "", `cash in · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
+      tile("If exercised", fmtM(proceeds), "", `all warrant classes · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
       tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`);
     const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
     setTxt("ex-breakeven", fmt$(breakeven));
@@ -665,6 +671,19 @@ function renderUnlocks() {
   }).join("");
 }
 
+const CURATED_THROUGH = "2026-08-31";  // filings on or before this date are hand-listed above
+
+function renderAutoFilings() {
+  const fresh = (D.recent_filings || []).filter(f => f.date > CURATED_THROUGH);
+  if (!fresh.length) return;
+  const tb = document.querySelector("#filings tbody");
+  const rows = fresh.map(f => {
+    const [y, m, dd] = f.date.split("-").map(Number);
+    return `<tr><td>${MON[m - 1]} ${dd}, ${y}</td><td><a href="${f.url}">${f.form}</a></td><td>New filing — auto-listed from EDGAR</td></tr>`;
+  }).join("");
+  tb.insertAdjacentHTML("afterbegin", rows);
+}
+
 function renderTable() {
   const s = D.series, n = s.date.length;
   let h = "<thead><tr><th>Date</th><th>USDE</th><th>Mcap</th><th>ENA</th><th>NAV</th><th>Unlocked NAV</th><th>mNAV</th><th>Unl. mNAV</th></tr></thead><tbody>";
@@ -703,7 +722,7 @@ async function refreshLive() {
       try { D = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
     }
     if (!D) throw new Error("no data source reachable");
-    renderTiles(); renderCharts(); renderUnlocks(); renderTable();
+    renderTiles(); renderCharts(); renderUnlocks(); renderTable(); renderAutoFilings();
     document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
     refreshLive();
     setInterval(refreshLive, 60000);
