@@ -756,15 +756,15 @@
     "usde_close":7.5,
     "usdew_close":1.6799999475,
     "shares_outstanding":24110000.0,
-    "ena_price":0.147053,
+    "ena_price":0.148522,
     "ena_holdings":3029000000.0,
     "market_cap":180825000.0,
-    "ena_nav":445424569.0,
-    "nav_per_share":18.4747,
-    "mnav":0.406,
+    "ena_nav":449873049.0,
+    "nav_per_share":18.6592,
+    "mnav":0.4019,
     "ena_unlocked":1216407209.0,
-    "nav_unlocked":178876744.0,
-    "nav_unlocked_per_share":7.4192,
-    "mnav_unlocked":1.0109
+    "nav_unlocked":180663196.0,
+    "nav_unlocked_per_share":7.4933,
+    "mnav_unlocked":1.0009
   }
 ]
