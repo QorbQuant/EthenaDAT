@@ -802,17 +802,17 @@
   {
     "date":"2026-09-08",
     "usde_close":7.61,
-    "usdew_close":2.1489999294,
+    "usdew_close":2.0899999142,
     "shares_outstanding":24110000.0,
-    "ena_price":0.160351,
+    "ena_price":0.159854,
     "ena_holdings":3029000000.0,
     "market_cap":183477103.0,
-    "ena_nav":485702885.0,
-    "nav_per_share":20.1453,
-    "mnav":0.3778,
+    "ena_nav":484199070.0,
+    "nav_per_share":20.0829,
+    "mnav":0.3789,
     "ena_unlocked":1216407209.0,
-    "nav_unlocked":195051994.0,
-    "nav_unlocked_per_share":8.0901,
-    "mnav_unlocked":0.9407
+    "nav_unlocked":194448081.0,
+    "nav_unlocked_per_share":8.065,
+    "mnav_unlocked":0.9436
   }
 ]
