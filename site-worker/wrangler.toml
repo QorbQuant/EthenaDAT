@@ -1,0 +1,14 @@
+# Serves the dashboard from a Worker instead of Cloudflare Pages.
+#
+# Why: as of 2026-09-11 the Pages *custom-domain* routing path intermittently
+# returns HTTP 530 / error 1016 (~10% of requests) for this account, while the
+# underlying *.pages.dev hostname is 100% healthy. Workers Custom Domains use a
+# different routing path, so this is the escape hatch.
+name = "ethenadash-site"
+compatibility_date = "2026-08-01"
+
+assets = { directory = "../docs" }
+
+routes = [
+  { pattern = "new.ethenadash.com", custom_domain = true },
+]
