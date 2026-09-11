@@ -309,28 +309,31 @@
     <div class="tiles" id="pay-tiles2"></div>
 
     <section>
-      <div class="sec-head"><h2>USDe held</h2><div class="chart-note">Balance across every user wallet · deposits + refunds − withdrawals − card spend</div></div>
+      <div class="sec-head"><h2>USDe held</h2><div class="chart-note">Balance across every user wallet · a running total, so it carries forward day to day</div></div>
       <div class="chart-wrap" id="chart-pay-tvl"></div>
       <div class="legend"><span class="l-unl">USDe held</span></div>
     </section>
 
     <section>
-      <div class="sec-head"><h2>Deposits &amp; withdrawals</h2><div class="chart-note">External USDe moving in and out · wallet-to-wallet transfers and refunded authorizations are excluded — refunds are tiled separately</div></div>
-      <div class="chart-wrap" id="chart-pay-flows"></div>
-      <div class="legend">
-        <span class="l-nav">Deposits</span>
-        <span class="l-red">Withdrawals</span>
-      </div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement · one authorization = one event, never one transaction</div></div>
+      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement each day · one authorization = one event, never one transaction</div></div>
       <div class="chart-wrap" id="chart-pay-spend"></div>
-      <div class="legend"><span class="l-mcap">Daily spend</span></div>
+      <div class="legend"><span class="l-mcap">Daily card spend</span></div>
     </section>
 
     <section>
-      <div class="sec-head"><h2>Wallets</h2><div class="chart-note">Deployed cumulatively vs. spending on any given day</div></div>
+      <div class="sec-head"><h2>USDe held vs. card spend</h2><div class="chart-note">Balance held on the left axis, daily spend on the right · two scales, so where the surface and the columns cross carries no meaning</div></div>
+      <div class="chart-wrap" id="chart-pay-combo"></div>
+      <div class="legend"><span class="l-unl">USDe held (left)</span><span class="l-mcap">Card spend (right)</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Deposits &amp; withdrawals</h2><div class="chart-note">External USDe in and out each day · wallet-to-wallet transfers and refunded authorizations are excluded</div></div>
+      <div class="chart-wrap" id="chart-pay-flows"></div>
+      <div class="legend"><span class="l-nav">Deposits (above)</span><span class="l-red">Withdrawals (below)</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Wallets</h2><div class="chart-note">Deployed cumulatively, then how many actually spent on each day</div></div>
       <div class="chart-wrap" id="chart-pay-wallets"></div>
       <div class="legend"><span class="l-nav">Wallets deployed (cumulative)</span></div>
       <div class="chart-wrap" id="chart-pay-active" style="margin-top:18px"></div>
@@ -340,18 +343,8 @@
     <section>
       <div class="sec-head"><h2>From wallet to spender</h2><div class="chart-note">Three defensible readings of "users" — they differ by ~30×</div></div>
       <div class="tiles" id="pay-funnel" style="margin-top:0"></div>
-      <div class="explainer">
-        <div class="micro">How these numbers are measured</div>
-        A wallet is deployed cheaply at signup and most are never funded, so wallet
-        count is not a user count — quote the step that matches the question.
-        <ul>
-          <li><b>Card spend reads the wallet's own <code>AllowanceSpent</code> event</b>, which fires on the first hop only (wallet → settlement). The settlement → card-issuer forward is a separate plain transfer, so it cannot be double-counted.</li>
-          <li><b>One event = one authorization.</b> Spends are sometimes batched — up to <b><span id="pay-batch">—</span> in a single transaction</b> — so counting transactions would undercount.</li>
-          <li><b>Refunds are not deposits.</b> USDe returned from settlement is a reversed authorization, tracked separately; it currently runs at <b><span id="pay-refund">—</span> of spend</b>.</li>
-          <li><b>Balance is concentrated:</b> the top 10 wallets hold <b><span id="pay-conc">—</span></b> of all USDe held, so the headline figure tracks a handful of accounts rather than broad retail growth.</li>
-        </ul>
-      </div>
     </section>
+
   </div><!-- /view-pay -->
 
   <footer>
@@ -603,6 +596,157 @@ function lineChart(el, seriesDefs, opts) {
 
 function mean(arr) { const a = arr.filter(v => v != null); return a.reduce((s, v) => s + v, 0) / a.length; }
 
+/* Bars for daily flows, an area for a running stock, and a combo of the two.
+   Same geometry, axis and tooltip conventions as lineChart above — a flow that
+   happened on one day reads as a discrete column, a stock that carries forward
+   reads as a continuous surface. */
+
+function payGeom(el) {
+  const narrow = el.clientWidth < 640;
+  return {
+    narrow,
+    W: narrow ? 640 : 1160, H: narrow ? 300 : 420,
+    L: narrow ? 62 : 64, R: narrow ? 70 : 130, T: 18, B: narrow ? 30 : 34, FS: 12,
+  };
+}
+
+function xTicks(g, dates, x) {
+  const n = dates.length, step = Math.ceil(n / (g.narrow ? 3 : 5));
+  let out = "";
+  for (let i = 0; i < n - step / 2; i += step)
+    out += `<text x="${x(i)}" y="${g.H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${g.FS}">${fmtD(dates[i])}</text>`;
+  out += `<text x="${x(n - 1)}" y="${g.H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${g.FS}">${fmtD(dates[n - 1])}</text>`;
+  return out;
+}
+
+function payTooltip(el, svg, g, dates, x, rowsFor) {
+  const tip = el.querySelector(".tooltip"), xh = el.querySelector(".xh");
+  const n = dates.length;
+  svg.addEventListener("mousemove", ev => {
+    const r = svg.getBoundingClientRect();
+    const px = (ev.clientX - r.left) * g.W / r.width;
+    const i = Math.max(0, Math.min(n - 1, Math.round((px - g.L) * (n - 1) / (g.W - g.L - g.R))));
+    if (xh) { xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible"); }
+    tip.style.display = "block";
+    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}</div>${rowsFor(i)}`;
+    const tx = (x(i) / g.W) * r.width;
+    tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
+    tip.style.top = (ev.clientY - r.top + 14) + "px";
+  });
+  svg.addEventListener("mouseleave", () => {
+    tip.style.display = "none";
+    if (xh) xh.setAttribute("visibility", "hidden");
+  });
+}
+
+/* Daily columns. `dir: -1` sends a series below the baseline, so deposits and
+   withdrawals share one zero line and read as opposing flows. */
+function barChart(el, seriesDefs, opts) {
+  const g = payGeom(el), dates = opts.dates, n = dates.length;
+  const up = seriesDefs.filter(s => (s.dir || 1) > 0).flatMap(s => s.data).filter(v => v != null);
+  const dn = seriesDefs.filter(s => (s.dir || 1) < 0).flatMap(s => s.data).filter(v => v != null);
+  const vmax = Math.max(...up, 0) * 1.06 || 1;
+  const vmin = dn.length ? -Math.max(...dn, 0) * 1.06 : 0;
+  const x = i => g.L + (g.W - g.L - g.R) * (i + 0.5) / n;
+  const y = v => g.T + (g.H - g.T - g.B) * (1 - (v - vmin) / (vmax - vmin));
+  const bw = Math.max(1, Math.min(16, (g.W - g.L - g.R) / n * 0.7));
+  let out = "";
+
+  const tickVals = opts.ticks(vmin, vmax).concat(vmin < 0 ? opts.ticks(0, -vmin).filter(v => v > 0).map(v => -v) : []);
+  for (const tv of tickVals) {
+    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
+    out += `<text x="${g.L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${g.FS}">${opts.fmt(Math.abs(tv))}</text>`;
+  }
+  for (const sd of seriesDefs) {
+    const dir = sd.dir || 1;
+    for (let i = 0; i < n; i++) {
+      const v = sd.data[i];
+      if (v == null || v === 0) continue;
+      const h = Math.max(1, Math.abs(y(0) - y(v)));
+      const top = dir > 0 ? y(0) - h : y(0);
+      out += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${sd.color}"/>`;
+    }
+  }
+  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(0)}" y2="${y(0)}" stroke="${C.ink3}" stroke-width="1"/>`;
+  out += xTicks(g, dates, x);
+  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
+  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
+    seriesDefs.map(sd => `<div class="tr"><span style="color:${C.ink2}">${sd.name}</span><b>${opts.fmt(sd.data[i])}</b></div>`).join(""));
+}
+
+/* A running stock: line plus a light wash down to the baseline. */
+function areaChart(el, sd, opts) {
+  const g = payGeom(el), dates = opts.dates, n = dates.length;
+  const vals = sd.data.filter(v => v != null);
+  const vmax = Math.max(...vals) * 1.06 || 1;
+  const x = i => g.L + (g.W - g.L - g.R) * i / (n - 1);
+  const y = v => g.T + (g.H - g.T - g.B) * (1 - v / vmax);
+  let out = "";
+  for (const tv of opts.ticks(0, vmax)) {
+    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
+    out += `<text x="${g.L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${g.FS}">${opts.fmt(tv)}</text>`;
+  }
+  const pts = sd.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
+  out += `<path d="M${g.L},${y(0)} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${y(0)} Z" fill="${sd.color}" fill-opacity="${opts.fillOpacity ?? 0.14}" stroke="none"/>`;
+  out += `<polyline points="${pts.join(" ")}" fill="none" stroke="${sd.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(0)}" y2="${y(0)}" stroke="${C.ink3}" stroke-width="1"/>`;
+  const lastV = [...sd.data].reverse().find(v => v != null);
+  out += `<text x="${g.W - g.R + 8}" y="${y(lastV) + 4}" fill="${sd.color}" font-size="${g.FS}" font-weight="bold">${opts.fmt(lastV)} ${sd.short}</text>`;
+  out += xTicks(g, dates, x);
+  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
+  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
+    `<div class="tr"><span style="color:${C.ink2}">${sd.name}</span><b>${opts.fmt(sd.data[i])}</b></div>`);
+}
+
+/* Stock on the left axis, daily flow as columns on the right.
+   Two y-scales, so where the surface and the columns cross means nothing — it
+   moves with either scale. Each axis is tinted to its own series so there is no
+   doubt which reads which; the tooltip gives both exact values. */
+function comboChart(el, areaDef, barDef, opts) {
+  const g = payGeom(el), dates = opts.dates, n = dates.length;
+  const aMax = Math.max(...areaDef.data.filter(v => v != null)) * 1.06 || 1;
+  const bMax = Math.max(...barDef.data.filter(v => v != null)) * 1.06 || 1;
+  const x = i => g.L + (g.W - g.L - g.R) * (i + 0.5) / n;
+  const yA = v => g.T + (g.H - g.T - g.B) * (1 - v / aMax);
+  const yB = v => g.T + (g.H - g.T - g.B) * (1 - v / bMax);
+  const base = yA(0);
+  const bw = Math.max(1, Math.min(16, (g.W - g.L - g.R) / n * 0.7));
+  let out = "";
+
+  const aTicks = opts.ticksLeft(0, aMax);
+  for (const tv of aTicks) {
+    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${yA(tv)}" y2="${yA(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
+    out += `<text x="${g.L - 8}" y="${yA(tv) + 4}" text-anchor="end" fill="${areaDef.color}" font-size="${g.FS}">${opts.fmtLeft(tv)}</text>`;
+  }
+  for (const tv of opts.ticksRight(0, bMax)) {
+    out += `<text x="${g.W - g.R + 8}" y="${yB(tv) + 4}" text-anchor="start" fill="${barDef.color}" font-size="${g.FS}">${opts.fmtRight(tv)}</text>`;
+  }
+
+  // bars first so the area's stroke stays legible over them
+  for (let i = 0; i < n; i++) {
+    const v = barDef.data[i];
+    if (v == null || v === 0) continue;
+    const h = Math.max(1, base - yB(v));
+    out += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${barDef.color}" fill-opacity="0.75"/>`;
+  }
+  const pts = areaDef.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${yA(v).toFixed(1)}`).filter(Boolean);
+  out += `<path d="M${x(0).toFixed(1)},${base} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${base} Z" fill="${areaDef.color}" fill-opacity="${opts.fillOpacity ?? 0.10}" stroke="none"/>`;
+  out += `<polyline points="${pts.join(" ")}" fill="none" stroke="${areaDef.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${base}" y2="${base}" stroke="${C.ink3}" stroke-width="1"/>`;
+  out += `<text x="${g.L - 8}" y="${g.T - 4}" text-anchor="end" fill="${areaDef.color}" font-size="${g.FS - 1}">${areaDef.short}</text>`;
+  out += `<text x="${g.W - g.R + 8}" y="${g.T - 4}" text-anchor="start" fill="${barDef.color}" font-size="${g.FS - 1}">${barDef.short}</text>`;
+  out += xTicks(g, dates, x);
+  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
+  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
+  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
+    `<div class="tr"><span style="color:${C.ink2}">${areaDef.name}</span><b>${opts.fmtLeft(areaDef.data[i])}</b></div>` +
+    `<div class="tr"><span style="color:${C.ink2}">${barDef.name}</span><b>${opts.fmtRight(barDef.data[i])}</b></div>`);
+}
+
+
+
 function payoffChart(el, warrantPx, stockPx, strike, marks) {
   const narrow = el.clientWidth < 640;
   const W = narrow ? 640 : 1160, H = narrow ? 300 : 420;
@@ -846,53 +990,43 @@ function renderPayTiles() {
 
   document.getElementById("badge-tvl").textContent = fmtK(h.tvl_usde);
   document.getElementById("badge-spend").textContent = fmtK(h.spend_usde_30d);
-  const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
-  set("pay-batch", h.max_logs_per_tx ? Math.round(h.max_logs_per_tx) + " authorizations" : "several");
-  set("pay-refund", fmtPc(h.refund_rate));
-  set("pay-conc", fmtPc(h.top10_balance_share));
-  set("pay-stamp", " Data as of " + P.generated_at.replace("T", " ").slice(0, 16) + " UTC.");
+  const stamp = document.getElementById("pay-stamp");
+  if (stamp) stamp.textContent = " Data as of " + P.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
 }
 
 function renderPayCharts() {
   const s = P.series, dates = s.date;
-  const max = a => Math.max(...a.filter(v => v != null));
+  const T = (lo, hi) => niceTicks(hi, 4);
 
-  lineChart(document.getElementById("chart-pay-tvl"), [
+  // USDe held is a running stock — it carries forward, so it gets a surface.
+  areaChart(document.getElementById("chart-pay-tvl"),
     { name: "USDe held", short: "held", data: s.tvl_usde, color: C.unl },
-  ], {
-    dates, zero: true, fmt: fmtK, label: "USDe held across all user wallets over time",
-    ticks: (lo, hi) => niceTicks(hi, 4),
-  });
+    { dates, fmt: fmtK, ticks: T, label: "USDe held across all user wallets over time" });
 
-  lineChart(document.getElementById("chart-pay-flows"), [
-    { name: "Deposits", short: "in", data: s.deposits_usde, color: C.nav },
-    { name: "Withdrawals", short: "out", data: s.withdrawals_usde, color: C.red },
-  ], {
-    dates, zero: true, fmt: fmtK, label: "Daily deposits and withdrawals",
-    ticks: (lo, hi) => niceTicks(hi, 4),
-  });
+  // Everything below is a per-day flow — discrete columns, not a continuous line.
+  barChart(document.getElementById("chart-pay-spend"),
+    [{ name: "Card spend", data: s.spend_usde, color: C.mcap }],
+    { dates, fmt: fmtK, ticks: T, label: "Daily card spend volume" });
 
-  lineChart(document.getElementById("chart-pay-spend"), [
-    { name: "Card spend", short: "spend", data: s.spend_usde, color: C.mcap },
-  ], {
-    dates, zero: true, fmt: fmtK, label: "Daily card spend volume",
-    ticks: (lo, hi) => niceTicks(hi, 4),
-  });
+  comboChart(document.getElementById("chart-pay-combo"),
+    { name: "USDe held", short: "USDe held", data: s.tvl_usde, color: C.unl },
+    { name: "Card spend", short: "card spend", data: s.spend_usde, color: C.mcap },
+    { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T, fillOpacity: 0.10,
+      label: "USDe held against daily card spend" });
 
-  // Cumulative deployments dwarf daily actives, so actives are shown against
-  // their own chart rather than crushed onto a shared axis.
+  barChart(document.getElementById("chart-pay-flows"), [
+    { name: "Deposits", data: s.deposits_usde, color: C.nav, dir: 1 },
+    { name: "Withdrawals", data: s.withdrawals_usde, color: C.red, dir: -1 },
+  ], { dates, fmt: fmtK, ticks: T, label: "Daily deposits and withdrawals" });
+
+  // Cumulative deployments are a stock; wallets spending on a day are a flow.
   lineChart(document.getElementById("chart-pay-wallets"), [
     { name: "Deployed (cumulative)", short: "deployed", data: s.cumulative_wallets, color: C.nav },
-  ], {
-    dates, zero: true, fmt: fmtN, label: "Wallets deployed over time",
-    ticks: (lo, hi) => niceTicks(hi, 4),
-  });
-  lineChart(document.getElementById("chart-pay-active"), [
-    { name: "Spending that day", short: "active", data: s.active_wallets, color: C.unl },
-  ], {
-    dates, zero: true, fmt: fmtN, label: "Wallets spending per day",
-    ticks: (lo, hi) => niceTicks(hi, 4),
-  });
+  ], { dates, zero: true, fmt: fmtN, ticks: T, label: "Wallets deployed over time" });
+
+  barChart(document.getElementById("chart-pay-active"),
+    [{ name: "Wallets spending", data: s.active_wallets, color: C.unl }],
+    { dates, fmt: fmtN, ticks: T, label: "Wallets spending per day" });
 }
 
 async function loadPay() {
