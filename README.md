@@ -69,3 +69,26 @@ future purchases appended to `ena_holdings.csv` count as unlocked unless a
 new locked tranche row is added.
 
 No API keys required (Yahoo Finance via `yfinance`, CoinGecko free tier).
+
+## Hosting
+
+The dashboard (`docs/`) is live at **https://ethenadash.com**, served by a
+Cloudflare **Worker** (`site-worker/`), not Cloudflare Pages:
+
+```bash
+npx wrangler deploy --config site-worker/wrangler.toml   # ship site changes
+```
+
+It ran on Pages until 2026-09-11, when the Pages *custom-domain* routing path
+began returning HTTP 530 / error 1016 on ~10–13% of requests for this account
+— while `ethenadash.pages.dev` stayed 100% healthy and the DNS and
+custom-domain config were both correct. The same failure hit another Pages
+custom domain on the account, so it was not project-specific. An interleaved
+head-to-head measured Pages 4/30 failed vs Worker 0/30; after cutover the apex
+measured 99/100.
+
+The `ethenadash` Pages project is intentionally left intact as a rollback
+path: re-attach the custom domains there to revert. Live prices come from the
+`ethenadash-quotes` Worker (`worker/`) and CoinGecko, and the daily series
+from the repo's own `docs/data.json` via the GitHub raw feed, so the site
+stays current without redeploying.
