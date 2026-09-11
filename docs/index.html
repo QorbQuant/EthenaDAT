@@ -94,6 +94,18 @@
   .legend span::before { content: "●"; margin-right: 7px; }
   .legend .l-nav::before { color: var(--nav); } .legend .l-unl::before { color: var(--unl); }
   .legend .l-mcap::before { color: var(--mcap); } .legend .l-ink::before { color: var(--ink); }
+  .legend .l-red::before { color: var(--red); } .legend .l-ink2::before { color: var(--ink-2); }
+
+  .tabs { display: flex; gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); margin-top: 24px; }
+  .tab {
+    background: var(--panel); color: var(--ink-2); border: 0; border-bottom: 2px solid transparent;
+    font: inherit; font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
+    padding: 11px 20px; cursor: pointer;
+  }
+  .tab:hover { color: var(--ink); }
+  .tab[aria-selected="true"] { color: var(--ink); background: var(--glow); border-bottom-color: var(--unl); }
+  .tab:focus-visible { outline: 1px dashed var(--unl); outline-offset: -4px; }
+  .view[hidden] { display: none; }
 
   .table-scroll { overflow-x: auto; }
   table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; min-width: 560px; font-variant-numeric: tabular-nums; }
@@ -158,17 +170,27 @@
 <main>
   <header>
     <div>
-      <div class="eyebrow">EthenaDAT / NAV Tracker · Nasdaq: USDE</div>
-      <h1>StablecoinX vs. its ENA treasury</h1>
+      <div class="eyebrow" id="eyebrow">EthenaDAT / NAV Tracker · Nasdaq: USDE</div>
+      <h1 id="h1">StablecoinX vs. its ENA treasury</h1>
       <div class="sub"><span class="live-dot" aria-hidden="true"></span><span id="sub">loading…</span></div>
     </div>
-    <div class="badges">
+    <div class="badges" id="badges-nav">
       <div class="badge"><div class="micro">mNAV</div><div class="bv c-mcap" id="badge-mnav">–</div></div>
       <div class="badge"><div class="micro">Unlocked mNAV</div><div class="bv c-unl" id="badge-unl">–</div></div>
+    </div>
+    <div class="badges" id="badges-pay" hidden>
+      <div class="badge"><div class="micro">USDe held</div><div class="bv c-unl" id="badge-tvl">–</div></div>
+      <div class="badge"><div class="micro">Spend 30d</div><div class="bv c-mcap" id="badge-spend">–</div></div>
     </div>
   </header>
   <noscript><p style="color:#9a97a6;font-size:13px;margin-top:12px">This dashboard requires JavaScript to load data.json.</p></noscript>
 
+  <nav class="tabs" role="tablist" aria-label="Dashboards">
+    <button class="tab" id="tab-nav" role="tab" aria-selected="true" aria-controls="view-nav" data-view="nav">NAV Tracker</button>
+    <button class="tab" id="tab-pay" role="tab" aria-selected="false" aria-controls="view-pay" data-view="pay">EthenaPay</button>
+  </nav>
+
+  <div class="view" id="view-nav" role="tabpanel" aria-labelledby="tab-nav">
   <div class="tiles" id="tiles"></div>
   <div class="tiles" id="tiles2"></div>
 
@@ -280,6 +302,57 @@
     <summary>Data table (last 10 sessions)</summary>
     <div class="table-scroll"><table id="dtable"></table></div>
   </details>
+  </div><!-- /view-nav -->
+
+  <div class="view" id="view-pay" role="tabpanel" aria-labelledby="tab-pay" hidden>
+    <div class="tiles" id="pay-tiles"></div>
+    <div class="tiles" id="pay-tiles2"></div>
+
+    <section>
+      <div class="sec-head"><h2>USDe held</h2><div class="chart-note">Balance across every user wallet · deposits + refunds − withdrawals − card spend</div></div>
+      <div class="chart-wrap" id="chart-pay-tvl"></div>
+      <div class="legend"><span class="l-unl">USDe held</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Deposits &amp; withdrawals</h2><div class="chart-note">External USDe moving in and out · wallet-to-wallet transfers and refunded authorizations are excluded — refunds are tiled separately</div></div>
+      <div class="chart-wrap" id="chart-pay-flows"></div>
+      <div class="legend">
+        <span class="l-nav">Deposits</span>
+        <span class="l-red">Withdrawals</span>
+      </div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement · one authorization = one event, never one transaction</div></div>
+      <div class="chart-wrap" id="chart-pay-spend"></div>
+      <div class="legend"><span class="l-mcap">Daily spend</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>Wallets</h2><div class="chart-note">Deployed cumulatively vs. spending on any given day</div></div>
+      <div class="chart-wrap" id="chart-pay-wallets"></div>
+      <div class="legend"><span class="l-nav">Wallets deployed (cumulative)</span></div>
+      <div class="chart-wrap" id="chart-pay-active" style="margin-top:18px"></div>
+      <div class="legend"><span class="l-unl">Wallets spending that day</span></div>
+    </section>
+
+    <section>
+      <div class="sec-head"><h2>From wallet to spender</h2><div class="chart-note">Three defensible readings of "users" — they differ by ~30×</div></div>
+      <div class="tiles" id="pay-funnel" style="margin-top:0"></div>
+      <div class="explainer">
+        <div class="micro">How these numbers are measured</div>
+        A wallet is deployed cheaply at signup and most are never funded, so wallet
+        count is not a user count — quote the step that matches the question.
+        <ul>
+          <li><b>Card spend reads the wallet's own <code>AllowanceSpent</code> event</b>, which fires on the first hop only (wallet → settlement). The settlement → card-issuer forward is a separate plain transfer, so it cannot be double-counted.</li>
+          <li><b>One event = one authorization.</b> Spends are sometimes batched — up to <b><span id="pay-batch">—</span> in a single transaction</b> — so counting transactions would undercount.</li>
+          <li><b>Refunds are not deposits.</b> USDe returned from settlement is a reversed authorization, tracked separately; it currently runs at <b><span id="pay-refund">—</span> of spend</b>.</li>
+          <li><b>Balance is concentrated:</b> the top 10 wallets hold <b><span id="pay-conc">—</span></b> of all USDe held, so the headline figure tracks a handful of accounts rather than broad retail growth.</li>
+        </ul>
+      </div>
+    </section>
+  </div><!-- /view-pay -->
 
   <footer>
     <div class="micro">Notes &amp; sources</div>
@@ -287,6 +360,12 @@
       <span id="fn1">*Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line.</span><br>
       Treasury cost basis ($893M / $0.295 per ENA) per the PIPE terms in the Super 8-K. Source: SEC filings, Yahoo Finance, CoinGecko.<br>
       <span id="stamp"></span>
+    </div>
+    <div style="margin-top:6px" id="foot-pay" hidden>
+      EthenaPay is the USDe card programme on Avalanche C-Chain (chain 43114). Metrics are
+      computed from chain data via Dune; the query definitions and the on-chain verification
+      behind them live in the <b>QorbQuant/ethenaPay</b> repo.
+      <span id="pay-stamp"></span>
     </div>
     <div class="frow">
       <div>Not investment advice.</div>
@@ -302,7 +381,7 @@
 </div>
 
 <script>
-const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#9a97a6", ink3: "#757280", grid: "#2e2b35" };
+const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#9a97a6", ink3: "#757280", grid: "#2e2b35", red: "#e07a7a" };  /* red mirrors the --red CSS token */
 const PIPE_COST = 893e6;
 const fmtM = v => v == null ? "–" : "$" + (v / 1e6).toFixed(1) + "M";
 const fmtX = v => v == null ? "–" : v.toFixed(2) + "×";
@@ -462,7 +541,8 @@ function lineChart(el, seriesDefs, opts) {
   const W = narrow ? 640 : 1160, H = narrow ? 300 : 420;
   const L = narrow ? 62 : 64, R = narrow ? 70 : 130, T = 18, B = narrow ? 30 : 34;
   const FS = 12;
-  const n = D.series.date.length;
+  const dates = opts.dates || D.series.date;
+  const n = dates.length;
   const all = seriesDefs.flatMap(s => s.data).filter(v => v != null);
   const vmax = (opts.vmax || Math.max(...all)) * 1.06;
   const vmin = opts.zero ? 0 : Math.min(...all) * 0.94;
@@ -480,10 +560,11 @@ function lineChart(el, seriesDefs, opts) {
   }
   const step = Math.ceil(n / (narrow ? 3 : 5));
   for (let i = 0; i < n - step / 2; i += step) {
-    g += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(D.series.date[i])}</text>`;
+    g += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(dates[i])}</text>`;
   }
-  g += `<text x="${x(n - 1)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(D.series.date[n - 1])}</text>`;
-  const endLabels = seriesDefs.map(s => ({ s, ly: y(s.data[n - 1]) + 4 })).sort((a, b) => a.ly - b.ly);
+  g += `<text x="${x(n - 1)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(dates[n - 1])}</text>`;
+  const lastVal = d => { for (let i = d.length - 1; i >= 0; i--) if (d[i] != null) return d[i]; return null; };
+  const endLabels = seriesDefs.map(s => ({ s, ly: y(lastVal(s.data) ?? vmin) + 4 })).sort((a, b) => a.ly - b.ly);
   for (let li = 1; li < endLabels.length; li++) {
     if (endLabels[li].ly - endLabels[li - 1].ly < FS + 4) endLabels[li].ly = endLabels[li - 1].ly + FS + 4;
   }
@@ -491,7 +572,8 @@ function lineChart(el, seriesDefs, opts) {
     const pts = s.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
     g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.dash ? 1.5 : 2}" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="6 5"' : ""}/>`;
     const ly = endLabels.find(e => e.s === s).ly;
-    const lbl = narrow ? opts.fmt(s.data[n - 1]) : `${opts.fmt(s.data[n - 1])} ${s.short}`;
+    const lv = lastVal(s.data);
+    const lbl = narrow ? opts.fmt(lv) : `${opts.fmt(lv)} ${s.short}`;
     g += `<text x="${W - R + 8}" y="${ly}" fill="${s.color}" font-size="${FS}" font-weight="bold">${lbl}</text>`;
   }
   g += `<line class="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
@@ -511,7 +593,7 @@ function lineChart(el, seriesDefs, opts) {
     });
     tip.style.display = "block";
     const rows = seriesDefs.map(s => `<div class="tr"><span style="color:${C.ink2}">${s.name}</span><b>${opts.fmt(s.data[i])}</b></div>`).join("");
-    tip.innerHTML = `<div class="th">${fmtD(D.series.date[i])}, ${D.series.date[i].slice(0, 4)}</div>${rows}`;
+    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}</div>${rows}`;
     const tx = (x(i) / W) * r.width;
     tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
     tip.style.top = (ev.clientY - r.top + 14) + "px";
@@ -711,6 +793,148 @@ async function refreshLive() {
   if (changed) renderTiles();
 }
 
+
+/* ---------------------------------------------------------------- EthenaPay */
+/* The USDe card programme on Avalanche. Data comes from the same GitHub-raw
+   pattern as the NAV tracker (docs/ethenapay.json, refreshed by Actions), and
+   is fetched lazily the first time the tab is opened. */
+
+let P = null;
+let payDrawn = false;
+
+const fmtK = v => v == null ? "–"
+  : v >= 1e6 ? "$" + (v / 1e6).toFixed(2) + "M"
+  : v >= 1e4 ? "$" + (v / 1e3).toFixed(0) + "k"
+  : v >= 1e3 ? "$" + (v / 1e3).toFixed(1) + "k"
+  : v >= 100 ? "$" + v.toFixed(0)
+  : "$" + v.toFixed(2);
+const fmtN = v => v == null ? "–" : v >= 1e3 ? (v / 1e3).toFixed(1) + "k" : String(Math.round(v));
+const fmtPc = v => v == null ? "–" : (v * 100).toFixed(v < 0.01 ? 2 : 1) + "%";
+const fmtInt = v => v == null ? "–" : Math.round(v).toLocaleString("en-US");
+
+function niceTicks(hi, count) {
+  if (!(hi > 0)) return [0, 1];
+  const raw = hi / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
+  const st = [1, 2, 2.5, 5, 10].map(m => m * mag).find(v => v >= raw) || 10 * mag;
+  const out = [];
+  for (let v = 0; v <= hi; v += st) out.push(v);
+  return out;
+}
+
+function renderPayTiles() {
+  const h = P.headline;
+  document.getElementById("pay-tiles").innerHTML =
+    tile("USDe held", fmtK(h.tvl_usde), "c-unl", fmtInt(h.funded_wallets) + " funded wallets") +
+    tile("Deposits, all time", fmtK(h.lifetime_deposits_usde), "c-nav", fmtK(h.lifetime_withdrawals_usde) + " withdrawn") +
+    tile("Card spend, all time", fmtK(h.lifetime_spend_usde), "c-mcap", fmtInt(h.lifetime_spend_count) + " authorizations") +
+    tile("Card spend, 30d", fmtK(h.spend_usde_30d), "c-mcap", fmtInt(h.mau_30d) + " wallets active") +
+    tile("Weekly active", fmtInt(h.wau_7d), "", "distinct spenders, 7d") +
+    tile("Median authorization", fmtK(h.median_spend_usde), "", "mean " + fmtK(h.avg_spend_usde));
+
+  document.getElementById("pay-tiles2").innerHTML =
+    tile("Refund rate", fmtPc(h.refund_rate), "", fmtK(h.lifetime_reversals_usde) + " reversed") +
+    tile("Cashback paid", fmtN(h.cashback_avax_total) + " AVAX", "c-unl", fmtInt(h.cashback_payments_total) + " payments") +
+    tile("Activation", fmtPc(h.activation_rate), "", fmtInt(h.spending_wallets) + " of " + fmtInt(h.wallets_created) + " ever spent") +
+    tile("Balance concentration", fmtPc(h.top10_balance_share), "", "held by the top 10 wallets") +
+    tile("Wallets deployed", fmtInt(h.wallets_created), "", fmtInt(h.wallets_created_30d) + " in the last 30d") +
+    tile("Avg per funded wallet", fmtK(h.funded_wallets ? h.tvl_usde / h.funded_wallets : null), "", "USDe held");
+
+  document.getElementById("pay-funnel").innerHTML =
+    tile("Wallets deployed", fmtInt(h.wallets_created), "c-nav", "100% — one per signup") +
+    tile("Funded", fmtInt(h.funded_wallets), "c-unl", fmtPc(h.funding_rate) + " hold any USDe") +
+    tile("Ever spent on card", fmtInt(h.spending_wallets), "c-mcap", fmtPc(h.activation_rate) + " of deployed");
+
+  document.getElementById("badge-tvl").textContent = fmtK(h.tvl_usde);
+  document.getElementById("badge-spend").textContent = fmtK(h.spend_usde_30d);
+  const set = (id, v) => { const e = document.getElementById(id); if (e) e.textContent = v; };
+  set("pay-batch", h.max_logs_per_tx ? Math.round(h.max_logs_per_tx) + " authorizations" : "several");
+  set("pay-refund", fmtPc(h.refund_rate));
+  set("pay-conc", fmtPc(h.top10_balance_share));
+  set("pay-stamp", " Data as of " + P.generated_at.replace("T", " ").slice(0, 16) + " UTC.");
+}
+
+function renderPayCharts() {
+  const s = P.series, dates = s.date;
+  const max = a => Math.max(...a.filter(v => v != null));
+
+  lineChart(document.getElementById("chart-pay-tvl"), [
+    { name: "USDe held", short: "held", data: s.tvl_usde, color: C.unl },
+  ], {
+    dates, zero: true, fmt: fmtK, label: "USDe held across all user wallets over time",
+    ticks: (lo, hi) => niceTicks(hi, 4),
+  });
+
+  lineChart(document.getElementById("chart-pay-flows"), [
+    { name: "Deposits", short: "in", data: s.deposits_usde, color: C.nav },
+    { name: "Withdrawals", short: "out", data: s.withdrawals_usde, color: C.red },
+  ], {
+    dates, zero: true, fmt: fmtK, label: "Daily deposits and withdrawals",
+    ticks: (lo, hi) => niceTicks(hi, 4),
+  });
+
+  lineChart(document.getElementById("chart-pay-spend"), [
+    { name: "Card spend", short: "spend", data: s.spend_usde, color: C.mcap },
+  ], {
+    dates, zero: true, fmt: fmtK, label: "Daily card spend volume",
+    ticks: (lo, hi) => niceTicks(hi, 4),
+  });
+
+  // Cumulative deployments dwarf daily actives, so actives are shown against
+  // their own chart rather than crushed onto a shared axis.
+  lineChart(document.getElementById("chart-pay-wallets"), [
+    { name: "Deployed (cumulative)", short: "deployed", data: s.cumulative_wallets, color: C.nav },
+  ], {
+    dates, zero: true, fmt: fmtN, label: "Wallets deployed over time",
+    ticks: (lo, hi) => niceTicks(hi, 4),
+  });
+  lineChart(document.getElementById("chart-pay-active"), [
+    { name: "Spending that day", short: "active", data: s.active_wallets, color: C.unl },
+  ], {
+    dates, zero: true, fmt: fmtN, label: "Wallets spending per day",
+    ticks: (lo, hi) => niceTicks(hi, 4),
+  });
+}
+
+async function loadPay() {
+  if (P) return true;
+  const RAW = "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/ethenapay.json";
+  const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
+  for (const u of (isLocal ? ["ethenapay.json", RAW] : [RAW, "ethenapay.json"])) {
+    try { P = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
+  }
+  return !!P;
+}
+
+const VIEWS = {
+  nav: { eyebrow: "EthenaDAT / NAV Tracker · Nasdaq: USDE", h1: "StablecoinX vs. its ENA treasury" },
+  pay: { eyebrow: "EthenaDAT / EthenaPay · Avalanche C-Chain", h1: "The USDe card programme, on-chain" },
+};
+
+async function showView(v) {
+  if (!VIEWS[v]) v = "nav";
+  for (const k of Object.keys(VIEWS)) {
+    document.getElementById("view-" + k).hidden = k !== v;
+    const t = document.getElementById("tab-" + k);
+    t.setAttribute("aria-selected", String(k === v));
+  }
+  document.getElementById("badges-nav").hidden = v !== "nav";
+  document.getElementById("badges-pay").hidden = v !== "pay";
+  document.getElementById("foot-pay").hidden = v !== "pay";
+  document.getElementById("eyebrow").textContent = VIEWS[v].eyebrow;
+  document.getElementById("h1").textContent = VIEWS[v].h1;
+  if (history.replaceState) history.replaceState(null, "", v === "nav" ? location.pathname : "#pay");
+
+  if (v === "pay" && !payDrawn) {
+    if (await loadPay()) { renderPayTiles(); renderPayCharts(); payDrawn = true; }
+    else document.getElementById("pay-tiles").innerHTML =
+      '<div class="tile"><div class="k">EthenaPay</div><div class="v">–</div><div class="d">data unavailable — retry shortly</div></div>';
+  }
+}
+
+document.querySelectorAll(".tab").forEach(t =>
+  t.addEventListener("click", () => showView(t.dataset.view)));
+window.addEventListener("hashchange", () => showView(location.hash === "#pay" ? "pay" : "nav"));
+
 (async () => {
   try {
     // Data refreshes land in the GitHub repo every 30 min; prefer the raw
@@ -727,7 +951,14 @@ async function refreshLive() {
     refreshLive();
     setInterval(refreshLive, 60000);
     let rt;
-    window.addEventListener("resize", () => { clearTimeout(rt); rt = setTimeout(renderCharts, 150); });
+    window.addEventListener("resize", () => {
+      clearTimeout(rt);
+      rt = setTimeout(() => {
+        if (!document.getElementById("view-nav").hidden) renderCharts();
+        else if (payDrawn) renderPayCharts();
+      }, 150);
+    });
+    if (location.hash === "#pay") showView("pay");
     // credit toast — once per day per browser
     try {
       const KEY = "credit-toast-at";

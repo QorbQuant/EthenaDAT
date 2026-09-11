@@ -70,6 +70,35 @@ new locked tranche row is added.
 
 No API keys required (Yahoo Finance via `yfinance`, CoinGecko free tier).
 
+## EthenaPay tab
+
+`ethenadash.com/#pay` tracks **EthenaPay**, the USDe card programme on Avalanche
+C-Chain (chain 43114) — USDe held, deposits and withdrawals, card spend, wallet
+growth and cashback.
+
+`fetch_ethenapay.py` pulls two saved Dune queries and writes
+`docs/ethenapay.json`, which the page fetches from the GitHub raw feed exactly
+like `data.json`. It reads each query's *last cached execution*, so the refresh
+costs no Dune credits; re-running the queries themselves happens in the
+[QorbQuant/ethenaPay](https://github.com/QorbQuant/ethenaPay) repo, which owns
+the SQL and documents how every metric is defined.
+
+```bash
+DUNE_API_KEY=... python fetch_ethenapay.py
+```
+
+In CI the key comes from the `DUNE_API_KEY` repository secret. The step is
+`continue-on-error` and the script exits cleanly when the key is absent — the
+NAV tracker is the site's primary job and must keep refreshing regardless.
+
+Two things worth knowing before quoting these numbers:
+
+- **There is no single "users" figure.** A wallet is deployed cheaply at signup
+  and most are never funded, so wallet count overstates adoption by ~30×. The tab
+  shows the funnel (deployed → funded → ever spent) rather than picking one.
+- **USDe held is concentrated** — the top 10 wallets hold ~76% of it, so the
+  headline tracks a handful of accounts, not broad retail growth.
+
 ## Hosting
 
 The dashboard (`docs/`) is live at **https://ethenadash.com**, served by a

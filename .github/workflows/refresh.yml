@@ -39,12 +39,22 @@ jobs:
           python fetch_data.py
           python build_dashboard_data.py
 
-      # Cloudflare Pages watches this repo and deploys docs/ on every push,
-      # so committing the refreshed data is also the deploy.
+      # EthenaPay tab. Kept separate and non-blocking: a Dune outage or a
+      # missing key must not stop the NAV tracker from refreshing.
+      - name: Refresh EthenaPay data
+        continue-on-error: true
+        env:
+          DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
+        run: python fetch_ethenapay.py
+
+      # The site reads data.json and ethenapay.json from the GitHub raw feed at
+      # runtime, so committing refreshed data is enough to update the live page.
+      # Changes to docs/index.html itself still need `wrangler deploy` — the site
+      # has been served by a Worker (not Pages) since 2026-09-11.
       - name: Commit refreshed data
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/ docs/data.json
+          git add output/ docs/data.json docs/ethenapay.json
           git diff --cached --quiet || git commit -m "Auto-refresh data [skip ci]"
           git push
