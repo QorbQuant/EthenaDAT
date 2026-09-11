@@ -315,15 +315,12 @@
     </section>
 
     <section>
-      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement each day · one authorization = one event, never one transaction</div></div>
+      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement each day, with the running total on the right axis · one authorization = one event, never one transaction</div></div>
       <div class="chart-wrap" id="chart-pay-spend"></div>
-      <div class="legend"><span class="l-mcap">Daily card spend</span></div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>USDe held vs. card spend</h2><div class="chart-note">Balance held on the left axis, daily spend on the right · two scales, so where the surface and the columns cross carries no meaning</div></div>
-      <div class="chart-wrap" id="chart-pay-combo"></div>
-      <div class="legend"><span class="l-unl">USDe held (left)</span><span class="l-mcap">Card spend (right)</span></div>
+      <div class="legend">
+        <span class="l-mcap">Daily spend (left)</span>
+        <span class="l-nav">Cumulative (right)</span>
+      </div>
     </section>
 
     <section>
@@ -704,48 +701,58 @@ function areaChart(el, sd, opts) {
    Two y-scales, so where the surface and the columns cross means nothing — it
    moves with either scale. Each axis is tinted to its own series so there is no
    doubt which reads which; the tooltip gives both exact values. */
-function comboChart(el, areaDef, barDef, opts) {
+function comboChart(el, leftDef, rightDef, opts) {
   const g = payGeom(el), dates = opts.dates, n = dates.length;
-  const aMax = Math.max(...areaDef.data.filter(v => v != null)) * 1.06 || 1;
-  const bMax = Math.max(...barDef.data.filter(v => v != null)) * 1.06 || 1;
+  const maxOf = d => Math.max(...d.filter(v => v != null)) || 1;
+  const lMax = maxOf(leftDef.data) * 1.06, rMax = maxOf(rightDef.data) * 1.06;
   const x = i => g.L + (g.W - g.L - g.R) * (i + 0.5) / n;
-  const yA = v => g.T + (g.H - g.T - g.B) * (1 - v / aMax);
-  const yB = v => g.T + (g.H - g.T - g.B) * (1 - v / bMax);
-  const base = yA(0);
+  const yL = v => g.T + (g.H - g.T - g.B) * (1 - v / lMax);
+  const yR = v => g.T + (g.H - g.T - g.B) * (1 - v / rMax);
+  const base = yL(0);
   const bw = Math.max(1, Math.min(16, (g.W - g.L - g.R) / n * 0.7));
   let out = "";
 
-  const aTicks = opts.ticksLeft(0, aMax);
-  for (const tv of aTicks) {
-    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${yA(tv)}" y2="${yA(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
-    out += `<text x="${g.L - 8}" y="${yA(tv) + 4}" text-anchor="end" fill="${areaDef.color}" font-size="${g.FS}">${opts.fmtLeft(tv)}</text>`;
+  for (const tv of opts.ticksLeft(0, lMax)) {
+    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${yL(tv)}" y2="${yL(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
+    out += `<text x="${g.L - 8}" y="${yL(tv) + 4}" text-anchor="end" fill="${leftDef.color}" font-size="${g.FS}">${opts.fmtLeft(tv)}</text>`;
   }
-  for (const tv of opts.ticksRight(0, bMax)) {
-    out += `<text x="${g.W - g.R + 8}" y="${yB(tv) + 4}" text-anchor="start" fill="${barDef.color}" font-size="${g.FS}">${opts.fmtRight(tv)}</text>`;
+  for (const tv of opts.ticksRight(0, rMax)) {
+    out += `<text x="${g.W - g.R + 8}" y="${yR(tv) + 4}" text-anchor="start" fill="${rightDef.color}" font-size="${g.FS}">${opts.fmtRight(tv)}</text>`;
   }
 
-  // bars first so the area's stroke stays legible over them
-  for (let i = 0; i < n; i++) {
-    const v = barDef.data[i];
-    if (v == null || v === 0) continue;
-    const h = Math.max(1, base - yB(v));
-    out += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${barDef.color}" fill-opacity="0.75"/>`;
-  }
-  const pts = areaDef.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${yA(v).toFixed(1)}`).filter(Boolean);
-  out += `<path d="M${x(0).toFixed(1)},${base} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${base} Z" fill="${areaDef.color}" fill-opacity="${opts.fillOpacity ?? 0.10}" stroke="none"/>`;
-  out += `<polyline points="${pts.join(" ")}" fill="none" stroke="${areaDef.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+  const draw = (def, y) => {
+    if (def.kind === "bar") {
+      let bars = "";
+      for (let i = 0; i < n; i++) {
+        const v = def.data[i];
+        if (v == null || v === 0) continue;
+        const h = Math.max(1, base - y(v));
+        bars += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${def.color}" fill-opacity="${def.opacity ?? 0.8}"/>`;
+      }
+      return bars;
+    }
+    const pts = def.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
+    let m = "";
+    if (def.kind === "area")
+      m += `<path d="M${x(0).toFixed(1)},${base} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${base} Z" fill="${def.color}" fill-opacity="${opts.fillOpacity ?? 0.10}" stroke="none"/>`;
+    m += `<polyline points="${pts.join(" ")}" fill="none" stroke="${def.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
+    return m;
+  };
+
+  // bars first, so a line on the other axis stays legible across them
+  for (const [def, y] of [[leftDef, yL], [rightDef, yR]].sort((a, b) => (a[0].kind === "bar" ? 0 : 1) - (b[0].kind === "bar" ? 0 : 1)))
+    out += draw(def, y);
+
   out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${base}" y2="${base}" stroke="${C.ink3}" stroke-width="1"/>`;
-  out += `<text x="${g.L - 8}" y="${g.T - 4}" text-anchor="end" fill="${areaDef.color}" font-size="${g.FS - 1}">${areaDef.short}</text>`;
-  out += `<text x="${g.W - g.R + 8}" y="${g.T - 4}" text-anchor="start" fill="${barDef.color}" font-size="${g.FS - 1}">${barDef.short}</text>`;
+  out += `<text x="${g.L - 8}" y="${g.T - 4}" text-anchor="end" fill="${leftDef.color}" font-size="${g.FS - 1}">${leftDef.short}</text>`;
+  out += `<text x="${g.W - g.R + 8}" y="${g.T - 4}" text-anchor="start" fill="${rightDef.color}" font-size="${g.FS - 1}">${rightDef.short}</text>`;
   out += xTicks(g, dates, x);
   out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
   el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
   payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
-    `<div class="tr"><span style="color:${C.ink2}">${areaDef.name}</span><b>${opts.fmtLeft(areaDef.data[i])}</b></div>` +
-    `<div class="tr"><span style="color:${C.ink2}">${barDef.name}</span><b>${opts.fmtRight(barDef.data[i])}</b></div>`);
+    `<div class="tr"><span style="color:${C.ink2}">${leftDef.name}</span><b>${opts.fmtLeft(leftDef.data[i])}</b></div>` +
+    `<div class="tr"><span style="color:${C.ink2}">${rightDef.name}</span><b>${opts.fmtRight(rightDef.data[i])}</b></div>`);
 }
-
-
 
 function payoffChart(el, warrantPx, stockPx, strike, marks) {
   const narrow = el.clientWidth < 640;
@@ -947,6 +954,7 @@ let P = null;
 let payDrawn = false;
 
 const fmtK = v => v == null ? "–"
+  : v === 0 ? "$0"
   : v >= 1e6 ? "$" + (v / 1e6).toFixed(2) + "M"
   : v >= 1e4 ? "$" + (v / 1e3).toFixed(0) + "k"
   : v >= 1e3 ? "$" + (v / 1e3).toFixed(1) + "k"
@@ -1003,16 +1011,15 @@ function renderPayCharts() {
     { name: "USDe held", short: "held", data: s.tvl_usde, color: C.unl },
     { dates, fmt: fmtK, ticks: T, label: "USDe held across all user wallets over time" });
 
-  // Everything below is a per-day flow — discrete columns, not a continuous line.
-  barChart(document.getElementById("chart-pay-spend"),
-    [{ name: "Card spend", data: s.spend_usde, color: C.mcap }],
-    { dates, fmt: fmtK, ticks: T, label: "Daily card spend volume" });
-
-  comboChart(document.getElementById("chart-pay-combo"),
-    { name: "USDe held", short: "USDe held", data: s.tvl_usde, color: C.unl },
-    { name: "Card spend", short: "card spend", data: s.spend_usde, color: C.mcap },
-    { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T, fillOpacity: 0.10,
-      label: "USDe held against daily card spend" });
+  // Daily spend is a per-day flow (columns); the running total only ever rises,
+  // so it needs its own scale — hence the right axis.
+  let running = 0;
+  const cumulative = s.spend_usde.map(v => (running += v || 0));
+  comboChart(document.getElementById("chart-pay-spend"),
+    { name: "Daily spend", short: "daily", data: s.spend_usde, color: C.mcap, kind: "bar" },
+    { name: "Cumulative", short: "cumulative", data: cumulative, color: C.nav, kind: "line" },
+    { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
+      label: "Daily card spend with the running total" });
 
   barChart(document.getElementById("chart-pay-flows"), [
     { name: "Deposits", data: s.deposits_usde, color: C.nav, dir: 1 },
