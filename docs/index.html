@@ -922,7 +922,9 @@ async function showView(v) {
   document.getElementById("foot-pay").hidden = v !== "pay";
   document.getElementById("eyebrow").textContent = VIEWS[v].eyebrow;
   document.getElementById("h1").textContent = VIEWS[v].h1;
-  if (history.replaceState) history.replaceState(null, "", v === "nav" ? location.pathname : "#pay");
+  // replaceState throws a SecurityError on file:// (and in some sandboxed
+  // embeds); the tab itself must still work there, so this is best-effort.
+  try { history.replaceState(null, "", v === "nav" ? location.pathname : "#pay"); } catch (e) { /* URL stays put */ }
 
   if (v === "pay" && !payDrawn) {
     if (await loadPay()) { renderPayTiles(); renderPayCharts(); payDrawn = true; }
