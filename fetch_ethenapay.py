@@ -6,15 +6,21 @@ QorbQuant/ethenaPay repo under dune/; this script only pulls the results of the
 two saved queries and reshapes them into the column-oriented series the
 dashboard already expects.
 
-Reads the *last cached execution* rather than triggering a new one, so the
-refresh workflow costs no Dune credits. Re-run `npm run dune:sync` in the
-ethenaPay repo to refresh the underlying data.
+The refresh workflow runs every ~30 minutes, but these metrics have a daily
+grain, so re-executing on every run would burn Dune credits for no new
+information. Instead the cached result is reused until it is older than
+MAX_AGE_HOURS (default 20), at which point both queries are re-executed once.
+That works out to roughly one execution per query per day.
+
+Reading the cache alone was the original design and it silently froze the tab:
+nothing ever re-ran the queries, so every refresh republished the same day.
 
 Needs DUNE_API_KEY in the environment.
 """
 
 import json
 import os
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -25,6 +31,7 @@ DUNE = "https://api.dune.com/api/v1"
 
 QUERY_DAILY = int(os.environ.get("DUNE_QUERY_DAILY", 8680891))
 QUERY_HEADLINE = int(os.environ.get("DUNE_QUERY_HEADLINE", 8680892))
+MAX_AGE_HOURS = float(os.environ.get("DUNE_MAX_AGE_HOURS", 20))
 
 # Dune column -> the name the dashboard uses. "users" is deliberately renamed to
 # "wallets": a wallet is deployed at signup and most are never funded, so the
@@ -44,7 +51,7 @@ SERIES_COLUMNS = {
 }
 
 
-def dune_rows(query_id: int, api_key: str) -> list:
+def dune_results(query_id: int, api_key: str) -> dict:
     r = requests.get(
         f"{DUNE}/query/{query_id}/results",
         headers={"X-Dune-API-Key": api_key},
@@ -52,7 +59,46 @@ def dune_rows(query_id: int, api_key: str) -> list:
         timeout=60,
     )
     r.raise_for_status()
-    body = r.json()
+    return r.json()
+
+
+def age_hours(body: dict) -> float:
+    ended = body.get("execution_ended_at")
+    if not ended:
+        return float("inf")
+    # Dune emits a variable number of fractional-second digits (e.g. ".62442"),
+    # which older fromisoformat implementations reject; seconds are plenty here.
+    ended = datetime.strptime(ended[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+    return (datetime.now(timezone.utc) - ended).total_seconds() / 3600
+
+
+def execute(query_id: int, api_key: str) -> None:
+    headers = {"X-Dune-API-Key": api_key}
+    r = requests.post(f"{DUNE}/query/{query_id}/execute", headers=headers,
+                      json={"performance": "medium"}, timeout=60)
+    r.raise_for_status()
+    execution_id = r.json()["execution_id"]
+    for _ in range(120):
+        time.sleep(5)
+        st = requests.get(f"{DUNE}/execution/{execution_id}/status", headers=headers, timeout=60)
+        st.raise_for_status()
+        state = st.json().get("state")
+        if state == "QUERY_STATE_COMPLETED":
+            return
+        if state in ("QUERY_STATE_FAILED", "QUERY_STATE_CANCELLED", "QUERY_STATE_EXPIRED"):
+            raise RuntimeError(f"query {query_id}: execution {execution_id} ended {state}")
+    raise RuntimeError(f"query {query_id}: execution {execution_id} timed out")
+
+
+def dune_rows(query_id: int, api_key: str) -> list:
+    body = dune_results(query_id, api_key)
+    age = age_hours(body)
+    if age > MAX_AGE_HOURS:
+        print(f"query {query_id}: cached result is {age:.1f}h old, re-executing")
+        execute(query_id, api_key)
+        body = dune_results(query_id, api_key)
+    else:
+        print(f"query {query_id}: using cached result ({age:.1f}h old)")
     rows = body.get("result", {}).get("rows")
     if rows is None:
         raise RuntimeError(f"query {query_id}: no rows (state={body.get('state')})")
