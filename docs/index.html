@@ -523,7 +523,7 @@ function renderTiles() {
   const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC").replace(/\.\d+Z$/, " UTC");
   const stateWord = D.usde.market_state === "LIVE" ? "live" : D.usde.market_state === "REGULAR" ? "intraday" : "as of";
   document.getElementById("sub").textContent =
-    `USDE quote ${stateWord} ${t} · ENA live · charts extend daily`;
+    `USDE quote ${stateWord} ${t} · ENA live · ${D.liveDate ? "charts live through today" : "charts extend daily"}`;
 }
 
 function lineChart(el, seriesDefs, opts) {
@@ -583,7 +583,7 @@ function lineChart(el, seriesDefs, opts) {
     });
     tip.style.display = "block";
     const rows = seriesDefs.map(s => `<div class="tr"><span style="color:${C.ink2}">${s.name}</span><b>${opts.fmt(s.data[i])}</b></div>`).join("");
-    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}</div>${rows}`;
+    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}${dates[i] === D.liveDate ? " · live" : ""}</div>${rows}`;
     const tx = (x(i) / W) * r.width;
     tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
     tip.style.top = (ev.clientY - r.top + 14) + "px";
@@ -625,7 +625,7 @@ function payTooltip(el, svg, g, dates, x, rowsFor) {
     const i = Math.max(0, Math.min(n - 1, Math.round((px - g.L) * (n - 1) / (g.W - g.L - g.R))));
     if (xh) { xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible"); }
     tip.style.display = "block";
-    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}</div>${rowsFor(i)}`;
+    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}${dates[i] === D.liveDate ? " · live" : ""}</div>${rowsFor(i)}`;
     const tx = (x(i) / g.W) * r.width;
     tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
     tip.style.top = (ev.clientY - r.top + 14) + "px";
@@ -921,9 +921,52 @@ function renderTable() {
   const s = D.series, n = s.date.length;
   let h = "<thead><tr><th>Date</th><th>USDE</th><th>Mcap</th><th>ENA</th><th>NAV</th><th>Unlocked NAV</th><th>mNAV</th><th>Unl. mNAV</th></tr></thead><tbody>";
   for (let i = n - 1; i >= Math.max(0, n - 10); i--) {
-    h += `<tr><td>${s.date[i]}</td><td>${fmt$(s.usde_close[i])}</td><td>${fmtM(s.market_cap[i])}</td><td>${fmt$(s.ena_price[i])}</td><td>${fmtM(s.ena_nav[i])}</td><td>${fmtM(s.nav_unlocked[i])}</td><td>${fmtX(s.mnav[i])}</td><td>${fmtX(s.mnav_unlocked[i])}</td></tr>`;
+    h += `<tr><td>${s.date[i]}${s.date[i] === D.liveDate ? " · live" : ""}</td><td>${fmt$(s.usde_close[i])}</td><td>${fmtM(s.market_cap[i])}</td><td>${fmt$(s.ena_price[i])}</td><td>${fmtM(s.ena_nav[i])}</td><td>${fmtM(s.nav_unlocked[i])}</td><td>${fmtX(s.mnav[i])}</td><td>${fmtX(s.mnav_unlocked[i])}</td></tr>`;
   }
   document.getElementById("dtable").innerHTML = h + "</tbody>";
+}
+
+// GitHub's scheduler skips many cron slots, so the committed series can lag a
+// session or more behind. Fold the live quotes into today's row so charts,
+// end labels and the table track the market; the pipeline's committed close
+// takes over on the next successful refresh.
+const nyDate = d => new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(d);
+let navChartsStale = false;
+
+function applyLiveRow() {
+  const s = D.series, n = s.date.length;
+  if (!n || D.usde.market_state !== "LIVE" || !enaLive) return false;
+  const session = nyDate(new Date(D.usde.quote_time));
+  // weekends / pre-market: the quote belongs to an earlier session already in
+  // the series, and stamping today's ENA onto it would misdate the move
+  if (session !== nyDate(new Date()) || session < s.date[n - 1]) return false;
+  const i = session > s.date[n - 1] ? n : n - 1;
+  const price = D.usde.price, ena = enaLive.price;
+  const shares = D.shares_outstanding, holdings = D.ena_holdings;
+  const unl = unlockedTokens(new Date());
+  const row = {
+    date: session,
+    usde_close: price,
+    usdew_close: liveW && liveW.price != null ? liveW.price : (s.usdew_close || [])[n - 1] ?? null,
+    shares_outstanding: shares,
+    ena_price: ena,
+    ena_holdings: holdings,
+    market_cap: price * shares,
+    ena_nav: ena * holdings,
+    nav_per_share: ena * holdings / shares,
+    mnav: price * shares / (ena * holdings),
+    ena_unlocked: unl,
+    nav_unlocked: ena * unl,
+    nav_unlocked_per_share: ena * unl / shares,
+    mnav_unlocked: price * shares / (ena * unl),
+  };
+  let changed = i === n;
+  for (const k of Object.keys(s)) {
+    const v = k in row ? row[k] : s[k][n - 1];
+    if (s[k][i] !== v) { s[k][i] = v; changed = true; }
+  }
+  D.liveDate = session;
+  return changed;
 }
 
 async function refreshLive() {
@@ -941,7 +984,14 @@ async function refreshLive() {
     }
     if (q.USDEW && q.USDEW.price != null) { liveW = q.USDEW; changed = true; }
   } catch (e) { /* keep last pipeline snapshot */ }
-  if (changed) renderTiles();
+  if (!changed) return;
+  const seriesMoved = applyLiveRow();
+  renderTiles();
+  if (seriesMoved) {
+    renderTable();
+    if (!document.getElementById("view-nav").hidden) renderCharts();
+    else navChartsStale = true;
+  }
 }
 
 
@@ -1067,6 +1117,7 @@ async function showView(v) {
   // embeds); the tab itself must still work there, so this is best-effort.
   try { history.replaceState(null, "", v === "nav" ? location.pathname : "#pay"); } catch (e) { /* URL stays put */ }
 
+  if (v === "nav" && navChartsStale) { navChartsStale = false; renderCharts(); }
   if (v === "pay" && !payDrawn) {
     if (await loadPay()) { renderPayTiles(); renderPayCharts(); payDrawn = true; }
     else document.getElementById("pay-tiles").innerHTML =
