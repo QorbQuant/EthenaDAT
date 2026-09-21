@@ -2,18 +2,27 @@
 
 EthenaPay is the USDe card programme on Avalanche C-Chain. The metric
 definitions — and the on-chain reasoning behind them — live in the
-QorbQuant/ethenaPay repo under dune/; this script only pulls the results of the
-two saved queries and reshapes them into the column-oriented series the
-dashboard already expects.
+QorbQuant/ethenaPay repo under dune/; this script runs that SQL and reshapes
+the results into the column-oriented series the dashboard expects.
 
-The refresh workflow runs every ~30 minutes, but these metrics have a daily
-grain, so re-executing on every run would burn Dune credits for no new
-information. Instead the cached result is reused until it is older than
-MAX_AGE_HOURS (default 20), at which point both queries are re-executed once.
-That works out to roughly one execution per query per day.
+Two failure modes are worth recording, because both came from depending on
+*saved* Dune queries:
 
-Reading the cache alone was the original design and it silently froze the tab:
-nothing ever re-ran the queries, so every refresh republished the same day.
+  1. Reading a saved query's cached result and never executing it silently
+     froze the tab — every refresh republished the same day.
+  2. Re-executing the saved queries fixed that until 2026-09-17, when both ids
+     began returning "Query not found or private" (deleted, or no longer
+     API-visible). The workflow step is `continue-on-error`, and GitHub reports
+     such a step as *success*, so four days of failures surfaced nowhere.
+
+So there is no saved-query id here any more: the SQL itself is sent to Dune's
+ad-hoc /sql/execute endpoint, sourced from the public ethenaPay repo, which is
+the source of truth for these definitions.
+
+Executions cost credits (~50 each, so ~100 for the pair), so the run is gated
+on the age of the existing docs/ethenapay.json — the queries only re-run once
+the published data is older than MAX_AGE_HOURS. The refresh workflow can keep
+firing every 30 minutes without burning the budget.
 
 Needs DUNE_API_KEY in the environment.
 """
@@ -27,11 +36,16 @@ from pathlib import Path
 import requests
 
 ROOT = Path(__file__).parent
+OUT = ROOT / "docs" / "ethenapay.json"
 DUNE = "https://api.dune.com/api/v1"
 
-QUERY_DAILY = int(os.environ.get("DUNE_QUERY_DAILY", 8680891))
-QUERY_HEADLINE = int(os.environ.get("DUNE_QUERY_HEADLINE", 8680892))
+SQL_BASE = os.environ.get(
+    "ETHENAPAY_SQL_BASE",
+    "https://raw.githubusercontent.com/QorbQuant/ethenaPay/main/dune",
+)
+SQL_FILES = {"daily": "05_daily_metrics.sql", "headline": "06_kpi_headline.sql"}
 MAX_AGE_HOURS = float(os.environ.get("DUNE_MAX_AGE_HOURS", 20))
+PERFORMANCE = os.environ.get("DUNE_PERFORMANCE", "medium")  # "small" is not on this plan
 
 # Dune column -> the name the dashboard uses. "users" is deliberately renamed to
 # "wallets": a wallet is deployed at signup and most are never funded, so the
@@ -50,59 +64,62 @@ SERIES_COLUMNS = {
     "cashback_avax": "cashback_avax",
 }
 
-
-def dune_results(query_id: int, api_key: str) -> dict:
-    r = requests.get(
-        f"{DUNE}/query/{query_id}/results",
-        headers={"X-Dune-API-Key": api_key},
-        params={"limit": 1000},
-        timeout=60,
-    )
-    r.raise_for_status()
-    return r.json()
+# A silent schema change upstream would otherwise publish a tab full of dashes.
+REQUIRED_HEADLINE = {"total_users", "funded_wallets", "lifetime_spend_usde", "tvl_usde"}
+REQUIRED_DAILY = {"day", "new_users", "spend_usde"}
 
 
-def age_hours(body: dict) -> float:
-    ended = body.get("execution_ended_at")
-    if not ended:
+def published_age_hours() -> float:
+    """Age of the data already on the site, in hours."""
+    try:
+        stamp = json.loads(OUT.read_text())["generated_at"]
+        when = datetime.strptime(stamp[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
+    except Exception:
         return float("inf")
-    # Dune emits a variable number of fractional-second digits (e.g. ".62442"),
-    # which older fromisoformat implementations reject; seconds are plenty here.
-    ended = datetime.strptime(ended[:19], "%Y-%m-%dT%H:%M:%S").replace(tzinfo=timezone.utc)
-    return (datetime.now(timezone.utc) - ended).total_seconds() / 3600
+    return (datetime.now(timezone.utc) - when).total_seconds() / 3600
 
 
-def execute(query_id: int, api_key: str) -> None:
-    headers = {"X-Dune-API-Key": api_key}
-    r = requests.post(f"{DUNE}/query/{query_id}/execute", headers=headers,
-                      json={"performance": "medium"}, timeout=60)
+def fetch_sql(name: str) -> str:
+    r = requests.get(f"{SQL_BASE}/{SQL_FILES[name]}", timeout=60)
     r.raise_for_status()
+    return r.text
+
+
+def run_sql(name: str, sql: str, api_key: str) -> list:
+    headers = {"X-Dune-API-Key": api_key}
+    r = requests.post(f"{DUNE}/sql/execute", headers=headers,
+                      json={"sql": sql, "performance": PERFORMANCE}, timeout=60)
+    if r.status_code >= 400:
+        raise RuntimeError(f"{name}: execute failed {r.status_code}: {r.text[:300]}")
     execution_id = r.json()["execution_id"]
-    for _ in range(120):
-        time.sleep(5)
+
+    state = None
+    for _ in range(150):
+        time.sleep(4)
         st = requests.get(f"{DUNE}/execution/{execution_id}/status", headers=headers, timeout=60)
         st.raise_for_status()
         state = st.json().get("state")
         if state == "QUERY_STATE_COMPLETED":
-            return
+            break
         if state in ("QUERY_STATE_FAILED", "QUERY_STATE_CANCELLED", "QUERY_STATE_EXPIRED"):
-            raise RuntimeError(f"query {query_id}: execution {execution_id} ended {state}")
-    raise RuntimeError(f"query {query_id}: execution {execution_id} timed out")
-
-
-def dune_rows(query_id: int, api_key: str) -> list:
-    body = dune_results(query_id, api_key)
-    age = age_hours(body)
-    if age > MAX_AGE_HOURS:
-        print(f"query {query_id}: cached result is {age:.1f}h old, re-executing")
-        execute(query_id, api_key)
-        body = dune_results(query_id, api_key)
+            raise RuntimeError(f"{name}: execution {execution_id} ended {state}")
     else:
-        print(f"query {query_id}: using cached result ({age:.1f}h old)")
-    rows = body.get("result", {}).get("rows")
-    if rows is None:
-        raise RuntimeError(f"query {query_id}: no rows (state={body.get('state')})")
+        raise RuntimeError(f"{name}: execution {execution_id} timed out (last state {state})")
+
+    res = requests.get(f"{DUNE}/execution/{execution_id}/results",
+                       headers=headers, params={"limit": 5000}, timeout=120)
+    res.raise_for_status()
+    rows = res.json().get("result", {}).get("rows")
+    if not rows:
+        raise RuntimeError(f"{name}: execution {execution_id} returned no rows")
+    print(f"{name}: {len(rows)} rows")
     return rows
+
+
+def check_columns(name: str, row: dict, required: set) -> None:
+    missing = required - set(row)
+    if missing:
+        raise RuntimeError(f"{name}: result is missing expected columns {sorted(missing)}")
 
 
 def num(v):
@@ -117,8 +134,16 @@ def main() -> None:
         print("DUNE_API_KEY not set — skipping EthenaPay refresh")
         return
 
-    daily = sorted(dune_rows(QUERY_DAILY, api_key), key=lambda r: r["day"])
-    headline = dune_rows(QUERY_HEADLINE, api_key)[0]
+    age = published_age_hours()
+    if age < MAX_AGE_HOURS and not os.environ.get("ETHENAPAY_FORCE"):
+        print(f"published data is {age:.1f}h old (< {MAX_AGE_HOURS}h) — skipping, no credits spent")
+        return
+    print(f"published data is {age:.1f}h old — running queries")
+
+    daily = sorted(run_sql("daily", fetch_sql("daily"), api_key), key=lambda r: r["day"])
+    headline = run_sql("headline", fetch_sql("headline"), api_key)[0]
+    check_columns("daily", daily[0], REQUIRED_DAILY)
+    check_columns("headline", headline, REQUIRED_HEADLINE)
 
     series = {"date": [str(r["day"])[:10] for r in daily]}
     for src, dest in SERIES_COLUMNS.items():
@@ -127,7 +152,7 @@ def main() -> None:
     payload = {
         "generated_at": datetime.now(timezone.utc).isoformat(timespec="seconds"),
         "source": "dune",
-        "queries": {"daily": QUERY_DAILY, "headline": QUERY_HEADLINE},
+        "sql": {k: f"{SQL_BASE}/{v}" for k, v in SQL_FILES.items()},
         "headline": {
             "wallets_created": num(headline.get("total_users")),
             "wallets_created_30d": num(headline.get("new_users_30d")),
@@ -162,10 +187,10 @@ def main() -> None:
         payload["headline"]["lifetime_reversals_usde"] / spend if spend else None
     )
 
-    out = ROOT / "docs" / "ethenapay.json"
-    out.parent.mkdir(exist_ok=True)
-    out.write_text(json.dumps(payload, separators=(",", ":"), allow_nan=False))
-    print(f"wrote {out} ({out.stat().st_size:,} bytes, {len(daily)} rows)")
+    OUT.parent.mkdir(exist_ok=True)
+    OUT.write_text(json.dumps(payload, separators=(",", ":"), allow_nan=False))
+    print(f"wrote {OUT} ({OUT.stat().st_size:,} bytes, {len(daily)} rows, "
+          f"through {series['date'][-1]})")
 
 
 if __name__ == "__main__":

@@ -42,10 +42,19 @@ jobs:
       # EthenaPay tab. Kept separate and non-blocking: a Dune outage or a
       # missing key must not stop the NAV tracker from refreshing.
       - name: Refresh EthenaPay data
+        id: ethenapay
         continue-on-error: true
         env:
           DUNE_API_KEY: ${{ secrets.DUNE_API_KEY }}
         run: python fetch_ethenapay.py
+
+      # A continue-on-error step reports conclusion "success" even when it
+      # fails, which is how this went unnoticed from 2026-09-17 to 09-21. The
+      # job still stays green; this just makes the failure visible in the run
+      # summary (the tab itself also shows a stale banner after 36h).
+      - name: Flag EthenaPay failure
+        if: steps.ethenapay.outcome == 'failure'
+        run: echo "::warning title=EthenaPay refresh failed::Dune refresh did not succeed - the EthenaPay tab will go stale. See the step log above."
 
       # The site reads data.json and ethenapay.json from the GitHub raw feed at
       # runtime, so committing refreshed data is enough to update the live page.

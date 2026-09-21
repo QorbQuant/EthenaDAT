@@ -113,6 +113,11 @@
   th:first-child, td:first-child { text-align: left; }
   th { color: var(--ink-2); font-weight: 400; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; border-bottom: 1px solid var(--panel-edge); }
   tbody tr:hover td { background: rgba(255,255,255,.03); }
+  .stale-banner {
+    border: 1px solid var(--red); border-left-width: 3px; border-radius: 2px;
+    background: rgba(224,122,122,.08); color: var(--ink);
+    padding: 10px 14px; margin-bottom: 14px; font-size: 12px; line-height: 1.6;
+  }
   .explainer { background: rgba(38,35,44,.5); border: 1px solid var(--panel-edge); border-radius: 2px; padding: 14px 18px; margin-top: 18px; font-size: 12px; line-height: 1.8; color: var(--ink-2); }
   .explainer b { color: var(--ink); font-weight: 700; }
   .explainer ul { margin: 6px 0 0; padding-left: 18px; }
@@ -305,6 +310,7 @@
   </div><!-- /view-nav -->
 
   <div class="view" id="view-pay" role="tabpanel" aria-labelledby="tab-pay" hidden>
+    <div id="pay-stale" class="stale-banner" hidden></div>
     <div class="tiles" id="pay-tiles"></div>
     <div class="tiles" id="pay-tiles2"></div>
 
@@ -1050,6 +1056,21 @@ function renderPayTiles() {
   document.getElementById("badge-spend").textContent = fmtK(h.spend_usde_30d);
   const stamp = document.getElementById("pay-stamp");
   if (stamp) stamp.textContent = " Data as of " + P.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
+
+  // These metrics have a daily grain and the Dune refresh is non-blocking, so a
+  // broken refresh used to show up as nothing at all — the tab just kept
+  // republishing an old day. Say it out loud instead.
+  const banner = document.getElementById("pay-stale");
+  const ageH = (Date.now() - new Date(P.generated_at).getTime()) / 36e5;
+  if (banner) {
+    const stale = ageH > 36;
+    banner.hidden = !stale;
+    if (stale) {
+      const days = Math.floor(ageH / 24);
+      banner.textContent = `Data is ${days >= 1 ? days + (days === 1 ? " day" : " days") : Math.floor(ageH) + "h"} old — `
+        + `the Dune refresh has not succeeded since ${P.generated_at.slice(0, 10)}. Figures below are from that date.`;
+    }
+  }
 }
 
 function renderPayCharts() {
