@@ -181,7 +181,7 @@
     </div>
     <div class="badges" id="badges-nav">
       <div class="badge"><div class="micro">mNAV</div><div class="bv c-mcap" id="badge-mnav">–</div></div>
-      <div class="badge"><div class="micro">Unlocked mNAV</div><div class="bv c-unl" id="badge-unl">–</div></div>
+      <div class="badge"><div class="micro" id="badge-unl-k">Unlocked mNAV</div><div class="bv c-unl" id="badge-unl">–</div></div>
     </div>
     <div class="badges" id="badges-pay" hidden>
       <div class="badge"><div class="micro">USDe held</div><div class="bv c-unl" id="badge-tvl">–</div></div>
@@ -240,7 +240,7 @@
   </section>
 
   <section>
-    <div class="sec-head"><h2>ENA per share</h2><div class="chart-note">Tokens backing each share — unlocked steps up on each vesting date</div></div>
+    <div class="sec-head"><h2>ENA per share</h2><div class="chart-note">Tokens backing each share — the unlocked line steps up on vesting dates and joins the total on Oct 5, 2026, when every lock-up was waived</div></div>
     <div class="chart-wrap" id="chart-enapershare"></div>
     <div class="legend">
       <span class="l-nav">Total ENA / share</span>
@@ -253,12 +253,12 @@
     <div class="tiles" id="tiles-w" style="margin-top:0"></div>
     <div class="explainer">
       <div class="micro">What a warrant is</div>
-      Each USDEW warrant is the right to buy <b>1 new USDE share from the company for $11.50</b>, any time until Jun 25, 2031 — a five-year call option that StablecoinX itself wrote. With the stock below the strike, its entire price is time value: a bet the stock clears <b><span id="ex-breakeven">$—</span></b> (strike + warrant price) before expiry.
+      Each USDEW warrant is the right to buy <b>1 new USDE share from the company for $11.50</b>, any time until Jun 25, 2031 — a five-year call option that StablecoinX itself wrote. <span id="ex-moneyness"></span>
       <ul>
         <li><b>Same thesis, more leverage:</b> USDE only needs to re-rate to <b><span id="ex-mnavbe">—</span> of NAV</b> by 2031 for warrant buyers to break even — the warrant is a geared bet on the discount closing, with a deadline.</li>
-        <li><b>Dilution if they pay off:</b> beyond the 11.5M public warrants, sponsors hold 7.6M private warrants (3.27M at $11.50, 4.36M at $15.00 — issued Aug 2026 to settle $6.9M of SPAC notes). Full exercise of every class mints 19.1M new shares (24.1M → 43.2M, ~44% dilution) but delivers <b>~$235M cash</b> to the treasury. Above the strikes, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
-        <li><b>Supply overhang:</b> an S-1 filed Aug 31, 2026 registers the resale of 12.7M existing shares (~29% of the Class A float) plus the shares under every warrant. Registered doesn't mean sold — but it is the pipe through which insiders and PIPE holders can exit.</li>
-        <li><b>The company holds a kill switch:</b> if USDE holds above <b>$10</b> for 20 of 30 trading days, StablecoinX can force-convert the warrants (capped at 0.361 shares each, or holders get $0.10); above <b>$18</b> the redemption pays just $0.01. A sustained rally likely ends the warrants long before 2031.</li>
+        <li><b>Dilution if they pay off:</b> beyond the 11.5M public warrants, sponsors hold 7.6M private warrants (3.27M at $11.50, 4.36M at $15.00 — issued Aug 2026 to settle $6.9M of SPAC notes). Full exercise of every class mints <span id="ex-dil">19.1M new shares</span> but delivers <b>~$235M cash</b> to the treasury. Above the strikes, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
+        <li><b>Supply overhang:</b> an S-1 filed Aug 31 and declared effective Sep 14, 2026 registers the resale of 12.7M existing shares (~29% of the Class A float) plus the shares under every warrant — those shares can now be sold. Insider sales will show up under <i>Insider filings</i> below; PIPE investors don't file Form 4s, so their sales won't.</li>
+        <li><b>The company holds a kill switch:</b> if USDE holds above <b>$10</b> for 20 of 30 trading days, StablecoinX can force-convert the warrants (capped at 0.361 shares each, or holders get $0.10); above <b>$18</b> the redemption pays just $0.01. A sustained rally likely ends the warrants long before 2031. <span id="ex-trigger"></span></li>
       </ul>
     </div>
     <div class="chart-wrap" id="chart-warrant" style="margin-top:22px"></div>
@@ -275,12 +275,27 @@
     </div>
   </section>
 
+  <section id="sec-options" hidden>
+    <div class="sec-head"><h2>Listed options (USDE)</h2><div class="chart-note" id="opt-note"></div></div>
+    <div class="tiles" id="tiles-o" style="margin-top:0"></div>
+    <div class="table-scroll">
+      <table id="options"><thead><tr><th>Expiry</th><th>Strikes</th><th>Call OI</th><th>Put OI</th><th>Volume c / p</th><th>ATM call bid / ask</th><th>ATM put bid / ask</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="chart-note" id="opt-status" style="margin-top:8px"></div>
+  </section>
+
   <section>
-    <div class="sec-head"><h2>Unlock schedule</h2><div class="chart-note">48-month lock-up: 25% at the 12-month cliff, the rest in 36 monthly installments (424B3)</div></div>
+    <div class="sec-head"><h2>Lock-ups</h2><div class="chart-note" id="unlock-note">Contractual 48-month schedule (424B3) until every lock-up was waived effective Oct 5, 2026 (8-K, Sep 17)</div></div>
     <div class="prog" id="prog"></div>
     <div class="chart-note" id="prog-label" style="margin-top:8px"></div>
     <div class="table-scroll">
       <table id="unlocks"><thead><tr><th>Unlock date</th><th>ENA tokens</th><th>Tranche</th><th>% of treasury</th><th>Cumulative unlocked</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="explainer">
+      <div class="micro">Lock-up waiver · 8-K, Sep 17, 2026</div>
+      Effective <b>Oct 5, 2026</b> the Ethena Foundation waived every lock-up on the treasury's ENA, including the 48-month schedule — so from that date unlocked NAV and total NAV are the same number.
+      The same letter lets StablecoinX <b>sell ENA</b> to fund working capital ("Funding Sales"): it gives the Foundation five business days' notice, and the Foundation can buy the tokens at the offered price first.
+      Neither side has to announce a sale unless the law requires it, so the holdings on this page are the <b>last disclosed figure</b> — <span id="holdings-src">—</span> — and can fall without a filing saying so.
     </div>
   </section>
 
@@ -290,6 +305,10 @@
       <table id="filings">
         <thead><tr><th>Date</th><th>Filing</th><th>What's in it</th></tr></thead>
         <tbody>
+          <tr><td>Sep 17, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea0305686-8k_stablecoinx.htm">8-K — lock-up waiver</a></td><td>Ethena Foundation waives every ENA lock-up effective Oct 5, 2026, and sets terms for the company to sell ENA ("Funding Sales")</td></tr>
+          <tr><td>Sep 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026099731/ea0305435-424b3_stable.htm">424B3 — resale prospectus</a></td><td>S-1 declared effective: the 12.7M-share resale and all warrant shares are now registered for sale</td></tr>
+          <tr><td>Sep 8, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026097877/ea0304764-8k_stablecoinx.htm">8-K — CEO change</a></td><td>Edward Chen resigns as CEO (stays a director); Christopher Jensen appointed CEO and director</td></tr>
+          <tr><td>Sep 3, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026097183/ea0304267-s8_stablecoinx.htm">S-8 — equity plan</a></td><td>Registers 1,802,203 Class A shares (~7% of Class A) for the 2026 Stock Incentive Plan</td></tr>
           <tr><td>Aug 31, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026095808/ea0303782-s1_stable.htm">S-1 — resale &amp; warrant shares</a></td><td>Registers 12.7M-share insider resale (~29% of Class A float) plus shares under all warrants (11.5M public + 7.6M sponsor)</td></tr>
         <tr><td>Aug 24, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026093069/ea0303125-8k_stablecoinx.htm">8-K — sponsor warrants</a></td><td>$6.9M sponsor notes settled with 3.27M warrants @ $11.50 + 4.36M @ $15.00 (private, non-listed)</td></tr>
         <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026090250/ea0301482-10q_stable.htm">10-Q — Q2 2026</a></td><td>First quarterly report as a public company</td></tr>
@@ -301,6 +320,14 @@
         </tbody>
       </table>
     </div>
+  </section>
+
+  <section>
+    <div class="sec-head"><h2>Insider filings</h2><div class="chart-note">Forms 3 &amp; 4 from EDGAR · officers, directors and 10% holders only</div></div>
+    <div class="table-scroll">
+      <table id="insiders"><thead><tr><th>Filed</th><th>Insider</th><th>Role</th><th>Transaction</th><th>Shares</th><th>Price</th></tr></thead><tbody></tbody></table>
+    </div>
+    <div class="chart-note" id="insider-summary" style="margin-top:8px"></div>
   </section>
 
   <details>
@@ -353,7 +380,7 @@
   <footer>
     <div class="micro">Notes &amp; sources</div>
     <div style="margin-top:6px">
-      <span id="fn1">*Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line.</span><br>
+      <span id="fn1">*Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line. From Oct 5, 2026 every lock-up is waived, so unlocked and total NAV are the same.</span><br>
       Treasury cost basis ($893M / $0.295 per ENA) per the PIPE terms in the Super 8-K. Source: SEC filings, Yahoo Finance, CoinGecko.<br>
       <span id="stamp"></span>
     </div>
@@ -401,18 +428,26 @@ function monthAdd(base, months) {
 
 function isLocked(t) { return !(t.locked === false || t.locked === "false"); }
 
+// Contractual schedule only: 25% at the 12-month cliff, then 36 monthly steps.
+function scheduledFrac(t, atDate) {
+  const p = new Date(t.purchase_date + "T00:00:00Z");
+  const cliff = monthAdd(p, 12);
+  if (atDate < cliff) return 0;
+  let months = (atDate.getUTCFullYear() - cliff.getUTCFullYear()) * 12 + (atDate.getUTCMonth() - cliff.getUTCMonth());
+  if (atDate < monthAdd(p, 12 + months)) months -= 1;
+  return Math.min(1, 0.25 + 0.75 * Math.min(36, months) / 36);
+}
+
+// The Foundation waived every lock-up effective 2026-10-05 (8-K, Sep 17); a
+// tranche with waived_on is fully unlocked from that date.
+const waiverDate = t => t.waived_on ? new Date(t.waived_on + "T00:00:00Z") : null;
+
 function unlockedTokens(atDate) {
   let unlocked = D.ena_holdings;
   for (const t of D.tranches) {
     if (!isLocked(t)) continue;
-    const p = new Date(t.purchase_date + "T00:00:00Z");
-    const cliff = monthAdd(p, 12);
-    let frac = 0;
-    if (atDate >= cliff) {
-      let months = (atDate.getUTCFullYear() - cliff.getUTCFullYear()) * 12 + (atDate.getUTCMonth() - cliff.getUTCMonth());
-      if (atDate < monthAdd(p, 12 + months)) months -= 1;
-      frac = Math.min(1, 0.25 + 0.75 * Math.min(36, months) / 36);
-    }
+    const w = waiverDate(t);
+    const frac = w && atDate >= w ? 1 : scheduledFrac(t, atDate);
     unlocked -= t.tokens * (1 - frac);
   }
   return unlocked;
@@ -423,11 +458,18 @@ function upcomingUnlocks(n) {
   for (const t of D.tranches) {
     if (!isLocked(t)) continue;
     const p = new Date(t.purchase_date + "T00:00:00Z");
+    const w = waiverDate(t);
+    const before = d => !w || d < w;
     const cliff = monthAdd(p, 12);
-    if (cliff > now) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche, cliff: true });
+    if (cliff > now && before(cliff)) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche, cliff: true });
     for (let m = 1; m <= 36; m++) {
       const d = monthAdd(p, 12 + m);
-      if (d > now) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche, cliff: false });
+      if (d > now && before(d)) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche, cliff: false });
+    }
+    // everything still locked on the waiver date unlocks at once
+    if (w && w > now) {
+      const left = t.tokens * (1 - scheduledFrac(t, new Date(w - 1)));
+      if (left > 0) out.push({ date: w, tokens: left, tranche: t.tranche, waiver: true });
     }
   }
   return out.sort((a, b) => a.date - b.date).slice(0, n);
@@ -436,6 +478,8 @@ function upcomingUnlocks(n) {
 function tile(k, v, cls, d) {
   return `<div class="tile"><div class="k">${k}</div><div class="v ${cls || ""}">${v}</div><div class="d">${d || ""}</div></div>`;
 }
+
+const ordinal = n => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th");
 
 function pctile(arr, v) {
   const clean = arr.filter(x => x != null);
@@ -453,15 +497,18 @@ function renderTiles() {
   const chgHtml = chg == null ? "" : `<span class="${chg >= 0 ? "up" : "down"}">${chg >= 0 ? "+" : ""}${chg.toFixed(1)}% today</span>`;
   const imp = nav / D.shares_outstanding, up = (imp / D.usde.price - 1) * 100;
   const impU = unlNav / D.shares_outstanding, upU = (impU / D.usde.price - 1) * 100;
+  const allUnlocked = D.ena_holdings - unlTok < 1;
+  const src = D.ena_holdings_source;
+  const srcTxt = src ? `${fmtD(src.date)}, ${src.date.slice(0, 4)} · ${src.label}` : "last disclosure";
 
   document.getElementById("tiles").innerHTML =
     tile("USDE price", fmt$(D.usde.price), "", chgHtml) +
     tile("Market cap", fmtM(mcap), "c-mcap", (D.shares_outstanding / 1e6).toFixed(1) + "M shares") +
     tile("ENA price", fmt$(ena), "", enaLive ? "live · CoinGecko" : "last daily close") +
     tile("Total ENA NAV", fmtM(nav), "c-nav", fmtB(D.ena_holdings) + " ENA") +
-    tile("Unlocked NAV", fmtM(unlNav), "c-unl", fmtB(unlTok) + " ENA liquid") +
+    tile("Unlocked NAV", fmtM(unlNav), "c-unl", allUnlocked ? "100% — lock-ups waived Oct 5" : fmtB(unlTok) + " ENA liquid") +
     tile("Implied @ 1:1 NAV", `${fmt$(imp)} <span class="${up >= 0 ? "up" : "down"}" style="font-size:13px">${sign(up)}</span>`, "",
-      `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
+      allUnlocked ? "per share, all ENA at spot" : `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
 
   // analytics row
   const impliedEna = mcap / D.ena_holdings;
@@ -478,16 +525,22 @@ function renderTiles() {
     date: sameDay[0].date,
     tokens: sameDay.reduce((t, u) => t + u.tokens, 0),
     cliff: sameDay.some(u => u.cliff),
+    waiver: sameDay.some(u => u.waiver),
   } : null;
   const pnl = nav - PIPE_COST;
   document.getElementById("tiles2").innerHTML =
     tile("Market-implied ENA", fmt$(impliedEna), "", `<span class="${enaDisc >= 0 ? "up" : "down"}">${sign(enaDisc)}</span> vs spot`) +
-    tile("Locked ENA implied value", lockedPct == null ? "—" : lockedPct.toFixed(0) + "% of spot", "", `market's price on the locked ${fmtB(lockedTok)}`) +
-    tile("mNAV percentile", pctile(mnavArr, mnavNow) + "th", "", `range ${fmtX(mnavMin)}–${fmtX(mnavMax)} since listing`) +
+    (allUnlocked
+      ? tile("ENA holdings", fmtB(D.ena_holdings), "", `last disclosed ${src ? fmtD(src.date) : ""} · sales need not be announced`)
+      : tile("Locked ENA implied value", lockedPct == null ? "—" : lockedPct.toFixed(0) + "% of spot", "", `market's price on the locked ${fmtB(lockedTok)}`)) +
+    tile("mNAV percentile", ordinal(pctile(mnavArr, mnavNow)), "", `range ${fmtX(mnavMin)}–${fmtX(mnavMax)} since listing`) +
     tile("Next unlock", nextU ? Math.ceil((nextU.date - new Date()) / 86400e3) + "d" : "—", "",
-      nextU ? `${MON[nextU.date.getUTCMonth()]} ${nextU.date.getUTCDate()} · ${(nextU.tokens / 1e6).toFixed(0)}M ENA${nextU.cliff ? " cliff" : ""}` : "fully vested") +
+      nextU ? `${MON[nextU.date.getUTCMonth()]} ${nextU.date.getUTCDate()} · ${(nextU.tokens / 1e6).toFixed(0)}M ENA${nextU.waiver ? " · waiver, all remaining" : nextU.cliff ? " cliff" : ""}`
+            : "all unlocked — lock-ups waived Oct 5") +
     tile("Treasury vs cost", `<span class="${pnl >= 0 ? "up" : "down"}">${sign(pnl / PIPE_COST * 100)}</span>`, "", `$893M paid · basis $0.295/ENA`) +
-    tile("mNAV / unlocked", fmtX(mnavNow) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV");
+    (allUnlocked
+      ? tile("Shares outstanding", (D.shares_outstanding / 1e6).toFixed(2) + "M", "", "Class A · incl. Sep 30 director awards")
+      : tile("mNAV / unlocked", fmtX(mnavNow) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV"));
 
   // warrant tiles
   const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
@@ -510,22 +563,39 @@ function renderTiles() {
     const fdChg = (fdNavSh / navSh - 1) * 100;
     const expiry = new Date(W_.expiry + "T00:00:00Z");
     const yearsLeft = (expiry - new Date()) / 31557600e3;
+    // redemption triggers: closes at/above $10 (or $18) on 20 of 30 trading days
+    const closes = s.usde_close.filter(v => v != null).slice(-30);
+    const n10 = closes.filter(v => v >= 10).length, n18 = closes.filter(v => v >= 18).length;
+    const intrinsic = D.usde.price - W_.strike, timeVal = w - Math.max(0, intrinsic);
     document.getElementById("tiles-w").innerHTML =
       tile("USDEW price", fmt$(w), "", wChg == null ? "last close" : `<span class="${wChg >= 0 ? "up" : "down"}">${wChg >= 0 ? "+" : ""}${wChg.toFixed(1)}% on the day</span>`) +
       tile("Breakeven at expiry", fmt$(breakeven), "", `<span class="${bePrem >= 0 ? "down" : "up"}">${sign(bePrem)}</span> vs USDE spot`) +
       tile("mNAV to break even", fmtX(mnavBE), "", `vs ${fmtX(mcap / nav)} today — a bet on the re-rate`) +
       tile("Gearing", gearing.toFixed(1) + "×", "", "USDE price ÷ warrant price") +
       tile("If exercised", fmtM(proceeds), "", `all warrant classes · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
-      tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`);
+      tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`) +
+      tile("$10 call trigger", `${n10} / 20`, n10 >= 20 ? "c-mcap" : "",
+        n10 >= 20 ? "met — the company can call the warrants" : `closes ≥ $10 in the last ${closes.length} sessions`);
     const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-    setTxt("ex-breakeven", fmt$(breakeven));
+    const setHtml = (id, v) => { const el = document.getElementById(id); if (el) el.innerHTML = v; };
+    setHtml("ex-moneyness", intrinsic <= 0
+      ? `With the stock below the strike, its entire price is time value: a bet the stock clears <b>${fmt$(breakeven)}</b> (strike + warrant price) before expiry.`
+      : `With USDE at ${fmt$(D.usde.price)} the warrants are <b>in the money</b>: ${fmt$(intrinsic)} of the ${fmt$(w)} price is intrinsic value (stock − strike)` +
+        (timeVal >= 0
+          ? ` and ${fmt$(timeVal)} is time value. Breakeven at expiry is <b>${fmt$(breakeven)}</b>.`
+          : `, so it trades ${fmt$(-timeVal)} <i>below</i> intrinsic — the market is pricing in an early forced conversion.`));
+    setTxt("ex-dil", `${(totWarrants / 1e6).toFixed(1)}M new shares (${(D.shares_outstanding / 1e6).toFixed(1)}M → ${((D.shares_outstanding + totWarrants) / 1e6).toFixed(1)}M, ~${dilution.toFixed(0)}% dilution)`);
+    setHtml("ex-trigger", `So far USDE has closed at or above $10 on <b>${n10} of the last ${closes.length}</b> trading days` +
+      (n10 >= 20 ? " — <b>the $10 condition is met</b>." : ` (${20 - n10} more needed)`) +
+      `, and at or above $18 on ${n18}.`);
     setTxt("ex-mnavbe", fmtX(mnavBE));
     setTxt("ex-fdnav", "$" + fdNavSh.toFixed(2));
     setTxt("ex-nav", "$" + navSh.toFixed(2));
   }
 
   document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
-  document.getElementById("badge-unl").textContent = fmtX(mcap / unlNav);
+  document.getElementById("badge-unl-k").textContent = allUnlocked ? "NAV / share" : "Unlocked mNAV";
+  document.getElementById("badge-unl").textContent = allUnlocked ? fmt$(nav / D.shares_outstanding) : fmtX(mcap / unlNav);
   const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC").replace(/\.\d+Z$/, " UTC");
   const stateWord = D.usde.market_state === "LIVE" ? "live" : D.usde.market_state === "REGULAR" ? "intraday" : "as of";
   document.getElementById("sub").textContent =
@@ -896,21 +966,30 @@ function renderCharts() {
 function renderUnlocks() {
   const unlTok = unlockedTokens(new Date());
   const pctUnl = unlTok / D.ena_holdings * 100;
+  const allUnlocked = D.ena_holdings - unlTok < 1;
   const prog = document.getElementById("prog");
   prog.innerHTML = `<div class="p-unl" style="width:${pctUnl}%"></div><div class="p-lock" style="width:${100 - pctUnl}%"></div>`;
-  const progText = `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked, vesting monthly through Sep 2029`;
+  const src = D.ena_holdings_source;
+  const hs = document.getElementById("holdings-src");
+  if (hs) hs.textContent = src ? `${fmtB(D.ena_holdings)} ENA, per the ${src.label} filed ${fmtD(src.date)}, ${src.date.slice(0, 4)}` : fmtB(D.ena_holdings) + " ENA";
+  const progText = allUnlocked
+    ? `All ${fmtB(D.ena_holdings)} ENA unlocked (100%) · every lock-up waived effective Oct 5, 2026`
+    : `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked until the Oct 5, 2026 waiver`;
   prog.setAttribute("role", "img");
   prog.setAttribute("aria-label", progText);
   document.getElementById("prog-label").textContent = progText;
   let cum = unlTok;
   const tb = document.querySelector("#unlocks tbody");
-  tb.innerHTML = upcomingUnlocks(8).map(u => {
+  const rows = upcomingUnlocks(8);
+  document.getElementById("unlocks").hidden = !rows.length;
+  tb.innerHTML = rows.map(u => {
     cum += u.tokens;
-    return `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}${u.cliff ? " ◆" : ""}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${TRANCHE_NAMES[u.tranche] || u.tranche}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td><td>${(cum / D.ena_holdings * 100).toFixed(1)}%</td></tr>`;
+    const what = u.waiver ? " · waiver, all remaining" : "";
+    return `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}${u.cliff || u.waiver ? " ◆" : ""}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${TRANCHE_NAMES[u.tranche] || u.tranche}${what}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td><td>${(cum / D.ena_holdings * 100).toFixed(1)}%</td></tr>`;
   }).join("");
 }
 
-const CURATED_THROUGH = "2026-08-31";  // filings on or before this date are hand-listed above
+const CURATED_THROUGH = "2026-09-30";  // filings on or before this date are hand-listed above
 
 function renderAutoFilings() {
   const fresh = (D.recent_filings || []).filter(f => f.date > CURATED_THROUGH);
@@ -921,6 +1000,76 @@ function renderAutoFilings() {
     return `<tr><td>${MON[m - 1]} ${dd}, ${y}</td><td><a href="${f.url}">${f.form}</a></td><td>New filing — auto-listed from EDGAR</td></tr>`;
   }).join("");
   tb.insertAdjacentHTML("afterbegin", rows);
+}
+
+const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
+
+// EDGAR stores names "Last First Middle"; show them the usual way round.
+const personName = n => { const p = String(n || "").trim().split(/\s+/); return p.length > 1 ? [...p.slice(1), p[0]].join(" ") : p.join(""); };
+
+function renderInsiders() {
+  const list = D.insiders || [];
+  const tb = document.querySelector("#insiders tbody");
+  if (!tb || !list.length) return;
+  const rows = [];
+  let sales = 0, buys = 0;
+  for (const f of list) {
+    const [y, m, dd] = f.date.split("-").map(Number);
+    const when = `<a href="${esc(f.url)}">${MON[m - 1]} ${dd}, ${y}</a>`;
+    const who = esc(personName(f.owner)), role = esc(f.role);
+    if (!f.transactions.length) {
+      rows.push(`<tr><td>${when}</td><td>${who}</td><td>${role}</td><td>Form ${esc(f.form)} · initial holdings statement</td><td>—</td><td>—</td></tr>`);
+      continue;
+    }
+    for (const t of f.transactions) {
+      if (t.code === "S") sales++;
+      if (t.code === "P") buys++;
+      const cls = t.code === "S" ? "down" : t.code === "P" ? "up" : "";
+      const sec = esc((t.security || "").replace(/ Common Stock$/i, ""));
+      const qty = t.shares == null ? "—" : (t.direction === "D" ? "−" : "+") + Math.round(t.shares).toLocaleString("en-US");
+      rows.push(`<tr><td>${when}</td><td>${who}</td><td>${role}</td><td class="${cls}">${esc(t.label)} · ${sec}</td><td>${qty}</td><td>${t.price ? fmt$(t.price) : "—"}</td></tr>`);
+    }
+  }
+  tb.innerHTML = rows.join("");
+  document.getElementById("insider-summary").textContent = sales || buys
+    ? `${sales} open-market sale${sales === 1 ? "" : "s"} and ${buys} purchase${buys === 1 ? "" : "s"} in the ${list.length} most recent insider filings.`
+    : `No open-market sales or purchases in the ${list.length} most recent insider filings — every transaction is a grant or award.`;
+}
+
+function renderOptions() {
+  const o = D.options;
+  const sec = document.getElementById("sec-options");
+  if (!o || !o.expiries || !o.expiries.length) { sec.hidden = true; return; }
+  sec.hidden = false;
+  const px = D.usde.price;
+  const fmtExp = iso => { const [y, m, d] = iso.split("-").map(Number); return `${MON[m - 1]} ${d}, ${y}`; };
+  const ba = q => q && (q.bid != null || q.ask != null) ? `${q.bid != null ? q.bid.toFixed(2) : "—"} / ${q.ask != null ? q.ask.toFixed(2) : "—"}` : "—";
+  let oiC = 0, oiP = 0, volC = 0, volP = 0;
+  const rows = o.expiries.map(e => {
+    oiC += e.call_oi; oiP += e.put_oi; volC += e.call_volume; volP += e.put_volume;
+    const atm = e.strikes.reduce((a, b) => Math.abs(b.strike - px) < Math.abs(a.strike - px) ? b : a, e.strikes[0]);
+    const lo = Math.min(...e.strikes.map(k => k.strike)), hi = Math.max(...e.strikes.map(k => k.strike));
+    return `<tr><td>${fmtExp(e.expiry)}</td><td>${e.strikes.length} · $${lo}–$${hi}</td><td>${e.call_oi.toLocaleString("en-US")}</td><td>${e.put_oi.toLocaleString("en-US")}</td>` +
+      `<td>${e.call_volume} / ${e.put_volume}</td><td>$${atm.strike} · ${ba(atm.call)}</td><td>$${atm.strike} · ${ba(atm.put)}</td></tr>`;
+  });
+  document.querySelector("#options tbody").innerHTML = rows.join("");
+
+  // how wide is the market at the money on the nearest expiry?
+  const near = o.expiries[0];
+  const atm = near.strikes.reduce((a, b) => Math.abs(b.strike - px) < Math.abs(a.strike - px) ? b : a, near.strikes[0]);
+  const spread = q => q && q.bid != null && q.ask != null ? q.ask - q.bid : null;
+  const sp = spread(atm.call);
+  const first = fmtExp(o.expiries[0].expiry), last = fmtExp(o.expiries[o.expiries.length - 1].expiry);
+  document.getElementById("tiles-o").innerHTML =
+    tile("Expiries", String(o.expiries.length), "", `${first} → ${last}`) +
+    tile("Open interest", (oiC + oiP).toLocaleString("en-US"), "", `calls ${oiC.toLocaleString("en-US")} · puts ${oiP.toLocaleString("en-US")}`) +
+    tile("Volume", String(volC + volP), "", `contracts, latest session · calls ${volC} · puts ${volP}`) +
+    tile("ATM call spread", sp == null ? "—" : "$" + sp.toFixed(2), "", `$${atm.strike} strike, ${first}` + (sp != null && atm.call.bid > 0 ? ` · ${(sp / ((atm.call.bid + atm.call.ask) / 2) * 100).toFixed(0)}% of mid` : ""));
+  const t = o.as_of.replace("T", " ").slice(0, 16);
+  document.getElementById("opt-note").textContent = `${o.source} option chain as of ${t} UTC`;
+  document.getElementById("opt-status").textContent = oiC + oiP === 0
+    ? `No open interest yet on any expiry, and only ${volC + volP} contract${volC + volP === 1 ? "" : "s"} traded. The quotes are wide market-maker placeholders, so they don't yet say anything about expected volatility.`
+    : `Put/call open-interest ratio ${(oiP / Math.max(oiC, 1)).toFixed(2)}.`;
 }
 
 function renderTable() {
@@ -1161,7 +1310,7 @@ window.addEventListener("hashchange", () => showView(location.hash === "#pay" ? 
       try { D = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
     }
     if (!D) throw new Error("no data source reachable");
-    renderTiles(); renderCharts(); renderUnlocks(); renderTable(); renderAutoFilings();
+    renderTiles(); renderCharts(); renderUnlocks(); renderTable(); renderAutoFilings(); renderInsiders(); renderOptions();
     document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
     refreshLive();
     setInterval(refreshLive, 60000);

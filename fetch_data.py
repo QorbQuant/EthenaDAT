@@ -74,17 +74,24 @@ def unlocked_fraction(purchase_date: pd.Timestamp, d: pd.Timestamp) -> float:
 
 
 def locked_remaining(index: pd.DatetimeIndex) -> pd.Series:
-    """Total still-locked tokens across the locked tranches, per date."""
-    tranches = pd.read_csv(ROOT / "inputs" / "ena_tranches.csv", parse_dates=["purchase_date"])
+    """Total still-locked tokens across the locked tranches, per date.
+
+    A tranche with a `waived_on` date is fully unlocked from that date: the
+    Ethena Foundation waived every lock-up on the treasury's ENA effective
+    2026-10-05 (8-K filed 2026-09-17). Dates before the waiver keep the
+    contractual schedule, so the history stays as it was."""
+    tranches = pd.read_csv(
+        ROOT / "inputs" / "ena_tranches.csv", parse_dates=["purchase_date", "waived_on"]
+    )
     tranches = tranches[tranches["locked"]]
+
+    def still_locked(tr, d) -> float:
+        if pd.notna(tr.waived_on) and d >= tr.waived_on:
+            return 0.0
+        return tr.tokens * (1 - unlocked_fraction(tr.purchase_date, d))
+
     return pd.Series(
-        [
-            sum(
-                tr.tokens * (1 - unlocked_fraction(tr.purchase_date, d))
-                for tr in tranches.itertuples()
-            )
-            for d in index
-        ],
+        [sum(still_locked(tr, d) for tr in tranches.itertuples()) for d in index],
         index=index,
         name="ena_locked",
     )

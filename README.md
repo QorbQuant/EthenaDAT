@@ -41,13 +41,40 @@ forward-filled by date. When StablecoinX announces a change, append a row:
 - `inputs/shares_out.csv` — `date,shares_outstanding`
 
 Seed values come from the closing 8-K (June 25, 2026 press release):
-~3,029M ENA valued at $275M ($0.0909 30-day VWAP), stated as "$11.42 per
-fully diluted share" → 24.11M fully diluted shares (275.3M ÷ 11.42).
-The Super 8-K (July 2, 2026) reports 27,187,129 total shares at closing
-(24,029,375 Class A + 3,157,754 unlisted Class B); the Class A-only count
-is used here, matching the company's own NAV-per-share framing.
+~3,029M ENA valued at $275M ($0.0909 30-day VWAP). The Super 8-K (July 2,
+2026) reports 27,187,129 total shares at closing (24,029,375 Class A +
+3,157,754 unlisted Class B); the Class A-only count is used here, matching
+the company's own NAV-per-share framing, and the Q2 10-Q cover confirms
+24,029,375 as of Aug 12, 2026. (The seed was previously 24.11M, backed out of
+the press release's "$11.42 per fully diluted share"; corrected to the filed
+count on 2026-10-03, which moves historical per-share figures by ~0.3%.)
 
-## Unlock schedule (`inputs/ena_tranches.csv`)
+| date | shares | source |
+|---|---|---|
+| 2026-06-26 | 24,029,375 | Super 8-K / 10-Q cover |
+| 2026-09-30 | 24,139,375 | + 5 × 22,000 director restricted-stock awards (Form 4s, Oct 2) |
+
+Public warrants have been in the money since mid-September, so cash
+exercises will add shares that only show up in the next 10-Q — check its
+cover page and append a row.
+
+When `inputs/ena_holdings.csv` changes, also update `ENA_HOLDINGS_SOURCE` in
+`build_dashboard_data.py` so the site states which filing the figure comes
+from. Since the lock-up waiver the company may sell ENA without announcing
+each sale (see below), so the disclosed figure can be stale.
+
+## Unlock schedule and the Oct 5, 2026 waiver (`inputs/ena_tranches.csv`)
+
+**Superseded on 2026-10-05.** Per the 8-K filed 2026-09-17, the Ethena
+Foundation waived every lock-up on the treasury's ENA effective Oct 5, 2026,
+including the 48-month schedule below. The `waived_on` column records this:
+a tranche is fully unlocked from that date, so `ena_unlocked` follows the
+contractual schedule before it and equals `ena_holdings` from it. History is
+unchanged. The same letter lets the company sell ENA ("Funding Sales") after
+five business days' notice, during which the Foundation may buy at the offered
+price; neither side has to announce a sale unless the law requires it.
+
+The original schedule, kept for the pre-waiver history:
 
 Most of the treasury is "Locked ENA" bought from Ethena OpCo with PIPE cash,
 subject to a 48-month contractual lock-up: 25% unlocks on the 12-month
@@ -68,7 +95,18 @@ and is assumed liquid from listing. `ena_unlocked` is computed as
 future purchases appended to `ena_holdings.csv` count as unlocked unless a
 new locked tranche row is added.
 
-No API keys required (Yahoo Finance via `yfinance`, CoinGecko free tier).
+No API keys required (Yahoo Finance via `yfinance`, CoinGecko free tier,
+SEC EDGAR, Nasdaq's public option-chain API).
+
+`build_dashboard_data.py` also writes two sections from those sources, each
+carried forward from the previous `docs/data.json` if its source fails:
+
+- `insiders` — the 15 most recent Forms 3/4/5 from EDGAR, parsed into owner,
+  role and transactions (code, shares, price). Filings are immutable, so ones
+  already parsed are reused by accession number rather than re-fetched.
+- `options` — the listed USDE option chain from Nasdaq, per expiry and strike
+  (bid/ask/last/volume/open interest). Yahoo did not carry the chain when
+  this was added (2026-10-03).
 
 ## EthenaPay tab
 
