@@ -38,7 +38,7 @@ window.mountValuation = function (initial) {
       }),
     ns = "http://www.w3.org/2000/svg";
   let state = {
-      mode: "explore",
+      mode: "history",
       ena: base.ena,
       mnav: base.mnav,
       range: "all",

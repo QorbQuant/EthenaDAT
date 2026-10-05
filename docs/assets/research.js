@@ -476,7 +476,7 @@ window.mountResearch = function (initialD, initialP) {
       F.fullPayView === "active"
         ? "Daily spending wallets"
         : (F.fullPayAgg === "total" ? "Cumulative " : "Daily ") +
-          (F.fullPayView === "spend" ? "card spend" : "purchases");
+          (F.fullPayView === "spend" ? "card spend" : "spend events");
     $("#pay-observation-count").textContent = num(T.spend_count[i]);
     $("#pay-observation-active").textContent = num(T.active_wallets[i]);
     $("#pay-date-input").value = i;
@@ -521,7 +521,7 @@ window.mountResearch = function (initialD, initialP) {
         F.fullPayView === "spend"
           ? "Spend"
           : F.fullPayView === "count"
-            ? "Purchases"
+            ? "Spend events"
             : "Wallets",
       isTotal = F.fullPayAgg === "total" && F.fullPayView !== "active";
     lineChart(
@@ -571,7 +571,7 @@ window.mountResearch = function (initialD, initialP) {
     );
     lineChart(
       "pay-active-chart",
-      "Daily wallets making a purchase",
+      "Daily wallets with a successful spend event",
       rr,
       [series("Spending wallets", T.active_wallets, copper, { kind: "bar" })],
       num,
@@ -901,7 +901,6 @@ window.mountResearch = function (initialD, initialP) {
     );
     $("#pay-cashback-rate").textContent = pct(H.cashback_rate_30d);
     $("#pay-yield-apy").textContent = pct(H.yield_apy_30d);
-    $("#pay-batched").textContent = pct(H.batched_spend_share);
   }
   tables();
   payHeadlines();

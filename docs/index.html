@@ -45,7 +45,6 @@
               EthenaPay
             </button>
           </nav>
-          <span class="sx-prototype">Independent research</span>
         </header>
         <div id="sx-status" class="data-status" role="status">
           Loading market data…
@@ -120,9 +119,9 @@
               <h2>Valuation workspace</h2>
             </div>
             <div class="sx-segment" aria-label="Workspace mode">
-              <button type="button" data-mode="history" aria-pressed="false">
+              <button type="button" data-mode="history" aria-pressed="true">
                 History</button
-              ><button type="button" data-mode="explore" aria-pressed="true">
+              ><button type="button" data-mode="explore" aria-pressed="false">
                 Explore
               </button>
             </div>
@@ -927,15 +926,15 @@
               <div class="full-pay-stat">
                 <div class="sx-eyebrow">Active wallets / 7d</div>
                 <strong data-pay="wau_7d" data-format="num">—</strong
-                ><small>Wallets with a purchase</small>
+                ><small>Wallets with a spend event</small>
               </div>
               <div class="full-pay-stat">
-                <div class="sx-eyebrow">Median purchase</div>
-                <strong data-pay="median_spend_usde" data-format="usd">—</strong
-                ><small>All-time transaction median</small>
+                <div class="sx-eyebrow">Funded wallets</div>
+                <strong data-pay="funded_wallets" data-format="num">—</strong
+                ><small>Currently holding USDe</small>
               </div>
               <div class="full-pay-stat">
-                <div class="sx-eyebrow">Ever purchased</div>
+                <div class="sx-eyebrow">Ever spent</div>
                 <strong data-pay="spending_wallets" data-format="num">—</strong
                 ><small>Distinct card wallets</small>
               </div>
@@ -972,7 +971,7 @@
                       data-pay-view="count"
                       aria-pressed="false"
                     >
-                      Purchases</button
+                      Spend events</button
                     ><button
                       type="button"
                       data-pay-view="active"
@@ -1030,7 +1029,7 @@
                   </p>
                 </div>
                 <div class="full-metric">
-                  <label>Purchases that day</label
+                  <label>Spend events that day</label
                   ><strong id="pay-observation-count"></strong>
                 </div>
                 <div class="full-metric">
@@ -1147,7 +1146,7 @@
                   <span id="pay-last-active"></span>
                 </div>
                 <p class="full-caption">
-                  Distinct wallets with a card purchase each day
+                  Distinct wallets with a successful spend event each day
                 </p>
                 <svg
                   id="pay-active-chart"
@@ -1180,7 +1179,7 @@
                   ></div>
                 </div>
                 <div class="full-balance-line">
-                  <span>Ever purchased</span><span id="pay-spent-count">—</span>
+                  <span>Ever spent</span><span id="pay-spent-count">—</span>
                 </div>
                 <div class="full-track">
                   <div
@@ -1237,7 +1236,7 @@
                 >
               </div>
               <div class="full-metric">
-                <label>Purchases / all time</label
+                <label>Spend events / all time</label
                 ><strong data-pay="lifetime_spend_count" data-format="num"
                   >—</strong
                 >
@@ -1334,32 +1333,7 @@
               are not advertised or guaranteed future rates.
             </p>
           </section>
-          <section class="full-section">
-            <div class="full-section-top">
-              <h2><span class="sx-section-num">05 /</span>Purchase profile</h2>
-              <p>Source headline metrics</p>
-            </div>
-            <div class="full-metrics">
-              <div class="full-metric">
-                <label>Median purchase</label
-                ><strong data-pay="median_spend_usde" data-format="usd"
-                  >—</strong
-                >
-              </div>
-              <div class="full-metric">
-                <label>Average purchase</label
-                ><strong data-pay="avg_spend_usde" data-format="usd">—</strong>
-              </div>
-              <div class="full-metric">
-                <label>Refunded spend share</label
-                ><strong data-pay="refund_rate" data-format="pct">—</strong>
-              </div>
-              <div class="full-metric">
-                <label>Batched spend share</label
-                ><strong id="pay-batched"></strong>
-              </div>
-            </div>
-          </section>
+
           <section id="pay-methodology" class="full-last-section">
             <details class="full-disclosure">
               <summary>Daily observations · last 10 days</summary>
@@ -1369,7 +1343,7 @@
                     <tr>
                       <th>Date</th>
                       <th>Spend</th>
-                      <th>Purchases</th>
+                      <th>Spend events</th>
                       <th>Active wallets</th>
                       <th>USDe held</th>
                     </tr>
@@ -1381,13 +1355,21 @@
             <details class="full-disclosure">
               <summary>Methodology & definitions</summary>
               <p>
-                Card spend measures purchases settled on-chain in USDe. Deposits
-                and withdrawals measure transfers into and out of card wallets,
-                excluding purchases, refunds and rewards. Wallets created are
-                deployed addresses, not verified individual users. Holding USDe
-                is a snapshot balance test; ever spent is an all-time count.
-                Daily spending wallets and rolling active-wallet counts use
-                different windows and must not be summed.
+                Card spend sums successful USDe AllowanceSpent events emitted by
+                user wallets on Avalanche C-Chain, filtered to the current and
+                retired settlement addresses. Spend counts count individual log
+                events, not distinct transaction hashes: one transaction can
+                contain events from many wallets. The settlement-to-issuer
+                transfer is excluded to avoid double-counting. Failed batch
+                items emit no spend event. Median and average purchase amounts
+                are omitted; these on-chain events are not a verified
+                receipt-level purchase dataset. Deposits and withdrawals measure
+                transfers into and out of card wallets, excluding purchases,
+                refunds and rewards. Wallets created are deployed addresses, not
+                verified individual users. Holding USDe is a snapshot balance
+                test; ever spent is an all-time count. Daily spending wallets
+                and rolling active-wallet counts use different windows and must
+                not be summed.
               </p>
               <p>
                 Headline rolling windows follow the source query. The newest
@@ -1427,18 +1409,13 @@
         </div>
 
         <footer class="full-footer">
-          <span>ethenadash · Independent research</span>
+          <span>ethenadash</span>
           <div class="full-footer-links">
             <a
               href="https://x.com/Degenerate_DeFi"
               target="_blank"
               rel="noopener noreferrer"
               >By @Degenerate_DeFi ↗</a
-            ><a
-              href="https://github.com/QorbQuant/EthenaDAT"
-              target="_blank"
-              rel="noopener noreferrer"
-              >Source repository ↗</a
             >
           </div>
         </footer>
