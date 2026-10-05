@@ -171,6 +171,85 @@ window.mountResearch = function (initialD, initialP) {
           : "Reported ENA token NAV excludes other assets and liabilities; Class A share-count basis. Quotes may be delayed.";
       return {
         title: c.title,
+        visual: {
+          title: {
+            "full-indexed": "StablecoinX vs ENA",
+            "full-per-share": "StablecoinX: price vs token NAV",
+            "full-mnav": "StablecoinX valuation multiple",
+            "full-ena-per-share": "ENA backing each share",
+            "full-warrants-chart": "StablecoinX stock & warrants",
+            "full-payoff-chart": "Stock vs warrants at expiry",
+            "pay-main-chart":
+              "EthenaPay: " +
+              (view === "active"
+                ? "daily spending wallets"
+                : (aggregation === "total" ? "cumulative " : "daily ") +
+                  (view === "spend" ? "card spend" : "spend events")),
+            "pay-balance-chart": "USDe in EthenaPay wallets",
+            "pay-flows-chart": "EthenaPay deposits & withdrawals",
+            "pay-created-chart": "EthenaPay wallets created",
+            "pay-active-chart": "EthenaPay spending wallets",
+            "pay-cashback-chart": "EthenaPay cashback",
+            "pay-yield-chart": "EthenaPay balance yield",
+          }[id],
+          category: pay
+            ? "ETHENAPAY"
+            : scenario
+              ? "SCENARIO / NOT A FORECAST"
+              : "STABLECOINX",
+          unit: units[id],
+          description:
+            id === "full-indexed"
+              ? "Price performance since listing"
+              : id === "pay-created-chart"
+                ? "Cumulative wallets deployed"
+                : (aggregation
+                    ? (aggregation === "total"
+                        ? "Cumulative since inception"
+                        : "Daily observations") + " · "
+                    : "") + units[id],
+          source: pay
+            ? "On-chain data · Avalanche"
+            : id === "full-indexed"
+              ? "Yahoo Finance / CoinGecko"
+              : "Public filings / market data",
+          caveat: scenario
+            ? `Inputs: USDE $${Ethena.current(D).price.toFixed(2)} / USDEW $${(D.liveW?.price ?? S.usdew_close.at(-1)).toFixed(2)} / strike $${D.warrants.strike.toFixed(2)}. Excludes early redemption, fees & taxes.`
+            : pay
+              ? aggregation === "total"
+                ? "Cumulative basis includes earlier dates. Latest day may be partial."
+                : "Latest day may be partial. Wallets are not people."
+              : id === "full-indexed"
+                ? "26 Jun 2026 = 100. Price changes exclude distributions."
+                : "Token NAV excludes other assets & liabilities. Quotes may be delayed.",
+          rows: c.rows,
+          series: c.series,
+          format: c.valueFmt || c.fmt,
+          axisFormat: c.fmt,
+          xFormat: c.xfmt,
+          contextFormat: scenario ? (v) => usd(v, 2) : null,
+          metricValues: scenario
+            ? [
+                payoff / Ethena.current(D).price,
+                Math.max(0, payoff - D.warrants.strike) /
+                  (D.liveW?.price ?? S.usdew_close.at(-1)),
+              ]
+            : null,
+          metricFormat:
+            id === "full-indexed"
+              ? (v) => (v >= 100 ? "+" : "") + (v - 100).toFixed(1) + "%"
+              : scenario
+                ? (v) => v.toFixed(2) + "×"
+                : null,
+          metricSuffix: id === "full-indexed" ? "since listing" : null,
+          zero: c.zero,
+          selected: scenario
+            ? payoff
+            : date
+              ? Date.parse(date + "T00:00:00Z")
+              : c.rows.at(-1).t,
+          contextLabel: scenario ? "STOCK AT EXPIRY" : "OBSERVATION",
+        },
         kind: scenario ? "SCENARIO" : "RECORDED DATA",
         updated: (pay ? P : D).generated_at,
         period: scenario

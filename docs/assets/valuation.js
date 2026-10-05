@@ -905,6 +905,59 @@ window.mountValuation = function (initial) {
           : factor
             ? factorMeta[factor][0]
             : "StablecoinX market cap & token NAV",
+        visual: {
+          title: scenario
+            ? "What could StablecoinX be worth?"
+            : factor
+              ? "StablecoinX: " + factorMeta[factor][0]
+              : "StablecoinX: market cap vs NAV",
+          category: scenario ? "SCENARIO / NOT A FORECAST" : "STABLECOINX",
+          type: scenario ? "scenario" : "series",
+          description: scenario
+            ? "Implied share price · holdings and share count held fixed"
+            : factor
+              ? factorMeta[factor][0] + " history"
+              : "Market value against reported ENA token holdings",
+          source: "Public filings / market data",
+          caveat:
+            "Reported token NAV excludes other assets & liabilities. Class A share basis.",
+          rows: data.map((r) => ({ d: r.date, t: r.t })),
+          series: factor
+            ? [
+                {
+                  name: factorMeta[factor][0],
+                  color: "#8aa9cf",
+                  data: data.map((r) => r[key]),
+                },
+              ]
+            : [
+                {
+                  name: "Token NAV",
+                  color: "#8aa9cf",
+                  data: data.map((r) => r.nav),
+                },
+                {
+                  name: "Market cap",
+                  color: "#cf9b79",
+                  data: data.map((r) => r.cap),
+                },
+              ],
+          format: factor ? factorMeta[factor][3] : mill,
+          axisFormat: factor
+            ? factorMeta[factor][3]
+            : (v) => "$" + (v / 1e6).toFixed(0) + "M",
+          zero: !factor,
+          selected: q.t,
+          scenario: scenario
+            ? {
+                ena: state.ena,
+                mnav: state.mnav,
+                per: base.per,
+                currentEna: base.ena,
+                currentMnav: base.mnav,
+              }
+            : null,
+        },
         kind: scenario ? "SCENARIO" : "RECORDED DATA",
         updated: D.generated_at,
         period: scenario
@@ -991,6 +1044,23 @@ window.mountValuation = function (initial) {
     );
     return {
       title: "StablecoinX share-price attribution",
+      visual: {
+        type: "waterfall",
+        title: "What moved StablecoinX?",
+        category: "STABLECOINX",
+        description: "Share-price change, decomposed · USD per share",
+        source: "Public filings / market data",
+        caveat:
+          "Shapley attribution is an accounting identity, not evidence of causation.",
+        start: start.price,
+        end: end.price,
+        contributions: c,
+        format: money,
+        rows: [
+          { d: start.date, t: start.t },
+          { d: end.date, t: end.t },
+        ],
+      },
       updated: D.generated_at,
       period: start.date + " — " + end.date,
       subtitle:

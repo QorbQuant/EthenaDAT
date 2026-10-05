@@ -223,8 +223,11 @@ to `https://ethenadash.com`. Unknown paths remain 404 responses.
 
 ## Chart sharing and exports
 
-Each chart has a secondary Share / export menu. PNG files include dates, units,
-source/export timestamps and methodology notes. CSV files contain the plotted
+Each chart has a secondary Share / export menu. PNG files use a fixed 1600 × 900 share-card layout, re-rendered from the plotted
+data so mobile and desktop downloads match. Large series readouts follow the
+selected observation; indexed-performance readouts show price change since the
+fixed listing baseline. Dates, units, source timestamps and short caveats remain
+visible. CSV files contain the plotted
 values at full available precision, with provenance and the view URL on each row.
 Cumulative EthenaPay exports retain their inception basis when a shorter window
 is selected; event counts are successful allowance logs, not transaction hashes.
