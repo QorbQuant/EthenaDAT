@@ -159,3 +159,32 @@ path: re-attach the custom domains there to revert. Live prices come from the
 `ethenadash-quotes` Worker (`worker/`) and CoinGecko, and the daily series
 from the repo's own `docs/data.json` via the GitHub raw feed, so the site
 stays current without redeploying.
+
+## Dashboard UI
+
+The StablecoinX valuation workspace and EthenaPay dashboard are static HTML,
+CSS, and JavaScript in `docs/`. The visual design uses a shared dark theme,
+interactive valuation scenarios, date inspection, performance charts, and
+progressive disclosure for research tables.
+
+- `docs/assets/data.js`: feed validation, valuation calculations, quote overlays,
+  contractual unlocking, and completed-session filtering.
+- `docs/assets/app.js`: independent page loading, hash navigation, live quote
+  refresh every minute, and source refresh every five minutes while visible.
+- `docs/assets/valuation.js`: scenario map, historical inspection, and exact
+  three-factor Shapley attribution using historical endpoint observations.
+- `docs/assets/research.js`: performance, derivatives, filings, and card analytics.
+- `docs/assets/dashboard.css`: shared desktop/mobile styles.
+- D3 7.9.0 is bundled locally with its ISC license; no runtime CDN is required.
+
+The production page prefers the GitHub raw feeds and falls back to deployed
+JSON. Failed refreshes retain the last successful data, and an older fallback
+cannot replace a newer observation already loaded. Source timestamps remain
+visible; EthenaPay displays a stale notice after 36 hours. Prices can be delayed.
+Current quote-based valuation is distinct from historical observations: only
+fresh same-session intraday quotes are folded into the current historical row.
+The redemption tracker excludes unfinished observations.
+
+Run calculation regression checks with `node --test tests/data.test.cjs`.
+Preview with `python3 -m http.server 8765 --directory docs`; check `/` and `/#pay`.
+Deploy remains `npx wrangler deploy --config site-worker/wrangler.toml`.

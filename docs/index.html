@@ -1,1402 +1,1459 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>EthenaDAT — StablecoinX (USDE) NAV Tracker</title>
-<meta name="description" content="Live NAV and mNAV tracker for StablecoinX (Nasdaq: USDE) vs. its 3.03B ENA treasury. Sourced from SEC filings, Yahoo Finance, CoinGecko.">
-<meta name="theme-color" content="#1d1b21">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231d1b21'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%234ed69e'/%3E%3C/svg%3E">
-<meta property="og:title" content="EthenaDAT — USDE mNAV Tracker">
-<meta property="og:description" content="Live NAV and mNAV tracker for StablecoinX (Nasdaq: USDE) vs. its 3.03B ENA treasury.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://ethenadash.com/">
-<meta name="twitter:card" content="summary">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
-<style>
-  :root {
-    --bg: #1d1b21;
-    --glow: #39363c;
-    --panel: #26232c;
-    --panel-edge: #35323c;
-    --ink: #e8e5e3;
-    --ink-2: #9a97a6;
-    --ink-3: #757280;
-    --nav: #93a8f0;
-    --unl: #4ed69e;
-    --mcap: #c3f53c;
-    --red: #e07a7a;
-    --grid: #2e2b35;
-  }
-  * { box-sizing: border-box; margin: 0; }
-  body {
-    background:
-      radial-gradient(140% 150% at 0% 0%, rgba(57,54,60,.85) 0%, rgba(57,54,60,.18) 45%, rgba(57,54,60,0) 100%),
-      radial-gradient(60% 55% at 108% 104%, rgba(42,39,46,.6) 0%, rgba(42,39,46,0) 100%),
-      var(--bg);
-    color: var(--ink);
-    font-family: "Courier Prime", "Courier New", monospace;
-    min-height: 100vh;
-    position: relative;
-  }
-  body::after {  /* grain */
-    content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='240' height='240'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
-    opacity: .05; mix-blend-mode: screen;
-  }
-  main { max-width: 1240px; margin: 0 auto; padding: 36px 28px 60px; position: relative; z-index: 2; }
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <link rel="canonical" href="https://ethenadash.com/" />
+    <meta
+      property="og:title"
+      content="EthenaDash — StablecoinX &amp; EthenaPay"
+    />
+    <meta
+      property="og:description"
+      content="Independent treasury valuation and on-chain card analytics."
+    />
+    <meta property="og:url" content="https://ethenadash.com/" />
+    <title>EthenaDash — StablecoinX & EthenaPay</title>
+    <meta
+      name="description"
+      content="Independent StablecoinX treasury valuation and EthenaPay on-chain analytics. Explore ENA NAV, market performance, card activity and rewards."
+    />
+    <meta name="theme-color" content="#0d1116" />
+    <link rel="stylesheet" href="assets/dashboard.css" />
+  </head>
+  <body>
+    <div id="sx-studio">
+      <div class="sx-shell">
+        <header class="sx-nav">
+          <div class="sx-brand">ethena<span>dash</span></div>
+          <nav class="sx-nav-items" aria-label="Dashboard">
+            <button
+              type="button"
+              class="full-nav-button"
+              data-page="sx"
+              aria-pressed="true"
+              aria-controls="full-sx"
+            >
+              StablecoinX</button
+            ><button
+              type="button"
+              class="full-nav-button"
+              data-page="pay"
+              aria-pressed="false"
+              aria-controls="full-pay"
+            >
+              EthenaPay
+            </button>
+          </nav>
+          <span class="sx-prototype">Independent research</span>
+        </header>
+        <div id="sx-status" class="data-status" role="status">
+          Loading market data…
+        </div>
+        <div id="pay-status" class="data-status" role="status" hidden>
+          Loading card data…
+        </div>
+        <div id="full-sx" hidden>
+          <nav class="full-jump" aria-label="StablecoinX sections">
+            <button type="button" data-jump="full-sx">Valuation</button
+            ><button type="button" data-jump="full-performance">
+              Performance</button
+            ><button type="button" data-jump="full-treasury">Treasury</button
+            ><button type="button" data-jump="full-derivatives">
+              Derivatives</button
+            ><button type="button" data-jump="full-filings">Filings</button>
+          </nav>
+          <div class="sx-page-head">
+            <div>
+              <div class="sx-heading-line">
+                <h1>StablecoinX</h1>
+                <span class="sx-ticker">NASDAQ / USDE</span>
+              </div>
+              <p class="sx-subtitle">
+                The asset. The market. The space between.
+              </p>
+            </div>
+            <div class="sx-date sx-muted">
+              <span id="sx-source-time">Loading market data…</span>
+            </div>
+          </div>
+          <section class="sx-hero" aria-label="Current valuation snapshot">
+            <div>
+              <div class="sx-eyebrow">Market value / token NAV</div>
+              <div class="sx-ratio" id="sx-ratio">—</div>
+              <p class="sx-hero-caption">
+                The market pays <span id="sx-cents">—</span> for each $1 of
+                reported ENA holdings.
+              </p>
+            </div>
+            <div class="sx-hero-right">
+              <div class="sx-eyebrow">Share price</div>
+              <div class="sx-shareline">
+                <strong id="sx-price">—</strong
+                ><span class="sx-change" id="sx-price-change">—</span>
+              </div>
+              <div class="sx-hero-bars">
+                <div class="sx-value-row">
+                  <span>Token NAV</span
+                  ><span class="sx-mono" id="sx-nav-value">—</span>
+                </div>
+                <div class="sx-bartrack">
+                  <div class="sx-bar" style="width: 100%"></div>
+                </div>
+                <div class="sx-value-row">
+                  <span>Market cap</span
+                  ><span class="sx-mono" id="sx-cap-value">—</span>
+                </div>
+                <div class="sx-bartrack">
+                  <div
+                    id="sx-cap-bar"
+                    class="sx-bar copper"
+                    style="width: 45.35%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+          </section>
+          <div class="sx-section-head">
+            <div class="sx-section-title">
+              <span class="sx-section-num">01 /</span>
+              <h2>Valuation workspace</h2>
+            </div>
+            <div class="sx-segment" aria-label="Workspace mode">
+              <button type="button" data-mode="history" aria-pressed="false">
+                History</button
+              ><button type="button" data-mode="explore" aria-pressed="true">
+                Explore
+              </button>
+            </div>
+          </div>
+          <section
+            class="sx-workbench"
+            aria-label="Interactive valuation workspace"
+          >
+            <div class="sx-plot-col">
+              <div class="sx-plot-top">
+                <span class="sx-plot-title" id="sx-plot-title"
+                  >Implied share-price contours</span
+                >
+                <div class="sx-legend" id="sx-map-legend">
+                  <span><i class="sx-key"></i>Current</span
+                  ><span><i class="sx-key scenario"></i>Scenario</span>
+                </div>
+                <div class="sx-rangebar" id="sx-history-ranges" hidden>
+                  <button type="button" data-range="30" aria-pressed="false">
+                    1M</button
+                  ><button type="button" data-range="90" aria-pressed="false">
+                    3M</button
+                  ><button type="button" data-range="all" aria-pressed="true">
+                    All
+                  </button>
+                </div>
+              </div>
+              <svg
+                class="sx-chart"
+                id="sx-main-chart"
+                role="img"
+                aria-label="Valuation map: ENA price on the horizontal axis, mNAV on the vertical axis. Drag to set a scenario or use the labeled controls."
+              ></svg>
+              <div class="sx-plot-foot">
+                <span id="sx-chart-hint">Drag anywhere to explore</span
+                ><span id="sx-chart-foot-right">Fixed ENA per share</span>
+              </div>
+            </div>
+            <aside
+              class="sx-scenario-panel"
+              id="sx-scenario-controls"
+              aria-label="Scenario inputs"
+            >
+              <div class="sx-scenario-result">
+                <div class="sx-eyebrow">Scenario / implied share price</div>
+                <div class="sx-result" id="sx-result">—</div>
+                <div class="sx-relative" id="sx-relative">
+                  At current valuation
+                </div>
+              </div>
+              <div class="sx-control">
+                <div class="sx-input-row">
+                  <label for="sx-ena-input">ENA price · USD</label
+                  ><input
+                    id="sx-ena-input"
+                    type="number"
+                    min="0.01"
+                    max="2"
+                    step="0.000001"
+                    value="0.245515"
+                  />
+                </div>
+                <input
+                  id="sx-ena-range"
+                  aria-label="Scenario ENA price"
+                  type="range"
+                  min="0.05"
+                  max="0.6"
+                  step="0.000001"
+                  value="0.245515"
+                />
+                <div class="sx-range-ends">
+                  <span>$0.05</span><span>$0.60</span>
+                </div>
+              </div>
+              <div class="sx-control">
+                <div class="sx-input-row">
+                  <label for="sx-mnav-input">mNAV · multiple</label
+                  ><input
+                    id="sx-mnav-input"
+                    type="number"
+                    min="0.01"
+                    max="3"
+                    step="0.000001"
+                    value="0.4535"
+                  />
+                </div>
+                <input
+                  id="sx-mnav-range"
+                  aria-label="Scenario mNAV"
+                  type="range"
+                  min="0.1"
+                  max="1.2"
+                  step="0.000001"
+                  value="0.4535"
+                />
+                <div class="sx-range-ends">
+                  <span>0.10×</span><span>1.20×</span>
+                </div>
+              </div>
+              <button type="button" class="sx-reset" id="sx-reset">
+                Reset to current
+              </button>
+              <p class="sx-assumption">
+                Reported holdings and share count held fixed. Token NAV only;
+                not a price forecast.
+              </p>
+              <div class="sx-error" id="sx-error" role="alert"></div>
+              <span
+                id="sx-scenario-announcement"
+                role="status"
+                aria-live="polite"
+                style="
+                  position: absolute;
+                  width: 1px;
+                  height: 1px;
+                  overflow: hidden;
+                  clip-path: inset(50%);
+                "
+              ></span>
+            </aside>
+            <aside
+              class="sx-scenario-panel sx-history-info"
+              id="sx-history-controls"
+              aria-label="Historical observation"
+              hidden
+            >
+              <div class="sx-eyebrow" id="sx-history-date">—</div>
+              <div class="sx-result" id="sx-history-mnav">—</div>
+              <div class="sx-relative">Market cap / token NAV</div>
+              <div class="sx-history-row">
+                <span class="sx-muted">Token NAV</span
+                ><span id="sx-h-nav">—</span>
+              </div>
+              <div class="sx-history-row">
+                <span class="sx-muted">Market cap</span
+                ><span id="sx-h-cap">—</span>
+              </div>
+              <div class="sx-history-row">
+                <span class="sx-muted">Share price</span
+                ><span id="sx-h-price">—</span>
+              </div>
+              <div class="sx-date-slider">
+                <label for="sx-history-date-input">Inspect a trading day</label
+                ><input
+                  id="sx-history-date-input"
+                  aria-label="Historical observation date"
+                  type="range"
+                  min="0"
+                  max="68"
+                  step="1"
+                  value="68"
+                  style="margin-top: 14px"
+                />
+              </div>
+              <p class="sx-history-note">
+                Move across the chart or use the date control. Readouts follow
+                actual observations.
+              </p>
+            </aside>
+          </section>
+          <div class="sx-equation" aria-label="Interactive valuation formula">
+            <button
+              type="button"
+              class="sx-factor"
+              data-factor="ena"
+              aria-pressed="false"
+            >
+              <span class="sx-label">ENA price</span
+              ><strong id="sx-f-ena">—</strong></button
+            ><span class="sx-op">×</span
+            ><button
+              type="button"
+              class="sx-factor"
+              data-factor="holdings"
+              aria-pressed="false"
+            >
+              <span class="sx-label">ENA per share</span
+              ><strong id="sx-f-holdings">—</strong></button
+            ><span class="sx-op">×</span
+            ><button
+              type="button"
+              class="sx-factor"
+              data-factor="multiple"
+              aria-pressed="false"
+            >
+              <span class="sx-label">mNAV</span
+              ><strong id="sx-f-mnav">—</strong></button
+            ><span class="sx-op">=</span
+            ><button
+              type="button"
+              class="sx-factor"
+              data-factor="price"
+              aria-pressed="false"
+            >
+              <span class="sx-label" id="sx-f-price-label"
+                >Implied share price</span
+              ><strong id="sx-f-price">—</strong>
+            </button>
+          </div>
+          <div class="sx-formula-caption">
+            <span id="sx-formula-context">Scenario assumptions</span
+            ><span>Select a term to inspect its history ↗</span>
+          </div>
+          <section
+            class="sx-detail"
+            id="sx-factor-detail"
+            aria-label="Formula component detail"
+            hidden
+          >
+            <div>
+              <h3 id="sx-detail-title"></h3>
+              <p id="sx-detail-description"></p>
+              <div
+                class="sx-detail-readout sx-mono"
+                id="sx-detail-readout"
+              ></div>
+            </div>
+            <svg
+              class="sx-mini"
+              id="sx-detail-chart"
+              role="img"
+              aria-label="Historical component values"
+            ></svg>
+          </section>
+          <section class="sx-moved">
+            <button
+              type="button"
+              class="sx-moved-toggle"
+              id="sx-moved-toggle"
+              aria-expanded="false"
+              aria-controls="sx-attrib"
+            >
+              <span class="sx-moved-title"
+                ><span class="sx-section-num">02 /</span>What moved?</span
+              ><span class="sx-moved-summary"
+                ><span class="sx-summary-text" id="sx-moved-summary"
+                  >Share-price attribution</span
+                ><b class="sx-mono" id="sx-total-move"></b
+                ><span id="sx-moved-arrow">+</span></span
+              >
+            </button>
+            <div id="sx-attrib" class="sx-attrib-content" hidden>
+              <div class="sx-attrib-header">
+                <span id="sx-attrib-dates"></span>
+                <div class="sx-rangebar" aria-label="Attribution period">
+                  <button
+                    type="button"
+                    data-attrib-range="30"
+                    aria-pressed="true"
+                  >
+                    1M</button
+                  ><button
+                    type="button"
+                    data-attrib-range="90"
+                    aria-pressed="false"
+                  >
+                    3M</button
+                  ><button
+                    type="button"
+                    data-attrib-range="all"
+                    aria-pressed="false"
+                  >
+                    All
+                  </button>
+                </div>
+              </div>
+              <svg
+                class="sx-waterfall"
+                id="sx-waterfall"
+                role="img"
+                aria-label="Dollar contribution of ENA price, ENA per share, and valuation multiple to share-price change"
+              ></svg>
+              <table class="sx-attrib-table" aria-label="Attribution values">
+                <tbody id="sx-attrib-rows"></tbody>
+              </table>
+              <details class="sx-method">
+                <summary>How this is calculated</summary>
+                <p>
+                  Order-independent Shapley attribution of share price = ENA
+                  price × ENA per share × mNAV, using the repository’s endpoint
+                  observations. mNAV is recomputed from those inputs to avoid
+                  rounded-ratio residuals. Reported holdings and share counts
+                  are forward-filled in the source dataset. This is a
+                  mathematical decomposition, not an explanation of investor
+                  motivation.
+                </p>
+              </details>
+            </div>
+          </section>
+          <div class="sx-bottom">
+            <div>
+              <div class="sx-eyebrow">Reported ENA</div>
+              <strong data-market="holdings">—</strong
+              ><small><span id="holdings-short-date"></span></small>
+            </div>
+            <div>
+              <div class="sx-eyebrow">Class A shares</div>
+              <strong id="sx-shares">—</strong
+              ><small>Dataset share-count basis</small>
+            </div>
+            <div>
+              <div class="sx-eyebrow">Token NAV / share</div>
+              <strong id="sx-nav-share">—</strong
+              ><small>ENA holdings × ENA price / shares</small>
+            </div>
+            <div>
+              <div class="sx-eyebrow">USDEW warrant</div>
+              <strong id="sx-warrant">—</strong
+              ><small>$11.50 strike · Jun 2031</small>
+            </div>
+          </div>
+          <section id="full-performance" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">03 /</span>Market performance
+              </h2>
+              <div class="sx-rangebar" aria-label="Performance date range">
+                <button type="button" data-perf="30" aria-pressed="false">
+                  1M</button
+                ><button type="button" data-perf="90" aria-pressed="false">
+                  3M</button
+                ><button type="button" data-perf="all" aria-pressed="true">
+                  All
+                </button>
+              </div>
+            </div>
+            <div class="full-grid">
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>NAV per share vs share price</h3>
+                  <span data-market="navPrice">—</span>
+                </div>
+                <div class="full-legend">
+                  <span>Token NAV per share</span><span>USDE share price</span>
+                </div>
+                <svg
+                  id="full-per-share"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Token NAV per share and USDE share price history"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>mNAV history</h3>
+                  <span data-market="mnav">—</span>
+                </div>
+                <p class="full-caption">Market cap / reported token NAV</p>
+                <svg
+                  id="full-mnav"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Historical valuation multiple"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Indexed performance</h3>
+                  <span id="full-index-latest"></span>
+                </div>
+                <div class="full-legend"><span>ENA</span><span>USDE</span></div>
+                <svg
+                  id="full-indexed"
+                  class="full-chart"
+                  role="img"
+                  aria-label="USDE and ENA indexed to 100 on June 26 2026"
+                ></svg>
+                <div class="full-readout"></div>
+                <p class="full-caption">
+                  Both start at 100 on Jun 26, 2026. Basis stays fixed when
+                  filtering.
+                </p>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>ENA per share</h3>
+                  <span id="full-ena-share"></span>
+                </div>
+                <p class="full-caption">
+                  Reported token holdings / Class A shares
+                </p>
+                <svg
+                  id="full-ena-per-share"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Reported ENA per Class A share history"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+            </div>
+          </section>
+          <section id="full-treasury" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">04 /</span>Treasury & capital
+                structure
+              </h2>
+              <p><span id="holdings-date"></span></p>
+            </div>
+            <div class="full-metrics">
+              <div class="full-metric">
+                <label>Reported ENA held</label
+                ><strong data-market="holdings">—</strong
+                ><small>Latest disclosed token balance</small>
+              </div>
+              <div class="full-metric">
+                <label>Class A shares</label
+                ><strong data-market="shares">—</strong
+                ><small>Dataset share-count basis</small>
+              </div>
+              <div class="full-metric">
+                <label>Token NAV</label><strong data-market="nav">—</strong
+                ><small>Excludes other assets and liabilities</small>
+              </div>
+              <div class="full-metric">
+                <label>ENA per share</label
+                ><strong id="full-treasury-per"></strong
+                ><small>Reported holdings / shares</small>
+              </div>
+            </div>
+            <div class="full-grid">
+              <div class="full-well">
+                <div class="sx-eyebrow">Contractual lock-ups</div>
+                <div class="full-number" id="unlocked-percent">—</div>
+                <p class="full-note"><span id="unlocked-description"></span></p>
+                <div class="full-track" style="margin: 18px 0">
+                  <div
+                    class="full-fill"
+                    id="unlocked-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <p class="full-note">
+                  The lock-up waiver supersedes the original 48-month schedule.
+                  Unlocked status does not verify the current token balance.
+                </p>
+                <a
+                  class="full-muted-link"
+                  href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea0305686-8k_stablecoinx.htm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Read the waiver ↗</a
+                >
+              </div>
+              <div>
+                <div class="full-log">
+                  <time>Jun 26, 2026</time>
+                  <div>
+                    <b>Nasdaq listing</b>
+                    <p>
+                      Historical series begins. Initial Class A count:
+                      24,029,375.
+                    </p>
+                  </div>
+                </div>
+                <div class="full-log">
+                  <time>Aug 14, 2026</time>
+                  <div>
+                    <b>Treasury disclosure</b>
+                    <p>
+                      The Q2 2026 disclosure reported approximately 3.0 billion
+                      ENA.
+                    </p>
+                  </div>
+                </div>
+                <div class="full-log">
+                  <time>Sep 30, 2026</time>
+                  <div>
+                    <b>Share-count update</b>
+                    <p>
+                      110,000 director restricted-stock awards added to the
+                      dataset.
+                    </p>
+                  </div>
+                </div>
+                <div class="full-log">
+                  <time>Oct 5, 2026</time>
+                  <div>
+                    <b>All token lock-ups waived</b>
+                    <p>Reported token NAV and unlocked token NAV converge.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="full-rule-note">
+              Holdings are a disclosed balance, not a live wallet proof. Funding
+              sales may occur without a separate announcement. Reported holdings
+              can therefore differ from current holdings.
+            </div>
+            <details class="full-disclosure">
+              <summary>Original ENA tranches</summary>
+              <div class="full-table-wrap">
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Tranche</th>
+                      <th>ENA tokens</th>
+                      <th>Original treatment</th>
+                      <th>Current status</th>
+                    </tr>
+                  </thead>
+                  <tbody id="full-tranches"></tbody>
+                </table>
+              </div>
+            </details>
+          </section>
+          <section id="full-derivatives" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">05 /</span>Warrants & options
+              </h2>
+              <p>USDEW / Nasdaq</p>
+            </div>
+            <div class="full-metrics">
+              <div class="full-metric">
+                <label>USDEW price</label
+                ><strong data-market="warrant">—</strong
+                ><small id="full-warrant-delta"></small>
+              </div>
+              <div class="full-metric">
+                <label>Exercise price</label
+                ><strong data-market="strike">—</strong
+                ><small>One new share per warrant</small>
+              </div>
+              <div class="full-metric">
+                <label>Expiry breakeven</label
+                ><strong data-market="breakeven">—</strong
+                ><small>Strike + current warrant price</small>
+              </div>
+              <div class="full-metric">
+                <label>Listed warrants</label
+                ><strong data-market="warrantCount">—</strong
+                ><small>Expire Jun 25, 2031</small>
+              </div>
+            </div>
+            <div class="full-grid">
+              <article class="full-chart-box">
+                <div class="full-chart-top"><h3>USDEW vs USDE</h3></div>
+                <div class="full-legend">
+                  <span>USDE share</span><span>USDEW warrant</span>
+                </div>
+                <svg
+                  id="full-warrants-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Warrant and share price history"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Payoff at expiry</h3>
+                  <span id="full-payoff-result"></span>
+                </div>
+                <div class="full-legend">
+                  <span>Stock</span><span>Warrant</span>
+                </div>
+                <svg
+                  id="full-payoff-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Value at expiry of one dollar invested in stock or warrants by terminal share price"
+                ></svg>
+                <div class="full-warrant-controls">
+                  <label for="full-payoff-price">USDE at expiry</label
+                  ><input
+                    id="full-payoff-price"
+                    type="range"
+                    min="0"
+                    max="40"
+                    step="0.1"
+                    value="20"
+                  /><span id="full-payoff-label" class="sx-mono">$20.00</span>
+                </div>
+                <p class="full-caption">
+                  Value of $1 invested at current prices. Ignores early
+                  redemption.
+                </p>
+              </article>
+            </div>
+            <div class="full-grid" style="margin-top: 22px">
+              <div class="full-well">
+                <h3>Call-trigger watch</h3>
+                <div class="full-chart-top">
+                  <span class="full-note"
+                    >Closes at or above $10 · last 30 completed sessions</span
+                  ><span id="full-call-count"></span>
+                </div>
+                <div class="full-call-progress" id="full-call-progress"></div>
+                <p class="full-note">
+                  The $0.10 call provision requires 20 qualifying closes in 30
+                  trading days. A cashless exercise may deliver up to 0.361
+                  shares per warrant. The separate $0.01 call trigger is $18.
+                </p>
+              </div>
+              <div>
+                <h3 style="font-size: 14px; font-weight: 500; margin: 0 0 8px">
+                  Sponsor warrants
+                </h3>
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Tranche</th>
+                      <th>Count</th>
+                      <th>Strike</th>
+                      <th>Expiry</th>
+                    </tr>
+                  </thead>
+                  <tbody id="full-sponsor"></tbody>
+                </table>
+                <p class="full-caption">
+                  Private, non-listed warrants. Exercise can increase shares
+                  outstanding.
+                </p>
+              </div>
+            </div>
+            <details class="full-disclosure" open>
+              <summary>Listed options · USDE</summary>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  gap: 18px;
+                  align-items: center;
+                  flex-wrap: wrap;
+                  margin: 20px 0 8px;
+                "
+              >
+                <label for="full-option-expiry">Expiration</label
+                ><select class="full-select" id="full-option-expiry"></select>
+              </div>
+              <div class="full-table-wrap">
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Strike</th>
+                      <th class="num">Call bid</th>
+                      <th class="num">Call ask</th>
+                      <th class="num">Call OI</th>
+                      <th class="num">Put bid</th>
+                      <th class="num">Put ask</th>
+                      <th class="num">Put OI</th>
+                    </tr>
+                  </thead>
+                  <tbody id="full-option-rows"></tbody>
+                </table>
+              </div>
+              <p>
+                <span id="options-time">Nasdaq options</span>. A dash means
+                unavailable, not zero. Quotes may be stale or wide.
+              </p>
+            </details>
+          </section>
+          <section id="full-filings" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">06 /</span>Research & filings
+              </h2>
+              <a
+                class="full-muted-link"
+                href="https://www.sec.gov/edgar/browse/?CIK=2080215"
+                target="_blank"
+                rel="noopener noreferrer"
+                >Open EDGAR ↗</a
+              >
+            </div>
+            <div class="full-table-wrap">
+              <table class="full-table">
+                <thead>
+                  <tr>
+                    <th>Filed</th>
+                    <th>Form</th>
+                    <th>Primary source</th>
+                  </tr>
+                </thead>
+                <tbody id="full-filing-rows"></tbody>
+              </table>
+            </div>
+            <button
+              type="button"
+              class="full-small-button"
+              id="full-more-filings"
+              style="margin-top: 14px"
+            >
+              Show all filings
+            </button>
+            <details class="full-disclosure">
+              <summary>Insider filings · Forms 3, 4 and 5</summary>
+              <div class="full-table-wrap">
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Filed</th>
+                      <th>Insider</th>
+                      <th>Transaction</th>
+                      <th>Shares</th>
+                      <th>Price</th>
+                    </tr>
+                  </thead>
+                  <tbody id="full-insiders"></tbody>
+                </table>
+              </div>
+              <p>
+                Grants, awards and opening holdings are not open-market
+                purchases.
+              </p>
+            </details>
+            <details class="full-disclosure">
+              <summary>Data table · last 10 sessions</summary>
+              <div class="full-table-wrap">
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>USDE</th>
+                      <th>ENA</th>
+                      <th>Token NAV / share</th>
+                      <th>mNAV</th>
+                    </tr>
+                  </thead>
+                  <tbody id="full-data-rows"></tbody>
+                </table>
+              </div>
+            </details>
+            <details class="full-disclosure">
+              <summary>About StablecoinX</summary>
+              <p>
+                StablecoinX is a Nasdaq-listed company whose principal treasury
+                asset in this dataset is ENA, the governance token of the Ethena
+                protocol. This independent dashboard compares its share price
+                with reported token holdings. The source series begins June 26,
+                2026.
+              </p>
+            </details>
+            <details class="full-disclosure">
+              <summary>Methodology & sources</summary>
+              <p>
+                Token NAV = reported ENA holdings × ENA price. Token NAV per
+                share = token NAV / dataset Class A shares. mNAV = share price /
+                token NAV per share. Indexed series are rebased to 100 on June
+                26, 2026. Holdings and share counts are forward-filled from
+                reported events. Other balance-sheet assets and liabilities are
+                outside token NAV.
+              </p>
+              <p>
+                Market observations: Yahoo Finance and CoinGecko via the
+                repository. Company disclosures: SEC EDGAR. Options: Nasdaq.
+                Daily series refresh from GitHub; market quotes are checked
+                every minute. Quotes can be delayed. Token NAV excludes other
+                assets and liabilities. Historical observations retain their
+                recorded dates.
+              </p>
+            </details>
+          </section>
+        </div>
+        <div id="full-pay" hidden>
+          <nav class="full-jump" aria-label="EthenaPay sections">
+            <button type="button" data-jump="pay-activity">Activity</button
+            ><button type="button" data-jump="pay-capital">Capital flows</button
+            ><button type="button" data-jump="pay-wallets">Wallets</button
+            ><button type="button" data-jump="pay-rewards">Rewards</button
+            ><button type="button" data-jump="pay-methodology">
+              Methodology
+            </button>
+          </nav>
+          <div class="sx-page-head">
+            <div>
+              <div class="sx-heading-line">
+                <h1>EthenaPay</h1>
+                <span class="sx-ticker">AVALANCHE / USDe</span>
+              </div>
+              <p class="sx-subtitle">
+                From on-chain balance to everyday spending.
+              </p>
+            </div>
+            <div class="sx-date sx-muted">
+              <span id="pay-source-time">Loading card data…</span>
+            </div>
+          </div>
+          <section
+            class="sx-hero full-pay-hero"
+            aria-label="EthenaPay snapshot"
+          >
+            <div>
+              <div class="sx-eyebrow">USDe in card wallets</div>
+              <div class="sx-ratio" id="pay-tvl">—</div>
+              <p class="sx-hero-caption">
+                Capital held across
+                <span data-pay="funded_wallets">—</span> funded card wallets.
+              </p>
+            </div>
+            <div class="sx-hero-right">
+              <div class="full-pay-stat">
+                <div class="sx-eyebrow">Card spend / 30d</div>
+                <strong id="pay-hero-spend"></strong
+                ><small>Rolling 30-day total</small>
+              </div>
+              <div class="full-pay-stat">
+                <div class="sx-eyebrow">Active wallets / 7d</div>
+                <strong data-pay="wau_7d" data-format="num">—</strong
+                ><small>Wallets with a purchase</small>
+              </div>
+              <div class="full-pay-stat">
+                <div class="sx-eyebrow">Median purchase</div>
+                <strong data-pay="median_spend_usde" data-format="usd">—</strong
+                ><small>All-time transaction median</small>
+              </div>
+              <div class="full-pay-stat">
+                <div class="sx-eyebrow">Ever purchased</div>
+                <strong data-pay="spending_wallets" data-format="num">—</strong
+                ><small>Distinct card wallets</small>
+              </div>
+            </div>
+          </section>
+          <section id="pay-activity">
+            <div class="sx-section-head">
+              <div class="sx-section-title">
+                <span class="sx-section-num">01 /</span>
+                <h2>Card activity</h2>
+              </div>
+              <div class="sx-rangebar" aria-label="EthenaPay date range">
+                <button type="button" data-pay-range="30" aria-pressed="false">
+                  1M</button
+                ><button type="button" data-pay-range="90" aria-pressed="false">
+                  3M</button
+                ><button type="button" data-pay-range="all" aria-pressed="true">
+                  All
+                </button>
+              </div>
+            </div>
+            <div class="full-pay-workspace">
+              <div class="full-pay-main">
+                <div class="full-activity-head">
+                  <div class="sx-segment" aria-label="Card activity metric">
+                    <button
+                      type="button"
+                      data-pay-view="spend"
+                      aria-pressed="true"
+                    >
+                      Spend</button
+                    ><button
+                      type="button"
+                      data-pay-view="count"
+                      aria-pressed="false"
+                    >
+                      Purchases</button
+                    ><button
+                      type="button"
+                      data-pay-view="active"
+                      aria-pressed="false"
+                    >
+                      Active wallets
+                    </button>
+                  </div>
+                  <div
+                    class="sx-rangebar"
+                    aria-label="Card spend aggregation"
+                    id="pay-aggregation"
+                  >
+                    <button
+                      type="button"
+                      data-pay-agg="daily"
+                      aria-pressed="true"
+                    >
+                      Daily</button
+                    ><button
+                      type="button"
+                      data-pay-agg="total"
+                      aria-pressed="false"
+                    >
+                      Cumulative
+                    </button>
+                  </div>
+                </div>
+                <svg
+                  id="pay-main-chart"
+                  class="full-chart large"
+                  role="img"
+                  aria-label="EthenaPay card activity over time"
+                ></svg>
+                <div class="full-readout" id="pay-main-readout"></div>
+                <div class="full-pay-date">
+                  <label for="pay-date-input">Inspect a date</label
+                  ><input
+                    id="pay-date-input"
+                    type="range"
+                    min="0"
+                    max="142"
+                    value="142"
+                    step="1"
+                    aria-label="Card activity observation date"
+                  />
+                </div>
+              </div>
+              <aside class="full-pay-side">
+                <div>
+                  <div class="sx-eyebrow" id="pay-observation-date"></div>
+                  <div class="full-number" id="pay-observation-value"></div>
+                  <p class="full-caption" id="pay-observation-metric">
+                    Daily card spend
+                  </p>
+                </div>
+                <div class="full-metric">
+                  <label>Purchases that day</label
+                  ><strong id="pay-observation-count"></strong>
+                </div>
+                <div class="full-metric">
+                  <label>Spending wallets that day</label
+                  ><strong id="pay-observation-active"></strong>
+                </div>
+                <div class="full-metric">
+                  <label>Lifetime card spend</label
+                  ><strong data-pay="lifetime_spend_usde" data-format="compact"
+                    >—</strong
+                  >
+                </div>
+                <p class="full-caption">
+                  Latest day may be partial. Hover, tap, or use the date control
+                  to inspect actual observations.
+                </p>
+              </aside>
+            </div>
+          </section>
+          <section id="pay-capital" class="full-section">
+            <div class="full-section-top">
+              <h2><span class="sx-section-num">02 /</span>Capital in motion</h2>
+              <p>Balances and transfers</p>
+            </div>
+            <div class="full-grid">
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>USDe in card wallets</h3>
+                  <span data-pay="tvl_usde" data-format="compact">—</span>
+                </div>
+                <p class="full-caption">
+                  Combined balance across all card wallets
+                </p>
+                <svg
+                  id="pay-balance-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="USDe balances in card wallets over time"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Deposits & withdrawals</h3>
+                </div>
+                <div class="full-legend">
+                  <span>Deposits</span><span>Withdrawals</span>
+                </div>
+                <svg
+                  id="pay-flows-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Daily deposits above zero and withdrawals below zero"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+            </div>
+            <div class="full-metrics">
+              <div class="full-metric">
+                <label>Deposited / all time</label
+                ><strong data-pay="lifetime_deposits_usde" data-format="compact"
+                  >—</strong
+                >
+              </div>
+              <div class="full-metric">
+                <label>Withdrawn / all time</label
+                ><strong
+                  data-pay="lifetime_withdrawals_usde"
+                  data-format="compact"
+                  >—</strong
+                >
+              </div>
+              <div class="full-metric">
+                <label>Card spend / all time</label
+                ><strong data-pay="lifetime_spend_usde" data-format="compact"
+                  >—</strong
+                >
+              </div>
+              <div class="full-metric">
+                <label>Refunded / all time</label
+                ><strong id="pay-refunds"></strong>
+              </div>
+            </div>
+            <p class="full-note">
+              Transfers exclude card purchases, refunds and rewards. Daily and
+              headline queries are separate snapshots and may differ slightly.
+            </p>
+          </section>
+          <section id="pay-wallets" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">03 /</span>Wallet participation
+              </h2>
+              <p>Creation, funding and spending are distinct measures</p>
+            </div>
+            <div class="full-grid">
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Wallets created</h3>
+                  <span data-pay="wallets_created" data-format="num">—</span>
+                </div>
+                <p class="full-caption">Cumulative deployed card wallets</p>
+                <svg
+                  id="pay-created-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Cumulative card wallets created"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Daily spending wallets</h3>
+                  <span id="pay-last-active"></span>
+                </div>
+                <p class="full-caption">
+                  Distinct wallets with a card purchase each day
+                </p>
+                <svg
+                  id="pay-active-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Distinct daily spending wallets"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+            </div>
+            <div class="full-grid" style="margin-top: 24px">
+              <div class="full-well full-funnel">
+                <h3>Three measures of participation</h3>
+                <div class="full-balance-line">
+                  <span>Created · all time</span
+                  ><span data-pay="wallets_created" data-format="num">—</span>
+                </div>
+                <div class="full-track">
+                  <div class="full-fill" style="width: 100%"></div>
+                </div>
+                <div class="full-balance-line">
+                  <span>Holding USDe · snapshot</span
+                  ><span id="pay-funded-count">—</span>
+                </div>
+                <div class="full-track">
+                  <div
+                    class="full-fill"
+                    id="pay-funded-bar"
+                    style="width: 0%"
+                  ></div>
+                </div>
+                <div class="full-balance-line">
+                  <span>Ever purchased</span><span id="pay-spent-count">—</span>
+                </div>
+                <div class="full-track">
+                  <div
+                    class="full-fill"
+                    id="pay-spent-bar"
+                    style="width: 0%; background: var(--sx-copper)"
+                  ></div>
+                </div>
+                <p class="full-caption" style="margin-top: 20px">
+                  Percentages use created wallets as the denominator. These are
+                  not sequential funnel stages.
+                </p>
+              </div>
+              <div class="full-well">
+                <div class="sx-eyebrow">Balance concentration</div>
+                <div
+                  class="full-number"
+                  id="pay-concentration"
+                  style="margin: 12px 0 4px"
+                ></div>
+                <p class="full-note">
+                  Of USDe balances belong to the top 10 wallets.
+                </p>
+                <div class="full-split-bar">
+                  <div id="pay-top-ten-bar"></div>
+                  <div id="pay-other-bar"></div>
+                </div>
+                <div class="full-legend">
+                  <span>Top 10 wallets</span><span>All other wallets</span>
+                </div>
+                <p class="full-note" style="margin-top: 19px">
+                  Read balance growth alongside participation: changes in a few
+                  large wallets can move the total.
+                </p>
+                <div class="full-balance-line">
+                  <span class="sx-muted">Average funded balance</span
+                  ><span id="pay-average-balance"></span>
+                </div>
+              </div>
+            </div>
+            <div class="full-metrics" style="margin-top: 20px">
+              <div class="full-metric">
+                <label>Active wallets / 30d</label
+                ><strong data-pay="mau_30d" data-format="num">—</strong>
+              </div>
+              <div class="full-metric">
+                <label>Active wallets / 7d</label
+                ><strong data-pay="wau_7d" data-format="num">—</strong>
+              </div>
+              <div class="full-metric">
+                <label>Created / 30d</label
+                ><strong data-pay="wallets_created_30d" data-format="num"
+                  >—</strong
+                >
+              </div>
+              <div class="full-metric">
+                <label>Purchases / all time</label
+                ><strong data-pay="lifetime_spend_count" data-format="num"
+                  >—</strong
+                >
+              </div>
+            </div>
+          </section>
+          <section id="pay-rewards" class="full-section">
+            <div class="full-section-top">
+              <h2>
+                <span class="sx-section-num">04 /</span>Cardholder rewards
+              </h2>
+              <div class="sx-rangebar" aria-label="Rewards aggregation">
+                <button
+                  type="button"
+                  data-reward-view="daily"
+                  aria-pressed="false"
+                >
+                  Daily</button
+                ><button
+                  type="button"
+                  data-reward-view="total"
+                  aria-pressed="true"
+                >
+                  Cumulative
+                </button>
+              </div>
+            </div>
+            <div class="full-reward-total">
+              <div class="full-number" id="pay-reward-total"></div>
+              <small>Cashback + balance yield paid / all time</small>
+            </div>
+            <div class="full-grid">
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Cashback</h3>
+                  <span data-pay="cashback_usd_total" data-format="compact"
+                    >—</span
+                  >
+                </div>
+                <p class="full-caption">
+                  Paid in AVAX · dollar value when paid
+                </p>
+                <svg
+                  id="pay-cashback-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Cashback payments in dollar value"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+              <article class="full-chart-box">
+                <div class="full-chart-top">
+                  <h3>Balance yield</h3>
+                  <span data-pay="yield_usd_total" data-format="compact"
+                    >—</span
+                  >
+                </div>
+                <p class="full-caption">Paid in USDe on card balances</p>
+                <svg
+                  id="pay-yield-chart"
+                  class="full-chart"
+                  role="img"
+                  aria-label="Yield paid on card balances"
+                ></svg>
+                <div class="full-readout"></div>
+              </article>
+            </div>
+            <div class="full-metrics">
+              <div class="full-metric">
+                <label>Cashback recipients</label
+                ><strong data-pay="cashback_wallets_total" data-format="num"
+                  >—</strong
+                ><small>Distinct wallets / all time</small>
+              </div>
+              <div class="full-metric">
+                <label>Yield recipients</label
+                ><strong data-pay="yield_wallets_total" data-format="num"
+                  >—</strong
+                ><small>Distinct wallets / all time</small>
+              </div>
+              <div class="full-metric">
+                <label>Realized cashback / 30d</label
+                ><strong id="pay-cashback-rate"></strong
+                ><small>Paid cashback / spend</small>
+              </div>
+              <div class="full-metric">
+                <label>Realized yield APY / 30d</label
+                ><strong id="pay-yield-apy"></strong
+                ><small>Annualized historical rate</small>
+              </div>
+            </div>
+            <p class="full-note">
+              Historical realized rates are derived by the source query. They
+              are not advertised or guaranteed future rates.
+            </p>
+          </section>
+          <section class="full-section">
+            <div class="full-section-top">
+              <h2><span class="sx-section-num">05 /</span>Purchase profile</h2>
+              <p>Source headline metrics</p>
+            </div>
+            <div class="full-metrics">
+              <div class="full-metric">
+                <label>Median purchase</label
+                ><strong data-pay="median_spend_usde" data-format="usd"
+                  >—</strong
+                >
+              </div>
+              <div class="full-metric">
+                <label>Average purchase</label
+                ><strong data-pay="avg_spend_usde" data-format="usd">—</strong>
+              </div>
+              <div class="full-metric">
+                <label>Refunded spend share</label
+                ><strong data-pay="refund_rate" data-format="pct">—</strong>
+              </div>
+              <div class="full-metric">
+                <label>Batched spend share</label
+                ><strong id="pay-batched"></strong>
+              </div>
+            </div>
+          </section>
+          <section id="pay-methodology" class="full-last-section">
+            <details class="full-disclosure">
+              <summary>Daily observations · last 10 days</summary>
+              <div class="full-table-wrap">
+                <table class="full-table">
+                  <thead>
+                    <tr>
+                      <th>Date</th>
+                      <th>Spend</th>
+                      <th>Purchases</th>
+                      <th>Active wallets</th>
+                      <th>USDe held</th>
+                    </tr>
+                  </thead>
+                  <tbody id="pay-data-rows"></tbody>
+                </table>
+              </div>
+            </details>
+            <details class="full-disclosure">
+              <summary>Methodology & definitions</summary>
+              <p>
+                Card spend measures purchases settled on-chain in USDe. Deposits
+                and withdrawals measure transfers into and out of card wallets,
+                excluding purchases, refunds and rewards. Wallets created are
+                deployed addresses, not verified individual users. Holding USDe
+                is a snapshot balance test; ever spent is an all-time count.
+                Daily spending wallets and rolling active-wallet counts use
+                different windows and must not be summed.
+              </p>
+              <p>
+                Headline rolling windows follow the source query. The newest
+                daily observation may be partial. Charts preserve observed
+                dates; missing observations are not inserted as zero. Cumulative
+                charts retain their all-time baseline when the visible range
+                changes. The top-10 concentration figure is from the headline
+                snapshot.
+              </p>
+            </details>
+            <details class="full-disclosure">
+              <summary>Sources & refresh information</summary>
+              <p>
+                Avalanche C-Chain data through Dune. The dashboard checks the
+                repository feed every five minutes. Dune refreshes follow the
+                repository pipeline; the update time above describes the source
+                data, not your browser refresh. A notice appears when this feed
+                is more than 36 hours old.
+              </p>
+              <p>
+                <a
+                  href="https://github.com/QorbQuant/ethenaPay/blob/main/dune/05_daily_metrics.sql"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Daily metric query ↗</a
+                >
+                ·
+                <a
+                  href="https://github.com/QorbQuant/ethenaPay/blob/main/dune/06_kpi_headline.sql"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >Headline metric query ↗</a
+                >
+              </p>
+            </details>
+          </section>
+        </div>
 
-  .micro { text-transform: uppercase; font-size: 10px; letter-spacing: .13em; color: var(--ink-2); }
-  header { display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; flex-wrap: wrap; border-bottom: 1px solid var(--panel-edge); padding-bottom: 18px; }
-  .eyebrow { font-size: 11px; letter-spacing: .16em; text-transform: uppercase; color: var(--ink-2); margin-bottom: 8px; }
-  h1 { font-size: clamp(20px, 2.6vw, 28px); font-weight: 700; letter-spacing: .5px; line-height: 1.3; }
-  .sub { color: var(--ink-2); margin-top: 10px; font-size: 13px; }
-  .live-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; background: var(--unl); margin-right: 6px; animation: pulse 2s infinite; }
-  .live-dot.err { background: var(--red); animation: none; }
-  @keyframes pulse { 0%,100% { opacity: 1 } 50% { opacity: .35 } }
-  .badges { display: flex; gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); }
-  .badge { background: var(--panel); padding: 10px 16px; text-align: right; min-width: 130px; }
-  .badge .bv { font-size: 20px; font-weight: 700; margin-top: 4px; }
-  .badge .c-mcap { color: var(--mcap); } .badge .c-unl { color: var(--unl); }
-
-  .tiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(172px, 1fr)); gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); border-radius: 2px; overflow: hidden; margin: 28px 0 8px; }
-  .tiles:empty { min-height: 110px; }
-  .tile { background: var(--panel); padding: 14px 16px; }
-  .tile .k { text-transform: uppercase; font-size: 10px; letter-spacing: .12em; color: var(--ink-2); }
-  .tile .v { font-size: clamp(17px, 1.8vw, 22px); font-weight: 700; margin-top: 6px; }
-  .tile .d { font-size: 11px; margin-top: 4px; color: var(--ink-3); }
-  .up { color: var(--unl); } .down { color: var(--red); }
-  .v.c-nav { color: var(--nav); } .v.c-unl { color: var(--unl); } .v.c-mcap { color: var(--mcap); }
-
-  section { margin-top: 42px; }
-  .sec-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; border-bottom: 1px solid var(--panel-edge); padding-bottom: 8px; margin-bottom: 14px; flex-wrap: wrap; }
-  h2 { font-size: 12px; text-transform: uppercase; letter-spacing: .14em; color: var(--ink); font-weight: 700; }
-  .chart-note { color: var(--ink-3); font-size: 11px; }
-  .chart-wrap { position: relative; width: 100%; }
-  .chart-wrap:empty { aspect-ratio: 1160/420; min-height: 160px; }
-  .chart-wrap svg { width: 100%; height: auto; display: block; }
-  .tiles:empty, .chart-wrap:empty {
-    background: linear-gradient(100deg, var(--panel) 40%, var(--glow) 50%, var(--panel) 60%);
-    background-size: 200% 100%; animation: shimmer 1.4s infinite; border-radius: 2px;
-  }
-  @keyframes shimmer { to { background-position: -200% 0 } }
-  .tooltip {
-    position: absolute; pointer-events: none; display: none; z-index: 3; min-width: 190px;
-    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 4px;
-    box-shadow: 0 10px 28px rgba(0,0,0,.5); padding: 9px 12px; font-size: 12px; line-height: 1.7;
-  }
-  .tooltip .th { text-transform: uppercase; font-size: 10px; letter-spacing: .1em; color: var(--ink-2); border-bottom: 1px solid var(--panel-edge); padding-bottom: 4px; margin-bottom: 5px; }
-  .tooltip .tr { display: flex; justify-content: space-between; gap: 16px; }
-  .tooltip .tr b { font-weight: 700; }
-  .legend { display: flex; gap: 22px; justify-content: center; margin-top: 10px; color: var(--ink-2); font-size: 11px; letter-spacing: .08em; text-transform: uppercase; flex-wrap: wrap; }
-  .legend span::before { content: "●"; margin-right: 7px; }
-  .legend .l-nav::before { color: var(--nav); } .legend .l-unl::before { color: var(--unl); }
-  .legend .l-mcap::before { color: var(--mcap); } .legend .l-ink::before { color: var(--ink); }
-  .legend .l-red::before { color: var(--red); } .legend .l-ink2::before { color: var(--ink-2); }
-
-  .tabs { display: flex; gap: 1px; background: var(--panel-edge); border: 1px solid var(--panel-edge); margin-top: 24px; }
-  .tab {
-    background: var(--panel); color: var(--ink-2); border: 0; border-bottom: 2px solid transparent;
-    font: inherit; font-size: 11px; letter-spacing: .13em; text-transform: uppercase;
-    padding: 11px 20px; cursor: pointer;
-  }
-  .tab:hover { color: var(--ink); }
-  .tab[aria-selected="true"] { color: var(--ink); background: var(--glow); border-bottom-color: var(--unl); }
-  .tab:focus-visible { outline: 1px dashed var(--unl); outline-offset: -4px; }
-  .view[hidden] { display: none; }
-
-  .table-scroll { overflow-x: auto; }
-  table { border-collapse: collapse; width: 100%; font-size: 13px; margin-top: 12px; min-width: 560px; font-variant-numeric: tabular-nums; }
-  th, td { text-align: right; padding: 7px 12px; border-bottom: 1px solid var(--grid); }
-  th:first-child, td:first-child { text-align: left; }
-  th { color: var(--ink-2); font-weight: 400; text-transform: uppercase; font-size: 10px; letter-spacing: .1em; border-bottom: 1px solid var(--panel-edge); }
-  tbody tr:hover td { background: rgba(255,255,255,.03); }
-  .stale-banner {
-    border: 1px solid var(--red); border-left-width: 3px; border-radius: 2px;
-    background: rgba(224,122,122,.08); color: var(--ink);
-    padding: 10px 14px; margin-bottom: 14px; font-size: 12px; line-height: 1.6;
-  }
-  .explainer { background: rgba(38,35,44,.5); border: 1px solid var(--panel-edge); border-radius: 2px; padding: 14px 18px; margin-top: 18px; font-size: 12px; line-height: 1.8; color: var(--ink-2); }
-  .explainer b { color: var(--ink); font-weight: 700; }
-  .explainer ul { margin: 6px 0 0; padding-left: 18px; }
-  .explainer li { margin-top: 4px; }
-  #filings th, #filings td { text-align: left; }
-  #filings td:first-child { white-space: nowrap; color: var(--ink-2); }
-  #filings .all-row td { text-align: right; border-bottom: none; }
-  .prog { height: 10px; background: var(--panel); border-radius: 5px; overflow: hidden; margin-top: 14px; display: flex; }
-  .prog > div { height: 100%; }
-  .prog .p-unl { background: var(--unl); }
-  .prog .p-lock { background: var(--panel-edge); }
-  details { margin-top: 18px; color: var(--ink-2); font-size: 13px; }
-  summary { cursor: pointer; }
-  a { color: var(--unl); }
-  a:focus-visible, summary:focus-visible { outline: 1px dashed var(--unl); outline-offset: 2px; }
-
-  footer { border-top: 1px solid var(--panel-edge); margin-top: 52px; padding-top: 16px; color: var(--ink-2); font-size: 12px; line-height: 1.8; }
-  footer .frow { display: flex; justify-content: space-between; gap: 20px; flex-wrap: wrap; margin-top: 10px; }
-
-  .toast {
-    position: fixed; right: 20px; bottom: 20px; z-index: 10;
-    background: #14121a; border: 1px solid var(--panel-edge); border-radius: 6px;
-    box-shadow: 0 10px 28px rgba(0,0,0,.5); padding: 12px 38px 12px 16px;
-    font-size: 13px; color: var(--ink); display: flex; align-items: center; gap: 8px;
-    transform: translateY(120%); opacity: 0; transition: transform .45s ease, opacity .45s ease;
-  }
-  .toast.show { transform: none; opacity: 1; }
-  .toast .heart { display: inline-block; animation: heartbeat 1.6s infinite; }
-  @keyframes heartbeat { 0%,100% { transform: scale(1) } 12% { transform: scale(1.25) } 24% { transform: scale(1) } }
-  .toast a { color: var(--unl); font-weight: 700; text-decoration: none; }
-  .toast a:hover { text-decoration: underline; }
-  .toast .x-close {
-    position: absolute; top: 4px; right: 8px; background: none; border: none;
-    color: var(--ink-3); font: inherit; font-size: 15px; cursor: pointer; padding: 2px;
-  }
-  .toast .x-close:hover { color: var(--ink); }
-  @media (prefers-reduced-motion: reduce) {
-    .live-dot, .tiles:empty, .chart-wrap:empty, .toast .heart { animation: none; }
-    .toast { transition: none; }
-  }
-  @media print {
-    body { background: #fff; color: #111; }
-    body::after { display: none; }
-    .tile, .badge { background: #fff; }
-    .tile .k, .sub, .chart-note, th, footer { color: #555; }
-    th, td { border-color: #ddd; }
-    a { color: #0a6b4f; }
-    .tooltip, .live-dot { display: none !important; }
-    section { break-inside: avoid; }
-    main { max-width: none; padding: 0; }
-  }
-</style>
-</head>
-<body>
-<main>
-  <header>
-    <div>
-      <div class="eyebrow" id="eyebrow">EthenaDAT / NAV Tracker · Nasdaq: USDE</div>
-      <h1 id="h1">StablecoinX vs. its ENA treasury</h1>
-      <div class="sub"><span class="live-dot" aria-hidden="true"></span><span id="sub">loading…</span></div>
-    </div>
-    <div class="badges" id="badges-nav">
-      <div class="badge"><div class="micro">mNAV</div><div class="bv c-mcap" id="badge-mnav">–</div></div>
-      <div class="badge"><div class="micro" id="badge-unl-k">Unlocked mNAV</div><div class="bv c-unl" id="badge-unl">–</div></div>
-    </div>
-    <div class="badges" id="badges-pay" hidden>
-      <div class="badge"><div class="micro">USDe held</div><div class="bv c-unl" id="badge-tvl">–</div></div>
-      <div class="badge"><div class="micro">Spend 30d</div><div class="bv c-mcap" id="badge-spend">–</div></div>
-    </div>
-  </header>
-  <noscript><p style="color:#9a97a6;font-size:13px;margin-top:12px">This dashboard requires JavaScript to load data.json.</p></noscript>
-
-  <nav class="tabs" role="tablist" aria-label="Dashboards">
-    <button class="tab" id="tab-nav" role="tab" aria-selected="true" aria-controls="view-nav" data-view="nav">NAV Tracker</button>
-    <button class="tab" id="tab-pay" role="tab" aria-selected="false" aria-controls="view-pay" data-view="pay">EthenaPay</button>
-  </nav>
-
-  <div class="view" id="view-nav" role="tabpanel" aria-labelledby="tab-nav">
-  <div class="tiles" id="tiles"></div>
-  <div class="tiles" id="tiles2"></div>
-
-  <section>
-    <div class="sec-head"><h2>Market cap vs. NAV</h2><div class="chart-note">Daily since the Jun 26, 2026 Nasdaq listing · hover for values</div></div>
-    <div class="chart-wrap" id="chart-nav"></div>
-    <div class="legend">
-      <span class="l-nav">Total ENA NAV</span>
-      <span class="l-unl">Unlocked ENA NAV*</span>
-      <span class="l-mcap">USDE market cap</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>NAV per share vs. share price</h2><div class="chart-note">Everything in $/share on one axis — the gap is the discount</div></div>
-    <div class="chart-wrap" id="chart-pershare"></div>
-    <div class="legend">
-      <span class="l-nav">NAV per share</span>
-      <span class="l-unl">Unlocked NAV per share*</span>
-      <span class="l-mcap">USDE share price</span>
-      <span class="l-ink">Warrant breakeven</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>mNAV ratio</h2><div class="chart-note">Market cap ÷ NAV · 1.0× = market pays full spot value · dashed = historical mean</div></div>
-    <div class="chart-wrap" id="chart-mnav"></div>
-    <div class="legend">
-      <span class="l-ink">mNAV (total)</span>
-      <span class="l-unl">mNAV (unlocked only)</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Indexed performance</h2><div class="chart-note">Rebased to 100 at listing — separates ENA beta from the re-rating</div></div>
-    <div class="chart-wrap" id="chart-indexed"></div>
-    <div class="legend">
-      <span class="l-mcap">USDE</span>
-      <span class="l-ink">ENA</span>
-      <span class="l-nav">NAV per share</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>ENA per share</h2><div class="chart-note">Tokens backing each share — the unlocked line steps up on vesting dates and joins the total on Oct 5, 2026, when every lock-up was waived</div></div>
-    <div class="chart-wrap" id="chart-enapershare"></div>
-    <div class="legend">
-      <span class="l-nav">Total ENA / share</span>
-      <span class="l-unl">Unlocked ENA / share</span>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Warrants (USDEW)</h2><div class="chart-note">11.5M public warrants · $11.50 strike · 1:1 · expire Jun 25, 2031</div></div>
-    <div class="tiles" id="tiles-w" style="margin-top:0"></div>
-    <div class="explainer">
-      <div class="micro">What a warrant is</div>
-      Each USDEW warrant is the right to buy <b>1 new USDE share from the company for $11.50</b>, any time until Jun 25, 2031 — a five-year call option that StablecoinX itself wrote. <span id="ex-moneyness"></span>
-      <ul>
-        <li><b>Same thesis, more leverage:</b> USDE only needs to re-rate to <b><span id="ex-mnavbe">—</span> of NAV</b> by 2031 for warrant buyers to break even — the warrant is a geared bet on the discount closing, with a deadline.</li>
-        <li><b>Dilution if they pay off:</b> beyond the 11.5M public warrants, sponsors hold 7.6M private warrants (3.27M at $11.50, 4.36M at $15.00 — issued Aug 2026 to settle $6.9M of SPAC notes). Full exercise of every class mints <span id="ex-dil">19.1M new shares</span> but delivers <b>~$235M cash</b> to the treasury. Above the strikes, the honest per-share metric is fully-diluted NAV: <b><span id="ex-fdnav">$—</span>/share</b> vs <span id="ex-nav">$—</span> undiluted.</li>
-        <li><b>Supply overhang:</b> an S-1 filed Aug 31 and declared effective Sep 14, 2026 registers the resale of 12.7M existing shares (~29% of the Class A float) plus the shares under every warrant — those shares can now be sold. Insider sales will show up under <i>Insider filings</i> below; PIPE investors don't file Form 4s, so their sales won't.</li>
-        <li><b>The company holds a kill switch:</b> if USDE holds above <b>$10</b> for 20 of 30 trading days, StablecoinX can force-convert the warrants (capped at 0.361 shares each, or holders get $0.10); above <b>$18</b> the redemption pays just $0.01. A sustained rally likely ends the warrants long before 2031. <span id="ex-trigger"></span></li>
-      </ul>
-    </div>
-    <div class="chart-wrap" id="chart-warrant" style="margin-top:22px"></div>
-    <div class="legend">
-      <span class="l-ink">USDEW warrant</span>
-      <span class="l-mcap">USDE stock</span>
-      <span class="l-nav">NAV per share</span>
-    </div>
-    <div class="sec-head" style="margin-top:30px"><h2>Payoff at expiry</h2><div class="chart-note" id="payoff-note">Multiple on today's money at each USDE price in Jun 2031 · ignores the $10/$18 redemption calls</div></div>
-    <div class="chart-wrap" id="chart-payoff"></div>
-    <div class="legend">
-      <span class="l-ink">Warrant (per $ in USDEW)</span>
-      <span class="l-mcap">Stock (per $ in USDE)</span>
-    </div>
-  </section>
-
-  <section id="sec-options" hidden>
-    <div class="sec-head"><h2>Listed options (USDE)</h2><div class="chart-note" id="opt-note"></div></div>
-    <div class="tiles" id="tiles-o" style="margin-top:0"></div>
-    <div class="table-scroll">
-      <table id="options"><thead><tr><th>Expiry</th><th>Strikes</th><th>Call OI</th><th>Put OI</th><th>Volume c / p</th><th>ATM call bid / ask</th><th>ATM put bid / ask</th></tr></thead><tbody></tbody></table>
-    </div>
-    <div class="chart-note" id="opt-status" style="margin-top:8px"></div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Lock-ups</h2><div class="chart-note" id="unlock-note">Contractual 48-month schedule (424B3) until every lock-up was waived effective Oct 5, 2026 (8-K, Sep 17)</div></div>
-    <div class="prog" id="prog"></div>
-    <div class="chart-note" id="prog-label" style="margin-top:8px"></div>
-    <div class="table-scroll">
-      <table id="unlocks"><thead><tr><th>Unlock date</th><th>ENA tokens</th><th>Tranche</th><th>% of treasury</th><th>Cumulative unlocked</th></tr></thead><tbody></tbody></table>
-    </div>
-    <div class="explainer">
-      <div class="micro">Lock-up waiver · 8-K, Sep 17, 2026</div>
-      Effective <b>Oct 5, 2026</b> the Ethena Foundation waived every lock-up on the treasury's ENA, including the 48-month schedule — so from that date unlocked NAV and total NAV are the same number.
-      The same letter lets StablecoinX <b>sell ENA</b> to fund working capital ("Funding Sales"): it gives the Foundation five business days' notice, and the Foundation can buy the tokens at the offered price first.
-      Neither side has to announce a sale unless the law requires it, so the holdings on this page are the <b>last disclosed figure</b> — <span id="holdings-src">—</span> — and can fall without a filing saying so.
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>SEC filings</h2><div class="chart-note">Primary sources · 10-K / 10-Q filings will be added as filed</div></div>
-    <div class="table-scroll">
-      <table id="filings">
-        <thead><tr><th>Date</th><th>Filing</th><th>What's in it</th></tr></thead>
-        <tbody>
-          <tr><td>Sep 17, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea0305686-8k_stablecoinx.htm">8-K — lock-up waiver</a></td><td>Ethena Foundation waives every ENA lock-up effective Oct 5, 2026, and sets terms for the company to sell ENA ("Funding Sales")</td></tr>
-          <tr><td>Sep 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026099731/ea0305435-424b3_stable.htm">424B3 — resale prospectus</a></td><td>S-1 declared effective: the 12.7M-share resale and all warrant shares are now registered for sale</td></tr>
-          <tr><td>Sep 8, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026097877/ea0304764-8k_stablecoinx.htm">8-K — CEO change</a></td><td>Edward Chen resigns as CEO (stays a director); Christopher Jensen appointed CEO and director</td></tr>
-          <tr><td>Sep 3, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026097183/ea0304267-s8_stablecoinx.htm">S-8 — equity plan</a></td><td>Registers 1,802,203 Class A shares (~7% of Class A) for the 2026 Stock Incentive Plan</td></tr>
-          <tr><td>Aug 31, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026095808/ea0303782-s1_stable.htm">S-1 — resale &amp; warrant shares</a></td><td>Registers 12.7M-share insider resale (~29% of Class A float) plus shares under all warrants (11.5M public + 7.6M sponsor)</td></tr>
-        <tr><td>Aug 24, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026093069/ea0303125-8k_stablecoinx.htm">8-K — sponsor warrants</a></td><td>$6.9M sponsor notes settled with 3.27M warrants @ $11.50 + 4.36M @ $15.00 (private, non-listed)</td></tr>
-        <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026090250/ea0301482-10q_stable.htm">10-Q — Q2 2026</a></td><td>First quarterly report as a public company</td></tr>
-        <tr><td>Aug 14, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm">8-K — Q2 2026 results</a></td><td>Treasury confirmed at ~3.0B ENA, $18.9M cash, ecosystem updates</td></tr>
-          <tr><td>Jul 2, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm">Super 8-K — closing</a></td><td>Share counts (24.03M Class A + 3.16M Class B), PIPE structure ($893M)</td></tr>
-          <tr><td>Jun 26, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026072231/ea029602401ex99-1.htm">8-K — Nasdaq debut</a></td><td>3,029M ENA at $0.0909 VWAP ($275M), $11.42/share NAV framing</td></tr>
-          <tr><td>May 29, 2026</td><td><a href="https://www.sec.gov/Archives/edgar/data/2080215/000121390026062798/ea0258165-06.htm">424B3 — prospectus</a></td><td>Locked ENA purchase terms: 48-month lock-up, 25% cliff, 36 monthly installments</td></tr>
-          <tr class="all-row"><td colspan="3"><a href="https://www.sec.gov/edgar/browse/?CIK=2080215">All StablecoinX filings on EDGAR →</a></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
-
-  <section>
-    <div class="sec-head"><h2>Insider filings</h2><div class="chart-note">Forms 3 &amp; 4 from EDGAR · officers, directors and 10% holders only</div></div>
-    <div class="table-scroll">
-      <table id="insiders"><thead><tr><th>Filed</th><th>Insider</th><th>Role</th><th>Transaction</th><th>Shares</th><th>Price</th></tr></thead><tbody></tbody></table>
-    </div>
-    <div class="chart-note" id="insider-summary" style="margin-top:8px"></div>
-  </section>
-
-  <details>
-    <summary>Data table (last 10 sessions)</summary>
-    <div class="table-scroll"><table id="dtable"></table></div>
-  </details>
-  </div><!-- /view-nav -->
-
-  <div class="view" id="view-pay" role="tabpanel" aria-labelledby="tab-pay" hidden>
-    <div id="pay-stale" class="stale-banner" hidden></div>
-    <div class="tiles" id="pay-tiles"></div>
-    <div class="tiles" id="pay-tiles2"></div>
-
-    <section>
-      <div class="sec-head"><h2>USDe held</h2><div class="chart-note">Balance across every user wallet · a running total, so it carries forward day to day</div></div>
-      <div class="chart-wrap" id="chart-pay-tvl"></div>
-      <div class="legend"><span class="l-unl">USDe held</span></div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>Card spend</h2><div class="chart-note">USDe drawn from wallets to card settlement each day, with the running total on the right axis · one authorization = one event, never one transaction</div></div>
-      <div class="chart-wrap" id="chart-pay-spend"></div>
-      <div class="legend">
-        <span class="l-mcap">Daily spend (left)</span>
-        <span class="l-nav">Cumulative (right)</span>
+        <footer class="full-footer">
+          <span>ethenadash · Independent research</span>
+          <div class="full-footer-links">
+            <a
+              href="https://x.com/Degenerate_DeFi"
+              target="_blank"
+              rel="noopener noreferrer"
+              >By @Degenerate_DeFi ↗</a
+            ><a
+              href="https://github.com/QorbQuant/EthenaDAT"
+              target="_blank"
+              rel="noopener noreferrer"
+              >Source repository ↗</a
+            >
+          </div>
+        </footer>
       </div>
-    </section>
-
-    <section id="sec-pay-rewards">
-      <div class="sec-head"><h2>Cardholder rewards</h2><div class="chart-note">Cashback in AVAX for card spend · yield in USDe on balances, claimed through Merkl</div></div>
-      <div class="tiles" id="pay-rewards" style="margin-top:0"></div>
-      <div class="chart-wrap" id="chart-pay-cashback" style="margin-top:22px"></div>
-      <div class="legend">
-        <span class="l-unl">Daily cashback, $ (left)</span>
-        <span class="l-ink">Cumulative (right)</span>
-      </div>
-      <div class="chart-wrap" id="chart-pay-yield" style="margin-top:22px"></div>
-      <div class="legend">
-        <span class="l-nav">Daily yield, $ (left)</span>
-        <span class="l-ink">Cumulative (right)</span>
-      </div>
-      <div class="chart-note" id="pay-rewards-note" style="margin-top:10px"></div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>Deposits &amp; withdrawals</h2><div class="chart-note">External USDe in and out each day · wallet-to-wallet transfers and refunded authorizations are excluded</div></div>
-      <div class="chart-wrap" id="chart-pay-flows"></div>
-      <div class="legend"><span class="l-nav">Deposits (above)</span><span class="l-red">Withdrawals (below)</span></div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>Wallets</h2><div class="chart-note">Deployed cumulatively, then how many actually spent on each day</div></div>
-      <div class="chart-wrap" id="chart-pay-wallets"></div>
-      <div class="legend"><span class="l-nav">Wallets deployed (cumulative)</span></div>
-      <div class="chart-wrap" id="chart-pay-active" style="margin-top:18px"></div>
-      <div class="legend"><span class="l-unl">Wallets spending that day</span></div>
-    </section>
-
-    <section>
-      <div class="sec-head"><h2>From wallet to spender</h2><div class="chart-note">Three defensible readings of "users" — they differ by ~30×</div></div>
-      <div class="tiles" id="pay-funnel" style="margin-top:0"></div>
-    </section>
-
-  </div><!-- /view-pay -->
-
-  <footer>
-    <div class="micro">Notes &amp; sources</div>
-    <div style="margin-top:6px">
-      <span id="fn1">*Unlocked NAV still marks ENA at spot; the position is ~39% of circulating supply, so true liquidation value sits below even that line. From Oct 5, 2026 every lock-up is waived, so unlocked and total NAV are the same.</span><br>
-      Treasury cost basis ($893M / $0.295 per ENA) per the PIPE terms in the Super 8-K. Source: SEC filings, Yahoo Finance, CoinGecko.<br>
-      <span id="stamp"></span>
     </div>
-    <div style="margin-top:6px" id="foot-pay" hidden>
-      EthenaPay is the USDe card programme on Avalanche C-Chain (chain 43114). Metrics are
-      computed from chain data via Dune; the query definitions and the on-chain verification
-      behind them live in the <b>QorbQuant/ethenaPay</b> repo.
-      <span id="pay-stamp"></span>
-    </div>
-    <div class="frow">
-      <div>Not investment advice.</div>
-      <div>made with ❤️ by <a href="https://x.com/Degenerate_DeFi">@Degenerate_DeFi</a></div>
-    </div>
-  </footer>
-</main>
-
-<div class="toast" id="toast" role="status">
-  made with <span class="heart" aria-hidden="true">❤️</span> by
-  <a href="https://x.com/Degenerate_DeFi" target="_blank" rel="noopener">@Degenerate_DeFi</a>
-  <button class="x-close" id="toast-close" aria-label="Dismiss">×</button>
-</div>
-
-<script>
-const C = { nav: "#93a8f0", unl: "#4ed69e", mcap: "#c3f53c", ink: "#e8e5e3", ink2: "#9a97a6", ink3: "#757280", grid: "#2e2b35", red: "#e07a7a" };  /* red mirrors the --red CSS token */
-const PIPE_COST = 893e6;
-const fmtM = v => v == null ? "–" : "$" + (v / 1e6).toFixed(1) + "M";
-const fmtX = v => v == null ? "–" : v.toFixed(2) + "×";
-const fmt$ = v => v == null ? "–" : "$" + v.toFixed(v < 1 ? 4 : 2);
-const fmtB = v => (v / 1e9).toFixed(2) + "B";
-const sign = v => (v >= 0 ? "+" : "") + v.toFixed(0) + "%";
-const MON = ["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
-const fmtD = iso => { const [y,m,d] = iso.split("-").map(Number); return MON[m-1] + " " + d; };
-const TRANCHE_NAMES = { cash_pipe_initial: "Cash PIPE — initial", cash_pipe_additional: "Cash PIPE — additional", ena_paid_pipe_and_contribution: "ENA-paid PIPE + contribution" };
-
-let D = null;
-let enaLive = null;
-let liveW = null;  // live USDEW quote from the CF worker
-const QUOTES_URL = "https://ethenadash-quotes.creditforagents-keeper.workers.dev/";
-
-function monthAdd(base, months) {
-  const y = base.getUTCFullYear(), m = base.getUTCMonth() + months;
-  const lastDay = new Date(Date.UTC(y, m + 1, 0)).getUTCDate();
-  return new Date(Date.UTC(y, m, Math.min(base.getUTCDate(), lastDay)));
-}
-
-function isLocked(t) { return !(t.locked === false || t.locked === "false"); }
-
-// Contractual schedule only: 25% at the 12-month cliff, then 36 monthly steps.
-function scheduledFrac(t, atDate) {
-  const p = new Date(t.purchase_date + "T00:00:00Z");
-  const cliff = monthAdd(p, 12);
-  if (atDate < cliff) return 0;
-  let months = (atDate.getUTCFullYear() - cliff.getUTCFullYear()) * 12 + (atDate.getUTCMonth() - cliff.getUTCMonth());
-  if (atDate < monthAdd(p, 12 + months)) months -= 1;
-  return Math.min(1, 0.25 + 0.75 * Math.min(36, months) / 36);
-}
-
-// The Foundation waived every lock-up effective 2026-10-05 (8-K, Sep 17); a
-// tranche with waived_on is fully unlocked from that date.
-const waiverDate = t => t.waived_on ? new Date(t.waived_on + "T00:00:00Z") : null;
-
-function unlockedTokens(atDate) {
-  let unlocked = D.ena_holdings;
-  for (const t of D.tranches) {
-    if (!isLocked(t)) continue;
-    const w = waiverDate(t);
-    const frac = w && atDate >= w ? 1 : scheduledFrac(t, atDate);
-    unlocked -= t.tokens * (1 - frac);
-  }
-  return unlocked;
-}
-
-function upcomingUnlocks(n) {
-  const out = [], now = new Date();
-  for (const t of D.tranches) {
-    if (!isLocked(t)) continue;
-    const p = new Date(t.purchase_date + "T00:00:00Z");
-    const w = waiverDate(t);
-    const before = d => !w || d < w;
-    const cliff = monthAdd(p, 12);
-    if (cliff > now && before(cliff)) out.push({ date: cliff, tokens: t.tokens * 0.25, tranche: t.tranche, cliff: true });
-    for (let m = 1; m <= 36; m++) {
-      const d = monthAdd(p, 12 + m);
-      if (d > now && before(d)) out.push({ date: d, tokens: t.tokens * 0.75 / 36, tranche: t.tranche, cliff: false });
-    }
-    // everything still locked on the waiver date unlocks at once
-    if (w && w > now) {
-      const left = t.tokens * (1 - scheduledFrac(t, new Date(w - 1)));
-      if (left > 0) out.push({ date: w, tokens: left, tranche: t.tranche, waiver: true });
-    }
-  }
-  return out.sort((a, b) => a.date - b.date).slice(0, n);
-}
-
-function tile(k, v, cls, d) {
-  return `<div class="tile"><div class="k">${k}</div><div class="v ${cls || ""}">${v}</div><div class="d">${d || ""}</div></div>`;
-}
-
-const ordinal = n => n + (n % 100 >= 11 && n % 100 <= 13 ? "th" : ["th", "st", "nd", "rd"][n % 10] || "th");
-
-function pctile(arr, v) {
-  const clean = arr.filter(x => x != null);
-  return Math.round(clean.filter(x => x <= v).length / clean.length * 100);
-}
-
-function renderTiles() {
-  const s = D.series, i = s.date.length - 1;
-  const mcap = D.usde.price * D.shares_outstanding;
-  const ena = enaLive ? enaLive.price : s.ena_price[i];
-  const nav = ena * D.ena_holdings;
-  const unlTok = unlockedTokens(new Date());
-  const unlNav = ena * unlTok;
-  const chg = D.usde.prev_close ? (D.usde.price / D.usde.prev_close - 1) * 100 : null;
-  const chgHtml = chg == null ? "" : `<span class="${chg >= 0 ? "up" : "down"}">${chg >= 0 ? "+" : ""}${chg.toFixed(1)}% today</span>`;
-  const imp = nav / D.shares_outstanding, up = (imp / D.usde.price - 1) * 100;
-  const impU = unlNav / D.shares_outstanding, upU = (impU / D.usde.price - 1) * 100;
-  const allUnlocked = D.ena_holdings - unlTok < 1;
-  const src = D.ena_holdings_source;
-  const srcTxt = src ? `${fmtD(src.date)}, ${src.date.slice(0, 4)} · ${src.label}` : "last disclosure";
-
-  document.getElementById("tiles").innerHTML =
-    tile("USDE price", fmt$(D.usde.price), "", chgHtml) +
-    tile("Market cap", fmtM(mcap), "c-mcap", (D.shares_outstanding / 1e6).toFixed(1) + "M shares") +
-    tile("ENA price", fmt$(ena), "", enaLive ? "live · CoinGecko" : "last daily close") +
-    tile("Total ENA NAV", fmtM(nav), "c-nav", fmtB(D.ena_holdings) + " ENA") +
-    tile("Unlocked NAV", fmtM(unlNav), "c-unl", allUnlocked ? "100% — lock-ups waived Oct 5" : fmtB(unlTok) + " ENA liquid") +
-    tile("Implied @ 1:1 NAV", `${fmt$(imp)} <span class="${up >= 0 ? "up" : "down"}" style="font-size:13px">${sign(up)}</span>`, "",
-      allUnlocked ? "per share, all ENA at spot" : `unlocked-only: ${fmt$(impU)} (${sign(upU)})`);
-
-  // analytics row
-  const impliedEna = mcap / D.ena_holdings;
-  const enaDisc = (impliedEna / ena - 1) * 100;
-  const lockedTok = D.ena_holdings - unlTok;
-  const lockedVal = nav - unlNav;
-  const lockedPct = lockedVal > 0 ? (mcap - unlNav) / lockedVal * 100 : null;
-  const mnavNow = mcap / nav;
-  const mnavArr = s.mnav;
-  const mnavMin = Math.min(...mnavArr.filter(v => v != null)), mnavMax = Math.max(...mnavArr.filter(v => v != null));
-  const ups = upcomingUnlocks(50);
-  const sameDay = ups.filter(u => +u.date === +ups[0]?.date);
-  const nextU = sameDay.length ? {
-    date: sameDay[0].date,
-    tokens: sameDay.reduce((t, u) => t + u.tokens, 0),
-    cliff: sameDay.some(u => u.cliff),
-    waiver: sameDay.some(u => u.waiver),
-  } : null;
-  const pnl = nav - PIPE_COST;
-  document.getElementById("tiles2").innerHTML =
-    tile("Market-implied ENA", fmt$(impliedEna), "", `<span class="${enaDisc >= 0 ? "up" : "down"}">${sign(enaDisc)}</span> vs spot`) +
-    (allUnlocked
-      ? tile("ENA holdings", fmtB(D.ena_holdings), "", `last disclosed ${src ? fmtD(src.date) : ""} · sales need not be announced`)
-      : tile("Locked ENA implied value", lockedPct == null ? "—" : lockedPct.toFixed(0) + "% of spot", "", `market's price on the locked ${fmtB(lockedTok)}`)) +
-    tile("mNAV percentile", ordinal(pctile(mnavArr, mnavNow)), "", `range ${fmtX(mnavMin)}–${fmtX(mnavMax)} since listing`) +
-    tile("Next unlock", nextU ? Math.ceil((nextU.date - new Date()) / 86400e3) + "d" : "—", "",
-      nextU ? `${MON[nextU.date.getUTCMonth()]} ${nextU.date.getUTCDate()} · ${(nextU.tokens / 1e6).toFixed(0)}M ENA${nextU.waiver ? " · waiver, all remaining" : nextU.cliff ? " cliff" : ""}`
-            : "all unlocked — lock-ups waived Oct 5") +
-    tile("Treasury vs cost", `<span class="${pnl >= 0 ? "up" : "down"}">${sign(pnl / PIPE_COST * 100)}</span>`, "", `$893M paid · basis $0.295/ENA`) +
-    (allUnlocked
-      ? tile("Shares outstanding", (D.shares_outstanding / 1e6).toFixed(2) + "M", "", "Class A · incl. Sep 30 director awards")
-      : tile("mNAV / unlocked", fmtX(mnavNow) + " / " + fmtX(mcap / unlNav), "", "mcap ÷ NAV"));
-
-  // warrant tiles
-  const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
-  const wSeries = (s.usdew_close || []).filter(v => v != null);
-  if (wSeries.length || liveW) {
-    const w = liveW && liveW.price != null ? liveW.price : wSeries[wSeries.length - 1];
-    const wPrev = liveW && liveW.prev_close != null ? liveW.prev_close
-      : wSeries.length > 1 ? wSeries[wSeries.length - 2] : null;
-    const wChg = wPrev ? (w / wPrev - 1) * 100 : null;
-    const breakeven = W_.strike + w;
-    const bePrem = (breakeven / D.usde.price - 1) * 100;
-    const navSh = nav / D.shares_outstanding;
-    const mnavBE = breakeven / navSh;
-    const gearing = D.usde.price / w;
-    const classes = [{ count: W_.count, strike: W_.strike }, ...(W_.sponsor || [])];
-    const totWarrants = classes.reduce((t, c) => t + c.count, 0);
-    const proceeds = classes.reduce((t, c) => t + c.count * c.strike, 0);
-    const dilution = totWarrants / (D.shares_outstanding + totWarrants) * 100;
-    const fdNavSh = (nav + proceeds) / (D.shares_outstanding + totWarrants);
-    const fdChg = (fdNavSh / navSh - 1) * 100;
-    const expiry = new Date(W_.expiry + "T00:00:00Z");
-    const yearsLeft = (expiry - new Date()) / 31557600e3;
-    // redemption triggers: closes at/above $10 (or $18) on 20 of 30 trading days
-    const closes = s.usde_close.filter(v => v != null).slice(-30);
-    const n10 = closes.filter(v => v >= 10).length, n18 = closes.filter(v => v >= 18).length;
-    const intrinsic = D.usde.price - W_.strike, timeVal = w - Math.max(0, intrinsic);
-    document.getElementById("tiles-w").innerHTML =
-      tile("USDEW price", fmt$(w), "", wChg == null ? "last close" : `<span class="${wChg >= 0 ? "up" : "down"}">${wChg >= 0 ? "+" : ""}${wChg.toFixed(1)}% on the day</span>`) +
-      tile("Breakeven at expiry", fmt$(breakeven), "", `<span class="${bePrem >= 0 ? "down" : "up"}">${sign(bePrem)}</span> vs USDE spot`) +
-      tile("mNAV to break even", fmtX(mnavBE), "", `vs ${fmtX(mcap / nav)} today — a bet on the re-rate`) +
-      tile("Gearing", gearing.toFixed(1) + "×", "", "USDE price ÷ warrant price") +
-      tile("If exercised", fmtM(proceeds), "", `all warrant classes · ${dilution.toFixed(0)}% dilution · NAV/sh ${sign(fdChg)}`) +
-      tile("Expiry", yearsLeft.toFixed(1) + "y", "", `Jun 25, 2031 · $18/$10 redemption calls`) +
-      tile("$10 call trigger", `${n10} / 20`, n10 >= 20 ? "c-mcap" : "",
-        n10 >= 20 ? "met — the company can call the warrants" : `closes ≥ $10 in the last ${closes.length} sessions`);
-    const setTxt = (id, v) => { const el = document.getElementById(id); if (el) el.textContent = v; };
-    const setHtml = (id, v) => { const el = document.getElementById(id); if (el) el.innerHTML = v; };
-    setHtml("ex-moneyness", intrinsic <= 0
-      ? `With the stock below the strike, its entire price is time value: a bet the stock clears <b>${fmt$(breakeven)}</b> (strike + warrant price) before expiry.`
-      : `With USDE at ${fmt$(D.usde.price)} the warrants are <b>in the money</b>: ${fmt$(intrinsic)} of the ${fmt$(w)} price is intrinsic value (stock − strike)` +
-        (timeVal >= 0
-          ? ` and ${fmt$(timeVal)} is time value. Breakeven at expiry is <b>${fmt$(breakeven)}</b>.`
-          : `, so it trades ${fmt$(-timeVal)} <i>below</i> intrinsic — the market is pricing in an early forced conversion.`));
-    setTxt("ex-dil", `${(totWarrants / 1e6).toFixed(1)}M new shares (${(D.shares_outstanding / 1e6).toFixed(1)}M → ${((D.shares_outstanding + totWarrants) / 1e6).toFixed(1)}M, ~${dilution.toFixed(0)}% dilution)`);
-    setHtml("ex-trigger", `So far USDE has closed at or above $10 on <b>${n10} of the last ${closes.length}</b> trading days` +
-      (n10 >= 20 ? " — <b>the $10 condition is met</b>." : ` (${20 - n10} more needed)`) +
-      `, and at or above $18 on ${n18}.`);
-    setTxt("ex-mnavbe", fmtX(mnavBE));
-    setTxt("ex-fdnav", "$" + fdNavSh.toFixed(2));
-    setTxt("ex-nav", "$" + navSh.toFixed(2));
-  }
-
-  document.getElementById("badge-mnav").textContent = fmtX(mnavNow);
-  document.getElementById("badge-unl-k").textContent = allUnlocked ? "NAV / share" : "Unlocked mNAV";
-  document.getElementById("badge-unl").textContent = allUnlocked ? fmt$(nav / D.shares_outstanding) : fmtX(mcap / unlNav);
-  const t = D.usde.quote_time.replace("T", " ").replace("+00:00", " UTC").replace(/\.\d+Z$/, " UTC");
-  const stateWord = D.usde.market_state === "LIVE" ? "live" : D.usde.market_state === "REGULAR" ? "intraday" : "as of";
-  document.getElementById("sub").textContent =
-    `USDE quote ${stateWord} ${t} · ENA live · ${D.liveDate ? "charts live through today" : "charts extend daily"}`;
-}
-
-function lineChart(el, seriesDefs, opts) {
-  const narrow = el.clientWidth < 640;
-  const W = narrow ? 640 : 1160, H = narrow ? 300 : 420;
-  const L = narrow ? 62 : 64, R = narrow ? 70 : 130, T = 18, B = narrow ? 30 : 34;
-  const FS = 12;
-  const dates = opts.dates || D.series.date;
-  const n = dates.length;
-  const all = seriesDefs.flatMap(s => s.data).filter(v => v != null);
-  const vmax = (opts.vmax || Math.max(...all)) * 1.06;
-  const vmin = opts.zero ? 0 : Math.min(...all) * 0.94;
-  const x = i => L + i * (W - L - R) / (n - 1);
-  const y = v => T + (H - T - B) * (1 - (v - vmin) / (vmax - vmin));
-  let g = "";
-  for (const tv of opts.ticks(vmin, vmax)) {
-    g += `<line x1="${L}" x2="${W - R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
-    g += `<text x="${L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${FS}">${opts.fmt(tv)}</text>`;
-  }
-  for (const rl of opts.refLines || []) {
-    if (rl.v > vmax || rl.v < vmin) continue;
-    g += `<line x1="${L}" x2="${W - R}" y1="${y(rl.v)}" y2="${y(rl.v)}" stroke="${rl.color || C.ink2}" stroke-width="1" stroke-dasharray="5 4"/>`;
-    if (rl.label) g += `<text x="${W - R - 6}" y="${y(rl.v) - 5}" text-anchor="end" fill="${rl.color || C.ink2}" font-size="${FS - 1}">${rl.label}</text>`;
-  }
-  const step = Math.ceil(n / (narrow ? 3 : 5));
-  for (let i = 0; i < n - step / 2; i += step) {
-    g += `<text x="${x(i)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(dates[i])}</text>`;
-  }
-  g += `<text x="${x(n - 1)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">${fmtD(dates[n - 1])}</text>`;
-  const lastVal = d => { for (let i = d.length - 1; i >= 0; i--) if (d[i] != null) return d[i]; return null; };
-  const endLabels = seriesDefs.map(s => ({ s, ly: y(lastVal(s.data) ?? vmin) + 4 })).sort((a, b) => a.ly - b.ly);
-  for (let li = 1; li < endLabels.length; li++) {
-    if (endLabels[li].ly - endLabels[li - 1].ly < FS + 4) endLabels[li].ly = endLabels[li - 1].ly + FS + 4;
-  }
-  for (const s of seriesDefs) {
-    const pts = s.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
-    g += `<polyline points="${pts.join(" ")}" fill="none" stroke="${s.color}" stroke-width="${s.dash ? 1.5 : 2}" stroke-linejoin="round" stroke-linecap="round"${s.dash ? ' stroke-dasharray="6 5"' : ""}/>`;
-    const ly = endLabels.find(e => e.s === s).ly;
-    const lv = lastVal(s.data);
-    const lbl = narrow ? opts.fmt(lv) : `${opts.fmt(lv)} ${s.short}`;
-    g += `<text x="${W - R + 8}" y="${ly}" fill="${s.color}" font-size="${FS}" font-weight="bold">${lbl}</text>`;
-  }
-  g += `<line class="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
-  seriesDefs.forEach((s, si) => { g += `<circle class="hd" data-si="${si}" r="3.5" fill="${s.color}" visibility="hidden"/>`; });
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="${opts.label}">${g}</svg><div class="tooltip"></div>`;
-  const svg = el.querySelector("svg"), tip = el.querySelector(".tooltip"), xh = el.querySelector(".xh");
-  const dots = [...el.querySelectorAll(".hd")];
-  svg.addEventListener("mousemove", ev => {
-    const r = svg.getBoundingClientRect();
-    const px = (ev.clientX - r.left) * W / r.width;
-    const i = Math.max(0, Math.min(n - 1, Math.round((px - L) * (n - 1) / (W - L - R))));
-    xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible");
-    dots.forEach((d, si) => {
-      const v = seriesDefs[si].data[i];
-      if (v == null) { d.setAttribute("visibility", "hidden"); return; }
-      d.setAttribute("cx", x(i)); d.setAttribute("cy", y(v)); d.setAttribute("visibility", "visible");
-    });
-    tip.style.display = "block";
-    const rows = seriesDefs.map(s => `<div class="tr"><span style="color:${C.ink2}">${s.name}</span><b>${opts.fmt(s.data[i])}</b></div>`).join("");
-    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}${dates[i] === D.liveDate ? " · live" : ""}</div>${rows}`;
-    const tx = (x(i) / W) * r.width;
-    tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
-    tip.style.top = (ev.clientY - r.top + 14) + "px";
-  });
-  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.setAttribute("visibility", "hidden"); dots.forEach(d => d.setAttribute("visibility", "hidden")); });
-}
-
-function mean(arr) { const a = arr.filter(v => v != null); return a.reduce((s, v) => s + v, 0) / a.length; }
-
-/* Bars for daily flows, an area for a running stock, and a combo of the two.
-   Same geometry, axis and tooltip conventions as lineChart above — a flow that
-   happened on one day reads as a discrete column, a stock that carries forward
-   reads as a continuous surface. */
-
-function payGeom(el) {
-  const narrow = el.clientWidth < 640;
-  return {
-    narrow,
-    W: narrow ? 640 : 1160, H: narrow ? 300 : 420,
-    L: narrow ? 62 : 64, R: narrow ? 70 : 130, T: 18, B: narrow ? 30 : 34, FS: 12,
-  };
-}
-
-function xTicks(g, dates, x) {
-  const n = dates.length, step = Math.ceil(n / (g.narrow ? 3 : 5));
-  let out = "";
-  for (let i = 0; i < n - step / 2; i += step)
-    out += `<text x="${x(i)}" y="${g.H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${g.FS}">${fmtD(dates[i])}</text>`;
-  out += `<text x="${x(n - 1)}" y="${g.H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${g.FS}">${fmtD(dates[n - 1])}</text>`;
-  return out;
-}
-
-function payTooltip(el, svg, g, dates, x, rowsFor) {
-  const tip = el.querySelector(".tooltip"), xh = el.querySelector(".xh");
-  const n = dates.length;
-  svg.addEventListener("mousemove", ev => {
-    const r = svg.getBoundingClientRect();
-    const px = (ev.clientX - r.left) * g.W / r.width;
-    const i = Math.max(0, Math.min(n - 1, Math.round((px - g.L) * (n - 1) / (g.W - g.L - g.R))));
-    if (xh) { xh.setAttribute("x1", x(i)); xh.setAttribute("x2", x(i)); xh.setAttribute("visibility", "visible"); }
-    tip.style.display = "block";
-    tip.innerHTML = `<div class="th">${fmtD(dates[i])}, ${dates[i].slice(0, 4)}${dates[i] === D.liveDate ? " · live" : ""}</div>${rowsFor(i)}`;
-    const tx = (x(i) / g.W) * r.width;
-    tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
-    tip.style.top = (ev.clientY - r.top + 14) + "px";
-  });
-  svg.addEventListener("mouseleave", () => {
-    tip.style.display = "none";
-    if (xh) xh.setAttribute("visibility", "hidden");
-  });
-}
-
-/* Daily columns. `dir: -1` sends a series below the baseline, so deposits and
-   withdrawals share one zero line and read as opposing flows. */
-function barChart(el, seriesDefs, opts) {
-  const g = payGeom(el), dates = opts.dates, n = dates.length;
-  const up = seriesDefs.filter(s => (s.dir || 1) > 0).flatMap(s => s.data).filter(v => v != null);
-  const dn = seriesDefs.filter(s => (s.dir || 1) < 0).flatMap(s => s.data).filter(v => v != null);
-  const vmax = Math.max(...up, 0) * 1.06 || 1;
-  const vmin = dn.length ? -Math.max(...dn, 0) * 1.06 : 0;
-  const x = i => g.L + (g.W - g.L - g.R) * (i + 0.5) / n;
-  const y = v => g.T + (g.H - g.T - g.B) * (1 - (v - vmin) / (vmax - vmin));
-  const bw = Math.max(1, Math.min(16, (g.W - g.L - g.R) / n * 0.7));
-  let out = "";
-
-  const tickVals = opts.ticks(vmin, vmax).concat(vmin < 0 ? opts.ticks(0, -vmin).filter(v => v > 0).map(v => -v) : []);
-  for (const tv of tickVals) {
-    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
-    out += `<text x="${g.L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${g.FS}">${opts.fmt(Math.abs(tv))}</text>`;
-  }
-  for (const sd of seriesDefs) {
-    const dir = sd.dir || 1;
-    for (let i = 0; i < n; i++) {
-      const v = sd.data[i];
-      if (v == null || v === 0) continue;
-      const h = Math.max(1, Math.abs(y(0) - y(v)));
-      const top = dir > 0 ? y(0) - h : y(0);
-      out += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${top.toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${sd.color}"/>`;
-    }
-  }
-  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(0)}" y2="${y(0)}" stroke="${C.ink3}" stroke-width="1"/>`;
-  out += xTicks(g, dates, x);
-  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
-  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
-    seriesDefs.map(sd => `<div class="tr"><span style="color:${C.ink2}">${sd.name}</span><b>${opts.fmt(sd.data[i])}</b></div>`).join(""));
-}
-
-/* A running stock: line plus a light wash down to the baseline. */
-function areaChart(el, sd, opts) {
-  const g = payGeom(el), dates = opts.dates, n = dates.length;
-  const vals = sd.data.filter(v => v != null);
-  const vmax = Math.max(...vals) * 1.06 || 1;
-  const x = i => g.L + (g.W - g.L - g.R) * i / (n - 1);
-  const y = v => g.T + (g.H - g.T - g.B) * (1 - v / vmax);
-  let out = "";
-  for (const tv of opts.ticks(0, vmax)) {
-    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(tv)}" y2="${y(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
-    out += `<text x="${g.L - 8}" y="${y(tv) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${g.FS}">${opts.fmt(tv)}</text>`;
-  }
-  const pts = sd.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
-  out += `<path d="M${g.L},${y(0)} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${y(0)} Z" fill="${sd.color}" fill-opacity="${opts.fillOpacity ?? 0.14}" stroke="none"/>`;
-  out += `<polyline points="${pts.join(" ")}" fill="none" stroke="${sd.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${y(0)}" y2="${y(0)}" stroke="${C.ink3}" stroke-width="1"/>`;
-  const lastV = [...sd.data].reverse().find(v => v != null);
-  out += `<text x="${g.W - g.R + 8}" y="${y(lastV) + 4}" fill="${sd.color}" font-size="${g.FS}" font-weight="bold">${opts.fmt(lastV)} ${sd.short}</text>`;
-  out += xTicks(g, dates, x);
-  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
-  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
-    `<div class="tr"><span style="color:${C.ink2}">${sd.name}</span><b>${opts.fmt(sd.data[i])}</b></div>`);
-}
-
-/* Stock on the left axis, daily flow as columns on the right.
-   Two y-scales, so where the surface and the columns cross means nothing — it
-   moves with either scale. Each axis is tinted to its own series so there is no
-   doubt which reads which; the tooltip gives both exact values. */
-function comboChart(el, leftDef, rightDef, opts) {
-  const g = payGeom(el), dates = opts.dates, n = dates.length;
-  const maxOf = d => Math.max(...d.filter(v => v != null)) || 1;
-  const lMax = maxOf(leftDef.data) * 1.06, rMax = maxOf(rightDef.data) * 1.06;
-  const x = i => g.L + (g.W - g.L - g.R) * (i + 0.5) / n;
-  const yL = v => g.T + (g.H - g.T - g.B) * (1 - v / lMax);
-  const yR = v => g.T + (g.H - g.T - g.B) * (1 - v / rMax);
-  const base = yL(0);
-  const bw = Math.max(1, Math.min(16, (g.W - g.L - g.R) / n * 0.7));
-  let out = "";
-
-  for (const tv of opts.ticksLeft(0, lMax)) {
-    out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${yL(tv)}" y2="${yL(tv)}" stroke="${C.grid}" stroke-width="1"/>`;
-    out += `<text x="${g.L - 8}" y="${yL(tv) + 4}" text-anchor="end" fill="${leftDef.color}" font-size="${g.FS}">${opts.fmtLeft(tv)}</text>`;
-  }
-  for (const tv of opts.ticksRight(0, rMax)) {
-    out += `<text x="${g.W - g.R + 8}" y="${yR(tv) + 4}" text-anchor="start" fill="${rightDef.color}" font-size="${g.FS}">${opts.fmtRight(tv)}</text>`;
-  }
-
-  const draw = (def, y) => {
-    if (def.kind === "bar") {
-      let bars = "";
-      for (let i = 0; i < n; i++) {
-        const v = def.data[i];
-        if (v == null || v === 0) continue;
-        const h = Math.max(1, base - y(v));
-        bars += `<rect x="${(x(i) - bw / 2).toFixed(1)}" y="${(base - h).toFixed(1)}" width="${bw.toFixed(1)}" height="${h.toFixed(1)}" fill="${def.color}" fill-opacity="${def.opacity ?? 0.8}"/>`;
-      }
-      return bars;
-    }
-    const pts = def.data.map((v, i) => v == null ? null : `${x(i).toFixed(1)},${y(v).toFixed(1)}`).filter(Boolean);
-    let m = "";
-    if (def.kind === "area")
-      m += `<path d="M${x(0).toFixed(1)},${base} L${pts.join(" L")} L${x(n - 1).toFixed(1)},${base} Z" fill="${def.color}" fill-opacity="${opts.fillOpacity ?? 0.10}" stroke="none"/>`;
-    m += `<polyline points="${pts.join(" ")}" fill="none" stroke="${def.color}" stroke-width="2" stroke-linejoin="round" stroke-linecap="round"/>`;
-    return m;
-  };
-
-  // bars first, so a line on the other axis stays legible across them
-  for (const [def, y] of [[leftDef, yL], [rightDef, yR]].sort((a, b) => (a[0].kind === "bar" ? 0 : 1) - (b[0].kind === "bar" ? 0 : 1)))
-    out += draw(def, y);
-
-  out += `<line x1="${g.L}" x2="${g.W - g.R}" y1="${base}" y2="${base}" stroke="${C.ink3}" stroke-width="1"/>`;
-  out += `<text x="${g.L - 8}" y="${g.T - 4}" text-anchor="end" fill="${leftDef.color}" font-size="${g.FS - 1}">${leftDef.short}</text>`;
-  out += `<text x="${g.W - g.R + 8}" y="${g.T - 4}" text-anchor="start" fill="${rightDef.color}" font-size="${g.FS - 1}">${rightDef.short}</text>`;
-  out += xTicks(g, dates, x);
-  out += `<line class="xh" x1="0" x2="0" y1="${g.T}" y2="${g.H - g.B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${g.W} ${g.H}" role="img" aria-label="${opts.label}">${out}</svg><div class="tooltip"></div>`;
-  payTooltip(el, el.querySelector("svg"), g, dates, x, i =>
-    `<div class="tr"><span style="color:${C.ink2}">${leftDef.name}</span><b>${opts.fmtLeft(leftDef.data[i])}</b></div>` +
-    `<div class="tr"><span style="color:${C.ink2}">${rightDef.name}</span><b>${opts.fmtRight(rightDef.data[i])}</b></div>`);
-}
-
-function payoffChart(el, warrantPx, stockPx, strike, marks) {
-  const narrow = el.clientWidth < 640;
-  const W = narrow ? 640 : 1160, H = narrow ? 300 : 420;
-  const L = narrow ? 52 : 60, R = 30, T = 18, B = narrow ? 30 : 34, FS = 12;
-  const SMAX = 24;
-  const wMult = S => Math.max(0, S - strike) / warrantPx;
-  const sMult = S => S / stockPx;
-  const ymax = Math.max(wMult(SMAX), sMult(SMAX)) * 1.06;
-  const x = S => L + S / SMAX * (W - L - R);
-  const y = m => T + (H - T - B) * (1 - m / ymax);
-  let g = "";
-  for (let m = 0; m <= ymax; m += 2) {
-    g += `<line x1="${L}" x2="${W - R}" y1="${y(m)}" y2="${y(m)}" stroke="${C.grid}"/>`;
-    g += `<text x="${L - 8}" y="${y(m) + 4}" text-anchor="end" fill="${C.ink2}" font-size="${FS}">${m}×</text>`;
-  }
-  for (let S = 0; S <= SMAX; S += narrow ? 8 : 4) {
-    g += `<text x="${x(S)}" y="${H - 8}" text-anchor="middle" fill="${C.ink2}" font-size="${FS}">$${S}</text>`;
-  }
-  // 1x break-even line for reference
-  g += `<line x1="${L}" x2="${W - R}" y1="${y(1)}" y2="${y(1)}" stroke="${C.ink3}" stroke-dasharray="5 4"/>`;
-  g += `<text x="${W - R - 6}" y="${y(1) - 5}" text-anchor="end" fill="${C.ink3}" font-size="${FS - 1}">1× — money back</text>`;
-  // vertical marks
-  for (const mk of marks) {
-    if (mk.v > SMAX) continue;
-    g += `<line x1="${x(mk.v)}" x2="${x(mk.v)}" y1="${T}" y2="${H - B}" stroke="${mk.color || C.ink3}" stroke-dasharray="3 4"/>`;
-    g += `<text x="${x(mk.v) + 4}" y="${T + 12 + (mk.row || 0) * 14}" fill="${mk.color || C.ink2}" font-size="${FS - 1}">${mk.label}</text>`;
-  }
-  const wPts = [], sPts = [];
-  for (let S = 0; S <= SMAX + 1e-9; S += 0.25) {
-    wPts.push(`${x(S).toFixed(1)},${y(wMult(S)).toFixed(1)}`);
-    sPts.push(`${x(S).toFixed(1)},${y(sMult(S)).toFixed(1)}`);
-  }
-  g += `<polyline points="${sPts.join(" ")}" fill="none" stroke="${C.mcap}" stroke-width="2" stroke-linejoin="round"/>`;
-  g += `<polyline points="${wPts.join(" ")}" fill="none" stroke="${C.ink}" stroke-width="2" stroke-linejoin="round"/>`;
-  g += `<line class="xh" x1="0" x2="0" y1="${T}" y2="${H - B}" stroke="${C.ink2}" stroke-width="1" stroke-dasharray="3 3" visibility="hidden"/>`;
-  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="Warrant and stock payoff multiples at expiry">${g}</svg><div class="tooltip"></div>`;
-  const svg = el.querySelector("svg"), tip = el.querySelector(".tooltip"), xh = el.querySelector(".xh");
-  svg.addEventListener("mousemove", ev => {
-    const r = svg.getBoundingClientRect();
-    const S = Math.max(0, Math.min(SMAX, ((ev.clientX - r.left) * W / r.width - L) * SMAX / (W - L - R)));
-    xh.setAttribute("x1", x(S)); xh.setAttribute("x2", x(S)); xh.setAttribute("visibility", "visible");
-    tip.style.display = "block";
-    tip.innerHTML = `<div class="th">USDE at $${S.toFixed(2)}</div>` +
-      `<div class="tr"><span style="color:${C.ink2}">Warrant</span><b>${wMult(S).toFixed(2)}× ($${Math.max(0, S - strike).toFixed(2)})</b></div>` +
-      `<div class="tr"><span style="color:${C.ink2}">Stock</span><b>${sMult(S).toFixed(2)}×</b></div>`;
-    const tx = (x(S) / W) * r.width;
-    tip.style.left = Math.min(tx + 14, r.width - tip.offsetWidth - 8) + "px";
-    tip.style.top = (ev.clientY - r.top + 14) + "px";
-  });
-  svg.addEventListener("mouseleave", () => { tip.style.display = "none"; xh.setAttribute("visibility", "hidden"); });
-}
-
-function renderCharts() {
-  const s = D.series, n = s.date.length;
-  lineChart(document.getElementById("chart-nav"), [
-    { name: "Total ENA NAV", short: "NAV", data: s.ena_nav, color: C.nav },
-    { name: "Unlocked ENA NAV", short: "unlocked", data: s.nav_unlocked, color: C.unl },
-    { name: "USDE market cap", short: "mcap", data: s.market_cap, color: C.mcap },
-  ], {
-    zero: true, fmt: fmtM, label: "Market cap versus NAV over time",
-    ticks: (lo, hi) => { const st = hi > 3.5e8 ? 1e8 : 5e7; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
-  });
-  const W_ = D.warrants || { count: 11499988, strike: 11.5, expiry: "2031-06-25" };
-  const breakeven = (s.usdew_close || []).map(v => v == null ? null : W_.strike + v);
-  lineChart(document.getElementById("chart-pershare"), [
-    { name: "NAV per share", short: "NAV/sh", data: s.nav_per_share, color: C.nav },
-    { name: "Unlocked NAV / share", short: "unl/sh", data: s.nav_unlocked_per_share, color: C.unl },
-    { name: "USDE share price", short: "USDE", data: s.usde_close, color: C.mcap },
-    ...(breakeven.some(v => v != null) ? [{ name: "Warrant breakeven", short: "brkeven", data: breakeven, color: C.ink, dash: true }] : []),
-  ], {
-    zero: true, fmt: v => v == null ? "–" : "$" + v.toFixed(2), label: "NAV per share versus share price",
-    ticks: (lo, hi) => { const st = hi > 12 ? 5 : 2; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
-    refLines: [{ v: W_.strike, color: C.ink3, label: "$11.50 strike" }],
-  });
-  lineChart(document.getElementById("chart-mnav"), [
-    { name: "mNAV (total)", short: "mNAV", data: s.mnav, color: C.ink },
-    { name: "mNAV (unlocked)", short: "unlocked", data: s.mnav_unlocked, color: C.unl },
-  ], {
-    zero: true, fmt: fmtX, label: "mNAV ratio over time",
-    ticks: () => [0, 0.25, 0.5, 0.75, 1, 1.25],
-    vmax: Math.max(1.25, ...s.mnav_unlocked.filter(v => v != null)),
-    refLines: [
-      { v: 1, color: C.ink2, label: "1.0× parity" },
-      { v: mean(s.mnav), color: C.ink3, label: "mean" },
-    ],
-  });
-  const idx = col => col.map(v => v == null ? null : v / col[0] * 100);
-  lineChart(document.getElementById("chart-indexed"), [
-    { name: "USDE", short: "USDE", data: idx(s.usde_close), color: C.mcap },
-    { name: "ENA", short: "ENA", data: idx(s.ena_price), color: C.ink },
-    { name: "NAV per share", short: "NAV/sh", data: idx(s.nav_per_share), color: C.nav },
-  ], {
-    zero: true, fmt: v => v == null ? "–" : v.toFixed(0), label: "Indexed performance since listing",
-    ticks: (lo, hi) => { const st = hi > 300 ? 100 : 50; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
-    refLines: [{ v: 100, color: C.ink3, label: "listing = 100" }],
-  });
-  if ((s.usdew_close || []).some(v => v != null)) {
-    lineChart(document.getElementById("chart-warrant"), [
-      { name: "USDEW warrant", short: "USDEW", data: idx(s.usdew_close), color: C.ink },
-      { name: "USDE stock", short: "USDE", data: idx(s.usde_close), color: C.mcap },
-      { name: "NAV per share", short: "NAV/sh", data: idx(s.nav_per_share), color: C.nav },
-    ], {
-      zero: true, fmt: v => v == null ? "–" : v.toFixed(0), label: "Warrant versus stock versus NAV per share, indexed to listing",
-      ticks: (lo, hi) => { const st = hi > 300 ? 100 : 50; const out = []; for (let v = 0; v <= hi; v += st) out.push(v); return out; },
-      refLines: [{ v: 100, color: C.ink3, label: "listing = 100" }],
-    });
-  }
-  const wLastArr = (s.usdew_close || []).filter(v => v != null);
-  if (wLastArr.length) {
-    const wPx = wLastArr[wLastArr.length - 1];
-    const sPx = s.usde_close[n - 1];
-    const navSh = s.nav_per_share[n - 1];
-    const crossover = W_.strike * sPx / (sPx - wPx);
-    payoffChart(document.getElementById("chart-payoff"), wPx, sPx, W_.strike, [
-      { v: sPx, label: "spot $" + sPx.toFixed(2), color: C.mcap, row: 0 },
-      { v: W_.strike, label: "strike", color: C.ink3, row: 1 },
-      { v: W_.strike + wPx, label: "breakeven", color: C.ink2, row: 2 },
-      { v: navSh, label: "NAV/sh $" + navSh.toFixed(2), color: C.nav, row: 0 },
-    ]);
-    document.getElementById("payoff-note").textContent =
-      `Multiple on today's money at each USDE price in Jun 2031 (stock $${sPx.toFixed(2)}, warrant $${wPx.toFixed(2)}) · warrant beats stock above ~$${crossover.toFixed(2)} · ignores the $10/$18 redemption calls`;
-  }
-  const enaShare = s.ena_holdings.map((v, i) => v / s.shares_outstanding[i]);
-  const enaShareUnl = s.ena_unlocked.map((v, i) => v / s.shares_outstanding[i]);
-  lineChart(document.getElementById("chart-enapershare"), [
-    { name: "Total ENA / share", short: "total", data: enaShare, color: C.nav },
-    { name: "Unlocked ENA / share", short: "unlocked", data: enaShareUnl, color: C.unl },
-  ], {
-    zero: true, fmt: v => v == null ? "–" : v.toFixed(0) + " ENA", label: "ENA tokens per share",
-    ticks: (lo, hi) => { const out = []; for (let v = 0; v <= hi; v += 25) out.push(v); return out; },
-  });
-}
-
-function renderUnlocks() {
-  const unlTok = unlockedTokens(new Date());
-  const pctUnl = unlTok / D.ena_holdings * 100;
-  const allUnlocked = D.ena_holdings - unlTok < 1;
-  const prog = document.getElementById("prog");
-  prog.innerHTML = `<div class="p-unl" style="width:${pctUnl}%"></div><div class="p-lock" style="width:${100 - pctUnl}%"></div>`;
-  const src = D.ena_holdings_source;
-  const hs = document.getElementById("holdings-src");
-  if (hs) hs.textContent = src ? `${fmtB(D.ena_holdings)} ENA, per the ${src.label} filed ${fmtD(src.date)}, ${src.date.slice(0, 4)}` : fmtB(D.ena_holdings) + " ENA";
-  const progText = allUnlocked
-    ? `All ${fmtB(D.ena_holdings)} ENA unlocked (100%) · every lock-up waived effective Oct 5, 2026`
-    : `${fmtB(unlTok)} ENA unlocked (${pctUnl.toFixed(0)}%) · ${fmtB(D.ena_holdings - unlTok)} still locked until the Oct 5, 2026 waiver`;
-  prog.setAttribute("role", "img");
-  prog.setAttribute("aria-label", progText);
-  document.getElementById("prog-label").textContent = progText;
-  let cum = unlTok;
-  const tb = document.querySelector("#unlocks tbody");
-  const rows = upcomingUnlocks(8);
-  document.getElementById("unlocks").hidden = !rows.length;
-  tb.innerHTML = rows.map(u => {
-    cum += u.tokens;
-    const what = u.waiver ? " · waiver, all remaining" : "";
-    return `<tr><td>${MON[u.date.getUTCMonth()]} ${u.date.getUTCDate()}, ${u.date.getUTCFullYear()}${u.cliff || u.waiver ? " ◆" : ""}</td><td>${(u.tokens / 1e6).toFixed(1)}M</td><td>${TRANCHE_NAMES[u.tranche] || u.tranche}${what}</td><td>${(u.tokens / D.ena_holdings * 100).toFixed(1)}%</td><td>${(cum / D.ena_holdings * 100).toFixed(1)}%</td></tr>`;
-  }).join("");
-}
-
-const CURATED_THROUGH = "2026-09-30";  // filings on or before this date are hand-listed above
-
-function renderAutoFilings() {
-  const fresh = (D.recent_filings || []).filter(f => f.date > CURATED_THROUGH);
-  if (!fresh.length) return;
-  const tb = document.querySelector("#filings tbody");
-  const rows = fresh.map(f => {
-    const [y, m, dd] = f.date.split("-").map(Number);
-    return `<tr><td>${MON[m - 1]} ${dd}, ${y}</td><td><a href="${f.url}">${f.form}</a></td><td>New filing — auto-listed from EDGAR</td></tr>`;
-  }).join("");
-  tb.insertAdjacentHTML("afterbegin", rows);
-}
-
-const esc = v => String(v ?? "").replace(/[&<>"']/g, c => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
-
-// EDGAR stores names "Last First Middle"; show them the usual way round.
-const personName = n => { const p = String(n || "").trim().split(/\s+/); return p.length > 1 ? [...p.slice(1), p[0]].join(" ") : p.join(""); };
-
-function renderInsiders() {
-  const list = D.insiders || [];
-  const tb = document.querySelector("#insiders tbody");
-  if (!tb || !list.length) return;
-  const rows = [];
-  let sales = 0, buys = 0;
-  for (const f of list) {
-    const [y, m, dd] = f.date.split("-").map(Number);
-    const when = `<a href="${esc(f.url)}">${MON[m - 1]} ${dd}, ${y}</a>`;
-    const who = esc(personName(f.owner)), role = esc(f.role);
-    if (!f.transactions.length) {
-      rows.push(`<tr><td>${when}</td><td>${who}</td><td>${role}</td><td>Form ${esc(f.form)} · initial holdings statement</td><td>—</td><td>—</td></tr>`);
-      continue;
-    }
-    for (const t of f.transactions) {
-      if (t.code === "S") sales++;
-      if (t.code === "P") buys++;
-      const cls = t.code === "S" ? "down" : t.code === "P" ? "up" : "";
-      const sec = esc((t.security || "").replace(/ Common Stock$/i, ""));
-      const qty = t.shares == null ? "—" : (t.direction === "D" ? "−" : "+") + Math.round(t.shares).toLocaleString("en-US");
-      rows.push(`<tr><td>${when}</td><td>${who}</td><td>${role}</td><td class="${cls}">${esc(t.label)} · ${sec}</td><td>${qty}</td><td>${t.price ? fmt$(t.price) : "—"}</td></tr>`);
-    }
-  }
-  tb.innerHTML = rows.join("");
-  document.getElementById("insider-summary").textContent = sales || buys
-    ? `${sales} open-market sale${sales === 1 ? "" : "s"} and ${buys} purchase${buys === 1 ? "" : "s"} in the ${list.length} most recent insider filings.`
-    : `No open-market sales or purchases in the ${list.length} most recent insider filings — every transaction is a grant or award.`;
-}
-
-function renderOptions() {
-  const o = D.options;
-  const sec = document.getElementById("sec-options");
-  if (!o || !o.expiries || !o.expiries.length) { sec.hidden = true; return; }
-  sec.hidden = false;
-  const px = D.usde.price;
-  const fmtExp = iso => { const [y, m, d] = iso.split("-").map(Number); return `${MON[m - 1]} ${d}, ${y}`; };
-  const ba = q => q && (q.bid != null || q.ask != null) ? `${q.bid != null ? q.bid.toFixed(2) : "—"} / ${q.ask != null ? q.ask.toFixed(2) : "—"}` : "—";
-  let oiC = 0, oiP = 0, volC = 0, volP = 0;
-  const rows = o.expiries.map(e => {
-    oiC += e.call_oi; oiP += e.put_oi; volC += e.call_volume; volP += e.put_volume;
-    const atm = e.strikes.reduce((a, b) => Math.abs(b.strike - px) < Math.abs(a.strike - px) ? b : a, e.strikes[0]);
-    const lo = Math.min(...e.strikes.map(k => k.strike)), hi = Math.max(...e.strikes.map(k => k.strike));
-    return `<tr><td>${fmtExp(e.expiry)}</td><td>${e.strikes.length} · $${lo}–$${hi}</td><td>${e.call_oi.toLocaleString("en-US")}</td><td>${e.put_oi.toLocaleString("en-US")}</td>` +
-      `<td>${e.call_volume} / ${e.put_volume}</td><td>$${atm.strike} · ${ba(atm.call)}</td><td>$${atm.strike} · ${ba(atm.put)}</td></tr>`;
-  });
-  document.querySelector("#options tbody").innerHTML = rows.join("");
-
-  // how wide is the market at the money on the nearest expiry?
-  const near = o.expiries[0];
-  const atm = near.strikes.reduce((a, b) => Math.abs(b.strike - px) < Math.abs(a.strike - px) ? b : a, near.strikes[0]);
-  const spread = q => q && q.bid != null && q.ask != null ? q.ask - q.bid : null;
-  const sp = spread(atm.call);
-  const first = fmtExp(o.expiries[0].expiry), last = fmtExp(o.expiries[o.expiries.length - 1].expiry);
-  document.getElementById("tiles-o").innerHTML =
-    tile("Expiries", String(o.expiries.length), "", `${first} → ${last}`) +
-    tile("Open interest", (oiC + oiP).toLocaleString("en-US"), "", `calls ${oiC.toLocaleString("en-US")} · puts ${oiP.toLocaleString("en-US")}`) +
-    tile("Volume", String(volC + volP), "", `contracts, latest session · calls ${volC} · puts ${volP}`) +
-    tile("ATM call spread", sp == null ? "—" : "$" + sp.toFixed(2), "", `$${atm.strike} strike, ${first}` + (sp != null && atm.call.bid > 0 ? ` · ${(sp / ((atm.call.bid + atm.call.ask) / 2) * 100).toFixed(0)}% of mid` : ""));
-  const t = o.as_of.replace("T", " ").slice(0, 16);
-  document.getElementById("opt-note").textContent = `${o.source} option chain as of ${t} UTC`;
-  document.getElementById("opt-status").textContent = oiC + oiP === 0
-    ? `No open interest yet on any expiry, and only ${volC + volP} contract${volC + volP === 1 ? "" : "s"} traded. The quotes are wide market-maker placeholders, so they don't yet say anything about expected volatility.`
-    : `Put/call open-interest ratio ${(oiP / Math.max(oiC, 1)).toFixed(2)}.`;
-}
-
-function renderTable() {
-  const s = D.series, n = s.date.length;
-  let h = "<thead><tr><th>Date</th><th>USDE</th><th>Mcap</th><th>ENA</th><th>NAV</th><th>Unlocked NAV</th><th>mNAV</th><th>Unl. mNAV</th></tr></thead><tbody>";
-  for (let i = n - 1; i >= Math.max(0, n - 10); i--) {
-    h += `<tr><td>${s.date[i]}${s.date[i] === D.liveDate ? " · live" : ""}</td><td>${fmt$(s.usde_close[i])}</td><td>${fmtM(s.market_cap[i])}</td><td>${fmt$(s.ena_price[i])}</td><td>${fmtM(s.ena_nav[i])}</td><td>${fmtM(s.nav_unlocked[i])}</td><td>${fmtX(s.mnav[i])}</td><td>${fmtX(s.mnav_unlocked[i])}</td></tr>`;
-  }
-  document.getElementById("dtable").innerHTML = h + "</tbody>";
-}
-
-// GitHub's scheduler skips many cron slots, so the committed series can lag a
-// session or more behind. Fold the live quotes into today's row so charts,
-// end labels and the table track the market; the pipeline's committed close
-// takes over on the next successful refresh.
-const nyDate = d => new Intl.DateTimeFormat("en-CA", { timeZone: "America/New_York" }).format(d);
-let navChartsStale = false;
-
-function applyLiveRow() {
-  const s = D.series, n = s.date.length;
-  if (!n || D.usde.market_state !== "LIVE" || !enaLive) return false;
-  const session = nyDate(new Date(D.usde.quote_time));
-  // weekends / pre-market: the quote belongs to an earlier session already in
-  // the series, and stamping today's ENA onto it would misdate the move
-  if (session !== nyDate(new Date()) || session < s.date[n - 1]) return false;
-  const i = session > s.date[n - 1] ? n : n - 1;
-  const price = D.usde.price, ena = enaLive.price;
-  const shares = D.shares_outstanding, holdings = D.ena_holdings;
-  const unl = unlockedTokens(new Date());
-  const row = {
-    date: session,
-    usde_close: price,
-    usdew_close: liveW && liveW.price != null ? liveW.price : (s.usdew_close || [])[n - 1] ?? null,
-    shares_outstanding: shares,
-    ena_price: ena,
-    ena_holdings: holdings,
-    market_cap: price * shares,
-    ena_nav: ena * holdings,
-    nav_per_share: ena * holdings / shares,
-    mnav: price * shares / (ena * holdings),
-    ena_unlocked: unl,
-    nav_unlocked: ena * unl,
-    nav_unlocked_per_share: ena * unl / shares,
-    mnav_unlocked: price * shares / (ena * unl),
-  };
-  let changed = i === n;
-  for (const k of Object.keys(s)) {
-    const v = k in row ? row[k] : s[k][n - 1];
-    if (s[k][i] !== v) { s[k][i] = v; changed = true; }
-  }
-  D.liveDate = session;
-  return changed;
-}
-
-async function refreshLive() {
-  let changed = false;
-  try {
-    const r = await fetch("https://api.coingecko.com/api/v3/simple/price?ids=ethena&vs_currencies=usd");
-    const j = await r.json();
-    if (j.ethena && j.ethena.usd) { enaLive = { price: j.ethena.usd, at: Date.now() }; changed = true; }
-  } catch (e) { /* keep daily close */ }
-  try {
-    const q = await (await fetch(QUOTES_URL)).json();
-    if (q.USDE && q.USDE.price != null) {
-      D.usde = { price: q.USDE.price, prev_close: q.USDE.prev_close, market_state: "LIVE", quote_time: q.USDE.t || q.fetched_at };
-      changed = true;
-    }
-    if (q.USDEW && q.USDEW.price != null) { liveW = q.USDEW; changed = true; }
-  } catch (e) { /* keep last pipeline snapshot */ }
-  if (!changed) return;
-  const seriesMoved = applyLiveRow();
-  renderTiles();
-  if (seriesMoved) {
-    renderTable();
-    if (!document.getElementById("view-nav").hidden) renderCharts();
-    else navChartsStale = true;
-  }
-}
-
-
-/* ---------------------------------------------------------------- EthenaPay */
-/* The USDe card programme on Avalanche. Data comes from the same GitHub-raw
-   pattern as the NAV tracker (docs/ethenapay.json, refreshed by Actions), and
-   is fetched lazily the first time the tab is opened. */
-
-let P = null;
-let payDrawn = false;
-
-const fmtK = v => v == null ? "–"
-  : v === 0 ? "$0"
-  : v >= 1e6 ? "$" + (v / 1e6).toFixed(2) + "M"
-  : v >= 1e4 ? "$" + (v / 1e3).toFixed(0) + "k"
-  : v >= 1e3 ? "$" + (v / 1e3).toFixed(1) + "k"
-  : v >= 100 ? "$" + v.toFixed(0)
-  : "$" + v.toFixed(2);
-const fmtN = v => v == null ? "–" : v >= 1e3 ? (v / 1e3).toFixed(1) + "k" : String(Math.round(v));
-const fmtPc = v => v == null ? "–" : (v * 100).toFixed(v < 0.01 ? 2 : 1) + "%";
-const fmtInt = v => v == null ? "–" : Math.round(v).toLocaleString("en-US");
-
-function niceTicks(hi, count) {
-  if (!(hi > 0)) return [0, 1];
-  const raw = hi / count, mag = Math.pow(10, Math.floor(Math.log10(raw)));
-  const st = [1, 2, 2.5, 5, 10].map(m => m * mag).find(v => v >= raw) || 10 * mag;
-  const out = [];
-  for (let v = 0; v <= hi; v += st) out.push(v);
-  return out;
-}
-
-function renderPayTiles() {
-  const h = P.headline;
-  document.getElementById("pay-tiles").innerHTML =
-    tile("USDe held", fmtK(h.tvl_usde), "c-unl", fmtInt(h.funded_wallets) + " funded wallets") +
-    tile("Deposits, all time", fmtK(h.lifetime_deposits_usde), "c-nav", fmtK(h.lifetime_withdrawals_usde) + " withdrawn") +
-    tile("Card spend, all time", fmtK(h.lifetime_spend_usde), "c-mcap", fmtInt(h.lifetime_spend_count) + " authorizations") +
-    tile("Card spend, 30d", fmtK(h.spend_usde_30d), "c-mcap", fmtInt(h.mau_30d) + " wallets active") +
-    tile("Weekly active", fmtInt(h.wau_7d), "", "distinct spenders, 7d") +
-    tile("Median authorization", fmtK(h.median_spend_usde), "", "mean " + fmtK(h.avg_spend_usde));
-
-  document.getElementById("pay-tiles2").innerHTML =
-    tile("Refund rate", fmtPc(h.refund_rate), "", fmtK(h.lifetime_reversals_usde) + " reversed") +
-    (h.yield_usd_total != null
-      ? tile("Rewards paid", fmtK((h.cashback_usd_total || 0) + (h.yield_usd_total || 0)), "c-unl", "cashback + yield, all time")
-      : tile("Cashback paid", fmtN(h.cashback_avax_total) + " AVAX", "c-unl", fmtInt(h.cashback_payments_total) + " payments")) +
-    tile("Activation", fmtPc(h.activation_rate), "", fmtInt(h.spending_wallets) + " of " + fmtInt(h.wallets_created) + " ever spent") +
-    tile("Balance concentration", fmtPc(h.top10_balance_share), "", "held by the top 10 wallets") +
-    tile("Wallets deployed", fmtInt(h.wallets_created), "", fmtInt(h.wallets_created_30d) + " in the last 30d") +
-    tile("Avg per funded wallet", fmtK(h.funded_wallets ? h.tvl_usde / h.funded_wallets : null), "", "USDe held");
-
-  // Rewards section needs the yield/cashback-USD columns; older data lacks them.
-  const hasRewards = h.yield_usd_total != null && h.cashback_usd_total != null;
-  document.getElementById("sec-pay-rewards").hidden = !hasRewards;
-  if (hasRewards) {
-    document.getElementById("pay-rewards").innerHTML =
-      tile("Cashback paid", fmtK(h.cashback_usd_total), "c-unl",
-        `${fmtN(h.cashback_avax_total)} AVAX to ${fmtInt(h.cashback_wallets_total)} wallets`) +
-      tile("Cashback rate, 30d", fmtPc(h.cashback_rate_30d), "", `of card spend · ${fmtK(h.cashback_usd_30d)} paid`) +
-      tile("Yield paid", fmtK(h.yield_usd_total), "c-nav",
-        `USDe to ${fmtInt(h.yield_wallets_total)} wallets`) +
-      tile("Yield, 30d", fmtPc(h.yield_apy_30d) + " APY", "", `on USDe held · ${fmtK(h.yield_usd_30d)} paid`);
-    document.getElementById("pay-rewards-note").textContent =
-      "Cashback is valued at the AVAX price on the day it was paid. Rates use the last 30 complete days. " +
-      "Daily yield is dated by when it was claimed, which can lag when it was earned: claims paused Sep 13–16 and about four days' worth landed on Sep 17. " +
-      (h.lifetime_other_rewards_usde > 0
-        ? `Yield excludes ${fmtK(h.lifetime_other_rewards_usde)} of USDe from a second Safe that pays only wallets already receiving yield, at roughly 12% on top — its purpose isn't confirmed, so it isn't counted here.`
-        : "");
-  }
-
-  document.getElementById("pay-funnel").innerHTML =
-    tile("Wallets deployed", fmtInt(h.wallets_created), "c-nav", "100% — one per signup") +
-    tile("Funded", fmtInt(h.funded_wallets), "c-unl", fmtPc(h.funding_rate) + " hold any USDe") +
-    tile("Ever spent on card", fmtInt(h.spending_wallets), "c-mcap", fmtPc(h.activation_rate) + " of deployed");
-
-  document.getElementById("badge-tvl").textContent = fmtK(h.tvl_usde);
-  document.getElementById("badge-spend").textContent = fmtK(h.spend_usde_30d);
-  const stamp = document.getElementById("pay-stamp");
-  if (stamp) stamp.textContent = " Data as of " + P.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
-
-  // These metrics have a daily grain and the Dune refresh is non-blocking, so a
-  // broken refresh used to show up as nothing at all — the tab just kept
-  // republishing an old day. Say it out loud instead.
-  const banner = document.getElementById("pay-stale");
-  const ageH = (Date.now() - new Date(P.generated_at).getTime()) / 36e5;
-  if (banner) {
-    const stale = ageH > 36;
-    banner.hidden = !stale;
-    if (stale) {
-      const days = Math.floor(ageH / 24);
-      banner.textContent = `Data is ${days >= 1 ? days + (days === 1 ? " day" : " days") : Math.floor(ageH) + "h"} old — `
-        + `the Dune refresh has not succeeded since ${P.generated_at.slice(0, 10)}. Figures below are from that date.`;
-    }
-  }
-}
-
-function renderPayCharts() {
-  const s = P.series, dates = s.date;
-  const T = (lo, hi) => niceTicks(hi, 4);
-
-  // USDe held is a running stock — it carries forward, so it gets a surface.
-  areaChart(document.getElementById("chart-pay-tvl"),
-    { name: "USDe held", short: "held", data: s.tvl_usde, color: C.unl },
-    { dates, fmt: fmtK, ticks: T, label: "USDe held across all user wallets over time" });
-
-  // Daily spend is a per-day flow (columns); the running total only ever rises,
-  // so it needs its own scale — hence the right axis.
-  let running = 0;
-  const cumulative = s.spend_usde.map(v => (running += v || 0));
-  comboChart(document.getElementById("chart-pay-spend"),
-    { name: "Daily spend", short: "daily", data: s.spend_usde, color: C.mcap, kind: "bar" },
-    { name: "Cumulative", short: "cumulative", data: cumulative, color: C.nav, kind: "line" },
-    { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
-      label: "Daily card spend with the running total" });
-
-  // Rewards: daily payout as columns, running total on its own right axis —
-  // the same form as card spend, which cashback is paid against.
-  if (s.cashback_usd && s.yield_usde) {
-    let cbRun = 0, yRun = 0;
-    comboChart(document.getElementById("chart-pay-cashback"),
-      { name: "Daily cashback", short: "daily", data: s.cashback_usd, color: C.unl, kind: "bar" },
-      { name: "Cumulative", short: "cumulative", data: s.cashback_usd.map(v => (cbRun += v || 0)), color: C.ink, kind: "line" },
-      { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
-        label: "Daily cashback paid, in dollars, with the running total" });
-    comboChart(document.getElementById("chart-pay-yield"),
-      { name: "Daily yield", short: "daily", data: s.yield_usde, color: C.nav, kind: "bar" },
-      { name: "Cumulative", short: "cumulative", data: s.yield_usde.map(v => (yRun += v || 0)), color: C.ink, kind: "line" },
-      { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
-        label: "Daily yield paid to cardholders, with the running total" });
-  }
-
-  barChart(document.getElementById("chart-pay-flows"), [
-    { name: "Deposits", data: s.deposits_usde, color: C.nav, dir: 1 },
-    { name: "Withdrawals", data: s.withdrawals_usde, color: C.red, dir: -1 },
-  ], { dates, fmt: fmtK, ticks: T, label: "Daily deposits and withdrawals" });
-
-  // Cumulative deployments are a stock; wallets spending on a day are a flow.
-  lineChart(document.getElementById("chart-pay-wallets"), [
-    { name: "Deployed (cumulative)", short: "deployed", data: s.cumulative_wallets, color: C.nav },
-  ], { dates, zero: true, fmt: fmtN, ticks: T, label: "Wallets deployed over time" });
-
-  barChart(document.getElementById("chart-pay-active"),
-    [{ name: "Wallets spending", data: s.active_wallets, color: C.unl }],
-    { dates, fmt: fmtN, ticks: T, label: "Wallets spending per day" });
-}
-
-async function loadPay() {
-  if (P) return true;
-  const RAW = "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/ethenapay.json";
-  const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
-  for (const u of (isLocal ? ["ethenapay.json", RAW] : [RAW, "ethenapay.json"])) {
-    try { P = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
-  }
-  return !!P;
-}
-
-const VIEWS = {
-  nav: { eyebrow: "EthenaDAT / NAV Tracker · Nasdaq: USDE", h1: "StablecoinX vs. its ENA treasury" },
-  pay: { eyebrow: "EthenaDAT / EthenaPay · Avalanche C-Chain", h1: "The USDe card programme, on-chain" },
-};
-
-async function showView(v) {
-  if (!VIEWS[v]) v = "nav";
-  for (const k of Object.keys(VIEWS)) {
-    document.getElementById("view-" + k).hidden = k !== v;
-    const t = document.getElementById("tab-" + k);
-    t.setAttribute("aria-selected", String(k === v));
-  }
-  document.getElementById("badges-nav").hidden = v !== "nav";
-  document.getElementById("badges-pay").hidden = v !== "pay";
-  document.getElementById("foot-pay").hidden = v !== "pay";
-  document.getElementById("eyebrow").textContent = VIEWS[v].eyebrow;
-  document.getElementById("h1").textContent = VIEWS[v].h1;
-  // replaceState throws a SecurityError on file:// (and in some sandboxed
-  // embeds); the tab itself must still work there, so this is best-effort.
-  try { history.replaceState(null, "", v === "nav" ? location.pathname : "#pay"); } catch (e) { /* URL stays put */ }
-
-  if (v === "nav" && navChartsStale) { navChartsStale = false; renderCharts(); }
-  if (v === "pay" && !payDrawn) {
-    if (await loadPay()) { renderPayTiles(); renderPayCharts(); payDrawn = true; }
-    else document.getElementById("pay-tiles").innerHTML =
-      '<div class="tile"><div class="k">EthenaPay</div><div class="v">–</div><div class="d">data unavailable — retry shortly</div></div>';
-  }
-}
-
-document.querySelectorAll(".tab").forEach(t =>
-  t.addEventListener("click", () => showView(t.dataset.view)));
-window.addEventListener("hashchange", () => showView(location.hash === "#pay" ? "pay" : "nav"));
-
-(async () => {
-  try {
-    // Data refreshes land in the GitHub repo every 30 min; prefer the raw
-    // feed so the Cloudflare-hosted page updates without a redeploy.
-    const RAW = "https://raw.githubusercontent.com/QorbQuant/EthenaDAT/main/docs/data.json";
-    const isLocal = ["localhost", "127.0.0.1"].includes(location.hostname);
-    const DATA_URLS = isLocal ? ["data.json", RAW] : [RAW, "data.json"];
-    for (const u of DATA_URLS) {
-      try { D = await (await fetch(u + "?t=" + Date.now())).json(); break; } catch (e) { /* next */ }
-    }
-    if (!D) throw new Error("no data source reachable");
-    renderTiles(); renderCharts(); renderUnlocks(); renderTable(); renderAutoFilings(); renderInsiders(); renderOptions();
-    document.getElementById("stamp").textContent = "Data as of " + D.generated_at.replace("T", " ").slice(0, 16) + " UTC.";
-    refreshLive();
-    setInterval(refreshLive, 60000);
-    let rt;
-    window.addEventListener("resize", () => {
-      clearTimeout(rt);
-      rt = setTimeout(() => {
-        if (!document.getElementById("view-nav").hidden) renderCharts();
-        else if (payDrawn) renderPayCharts();
-      }, 150);
-    });
-    if (location.hash === "#pay") showView("pay");
-    // credit toast — once per day per browser
-    try {
-      const KEY = "credit-toast-at";
-      let lastShown = 0;
-      try { lastShown = +localStorage.getItem(KEY) || 0; } catch (e) {}
-      if (Date.now() - lastShown > 86400e3) {
-        const toast = document.getElementById("toast");
-        const hide = () => toast.classList.remove("show");
-        setTimeout(() => {
-          toast.classList.add("show");
-          try { localStorage.setItem(KEY, String(Date.now())); } catch (e) {}
-          setTimeout(hide, 10000);
-        }, 1500);
-        document.getElementById("toast-close").addEventListener("click", hide);
-      }
-    } catch (e) { /* cosmetic only */ }
-  } catch (e) {
-    document.getElementById("sub").textContent = "data unavailable — retry shortly";
-    document.querySelector(".live-dot").classList.add("err");
-  }
-})();
-</script>
-</body>
+    <noscript
+      ><p style="padding: 30px; color: #eeeae3">
+        Enable JavaScript to load the dashboard.
+        <a href="data.json">StablecoinX data</a> ·
+        <a href="ethenapay.json">EthenaPay data</a>
+      </p></noscript
+    >
+    <script src="assets/d3.min.js"></script>
+    <script src="assets/data.js"></script>
+    <script src="assets/valuation.js"></script>
+    <script src="assets/research.js"></script>
+    <script src="assets/app.js"></script>
+  </body>
 </html>
