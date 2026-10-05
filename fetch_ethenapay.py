@@ -62,11 +62,17 @@ SERIES_COLUMNS = {
     "depositing_wallets": "depositing_wallets",
     "tvl_usde": "tvl_usde",
     "cashback_avax": "cashback_avax",
+    "cashback_usd": "cashback_usd",
+    "cashback_wallets": "cashback_wallets",
+    "yield_usde": "yield_usde",
+    "yield_wallets": "yield_wallets",
+    "other_rewards_usde": "other_rewards_usde",
 }
 
 # A silent schema change upstream would otherwise publish a tab full of dashes.
-REQUIRED_HEADLINE = {"total_users", "funded_wallets", "lifetime_spend_usde", "tvl_usde"}
-REQUIRED_DAILY = {"day", "new_users", "spend_usde"}
+REQUIRED_HEADLINE = {"total_users", "funded_wallets", "lifetime_spend_usde", "tvl_usde",
+                     "cashback_usd_total", "yield_usd_total"}
+REQUIRED_DAILY = {"day", "new_users", "spend_usde", "yield_usde", "cashback_usd"}
 
 
 def published_age_hours() -> float:
@@ -170,7 +176,12 @@ def main() -> None:
             "tvl_usde": num(headline.get("tvl_usde")),
             "top10_balance_share": num(headline.get("top10_balance_share")),
             "cashback_avax_total": num(headline.get("cashback_avax_total")),
+            "cashback_usd_total": num(headline.get("cashback_usd_total")),
             "cashback_payments_total": num(headline.get("cashback_payments_total")),
+            "cashback_wallets_total": num(headline.get("cashback_wallets_total")),
+            "yield_usd_total": num(headline.get("yield_usd_total")),
+            "yield_payments_total": num(headline.get("yield_payments_total")),
+            "yield_wallets_total": num(headline.get("yield_wallets_total")),
             "max_logs_per_tx": num(headline.get("max_logs_per_tx")),
             "batched_spend_share": num(headline.get("batched_spend_share")),
         },
@@ -186,6 +197,22 @@ def main() -> None:
     payload["headline"]["refund_rate"] = (
         payload["headline"]["lifetime_reversals_usde"] / spend if spend else None
     )
+    payload["headline"]["lifetime_other_rewards_usde"] = sum(v or 0 for v in series["other_rewards_usde"])
+
+    # Reward rates over the last 30 *complete* days — today is partial, and a
+    # partial day would understate both. Cashback as a share of card spend; yield
+    # annualised against the average USDe held over the same window.
+    window = slice(-31, -1) if len(series["date"]) > 31 else slice(0, -1)
+    w_spend = sum(v or 0 for v in series["spend_usde"][window])
+    w_cashback = sum(v or 0 for v in series["cashback_usd"][window])
+    w_yield = sum(v or 0 for v in series["yield_usde"][window])
+    w_held = [v for v in series["tvl_usde"][window] if v is not None]
+    avg_held = sum(w_held) / len(w_held) if w_held else 0
+    days = len(series["date"][window])
+    payload["headline"]["cashback_usd_30d"] = w_cashback
+    payload["headline"]["cashback_rate_30d"] = w_cashback / w_spend if w_spend else None
+    payload["headline"]["yield_usd_30d"] = w_yield
+    payload["headline"]["yield_apy_30d"] = (w_yield / avg_held) * 365 / days if avg_held and days else None
 
     OUT.parent.mkdir(exist_ok=True)
     OUT.write_text(json.dumps(payload, separators=(",", ":"), allow_nan=False))

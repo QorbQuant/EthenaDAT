@@ -356,6 +356,22 @@
       </div>
     </section>
 
+    <section id="sec-pay-rewards">
+      <div class="sec-head"><h2>Cardholder rewards</h2><div class="chart-note">Cashback in AVAX for card spend · yield in USDe on balances, claimed through Merkl</div></div>
+      <div class="tiles" id="pay-rewards" style="margin-top:0"></div>
+      <div class="chart-wrap" id="chart-pay-cashback" style="margin-top:22px"></div>
+      <div class="legend">
+        <span class="l-unl">Daily cashback, $ (left)</span>
+        <span class="l-ink">Cumulative (right)</span>
+      </div>
+      <div class="chart-wrap" id="chart-pay-yield" style="margin-top:22px"></div>
+      <div class="legend">
+        <span class="l-nav">Daily yield, $ (left)</span>
+        <span class="l-ink">Cumulative (right)</span>
+      </div>
+      <div class="chart-note" id="pay-rewards-note" style="margin-top:10px"></div>
+    </section>
+
     <section>
       <div class="sec-head"><h2>Deposits &amp; withdrawals</h2><div class="chart-note">External USDe in and out each day · wallet-to-wallet transfers and refunded authorizations are excluded</div></div>
       <div class="chart-wrap" id="chart-pay-flows"></div>
@@ -1190,11 +1206,32 @@ function renderPayTiles() {
 
   document.getElementById("pay-tiles2").innerHTML =
     tile("Refund rate", fmtPc(h.refund_rate), "", fmtK(h.lifetime_reversals_usde) + " reversed") +
-    tile("Cashback paid", fmtN(h.cashback_avax_total) + " AVAX", "c-unl", fmtInt(h.cashback_payments_total) + " payments") +
+    (h.yield_usd_total != null
+      ? tile("Rewards paid", fmtK((h.cashback_usd_total || 0) + (h.yield_usd_total || 0)), "c-unl", "cashback + yield, all time")
+      : tile("Cashback paid", fmtN(h.cashback_avax_total) + " AVAX", "c-unl", fmtInt(h.cashback_payments_total) + " payments")) +
     tile("Activation", fmtPc(h.activation_rate), "", fmtInt(h.spending_wallets) + " of " + fmtInt(h.wallets_created) + " ever spent") +
     tile("Balance concentration", fmtPc(h.top10_balance_share), "", "held by the top 10 wallets") +
     tile("Wallets deployed", fmtInt(h.wallets_created), "", fmtInt(h.wallets_created_30d) + " in the last 30d") +
     tile("Avg per funded wallet", fmtK(h.funded_wallets ? h.tvl_usde / h.funded_wallets : null), "", "USDe held");
+
+  // Rewards section needs the yield/cashback-USD columns; older data lacks them.
+  const hasRewards = h.yield_usd_total != null && h.cashback_usd_total != null;
+  document.getElementById("sec-pay-rewards").hidden = !hasRewards;
+  if (hasRewards) {
+    document.getElementById("pay-rewards").innerHTML =
+      tile("Cashback paid", fmtK(h.cashback_usd_total), "c-unl",
+        `${fmtN(h.cashback_avax_total)} AVAX to ${fmtInt(h.cashback_wallets_total)} wallets`) +
+      tile("Cashback rate, 30d", fmtPc(h.cashback_rate_30d), "", `of card spend · ${fmtK(h.cashback_usd_30d)} paid`) +
+      tile("Yield paid", fmtK(h.yield_usd_total), "c-nav",
+        `USDe to ${fmtInt(h.yield_wallets_total)} wallets`) +
+      tile("Yield, 30d", fmtPc(h.yield_apy_30d) + " APY", "", `on USDe held · ${fmtK(h.yield_usd_30d)} paid`);
+    document.getElementById("pay-rewards-note").textContent =
+      "Cashback is valued at the AVAX price on the day it was paid. Rates use the last 30 complete days. " +
+      "Daily yield is dated by when it was claimed, which can lag when it was earned: claims paused Sep 13–16 and about four days' worth landed on Sep 17. " +
+      (h.lifetime_other_rewards_usde > 0
+        ? `Yield excludes ${fmtK(h.lifetime_other_rewards_usde)} of USDe from a second Safe that pays only wallets already receiving yield, at roughly 12% on top — its purpose isn't confirmed, so it isn't counted here.`
+        : "");
+  }
 
   document.getElementById("pay-funnel").innerHTML =
     tile("Wallets deployed", fmtInt(h.wallets_created), "c-nav", "100% — one per signup") +
@@ -1240,6 +1277,22 @@ function renderPayCharts() {
     { name: "Cumulative", short: "cumulative", data: cumulative, color: C.nav, kind: "line" },
     { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
       label: "Daily card spend with the running total" });
+
+  // Rewards: daily payout as columns, running total on its own right axis —
+  // the same form as card spend, which cashback is paid against.
+  if (s.cashback_usd && s.yield_usde) {
+    let cbRun = 0, yRun = 0;
+    comboChart(document.getElementById("chart-pay-cashback"),
+      { name: "Daily cashback", short: "daily", data: s.cashback_usd, color: C.unl, kind: "bar" },
+      { name: "Cumulative", short: "cumulative", data: s.cashback_usd.map(v => (cbRun += v || 0)), color: C.ink, kind: "line" },
+      { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
+        label: "Daily cashback paid, in dollars, with the running total" });
+    comboChart(document.getElementById("chart-pay-yield"),
+      { name: "Daily yield", short: "daily", data: s.yield_usde, color: C.nav, kind: "bar" },
+      { name: "Cumulative", short: "cumulative", data: s.yield_usde.map(v => (yRun += v || 0)), color: C.ink, kind: "line" },
+      { dates, fmtLeft: fmtK, fmtRight: fmtK, ticksLeft: T, ticksRight: T,
+        label: "Daily yield paid to cardholders, with the running total" });
+  }
 
   barChart(document.getElementById("chart-pay-flows"), [
     { name: "Deposits", data: s.deposits_usde, color: C.nav, dir: 1 },
