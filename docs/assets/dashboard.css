@@ -1700,3 +1700,60 @@ body {
     gap: 22px;
   }
 }
+/* Secondary export controls stay outside the chart's plotting area. */
+#sx-studio .chart-tools-slot,
+#sx-studio .chart-tools {
+  position: relative;
+  display: flex;
+  justify-content: flex-end;
+  margin: 4px 0 8px;
+  min-height: 24px;
+  font-size: 11px;
+}
+#sx-studio .chart-tools summary {
+  cursor: pointer;
+  color: var(--sx-muted);
+  list-style: none;
+  text-align: right;
+  padding: 4px 0;
+}
+#sx-studio .chart-tools summary::-webkit-details-marker {
+  display: none;
+}
+#sx-studio .chart-tools summary:hover {
+  color: var(--sx-text);
+}
+#sx-studio .chart-tools-panel {
+  position: absolute;
+  right: 0;
+  bottom: 29px;
+  z-index: 30;
+  width: 250px;
+  padding: 12px;
+  border: 1px solid var(--sx-rule);
+  border-radius: 5px;
+  background: var(--sx-panel);
+  box-shadow: 0 12px 35px #0006;
+}
+#sx-studio .chart-tools-panel button {
+  display: block;
+  width: 100%;
+  border: 0;
+  background: none;
+  text-align: left;
+  padding: 9px 8px;
+}
+#sx-studio .chart-tools-panel button:hover {
+  background: #ffffff08;
+}
+#sx-studio .chart-tools-panel p,
+#sx-studio .chart-tools-panel [role="status"] {
+  display: block;
+  color: var(--sx-muted);
+  padding: 7px 8px;
+  font-size: 11px;
+}
+#sx-studio .chart-tools-panel input {
+  width: 100%;
+  margin-top: 8px;
+}

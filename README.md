@@ -220,3 +220,21 @@ Search Console verification is a public HTML meta tag in `extraHead`.
 The root and legacy `/index.html` permanently redirect to `/stablecoinx/`;
 legacy `#pay` bookmarks are handled by the client. Alternate hostnames redirect
 to `https://ethenadash.com`. Unknown paths remain 404 responses.
+
+## Chart sharing and exports
+
+Each chart has a secondary Share / export menu. PNG files include dates, units,
+source/export timestamps and methodology notes. CSV files contain the plotted
+values at full available precision, with provenance and the view URL on each row.
+Cumulative EthenaPay exports retain their inception basis when a shorter window
+is selected; event counts are successful allowance logs, not transaction hashes.
+Scenario exports are explicitly identified as hypothetical.
+
+Copied links preserve the chart, absolute date window, selected observation and
+applicable scenario/aggregation settings. Source corrections and new quotes can
+change values; a link is not an immutable dataset snapshot. Query parameters
+never change the page's canonical URL. Export rendering loads only on demand.
+
+Initial HTML paints before chart initialization. Offscreen research charts draw
+when approaching the viewport; quote-only requests are skipped on EthenaPay.
+Run all regression checks with `node --test tests/*.test.*`.

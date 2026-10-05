@@ -61,8 +61,14 @@ window.mountValuation = function (initial) {
     svg.appendChild(n);
     return n;
   }
+  const shared = ChartShare.initial;
+  let fixedWindow = !!(shared.from || shared.to);
   function saved() {
-    return {};
+    return {
+      ...shared,
+      attribRange: shared.chart === "sx-waterfall" ? shared.range : undefined,
+      expanded: shared.chart === "sx-waterfall",
+    };
   }
   function applySaved(v) {
     if (["history", "explore"].includes(v.mode)) state.mode = v.mode;
@@ -78,12 +84,17 @@ window.mountValuation = function (initial) {
     if (typeof v.expanded === "boolean") state.expanded = v.expanded;
   }
   applySaved(saved());
+  if (shared.date && rows.some((r) => r.date === shared.date))
+    selected = rows.findIndex((r) => r.date === shared.date);
   function persist() {}
   function filter(range) {
+    if (fixedWindow) return ChartShare.windowRows(rows, shared.from, shared.to);
     if (range === "all") return rows;
     const from = base.t - Number(range) * 864e5;
     return rows.filter((r) => r.t >= from);
   }
+  if (!filter(state.range).includes(rows[selected]))
+    selected = rows.indexOf(filter(state.range).at(-1));
   function path(points) {
     return points
       .map((p, i) => (i ? "L" : "M") + p[0].toFixed(2) + "," + p[1].toFixed(2))
@@ -274,7 +285,9 @@ window.mountValuation = function (initial) {
       t = 24,
       b = h - 38,
       max = Math.ceil(Math.max(...data.map((q) => q.nav)) / 2e8) * 2e8,
-      x = (v) => l + ((v - data[0].t) / (data.at(-1).t - data[0].t)) * (r - l),
+      x = (v) =>
+        l +
+        ((v - data[0].t) / Math.max(1, data.at(-1).t - data[0].t)) * (r - l),
       y = (v) => b - (v / max) * (b - t);
     geometry = { l, r, t, b, w, h, data, x, y };
     for (let i = 0; i <= 4; i++) {
@@ -469,7 +482,8 @@ window.mountValuation = function (initial) {
       min = low - pad,
       max = high + pad,
       x = (q) =>
-        l + ((q.t - data[0].t) / (data.at(-1).t - data[0].t)) * (r - l),
+        l +
+        ((q.t - data[0].t) / Math.max(1, data.at(-1).t - data[0].t)) * (r - l),
       y = (v) => b - ((v - min) / (max - min)) * (b - t);
     [low, high].forEach((v) => {
       add(svg, "line", { x1: l, y1: y(v), x2: r, y2: y(v), stroke: "#29313a" });
@@ -545,8 +559,8 @@ window.mountValuation = function (initial) {
     return c;
   }
   function attribution() {
-    const end = rows.at(-1);
     const data = filter(state.attribRange),
+      end = data.at(-1),
       start = data[0],
       c = shapley(
         [start.ena, start.per, start.mnav],
@@ -694,8 +708,9 @@ window.mountValuation = function (initial) {
       b.setAttribute("aria-pressed", b.dataset.range === state.range),
     );
     const data = filter(state.range);
+    if (!data.includes(rows[selected])) selected = rows.indexOf(data.at(-1));
     $("#sx-history-date-input").min = rows.indexOf(data[0]);
-    $("#sx-history-date-input").max = rows.length - 1;
+    $("#sx-history-date-input").max = rows.indexOf(data.at(-1));
     scenarioControls();
     updateHistory();
     formula();
@@ -759,6 +774,7 @@ window.mountValuation = function (initial) {
   $$("[data-range]").forEach(
     (b) =>
       (b.onclick = () => {
+        fixedWindow = false;
         state.range = b.dataset.range;
         state.attribRange = state.range;
         selected = rows.length - 1;
@@ -791,8 +807,9 @@ window.mountValuation = function (initial) {
   $$("[data-attrib-range]").forEach(
     (b) =>
       (b.onclick = () => {
+        fixedWindow = false;
         state.attribRange = b.dataset.attribRange;
-        attribution();
+        render();
         persist();
       }),
   );
@@ -848,7 +865,10 @@ window.mountValuation = function (initial) {
     dragging = false;
   };
   function headline() {
-    $("#sx-ratio").innerHTML = base.mnav.toFixed(2) + "<span>×</span>";
+    const ratio = $("#sx-ratio"),
+      text = base.mnav.toFixed(2);
+    if (ratio.textContent !== text + "×")
+      ratio.innerHTML = text + "<span>×</span>";
     $("#sx-cents").textContent = Math.round(base.mnav * 100) + "¢";
     $("#sx-price").textContent = money(base.price);
     $("#sx-price-change").textContent = D.usde.prev_close
@@ -872,10 +892,137 @@ window.mountValuation = function (initial) {
       D.liveW?.price ?? S.usdew_close.at(-1),
     );
   }
+  for (const id of ["sx-main-chart", "sx-detail-chart"])
+    ChartShare.register(id, () => {
+      const data = filter(state.range),
+        scenario = id === "sx-main-chart" && state.mode === "explore";
+      const q = rows[selected],
+        factor = id === "sx-detail-chart" ? state.factor : null;
+      const key = factor ? factorMeta[factor][2] : null;
+      return {
+        title: scenario
+          ? "StablecoinX valuation scenario"
+          : factor
+            ? factorMeta[factor][0]
+            : "StablecoinX market cap & token NAV",
+        kind: scenario ? "SCENARIO" : "RECORDED DATA",
+        updated: D.generated_at,
+        period: scenario
+          ? "Illustrative inputs, not a forecast"
+          : data[0].date + " — " + data.at(-1).date,
+        subtitle: scenario
+          ? `ENA $${state.ena.toFixed(4)} × ${base.per.toFixed(4)} ENA/share × ${state.mnav.toFixed(4)} mNAV = $${(state.ena * base.per * state.mnav).toFixed(2)} per share`
+          : (factor
+              ? factorMeta[factor][0] +
+                " · " +
+                {
+                  ena: "USD per ENA",
+                  holdings: "ENA per Class A share",
+                  multiple: "multiple of token NAV",
+                  price: "USD per share",
+                }[factor]
+              : "Blue: token NAV / Copper: market cap · USD") +
+            " · Selected: " +
+            q.date,
+        note:
+          "Reported ENA token NAV excludes other assets and liabilities; Class A share-count basis. " +
+          (D.liveDate
+            ? "Current session may include intraday quotes."
+            : "Recorded source observations."),
+        columns: scenario
+          ? [
+              "ena_price_usd",
+              "ena_per_share",
+              "mnav",
+              "implied_share_price_usd",
+            ]
+          : factor
+            ? [
+                "date",
+                {
+                  ena: "ena_price_usd",
+                  holdings: "ena_per_share",
+                  multiple: "mnav",
+                  price: "share_price_usd",
+                }[factor],
+              ]
+            : [
+                "date",
+                "token_nav_usd",
+                "market_cap_usd",
+                "share_price_usd",
+                "ena_price_usd",
+                "ena_per_share",
+                "mnav",
+              ],
+        rows: scenario
+          ? [
+              [
+                state.ena,
+                base.per,
+                state.mnav,
+                state.ena * base.per * state.mnav,
+              ],
+            ]
+          : data.map((r) =>
+              factor
+                ? [r.date, r[key]]
+                : [r.date, r.nav, r.cap, r.price, r.ena, r.per, r.mnav],
+            ),
+        state: {
+          mode: state.mode,
+          range: state.range,
+          from: data[0].date,
+          to: data.at(-1).date,
+          date: q.date,
+          ena: scenario ? state.ena : null,
+          mnav: scenario ? state.mnav : null,
+          factor,
+        },
+      };
+    });
+  ChartShare.register("sx-waterfall", () => {
+    const data = filter(state.attribRange),
+      start = data[0],
+      end = data.at(-1);
+    const c = shapley(
+      [start.ena, start.per, start.mnav],
+      [end.ena, end.per, end.mnav],
+    );
+    return {
+      title: "StablecoinX share-price attribution",
+      updated: D.generated_at,
+      period: start.date + " — " + end.date,
+      subtitle:
+        "USD per share · contributions allocated across ENA price, ENA per share, and mNAV",
+      note: "Shapley decomposition of the recorded share-price change. Attribution is an accounting identity, not evidence of causation.",
+      columns: ["component", "value_usd_per_share"],
+      rows: [
+        ["Starting share price", start.price],
+        ["ENA price contribution", c[0]],
+        ["ENA per share contribution", c[1]],
+        ["mNAV contribution", c[2]],
+        ["Ending share price", end.price],
+      ],
+      state: {
+        mode: "history",
+        range: state.attribRange,
+        from: start.date,
+        to: end.date,
+      },
+    };
+  });
   headline();
   render();
   let resizeFrame;
-  const observer = new ResizeObserver(() => {
+  const sizes = new WeakMap();
+  const observer = new ResizeObserver((entries) => {
+    const changed = entries.some((e) => {
+      const prev = sizes.get(e.target);
+      sizes.set(e.target, e.contentRect.width);
+      return prev !== undefined && prev !== e.contentRect.width;
+    });
+    if (!changed) return;
     cancelAnimationFrame(resizeFrame);
     resizeFrame = requestAnimationFrame(() => {
       if (state.mode === "explore") mapChart();

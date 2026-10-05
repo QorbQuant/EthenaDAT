@@ -120,6 +120,7 @@ export function renderDashboard(template, path, feeds) {
     .on("#full-" + active, {
       element(e) {
         e.removeAttribute("hidden");
+        e.setAttribute("role", "main");
       },
     })
     .on("#full-" + (active === "sx" ? "pay" : "sx") + " h1", {
@@ -173,7 +174,15 @@ export function renderDashboard(template, path, feeds) {
   for (const [id, value] of Object.entries(ids))
     rewriter = rewriter.on("#" + id, {
       element(e) {
-        e.setInnerContent(value);
+        if (id === "sx-ratio")
+          e.setInnerContent(value.replace("×", "<span>×</span>"), {
+            html: true,
+          });
+        else if (id === "pay-tvl")
+          e.setInnerContent(value.replace(/([KMB])$/, "<span>$1</span>"), {
+            html: true,
+          });
+        else e.setInnerContent(value);
       },
     });
   for (const [key, data] of [

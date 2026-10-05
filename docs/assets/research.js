@@ -70,7 +70,16 @@ window.mountResearch = function (initialD, initialP) {
       let n = 0;
       return a.map((v) => (v == null ? null : (n += v)));
     };
-  let saved = {};
+  const shared = ChartShare.initial;
+  let saved = {
+    fullPage: location.pathname === "/ethenapay/" ? "pay" : "sx",
+    fullPerf: shared.range,
+    fullPayRange: shared.range,
+    fullPayView: shared.view,
+    fullPayAgg: shared.agg,
+    fullRewardView: shared.rewards,
+  };
+  let fixedWindow = !!(shared.from || shared.to);
   let F = {
     fullPage: ["sx", "pay"].includes(saved.fullPage) ? saved.fullPage : "sx",
     fullPerf: ["30", "90", "all"].includes(saved.fullPerf)
@@ -93,13 +102,19 @@ window.mountResearch = function (initialD, initialP) {
   let payIndex = T.date.length - 1,
     perfIndex = S.date.length - 1,
     showAllFilings = false,
-    payoff = 20;
+    payoff = shared.payoff ?? 20;
+  if (shared.date && T.date.includes(shared.date))
+    payIndex = T.date.indexOf(shared.date);
+  if (shared.date && S.date.includes(shared.date))
+    perfIndex = S.date.indexOf(shared.date);
   const registry = new Map();
   function persist() {}
   const ts = (d) => Date.parse(d + "T00:00:00Z");
   let rS = S.date.map((d, i) => ({ i, d, t: ts(d) })),
     rP = T.date.map((d, i) => ({ i, d, t: ts(d) }));
   function sliced(rows, range) {
+    if (fixedWindow)
+      return ChartShare.windowRows(rows, shared.from, shared.to, "d");
     if (range === "all") return rows;
     return rows.filter((r) => r.t >= rows.at(-1).t - Number(range) * 864e5);
   }
@@ -112,12 +127,120 @@ window.mountResearch = function (initialD, initialP) {
   }
   function chart(id, cfg) {
     registry.set(id, cfg);
+    ChartShare.register(id, () => {
+      const c = registry.get(id),
+        pay = c.group === "pay",
+        scenario = c.group === "payoff";
+      const view = pay ? F.fullPayView : undefined;
+      const date = pay
+        ? T.date[payIndex]
+        : c.group === "perf"
+          ? S.date[perfIndex]
+          : undefined;
+      const units = {
+        "full-per-share": "USD per share",
+        "full-mnav": "multiple of token NAV",
+        "full-indexed": "index, first recorded session = 100",
+        "full-ena-per-share": "ENA per Class A share",
+        "full-warrants-chart": "USD",
+        "full-payoff-chart": "gross value per USD invested at expiry",
+        "pay-main-chart":
+          view === "spend"
+            ? "USDe"
+            : view === "count"
+              ? "spend events"
+              : "distinct wallets per day",
+        "pay-balance-chart": "USDe",
+        "pay-flows-chart": "USDe; withdrawals plotted negative",
+        "pay-created-chart": "wallets",
+        "pay-active-chart": "distinct wallets per day",
+        "pay-cashback-chart": "USD at payout-day AVAX price",
+        "pay-yield-chart": "USDe",
+      };
+      const aggregation = pay
+        ? id === "pay-cashback-chart" || id === "pay-yield-chart"
+          ? F.fullRewardView
+          : id === "pay-main-chart" && view !== "active"
+            ? F.fullPayAgg
+            : null
+        : null;
+      const note = scenario
+        ? `Hypothetical expiry payoff; ignores early redemption, fees and taxes. USDE input $${Ethena.current(D).price}; USDEW input $${D.liveW?.price ?? S.usdew_close.at(-1)}; strike $${D.warrants.strike}.`
+        : pay
+          ? "Successful spend events are not transaction hashes. Wallets are not people. Latest day may be partial."
+          : "Reported ENA token NAV excludes other assets and liabilities; Class A share-count basis. Quotes may be delayed.";
+      return {
+        title: c.title,
+        kind: scenario ? "SCENARIO" : "RECORDED DATA",
+        updated: (pay ? P : D).generated_at,
+        period: scenario
+          ? "Terminal stock-price scenarios (USD)"
+          : c.rows[0].d + " — " + c.rows.at(-1).d,
+        subtitle:
+          c.series
+            .map(
+              (v, i) =>
+                (v.color === copper ? "Copper" : "Blue") + ": " + v.name,
+            )
+            .join(" / ") +
+          " · Units: " +
+          units[id] +
+          (aggregation
+            ? " · " +
+              (aggregation === "total" ? "Cumulative since inception" : "Daily")
+            : "") +
+          (date ? " · Selected: " + date : ""),
+        note:
+          note +
+          (aggregation
+            ? " Values are " +
+              (aggregation === "total"
+                ? "cumulative since inception, including observations before the selected window."
+                : "daily observations.")
+            : "") +
+          (scenario ? " Selected terminal stock price: $" + payoff + "." : ""),
+        columns: [
+          scenario ? "terminal_stock_price_usd" : "date",
+          ...c.series.map(
+            (v) =>
+              (aggregation === "total" ? "Cumulative " : "") +
+              v.name +
+              " [" +
+              units[id] +
+              "]",
+          ),
+        ],
+        rows: c.rows.map((r, i) => [
+          scenario ? r.t : r.d,
+          ...c.series.map((v) => v.data[i]),
+        ]),
+        state: {
+          range: pay ? F.fullPayRange : F.fullPerf,
+          from: scenario ? null : c.rows[0].d,
+          to: scenario ? null : c.rows.at(-1).d,
+          date,
+          view: pay ? F.fullPayView : null,
+          agg: pay ? F.fullPayAgg : null,
+          rewards: pay ? F.fullRewardView : null,
+          payoff: scenario ? payoff : null,
+        },
+      };
+    });
     draw(id);
   }
+  const nearViewport = (svg) => {
+    const r = svg.getBoundingClientRect();
+    return (
+      !svg.closest("[hidden]") &&
+      r.width > 20 &&
+      r.bottom >= -200 &&
+      r.top < innerHeight + 200
+    );
+  };
   function draw(id) {
     const svg = $("#" + id),
       c = registry.get(id);
-    if (!svg || !c || svg.closest("[hidden]")) return;
+    if (!svg || !c || !nearViewport(svg)) return;
     const w = svg.getBoundingClientRect().width,
       h = svg.getBoundingClientRect().height;
     if (w < 20) return;
@@ -319,6 +442,7 @@ window.mountResearch = function (initialD, initialP) {
   function performance() {
     if (!S.date.length) return;
     const rr = sliced(rS, F.fullPerf);
+    if (!rr.some((r) => r.i === perfIndex)) perfIndex = rr.at(-1).i;
     $$("[data-perf]").forEach((b) =>
       b.setAttribute("aria-pressed", b.dataset.perf === F.fullPerf),
     );
@@ -426,7 +550,7 @@ window.mountResearch = function (initialD, initialP) {
       (v) => "$" + v.toFixed(0),
     );
     const svg = $("#full-payoff-chart");
-    if (svg.closest("[hidden]")) return;
+    if (!nearViewport(svg)) return;
     const w = svg.getBoundingClientRect().width,
       l = w < 400 ? 54 : 62,
       r = w - 12,
@@ -633,6 +757,7 @@ window.mountResearch = function (initialD, initialP) {
   $$("[data-perf]").forEach(
     (b) =>
       (b.onclick = () => {
+        fixedWindow = false;
         F.fullPerf = b.dataset.perf;
         perfIndex = S.date.length - 1;
         performance();
@@ -642,6 +767,7 @@ window.mountResearch = function (initialD, initialP) {
   $$("[data-pay-range]").forEach(
     (b) =>
       (b.onclick = () => {
+        fixedWindow = false;
         F.fullPayRange = b.dataset.payRange;
         payCharts();
         persist();
@@ -676,6 +802,7 @@ window.mountResearch = function (initialD, initialP) {
     updatePayObservation();
     for (const [id, c] of registry) if (c.group === "pay") draw(id);
   };
+  $("#full-payoff-price").value = payoff;
   $("#full-payoff-price").oninput = (e) => {
     payoff = Number(e.target.value);
     payoffChart();
@@ -906,15 +1033,35 @@ window.mountResearch = function (initialD, initialP) {
   payHeadlines();
   switchPage(F.fullPage);
   let frame;
-  const ro = new ResizeObserver(() => {
+  const sizes = new WeakMap();
+  const ro = new ResizeObserver((entries) => {
+    const changed = entries.some((e) => {
+      const previous = sizes.get(e.target);
+      sizes.set(e.target, e.contentRect.width);
+      return previous !== undefined && previous !== e.contentRect.width;
+    });
+    if (!changed) return;
     cancelAnimationFrame(frame);
     frame = requestAnimationFrame(() => {
       for (const [id] of registry) draw(id);
       if (F.fullPage === "sx") payoffChart();
     });
   });
-  $$(".full-chart").forEach((e) => ro.observe(e));
-  $$("details").forEach((e) =>
+  const visible = new IntersectionObserver(
+    (entries) => {
+      for (const e of entries)
+        if (e.isIntersecting) {
+          if (e.target.id === "full-payoff-chart") payoffChart();
+          else draw(e.target.id);
+        }
+    },
+    { rootMargin: "200px" },
+  );
+  $$(".full-chart").forEach((e) => {
+    ro.observe(e);
+    visible.observe(e);
+  });
+  $$("details:not(.chart-tools)").forEach((e) =>
     e.addEventListener("toggle", () => {
       if (e.open) for (const [id] of registry) draw(id);
     }),

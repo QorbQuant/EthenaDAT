@@ -149,8 +149,6 @@
     $("#full-sx").hidden = page !== "sx" || !D;
     $("#full-pay").hidden = page !== "pay" || !P;
     status();
-    research?.switchPage(page);
-    if (page === "sx" && valuation) valuation.redraw();
   }
   function headlines() {
     if (D) {
@@ -210,13 +208,15 @@
       );
       const tvl = compact(h.tvl_usde),
         match = tvl.match(/^(.*?)([KMB])$/);
-      $("#pay-tvl").replaceChildren(
-        document.createTextNode(match ? match[1] : tvl),
-      );
-      if (match) {
-        const span = document.createElement("span");
-        span.textContent = match[2];
-        $("#pay-tvl").appendChild(span);
+      if ($("#pay-tvl").textContent !== tvl) {
+        $("#pay-tvl").replaceChildren(
+          document.createTextNode(match ? match[1] : tvl),
+        );
+        if (match) {
+          const span = document.createElement("span");
+          span.textContent = match[2];
+          $("#pay-tvl").appendChild(span);
+        }
       }
       $("#pay-source-time").textContent =
         "Source updated · " + stamp(P.generated_at);
@@ -239,7 +239,7 @@
   }
   function render() {
     if (source) D = Ethena.applyQuotes(source, quotes, ena);
-    if (D) {
+    if (D && page === "sx") {
       if (!valuation) valuation = mountValuation(D);
       else valuation.update(D);
     }
@@ -252,6 +252,7 @@
   async function refresh() {
     if (refreshing) return;
     refreshing = true;
+    let changed = false;
     const results = await Promise.allSettled([
       feed("data.json", "sx"),
       feed("ethenapay.json", "pay"),
@@ -270,16 +271,19 @@
           continue;
         }
         feeds[key] = { fallback: result.value.fallback };
+        changed ||=
+          !previous || previous.generated_at !== result.value.data.generated_at;
         if (i) P = Ethena.normalizePay(result.value.data);
         else source = result.value.data;
       } else feeds[key].failed = true;
     }
     loading = false;
     refreshing = false;
-    render();
+    if (changed) render();
+    else status();
   }
   async function refreshQuotes() {
-    if (quoting || !source) return;
+    if (quoting || !source || page !== "sx") return;
     quoting = true;
     const results = await Promise.allSettled([
       json(QUOTES),
@@ -307,13 +311,19 @@
         : null;
       feeds = initial.feeds;
       loading = false;
-      render();
     }
   } catch (error) {
     console.error("Snapshot initialization failed", error);
   }
-  route(page);
-  refresh().then(refreshQuotes);
+  // Let the server-rendered snapshot paint before initializing interactive charts.
+  requestAnimationFrame(() =>
+    requestAnimationFrame(() => {
+      render();
+      ChartShare.reveal();
+      if (!source || !P || feeds[page].fallback) refresh().then(refreshQuotes);
+      else refreshQuotes();
+    }),
+  );
   setInterval(() => {
     if (!document.hidden) refreshQuotes();
   }, 60000);

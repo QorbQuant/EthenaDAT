@@ -150,6 +150,11 @@
                 role="img"
                 aria-label="Valuation map: ENA price on the horizontal axis, mNAV on the vertical axis. Drag to set a scenario or use the labeled controls."
               ></svg>
+              <div
+                class="chart-tools-slot"
+                data-export-slot="sx-main-chart"
+                aria-hidden="true"
+              ></div>
               <div class="sx-plot-foot">
                 <span id="sx-chart-hint">Drag anywhere to explore</span
                 ><span id="sx-chart-foot-right">Fixed ENA per share</span>
@@ -341,6 +346,11 @@
               role="img"
               aria-label="Historical component values"
             ></svg>
+            <div
+              class="chart-tools-slot"
+              data-export-slot="sx-detail-chart"
+              aria-hidden="true"
+            ></div>
           </section>
           <section class="sx-moved">
             <button
@@ -390,6 +400,11 @@
                 role="img"
                 aria-label="Dollar contribution of ENA price, ENA per share, and valuation multiple to share-price change"
               ></svg>
+              <div
+                class="chart-tools-slot"
+                data-export-slot="sx-waterfall"
+                aria-hidden="true"
+              ></div>
               <table class="sx-attrib-table" aria-label="Attribution values">
                 <tbody id="sx-attrib-rows"></tbody>
               </table>
@@ -460,6 +475,11 @@
                   role="img"
                   aria-label="Token NAV per share and USDE share price history"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-per-share"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -474,6 +494,11 @@
                   role="img"
                   aria-label="Historical valuation multiple"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-mnav"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -488,6 +513,11 @@
                   role="img"
                   aria-label="USDE and ENA indexed to 100 on June 26 2026"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-indexed"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
                 <p class="full-caption">
                   Both start at 100 on Jun 26, 2026. Basis stays fixed when
@@ -508,6 +538,11 @@
                   role="img"
                   aria-label="Reported ENA per Class A share history"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-ena-per-share"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
             </div>
@@ -668,6 +703,11 @@
                   role="img"
                   aria-label="Warrant and share price history"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-warrants-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -684,6 +724,11 @@
                   role="img"
                   aria-label="Value at expiry of one dollar invested in stock or warrants by terminal share price"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="full-payoff-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-warrant-controls">
                   <label for="full-payoff-price">USDE at expiry</label
                   ><input
@@ -1001,6 +1046,11 @@
                   role="img"
                   aria-label="EthenaPay card activity over time"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-main-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout" id="pay-main-readout"></div>
                 <div class="full-pay-date">
                   <label for="pay-date-input">Inspect a date</label
@@ -1064,6 +1114,11 @@
                   role="img"
                   aria-label="USDe balances in card wallets over time"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-balance-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -1079,6 +1134,11 @@
                   role="img"
                   aria-label="Daily deposits above zero and withdrawals below zero"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-flows-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
             </div>
@@ -1133,6 +1193,11 @@
                   role="img"
                   aria-label="Cumulative card wallets created"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-created-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -1149,6 +1214,11 @@
                   role="img"
                   aria-label="Distinct daily spending wallets"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-active-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
             </div>
@@ -1280,6 +1350,11 @@
                   role="img"
                   aria-label="Cashback payments in dollar value"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-cashback-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
               <article class="full-chart-box">
@@ -1296,6 +1371,11 @@
                   role="img"
                   aria-label="Yield paid on card balances"
                 ></svg>
+                <div
+                  class="chart-tools-slot"
+                  data-export-slot="pay-yield-chart"
+                  aria-hidden="true"
+                ></div>
                 <div class="full-readout"></div>
               </article>
             </div>
@@ -1434,6 +1514,7 @@
     >
     <script defer src="/assets/d3.min.js"></script>
     <script defer src="/assets/data.js"></script>
+    <script defer src="/assets/share.js"></script>
     <script defer src="/assets/valuation.js"></script>
     <script defer src="/assets/research.js"></script>
     <script defer src="/assets/app.js"></script>
