@@ -7,7 +7,8 @@
 name = "ethenadash-site"
 compatibility_date = "2026-08-01"
 
-assets = { directory = "../docs" }
+main = "index.mjs"
+assets = { directory = "../docs", binding = "ASSETS", run_worker_first = true }
 
 routes = [
   { pattern = "ethenadash.com", custom_domain = true },

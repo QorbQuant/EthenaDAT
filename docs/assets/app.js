@@ -49,7 +49,11 @@
     loading = true,
     refreshing = false,
     quoting = false;
-  let page = location.hash === "#pay" ? "pay" : "sx",
+  if (location.hash === "#pay" && location.pathname !== "/ethenapay/") {
+    location.replace("/ethenapay/");
+    return;
+  }
+  let page = location.pathname === "/ethenapay/" ? "pay" : "sx",
     feeds = { sx: {}, pay: {} };
   const usd = (v, n = 2) =>
     Number.isFinite(v)
@@ -104,8 +108,8 @@
   }
   async function feed(file, type) {
     const urls = ["localhost", "127.0.0.1"].includes(location.hostname)
-      ? [file, RAW + file]
-      : [RAW + file, file];
+      ? ["/" + file, RAW + file]
+      : [RAW + file, "/" + file];
     for (let i = 0; i < urls.length; i++) {
       try {
         const d = await json(urls[i] + "?t=" + Date.now());
@@ -140,33 +144,14 @@
       el.hidden = key !== page || !message;
     }
   }
-  function route(next, write = false) {
+  function route(next) {
     page = next;
     $("#full-sx").hidden = page !== "sx" || !D;
     $("#full-pay").hidden = page !== "pay" || !P;
-    $$("[data-page]").forEach((b) =>
-      b.setAttribute("aria-pressed", b.dataset.page === page),
-    );
-    document.title =
-      page === "pay" ? "EthenaPay — EthenaDash" : "StablecoinX — EthenaDash";
-    if (write) {
-      history.pushState(
-        null,
-        "",
-        page === "pay" ? "#pay" : location.pathname + location.search,
-      );
-      window.scrollTo({ top: 0, behavior: "instant" });
-    }
     status();
     research?.switchPage(page);
     if (page === "sx" && valuation) valuation.redraw();
   }
-  $$("[data-page]").forEach(
-    (b) => (b.onclick = () => route(b.dataset.page, true)),
-  );
-  window.addEventListener("hashchange", () =>
-    route(location.hash === "#pay" ? "pay" : "sx"),
-  );
   function headlines() {
     if (D) {
       const c = Ethena.current(D),
@@ -310,6 +295,22 @@
       ena = { price: results[1].value.ethena.usd, at: Date.now() };
     quoting = false;
     render();
+  }
+  try {
+    const initial = JSON.parse(
+      $("#dashboard-bootstrap")?.textContent || "null",
+    );
+    if (initial) {
+      source = Ethena.valid(initial.sx, "sx") ? initial.sx : null;
+      P = Ethena.valid(initial.pay, "pay")
+        ? Ethena.normalizePay(initial.pay)
+        : null;
+      feeds = initial.feeds;
+      loading = false;
+      render();
+    }
+  } catch (error) {
+    console.error("Snapshot initialization failed", error);
   }
   route(page);
   refresh().then(refreshQuotes);

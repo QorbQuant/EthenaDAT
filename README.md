@@ -188,3 +188,35 @@ The redemption tracker excludes unfinished observations.
 Run calculation regression checks with `node --test tests/data.test.cjs`.
 Preview with `python3 -m http.server 8765 --directory docs`; check `/` and `/#pay`.
 Deploy remains `npx wrangler deploy --config site-worker/wrangler.toml`.
+
+## Website and search pages
+
+The production site is a Cloudflare Worker with static assets. Use the Worker
+preview (a plain static server does not render the new page routes):
+
+```bash
+npx wrangler dev --config site-worker/wrangler.toml --port 8777 --var LOCAL_DEV:true
+node --test tests/data.test.cjs tests/seo.test.mjs
+python3 scripts/check_seo.py http://127.0.0.1:8777
+npx wrangler deploy --config site-worker/wrangler.toml
+python3 scripts/check_seo.py https://ethenadash.com
+```
+
+`LOCAL_DEV` is only a local CLI override; never add it to production variables.
+`site-worker/index.mjs` renders both dashboard snapshots with the same validated
+JSON and calculations used by the browser. The upstream GitHub datasets are
+cached for five minutes at the edge; failed requests fall back to the deployed
+JSON and display a backup/staleness notice. Source refresh commits therefore
+continue to update the live dashboard without a website deployment. JavaScript
+adds live quotes and interactive charts after the initial HTML arrives.
+
+`site-worker/seo.mjs` owns canonical routes, metadata, author identity, sitemap
+and shared navigation. `site-worker/content.mjs` contains the three sourced
+research guides, methodology and About page. New articles need a unique route,
+useful original analysis, reviewed primary sources, and a link from Research.
+Change publication/update dates only when the editorial content actually changes.
+Search Console verification is a public HTML meta tag in `extraHead`.
+
+The root and legacy `/index.html` permanently redirect to `/stablecoinx/`;
+legacy `#pay` bookmarks are handled by the client. Alternate hostnames redirect
+to `https://ethenadash.com`. Unknown paths remain 404 responses.

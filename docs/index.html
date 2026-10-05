@@ -19,31 +19,20 @@
       content="Independent StablecoinX treasury valuation and EthenaPay on-chain analytics. Explore ENA NAV, market performance, card activity and rewards."
     />
     <meta name="theme-color" content="#0d1116" />
-    <link rel="stylesheet" href="assets/dashboard.css" />
+    <link rel="stylesheet" href="/assets/dashboard.css" />
   </head>
   <body>
     <div id="sx-studio">
       <div class="sx-shell">
         <header class="sx-nav">
-          <div class="sx-brand">ethena<span>dash</span></div>
+          <a class="sx-brand" href="/stablecoinx/" aria-label="EthenaDash home"
+            >ethena<span>dash</span></a
+          >
           <nav class="sx-nav-items" aria-label="Dashboard">
-            <button
-              type="button"
-              class="full-nav-button"
-              data-page="sx"
-              aria-pressed="true"
-              aria-controls="full-sx"
-            >
-              StablecoinX</button
-            ><button
-              type="button"
-              class="full-nav-button"
-              data-page="pay"
-              aria-pressed="false"
-              aria-controls="full-pay"
-            >
-              EthenaPay
-            </button>
+            <a class="full-nav-button" href="/stablecoinx/" aria-current="page"
+              >StablecoinX</a
+            ><a class="full-nav-button" href="/ethenapay/">EthenaPay</a
+            ><a class="full-nav-button" href="/research/">Research</a>
           </nav>
         </header>
         <div id="sx-status" class="data-status" role="status">
@@ -69,13 +58,19 @@
                 <span class="sx-ticker">NASDAQ / USDE</span>
               </div>
               <p class="sx-subtitle">
-                The asset. The market. The space between.
+                Reported ENA treasury. Token NAV. Market valuation.
               </p>
             </div>
             <div class="sx-date sx-muted">
               <span id="sx-source-time">Loading market data…</span>
             </div>
           </div>
+          <p class="seo-intro">
+            Track StablecoinX’s ENA holdings, token NAV per share and mNAV.
+            <a href="/research/stablecoinx-mnav/"
+              >How to read the multiple ↗</a
+            >
+          </p>
           <section class="sx-hero" aria-label="Current valuation snapshot">
             <div>
               <div class="sx-eyebrow">Market value / token NAV</div>
@@ -1334,6 +1329,12 @@
             </p>
           </section>
 
+          <p class="seo-related">
+            <a href="/research/ethenapay-spend-events/"
+              >How EthenaPay spending is measured ↗</a
+            >
+            · <a href="/methodology/">Data methodology</a>
+          </p>
           <section id="pay-methodology" class="full-last-section">
             <details class="full-disclosure">
               <summary>Daily observations · last 10 days</summary>
@@ -1410,28 +1411,31 @@
 
         <footer class="full-footer">
           <span>ethenadash</span>
-          <div class="full-footer-links">
-            <a
+          <nav class="full-footer-links" aria-label="Site information">
+            <a href="/research/">Research</a
+            ><a href="/methodology/">Methodology</a><a href="/about/">About</a
+            ><a
               href="https://x.com/Degenerate_DeFi"
               target="_blank"
               rel="noopener noreferrer"
               >By @Degenerate_DeFi ↗</a
             >
-          </div>
+          </nav>
         </footer>
       </div>
     </div>
     <noscript
       ><p style="padding: 30px; color: #eeeae3">
-        Enable JavaScript to load the dashboard.
-        <a href="data.json">StablecoinX data</a> ·
-        <a href="ethenapay.json">EthenaPay data</a>
+        This is a recorded snapshot. Enable JavaScript for interactive charts
+        and automatic refreshes.
+        <a href="/data.json">StablecoinX data</a> ·
+        <a href="/ethenapay.json">EthenaPay data</a>
       </p></noscript
     >
-    <script src="assets/d3.min.js"></script>
-    <script src="assets/data.js"></script>
-    <script src="assets/valuation.js"></script>
-    <script src="assets/research.js"></script>
-    <script src="assets/app.js"></script>
+    <script defer src="/assets/d3.min.js"></script>
+    <script defer src="/assets/data.js"></script>
+    <script defer src="/assets/valuation.js"></script>
+    <script defer src="/assets/research.js"></script>
+    <script defer src="/assets/app.js"></script>
   </body>
 </html>
