@@ -172,8 +172,11 @@
       const c = Ethena.current(D),
         w = D.liveW?.price ?? D.series.usdew_close.at(-1),
         m = {
-          navPrice: usd(c.ena * c.per) + " / " + usd(c.price),
-          mnav: c.mnav.toFixed(2) + "×",
+          navPrice:
+            usd(D.series.nav_per_share.at(-1)) +
+            " / " +
+            usd(D.series.usde_close.at(-1)),
+          mnav: D.series.mnav.at(-1).toFixed(2) + "×",
           holdings: (D.ena_holdings / 1e9).toFixed(3) + "B",
           shares: (D.shares_outstanding / 1e6).toFixed(3) + "M",
           nav: compact(c.nav),
@@ -196,6 +199,12 @@
         (D.liveEna
           ? "CoinGecko, " + stamp(new Date(D.liveEna.at).toISOString())
           : "daily " + day(D.series.date.at(-1)));
+      $("#history-source-time").textContent =
+        "Recorded series · " +
+        stamp(D.generated_at) +
+        (D.liveDate
+          ? " · current session includes fresh intraday quotes"
+          : " · current quotes shown above");
       $("#options-time").textContent =
         "Nasdaq options · " + stamp(D.options?.as_of);
       const u = Ethena.unlocked(D) / D.ena_holdings;
