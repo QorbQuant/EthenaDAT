@@ -1,0 +1,220 @@
+CROSS-CHECKS
+ 1. dashboard series ENA == CoinGecko 00:00 UTC stamp of the session date, to 6 decimals (max abs diff 0.0e+00) for 24 sessions
+ 2. dataset USDE close == S&P Global close for all 25 sessions 2026-08-28..2026-10-02
+ 3. Kraken 4h candle opens vs CoinGecko: 00:00 UTC max diff 0.21% (n=24), 20:00 UTC max diff 0.63% (n=25)
+ 4. Coinbase 2026-08-28T20:00:00Z open 0.15961 vs CoinGecko 0.159660  (-0.03%)
+ 4. Coinbase 2026-08-31T20:00:00Z open 0.14904 vs CoinGecko 0.149161  (-0.08%)
+ 4. Coinbase 2026-09-16T20:00:00Z open 0.14630 vs CoinGecko 0.146376  (-0.05%)
+ 4. Coinbase 2026-09-25T20:00:00Z open 0.26209 vs CoinGecko 0.261726  (+0.14%)
+ 4. Coinbase 2026-09-30T20:00:00Z open 0.26316 vs CoinGecko 0.263111  (+0.02%)
+ 5. Q2 release ENA closing price for June 30: 0.07204. Dataset row 2026-06-30: 0.078602; dataset row 2026-07-01: 0.072049
+    NAV/share on the dataset's June 30 row: 9.9081; company figure 9.09; 218.4e6/24,029,375 = 9.0889
+    tokens implied by $218.4M at $0.07204: 3,031.6M (dataset uses 3,029.0M)
+
+START AND END OBSERVATIONS
+ dashboard 2026-08-31  USDE   8.87  ENA 0.148113  ENA held 3,029,000,000  Class A 24,029,375  ENA/share 126.0540  NAV/share 18.6702  mNAV 0.4751  token NAV $448.6M  mkt cap $213.1M  gap $235.5M
+ dashboard 2026-09-30  USDE  16.08  ENA 0.248287  ENA held 3,029,000,000  Class A 24,139,375  ENA/share 125.4796  NAV/share 31.1550  mNAV 0.5161  token NAV $752.1M  mkt cap $388.2M  gap $363.9M
+ close     2026-08-31  USDE   8.87  ENA 0.149161  ENA held 3,029,000,000  Class A 24,029,375  ENA/share 126.0540  NAV/share 18.8024  mNAV 0.4717  token NAV $451.8M  mkt cap $213.1M  gap $238.7M
+ close     2026-09-30  USDE  16.08  ENA 0.263111  ENA held 3,029,000,000  Class A 24,139,375  ENA/share 125.4796  NAV/share 33.0151  mNAV 0.4871  token NAV $797.0M  mkt cap $388.2M  gap $408.8M
+ utcday    2026-08-31  USDE   8.87  ENA 0.149484  ENA held 3,029,000,000  Class A 24,029,375  ENA/share 126.0540  NAV/share 18.8430  mNAV 0.4707  token NAV $452.8M  mkt cap $213.1M  gap $239.6M
+ utcday    2026-09-30  USDE  16.08  ENA 0.264759  ENA held 3,029,000,000  Class A 24,139,375  ENA/share 125.4796  NAV/share 33.2218  mNAV 0.4840  token NAV $802.0M  mkt cap $388.2M  gap $413.8M
+
+ATTRIBUTION
+
+== September, month-end to month-end | 2026-08-31 -> 2026-09-30 | ENA basis: dashboard
+   USDE close           8.87 ->     16.08   +7.21  (+81.29%)
+   ENA price        0.148113 ->  0.248287   (+67.63%)
+   ENA per share    126.0540 ->  125.4796   (-0.456%)
+   token NAV/share   18.6702 ->   31.1550   (+66.87%)
+   mNAV               0.4751 ->    0.5161   (+8.64%)
+   Shapley $/share: ENA +6.2438 | ENA per share -0.0566 | mNAV +1.0229 | sum +7.2100
+   share of move:   ENA 86.6% | ENA per share -0.8% | mNAV 14.2%
+   log check:       ln P +0.5949 = ln E +0.5166 + ln S -0.0046 + ln M +0.0829  (shares 86.8% / -0.8% / 13.9%)
+   order   dE        dS        dM
+   ESM   +5.9991  -0.0678  +1.2787
+   EMS   +5.9991  -0.0736  +1.2845
+   SEM   +5.9718  -0.0404  +1.2787
+   SME   +6.4876  -0.0404  +0.7628
+   MES   +6.5173  -0.0736  +0.7663
+   MSE   +6.4876  -0.0439  +0.7663
+
+== September, month-end to month-end | 2026-08-31 -> 2026-09-30 | ENA basis: close
+   USDE close           8.87 ->     16.08   +7.21  (+81.29%)
+   ENA price        0.149161 ->  0.263111   (+76.39%)
+   ENA per share    126.0540 ->  125.4796   (-0.456%)
+   token NAV/share   18.8024 ->   33.0151   (+75.59%)
+   mNAV               0.4717 ->    0.4871   (+3.24%)
+   Shapley $/share: ENA +6.8702 | ENA per share -0.0568 | mNAV +0.3966 | sum +7.2100
+   share of move:   ENA 95.3% | ENA per share -0.8% | mNAV 5.5%
+   log check:       ln P +0.5949 = ln E +0.5675 + ln S -0.0046 + ln M +0.0319  (shares 95.4% / -0.8% / 5.4%)
+   order   dE        dS        dM
+   ESM   +6.7761  -0.0713  +0.5052
+   EMS   +6.7761  -0.0736  +0.5075
+   SEM   +6.7452  -0.0404  +0.5052
+   SME   +6.9640  -0.0404  +0.2864
+   MES   +6.9959  -0.0736  +0.2877
+   MSE   +6.9640  -0.0417  +0.2877
+
+== September, month-end to month-end | 2026-08-31 -> 2026-09-30 | ENA basis: utcday
+   USDE close           8.87 ->     16.08   +7.21  (+81.29%)
+   ENA price        0.149484 ->  0.264759   (+77.12%)
+   ENA per share    126.0540 ->  125.4796   (-0.456%)
+   token NAV/share   18.8430 ->   33.2218   (+76.31%)
+   mNAV               0.4707 ->    0.4840   (+2.82%)
+   Shapley $/share: ENA +6.9208 | ENA per share -0.0569 | mNAV +0.3461 | sum +7.2100
+   share of move:   ENA 96.0% | ENA per share -0.8% | mNAV 4.8%
+   log check:       ln P +0.5949 = ln E +0.5716 + ln S -0.0046 + ln M +0.0278  (shares 96.1% / -0.8% / 4.7%)
+
+== Leg 1, to the mNAV low at the close | 2026-08-31 -> 2026-09-16 | ENA basis: dashboard
+   USDE close           8.87 ->      6.20   -2.67  (-30.10%)
+   ENA price        0.148113 ->  0.139566   (-5.77%)
+   ENA per share    126.0540 ->  126.0540   (+0.000%)
+   token NAV/share   18.6702 ->   17.5929   (-5.77%)
+   mNAV               0.4751 ->    0.3524   (-25.82%)
+   Shapley $/share: ENA -0.4458 | ENA per share +0.0000 | mNAV -2.2242 | sum -2.6700
+   share of move:   ENA 16.7% | ENA per share -0.0% | mNAV 83.3%
+   log check:       ln P -0.3581 = ln E -0.0594 + ln S +0.0000 + ln M -0.2987  (shares 16.6% / -0.0% / 83.4%)
+
+== Leg 2, from that low to month end | 2026-09-16 -> 2026-09-30 | ENA basis: dashboard
+   USDE close           6.20 ->     16.08   +9.88  (+159.35%)
+   ENA price        0.139566 ->  0.248287   (+77.90%)
+   ENA per share    126.0540 ->  125.4796   (-0.456%)
+   token NAV/share   17.5929 ->   31.1550   (+77.09%)
+   mNAV               0.3524 ->    0.5161   (+46.45%)
+   Shapley $/share: ENA +5.9372 | ENA per share -0.0492 | mNAV +3.9921 | sum +9.8800
+   share of move:   ENA 60.1% | ENA per share -0.5% | mNAV 40.4%
+   log check:       ln P +0.9530 = ln E +0.5760 + ln S -0.0046 + ln M +0.3815  (shares 60.4% / -0.5% / 40.0%)
+
+== Leg 1, to the mNAV low at the close | 2026-08-31 -> 2026-09-16 | ENA basis: close
+   USDE close           8.87 ->      6.20   -2.67  (-30.10%)
+   ENA price        0.149161 ->  0.146376   (-1.87%)
+   ENA per share    126.0540 ->  126.0540   (+0.000%)
+   token NAV/share   18.8024 ->   18.4512   (-1.87%)
+   mNAV               0.4717 ->    0.3360   (-28.77%)
+   Shapley $/share: ENA -0.1418 | ENA per share +0.0000 | mNAV -2.5282 | sum -2.6700
+   share of move:   ENA 5.3% | ENA per share -0.0% | mNAV 94.7%
+   log check:       ln P -0.3581 = ln E -0.0189 + ln S +0.0000 + ln M -0.3393  (shares 5.3% / -0.0% / 94.7%)
+
+== Leg 2, from that low to month end | 2026-09-16 -> 2026-09-30 | ENA basis: close
+   USDE close           6.20 ->     16.08   +9.88  (+159.35%)
+   ENA price        0.146376 ->  0.263111   (+79.75%)
+   ENA per share    126.0540 ->  125.4796   (-0.456%)
+   token NAV/share   18.4512 ->   33.0151   (+78.93%)
+   mNAV               0.3360 ->    0.4871   (+44.95%)
+   Shapley $/share: ENA +6.0411 | ENA per share -0.0492 | mNAV +3.8882 | sum +9.8800
+   share of move:   ENA 61.1% | ENA per share -0.5% | mNAV 39.4%
+   log check:       ln P +0.9530 = ln E +0.5864 + ln S -0.0046 + ln M +0.3712  (shares 61.5% / -0.5% / 38.9%)
+
+ worked inputs, at the close: E0 0.149161  E1 0.263111  S0 126.054048  S1 125.479636  M0 0.471749  M1 0.487050
+ closed-form ENA term, at the close: (0.263111 - 0.149161) x 60.2918 = 0.113950 x 60.2918 = 6.8702
+ worked inputs, dashboard series: E0 0.148113  E1 0.248287  S0 126.054048  S1 125.479636  M0 0.475088  M1 0.516130
+ closed-form ENA term, dashboard series: (0.248287 - 0.148113) x 62.3292 = 0.100174 x 62.3292 = 6.2438
+
+ legs summed, at the close: ENA +5.8993  ENA per share -0.0492  mNAV +1.3600  (sum +7.2100)  vs one step: ENA +6.8702  ENA per share -0.0568  mNAV +0.3966
+ legs summed, dashboard series: ENA +5.4914  ENA per share -0.0492  mNAV +1.7678  (sum +7.2100)  vs one step: ENA +6.2438  ENA per share -0.0566  mNAV +1.0229
+
+ENDPOINT SENSITIVITY (share of the USDE change attributed to each factor)
+ dashboard 2026-08-28 -> 2026-09-29: USDE +126.63%  ENA  +50.93%  mNAV 0.315->0.474  $ENA +4.31  $mNAV +4.25  ENA  50.3%  mNAV  49.7%
+ dashboard 2026-08-28 -> 2026-09-30: USDE +137.87%  ENA  +46.05%  mNAV 0.315->0.516  $ENA +4.09  $mNAV +5.28  ENA  43.9%  mNAV  56.6%
+ dashboard 2026-08-28 -> 2026-10-01: USDE +129.44%  ENA  +55.74%  mNAV 0.315->0.467  $ENA +4.66  $mNAV +4.14  ENA  53.3%  mNAV  47.3%
+ dashboard 2026-08-31 -> 2026-09-29: USDE  +72.72%  ENA  +73.24%  mNAV 0.475->0.474  $ENA +6.49  $mNAV -0.04  ENA 100.6%  mNAV  -0.6%
+ dashboard 2026-08-31 -> 2026-09-30: USDE  +81.29%  ENA  +67.63%  mNAV 0.475->0.516  $ENA +6.24  $mNAV +1.02  ENA  86.6%  mNAV  14.2%
+ dashboard 2026-08-31 -> 2026-10-01: USDE  +74.86%  ENA  +78.75%  mNAV 0.475->0.467  $ENA +6.91  $mNAV -0.21  ENA 104.1%  mNAV  -3.2%
+ dashboard 2026-09-01 -> 2026-09-29: USDE  +83.25%  ENA  +71.65%  mNAV 0.444->0.474  $ENA +6.19  $mNAV +0.77  ENA  89.0%  mNAV  11.0%
+ dashboard 2026-09-01 -> 2026-09-30: USDE  +92.34%  ENA  +66.10%  mNAV 0.444->0.516  $ENA +5.96  $mNAV +1.81  ENA  77.2%  mNAV  23.5%
+ dashboard 2026-09-01 -> 2026-10-01: USDE  +85.53%  ENA  +77.12%  mNAV 0.444->0.467  $ENA +6.60  $mNAV +0.60  ENA  92.3%  mNAV   8.4%
+ close     2026-08-28 -> 2026-09-29: USDE +126.63%  ENA  +56.60%  mNAV 0.336->0.486  $ENA +4.68  $mNAV +3.88  ENA  54.7%  mNAV  45.3%
+ close     2026-08-28 -> 2026-09-30: USDE +137.87%  ENA  +64.79%  mNAV 0.336->0.487  $ENA +5.35  $mNAV +4.02  ENA  57.4%  mNAV  43.1%
+ close     2026-08-28 -> 2026-10-01: USDE +129.44%  ENA  +54.36%  mNAV 0.336->0.502  $ENA +4.57  $mNAV +4.23  ENA  52.2%  mNAV  48.3%
+ close     2026-08-31 -> 2026-09-29: USDE  +72.72%  ENA  +67.62%  mNAV 0.472->0.486  $ENA +6.09  $mNAV +0.36  ENA  94.4%  mNAV   5.6%
+ close     2026-08-31 -> 2026-09-30: USDE  +81.29%  ENA  +76.39%  mNAV 0.472->0.487  $ENA +6.87  $mNAV +0.40  ENA  95.3%  mNAV   5.5%
+ close     2026-08-31 -> 2026-10-01: USDE  +74.86%  ENA  +65.22%  mNAV 0.472->0.502  $ENA +5.95  $mNAV +0.74  ENA  89.7%  mNAV  11.2%
+ close     2026-09-01 -> 2026-09-29: USDE  +83.25%  ENA  +59.19%  mNAV 0.422->0.486  $ENA +5.32  $mNAV +1.64  ENA  76.5%  mNAV  23.5%
+ close     2026-09-01 -> 2026-09-30: USDE  +92.34%  ENA  +67.52%  mNAV 0.422->0.487  $ENA +6.06  $mNAV +1.71  ENA  78.5%  mNAV  22.2%
+ close     2026-09-01 -> 2026-10-01: USDE  +85.53%  ENA  +56.91%  mNAV 0.422->0.502  $ENA +5.19  $mNAV +2.01  ENA  72.6%  mNAV  28.1%
+
+DAILY SERIES, 2026-08-31 to 2026-09-30
+ date        USDE    ENA 00:00   ENA 20:00   gap%    NAV/sh rec  NAV/sh close  mNAV rec  mNAV close  Kraken20
+ 2026-08-31    8.87  0.148113   0.149161   +0.71    18.6702     18.8024     0.4751    0.4717    0.1493
+ 2026-09-01    8.36  0.149484   0.157061   +5.07    18.8431     19.7982     0.4437    0.4223    0.1572
+ 2026-09-02    7.50  0.159318   0.148880   -6.55    20.0827     18.7669     0.3735    0.3996    0.149
+ 2026-09-03    8.77  0.149106   0.170739  +14.51    18.7954     21.5223     0.4666    0.4075    0.1708
+ 2026-09-04    7.93  0.168413   0.163523   -2.90    21.2291     20.6128     0.3735    0.3847    0.1637
+ 2026-09-08    7.61  0.164037   0.159510   -2.76    20.6775     20.1069     0.3680    0.3785    0.16
+ 2026-09-09    7.24  0.159290   0.152759   -4.10    20.0791     19.2559     0.3606    0.3760    0.1529
+ 2026-09-10    6.66  0.152084   0.143777   -5.46    19.1708     18.1236     0.3474    0.3675    0.1438
+ 2026-09-11    7.26  0.142892   0.142404   -0.34    18.0121     17.9505     0.4031    0.4044    0.1427
+ 2026-09-14    7.44  0.136201   0.145613   +6.91    17.1687     18.3552     0.4333    0.4053    0.146
+ 2026-09-15    6.12  0.143183   0.141088   -1.46    18.0488     17.7847     0.3391    0.3441    0.1411
+ 2026-09-16    6.20  0.139566   0.146376   +4.88    17.5929     18.4512     0.3524    0.3360    0.1473
+ 2026-09-17    7.71  0.148605   0.153577   +3.35    18.7323     19.3590     0.4116    0.3983    0.1536
+ 2026-09-18   10.19  0.154611   0.167703   +8.47    19.4893     21.1397     0.5228    0.4820    0.1675
+ 2026-09-21   12.60  0.216987   0.213555   -1.58    27.3521     26.9195     0.4607    0.4681    0.2136
+ 2026-09-22   13.54  0.212378   0.207784   -2.16    26.7711     26.1920     0.5058    0.5170    0.2077
+ 2026-09-23   12.87  0.216303   0.206020   -4.75    27.2659     25.9697     0.4720    0.4956    0.2059
+ 2026-09-24   14.22  0.206062   0.222508   +7.98    25.9749     28.0481     0.5475    0.5070    0.2225
+ 2026-09-25   17.25  0.224508   0.261726  +16.58    28.3001     32.9916     0.6095    0.5229    0.2621
+ 2026-09-28   15.56  0.272163   0.260308   -4.36    34.3072     32.8129     0.4535    0.4742    0.2604
+ 2026-09-29   15.32  0.256593   0.250030   -2.56    32.3446     31.5173     0.4736    0.4861    0.2498
+ 2026-09-30   16.08  0.248287   0.263111   +5.97    31.1550     33.0151     0.5161    0.4871    0.2632
+ mnav_dashboard: 21 session-to-session changes, median abs 11.32%, mean 12.48%, max 27.02%; range 0.3391 (2026-09-15) to 0.6095 (2026-09-25)
+ mnav_close: 21 session-to-session changes, median abs 3.14%, mean 6.20%, max 21.01%; range 0.3360 (2026-09-16) to 0.5229 (2026-09-25)
+ |ENA 20:00 vs 00:00 UTC| across 22 sessions: median 4.55%, max 16.58%
+
+OTHER FACTS
+ September sessions: 21 | observations Aug 31..Sep 30: 22
+ September closes: low 6.12 on 2026-09-15, high 17.25 on 2026-09-25
+ first close above $11.50: 2026-09-21
+ closes at or above $10.00: 9 through Sep 30 (first 2026-09-18), 11 through Oct 2
+ closes at or above $18.00 through Oct 2: 0 | highest intraday high in September (S&P Global): (18.11, '2026-09-30')
+ USDEW close: 1.80 -> 5.17 (+187.2%)
+ September share volume (S&P Global): 112,903,049 = 4.70x the 24,029,375 Class A shares
+ ENA per share: 126.0540 -> 125.4796 (-0.456%)
+ Sep 30 mNAV if the 110,000 director shares are left out: 0.5138 (dashboard series), 0.4848 (close)
+ 5 x 22,000 = 110,000; 24,029,375 + 110,000 = 24,139,375
+ 7.5% x 24,029,375 = 1,802,203.125 (S-8 registers 1,802,203)
+ warrant cash if all exercised: 11,500,000 x 11.50 + 3,267,679 x 11.50 + 4,356,907 x 15.00 = $235.18M
+ public warrants x $0.41 (Jun 30 close): 11,500,000 -> $4,715,000.00; 11,499,988 -> $4,714,995.08; 10-Q warrant liability $4,715,000
+ public warrants x $5.17 (Sep 30 close): 11,500,000 -> $59.455M; 11,499,988 -> $59.455M
+ each 1,000,000 new Class A shares lowers ENA per share by 3.98%
+ 2026-09-25: ENA 00:00 0.224508, 20:00 0.261726 (+16.58%); mNAV 0.6095 on the dashboard series, 0.5229 at the close
+ 2026-09-30: ENA 00:00 0.248287, 20:00 0.263111 (+5.97%); mNAV 0.5161 on the dashboard series, 0.4871 at the close
+ Sep 25 first print in the repo (commit 0efe051, ENA 0.260069) on 24,029,375 shares: mNAV 0.5262
+ Sep 25 second print that evening (commit 04cf641, ENA 0.268311) on 24,029,375 shares: mNAV 0.5100
+ the same two prints on the 24,110,000 share seed the repo used until Oct 3: mNAV 0.5280 and 0.5117
+ Sep 30 first print in the repo (commit 8df558b, ENA 0.263804) on 24,139,375 shares: mNAV 0.4858
+ Sep 25 session: USDE 14.22 -> 17.25 (+21.31%)
+ highest dashboard-series mNAV from 2026-06-26 to 2026-09-30: 0.6095 on 2026-09-25
+
+WINDOW TABLE (all end at the Sep 30 close, ENA priced at the stock close)
+ opens 2026-08-28 at 6.76, mNAV 0.3359: ENA 57.4%  share count -0.5%  mNAV 43.1%
+ opens 2026-08-31 at 8.87, mNAV 0.4717: ENA 95.3%  share count -0.8%  mNAV 5.5%
+ opens 2026-09-01 at 8.36, mNAV 0.4223: ENA 78.5%  share count -0.7%  mNAV 22.2%
+ Aug 31 session: USDE 6.76 -> 8.87 (+31.21%), ENA at close 0.159660 -> 0.149161 (-6.58%), mNAV 0.3359 -> 0.4717
+
+PATH OF mNAV AT THE CLOSE
+ Sep 16 0.3360 -> Sep 17 0.3983 -> Sep 18 0.4820 -> Sep 30 0.4871
+ Sep 18 -> Sep 30: USDE +57.8%, ENA +56.9%, mNAV +1.0%
+ chained: mNAV -28.77% then +44.95% = net +3.24%
+ Sep 16 ENA at the close: 0.14638
+ lowest mNAV at the close in the window: 0.336 on 2026-09-16
+ mean abs session-to-session change: dashboard series 12.5%, at the close 6.2%
+
+TOKEN COUNT AND LOCK-UP SCHEDULE
+ 10-Q Note 3 tokens: 3,031,404,420.94; dataset 3,029,000,000 is -0.0793%
+ 10-Q Note 3 values: 249,120,580.68
+ June 30 NAV/share at $0.07204: dataset tokens 9.0809; 10-Q tokens 9.0881; company 9.09
+ tracker schedule, unlocked ENA on 2026-08-31: 1,216,407,209 = 40.2% of 3.029B | with the contributed tokens counted as locked: 30.8%
+ tracker schedule, unlocked ENA on 2026-09-29: 1,216,407,209 = 40.2% of 3.029B | with the contributed tokens counted as locked: 30.8%
+ tracker schedule, unlocked ENA on 2026-09-30: 1,470,656,979 = 48.6% of 3.029B | with the contributed tokens counted as locked: 39.1%
+
+WARRANTS
+ warrants at $11.50: 14,767,679; at $15.00: 4,356,907; total 19,124,586 = 79.2% of 24,139,375
+ first close above $15.00: 2026-09-25
+ sponsor warrants: 7,624,586 = 39.9% of the warrant shares; cash if exercised for cash $102.9M of $235.18M
+ highest close Aug 31..Sep 30: 17.25 (no close at or above $18.00)
+ tenth close at or above $10.00: 2026-10-01 at 15.51; eleventh: 2026-10-02 at 14.15
+ resale shares: 4,965,722 + 78,635 + 7,624,586 = 12,668,943; sponsor warrant shares 7,624,586
+ public warrants x USDEW close: Jun 30 0.41 -> $4.71M; Sep 30 5.17 -> $59.46M
+
+wrote attribution_bridge.csv, daily_mnav_two_timestamps.csv, endpoint_sensitivity.csv, window_table.csv, results.json

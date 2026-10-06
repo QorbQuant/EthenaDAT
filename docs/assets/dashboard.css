@@ -1700,6 +1700,118 @@ body {
     gap: 22px;
   }
 }
+/* Long-form research keeps prose narrow and tables scrollable on small screens. */
+#sx-studio .research-header .article-byline {
+  margin-bottom: 12px;
+}
+#sx-studio .research-header .research-cutoff {
+  font-size: 12px;
+  color: var(--sx-muted);
+  margin-bottom: 26px;
+}
+#sx-studio .research-contents {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 22px;
+  padding: 18px 0;
+  border-block: 1px solid var(--sx-rule);
+  margin-bottom: 32px;
+  font-size: 12px;
+}
+#sx-studio .research-contents span {
+  color: var(--sx-muted);
+}
+#sx-studio .research-contents a {
+  text-decoration: none;
+}
+#sx-studio .research-article .research-opening {
+  font-size: 19px;
+  line-height: 1.8;
+  color: var(--sx-text);
+}
+#sx-studio .research-article h2 {
+  scroll-margin-top: 100px;
+}
+#sx-studio .research-table {
+  overflow-x: auto;
+  margin: 26px 0;
+  border-block: 1px solid var(--sx-rule);
+}
+#sx-studio .research-table table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: 13px;
+  line-height: 1.65;
+  font-variant-numeric: tabular-nums;
+}
+#sx-studio .research-table th,
+#sx-studio .research-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 14px 15px;
+  border-bottom: 1px solid var(--sx-rule);
+  white-space: normal;
+}
+#sx-studio .research-table th {
+  color: var(--sx-muted);
+  font-weight: 500;
+}
+#sx-studio .research-table td {
+  color: #c1c8d1;
+}
+#sx-studio .research-table tr:last-child td {
+  border-bottom: 0;
+}
+#sx-studio .research-table td:first-child {
+  color: var(--sx-text);
+  min-width: 125px;
+}
+#sx-studio .research-table th:first-child,
+#sx-studio .research-table td:first-child {
+  padding-left: 0;
+}
+#sx-studio .research-figure {
+  margin: 32px 0;
+}
+#sx-studio .research-chart {
+  overflow-x: auto;
+}
+#sx-studio .research-chart img {
+  display: block;
+  width: 100%;
+  min-width: 640px;
+  height: auto;
+}
+#sx-studio .research-figure figcaption {
+  margin-top: 14px;
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--sx-muted);
+}
+#sx-studio .research-article pre {
+  overflow-x: auto;
+  padding: 22px;
+  background: var(--sx-panel);
+  border-left: 2px solid var(--sx-blue);
+  font-size: 12px;
+  line-height: 1.9;
+  margin: 26px 0;
+}
+#sx-studio .research-featured h2 {
+  color: var(--sx-text);
+}
+@media (max-width: 600px) {
+  #sx-studio .research-article .research-opening {
+    font-size: 17px;
+  }
+  #sx-studio .research-article h2 {
+    scroll-margin-top: 130px;
+  }
+  #sx-studio .research-contents span {
+    flex-basis: 100%;
+  }
+}
 /* Secondary export controls stay outside the chart's plotting area. */
 #sx-studio .chart-tools-slot,
 #sx-studio .chart-tools {

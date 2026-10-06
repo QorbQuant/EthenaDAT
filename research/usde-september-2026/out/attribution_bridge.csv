@@ -1,0 +1,11 @@
+basis,step,kind,value
+Dashboard series (ENA at 00:00 UTC of the session date),Aug 31 close,total,8.87
+Dashboard series (ENA at 00:00 UTC of the session date),ENA price,step,6.2438
+Dashboard series (ENA at 00:00 UTC of the session date),ENA per share,step,-0.0566
+Dashboard series (ENA at 00:00 UTC of the session date),mNAV,step,1.0229
+Dashboard series (ENA at 00:00 UTC of the session date),Sep 30 close,total,16.08
+"At the close (ENA at 20:00 UTC, 4 pm New York)",Aug 31 close,total,8.87
+"At the close (ENA at 20:00 UTC, 4 pm New York)",ENA price,step,6.8702
+"At the close (ENA at 20:00 UTC, 4 pm New York)",ENA per share,step,-0.0568
+"At the close (ENA at 20:00 UTC, 4 pm New York)",mNAV,step,0.3966
+"At the close (ENA at 20:00 UTC, 4 pm New York)",Sep 30 close,total,16.08

@@ -1,3 +1,4 @@
+import { meta as septemberReview } from "./content/usde-september-2026.mjs";
 export const ORIGIN = "https://ethenadash.com";
 export const AUTHOR = {
   "@type": "Person",
@@ -8,6 +9,7 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [septemberReview.path]: septemberReview,
   "/stablecoinx/": {
     title: "StablecoinX NAV Tracker: ENA Holdings & mNAV | EthenaDash",
     description:
@@ -23,9 +25,9 @@ export const PAGES = {
     page: "pay",
   },
   "/research/": {
-    title: "Ethena & StablecoinX Research Guides | EthenaDash",
+    title: "Ethena & StablecoinX Research and Analysis | EthenaDash",
     description:
-      "Understand StablecoinX token NAV, USDEW warrant mechanics and EthenaPay on-chain spend data through sourced research guides.",
+      "Original StablecoinX market reviews and sourced guides to ENA treasury valuation, USDEW warrants and EthenaPay on-chain spending.",
     name: "Research",
   },
   "/research/stablecoinx-mnav/": {
@@ -96,15 +98,20 @@ export function graph(path, modified) {
         "@id": url + "#page",
         url,
         name: p.name,
-        headline: p.title,
+        headline: p.headline || p.title,
         description: p.description,
         isPartOf: { "@id": ORIGIN + "/#website" },
         author: { "@id": ORIGIN + "/about/#author" },
         ...(p.article
-          ? { datePublished: "2026-10-05", dateModified: "2026-10-05" }
+          ? {
+              datePublished: p.datePublished || "2026-10-05",
+              dateModified: p.dateModified || "2026-10-05",
+              mainEntityOfPage: url,
+              ...(p.image ? { image: ORIGIN + p.image } : {}),
+            }
           : modified
-            ? { dateModified: modified }
-            : {}),
+          ? { dateModified: modified }
+          : {}),
         breadcrumb: { "@id": url + "#breadcrumb" },
       },
       {
@@ -139,10 +146,32 @@ export function graph(path, modified) {
   };
 }
 export function extraHead(path, modified) {
-  return `<meta name="google-site-verification" content="sOjYC81rnJ1CgZWbrKyOYYKMBcG3Xmq5SJ4AEpVOZk4"><meta name="author" content="Qorban Ferrell"><meta property="og:type" content="${PAGES[path].article ? "article" : "website"}"><meta property="og:site_name" content="EthenaDash"><meta name="twitter:card" content="summary"><meta name="twitter:creator" content="@Degenerate_DeFi"><link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><script type="application/ld+json">${safeJSON(graph(path, modified))}</script>`;
+  const page = PAGES[path];
+  const image = page.image
+    ? `<meta property="og:image" content="${
+        ORIGIN + esc(page.image)
+      }"><meta property="og:image:alt" content="${esc(
+        page.imageAlt,
+      )}"><meta name="twitter:image" content="${
+        ORIGIN + esc(page.image)
+      }"><meta name="twitter:image:alt" content="${esc(page.imageAlt)}">`
+    : "";
+  return `<meta name="google-site-verification" content="sOjYC81rnJ1CgZWbrKyOYYKMBcG3Xmq5SJ4AEpVOZk4"><meta name="author" content="Qorban Ferrell"><meta property="og:type" content="${
+    page.article ? "article" : "website"
+  }"><meta property="og:site_name" content="EthenaDash"><meta name="twitter:card" content="${
+    page.image ? "summary_large_image" : "summary"
+  }"><meta name="twitter:creator" content="@Degenerate_DeFi">${image}<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><script type="application/ld+json">${safeJSON(
+    graph(path, modified),
+  )}</script>`;
 }
 export function nav(path) {
-  return `<header class="sx-nav"><a class="sx-brand" href="/stablecoinx/" aria-label="EthenaDash home">ethena<span>dash</span></a><nav class="sx-nav-items" aria-label="Dashboard"><a class="full-nav-button" href="/stablecoinx/" ${path === "/stablecoinx/" ? 'aria-current="page"' : ""}>StablecoinX</a><a class="full-nav-button" href="/ethenapay/" ${path === "/ethenapay/" ? 'aria-current="page"' : ""}>EthenaPay</a><a class="full-nav-button" href="/research/" ${path.startsWith("/research/") ? 'aria-current="page"' : ""}>Research</a></nav></header>`;
+  return `<header class="sx-nav"><a class="sx-brand" href="/stablecoinx/" aria-label="EthenaDash home">ethena<span>dash</span></a><nav class="sx-nav-items" aria-label="Dashboard"><a class="full-nav-button" href="/stablecoinx/" ${
+    path === "/stablecoinx/" ? 'aria-current="page"' : ""
+  }>StablecoinX</a><a class="full-nav-button" href="/ethenapay/" ${
+    path === "/ethenapay/" ? 'aria-current="page"' : ""
+  }>EthenaPay</a><a class="full-nav-button" href="/research/" ${
+    path.startsWith("/research/") ? 'aria-current="page"' : ""
+  }>Research</a></nav></header>`;
 }
 export function footer() {
   return `<footer class="full-footer"><span>ethenadash</span><nav class="full-footer-links" aria-label="Site information"><a href="/research/">Research</a><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="https://x.com/Degenerate_DeFi" target="_blank" rel="noopener noreferrer">By @Degenerate_DeFi ↗</a></nav></footer>`;
@@ -150,7 +179,27 @@ export function footer() {
 export function documentPage(path, content, status = 200) {
   const p = PAGES[path];
   return new Response(
-    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1116"><title>${esc(p.title)}</title><meta name="description" content="${esc(p.description)}"><link rel="canonical" href="${ORIGIN + path}"><meta property="og:title" content="${esc(p.title)}"><meta property="og:description" content="${esc(p.description)}"><meta property="og:url" content="${ORIGIN + path}"><link rel="stylesheet" href="/assets/dashboard.css">${extraHead(path)}</head><body><div id="sx-studio"><div class="sx-shell">${nav(path)}<main class="editorial"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/stablecoinx/">EthenaDash</a><span>/</span>${p.article ? '<a href="/research/">Research</a><span>/</span>' : ""}<span aria-current="page">${esc(p.name)}</span></nav>${content}</main>${footer()}</div></div></body></html>`,
+    `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1116"><title>${esc(
+      p.title,
+    )}</title><meta name="description" content="${esc(
+      p.description,
+    )}"><link rel="canonical" href="${
+      ORIGIN + path
+    }"><meta property="og:title" content="${esc(
+      p.title,
+    )}"><meta property="og:description" content="${esc(
+      p.description,
+    )}"><meta property="og:url" content="${
+      ORIGIN + path
+    }"><link rel="stylesheet" href="/assets/dashboard.css">${extraHead(
+      path,
+    )}</head><body><div id="sx-studio"><div class="sx-shell">${nav(
+      path,
+    )}<main class="editorial"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/stablecoinx/">EthenaDash</a><span>/</span>${
+      p.article ? '<a href="/research/">Research</a><span>/</span>' : ""
+    }<span aria-current="page">${esc(
+      p.name,
+    )}</span></nav>${content}</main>${footer()}</div></div></body></html>`,
     {
       status,
       headers: {

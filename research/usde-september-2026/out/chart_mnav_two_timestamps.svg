@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="mnav-t mnav-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="mnav-t">USDE mNAV by session on two ENA timestamps, August 31 to September 30, 2026</title>
+<desc id="mnav-d">Line chart. With ENA priced at the 4 pm New York stock close, mNAV starts at 0.47, falls to 0.34 on September 16 and ends September at 0.49. On the dashboard series, which prices ENA 20 hours earlier, it peaks at 0.61 on September 25 and ends at 0.52.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="16" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">Priced at the close, mNAV fell to 0.34× and ended September at 0.49×</text>
+<text x="16" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">USDE share price ÷ token NAV per share, by session, Aug 31 to Sep 30, 2026</text>
+<line x1="52" x2="628" y1="388.0" y2="388.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="44" y="392.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.30×</text>
+<line x1="52" x2="628" y1="301.1" y2="301.1" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="44" y="305.1" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.40×</text>
+<line x1="52" x2="628" y1="214.3" y2="214.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="44" y="218.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.50×</text>
+<line x1="52" x2="628" y1="127.4" y2="127.4" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="44" y="131.4" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.60×</text>
+<line x1="52.0" x2="52.0" y1="388" y2="393" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52.0" y="408" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 31</text>
+<line x1="189.1" x2="189.1" y1="388" y2="393" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="189.1" y="408" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 8</text>
+<line x1="353.7" x2="353.7" y1="388" y2="393" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="353.7" y="408" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 16</text>
+<line x1="545.7" x2="545.7" y1="388" y2="393" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="545.7" y="408" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 25</text>
+<line x1="628.0" x2="628.0" y1="388" y2="393" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="628.0" y="408" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 30</text>
+<path d="M52.0,235.9 L79.4,263.2 L106.9,324.2 L134.3,243.3 L161.7,324.2 L189.1,328.9 L216.6,335.4 L244.0,346.8 L271.4,298.5 L298.9,272.2 L326.3,354.0 L353.7,342.5 L381.1,291.1 L408.6,194.5 L436.0,248.4 L463.4,209.2 L490.9,238.6 L518.3,173.0 L545.7,119.2 L573.1,254.7 L600.6,237.2 L628.0,200.3" fill="none" stroke="var(--sx-muted, #99a3b0)" stroke-width="1.5" stroke-linejoin="round" stroke-linecap="round"/>
+<path d="M52.0,238.9 L79.4,281.8 L106.9,301.5 L134.3,294.6 L161.7,314.4 L189.1,319.8 L216.6,322.0 L244.0,329.4 L271.4,297.3 L298.9,296.5 L326.3,349.7 L353.7,356.7 L381.1,302.6 L408.6,229.9 L436.0,242.0 L463.4,199.5 L490.9,218.1 L518.3,208.2 L545.7,194.4 L573.1,236.7 L600.6,226.4 L628.0,225.5" fill="none" stroke="var(--sx-blue, #8aa9cf)" stroke-width="2.5" stroke-linejoin="round" stroke-linecap="round"/>
+<circle cx="52.0" cy="238.9" r="3.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="54.0" y="223.9" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="400" text-anchor="start">0.47×</text>
+<circle cx="353.7" cy="356.7" r="3.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="353.7" y="378.7" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600" text-anchor="middle">0.34× on Sep 16</text>
+<circle cx="545.7" cy="119.2" r="3.5" fill="var(--sx-muted, #99a3b0)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<circle cx="545.7" cy="194.4" r="3.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="556.7" y="123.2" fill="var(--sx-muted, #99a3b0)" font-size="12" font-weight="400" text-anchor="start">0.61× on the dashboard series</text>
+<text x="556.7" y="140.2" fill="var(--sx-blue, #8aa9cf)" font-size="12" font-weight="600" text-anchor="start">0.52× at the close</text>
+<circle cx="628.0" cy="200.3" r="3.5" fill="var(--sx-muted, #99a3b0)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<circle cx="628.0" cy="225.5" r="3.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="640.0" y="198.3" fill="var(--sx-muted, #99a3b0)" font-size="12">Dashboard series 0.52×</text>
+<text x="640.0" y="237.5" fill="var(--sx-blue, #8aa9cf)" font-size="12" font-weight="600">At the close 0.49×</text>
+<text x="16" y="436" fill="var(--sx-muted, #99a3b0)" font-size="11">EthenaDash dataset at commit 759f283 and CoinGecko ENA at 20:00 UTC, the 4 pm New York close.</text>
+<text x="16" y="452" fill="var(--sx-muted, #99a3b0)" font-size="11">The dashboard series prices ENA 20 hours earlier, at 8 pm New York the evening before.</text>
+</svg>
