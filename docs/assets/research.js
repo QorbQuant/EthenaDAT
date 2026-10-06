@@ -189,8 +189,14 @@ window.mountResearch = function (initialD, initialP) {
             "pay-flows-chart": "EthenaPay deposits & withdrawals",
             "pay-created-chart": "EthenaPay wallets created",
             "pay-active-chart": "EthenaPay spending wallets",
-            "pay-cashback-chart": "EthenaPay cashback",
-            "pay-yield-chart": "EthenaPay balance yield",
+            "pay-cashback-chart":
+              "EthenaPay: " +
+              (aggregation === "total" ? "cumulative" : "daily") +
+              " cashback",
+            "pay-yield-chart":
+              "EthenaPay: " +
+              (aggregation === "total" ? "cumulative" : "daily") +
+              " balance yield",
           }[id],
           category: pay
             ? "ETHENAPAY"

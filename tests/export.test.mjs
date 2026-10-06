@@ -35,12 +35,13 @@ const fixture = () => ({
     selected: 2,
   },
 });
-test("share card preserves selected observation and fixed index basis", () => {
+test("share card keeps selected chart marker without header statistics", () => {
   const d = fixture(),
     xml = renderCard(d, d3);
-  assert.ok(xml.includes(">50.0%</text>"));
+  assert.ok(!xml.includes(">50.0%</text>"));
+  assert.match(xml, /<circle cx="846"/);
   assert.ok(!xml.includes(">100.0%</text>"));
-  assert.ok(xml.includes('width="1600" height="900"'));
+  assert.ok(xml.includes('width="3200" height="1800"'));
   assert.ok(xml.includes("Sources &amp; notes"));
   assert.doesNotMatch(xml, /NaN|Infinity|undefined/);
 });
@@ -48,7 +49,7 @@ test("missing selected values remain missing while the plotted line has a gap", 
   const d = fixture();
   d.visual.series[0].data[1] = null;
   const xml = renderCard(d, d3);
-  assert.ok(xml.includes(">—</text>"));
+  assert.ok(!xml.includes("<circle"));
   assert.doesNotMatch(xml, /NaN|Infinity/);
   assert.match(xml, /<path d="M[^\"]*M[^\"]*" fill="none"/);
 });
@@ -73,7 +74,7 @@ test("scenario and attribution exports retain explicit assumptions and valid geo
     currentEna: 0.25,
     currentMnav: 0.48,
   };
-  assert.ok(renderCard(d, d3).includes("$30.74"));
+  assert.ok(renderCard(d, d3).includes("Scenario, not a forecast"));
   assert.doesNotMatch(renderCard(d, d3), /NaN|Infinity/);
   d.visual.type = "waterfall";
   d.visual.start = 3.7;
@@ -97,6 +98,19 @@ test("continuous scenario selections use exact values rather than snapping to a 
   d.visual.selected = 2.25;
   d.visual.metricValues = [162.5];
   const xml = renderCard(d, d3);
-  assert.ok(xml.includes(">62.5%</text>"));
-  assert.ok(xml.includes(">$2.25</text>"));
+  assert.match(xml, /<circle cx="1016\.5"/);
+  assert.ok(!xml.includes(">62.5%</text>"));
+});
+
+test("exports have one title and a single source footer without duplicate branding or timestamps", () => {
+  const xml = renderCard(fixture(), d3);
+  assert.ok(
+    xml.includes("Source: ethenadash.com / Market data · As of Oct 5, 2026"),
+  );
+  assert.doesNotMatch(
+    xml,
+    /OBSERVATION|Charts &amp; methodology|22:33|>ethenadash<|>STABLECOINX</,
+  );
+  assert.ok(!xml.includes(">Price performance since listing</text>"));
+  assert.ok(xml.includes('viewBox="0 0 1600 900"'));
 });

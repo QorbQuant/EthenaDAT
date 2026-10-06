@@ -16,7 +16,8 @@ const C = {
   copper: "#cf9b79",
 };
 const W = 1600,
-  H = 900;
+  H = 900,
+  SCALE = 2;
 const text = (x, y, value, size = 24, color = C.text, extra = "") =>
   `<text x="${x}" y="${y}" font-size="${size}" fill="${color}" ${extra}>${esc(value)}</text>`;
 const line = (x1, y1, x2, y2, color = C.grid, extra = "") =>
@@ -37,31 +38,16 @@ function dateLabel(value, year = true) {
 function sourceStamp(value) {
   const d = new Date(value);
   return Number.isFinite(d.getTime())
-    ? dateLabel(d) + " " + d.toISOString().slice(11, 16) + " UTC"
+    ? d.toLocaleDateString("en-US", {
+        month: "short",
+        day: "numeric",
+        year: "numeric",
+        timeZone: "UTC",
+      })
     : "Unavailable";
 }
 const safeFormat = (f, v) => (Number.isFinite(v) ? f(v) : "—");
-function metric(x, label, value, color = C.text, suffix = "") {
-  return (
-    circle(x + 5, 211, color, 5) +
-    text(x + 22, 219, label, 25, C.muted) +
-    text(x, 283, value, 60, color, 'font-weight="600" letter-spacing="-2"') +
-    (suffix ? text(x + 2, 314, suffix, 20, C.muted) : "")
-  );
-}
-function context(label, value) {
-  return (
-    text(
-      1536,
-      218,
-      label,
-      18,
-      C.muted,
-      'text-anchor="end" letter-spacing="2"',
-    ) + text(1536, 263, value, 29, C.text, 'text-anchor="end"')
-  );
-}
-const bounds = { l: 156, r: 1536, t: 371, b: 738 };
+const bounds = { l: 156, r: 1536, t: 185, b: 760 };
 function axes(y, fmt) {
   const { l, r } = bounds;
   return y
@@ -123,7 +109,7 @@ function seriesPlot(v, d3) {
     .map((i, k) =>
       text(
         x(v.rows[i].t),
-        785,
+        803,
         v.xFormat ? v.xFormat(v.rows[i].t) : dateLabel(v.rows[i].t, false),
         25,
         C.muted,
@@ -160,7 +146,7 @@ function seriesPlot(v, d3) {
           .defined((p) => Number.isFinite(p.value))
           .x((p) => p.x)
           .y((p) => y(p.value))(points) || ""
-      }" fill="none" stroke="${color}" stroke-width="4.5" stroke-linecap="round" stroke-linejoin="round"/>`;
+      }" fill="none" stroke="${color}" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>`;
     }
   });
   out += line(
@@ -181,22 +167,6 @@ function seriesPlot(v, d3) {
       );
   });
   out += "</g>";
-  // Metrics always refer to the selected observation, never a silently substituted last value.
-  out += v.series
-    .map((s, k) =>
-      metric(
-        64 + k * 490,
-        s.name,
-        safeFormat(v.metricFormat || v.format, selectedValues[k]),
-        s.color || [C.blue, C.copper][k % 2],
-        v.metricSuffix,
-      ),
-    )
-    .join("");
-  out += context(
-    v.contextLabel || "OBSERVATION",
-    v.xFormat ? (v.contextFormat || v.xFormat)(selectedX) : dateLabel(q.t),
-  );
   return out;
 }
 function waterfall(v, d3) {
@@ -240,7 +210,7 @@ function waterfall(v, d3) {
       q.color,
       'text-anchor="middle"',
     );
-    out += text(x, 785, q.name, 23, C.muted, 'text-anchor="middle"');
+    out += text(x, 803, q.name, 23, C.muted, 'text-anchor="middle"');
     if (i < 4)
       out += line(
         x + bw / 2,
@@ -251,21 +221,7 @@ function waterfall(v, d3) {
         'stroke-dasharray="4 6"',
       );
   });
-  out += metric(
-    64,
-    "Share-price change",
-    (v.end >= v.start ? "+" : "−") + v.format(Math.abs(v.end - v.start)),
-    C.copper,
-  );
-  out += metric(
-    554,
-    "Price return",
-    (v.end >= v.start ? "+" : "") +
-      ((v.end / v.start - 1) * 100).toFixed(1) +
-      "%",
-    C.text,
-  );
-  return out + context("PERIOD END", dateLabel(v.rows.at(-1).t));
+  return out;
 }
 function scenario(v, d3) {
   const s = v.scenario,
@@ -282,7 +238,7 @@ function scenario(v, d3) {
   x.ticks(5).forEach((n) => {
     out += text(
       x(n),
-      785,
+      803,
       "$" + n.toFixed(2),
       25,
       C.muted,
@@ -324,110 +280,63 @@ function scenario(v, d3) {
     out +=
       circle(x(s.currentEna), y(s.currentMnav), C.blue, 7) +
       text(x(s.currentEna) + 15, y(s.currentMnav) - 15, "Current", 20, C.blue);
-  out += metric(
-    64,
-    "Implied share price",
-    "$" + (s.ena * s.per * s.mnav).toFixed(2),
-    C.copper,
-  );
-  out +=
-    text(554, 219, "SCENARIO INPUTS", 20, C.muted, 'letter-spacing="1"') +
-    text(
-      554,
-      274,
-      "ENA $" + s.ena.toFixed(4) + "  /  " + s.mnav.toFixed(3) + "× mNAV",
-      34,
-      C.text,
-    );
-  return (
-    out +
-    text(
-      1536,
-      332,
-      "X: ENA price (USD)   ·   Y: mNAV",
-      20,
-      C.muted,
-      'text-anchor="end"',
-    )
-  );
+  return out;
 }
 export function renderCard(d, d3) {
   const v = d.visual;
   if (!v || !d3) throw Error("Chart export unavailable. Reload and try again.");
-  const title = v.title || d.title;
-  const period =
+  const title =
     v.type === "scenario"
-      ? ""
-      : v.xFormat
-        ? "Terminal stock price: $0–$40"
-        : dateLabel(v.rows[0].t) + " — " + dateLabel(v.rows.at(-1).t);
-  const description = v.description + (period ? "  ·  " + period : "");
-  let body =
-    text(
-      64,
-      57,
-      "ethenadash",
-      28,
-      C.text,
-      'font-weight="700" letter-spacing="-1"',
-    ) +
-    text(
-      1536,
-      57,
-      v.category,
-      19,
-      C.copper,
-      'text-anchor="end" letter-spacing="2"',
-    );
-  body += text(
+      ? "StablecoinX valuation scenario"
+      : v.title || d.title;
+  let body = text(
     64,
-    127,
+    96,
     title,
-    title.length > 43 ? 46 : 54,
+    title.length > 43 ? 44 : 50,
     C.text,
-    'font-weight="600" letter-spacing="-1.5"',
+    'font-weight="600" letter-spacing="-1"',
   );
-  body += text(
-    64,
-    167,
-    description,
-    description.length > 110 ? 20 : 23,
-    C.muted,
-  );
-  body += line(64, 338, 1536, 338, C.grid);
+  // A key identifies multiple plotted series without adding a second headline.
+  if (v.type !== "scenario" && v.type !== "waterfall" && v.series.length > 1) {
+    let x = 66;
+    for (const [k, s] of v.series.entries()) {
+      const color = s.color || [C.blue, C.copper][k % 2];
+      body +=
+        line(x, 140, x + 28, 140, color, 'stroke-width="3"') +
+        text(x + 40, 148, s.name, 23, C.muted);
+      x += 100 + s.name.length * 14;
+    }
+  }
   body +=
     v.type === "scenario"
       ? scenario(v, d3)
       : v.type === "waterfall"
         ? waterfall(v, d3)
         : seriesPlot(v, d3);
-  body += line(64, 818, 1536, 818, C.grid);
-  body += text(64, 849, v.caveat, 19, C.muted);
-  body += text(
-    64,
-    878,
-    "Source: " + v.source + " · Updated " + sourceStamp(d.updated),
-    18,
-    C.muted,
-  );
-  body += text(
-    1536,
-    856,
-    "ethenadash.com",
-    26,
-    C.text,
-    'text-anchor="end" font-weight="600"',
-  );
-  body += text(
-    1536,
-    881,
-    "Charts & methodology",
-    17,
-    C.muted,
-    'text-anchor="end"',
-  );
-  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}"><title>${esc(title)}</title><desc>${esc(d.subtitle + " " + d.note + " View: " + d.url)}</desc><rect width="${W}" height="${H}" fill="${C.bg}"/><g font-family="Arial,Helvetica,sans-serif">${body}</g></svg>`;
+  let explanation =
+    v.type === "scenario"
+      ? "Scenario, not a forecast · X: ENA (USD), Y: mNAV"
+      : v.xFormat
+        ? "Hypothetical expiry value per $1 invested"
+        : v.metricSuffix === "since listing"
+          ? "Jun 26, 2026 = 100"
+          : v.unit === "USDe"
+            ? "USDe"
+            : v.unit === "USD at payout-day AVAX price"
+              ? "USD at payout-day prices"
+              : "";
+  const footer =
+    "Source: ethenadash.com / " +
+    v.source.replaceAll(" / ", ", ") +
+    " · As of " +
+    sourceStamp(d.updated) +
+    (explanation ? " · " + explanation : "");
+  body += text(64, 865, footer, footer.length > 145 ? 17 : 20, C.muted);
+  // Intrinsic SVG and canvas dimensions both use 2x resolution: no bitmap upscaling.
+  return `<svg xmlns="http://www.w3.org/2000/svg" width="${W * SCALE}" height="${H * SCALE}" viewBox="0 0 ${W} ${H}"><title>${esc(title)}</title><desc>${esc(d.subtitle + " " + d.note + " View: " + d.url)}</desc><rect width="${W}" height="${H}" fill="${C.bg}"/><g font-family="Arial,Helvetica,sans-serif">${body}</g></svg>`;
 }
+
 function save(blob, name) {
   const href = URL.createObjectURL(blob),
     a = document.createElement("a");
@@ -460,8 +369,8 @@ export async function download(type, svg, d, csv) {
       img.src = url;
     });
     const canvas = document.createElement("canvas");
-    canvas.width = W;
-    canvas.height = H;
+    canvas.width = W * SCALE;
+    canvas.height = H * SCALE;
     canvas.getContext("2d").drawImage(img, 0, 0);
     const blob = await new Promise((resolve) =>
       canvas.toBlob(resolve, "image/png"),
