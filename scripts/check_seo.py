@@ -42,7 +42,7 @@ for url in urls:
         key='sx' if path=='/stablecoinx/' else 'pay'
         assert 'hidden' not in p.ids['full-'+key]
         assert p.boot[key]['series']['date']
-        assert p.text['sx-price' if key=='sx' else 'pay-hero-spend'].strip() not in ('','—')
+        assert p.text['sx-price' if key=='sx' else 'pay-hero-spend'].strip() not in ('','N/A')
         assert '<tr><td>' in html
         assert '<path d="M' in html
         assert html.index('dashboard-bootstrap')>html.index('defer src="/assets/app.js"')

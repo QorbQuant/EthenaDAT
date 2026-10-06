@@ -33,7 +33,7 @@ export const PAGES = {
   "/research/stablecoinx-mnav/": {
     title: "StablecoinX mNAV Explained: ENA Treasury vs Share Price",
     description:
-      "How to calculate StablecoinX token NAV, ENA per share and mNAV—and why a discount to reported token assets is not a guaranteed return.",
+      "How to calculate StablecoinX token NAV, ENA per share and mNAV, and why a discount to reported token assets is not a guaranteed return.",
     name: "StablecoinX mNAV explained",
     article: true,
   },

@@ -15,16 +15,16 @@ window.mountResearch = function (initialD, initialP) {
     ns = "http://www.w3.org/2000/svg";
   const usd = (v, n = 2) =>
       v == null || !Number.isFinite(v)
-        ? "—"
+        ? "N/A"
         : "$" +
           v.toLocaleString("en-US", {
             minimumFractionDigits: n,
             maximumFractionDigits: n,
           }),
     num = (v) =>
-      v == null ? "—" : v.toLocaleString("en-US", { maximumFractionDigits: 0 }),
+      v == null ? "N/A" : v.toLocaleString("en-US", { maximumFractionDigits: 0 }),
     compact = (v) => {
-      if (v == null) return "—";
+      if (v == null) return "N/A";
       let abs = Math.abs(v),
         sign = v < 0 ? "−" : "";
       return (
@@ -39,7 +39,7 @@ window.mountResearch = function (initialD, initialP) {
               : abs.toFixed(2))
       );
     },
-    pct = (v) => (Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "—"),
+    pct = (v) => (Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "N/A"),
     date = (d) =>
       new Date(d + "T00:00:00Z").toLocaleDateString("en-GB", {
         day: "2-digit",
@@ -54,7 +54,7 @@ window.mountResearch = function (initialD, initialP) {
         timeZone: "UTC",
       }),
     esc = (s) =>
-      String(s ?? "—").replace(
+      String(s ?? "N/A").replace(
         /[&<>"']/g,
         (c) =>
           ({
@@ -260,7 +260,7 @@ window.mountResearch = function (initialD, initialP) {
         updated: (pay ? P : D).generated_at,
         period: scenario
           ? "Terminal stock-price scenarios (USD)"
-          : c.rows[0].d + " — " + c.rows.at(-1).d,
+          : c.rows[0].d + " to " + c.rows.at(-1).d,
         subtitle:
           c.series
             .map(

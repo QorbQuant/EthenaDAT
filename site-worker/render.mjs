@@ -3,7 +3,7 @@ import { esc } from "./seo.mjs";
 export const num = (v) =>
   Number.isFinite(v)
     ? v.toLocaleString("en-US", { maximumFractionDigits: 0 })
-    : "—";
+    : "N/A";
 export const usd = (v, n = 2) =>
   Number.isFinite(v)
     ? "$" +
@@ -11,12 +11,12 @@ export const usd = (v, n = 2) =>
         minimumFractionDigits: n,
         maximumFractionDigits: n,
       })
-    : "—";
+    : "N/A";
 export const pct = (v) =>
-  Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "—";
+  Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "N/A";
 export const compact = (v) =>
   !Number.isFinite(v)
-    ? "—"
+    ? "N/A"
     : Math.abs(v) >= 1e9
       ? "$" + (v / 1e9).toFixed(2) + "B"
       : Math.abs(v) >= 1e6
@@ -76,7 +76,7 @@ export function values(D, P) {
       "sx-formula-context": "Current observation",
       "sx-plot-title": "Market cap & token NAV",
       "sx-chart-hint": "Blue · token NAV / Copper · market cap",
-      "sx-chart-foot-right": s.date[0] + " — " + s.date[i],
+      "sx-chart-foot-right": s.date[0] + " to " + s.date[i],
       "unlocked-percent": pct(Ethena.unlocked(D) / D.ena_holdings),
       "unlocked-description":
         "Of reported ENA is contractually unlocked as of " +
@@ -123,7 +123,7 @@ export function values(D, P) {
         Number.isFinite(h.cashback_usd_total) &&
         Number.isFinite(h.yield_usd_total)
           ? compact(h.cashback_usd_total + h.yield_usd_total)
-          : "—",
+          : "N/A",
       "pay-cashback-rate": pct(h.cashback_rate_30d),
       "pay-yield-apy": pct(h.yield_apy_30d),
       "pay-observation-date": s.date[i],
@@ -180,7 +180,7 @@ export function rows(d, type) {
               usd(s.usde_close[i]),
               usd(s.ena_price[i], 4),
               usd(s.nav_per_share[i]),
-              Number.isFinite(s.mnav[i]) ? s.mnav[i].toFixed(2) + "×" : "—",
+              Number.isFinite(s.mnav[i]) ? s.mnav[i].toFixed(2) + "×" : "N/A",
             ]
           : [
               date,

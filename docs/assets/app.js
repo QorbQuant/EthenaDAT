@@ -62,14 +62,14 @@
           minimumFractionDigits: n,
           maximumFractionDigits: n,
         })
-      : "—";
+      : "N/A";
   const num = (v) =>
     Number.isFinite(v)
       ? v.toLocaleString("en-US", { maximumFractionDigits: 0 })
-      : "—";
+      : "N/A";
   const compact = (v) =>
     !Number.isFinite(v)
-      ? "—"
+      ? "N/A"
       : Math.abs(v) >= 1e9
         ? "$" + (v / 1e9).toFixed(2) + "B"
         : Math.abs(v) >= 1e6
@@ -77,7 +77,7 @@
           : Math.abs(v) >= 1000
             ? "$" + (v / 1000).toFixed(1) + "K"
             : usd(v);
-  const pct = (v) => (Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "—");
+  const pct = (v) => (Number.isFinite(v) ? (v * 100).toFixed(1) + "%" : "N/A");
   const stamp = (v) =>
     Number.isFinite(Date.parse(v))
       ? new Date(v).toLocaleString("en-GB", {

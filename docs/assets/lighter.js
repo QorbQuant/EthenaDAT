@@ -21,7 +21,7 @@
           minimumFractionDigits: 2,
           maximumFractionDigits: 2,
         })
-      : "—";
+      : "N/A";
   const compact = (n) =>
     Number.isFinite(n)
       ? "$" +
@@ -29,11 +29,11 @@
           notation: "compact",
           maximumFractionDigits: 1,
         }).format(n)
-      : "—";
+      : "N/A";
   const rate = (n) =>
     Number.isFinite(n)
       ? (n > 0 ? "+" : n < 0 ? "−" : "") + Math.abs(n).toFixed(4) + "%"
-      : "—";
+      : "N/A";
   const time = (t) =>
     new Date(t).toLocaleString("en-GB", {
       day: "2-digit",
@@ -87,7 +87,7 @@
       ).toFixed(2)}% vs recorded USDE ${money(stock.price)} · ${stock.date}`;
     }
     const f = data.latestFunding;
-    $("#lighter-funding").textContent = f ? rate(f.ratePct) : "—";
+    $("#lighter-funding").textContent = f ? rate(f.ratePct) : "N/A";
     $("#lighter-payer").textContent = f
       ? `${payer(f.ratePct)} · ${time(f.t)}${
           data.historyDelayed?.funding || Date.now() - f.t > 2 * HOUR

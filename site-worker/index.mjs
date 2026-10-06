@@ -131,7 +131,7 @@ export function renderDashboard(template, path, feeds) {
     })
     .on("[data-market]", {
       element(e) {
-        e.setInnerContent(market[e.getAttribute("data-market")] ?? "—");
+        e.setInnerContent(market[e.getAttribute("data-market")] ?? "N/A");
       },
     })
     .on("[data-pay]", {

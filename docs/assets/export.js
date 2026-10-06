@@ -46,7 +46,7 @@ function sourceStamp(value) {
       })
     : "Unavailable";
 }
-const safeFormat = (f, v) => (Number.isFinite(v) ? f(v) : "—");
+const safeFormat = (f, v) => (Number.isFinite(v) ? f(v) : "N/A");
 const bounds = { l: 156, r: 1536, t: 185, b: 760 };
 function axes(y, fmt) {
   const { l, r } = bounds;

@@ -21,7 +21,7 @@ window.mountValuation = function (initial) {
     base = Ethena.current(D);
   const money = (v, n = 2) =>
       !Number.isFinite(v)
-        ? "—"
+        ? "N/A"
         : "$" +
           v.toLocaleString("en-US", {
             minimumFractionDigits: n,
@@ -578,7 +578,7 @@ window.mountValuation = function (initial) {
       (c[0] > c[2] ? "ENA price leads" : "Multiple leads");
     $("#sx-attrib-dates").textContent =
       dateLabel(start.date) +
-      " — " +
+      " to " +
       dateLabel(end.date) +
       " · dollars per share";
     $("#sx-attrib").hidden = !state.expanded;
@@ -962,7 +962,7 @@ window.mountValuation = function (initial) {
         updated: D.generated_at,
         period: scenario
           ? "Illustrative inputs, not a forecast"
-          : data[0].date + " — " + data.at(-1).date,
+          : data[0].date + " to " + data.at(-1).date,
         subtitle: scenario
           ? `ENA $${state.ena.toFixed(4)} × ${base.per.toFixed(4)} ENA/share × ${state.mnav.toFixed(4)} mNAV = $${(state.ena * base.per * state.mnav).toFixed(2)} per share`
           : (factor
@@ -1062,7 +1062,7 @@ window.mountValuation = function (initial) {
         ],
       },
       updated: D.generated_at,
-      period: start.date + " — " + end.date,
+      period: start.date + " to " + end.date,
       subtitle:
         "USD per share · contributions allocated across ENA price, ENA per share, and mNAV",
       note: "Shapley decomposition of the recorded share-price change. Attribution is an accounting identity, not evidence of causation.",
