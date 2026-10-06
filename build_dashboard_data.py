@@ -20,6 +20,8 @@ import pandas as pd
 import requests
 import yfinance as yf
 
+from data_quality import positive, validate_history
+
 ROOT = Path(__file__).parent
 EDGAR_URL = "https://data.sec.gov/submissions/CIK0002080215.json"
 EDGAR_ARCHIVE = "https://www.sec.gov/Archives/edgar/data/2080215"
@@ -209,7 +211,7 @@ def usde_snapshot(df: pd.DataFrame) -> dict:
     try:
         info = yf.Ticker("USDE").info
         price = info.get("regularMarketPrice")
-        if price:
+        if positive(price):
             return {
                 "price": price,
                 "prev_close": info.get("previousClose"),
@@ -230,6 +232,8 @@ def usde_snapshot(df: pd.DataFrame) -> dict:
 
 def main() -> None:
     df = pd.read_csv(ROOT / "output" / "ethena_dat.csv", parse_dates=["date"])
+    # Reject broken intermediate data before touching the last usable feed.
+    validate_history(df)
     tranches = pd.read_csv(ROOT / "inputs" / "ena_tranches.csv")
     # blank waived_on cells read as NaN, which json.dumps(allow_nan=False) rejects
     tranches = tranches.astype(object).where(tranches.notna(), None)

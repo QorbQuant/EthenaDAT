@@ -14,6 +14,8 @@ import pandas as pd
 import requests
 import yfinance as yf
 
+from data_quality import reconcile_prices, validate_history
+
 ROOT = Path(__file__).parent
 LISTING_DATE = "2026-06-26"  # first Nasdaq trading day post TLGY merger
 COINGECKO_URL = "https://api.coingecko.com/api/v3/coins/ethena/market_chart"
@@ -104,17 +106,26 @@ def main() -> None:
     days = min((pd.Timestamp.today().normalize() - pd.Timestamp(LISTING_DATE)).days + 5, 360)
     ena = fetch_ena(days)
     prev_path = ROOT / "output" / "ethena_dat.csv"
+    previous = pd.DataFrame(columns=["usde_close", "ena_price"], dtype=float)
     if prev_path.exists():
-        prev = pd.read_csv(prev_path, parse_dates=["date"]).set_index("date")["ena_price"]
-        ena = ena.combine_first(prev)
+        previous = pd.read_csv(prev_path, parse_dates=["date"]).set_index("date")
+    usde = reconcile_prices(usde, previous["usde_close"], "usde_close")
+    ena = reconcile_prices(ena, previous["ena_price"], "ena_price")
 
     df = pd.DataFrame(usde)
+    df["ena_price"] = ena.reindex(df.index)
+    # A new date needs both market observations before it can enter the chart.
+    missing = df.index[df["ena_price"].isna()]
+    if len(missing):
+        print(f"Omitting {len(missing)} dates without an ENA price: {missing.tolist()}")
+        df = df.dropna(subset=["ena_price"])
+    if df.empty:
+        raise ValueError("No complete price observations; keeping the published dataset")
     # USDEW public warrants (strike $11.50); optional so a warrant-data outage
     # never blocks the equity refresh
     usdew = fetch_ticker_close("USDEW", "usdew_close", required=False)
     df["usdew_close"] = usdew.reindex(df.index)
     df["shares_outstanding"] = load_events("shares_out.csv", "shares_outstanding", df.index)
-    df["ena_price"] = ena.reindex(df.index)
     df["ena_holdings"] = load_events("ena_holdings.csv", "ena_holdings", df.index)
 
     df["market_cap"] = df["usde_close"] * df["shares_outstanding"]
@@ -136,6 +147,7 @@ def main() -> None:
     )
 
     out = ROOT / "output"
+    validate_history(df)
     out.mkdir(exist_ok=True)
     df.to_csv(out / "ethena_dat.csv", date_format="%Y-%m-%d")
     df.reset_index().assign(date=lambda d: d["date"].dt.strftime("%Y-%m-%d")).to_json(
