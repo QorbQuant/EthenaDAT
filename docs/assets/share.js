@@ -136,7 +136,7 @@
               input.select();
             }
           } else {
-            exportModule ??= import("/assets/export.js").catch((error) => {
+            exportModule ??= import("/assets/export.js?v=bb224fd1e408").catch((error) => {
               exportModule = null;
               throw error;
             });
