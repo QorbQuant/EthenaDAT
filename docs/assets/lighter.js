@@ -57,8 +57,8 @@
     r > 0
       ? "Longs pay shorts"
       : r < 0
-        ? "Shorts pay longs"
-        : "No funding payment";
+      ? "Shorts pay longs"
+      : "No funding payment";
   function status() {
     const stale =
       data &&
@@ -66,10 +66,12 @@
         data.stale ||
         Date.now() - Date.parse(data.fetchedAt) > 120000);
     $("#lighter-status").textContent = data
-      ? `${stale ? "Refresh delayed · showing last snapshot. " : ""}Source: Lighter · retrieved ${time(data.fetchedAt)}`
+      ? `${
+          stale ? "Refresh delayed · showing last snapshot. " : ""
+        }Source: Lighter · retrieved ${time(data.fetchedAt)}`
       : failed
-        ? "Lighter is temporarily unavailable. Stock, warrant and options data remain available."
-        : "Loading Lighter market data…";
+      ? "Lighter is temporarily unavailable. Stock, warrant and options data remain available."
+      : "Loading Lighter market data…";
     $("#lighter-status").classList.toggle("lighter-delayed", !!stale || failed);
   }
   function render() {
@@ -80,13 +82,18 @@
     $("#lighter-volume").textContent = compact(data.volume24hUsd);
     if (stock) {
       const delta = (data.markPrice / stock.price - 1) * 100;
-      $("#lighter-basis").textContent =
-        `${delta >= 0 ? "+" : "−"}${Math.abs(delta).toFixed(2)}% vs recorded USDE ${money(stock.price)} · ${stock.date}`;
+      $("#lighter-basis").textContent = `${delta >= 0 ? "+" : "−"}${Math.abs(
+        delta,
+      ).toFixed(2)}% vs recorded USDE ${money(stock.price)} · ${stock.date}`;
     }
     const f = data.latestFunding;
     $("#lighter-funding").textContent = f ? rate(f.ratePct) : "—";
     $("#lighter-payer").textContent = f
-      ? `${payer(f.ratePct)} · ${time(f.t)}${Date.now() - f.t > 2 * HOUR ? " · delayed" : ""}`
+      ? `${payer(f.ratePct)} · ${time(f.t)}${
+          data.historyDelayed?.funding || Date.now() - f.t > 2 * HOUR
+            ? " · refresh delayed"
+            : ""
+        }`
       : "Funding history unavailable";
     draw();
   }
@@ -107,12 +114,17 @@
       .attr("tabindex", "0")
       .attr(
         "aria-label",
-        `${funding ? "Settled hourly funding" : "Hourly trade closing prices"} for StablecoinX on Lighter. Use left and right arrow keys to inspect observations.`,
+        `${
+          funding ? "Settled hourly funding" : "Hourly trade closing prices"
+        } for StablecoinX on Lighter. Use left and right arrow keys to inspect observations.`,
       );
     $("#lighter-empty").hidden = rows.length > 0;
     $("#lighter-chart-note").textContent = funding
       ? "Hourly settled funding · copper: longs pay / blue: shorts pay · times in UTC."
       : "Hourly trade closes · times in UTC · latest candle may be partial.";
+    if (data.historyDelayed?.[funding ? "funding" : "prices"])
+      $("#lighter-chart-note").textContent += " History refresh delayed.";
+    $("#lighter-readout").textContent = "";
     if (!rows.length) return;
     const left = funding ? 78 : 54,
       right = width - 12,
@@ -230,8 +242,11 @@
       selected = Math.max(0, Math.min(rows.length - 1, i));
       const r = rows[selected];
       cursor.attr("x1", x(r.t)).attr("x2", x(r.t)).attr("opacity", 1);
-      $("#lighter-readout").textContent =
-        `${time(r.t)} · ${funding ? rate(r.ratePct) + " · " + payer(r.ratePct) : money(r.close) + " trade close"}`;
+      $("#lighter-readout").textContent = `${time(r.t)} · ${
+        funding
+          ? rate(r.ratePct) + " · " + payer(r.ratePct)
+          : money(r.close) + " trade close"
+      }`;
     };
     svg.on("pointermove", function (event) {
       const t = +x.invert(d3.pointer(event, this)[0]);

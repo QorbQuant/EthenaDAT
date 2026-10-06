@@ -125,7 +125,7 @@ export async function lighterResponse(
       signal: AbortSignal.timeout(5000),
       headers: { Accept: "application/json" },
     });
-    if (!r.ok) throw Error("Lighter upstream unavailable");
+    if (!r.ok) throw Error("Lighter upstream HTTP " + r.status);
     return r.json();
   };
   try {
@@ -134,10 +134,33 @@ export async function lighterResponse(
       get("fundings?" + query),
       get("candles?" + query),
     ]);
+    results.forEach((result, i) => {
+      if (result.status === "rejected")
+        console.warn(
+          "Lighter source failed",
+          ["market", "funding", "candles"][i],
+          String(result.reason),
+        );
+      else if (result.value?.code !== 200)
+        console.warn(
+          "Lighter source rejected",
+          ["market", "funding", "candles"][i],
+          result.value?.code,
+        );
+    });
     const data = normalizeLighter(
       ...results.map((r) => (r.status === "fulfilled" ? r.value : null)),
       now,
     );
+    data.historyDelayed = {
+      funding: !data.funding.length,
+      prices: !data.prices.length,
+    };
+    // A brief history outage should not erase a previously verified chart.
+    for (const field of ["funding", "prices"])
+      if (data.historyDelayed[field] && previous?.[field]?.length)
+        data[field] = previous[field];
+    data.latestFunding = data.funding.at(-1) || null;
     if (cache)
       ctx.waitUntil(
         cache.put(

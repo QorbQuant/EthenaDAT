@@ -142,3 +142,24 @@ test("malformed optional history and blank numeric strings are not presented as 
   assert.deepEqual(d.funding, []);
   assert.deepEqual(d.prices, []);
 });
+
+test("partial history outages retain verified observations and explicitly label the delayed history", async () => {
+  const previous = snapshot();
+  const cache = {
+    match: async () => Response.json(previous),
+    put: async () => {},
+  };
+  const r = await lighterResponse(
+    ctx,
+    async (url) =>
+      Response.json(url.includes("orderBookDetails") ? market : { code: 200 }),
+    cache,
+    now + hour,
+  );
+  const d = await r.json();
+  assert.equal(d.stale, false);
+  assert.deepEqual(d.funding, previous.funding);
+  assert.deepEqual(d.prices, previous.prices);
+  assert.equal(d.latestFunding.t, previous.latestFunding.t);
+  assert.deepEqual(d.historyDelayed, { funding: true, prices: true });
+});
