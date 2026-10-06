@@ -125,14 +125,31 @@ export async function lighterResponse(
       signal: AbortSignal.timeout(5000),
       headers: { Accept: "application/json" },
     });
-    if (!r.ok) throw Error("Lighter upstream HTTP " + r.status);
+    if (!r.ok) {
+      const error = Error("Lighter upstream HTTP " + r.status);
+      const retry = r.headers.get("Retry-After");
+      error.retryAt =
+        retry && /^\d+$/.test(retry)
+          ? now + Number(retry) * 1000
+          : Date.parse(retry);
+      throw error;
+    }
     return r.json();
+  };
+  const history = (field, path) => {
+    const last =
+      previous?.historyFetchedAt?.[field] ||
+      (previous?.[field]?.length ? Date.parse(previous.fetchedAt) : 0);
+    const due = Math.max(last + 300000, previous?.historyRetryAt?.[field] || 0);
+    return now < due
+      ? Promise.resolve({ skipped: true })
+      : get(path + "?" + query);
   };
   try {
     const results = await Promise.allSettled([
       get("orderBookDetails?market_id=" + MARKET),
-      get("fundings?" + query),
-      get("candles?" + query),
+      history("funding", "fundings"),
+      history("prices", "candles"),
     ]);
     results.forEach((result, i) => {
       if (result.status === "rejected")
@@ -141,7 +158,7 @@ export async function lighterResponse(
           ["market", "funding", "candles"][i],
           String(result.reason),
         );
-      else if (result.value?.code !== 200)
+      else if (!result.value?.skipped && result.value?.code !== 200)
         console.warn(
           "Lighter source rejected",
           ["market", "funding", "candles"][i],
@@ -152,14 +169,31 @@ export async function lighterResponse(
       ...results.map((r) => (r.status === "fulfilled" ? r.value : null)),
       now,
     );
-    data.historyDelayed = {
-      funding: !data.funding.length,
-      prices: !data.prices.length,
-    };
+    data.historyDelayed = {};
+    data.historyFetchedAt = { ...previous?.historyFetchedAt };
+    data.historyRetryAt = { ...previous?.historyRetryAt };
     // A brief history outage should not erase a previously verified chart.
-    for (const field of ["funding", "prices"])
-      if (data.historyDelayed[field] && previous?.[field]?.length)
-        data[field] = previous[field];
+    for (const [i, field] of ["funding", "prices"].entries()) {
+      const result = results[i + 1],
+        skipped = result.value?.skipped;
+      const complete = data[field].length > 0;
+      data.historyDelayed[field] = skipped
+        ? !!previous?.historyDelayed?.[field]
+        : !complete;
+      if (complete) {
+        data.historyFetchedAt[field] = now;
+        data.historyRetryAt[field] = 0;
+      } else {
+        if (previous?.[field]?.length) data[field] = previous[field];
+        if (!skipped)
+          data.historyRetryAt[field] = Math.max(
+            now + 300000,
+            result.reason?.retryAt || 0,
+          );
+        if (!data.historyFetchedAt[field] && previous?.[field]?.length)
+          data.historyFetchedAt[field] = Date.parse(previous.fetchedAt);
+      }
+    }
     data.latestFunding = data.funding.at(-1) || null;
     if (cache)
       ctx.waitUntil(

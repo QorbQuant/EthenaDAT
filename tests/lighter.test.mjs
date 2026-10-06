@@ -163,3 +163,66 @@ test("partial history outages retain verified observations and explicitly label 
   assert.equal(d.latestFunding.t, previous.latestFunding.t);
   assert.deepEqual(d.historyDelayed, { funding: true, prices: true });
 });
+
+test("hourly history is reused between five-minute refreshes while market stats stay current", async () => {
+  const previous = snapshot();
+  let requests = 0;
+  const cache = {
+    match: async () => Response.json(previous),
+    put: async () => {},
+  };
+  const r = await lighterResponse(
+    ctx,
+    async (url) => {
+      requests++;
+      assert.ok(url.includes("orderBookDetails"));
+      return Response.json(market);
+    },
+    cache,
+    now + 120000,
+  );
+  const d = await r.json();
+  assert.equal(requests, 1);
+  assert.deepEqual(d.historyDelayed, { funding: false, prices: false });
+  assert.deepEqual(d.funding, previous.funding);
+});
+
+test("429 retry-after is honored across requests without losing verified history", async () => {
+  let saved = snapshot();
+  const cache = {
+    match: async () => Response.json(saved),
+    put: async (k, r) => {
+      saved = await r.json();
+    },
+  };
+  const pending = [];
+  const context = { waitUntil: (p) => pending.push(p) };
+  const limited = async (url) =>
+    url.includes("orderBookDetails")
+      ? Response.json(market)
+      : new Response("Rate limited", {
+          status: 429,
+          headers: { "Retry-After": "900" },
+        });
+  const first = await (
+    await lighterResponse(context, limited, cache, now + hour)
+  ).json();
+  await Promise.all(pending);
+  assert.equal(first.historyRetryAt.funding, now + hour + 900000);
+  let calls = 0;
+  const next = await (
+    await lighterResponse(
+      context,
+      async (url) => {
+        calls++;
+        assert.ok(url.includes("orderBookDetails"));
+        return Response.json(market);
+      },
+      cache,
+      now + hour + 6 * 60000,
+    )
+  ).json();
+  assert.equal(calls, 1);
+  assert.equal(next.historyDelayed.funding, true);
+  assert.deepEqual(next.funding, first.funding);
+});
