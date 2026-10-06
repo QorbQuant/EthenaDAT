@@ -1757,3 +1757,127 @@ body {
   width: 100%;
   margin-top: 8px;
 }
+
+/* Lighter: independent market context within Derivatives. */
+#sx-studio .lighter-panel {
+  border: 1px solid var(--sx-rule);
+  border-radius: 6px;
+  padding: 28px 30px 10px;
+  margin: 4px 0 36px;
+  background: linear-gradient(
+    120deg,
+    rgba(138, 169, 207, 0.035),
+    transparent 65%
+  );
+}
+#sx-studio .lighter-heading,
+#sx-studio .lighter-toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+#sx-studio .lighter-eyebrow {
+  color: var(--sx-copper);
+  font-size: 10px;
+  letter-spacing: 1.4px;
+  margin: 0 0 10px;
+}
+#sx-studio .lighter-heading h3 {
+  font-size: 25px;
+  letter-spacing: -0.8px;
+  font-weight: 450;
+  margin: 0;
+}
+#sx-studio .lighter-panel .full-note {
+  margin: 12px 0 4px;
+}
+#sx-studio .lighter-panel .full-metrics {
+  margin: 18px 0 20px;
+}
+#sx-studio .lighter-panel .full-metric small {
+  display: block;
+  line-height: 1.7;
+}
+#sx-studio .lighter-panel .full-metric strong {
+  font-size: 30px;
+}
+#sx-studio .lighter-toolbar {
+  padding-top: 18px;
+  border-top: 1px solid var(--sx-rule);
+}
+#sx-studio .lighter-switch {
+  display: flex;
+  gap: 3px;
+  padding: 3px;
+  border: 1px solid var(--sx-rule);
+  border-radius: 4px;
+}
+#sx-studio .lighter-switch button {
+  cursor: pointer;
+  background: transparent;
+  border: 0;
+  border-radius: 2px;
+  color: var(--sx-muted);
+  padding: 7px 12px;
+  font: inherit;
+  font-size: 11px;
+}
+#sx-studio .lighter-switch button[aria-pressed="true"] {
+  color: var(--sx-bg);
+  background: var(--sx-text);
+}
+#sx-studio .lighter-switch button:focus-visible,
+#sx-studio #lighter-chart:focus-visible {
+  outline: 2px solid var(--sx-blue);
+  outline-offset: 3px;
+}
+#sx-studio .lighter-chart-wrap {
+  position: relative;
+  margin-top: 18px;
+}
+#sx-studio #lighter-chart {
+  width: 100%;
+  height: 260px;
+  display: block;
+  touch-action: pan-y;
+}
+#sx-studio #lighter-empty {
+  position: absolute;
+  top: 40%;
+  width: 100%;
+  text-align: center;
+}
+#sx-studio .lighter-delayed {
+  color: var(--sx-copper);
+}
+#sx-studio .lighter-methodology {
+  margin-top: 12px;
+  border-bottom: 0;
+}
+#sx-studio .lighter-warrants-heading h3 {
+  font-size: 18px;
+  font-weight: 450;
+}
+@media (max-width: 640px) {
+  #sx-studio .lighter-panel {
+    padding: 20px 14px 4px;
+  }
+  #sx-studio .lighter-heading {
+    align-items: flex-start;
+  }
+  #sx-studio .lighter-heading h3 {
+    font-size: 22px;
+  }
+  #sx-studio .lighter-heading a {
+    font-size: 10px;
+    white-space: nowrap;
+  }
+  #sx-studio .lighter-panel .full-metrics {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 12px;
+  }
+  #sx-studio .lighter-panel .full-metric strong {
+    font-size: 25px;
+  }
+}

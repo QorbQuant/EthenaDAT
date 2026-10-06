@@ -664,9 +664,155 @@
           </section>
           <section id="full-derivatives" class="full-section">
             <div class="full-section-top">
-              <h2>
-                <span class="sx-section-num">05 /</span>Warrants & options
-              </h2>
+              <h2><span class="sx-section-num">05 /</span>Derivatives</h2>
+              <p>Perpetuals · warrants · options</p>
+            </div>
+            <article
+              id="lighter-panel"
+              class="lighter-panel"
+              aria-labelledby="lighter-title"
+            >
+              <div class="lighter-heading">
+                <div>
+                  <p class="lighter-eyebrow">LIGHTER / STABLECOINX</p>
+                  <h3 id="lighter-title">Beyond the closing bell.</h3>
+                </div>
+                <a
+                  class="full-muted-link"
+                  href="https://app.lighter.xyz/trade/STABLECOINX"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View market ↗</a
+                >
+              </div>
+              <p class="full-note">
+                Perpetual market activity, including outside the stock session.
+              </p>
+              <p id="lighter-status" class="full-caption" role="status">
+                Loading Lighter market data…
+              </p>
+              <div class="full-metrics">
+                <div class="full-metric">
+                  <label>Perp mark price</label
+                  ><strong id="lighter-mark">—</strong
+                  ><small id="lighter-basis"
+                    >Comparison with recorded stock price</small
+                  >
+                </div>
+                <div class="full-metric">
+                  <label>Open interest</label><strong id="lighter-oi">—</strong
+                  ><small>Outstanding notional · both sides matched</small>
+                </div>
+                <div class="full-metric">
+                  <label>Last hourly funding</label
+                  ><strong id="lighter-funding">—</strong
+                  ><small id="lighter-payer"
+                    >Settled rate · awaiting data</small
+                  >
+                </div>
+                <div class="full-metric">
+                  <label>24h perp volume</label
+                  ><strong id="lighter-volume">—</strong
+                  ><small>Traded notional on Lighter</small>
+                </div>
+              </div>
+              <div class="lighter-toolbar">
+                <div
+                  class="lighter-switch"
+                  role="group"
+                  aria-label="Lighter chart"
+                >
+                  <button
+                    type="button"
+                    data-lighter-view="price"
+                    aria-pressed="true"
+                  >
+                    Price</button
+                  ><button
+                    type="button"
+                    data-lighter-view="funding"
+                    aria-pressed="false"
+                  >
+                    Funding
+                  </button>
+                </div>
+                <div
+                  class="lighter-switch"
+                  role="group"
+                  aria-label="Lighter date range"
+                >
+                  <button
+                    type="button"
+                    data-lighter-hours="24"
+                    aria-pressed="true"
+                  >
+                    24h</button
+                  ><button
+                    type="button"
+                    data-lighter-hours="168"
+                    aria-pressed="false"
+                  >
+                    7d
+                  </button>
+                </div>
+              </div>
+              <div class="lighter-chart-wrap">
+                <svg
+                  id="lighter-chart"
+                  role="img"
+                  aria-label="StablecoinX perpetual hourly price history"
+                ></svg>
+                <p id="lighter-empty" class="full-note" hidden>
+                  No observations available for this period.
+                </p>
+              </div>
+              <p id="lighter-chart-note" class="full-caption">
+                Hourly trade closes · times in UTC · latest candle may be
+                partial.
+              </p>
+              <p
+                id="lighter-readout"
+                class="full-readout"
+                aria-live="polite"
+              ></p>
+              <details class="full-disclosure lighter-methodology">
+                <summary>How to read this market</summary>
+                <p>
+                  The mark price is Lighter’s valuation reference; it can differ
+                  from the last traded price and the Nasdaq stock price. The
+                  comparison uses the latest recorded USDE daily price, with its
+                  date shown. It is not a synchronized arbitrage spread or a
+                  prediction of the next stock opening.
+                </p>
+                <p>
+                  Funding is the last settled hourly rate, not an estimate of
+                  the next payment. Positive rates mean longs pay shorts;
+                  negative rates mean shorts pay longs. Open interest is
+                  outstanding contracts multiplied by the mark price. It
+                  measures exposure, not a net long/short split. Missing data
+                  stays unavailable.
+                </p>
+                <p>
+                  Source:
+                  <a
+                    href="https://apidocs.lighter.xyz/reference/orderbookdetails"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Lighter market data ↗</a
+                  >
+                  ·
+                  <a
+                    href="https://docs.lighter.xyz/trading/funding"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Funding methodology ↗</a
+                  >. Data refreshes approximately every minute while this panel
+                  is visible.
+                </p>
+              </details>
+            </article>
+            <div class="full-section-top lighter-warrants-heading">
+              <h3>Warrants & options</h3>
               <p>USDEW / Nasdaq</p>
             </div>
             <div class="full-metrics">
@@ -1518,5 +1664,6 @@
     <script defer src="/assets/valuation.js"></script>
     <script defer src="/assets/research.js"></script>
     <script defer src="/assets/app.js"></script>
+    <script defer src="/assets/lighter.js"></script>
   </body>
 </html>
