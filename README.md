@@ -240,3 +240,7 @@ never change the page's canonical URL. Export rendering loads only on demand.
 Initial HTML paints before chart initialization. Offscreen research charts draw
 when approaching the viewport; quote-only requests are skipped on EthenaPay.
 Run all regression checks with `node --test tests/*.test.*`.
+
+### Reviewed articles
+
+Article sources live in `research/<slug>/`. Each `layout.json` supplies section navigation, chart and dashboard links, public assets and an explicit list of files allowed in the downloadable archive. Internal review notes and private address lists must never be included. Install `research/requirements.txt`, then run `python3 scripts/build_research.py` to rebuild all reviewed articles. Add the generated module to `site-worker/content.mjs` and its metadata to `site-worker/seo.mjs`; the sitemap follows that metadata.

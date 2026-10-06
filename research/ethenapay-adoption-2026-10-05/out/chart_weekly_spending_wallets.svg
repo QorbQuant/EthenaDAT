@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="wk-t wk-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="wk-t">Distinct EthenaPay spending wallets by seven-day period, August 3 to October 4, 2026</title>
+<desc id="wk-d">Stacked column chart. Distinct wallets with a qualifying spend event rose from 48 in the seven days to August 9 to 92 in the last full period before the beta and 617 in the seven days to October 4. In the latest period 425 of the wallets had also spent in the period before and 192 had not.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">617 wallets spent in the seven days to October 4, 2026, up from 92 before the beta</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Distinct EthenaPay wallets with a spend event, by seven-day period</text>
+<rect x="20" y="67" width="10" height="10" rx="2" fill="var(--sx-blue, #8aa9cf)"/>
+<text x="36" y="76" fill="var(--sx-text, #eeeae3)" font-size="12">Also spent in the previous seven days</text>
+<rect x="266" y="67" width="10" height="10" rx="2" fill="#5d6877"/>
+<text x="282" y="76" fill="var(--sx-text, #eeeae3)" font-size="12">Did not</text>
+<line x1="56" x2="772" y1="382.0" y2="382.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="386.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0</text>
+<line x1="56" x2="772" y1="304.9" y2="304.9" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="308.9" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">200</text>
+<line x1="56" x2="772" y1="227.7" y2="227.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="231.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">400</text>
+<line x1="56" x2="772" y1="150.6" y2="150.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="154.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">600</text>
+<g><title>Aug 3 to Aug 9. 48 spending wallets. 34 also spent in the previous seven days and 14 did not.</title>
+<rect x="83.8" y="369.9" width="24" height="12.1" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M83.8,367.9 L83.8,367.5 Q83.8,363.5 87.8,363.5 L103.8,363.5 Q107.8,363.5 107.8,367.5 L107.8,367.9 Z" fill="#5d6877"/>
+<rect x="56.0" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="95.8" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 9</text>
+<g><title>Aug 10 to Aug 16. 60 spending wallets. 41 also spent in the previous seven days and 19 did not.</title>
+<rect x="163.3" y="367.2" width="24" height="14.8" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M163.3,365.2 L163.3,362.9 Q163.3,358.9 167.3,358.9 L183.3,358.9 Q187.3,358.9 187.3,362.9 L187.3,365.2 Z" fill="#5d6877"/>
+<rect x="135.6" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="175.3" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 16</text>
+<g><title>Aug 17 to Aug 23. 75 spending wallets. 52 also spent in the previous seven days and 23 did not.</title>
+<rect x="242.9" y="362.9" width="24" height="19.1" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M242.9,360.9 L242.9,357.1 Q242.9,353.1 246.9,353.1 L262.9,353.1 Q266.9,353.1 266.9,357.1 L266.9,360.9 Z" fill="#5d6877"/>
+<rect x="215.1" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="254.9" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 23</text>
+<g><title>Aug 24 to Aug 30. 92 spending wallets. 64 also spent in the previous seven days and 28 did not.</title>
+<rect x="322.4" y="358.3" width="24" height="23.7" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M322.4,356.3 L322.4,350.5 Q322.4,346.5 326.4,346.5 L342.4,346.5 Q346.4,346.5 346.4,350.5 L346.4,356.3 Z" fill="#5d6877"/>
+<rect x="294.7" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="334.4" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 30</text>
+<g><title>Aug 31 to Sep 6. 212 spending wallets. 78 also spent in the previous seven days and 134 did not.</title>
+<rect x="402.0" y="352.9" width="24" height="29.1" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M402.0,350.9 L402.0,304.2 Q402.0,300.2 406.0,300.2 L422.0,300.2 Q426.0,300.2 426.0,304.2 L426.0,350.9 Z" fill="#5d6877"/>
+<rect x="374.2" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="414.0" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 6</text>
+<g><title>Sep 7 to Sep 13. 281 spending wallets. 184 also spent in the previous seven days and 97 did not.</title>
+<rect x="481.6" y="312.0" width="24" height="70.0" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M481.6,310.0 L481.6,277.6 Q481.6,273.6 485.6,273.6 L501.6,273.6 Q505.6,273.6 505.6,277.6 L505.6,310.0 Z" fill="#5d6877"/>
+<rect x="453.8" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="493.6" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 13</text>
+<g><title>Sep 14 to Sep 20. 416 spending wallets. 232 also spent in the previous seven days and 184 did not.</title>
+<rect x="561.1" y="293.5" width="24" height="88.5" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M561.1,291.5 L561.1,225.5 Q561.1,221.5 565.1,221.5 L581.1,221.5 Q585.1,221.5 585.1,225.5 L585.1,291.5 Z" fill="#5d6877"/>
+<rect x="533.3" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="573.1" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 20</text>
+<g><title>Sep 21 to Sep 27. 495 spending wallets. 340 also spent in the previous seven days and 155 did not.</title>
+<rect x="640.7" y="251.9" width="24" height="130.1" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M640.7,249.9 L640.7,195.1 Q640.7,191.1 644.7,191.1 L660.7,191.1 Q664.7,191.1 664.7,195.1 L664.7,249.9 Z" fill="#5d6877"/>
+<rect x="612.9" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="652.7" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 27</text>
+<g><title>Sep 28 to Oct 4. 617 spending wallets. 425 also spent in the previous seven days and 192 did not.</title>
+<rect x="720.2" y="219.1" width="24" height="162.9" fill="var(--sx-blue, #8aa9cf)"/>
+<path d="M720.2,217.1 L720.2,148.0 Q720.2,144.0 724.2,144.0 L740.2,144.0 Q744.2,144.0 744.2,148.0 L744.2,217.1 Z" fill="#5d6877"/>
+<rect x="692.4" y="112" width="79.6" height="270" fill="transparent"/>
+</g>
+<text x="732.2" y="402" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct 4</text>
+<text x="334.4" y="338.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600" text-anchor="middle">92</text>
+<text x="414.0" y="292.2" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600" text-anchor="middle">212</text>
+<text x="732.2" y="136.0" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600" text-anchor="middle">617</text>
+<text x="414.0" y="274.2" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">beta opened Sep 1</text>
+<text x="56" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11">Each column covers seven full UTC days and is labeled with its last day.</text>
+<text x="20" y="452" fill="var(--sx-muted, #99a3b0)" font-size="11">Chain recount of USDe spend events to the two settlement addresses. Data through October 4, 2026. Wallets are not verified people.</text>
+</svg>

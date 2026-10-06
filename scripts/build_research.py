@@ -1,51 +1,75 @@
-"""Build the reviewed September article. Requires research/requirements.txt."""
+"""Build reviewed articles and explicit public archives. Requires research/requirements.txt."""
 import html
 import json
 import re
 import shutil
 import zipfile
+from datetime import date
 from pathlib import Path
 
 import markdown
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "research/usde-september-2026"
-PUBLIC = ROOT / "docs/research-assets/usde-september-2026"
-PUBLIC.mkdir(parents=True, exist_ok=True)
-meta = json.loads((SOURCE / "metadata.json").read_text())
-blocks = (SOURCE / "article_draft.md").read_text().split("\n\n", 3)
-body = markdown.markdown(blocks[3], extensions=["tables", "fenced_code", "toc"])
-body = body.replace('href="https://ethenadash.com/', 'href="/')
-body = re.sub(r"<table>(.*?)</table>",
-              r'<div class="research-table" tabindex="0" role="region" aria-label="Research data table"><table>\1</table></div>',
-              body, flags=re.S)
-body = re.sub(r'<a href="(/research-assets/[^"\s]+\.(?:csv|zip))">', r'<a download href="\1">', body)
-body = body.replace("<th>", '<th scope="col">')
-body = body.replace("<p>", '<p class="research-opening">', 1)
-body = re.sub(r'<p>(<img [^>]+>)</p>\s*<p><em>(.*?)</em></p>',
-              lambda m: '<figure class="research-figure"><div class="research-chart" tabindex="0" role="region" aria-label="mNAV comparison chart">' +
-              m[1].replace('<img ', '<img width="800" height="466" loading="lazy" ') +
-              '</div><figcaption>' + m[2] +
-              ' · <a href="/research-assets/usde-september-2026/chart_mnav_two_timestamps.svg">Open full chart ↗</a>' +
-              '</figcaption></figure>', body, flags=re.S)
-header = f'''<article class="research-article">
+
+
+def within(root, name):
+    path = (root / name).resolve()
+    if not path.is_relative_to(root.resolve()) or not path.is_file():
+        raise ValueError(f"Missing or invalid publication file: {name}")
+    return path
+
+
+def build(source):
+    slug = source.name
+    public = ROOT / "docs/research-assets" / slug
+    public.mkdir(parents=True, exist_ok=True)
+    meta = json.loads((source / "metadata.json").read_text())
+    layout = json.loads((source / "layout.json").read_text())
+    published = date.fromisoformat(meta["datePublished"])
+    display_date = f"{published.day} {published.strftime('%B %Y')}"
+    blocks = (source / "article_draft.md").read_text().split("\n\n", 3)
+    body = markdown.markdown(blocks[3], extensions=["tables", "fenced_code", "toc"])
+    body = body.replace('href="https://ethenadash.com/', 'href="/')
+    body = re.sub(r"<table>(.*?)</table>",
+                  r'<div class="research-table" tabindex="0" role="region" aria-label="Research data table"><table>\1</table></div>',
+                  body, flags=re.S)
+    body = re.sub(r'<a href="(/research-assets/[^"\s]+\.(?:csv|zip))">', r'<a download href="\1">', body)
+    body = body.replace("<th>", '<th scope="col">')
+    body = body.replace("<p>", '<p class="research-opening">', 1)
+    body = re.sub(r'<p>(<img [^>]+>)</p>\s*<p><em>(.*?)</em></p>',
+                  lambda m: '<figure class="research-figure"><div class="research-chart" tabindex="0" role="region" aria-label="' + html.escape(layout['chartLabel']) + '">' +
+                  m[1].replace('<img ', '<img width="800" height="466" loading="lazy" ') +
+                  '</div><figcaption>' + m[2] +
+                  f' · <a href="/research-assets/{slug}/{layout["chartFile"]}">Open full chart ↗</a>' +
+                  '</figcaption></figure>', body, flags=re.S)
+    navigation = ''.join(f'<a href="#{html.escape(anchor)}">{html.escape(label)}</a>' for label, anchor in layout['navigation'])
+    for _, anchor in layout['navigation']:
+        if f'id="{anchor}"' not in body:
+            raise ValueError(f"Missing article section: {slug}#{anchor}")
+    header = f'''<article class="research-article">
 <header class="research-header"><div class="editorial-kicker">{html.escape(blocks[1])}</div>
 <h1>{html.escape(meta['headline'])}</h1>
-<p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published <time datetime="{meta['datePublished']}">5 October 2026</time></span></p>
-<p class="research-cutoff">Prices through the September 30 close · Filings reviewed through October 5, 2026</p></header>
-<nav class="research-contents" aria-label="In this article"><span>In this review</span><a href="#priced-at-the-stock-close-ena-accounts-for-95-of-the-gain-between-month-ends">Attribution</a><a href="#the-dashboard-series-prices-ena-20-hours-before-the-stock-close">Price timing</a><a href="#what-the-company-filed-in-the-window">Filings</a><a href="#reproduce-the-numbers">Download data</a></nav>
+<p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published <time datetime="{meta['datePublished']}">{display_date}</time></span></p>
+<p class="research-cutoff">{html.escape(layout['cutoff'])}</p></header>
+<nav class="research-contents" aria-label="In this article"><span>In this review</span>{navigation}</nav>
 '''
-end = '''<div class="article-next"><span>Continue exploring</span><a href="/stablecoinx/">Open the StablecoinX dashboard →</a><a href="/research/">All research and guides →</a></div></article>'''
-output = "// Generated by scripts/build_research.py; edit research/usde-september-2026/.\n"
-output += "export const meta = " + json.dumps(meta, ensure_ascii=False, indent=2) + ";\n"
-output += "export const html = " + json.dumps(header + body + end, ensure_ascii=False) + ";\n"
-(ROOT / "site-worker/content/usde-september-2026.mjs").write_text(output)
-for name in ["chart_mnav_two_timestamps.svg", "chart_preview.png", "daily_mnav_two_timestamps.csv", "attribution_bridge.csv", "endpoint_sensitivity.csv", "window_table.csv"]:
-    shutil.copyfile(SOURCE / "out" / name, PUBLIC / name)
-with zipfile.ZipFile(PUBLIC / "calculation-files.zip", "w", zipfile.ZIP_DEFLATED) as archive:
-    for path in sorted(SOURCE.rglob("*")):
-        if path.is_file() and path.suffix in {".py", ".csv", ".json", ".md", ".svg"}:
-            info = zipfile.ZipInfo("usde-september-2026/" + path.relative_to(SOURCE).as_posix(), (2026, 10, 5, 0, 0, 0))
+    end = f'''<div class="article-next"><span>Continue exploring</span><a href="{html.escape(layout['dashboard'])}">{html.escape(layout['dashboardLabel'])}</a><a href="/research/">All research and guides →</a></div></article>'''
+    output = f"// Generated by scripts/build_research.py; edit research/{slug}/.\n"
+    output += "export const meta = " + json.dumps(meta, ensure_ascii=False, indent=2) + ";\n"
+    output += "export const html = " + json.dumps(header + body + end, ensure_ascii=False) + ";\n"
+    (ROOT / f"site-worker/content/{slug}.mjs").write_text(output)
+    for name in layout['assets']:
+        shutil.copyfile(within(source / 'out', name), public / name)
+    with zipfile.ZipFile(public / "calculation-files.zip", "w", zipfile.ZIP_DEFLATED) as archive:
+        # Only reviewed files are published. Internal notes and future files stay private.
+        for name in sorted(layout['archiveFiles']):
+            path = within(source, name)
+            info = zipfile.ZipInfo(f"{slug}/{name}", (published.year, published.month, published.day, 0, 0, 0))
             info.compress_type = zipfile.ZIP_DEFLATED
             archive.writestr(info, path.read_bytes())
-print("Built", meta["path"], "and its public calculation files")
+    print("Built", meta["path"], "and its public calculation files")
+
+
+if __name__ == '__main__':
+    for layout_path in sorted((ROOT / 'research').glob('*/layout.json')):
+        build(layout_path.parent)

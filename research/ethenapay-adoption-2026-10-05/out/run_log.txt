@@ -1,0 +1,380 @@
+INPUTS
+ ethenapay_90a04e1.json                     commit 90a04e1  generated 2026-09-11T15:41:00+00:00   source dune
+ ethenapay_a58244e.json                     commit a58244e  generated 2026-09-14T17:55:32+00:00   source dune
+ ethenapay_e279050.json                     commit e279050  generated 2026-09-17T18:17:52+00:00   source dune
+ ethenapay_364ba6b.json                     commit 364ba6b  generated 2026-09-21T15:35:15+00:00   source dune
+ ethenapay_ed7f66f.json                     commit ed7f66f  generated 2026-09-22T15:05:23+00:00   source dune
+ ethenapay_ccf36a7.json                     commit ccf36a7  generated 2026-10-03T15:06:53+00:00   source dune
+ ethenapay_bd9fb3c.json                     commit bd9fb3c  generated 2026-10-04T16:53:29+00:00   source dune
+ ethenapay_56a0be9.json                     commit 56a0be9  generated 2026-10-05T15:41:38+00:00   source dune
+ ethenapay_e9d94d8.json                     commit e9d94d8  generated 2026-10-05T15:57:32+00:00   source dune
+ ethenapay_chain_snapshot_33fe499.json      commit 33fe499  generated 2026-09-11T15:19:49.213Z    source routescan explorer api + avalanche public rpc
+
+HEADLINE AT EACH SNAPSHOT (Dune)
+ generated (UTC)    created  funded  ever-spent  30d    7d   events  spend $      USDe held    top10   top10 $      rest $      funded/created  spent/created
+ 2026-09-11T15:41    10763     484      315     292   263    9763     719,459    4,122,766  76.36%    3,148,219     974,548     4.50%         2.93%
+ 2026-09-14T17:55    11160     550      364     339   296   11295     806,395    4,337,016  73.48%    3,186,941   1,150,076     4.93%         3.26%
+ 2026-09-17T18:17    11769     650      445     421   364   13033     935,128    3,407,795  64.33%    2,192,095   1,215,700     5.52%         3.78%
+ 2026-09-21T15:35    12267     751      543     516   442   15824   1,311,814    3,720,671  59.50%    2,213,901   1,506,770     6.12%         4.43%
+ 2026-09-22T15:05    12378     768      564     537   456   16566   1,387,741    2,903,675  45.72%    1,327,435   1,576,240     6.20%         4.56%
+ 2026-10-03T15:06    13667    1020      768     732   606   26712   2,263,229    3,885,697  44.65%    1,734,813   2,150,884     7.46%         5.62%
+ 2026-10-04T16:53    13867    1049      793     756   622   28078   2,362,254    3,943,333  43.99%    1,734,847   2,208,486     7.56%         5.72%
+ 2026-10-05T15:41    14047    1078      816     778   645   29268   2,453,935    3,968,474  43.34%    1,719,813   2,248,661     7.67%         5.81%
+ 2026-10-05T15:57    14048    1078      816     778   645   29286   2,454,347    3,968,570  43.34%    1,719,813   2,248,757     7.67%         5.81%
+
+FIRST TO LAST SNAPSHOT (2026-09-11T15:41:00+00:00 to 2026-10-05T15:57:32+00:00, 24.01 days)
+ wallets created                               10,763.00 ->      14,048.00   change      +3,285.00   x1.305   (+30.5%)
+ funded wallets                                   484.00 ->       1,078.00   change        +594.00   x2.227   (+122.7%)
+ wallets that ever spent                          315.00 ->         816.00   change        +501.00   x2.590   (+159.0%)
+ 30-day spending wallets                          292.00 ->         778.00   change        +486.00   x2.664   (+166.4%)
+ 7-day spending wallets                           263.00 ->         645.00   change        +382.00   x2.452   (+145.2%)
+ spend events                                   9,763.00 ->      29,286.00   change     +19,523.00   x3.000   (+200.0%)
+ spend, USDe                                  719,459.37 ->   2,454,347.43   change  +1,734,888.06   x3.411   (+241.1%)
+ USDe held                                  4,122,766.21 ->   3,968,569.94   change    -154,196.28   x0.963   (-3.7%)
+ USDe in the ten largest wallets            3,148,218.63 ->   1,719,813.19   change  -1,428,405.44   x0.546   (-45.4%)
+ USDe in all other wallets                    974,547.59 ->   2,248,756.75   change  +1,274,209.16   x2.307   (+130.7%)
+ funded wallets outside the ten largest           474.00 ->       1,068.00   change        +594.00   x2.253   (+125.3%)
+ top-10 share                             76.36% -> 43.34%
+ funded share of created                  4.50% -> 7.67%
+ ever-spent share of created              2.93% -> 5.81%
+ share of all spend events that fall after the first snapshot: 66.7% (19,523 of 29,286)
+ created wallets per funded wallet, last snapshot: 13.0; per wallet that ever spent: 17.2
+ last snapshot: 30-day spending wallets are 95.3% of wallets that ever spent; 7-day are 79.0%; 7-day over 30-day 82.9%
+ first snapshot: 92.7% and 83.5%
+ batched share of spend events: 2.76% -> 4.09%; most events in one transaction: 5
+
+TWO RUNS 16 MINUTES APART ON OCT 5, ONE ON EACH VERSION OF THE QUERY
+ wallets_created             14,047.0000       14,048.0000
+ funded_wallets               1,078.0000        1,078.0000
+ spending_wallets               816.0000          816.0000
+ mau_30d                        778.0000          778.0000
+ wau_7d                         645.0000          645.0000
+ lifetime_spend_count        29,268.0000       29,286.0000
+ tvl_usde                 3,968,474.0779    3,968,569.9379
+ top10_balance_share              0.4334            0.4334
+
+DUNE (2026-09-11T15:41:00+00:00) AGAINST THE CHAIN-BUILT SNAPSHOT (2026-09-11T15:19:49.213Z)
+ the Dune run is 21 minutes later
+ wallets_created        Dune      10,763.0000   chain      10,755.0000   diff      +8.0000  (+0.07%)
+ funded_wallets         Dune         484.0000   chain         482.0000   diff      +2.0000  (+0.41%)
+ spending_wallets       Dune         315.0000   chain         314.0000   diff      +1.0000  (+0.32%)
+ lifetime_spend_count   Dune       9,763.0000   chain       9,745.0000   diff     +18.0000  (+0.18%)
+ lifetime_spend_usde    Dune     719,459.3700   chain     716,545.8700   diff  +2,913.5000  (+0.41%)
+ mau_30d                Dune         292.0000   chain         291.0000   diff      +1.0000  (+0.34%)
+ wau_7d                 Dune         263.0000   chain         255.0000   diff      +8.0000  (+3.14%)
+ tvl_usde               Dune   4,122,766.2138   chain   4,125,822.9600   diff  -3,056.7462  (-0.07%)
+ top10_balance_share    Dune           0.7636   chain           0.7631   diff      +0.0005  (+0.07%)
+ max_logs_per_tx        Dune           5.0000   chain           5.0000   diff      +0.0000  (+0.00%)
+
+DAILY SERIES: 2026-05-15 to 2026-10-05 (143 days). 2026-10-05 is partial (run at 15:57 UTC). Last full day 2026-10-04.
+ sum of daily spend events 29,285 against headline 29,286; sum of new wallets 14,048 against headline 14,048
+
+RESTATEMENT CHECK (full days, each earlier snapshot against the latest, every field the two share)
+ 2026-09-11T15:41  118 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 70 days, depositing_wallets on 79 days, cashback_avax on 32 days
+ 2026-09-14T17:55  121 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 73 days, depositing_wallets on 82 days, cashback_avax on 32 days
+ 2026-09-17T18:17  124 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 76 days, depositing_wallets on 85 days, cashback_avax on 32 days
+ 2026-09-21T15:35  128 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 80 days, depositing_wallets on 89 days, cashback_avax on 32 days
+ 2026-09-22T15:05  129 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 81 days, depositing_wallets on 90 days, cashback_avax on 32 days
+ 2026-10-03T15:06  140 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 92 days, depositing_wallets on 101 days, cashback_avax on 32 days
+ 2026-10-04T16:53  141 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 93 days, depositing_wallets on 102 days, cashback_avax on 32 days
+ 2026-10-05T15:41  142 full days  identical: new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, reversals_usde, tvl_usde  |  restated: deposits_usde on 94 days, depositing_wallets on 103 days, cashback_avax on 32 days
+ every field this review takes from the daily series (new_wallets, cumulative_wallets, active_wallets, spend_count, spend_usde, withdrawals_usde, tvl_usde) reads the same in all nine snapshots
+
+ first day with a spend event: 2026-06-04
+ largest wallet-creation days: 2026-09-01 4,089, 2026-09-02 2,084, 2026-05-15 815, 2026-09-03 525, 2026-05-18 504, 2026-09-04 293
+ wallets created through Aug 31: 2,535; on Sep 1 and 2: 6,173 = 43.9% of all wallets; Sep 3 to 2026-10-04: 5,182
+
+FULL CALENDAR MONTHS (October holds four full days)
+ period                  days  new wallets  spend events   per day   spend USDe   daily spending wallets low/high/mean   deposits     withdrawals   USDe held at end
+ June 2026                30         223           453      15.1       17,188         0 /   11 /    5.1                49,996        3,857         32,822
+ July 2026                31         147         1,437      46.4       84,699         0 /   29 /   14.5               177,500        2,388        128,981
+ August 2026              31         291         4,034     130.1      259,791        23 /   59 /   38.1             1,094,653      443,605        530,905
+ September 2026           30      10,784        17,734     591.1    1,588,430        74 /  339 /  201.0             8,864,947    4,180,502      3,712,926
+ October 1 to 4, 2026      4         571         4,648    1162.0      433,048       344 /  377 /  363.5               699,314       55,909      3,939,522
+ September against August: spend events x4.40, spend USDe x6.11, mean daily spending wallets x5.28, new wallets x37.1
+
+SEVEN-DAY PERIODS ENDING ON THE LAST FULL DAY
+ period                  days  new wallets  spend events   per day   spend USDe   daily spending wallets low/high/mean   deposits     withdrawals   USDe held at end
+ Aug 10 to Aug 16          7          89           881     125.9       51,846        27 /   42 /   33.6               173,686       24,801        337,441
+ Aug 17 to Aug 23          7          60           885     126.4       70,280        36 /   47 /   40.6               316,584       72,524        513,309
+ Aug 24 to Aug 30          7          90         1,290     184.3       77,862        43 /   59 /   52.0               168,558       80,805        524,696
+ Aug 31 to Sep 6           7       7,383         2,148     306.9      172,772        47 /  139 /  106.0             3,161,582      207,046      3,326,964
+ Sep 7 to Sep 13           7       1,090         2,987     426.7      250,230       124 /  164 /  145.4             1,401,140      207,649      4,278,518
+ Sep 14 to Sep 20          7       1,192         4,421     631.6      490,016       165 /  246 /  213.1             1,687,655    1,837,275      3,655,790
+ Sep 21 to Sep 27          7         737         5,805     829.3      471,238       243 /  301 /  271.9             1,590,828    1,205,276      3,601,525
+ Sep 28 to Oct 4           7         967         7,172    1024.6      645,128       278 /  377 /  339.4             1,737,045      779,165      3,939,522
+ latest period against the period four weeks earlier (Aug 31 to Sep 6): spend events x3.34, mean daily spending wallets x3.20
+
+LARGEST ONE-DAY WITHDRAWALS AND DEPOSITS (full days)
+ 2026-09-16: withdrawals    1,134,535  deposits      671,627  USDe held at end of day    3,302,419
+ 2026-09-22: withdrawals    1,024,171  deposits      605,567  USDe held at end of day    3,289,965
+ 2026-09-15: withdrawals      575,190  deposits       93,953  USDe held at end of day    3,798,581
+ 2026-09-28: withdrawals      491,153  deposits      549,343  USDe held at end of day    3,594,493
+ 2026-08-04: withdrawals      245,110  deposits      333,225  USDe held at end of day      235,192
+ 2026-09-30: withdrawals      152,961  deposits      192,635  USDe held at end of day    3,712,926
+ 2026-09-02: deposits    1,269,538  withdrawals       45,501  USDe held at end of day    1,940,879
+ 2026-09-04: deposits    1,122,099  withdrawals       74,531  USDe held at end of day    3,049,990
+ 2026-09-16: deposits      671,627  withdrawals    1,134,535  USDe held at end of day    3,302,419
+ 2026-09-08: deposits      636,573  withdrawals       82,102  USDe held at end of day    3,886,525
+ 2026-09-22: deposits      605,567  withdrawals    1,024,171  USDe held at end of day    3,289,965
+ 2026-09-28: deposits      549,343  withdrawals      491,153  USDe held at end of day    3,594,493
+ highest end-of-day USDe held: 4,321,079 on 2026-09-14; on Aug 31 530,905; on 2026-10-04 3,939,522
+
+==============================================================================================================
+PART B. CHAIN RECOUNT
+ read through block 96,839,679 (the last block of 2026-10-05 UTC): 14,103 wallets, 29,556 qualifying spend events, 81,077 USDe transfers touching a wallet out of 109,823 scanned
+ contracts created by the factories: 14,106 = 14,103 wallets (CREATE2) + 3 others (plain CREATE)
+   other contract 0x85d133fde5660220b0401600e113ae25ad9aebef from the v1 factory at 2026-05-15T12:46:34Z
+   other contract 0xc831ea25deb7654679a438c78c4c5d1c313c8448 from the v2 factory at 2026-06-10T11:29:34Z
+   other contract 0xddaffdb1c5f0774ee734cf3491aafd4f0a678127 from the v2 factory at 2026-06-10T11:29:34Z
+ USDe transfers from wallets to the two settlement addresses: 29,557, against 29,556 spend events. The transfers sum to 5.00 USDe more than the events
+   on every day the two daily sums are equal, except 2026-09-24, when the transfers sum to 5.00 USDe more
+ settlement addresses: the retired one received 836 spend events, 38,941.88 USDe, from 2026-06-04T15:04:37Z to 2026-07-13T06:09:31Z;
+   the current one received 28,720 events, 2,431,301.77 USDe, from 2026-07-13T07:40:17Z
+   the repo's chain-built snapshot of September 11 shows the same 38,941.88 USDe to the retired address, on 39 days from 2026-06-04 to 2026-07-13
+ balanceOf at block 96,815,525 for 14,047 wallets: 0 differ from the balance built from transfers; 1,076 hold a balance, 3,968,569.94 USDe in total
+
+B1. CHAIN AGAINST THE DASHBOARD AT EACH SNAPSHOT
+ The chain figures are read at the block of the last spend event the dashboard had counted (the cut block).
+ snapshot          cut time (UTC)   lag s  created      funded       ever spent   30-day       7-day        spend USDe                 USDe held                    top-10 share
+                                           dash/chain   dash/chain   dash/chain   dash/chain   dash/chain   dash / chain               dash / chain                 dash / chain
+ 2026-09-11T15:41  09-11T15:14   1588  10763/10762    484/  482    315/  315    292/  292    263/  263    719,459.37/  719,459.37  4,122,766.21/4,122,766.21  76.362%/76.362%
+ 2026-09-14T17:55  09-14T17:52    162  11160/11158    550/  548    364/  364    339/  339    296/  296    806,394.63/  806,394.63  4,337,016.33/4,337,016.33  73.482%/73.482%
+ 2026-09-17T18:17  09-17T18:15    138  11769/11768    650/  648    445/  445    421/  421    364/  364    935,128.18/  935,128.18  3,407,795.46/3,407,795.46  64.326%/64.326%
+ 2026-09-21T15:35  09-21T15:32    165  12267/12266    751/  750    543/  543    516/  516    442/  442  1,311,813.55/1,311,813.55  3,720,671.24/3,720,671.24  59.503%/59.503%
+ 2026-09-22T15:05  09-22T14:57    482  12378/12377    768/  766    564/  564    537/  537    456/  456  1,387,741.26/1,387,741.26  2,903,674.96/2,903,674.96  45.716%/45.716%
+ 2026-10-03T15:06  10-03T14:59    460  13667/13666   1020/ 1019    768/  768    732/  732    606/  606  2,263,229.30/2,263,229.30  3,885,697.13/3,885,697.13  44.646%/44.646%
+ 2026-10-04T16:53  10-04T16:49    226  13867/13866   1049/ 1047    793/  793    756/  756    622/  622  2,362,254.39/2,362,254.39  3,943,333.08/3,943,333.08  43.994%/43.994%
+ 2026-10-05T15:41  10-05T15:37    266  14047/14045   1078/ 1076    816/  816    778/  778    645/  645  2,453,934.54/2,453,934.54  3,968,474.08/3,968,458.86  43.337%/43.337%
+ 2026-10-05T15:57  10-05T15:53    244  14048/14047   1078/ 1076    816/  816    778/  778    645/  645  2,454,347.43/2,454,347.43  3,968,569.94/3,968,569.94  43.336%/43.336%
+ at all nine snapshots the chain gives the same wallets that ever spent, the same 30-day and 7-day wallets and the same spend to the cent
+ USDe held equals the dashboard to the cent at 8 snapshots. At the snapshot generated 2026-10-05T15:41:38Z the dashboard shows 3,968,474.08, the chain at the cut block 3,968,458.86 (+15.22) and the chain at the run time 3,968,464.01
+ the cut block is 138 to 1588 seconds before the run time; USDe held changed between the two at 7 of the nine snapshots, and some balance statistic changed at 8
+ wallets created: the dashboard is higher by [1, 2] (one factory-created contract is a beacon, not a wallet)
+   the gap is two at 2 snapshots (2026-09-14T17:55, 2026-10-05T15:41); at each of them a wallet was created between the cut block and the run time
+ funded wallets: the dashboard is higher by [1, 2]; summing balances in floating point, as the query does, raises the exact count by [1]
+   the gap is two at 7 snapshots. At 1 of them (2026-09-14T17:55) the floating-point count at the run time equals the dashboard. At the other 6 one wallet is unexplained
+   snapshot           dashboard  exact at cut  float at cut  exact at run  float at run
+   2026-09-11T15:41        484           482           483           482           483
+   2026-09-14T17:55        550           548           549           549           550
+   2026-09-17T18:17        650           648           649           648           649
+   2026-09-21T15:35        751           750           751           750           751
+   2026-09-22T15:05        768           766           767           766           767
+   2026-10-03T15:06       1020          1019          1020          1019          1020
+   2026-10-04T16:53       1049          1047          1048          1047          1048
+   2026-10-05T15:41       1078          1076          1077          1076          1077
+   2026-10-05T15:57       1078          1076          1077          1076          1077
+
+B2. CHAIN AGAINST THE DASHBOARD, EVERY FULL DAY
+ 142 days in the dashboard's daily series from 2026-05-15 to 2026-10-04. Largest difference on any day:
+  new_wallets 0.0000, spend_count 0.0000, active_wallets 0.0000, spend_usde 0.0000, deposits_usde 0.0000, withdrawals_usde 0.0000, reversals_usde 0.0000, yield_usde 0.0000, other_rewards_usde 0.0000, tvl_usde 0.0000
+  days absent from the dashboard series because nothing happened on them: ['2026-05-30']
+  new wallets, spend events and daily spending wallets are identical on every day; the only exception is one extra 'wallet' on 2026-05-15, the beacon contract
+
+B3. PARTICIPATION AT THE CUTOFF (block 96,815,525, 2026-10-05T15:53:28Z)
+ The dashboard notes that created, holding and ever spent are not sequential stages. The same holds here: four wallets that spent hold nothing now.
+ wallets created                14,047   100.00% of created
+ ever received USDe              1,100     7.83% of created
+ hold a balance above zero       1,076     7.66% of created
+ hold 1 USDe or more               975     6.94% of created
+ hold 100 USDe or more             539     3.84% of created
+ ever spent                        816     5.81% of created
+ spent in the 30-day window        778     5.54% of created
+ spent in the 7-day window         645     4.59% of created
+ never received any USDe: 12,947 = 92.2% of created; created wallets per wallet that ever received USDe: 12.8
+ of the 1,100 that ever received USDe: 816 ever spent (74.2%); 24 are empty again
+ of the 1,076 holding a balance: 264 never spent; of the 816 that ever spent: 4 are empty
+ hold under 1 USDe: 101; of which under one cent: 40
+ the dashboard's 7-day window (2026-09-28 to the cutoff) holds 645 wallets; the seven full days 2026-09-28 to 2026-10-04 hold 617; 28 wallets spent on 2026-10-05 before the cutoff and on none of the seven days before
+ the dashboard's 30-day window starts 2026-09-05 and holds 778; every wallet in the 7-day window still held USDe at the cutoff: True
+ first USDe came from outside the programme for 892, from another programme wallet for 208, from other sources for 0
+ first USDe arrived within a day of creation for 416 of 1100 (37.8%), within seven days for 582 (52.9%), after more than thirty days for 68
+ first spend came within a day of the first USDe for 548 of 816 (67.2%), within seven days for 750 (91.9%)
+
+B4. COHORTS BY CREATION DATE, AS OF THE CUTOFF
+ busiest creation days: 2026-09-01 4,089, 2026-09-02 2,084, 2026-05-15 814, 2026-09-03 525, 2026-05-18 504, 2026-09-04 293
+  2026-05-15: 814 wallets, median gap 9 s; per UTC hour [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 23, 134, 173, 78, 66, 56, 7, 78, 32, 167]
+  2026-09-01: 4,089 wallets, median gap 5 s; per UTC hour [0, 0, 0, 1, 0, 0, 0, 3, 4, 10, 7, 10, 790, 767, 586, 431, 360, 293, 207, 173, 115, 119, 89, 124]
+  2026-09-02: 2,084 wallets, median gap 24 s; per UTC hour [120, 166, 129, 121, 144, 133, 115, 117, 100, 70, 71, 72, 80, 136, 104, 101, 71, 42, 41, 46, 28, 31, 22, 24]
+  2026-09-01: 35 wallets before 12:00 UTC and 4,054 after
+  wallets at the end of August: 2,534, of which created May 15 to 31: 1,873 (814 on May 15 alone, 1,713 by May 19) and June to August: 661
+  first qualifying spend event: 2026-06-04T15:04:37Z; every May wallet came from the first factory: True
+ May 15 to 31               created  1,873  ever received USDe    23 ( 1.23%)  holding 1 USDe or more    11  ever spent     4 ( 0.21%)
+ June 1 to August 31        created    661  ever received USDe   249 (37.67%)  holding 1 USDe or more   208  ever spent   155 (23.45%)
+ September 1 and 2          created  6,173  ever received USDe   576 ( 9.33%)  holding 1 USDe or more   516  ever spent   463 ( 7.50%)
+ September 3 to 30          created  4,611  ever received USDe   213 ( 4.62%)  holding 1 USDe or more   204  ever spent   167 ( 3.62%)
+ October 1 to the cutoff    created    729  ever received USDe    39 ( 5.35%)  holding 1 USDe or more    36  ever spent    27 ( 3.70%)
+  share of all wallets created on September 1 and 2: 43.9%; created from June 1 on: 12,174, of which ever received USDe 1,077 (8.8%)
+ like for like: within 14 days of creation, for wallets created by September 20 so that every wallet has had its 14 days
+  May 15 to 31             created  1,873  received USDe within 14 days    21 ( 1.12%)  spent within 14 days     4 ( 0.21%)
+  June 1 to August 31      created    661  received USDe within 14 days   222 (33.59%)  spent within 14 days   120 (18.15%)
+  September 1 and 2        created  6,173  received USDe within 14 days   287 ( 4.65%)  spent within 14 days   205 ( 3.32%)
+  September 3 to 20        created  3,478  received USDe within 14 days   113 ( 3.25%)  spent within 14 days    90 ( 2.59%)
+  of the 576 wallets from September 1 and 2 that had received USDe by the cutoff, 287 received it within 14 days of creation and 289 later
+
+B4b. THE CHAIN AT THE TIME OF EACH PUBLIC STATEMENT ABOUT ACCESS
+ wallets that received USDe before their contract was deployed: 1
+ 2026-09-01T11:59:55Z  created  2,569  ever received USDe   259  ever spent  133   @ethena the beta opens to a first group of 400 users, to widen each week
+ 2026-09-10T07:49:38Z  created 10,491  ever received USDe   484  ever spent  298   @EthenaPay waitlisted users will be added every day, 100 of them the next day
+ 2026-09-25T14:34:45Z  created 12,667  ever received USDe   861  ever spent  618   @EthenaPay 1,600 people have the app and the number is growing
+ 2026-09-28T17:32:05Z  created 13,010  ever received USDe   901  ever spent  661   @EthenaPay readers are invited to download the app and join the waitlist
+ 2026-10-05T15:53:28Z  created 14,047  ever received USDe 1,100  ever spent  816    the cutoff of this review
+ on September 25 the 1,600 in the post is 12.6% of the wallets created (one in 7.9) and 1.86 times the wallets that had received USDe
+ wallets created from 12:00 to 24:00 UTC on September 1: 4,054; between the first post of the thread and 12:00: 0
+ wallets created from 11:00 to 12:00 UTC that day: 10; from 12:00 to 13:00: 790
+ end of 2026-09-24: lifetime spend 1,539,454.08 USDe, wallets created 12,614, ever received 842, ever spent 604
+ end of 2026-09-25: lifetime spend 1,597,633.49 USDe, wallets created 12,718, ever received 866, ever spent 623
+ factories: v1 created 2,006 wallets from 2026-05-15 to 2026-06-19; v2 created 12,097 from 2026-06-10
+ wallets created per day: August 0 to 27 (total 291); September 3 to 30 74 to 525 (total 4,611, median 140)
+
+B5. DISTINCT SPENDING WALLETS BY CALENDAR MONTH (full days only; October holds four)
+ June 2026                28 wallets (  28 first spend,    0 earlier)  events    453 in    453 transactions  USDe    17,187.93  days active 1 / 2-5 / 6-14 / 15+: [5, 10, 12, 1]
+ July 2026                51 wallets (  32 first spend,   19 earlier)  19 of the previous period's 28 spent again (68%)  events  1,437 in  1,357 transactions  USDe    84,698.70  days active 1 / 2-5 / 6-14 / 15+: [9, 20, 9, 13]
+ August 2026             116 wallets (  72 first spend,   44 earlier)  44 of the previous period's 51 spent again (86%)  events  4,034 in  4,002 transactions  USDe   259,791.22  days active 1 / 2-5 / 6-14 / 15+: [15, 32, 36, 33]
+ September 2026          673 wallets ( 573 first spend,  100 earlier)  98 of the previous period's 116 spent again (84%)  events 17,734 in 17,395 transactions  USDe 1,588,430.13  days active 1 / 2-5 / 6-14 / 15+: [94, 219, 210, 150]
+ October 1 to 4, 2026    553 wallets (  92 first spend,  461 earlier)  458 of the previous period's 673 spent again (68%)  events  4,648 in  4,492 transactions  USDe   433,047.98  days active 1 / 2-5 / 6-14 / 15+: [137, 416, 0, 0]
+ September against August: spending wallets x5.80, spend events x4.40, spend USDe x6.11
+ September: 360 of 673 wallets spent on six or more days (53.5%); 150 on fifteen or more (22.3%)
+ September wallets that had spent before August and not in August: 2 (so first-time plus returning-from-August is 573 + 98 = 671, not 673)
+ the dashboard's daily spending wallets for September add up to 6,030, which is not a count of wallets; the month had 673 distinct ones
+
+B6. DISTINCT SPENDING WALLETS IN SEVEN-DAY PERIODS ENDING 2026-10-04
+ Jul 27 to Aug 2      45 wallets                                                                  events   514  USDe     32,268
+ Aug 3 to Aug 9       48 wallets   34 also in the previous period (75.6% of its  45),  14 not  events   664  USDe     39,726
+ Aug 10 to Aug 16     60 wallets   41 also in the previous period (85.4% of its  48),  19 not  events   881  USDe     51,846
+ Aug 17 to Aug 23     75 wallets   52 also in the previous period (86.7% of its  60),  23 not  events   885  USDe     70,280
+ Aug 24 to Aug 30     92 wallets   64 also in the previous period (85.3% of its  75),  28 not  events 1,290  USDe     77,862
+ Aug 31 to Sep 6     212 wallets   78 also in the previous period (84.8% of its  92), 134 not  events 2,148  USDe    172,772
+ Sep 7 to Sep 13     281 wallets  184 also in the previous period (86.8% of its 212),  97 not  events 2,987  USDe    250,230
+ Sep 14 to Sep 20    416 wallets  232 also in the previous period (82.6% of its 281), 184 not  events 4,421  USDe    490,016
+ Sep 21 to Sep 27    495 wallets  340 also in the previous period (81.7% of its 416), 155 not  events 5,805  USDe    471,238
+ Sep 28 to Oct 4     617 wallets  425 also in the previous period (85.9% of its 495), 192 not  events 7,172  USDe    645,128
+ latest period against the period four weeks earlier (Aug 31 to Sep 6): spending wallets x2.91, spend events x3.34, spend USDe x3.73
+ of the latest period's 7,172 events, 4,812 (67.1%) came from the 454 wallets with no spend event in Aug 31 to Sep 6; 2,360 came from the 163 wallets that also spent then
+ Aug 31 to Sep 6 holds September 1, the day the beta opened, and one day before it
+ against the last period before the beta (Aug 24 to Aug 30): spending wallets x6.71, spend events x5.56
+ share of the previous period's wallets that spent again, last five periods: 84.8%, 86.8%, 82.6%, 81.7%, 85.9%  (lowest 81.7%, highest 86.8%)
+ thirty full days ending 2026-10-04: 758 distinct spending wallets; thirty full days ending 2026-09-04: 218
+
+B7. SPEND BY WALLET AT THE CUTOFF
+ top   1 wallets by USDe spent:      126,019 USDe =   5.1% of spend with   0.0% of events; top   1 by events hold   2.3% of events
+ top   5 wallets by USDe spent:      376,784 USDe =  15.4% of spend with   2.7% of events; top   5 by events hold   8.6% of events
+ top  10 wallets by USDe spent:      584,835 USDe =  23.8% of spend with   6.9% of events; top  10 by events hold  14.2% of events
+ top  20 wallets by USDe spent:      893,945 USDe =  36.4% of spend with  10.9% of events; top  20 by events hold  23.3% of events
+ top  50 wallets by USDe spent:    1,361,722 USDe =  55.5% of spend with  28.1% of events; top  50 by events hold  38.7% of events
+ top 100 wallets by USDe spent:    1,736,998 USDe =  70.8% of spend with  41.9% of events; top 100 by events hold  54.6% of events
+ wallets needed to reach half of all USDe spent: 39 of 816 (4.8%); the largest spender by USDe has 6 events and 126,019.43 USDe
+ wallets by lifetime events 1 / 2-5 / 6-20 / 21-100 / 101+: [88, 162, 220, 278, 68]; five or fewer: 250 (30.6%); more than twenty: 346 (42.4%)
+ of the 250 wallets with five or fewer events, 134 first spent in the 14 days before the cutoff
+
+B8. USDe BALANCES AT THE CUTOFF
+ under 0.01            40 wallets (  3.7%)            0.12 USDe (  0.00%)
+ 0.01 to 1             61 wallets (  5.7%)           20.73 USDe (  0.00%)
+ 1 to 10              162 wallets ( 15.1%)          646.29 USDe (  0.02%)
+ 10 to 100            274 wallets ( 25.5%)       10,179.64 USDe (  0.26%)
+ 100 to 1,000         265 wallets ( 24.6%)      110,806.92 USDe (  2.79%)
+ 1,000 to 10,000      219 wallets ( 20.4%)      776,724.24 USDe ( 19.57%)
+ 10,000 to 100,000     45 wallets (  4.2%)    1,350,378.80 USDe ( 34.03%)
+ 100,000 and over      10 wallets (  0.9%)    1,719,813.19 USDe ( 43.34%)
+ USDe held 3,968,569.94; largest wallet 381,532 (9.6%); ten largest 1,719,813 (43.34%); fifty largest 76.1%; hundred largest 85.8%
+ 55 wallets with 10,000 USDe or more hold 77.4%; 274 with 1,000 or more hold 96.9%; the other 802 hold 121,654 USDe (3.1%)
+ funded wallets that never spent: 264 holding 597,682 USDe (15.1% of USDe held)
+ the ten largest balances belong to wallets that spent 85,432.86 USDe in all (3.5% of lifetime spend); 2 of them never spent
+ four of the ten hold 705,164 USDe and spent 484.36 USDe between them
+ the ten largest balances, with each wallet's rank by USDe spent, USDe spent and events:
+   balance rank  1:      381,532 USDe   spend rank none   spent       0.00 USDe in   0 events
+   balance rank  2:      316,426 USDe   spend rank   15   spent  33,082.67 USDe in 248 events
+   balance rank  3:      180,187 USDe   spend rank   63   spent   9,098.83 USDe in  56 events
+   balance rank  4:      167,846 USDe   spend rank   14   spent  33,730.19 USDe in  16 events
+   balance rank  5:      145,553 USDe   spend rank  258   spent   1,731.28 USDe in  57 events
+   balance rank  6:      113,733 USDe   spend rank  777   spent       6.88 USDe in   3 events
+   balance rank  7:      109,167 USDe   spend rank none   spent       0.00 USDe in   0 events
+   balance rank  8:      104,477 USDe   spend rank  324   spent   1,126.24 USDe in  19 events
+   balance rank  9:      100,732 USDe   spend rank  437   spent     477.48 USDe in  24 events
+   balance rank 10:      100,159 USDe   spend rank   87   spent   6,179.29 USDe in  30 events
+ ten largest balances that are also among the ten largest spenders: 0; hundred largest balances among the hundred largest spenders: 39
+ wallets holding 1,000 USDe or more: 274, of which spent in the dashboard's 7-day window: 225, ever spent: 247
+ the two largest balances that never spent hold 490,699 of the 597,682 USDe held by wallets that never spent
+
+B9. THE TEN LARGEST WALLETS AGAINST ALL THE OTHERS
+ 2026-09-11T15:41  funded   482  1+   429  100+  241  1,000+  131  10,000+  35  100,000+  7  held    4,122,766  ten largest    3,148,219  others      974,548  top-10 76.36%  top-1  24.3%
+ 2026-09-14T17:55  funded   548  1+   491  100+  278  1,000+  154  10,000+  39  100,000+  7  held    4,337,016  ten largest    3,186,941  others    1,150,076  top-10 73.48%  top-1  23.1%
+ 2026-09-17T18:17  funded   648  1+   580  100+  332  1,000+  172  10,000+  42  100,000+  6  held    3,407,795  ten largest    2,192,095  others    1,215,700  top-10 64.33%  top-1  29.1%
+ 2026-09-21T15:35  funded   750  1+   674  100+  390  1,000+  197  10,000+  51  100,000+  6  held    3,720,671  ten largest    2,213,901  others    1,506,770  top-10 59.50%  top-1  26.7%
+ 2026-09-22T15:05  funded   766  1+   690  100+  398  1,000+  207  10,000+  50  100,000+  6  held    2,903,675  ten largest    1,327,435  others    1,576,240  top-10 45.72%  top-1  11.5%
+ 2026-10-03T15:06  funded  1019  1+   922  100+  524  1,000+  268  10,000+  56  100,000+ 10  held    3,885,697  ten largest    1,734,813  others    2,150,884  top-10 44.65%  top-1   9.8%
+ 2026-10-04T16:53  funded  1047  1+   946  100+  527  1,000+  264  10,000+  56  100,000+ 10  held    3,943,333  ten largest    1,734,847  others    2,208,486  top-10 43.99%  top-1   9.7%
+ 2026-10-05T15:41  funded  1076  1+   975  100+  539  1,000+  274  10,000+  55  100,000+ 10  held    3,968,459  ten largest    1,719,813  others    2,248,646  top-10 43.34%  top-1   9.6%
+ 2026-10-05T15:57  funded  1076  1+   975  100+  539  1,000+  274  10,000+  55  100,000+ 10  held    3,968,570  ten largest    1,719,813  others    2,248,757  top-10 43.34%  top-1   9.6%
+ first to last snapshot: USDe held 4,122,766 to 3,968,570 (-3.7%); ten largest 3,148,219 to 1,719,813 (-45.4%); all others 974,548 to 2,248,757 (x2.31)
+  wallets holding 1,000 USDe or more 131 to 274; 1 USDe or more 429 to 975; top-1 share 24.3% to 9.6%
+  across the nine snapshots USDe held was highest at 4,337,016 (2026-09-14) and lowest at 2,903,675 (2026-09-22)
+  snapshot run times (UTC): 15:41, 17:55, 18:17, 15:35, 15:05, 15:06, 16:53, 15:41, 15:57
+ the ten largest wallets of the first snapshot, then and at the cutoff
+   wallet  3780 created 2026-09-01     1,000,310 ->       40,687   lifetime spend  11,990.29 USDe in 55 events
+   wallet  2195 created 2026-07-26       998,999 ->        3,271   lifetime spend  17,873.95 USDe in 121 events
+   wallet  2033 created 2026-06-15       333,882 ->      316,426   lifetime spend  33,082.67 USDe in 248 events   still among the ten largest
+   wallet  2421 created 2026-08-21       187,717 ->      180,187   lifetime spend   9,098.83 USDe in 56 events   still among the ten largest
+   wallet  3533 created 2026-09-01       168,159 ->      167,846   lifetime spend  33,730.19 USDe in 16 events   still among the ten largest
+   wallet  2430 created 2026-08-24       113,411 ->      113,733   lifetime spend       6.88 USDe in 3 events   still among the ten largest
+   wallet  3653 created 2026-09-01       103,364 ->      100,159   lifetime spend   6,179.29 USDe in 30 events   still among the ten largest
+   wallet  2467 created 2026-08-26        99,936 ->       95,215   lifetime spend   5,296.59 USDe in 40 events
+   wallet  4199 created 2026-09-01        81,885 ->       63,762   lifetime spend   6,689.86 USDe in 60 events
+   wallet  2224 created 2026-07-29        60,555 ->        2,386   lifetime spend     837.66 USDe in 53 events
+   together 3,148,219 -> 1,083,672 (-2,064,546); 5 of the ten are still among the ten largest
+   the two wallets above 900,000 USDe held 1,999,309 then and 43,958 at the cutoff
+   wallet 3780: 09-11 1,000,310; 09-14 1,000,313; 09-17 51,645; 09-21 50,184; 09-22 49,022; 10-03 42,447; 10-04 not in the twenty largest; 10-05 not in the twenty largest; 10-05 not in the twenty largest; at the cutoff 40,687, with 55 spend events
+   wallet 2195: 09-11 998,999; 09-14 999,117; 09-17 992,541; 09-21 993,463; 09-22 not in the twenty largest; 10-03 not in the twenty largest; 10-04 not in the twenty largest; 10-05 not in the twenty largest; 10-05 not in the twenty largest; at the cutoff 3,271, with 121 spend events
+  end of 2026-08-31: held      530,905  ten largest      405,826  others      125,079  largest wallet    137,774  funded   233  deposits      13,990  withdrawals           0
+  end of 2026-09-01: held      732,676  ten largest      486,509  others      246,166  largest wallet    137,832  funded   310  deposits     218,401  withdrawals       1,209
+  end of 2026-09-02: held    1,940,879  ten largest    1,585,200  others      355,680  largest wallet  1,000,636  funded   372  deposits   1,269,538  withdrawals      45,501
+  end of 2026-09-03: held    2,027,237  ten largest    1,612,311  others      414,926  largest wallet  1,000,714  funded   396  deposits     140,168  withdrawals      17,768
+  end of 2026-09-04: held    3,049,990  ten largest    2,611,880  others      438,110  largest wallet  1,049,955  funded   411  deposits   1,122,099  withdrawals      74,531
+  end of 2026-09-14: held    4,321,079  ten largest    3,187,006  others    1,134,073  largest wallet  1,000,313  funded   553  deposits     112,361  withdrawals      33,689
+  end of 2026-09-15: held    3,798,581  ten largest    2,678,129  others    1,120,452  largest wallet    999,118  funded   588  deposits      93,953  withdrawals     575,190
+  end of 2026-09-16: held    3,302,419  ten largest    2,177,547  others    1,124,872  largest wallet    999,119  funded   616  deposits     671,627  withdrawals   1,134,535
+  end of 2026-09-21: held    3,770,031  ten largest    2,222,404  others    1,547,627  largest wallet    993,463  funded   753  deposits     179,188  withdrawals       4,375
+  end of 2026-09-22: held    3,289,965  ten largest    1,607,956  others    1,682,009  largest wallet    350,001  funded   777  deposits     605,567  withdrawals   1,024,171
+  end of 2026-10-04: held    3,939,522  ten largest    1,734,823  others    2,204,699  largest wallet    381,470  funded  1051  deposits      80,425  withdrawals       6,406
+  ten largest balances: end of Sep 14 3,187,006, end of Sep 16 2,177,547 (change -1,009,459); largest single balance: end of Sep 21 993,463, end of Sep 22 350,001
+  the three days with the largest withdrawals in the dashboard series: ['2026-09-15', '2026-09-16', '2026-09-22']
+  balances at the end of each week in the spending table
+   end of 2026-08-30: held      524,696  ten largest      407,306  others      117,390  top-10  77.6%  funded   230
+   end of 2026-09-06: held    3,326,964  ten largest    2,818,668  others      508,296  top-10  84.7%  funded   425
+   end of 2026-09-13: held    4,278,518  ten largest    3,187,318  others    1,091,200  top-10  74.5%  funded   517
+   end of 2026-09-20: held    3,655,790  ten largest    2,218,695  others    1,437,096  top-10  60.7%  funded   732
+   end of 2026-09-27: held    3,601,525  ten largest    1,684,180  others    1,917,345  top-10  46.8%  funded   872
+   end of 2026-10-04: held    3,939,522  ten largest    1,734,823  others    2,204,699  top-10  44.0%  funded  1051
+   ten largest balances were highest at the end of 2026-09-12: 3,187,671; all others rose at every week end, from 117,390 to 2,204,699 (x18.8); funded wallets 230 to 1,051; ten largest 407,306 to 1,734,823 (x4.3)
+  first day on which all other wallets together held more than the ten largest: 2026-09-22
+  highest end-of-day USDe held: 4,321,079 on 2026-09-14, of which 3,187,006 in the ten largest
+
+B10. USDe AllowanceSpent EVENTS THAT DO NOT GO TO A SETTLEMENT ADDRESS (not counted as spend)
+ all USDe AllowanceSpent logs from block 0: 29,681; to a settlement address 29,556; to any other destination 125, of which 113 from programme wallets (32 wallets, 8 of them with no qualifying spend)
+ 11 of them went to 7 destinations that are programme wallets themselves; 102 went to 2 other addresses
+  destination 1   56 events from 12 wallets    1,096.49 USDe  2026-05-15 to 2026-06-10  wallets with no qualifying spend: 7
+  destination 2   46 events from 18 wallets      909.54 USDe  2026-06-11 to 2026-10-05  wallets with no qualifying spend: 1
+ the remaining 12 events to other destinations were emitted by addresses that are not programme wallets; 2 destinations received events only from such addresses and are not listed
+ the other-destination events run through block 96,839,679, the end of October 5, past the cutoff of this review
+ share of all USDe AllowanceSpent events from programme wallets that the two-address rule counts: 99.62%
+
+B11. WHO SENT EACH WALLET ITS FIRST USDe, AT THE CUTOFF
+ wallets that had received USDe: 1,100; first USDe from outside the programme: 892; from another programme wallet: 208; from a reversal or reward: 0
+ programme wallets that sent some wallet its first USDe: 46; the largest such sender first-funded 111 wallets (five largest: [111, 14, 11, 6, 5])
+
+B12. PAYMENTSCAN AGAINST THE RECOUNT
+ Paymentscan's figures were read on paymentscan.xyz/cards/ethena-pay on 2026-10-06 at 04:41 and again at 07:02 UTC. They are typed in below as read.
+ July 2026              Paymentscan  $62.94K  1,034 tx   48 addresses | recount, all addresses     84,698.70 USDe  1,437 events  1,357 tx   51 wallets | current address only     62,944.75 USDe  1,034 to  1,038 tx   48 to   48 wallets
+ August 2026            Paymentscan  $259.8K  4,002 tx  116 addresses | recount, all addresses    259,791.22 USDe  4,034 events  4,002 tx  116 wallets | current address only    259,791.22 USDe  4,002 to  4,002 tx  116 to  116 wallets
+ September 2026         Paymentscan  $1.588M 17,387 tx  673 addresses | recount, all addresses  1,588,430.13 USDe 17,734 events 17,395 tx  673 wallets | current address only  1,588,430.13 USDe 17,395 to 17,395 tx  673 to  673 wallets
+ October 1 to 5, 2026   Paymentscan  $520.1K  5,698 tx  597 addresses | recount, all addresses    520,135.67 USDe  5,898 events  5,698 tx  597 wallets | current address only    520,135.67 USDe  5,698 to  5,698 tx  597 to  597 wallets
+ all months             Paymentscan  $2.431M 28,121 tx  810 addresses | recount, all addresses  2,470,243.65 USDe 29,556 events 28,905 tx  820 wallets | current address only  2,431,301.77 USDe 28,129 to 28,133 tx  810 to  810 wallets
+ July: 3 of the 51 wallets spent only before 2026-07-13. 1 spent in July on that day only, first at 12:53:10 UTC, after the retired address's last event at 06:09:31
+ September: Paymentscan shows 8 fewer transactions than the recount's distinct transactions. Not explained
+ all months: Paymentscan's transaction total is 8 below the lowest current-address count, the same September gap
+ every other Paymentscan figure equals the recount for the current settlement address alone, with July's transactions at the low end of the recount's range.
+ That Paymentscan counts transactions and follows only that address is an inference
+
+wrote snapshots.csv, dune_vs_chain_sep11.csv, months.csv, weeks.csv, daily_series.csv, chain_vs_dashboard_snapshots.csv, participation.csv, cohorts.csv, timeline.csv,
+      months_wallets.csv, weeks_wallets.csv, spend_concentration.csv, balance_distribution.csv, top10_vs_rest_snapshots.csv, top10_vs_rest_daily.csv,
+      balances_week_ends.csv, paymentscan_check.csv, results.json

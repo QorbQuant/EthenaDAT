@@ -1,0 +1,10 @@
+cohort,created,ever_received,ever_received_share,holding_balance,holding_1_usde_or_more,ever_spent,ever_spent_share
+May 15 to 31,1873,23,0.01228,17,11,4,0.002136
+June 1 to August 31,661,249,0.376702,235,208,155,0.234493
+September 1 and 2,6173,576,0.09331,573,516,463,0.075004
+September 3 to 30,4611,213,0.046194,212,204,167,0.036218
+October 1 to the cutoff,729,39,0.053498,39,36,27,0.037037
+May 15 to 31 (within 14 days of creation),1873,21,0.011212,,,4,0.002136
+June 1 to August 31 (within 14 days of creation),661,222,0.335855,,,120,0.181543
+September 1 and 2 (within 14 days of creation),6173,287,0.046493,,,205,0.033209
+September 3 to 20 (within 14 days of creation),3478,113,0.03249,,,90,0.025877

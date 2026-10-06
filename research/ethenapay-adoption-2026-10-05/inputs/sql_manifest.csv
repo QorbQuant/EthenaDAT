@@ -1,0 +1,5 @@
+file,repo,path,commit,committed_at,sha256,bytes
+05_daily_metrics_33fe499.sql,QorbQuant/ethenaPay,dune/05_daily_metrics.sql,33fe499c3a76661967dd692a23a21bd2e598b262,2026-09-11T08:22:37-07:00,448a972a9c83fbb3a8835a9774c685ae233d78e8e045ed8bc8540be9386ad2a7,7340
+05_daily_metrics_eb01f5d.sql,QorbQuant/ethenaPay,dune/05_daily_metrics.sql,eb01f5dd85b89c9ae00238c72c651d8e51233cb0,2026-10-05T08:53:04-07:00,9d857f95aee0211cb631f10779894fee2f240b5c899403007c97d656b9c8ab02,10016
+06_kpi_headline_33fe499.sql,QorbQuant/ethenaPay,dune/06_kpi_headline.sql,33fe499c3a76661967dd692a23a21bd2e598b262,2026-09-11T08:22:37-07:00,f76a34fdba15599bb6ae51c3db26bde7a918808c064ef3879da13ccfadfc8b3f,5590
+06_kpi_headline_eb01f5d.sql,QorbQuant/ethenaPay,dune/06_kpi_headline.sql,eb01f5dd85b89c9ae00238c72c651d8e51233cb0,2026-10-05T08:53:04-07:00,4b4c031f578268e5ac0671d87721c379a2b1345a8afb74fdb1a16a27fcd9ef0e,7058

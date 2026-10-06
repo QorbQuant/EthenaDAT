@@ -1,0 +1,53 @@
+{
+  "cutoff": "Prices through the September 30 close \u00b7 Filings reviewed through October 5, 2026",
+  "navigation": [
+    [
+      "Attribution",
+      "priced-at-the-stock-close-ena-accounts-for-95-of-the-gain-between-month-ends"
+    ],
+    [
+      "Price timing",
+      "the-dashboard-series-prices-ena-20-hours-before-the-stock-close"
+    ],
+    [
+      "Filings",
+      "what-the-company-filed-in-the-window"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "mNAV comparison chart",
+  "chartFile": "chart_mnav_two_timestamps.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard \u2192",
+  "assets": [
+    "chart_mnav_two_timestamps.svg",
+    "chart_preview.png",
+    "daily_mnav_two_timestamps.csv",
+    "attribution_bridge.csv",
+    "endpoint_sensitivity.csv",
+    "window_table.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "check_article_numbers.py",
+    "inputs/coinbase_ena_usd_hourly_spotchecks.csv",
+    "inputs/ena_coingecko_via_defillama.csv",
+    "inputs/ethenadat_data_759f283.json",
+    "inputs/kraken_enausd_4h.json",
+    "inputs/usde_spglobal_via_stockanalysis.csv",
+    "make_chart_svg.py",
+    "metadata.json",
+    "out/attribution_bridge.csv",
+    "out/chart_mnav_two_timestamps.svg",
+    "out/daily_mnav_two_timestamps.csv",
+    "out/endpoint_sensitivity.csv",
+    "out/repo_restatements.csv",
+    "out/results.json",
+    "out/window_table.csv",
+    "usde_sept2026_review.py"
+  ]
+}

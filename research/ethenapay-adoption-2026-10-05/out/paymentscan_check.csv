@@ -1,0 +1,6 @@
+period,paymentscan_volume,paymentscan_transactions,paymentscan_active_addresses,recount_spending_wallets,recount_spend_events,recount_distinct_transactions,recount_spend_usde,current_address_only_usde,current_address_only_transactions_low,current_address_only_transactions_high,current_address_only_wallets_low,current_address_only_wallets_high
+July 2026,$62.94K,1034,48,51,1437,1357,84698.7,62944.75,1034,1038,48,48
+August 2026,$259.8K,4002,116,116,4034,4002,259791.22,259791.22,4002,4002,116,116
+September 2026,$1.588M,17387,673,673,17734,17395,1588430.13,1588430.13,17395,17395,673,673
+"October 1 to 5, 2026",$520.1K,5698,597,597,5898,5698,520135.67,520135.67,5698,5698,597,597
+all months,$2.431M,28121,810,820,29556,28905,2470243.65,2431301.77,28129,28133,810,810

@@ -1,0 +1,85 @@
+{
+  "cutoff": "Chain data through October 5, 2026 at 15:53 UTC \u00b7 Full weeks through October 4 \u00b7 Full months through September",
+  "navigation": [
+    [
+      "Wallet growth",
+      "spending-wallets-nearly-tripled-in-four-weeks"
+    ],
+    [
+      "Funding",
+      "one-wallet-in-thirteen-had-received-usde-by-the-cutoff"
+    ],
+    [
+      "Concentration",
+      "half-of-the-usde-spent-came-from-39-wallets"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Weekly EthenaPay spending wallets",
+  "chartFile": "chart_weekly_spending_wallets.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard \u2192",
+  "assets": [
+    "chart_weekly_spending_wallets.svg",
+    "chart_preview.png",
+    "weeks_wallets.csv",
+    "cohorts.csv",
+    "timeline.csv",
+    "balances_week_ends.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "chain_recount.cjs",
+    "check_article_numbers.py",
+    "ethenapay_adoption_review.py",
+    "inputs/05_daily_metrics_33fe499.sql",
+    "inputs/05_daily_metrics_eb01f5d.sql",
+    "inputs/06_kpi_headline_33fe499.sql",
+    "inputs/06_kpi_headline_eb01f5d.sql",
+    "inputs/chain/daily_chain.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain/snapshots_chain.json",
+    "inputs/chain/spend_wallet_days.csv",
+    "inputs/chain/wallet_activity.csv",
+    "inputs/chain/wallets_created.csv",
+    "inputs/chain_manifest.csv",
+    "inputs/ethenapay_364ba6b.json",
+    "inputs/ethenapay_56a0be9.json",
+    "inputs/ethenapay_90a04e1.json",
+    "inputs/ethenapay_a58244e.json",
+    "inputs/ethenapay_bd9fb3c.json",
+    "inputs/ethenapay_ccf36a7.json",
+    "inputs/ethenapay_chain_snapshot_33fe499.json",
+    "inputs/ethenapay_e279050.json",
+    "inputs/ethenapay_e9d94d8.json",
+    "inputs/ethenapay_ed7f66f.json",
+    "inputs/manifest.csv",
+    "inputs/sql_manifest.csv",
+    "make_chart_svg.py",
+    "metadata.json",
+    "out/balance_distribution.csv",
+    "out/balances_week_ends.csv",
+    "out/chain_vs_dashboard_snapshots.csv",
+    "out/chart_weekly_spending_wallets.svg",
+    "out/cohorts.csv",
+    "out/daily_series.csv",
+    "out/dune_vs_chain_sep11.csv",
+    "out/months.csv",
+    "out/months_wallets.csv",
+    "out/participation.csv",
+    "out/paymentscan_check.csv",
+    "out/results.json",
+    "out/snapshots.csv",
+    "out/spend_concentration.csv",
+    "out/timeline.csv",
+    "out/top10_vs_rest_daily.csv",
+    "out/top10_vs_rest_snapshots.csv",
+    "out/weeks.csv",
+    "out/weeks_wallets.csv",
+    "test_chain_recount.cjs"
+  ]
+}

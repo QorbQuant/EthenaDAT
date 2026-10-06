@@ -1,3 +1,4 @@
+import { meta as payAdoptionReview } from "./content/ethenapay-adoption-2026-10-05.mjs";
 import { meta as septemberReview } from "./content/usde-september-2026.mjs";
 export const ORIGIN = "https://ethenadash.com";
 export const AUTHOR = {
@@ -9,6 +10,7 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [payAdoptionReview.path]: payAdoptionReview,
   [septemberReview.path]: septemberReview,
   "/stablecoinx/": {
     title: "StablecoinX NAV Tracker: ENA Holdings & mNAV | EthenaDash",
