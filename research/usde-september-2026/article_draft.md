@@ -62,7 +62,7 @@ The widest gap of the month fell on September 25. ENA rose 16.6% between the two
 
 *EthenaDash dataset at commit 759f283 and CoinGecko ENA at 8 pm UTC · 22 sessions, Aug 31 to Sep 30, 2026*
 
-Two other records point the same way. Two updates on the evening of September 25 put mNAV at [0.53×](https://github.com/QorbQuant/EthenaDAT/commit/0efe051) and [0.51×](https://github.com/QorbQuant/EthenaDAT/commit/04cf641), and the [next day's update](https://github.com/QorbQuant/EthenaDAT/commit/8d8a19a) replaced the ENA price. StablecoinX [valued its treasury](https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm) for June 30 at a closing ENA price of $0.07204. The dataset shows $0.0786 for June 30 and $0.0720 for July 1, so its June 30 row reads $9.91 of token NAV per share. The company reported $9.09, and the ENA price explains that gap to within a cent.
+Two other records point the same way. Two updates on the evening of September 25 put mNAV at 0.53× and 0.51×, and the next day's update replaced the ENA price. StablecoinX [valued its treasury](https://www.sec.gov/Archives/edgar/data/2080215/000121390026089504/ea030188301ex99-1.htm) for June 30 at a closing ENA price of $0.07204. The dataset shows $0.0786 for June 30 and $0.0720 for July 1, so its June 30 row reads $9.91 of token NAV per share. The company reported $9.09, and the ENA price explains that gap to within a cent.
 
 The earlier timestamp also adds noise. The median absolute session-to-session change in mNAV was 11.3% of its level on the dashboard series and 3.1% at the close. The means were 12.5% and 6.2%.
 
@@ -133,7 +133,7 @@ The company carries its ENA at cost less impairment, $212.9 million at June 30. 
 
 ## Reproduce the numbers
 
-The observations come from the dashboard dataset as committed to the [public repository](https://github.com/QorbQuant/EthenaDAT/blob/759f283adff372f05678de909efe099db6791ce6/docs/data.json) on October 5, 2026. The dataset's share count changed on October 3 from 24,110,000 to the filed 24,029,375, so earlier commits show slightly different mNAV values.
+The observations come from an October 5, 2026 snapshot of the [StablecoinX dashboard](/stablecoinx/). That snapshot is included in the calculation files below. The dataset's share count changed on October 3 from 24,110,000 to the filed 24,029,375, so earlier snapshots show slightly different mNAV values.
 
 The ENA price at the stock close is CoinGecko's 8 pm UTC price as served by DefiLlama's price API. 8 pm UTC is 4 pm in New York during daylight time. That series sits within 0.63% of Kraken's price at the same time on every session from August 28 to October 2 and within 0.14% of Coinbase on five dates checked. USDE closes match the S&P Global closes published by StockAnalysis for every session. [Download the daily figures on both timestamps](/research-assets/usde-september-2026/daily_mnav_two_timestamps.csv), the [attribution table](/research-assets/usde-september-2026/attribution_bridge.csv), or the [calculation files and source inputs](/research-assets/usde-september-2026/calculation-files.zip).
 

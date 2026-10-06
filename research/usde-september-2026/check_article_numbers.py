@@ -131,7 +131,7 @@ need("Sep 25 close", f"Priced at the close, mNAV was {m2(M(wide,'close'))}")
 for ena, lab in ((0.260069, "first"), (0.268311, "second")):          # repo commits 0efe051 and 04cf641
     both = {f"{P(wide)/(ena*H(wide)/n):.2f}" for n in (24029375, 24110000)}
     assert len(both) == 1, both                                          # same to two decimals on either share count
-    need(f"Sep 25 {lab} same-evening print", f"[{both.pop()}{X}]")
+    need(f"Sep 25 {lab} same-evening print", f"{both.pop()}{X}")
 CO_PRICE, CO_NAVPS = 0.07204, 9.09                                       # Q2 release, 8-K Exhibit 99.1 filed Aug 14, 2026
 need("June 30 dataset rows", f"shows ${E('2026-06-30','dash'):.4f} for June 30 and ${E('2026-07-01','dash'):.4f} for July 1")
 need("June 30 NAV", f"reads ${NAVPS('2026-06-30','dash'):.2f} of token NAV per share")
