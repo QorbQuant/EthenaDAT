@@ -1011,7 +1011,7 @@ window.mountResearch = function (initialD, initialP) {
           "</td><td>" +
           num(t.tokens) +
           "</td><td>" +
-          (t.locked ? "48-month lock-up" : "Assumed unlocked") +
+          (t.locked ? "48-month lock-up" : "Modeled unlocked; restrictions disclosed") +
           "</td><td>" +
           (t.waived_on
             ? Date.now() >= Date.parse(t.waived_on)

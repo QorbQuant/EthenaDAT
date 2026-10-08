@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="lw-t lw-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="lw-t">ENA bought under StablecoinX's two token purchase agreements and still locked, on the old schedule and with the October 5, 2026 waiver</title>
+<desc id="lw-d">Stepped line chart from July 2025 to September 2029. On the old 48-month schedule the locked count was 2.15B ENA from September 30, 2025, fell in steps from July 31, 2026, stood at 1.56B on October 5, 2026 and would have reached zero on September 30, 2029. With the waiver it fell from 1.56B to zero on October 5, 2026. Dates follow the dashboard's assumption that each purchase completed at the end of its month.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">On October 5 the waiver unlocked 1.56B ENA the old schedule held until 2029</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">ENA bought under the two token purchase agreements and still locked, on the dashboard's schedule dates</text>
+<line x1="20" x2="38" y1="74" y2="74" stroke="var(--sx-blue, #8aa9cf)" stroke-width="2"/>
+<text x="44" y="78" fill="var(--sx-text, #eeeae3)" font-size="12">With the waiver</text>
+<line x1="170" x2="188" y1="74" y2="74" stroke="#5d6877" stroke-width="2"/>
+<text x="194" y="78" fill="var(--sx-text, #eeeae3)" font-size="12">Old 48-month schedule</text>
+<rect x="356" y="68" width="12" height="12" rx="2" fill="#5d6877" fill-opacity="0.3"/>
+<text x="374" y="78" fill="var(--sx-text, #eeeae3)" font-size="12">Still locked on the old schedule after the waiver</text>
+<line x1="60" x2="672" y1="396.0" y2="396.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="400.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0</text>
+<line x1="60" x2="672" y1="339.2" y2="339.2" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="343.2" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.5B</text>
+<line x1="60" x2="672" y1="282.4" y2="282.4" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="286.4" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">1.0B</text>
+<line x1="60" x2="672" y1="225.6" y2="225.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="229.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">1.5B</text>
+<line x1="60" x2="672" y1="168.8" y2="168.8" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="172.8" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">2.0B</text>
+<line x1="60" x2="672" y1="112.0" y2="112.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="52" y="116.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">2.5B</text>
+<line x1="131.1" x2="131.1" y1="396" y2="401" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="131.1" y="416" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2026</text>
+<line x1="272.2" x2="272.2" y1="396" y2="401" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="272.2" y="416" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2027</text>
+<line x1="413.4" x2="413.4" y1="396" y2="401" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="413.4" y="416" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2028</text>
+<line x1="554.9" x2="554.9" y1="396" y2="401" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="554.9" y="416" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2029</text>
+<path d="M238.2,396.0 L238.2,219.0 L247.9,219.0 L247.9,221.1 L248.3,221.1 L248.3,224.1 L259.9,224.1 L259.9,229.1 L271.5,229.1 L271.5,231.3 L271.9,231.3 L271.9,234.2 L283.5,234.2 L283.5,236.4 L283.8,236.4 L283.8,239.3 L294.7,239.3 L294.7,244.4 L306.3,244.4 L306.3,246.5 L306.7,246.5 L306.7,249.4 L318.3,249.4 L318.3,254.5 L329.9,254.5 L329.9,256.7 L330.2,256.7 L330.2,259.6 L341.8,259.6 L341.8,264.7 L353.4,264.7 L353.4,266.9 L353.8,266.9 L353.8,269.8 L365.4,269.8 L365.4,271.9 L365.8,271.9 L365.8,274.8 L377.4,274.8 L377.4,279.9 L389.0,279.9 L389.0,282.1 L389.4,282.1 L389.4,285.0 L401.0,285.0 L401.0,290.1 L412.6,290.1 L412.6,292.2 L413.0,292.2 L413.0,295.2 L424.6,295.2 L424.6,297.3 L425.0,297.3 L425.0,300.2 L436.2,300.2 L436.2,305.3 L447.8,305.3 L447.8,307.5 L448.2,307.5 L448.2,310.4 L459.8,310.4 L459.8,315.5 L471.4,315.5 L471.4,317.6 L471.7,317.6 L471.7,320.6 L483.3,320.6 L483.3,325.6 L494.9,325.6 L494.9,327.8 L495.3,327.8 L495.3,330.7 L506.9,330.7 L506.9,332.9 L507.3,332.9 L507.3,335.8 L518.9,335.8 L518.9,340.9 L530.5,340.9 L530.5,343.0 L530.9,343.0 L530.9,346.0 L542.5,346.0 L542.5,351.0 L554.1,351.0 L554.1,353.2 L554.5,353.2 L554.5,356.1 L566.1,356.1 L566.1,358.3 L566.5,358.3 L566.5,361.2 L577.3,361.2 L577.3,366.3 L588.9,366.3 L588.9,368.4 L589.3,368.4 L589.3,371.4 L600.9,371.4 L600.9,376.4 L612.5,376.4 L612.5,378.6 L612.8,378.6 L612.8,381.5 L624.4,381.5 L624.4,386.6 L636.0,386.6 L636.0,388.8 L636.4,388.8 L636.4,391.7 L648.0,391.7 L648.0,393.8 L660.0,393.8 L660.0,396.0 L660.0,396.0 Z" fill="#5d6877" fill-opacity="0.3"/>
+<path d="M71.6,256.1 L95.2,256.1 L95.2,152.2 L212.7,152.2 L212.7,187.2 L224.7,187.2 L224.7,190.1 L236.3,190.1 L236.3,219.0 L247.9,219.0 L247.9,221.1 L248.3,221.1 L248.3,224.1 L259.9,224.1 L259.9,229.1 L271.5,229.1 L271.5,231.3 L271.9,231.3 L271.9,234.2 L283.5,234.2 L283.5,236.4 L283.8,236.4 L283.8,239.3 L294.7,239.3 L294.7,244.4 L306.3,244.4 L306.3,246.5 L306.7,246.5 L306.7,249.4 L318.3,249.4 L318.3,254.5 L329.9,254.5 L329.9,256.7 L330.2,256.7 L330.2,259.6 L341.8,259.6 L341.8,264.7 L353.4,264.7 L353.4,266.9 L353.8,266.9 L353.8,269.8 L365.4,269.8 L365.4,271.9 L365.8,271.9 L365.8,274.8 L377.4,274.8 L377.4,279.9 L389.0,279.9 L389.0,282.1 L389.4,282.1 L389.4,285.0 L401.0,285.0 L401.0,290.1 L412.6,290.1 L412.6,292.2 L413.0,292.2 L413.0,295.2 L424.6,295.2 L424.6,297.3 L425.0,297.3 L425.0,300.2 L436.2,300.2 L436.2,305.3 L447.8,305.3 L447.8,307.5 L448.2,307.5 L448.2,310.4 L459.8,310.4 L459.8,315.5 L471.4,315.5 L471.4,317.6 L471.7,317.6 L471.7,320.6 L483.3,320.6 L483.3,325.6 L494.9,325.6 L494.9,327.8 L495.3,327.8 L495.3,330.7 L506.9,330.7 L506.9,332.9 L507.3,332.9 L507.3,335.8 L518.9,335.8 L518.9,340.9 L530.5,340.9 L530.5,343.0 L530.9,343.0 L530.9,346.0 L542.5,346.0 L542.5,351.0 L554.1,351.0 L554.1,353.2 L554.5,353.2 L554.5,356.1 L566.1,356.1 L566.1,358.3 L566.5,358.3 L566.5,361.2 L577.3,361.2 L577.3,366.3 L588.9,366.3 L588.9,368.4 L589.3,368.4 L589.3,371.4 L600.9,371.4 L600.9,376.4 L612.5,376.4 L612.5,378.6 L612.8,378.6 L612.8,381.5 L624.4,381.5 L624.4,386.6 L636.0,386.6 L636.0,388.8 L636.4,388.8 L636.4,391.7 L648.0,391.7 L648.0,393.8 L660.0,393.8 L660.0,396.0 L660.0,396.0" fill="none" stroke="#5d6877" stroke-width="2" stroke-linejoin="round"/>
+<path d="M71.6,256.1 L95.2,256.1 L95.2,152.2 L212.7,152.2 L212.7,187.2 L224.7,187.2 L224.7,190.1 L236.3,190.1 L236.3,219.0 L238.2,219.0 L238.2,396.0 L238.2,396.0 L660.0,396.0" fill="none" stroke="var(--sx-bg, #0d1116)" stroke-width="5" stroke-linejoin="round"/>
+<path d="M71.6,256.1 L95.2,256.1 L95.2,152.2 L212.7,152.2 L212.7,187.2 L224.7,187.2 L224.7,190.1 L236.3,190.1 L236.3,219.0 L238.2,219.0 L238.2,396.0 L238.2,396.0 L660.0,396.0" fill="none" stroke="var(--sx-blue, #8aa9cf)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="238.2" cy="219.0" r="4.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<circle cx="238.2" cy="396.0" r="4.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="248.2" y="193.0" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">October 5, 2026</text>
+<text x="248.2" y="208.0" fill="var(--sx-text, #eeeae3)" font-size="12">1.56B ENA unlocked at once</text>
+<text x="670.0" y="374.0" fill="var(--sx-text, #eeeae3)" font-size="12">Old schedule</text>
+<text x="670.0" y="389.0" fill="var(--sx-muted, #99a3b0)" font-size="11">ends Sep 30, 2029</text>
+<text x="101.2" y="144.2" fill="var(--sx-text, #eeeae3)" font-size="12">2.15B after the second purchase</text>
+<g><title>From July 31, 2025 to September 29, 2025. 1,231,887,038 ENA still locked on the old schedule, 1,231,887,038 with the waiver.</title><rect x="71.6" y="112" width="23.6" height="284" fill="transparent"/></g>
+<g><title>From September 30, 2025 to July 30, 2026. 2,146,228,864 ENA still locked on the old schedule, 2,146,228,864 with the waiver.</title><rect x="95.2" y="112" width="117.5" height="284" fill="transparent"/></g>
+<g><title>From July 31, 2026 to August 30, 2026. 1,838,257,105 ENA still locked on the old schedule, 1,838,257,105 with the waiver.</title><rect x="212.7" y="112" width="12.0" height="284" fill="transparent"/></g>
+<g><title>From August 31, 2026 to September 29, 2026. 1,812,592,791 ENA still locked on the old schedule, 1,812,592,791 with the waiver.</title><rect x="224.7" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From September 30, 2026 to October 29, 2026. 1,558,343,021 ENA still locked on the old schedule, 1,558,343,021 with the waiver.</title><rect x="236.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From October 30, 2026 to October 30, 2026. 1,539,294,233 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="247.9" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From October 31, 2026 to November 29, 2026. 1,513,629,920 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="248.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From November 30, 2026 to December 29, 2026. 1,468,916,819 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="259.9" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From December 30, 2026 to December 30, 2026. 1,449,868,031 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="271.5" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From December 31, 2026 to January 29, 2027. 1,424,203,717 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="271.9" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From January 30, 2027 to January 30, 2027. 1,405,154,929 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="283.5" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From January 31, 2027 to February 27, 2027. 1,379,490,616 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="283.8" y="112" width="10.8" height="284" fill="transparent"/></g>
+<g><title>From February 28, 2027 to March 29, 2027. 1,334,777,515 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="294.7" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From March 30, 2027 to March 30, 2027. 1,315,728,727 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="306.3" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From March 31, 2027 to April 29, 2027. 1,290,064,413 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="306.7" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From April 30, 2027 to May 29, 2027. 1,245,351,312 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="318.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From May 30, 2027 to May 30, 2027. 1,226,302,524 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="329.9" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From May 31, 2027 to June 29, 2027. 1,200,638,211 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="330.2" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From June 30, 2027 to July 29, 2027. 1,155,925,109 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="341.8" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From July 30, 2027 to July 30, 2027. 1,136,876,321 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="353.4" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From July 31, 2027 to August 29, 2027. 1,111,212,008 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="353.8" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From August 30, 2027 to August 30, 2027. 1,092,163,220 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="365.4" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From August 31, 2027 to September 29, 2027. 1,066,498,907 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="365.8" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From September 30, 2027 to October 29, 2027. 1,021,785,805 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="377.4" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From October 30, 2027 to October 30, 2027. 1,002,737,017 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="389.0" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From October 31, 2027 to November 29, 2027. 977,072,704 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="389.4" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From November 30, 2027 to December 29, 2027. 932,359,603 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="401.0" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From December 30, 2027 to December 30, 2027. 913,310,815 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="412.6" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From December 31, 2027 to January 29, 2028. 887,646,501 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="413.0" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From January 30, 2028 to January 30, 2028. 868,597,713 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="424.6" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From January 31, 2028 to February 28, 2028. 842,933,400 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="425.0" y="112" width="11.2" height="284" fill="transparent"/></g>
+<g><title>From February 29, 2028 to March 29, 2028. 798,220,299 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="436.2" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From March 30, 2028 to March 30, 2028. 779,171,511 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="447.8" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From March 31, 2028 to April 29, 2028. 753,507,197 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="448.2" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From April 30, 2028 to May 29, 2028. 708,794,096 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="459.8" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From May 30, 2028 to May 30, 2028. 689,745,308 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="471.4" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From May 31, 2028 to June 29, 2028. 664,080,995 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="471.7" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From June 30, 2028 to July 29, 2028. 619,367,893 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="483.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From July 30, 2028 to July 30, 2028. 600,319,105 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="494.9" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From July 31, 2028 to August 29, 2028. 574,654,792 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="495.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From August 30, 2028 to August 30, 2028. 555,606,004 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="506.9" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From August 31, 2028 to September 29, 2028. 529,941,691 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="507.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From September 30, 2028 to October 29, 2028. 485,228,589 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="518.9" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From October 30, 2028 to October 30, 2028. 466,179,801 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="530.5" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From October 31, 2028 to November 29, 2028. 440,515,488 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="530.9" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From November 30, 2028 to December 29, 2028. 395,802,387 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="542.5" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From December 30, 2028 to December 30, 2028. 376,753,599 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="554.1" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From December 31, 2028 to January 29, 2029. 351,089,285 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="554.5" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From January 30, 2029 to January 30, 2029. 332,040,497 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="566.1" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From January 31, 2029 to February 27, 2029. 306,376,184 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="566.5" y="112" width="10.8" height="284" fill="transparent"/></g>
+<g><title>From February 28, 2029 to March 29, 2029. 261,663,083 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="577.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From March 30, 2029 to March 30, 2029. 242,614,295 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="588.9" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From March 31, 2029 to April 29, 2029. 216,949,981 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="589.3" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From April 30, 2029 to May 29, 2029. 172,236,880 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="600.9" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From May 30, 2029 to May 30, 2029. 153,188,092 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="612.5" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From May 31, 2029 to June 29, 2029. 127,523,779 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="612.8" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From June 30, 2029 to July 29, 2029. 82,810,677 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="624.4" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From July 30, 2029 to July 30, 2029. 63,761,889 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="636.0" y="112" width="1.0" height="284" fill="transparent"/></g>
+<g><title>From July 31, 2029 to August 29, 2029. 38,097,576 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="636.4" y="112" width="11.6" height="284" fill="transparent"/></g>
+<g><title>From August 30, 2029 to September 29, 2029. 19,048,788 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="648.0" y="112" width="12.0" height="284" fill="transparent"/></g>
+<g><title>From September 30, 2029 to October 30, 2029. 0 ENA still locked on the old schedule, 0 with the waiver.</title><rect x="660.0" y="112" width="12.0" height="284" fill="transparent"/></g>
+<text x="20" y="452" fill="var(--sx-muted, #99a3b0)" font-size="11">EthenaDash from the token purchase agreements and the dashboard's tranche file, on the dashboard's month-end dates.</text>
+</svg>

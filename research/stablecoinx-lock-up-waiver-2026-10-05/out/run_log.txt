@@ -1,0 +1,12 @@
+Inputs read. Dashboard holdings 3,029,000,000 ENA. Waiver effective 2026-10-05
+Token purchase prices and counts reconcile. TPA total 2,146,228,863.59 | other ENA in the filings 885,178,094.20 | dashboard third tranche 882,771,136 | filings' total 3,031,406,957.79 (pro forma), 3,031,404,420.94 (10-Q)
+Dashboard model reproduces ena_unlocked, nav_unlocked_per_share and mnav_unlocked on 69 rows of 4c7c3a7 and 72 rows of e57e314
+Locked under the TPA schedules at the end of October 4, 2026: 1,558,343,021.12 ENA, for every completion day in July 21 to 31 and September 5 to 30, 2025. 51.4% of 3,029,000,000
+Old schedule would have unlocked 25,664,313.29 ENA a month under TPA-1 and 19,048,788.04 under TPA-2, the last steps falling in July and September 2029. Next step after the waiver on the dashboard model: 2026-10-30
+USDE closes match S&P Global via StockAnalysis, and ENA prices match CoinGecko at 00:00 UTC, on 4 rows
+Oct 2 row: unlocked 1,470,656,979.0 (48.6%), unlocked token NAV per share 14.8173 , unlocked mNAV 0.9550 | Oct 5 row: 3,029,000,000.0 30.2816 0.4940 | Oct 5 on the old schedule: 14.7025 1.0175
+Bridge: x 1.0572 for the stock, x 1.0078 for ENA, x 0.4855 for the unlocked count. Without the waiver 1.0175
+On a September 5 start the old schedule unlocks 1,489,705,767 ENA on October 5 and unlocked mNAV is 1.0045 | the first quarter of the September purchase, 228,585,456 ENA, would unlock 25 days before the dashboard's date
+If none of the contribution or July in-kind ENA had unlocked by October 2, the unlocked count was 1,011,832,637 (33.4%), unlocked token NAV per share 10.19 and the multiple 1.388
+10-Q for the quarter to September 30 due 2026-11-14 (a Saturday), so by 2026-11-16 | Collaboration Agreement initial term ends 2030-07-21
+All checks passed.

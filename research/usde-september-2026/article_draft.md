@@ -115,7 +115,7 @@ The [warrant agreement](https://www.sec.gov/Archives/edgar/data/1879814/00011931
 
 ## What changed after the cutoff
 
-Ethena OpCo and the Ethena Foundation waived every lock-up on the company's ENA with effect from October 5, 2026. The [waiver letter](https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea030568601ex10-1.htm) is dated September 14. It is permanent and covers the 48-month schedule in the token purchase agreements. It changes no token count, no share count and no September figure on this page.
+Ethena OpCo and the Ethena Foundation waived every lock-up on the company's ENA with effect from October 5, 2026. The [waiver letter](https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea030568601ex10-1.htm) is dated September 14. It is permanent and covers the 48-month schedule in the token purchase agreements. It changes no token count, no share count and no September figure on this page. The [October lock-up review](/research/stablecoinx-lock-up-waiver-2026-10-05/) examines the remaining sale approvals and the limits of the dashboard’s historical unlocked count.
 
 Part of the treasury was still under lock-up through September. The second-quarter 10-Q describes tokens that were locked at June 30 and due to unlock over up to 48 months. Token NAV priced locked and unlocked tokens alike throughout the month.
 

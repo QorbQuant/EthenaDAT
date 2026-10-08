@@ -1,0 +1,18 @@
+event,date,source,location
+tpa1_signed,2025-07-21,px217,"Annex H-1, date of the agreement"
+contribution_signed,2025-07-21,q2,"Note 3, Contribution Agreement of July 21, 2025"
+collab_effective,2025-07-21,px217,"Annex E, definition of Effective Date"
+tpa1_completed_by,2025-07-31,px217,"Pro forma notes, completed by the end of July 2025"
+tpa2_signed,2025-09-05,s8k,"Exhibit index, Exhibit 10.16"
+collab_amended,2025-09-05,px217,"Annex E, Amended and Restated Collaboration Agreement"
+tpa2_completed_by,2025-09-30,px217,"Pro forma notes, completed by the end of September 2025"
+dvn_agreement,2026-04-14,s8k,"DVN Services Agreement entered into on April 14, 2026"
+merger_closing,2026-06-25,pr,Press release on the closing
+q2_balance_date,2026-06-30,q2,"Note 3, locked as of June 30, 2026"
+ethena_post,2026-08-27,ethena_blog,Published 2026-08-27T14:02:38Z
+waiver_signed,2026-09-14,l101,Date of the Waiver Letter
+waiver_8k_filed,2026-09-17,l8k,"EDGAR filing date, accepted 2026-09-17T12:00:32Z"
+waiver_effective,2026-10-05,l101,Definition of Waiver Effective Date
+collab_initial_term_end,2030-07-21,px217,"Section 3.1, fifth anniversary of the Effective Date (computed)"
+inkind_unlock_months_first,2025-08-01,px217,"Annex G-1 signature page, first unlock month listed, August 2025"
+inkind_unlock_months_last,2028-07-01,px217,"Annex G-1 signature page, last unlock month listed, July 2028"

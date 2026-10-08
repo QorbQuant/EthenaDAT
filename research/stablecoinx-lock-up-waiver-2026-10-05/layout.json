@@ -1,0 +1,70 @@
+{
+  "cutoff": "Dashboard rows through the October 7, 2026 close \u00b7 Filings reviewed through October 8, 2026",
+  "navigation": [
+    [
+      "Old schedule",
+      "the-waiver-released-156-billion-ena-locked-until-as-late-as-2029"
+    ],
+    [
+      "Sale steps",
+      "a-sale-still-needs-the-foundations-consent-and-the-companys-own-approvals"
+    ],
+    [
+      "Dashboard change",
+      "on-the-dashboard-unlocked-mnav-fell-from-0955-to-0494"
+    ],
+    [
+      "Count correction",
+      "before-october-5-the-dashboard-counted-some-locked-ena-as-unlocked"
+    ],
+    [
+      "Disclosure",
+      "the-letter-bars-announcements-and-the-next-balance-sheet-predates-the-waiver"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Locked ENA schedule chart",
+  "chartFile": "chart_locked_schedule.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard \u2192",
+  "assets": [
+    "chart_locked_schedule.svg",
+    "chart_preview.png",
+    "chart_locked_schedule.csv",
+    "tpa_schedule.csv",
+    "dashboard_before_after.csv",
+    "holdings_by_source.csv",
+    "unlocked_multiple_bridge.csv",
+    "pre_waiver_bounds.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "metadata.json",
+    "stablecoinx_waiver_review.py",
+    "inputs/ena_coingecko_via_defillama.csv",
+    "inputs/ena_tranches_e57e314.csv",
+    "inputs/ethenadat_data_4c7c3a7.json",
+    "inputs/ethenadat_data_e57e314.json",
+    "inputs/filing_dates.csv",
+    "inputs/filing_facts.csv",
+    "inputs/manifest.csv",
+    "inputs/other_sources.csv",
+    "inputs/sec_sources.csv",
+    "inputs/usde_spglobal_via_stockanalysis.csv",
+    "out/chart_locked_schedule.csv",
+    "out/chart_locked_schedule.svg",
+    "out/dashboard_before_after.csv",
+    "out/holdings_by_source.csv",
+    "out/pre_waiver_bounds.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/tpa_schedule.csv",
+    "out/unlocked_multiple_bridge.csv"
+  ]
+}

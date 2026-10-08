@@ -1,0 +1,5 @@
+utc,unix_ts,price_usd,source,read_utc
+2026-10-02T00:00:00Z,1790899200,0.24321125119897466,https://coins.llama.fi/prices/historical/1790899200/coingecko:ethena,2026-10-08T15:59:40Z
+2026-10-05T00:00:00Z,1791158400,0.24132714027052574,https://coins.llama.fi/prices/historical/1791158400/coingecko:ethena,2026-10-08T15:59:40Z
+2026-10-06T00:00:00Z,1791244800,0.24932241435658015,https://coins.llama.fi/prices/historical/1791244800/coingecko:ethena,2026-10-08T15:59:40Z
+2026-10-07T00:00:00Z,1791331200,0.24044329815114926,https://coins.llama.fi/prices/historical/1791331200/coingecko:ethena,2026-10-08T15:59:40Z

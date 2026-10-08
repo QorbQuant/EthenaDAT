@@ -1,0 +1,8 @@
+group,ena_tokens,source,lock_up_before_october_5_per_filings,dashboard_treatment_before_october_5
+Bought under TPA-1 with July 2025 PIPE cash,1231887037.76,"Prospectus of Feb 17, 2026, pro forma notes","48-month schedule from Completion, by the end of July 2025","48-month schedule from July 31, 2025"
+Bought under TPA-2 with September 2025 PIPE cash,914341825.83,"Prospectus of Feb 17, 2026, pro forma notes","48-month schedule from Completion, by the end of September 2025","48-month schedule from September 30, 2025"
+Contributed by Ethena,284954407.29,10-Q Note 3 and the prospectus's summary of the Contribution Agreement,"Locked at June 30, 2026, unlocking over up to 48 months on a schedule the filings do not give",Counted as unlocked
+Paid in kind under the July 2025 PIPE,173869934.53,"Prospectus of Feb 17, 2026, pro forma notes","Transfer restrictions of 0 to 36 months, split not given",Counted as unlocked
+Paid in kind under the September 2025 PIPE,426353752.38,"Prospectus of Feb 17, 2026, pro forma notes",No restrictions on transfer,Counted as unlocked
+Total in the filings,3031406957.79,Sum of the five rows,,
+Dashboard holdings input,3029000000,"Press release of June 25, 2026, approximately 3,029 million",,

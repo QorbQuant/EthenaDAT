@@ -1,0 +1,29 @@
+fact,value,unit,source,location,as_of
+tpa1_tokens,1231887037.76,tokens,px217,"Unaudited pro forma notes, paragraph on the Initial Token Purchase Agreement",2025-07-31
+tpa1_amount,259386134.67,usd,px217,"Unaudited pro forma notes, paragraph on the Initial Token Purchase Agreement",2025-07-31
+tpa1_vwap,0.3008,usd_per_token,px217,"Unaudited pro forma notes, the 30-day VWAP before signing",2025-07-21
+tpa1_discount,0.30,fraction,px217,"Unaudited pro forma notes, the discount to that VWAP",2025-07-21
+tpa2_tokens,914341825.83,tokens,px217,"Unaudited pro forma notes, paragraph on the Additional Token Purchase Agreement",2025-09-30
+tpa2_amount,265159129.49,usd,px217,"Unaudited pro forma notes, paragraph on the Additional Token Purchase Agreement",2025-09-30
+tpa2_price,0.29,usd_per_token,px217,"Unaudited pro forma notes, paragraph on the Additional Token Purchase Agreement",2025-09-05
+inkind_july_tokens,173869934.53,tokens,px217,"Unaudited pro forma notes, Initial In-Kind PIPE Proceeds, restrictions of 0 to 36 months",2026-06-25
+inkind_sept_tokens,426353752.38,tokens,px217,"Unaudited pro forma notes, Additional In-Kind PIPE Proceeds, no restrictions on transfer",2026-06-25
+contrib_usd,60000000,usd,px217,"Summary of the Contribution Agreement, described as locked ENA",2025-07-21
+contrib_price,0.21056,usd_per_token,px217,Summary of the Contribution Agreement,2025-07-21
+contrib_tokens,284954407.29,tokens,q2,"Note 3, Ethena Contribution, locked at June 30 and unlocking over up to 48 months",2026-06-25
+q2_pipe_july_tokens,1405754435.84,tokens,q2,"Note 3, PIPE Shares, agreements of July 21, 2025",2026-06-25
+q2_pipe_sept_tokens,1340695577.81,tokens,q2,"Note 3, PIPE Shares, agreements of September 5, 2025",2026-06-25
+pr_closing_ena_millions,3029,tokens_millions,pr,"Second paragraph, approximately 3,029 million ENA after closing",2026-06-25
+tpa_cliff_fraction,0.25,fraction,px217,"Annexes H-1 and H-2, clause 7.3(a)",2025-07-21
+tpa_cliff_months,12,months,px217,"Annexes H-1 and H-2, clause 7.3(a), 12-month anniversary of Completion",2025-07-21
+tpa_installments,36,count,px217,"Annexes H-1 and H-2, clause 7.3(b), equal monthly installments",2025-07-21
+tpa_lockup_months,48,months,px217,"Annexes H-1 and H-2, clauses 7.2(c) and 7.3(b)",2025-07-21
+tpa_completion_days,2,calendar_days,px217,"Annexes H-1 and H-2, clause 4.1, unless agreed otherwise in writing",2025-07-21
+wl_review_bdays,5,business_days,l101,"Clause 5.4, the Review Period from receipt of a Funding Notice",2026-09-14
+wl_settlement_bdays,5,business_days,l101,"Clause 5.5(a), latest settlement after an Acquisition Notice",2026-09-14
+wl_discussion_bdays,5,business_days,l101,"Clause 5.9, longest good-faith discussion",2026-09-14
+wl_clearance_days,60,days,l101,"Clause 5.10, sales completed within 60 days after clearance",2026-09-14
+wl_vwap_band_pct,5,percent,l101,"Clause 5.7, in square brackets in the filed letter",2026-09-14
+ca_initial_term_years,5,years,px217,"Annex E, Section 3.1, from the Effective Date of July 21, 2025",2025-09-05
+ca_ic_members,3,count,px217,"Annex E, Section 5.1, one Pubco, one Foundation and one independent member",2025-09-05
+form10q_days_other,45,days,form10q,"General Instruction A.1, registrants other than large accelerated and accelerated filers",current

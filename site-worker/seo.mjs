@@ -1,3 +1,4 @@
+import { meta as waiverReview } from "./content/stablecoinx-lock-up-waiver-2026-10-05.mjs";
 import { meta as payAdoptionReview } from "./content/ethenapay-adoption-2026-10-05.mjs";
 import { meta as septemberReview } from "./content/usde-september-2026.mjs";
 export const ORIGIN = "https://ethenadash.com";
@@ -10,6 +11,7 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [waiverReview.path]: waiverReview,
   [payAdoptionReview.path]: payAdoptionReview,
   [septemberReview.path]: septemberReview,
   "/stablecoinx/": {
