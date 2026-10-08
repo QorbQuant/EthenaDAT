@@ -244,3 +244,9 @@ Run all regression checks with `node --test tests/*.test.*`.
 ### Reviewed articles
 
 Article sources live in `research/<slug>/`. Each `layout.json` supplies section navigation, chart and dashboard links, public assets and an explicit list of files allowed in the downloadable archive. Internal review notes and private address lists must never be included. Install `research/requirements.txt`, then run `python3 scripts/build_research.py` to rebuild all reviewed articles. Add the generated module to `site-worker/content.mjs` and its metadata to `site-worker/seo.mjs`; the sitemap follows that metadata.
+
+### StablecoinX tokenized equity
+
+`/api/tokenized/stablecoinx` reads the USDEB contract published in Binance’s October 7 listing announcement. `site-worker/tokenized.mjs` verifies chain 56, token identity, decimals, raw supply and corporate-action-adjusted supply at a single block. The panel uses the recorded stock price and reported Class A denominator only as reference measures. It does not change treasury NAV or shares outstanding. The feed caches for two minutes, labels failed refreshes, and expires fallback data after six hours. Spot price, volume, holders and net issuance are not inferred from supply.
+
+Local verification found Binance market data region-restricted and the public BNB node unable to serve the day-old token state. Price comparisons and historical issuance require independently verified, permitted sources.

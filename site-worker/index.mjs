@@ -1,3 +1,4 @@
+import { tokenizedResponse } from "./tokenized.mjs";
 import Ethena from "../docs/assets/data.js";
 import { lighterResponse } from "./lighter.mjs";
 import {
@@ -298,7 +299,9 @@ export default {
       return Response.redirect(dest, 301);
     }
     let response;
-    if (url.pathname === "/api/lighter/stablecoinx")
+    if (url.pathname === "/api/tokenized/stablecoinx")
+      response = await tokenizedResponse(ctx);
+    else if (url.pathname === "/api/lighter/stablecoinx")
       response = await lighterResponse(ctx);
     else if (url.pathname === "/sitemap.xml")
       response = new Response(sitemap(), {

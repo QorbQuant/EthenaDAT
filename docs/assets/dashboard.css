@@ -1993,3 +1993,10 @@ body {
     font-size: 25px;
   }
 }
+
+/* Tokenized equity has three distinct, sourced measures. */
+#sx-studio #tokenized-panel { margin-bottom: 32px; }
+#sx-studio #tokenized-panel .full-metrics { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+@media (max-width: 700px) {
+  #sx-studio #tokenized-panel .full-metrics { grid-template-columns: 1fr; }
+}

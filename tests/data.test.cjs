@@ -8,6 +8,9 @@ const read = (n) =>
   );
 const fresh = () => {
   const d = read("data");
+  // Keep the fixture on the test clock as the production feed gains new dates.
+  const count = d.series.date.filter(date => date <= "2026-10-05").length;
+  for (const key of Object.keys(d.series)) d.series[key] = d.series[key].slice(0, count);
   d.generated_at = "2026-10-05T15:59:51Z";
   d.usde = {
     price: 13.97,

@@ -47,8 +47,7 @@
             ><button type="button" data-jump="full-performance">
               Performance</button
             ><button type="button" data-jump="full-treasury">Treasury</button
-            ><button type="button" data-jump="full-derivatives">
-              Derivatives</button
+            ><button type="button" data-jump="full-derivatives">Markets</button
             ><button type="button" data-jump="full-filings">Filings</button>
           </nav>
           <div class="sx-page-head">
@@ -664,9 +663,102 @@
           </section>
           <section id="full-derivatives" class="full-section">
             <div class="full-section-top">
-              <h2><span class="sx-section-num">05 /</span>Derivatives</h2>
-              <p>Perpetuals · warrants · options</p>
+              <h2>
+                <span class="sx-section-num">05 /</span>Markets &amp;
+                derivatives
+              </h2>
+              <p>Tokenized equity · perpetuals · warrants · options</p>
             </div>
+            <article
+              id="tokenized-panel"
+              class="lighter-panel"
+              aria-labelledby="tokenized-title"
+            >
+              <div class="lighter-heading">
+                <div>
+                  <p class="lighter-eyebrow">TOKENIZED EQUITY / USDEB</p>
+                  <h3 id="tokenized-title">StablecoinX, on-chain.</h3>
+                </div>
+                <a
+                  class="full-muted-link"
+                  href="https://bscscan.com/token/0xDfD3Ba51D4591f243481a6f26059d1a5Ee95252F"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  >View token ↗</a
+                >
+              </div>
+              <p class="full-note">
+                Binance bStocks launched USDEB on October 7, 2026. Track issued
+                token supply and its size relative to the listed equity.
+              </p>
+              <p id="tokenized-status" class="full-caption" role="status">
+                Loading USDEB supply…
+              </p>
+              <div class="full-metrics">
+                <div class="full-metric">
+                  <label>USDEB supply</label
+                  ><strong id="tokenized-supply">N/A</strong
+                  ><small
+                    >Outstanding tokens, adjusted for the issuer
+                    multiplier</small
+                  >
+                </div>
+                <div class="full-metric">
+                  <label>Value at recorded price</label
+                  ><strong id="tokenized-value">N/A</strong
+                  ><small id="tokenized-value-note"
+                    >Supply × recorded USDE price</small
+                  >
+                </div>
+                <div class="full-metric">
+                  <label>Share of Class A equity</label
+                  ><strong id="tokenized-share">N/A</strong
+                  ><small id="tokenized-share-note"
+                    >Token supply ÷ reported Class A share count</small
+                  >
+                </div>
+              </div>
+              <details class="full-disclosure lighter-methodology">
+                <summary>What these figures measure</summary>
+                <p>
+                  USDEB is a tokenized security linked to StablecoinX, separate
+                  from the USDE stock, Ethena’s USDe stablecoin and USDEX
+                  perpetual contracts. Holding a bStock does not directly confer
+                  ownership of the underlying company’s shares.
+                </p>
+                <p>
+                  Supply comes from the issuer-published BNB Chain contract at
+                  one block. We verify the token symbol, decimals and scaled
+                  supply against its raw supply and current corporate-action
+                  multiplier (<span id="tokenized-multiplier">N/A</span>).
+                  Issuance can reflect conversion of existing stock holdings; it
+                  is not a new equity raise or a measure of net buying.
+                </p>
+                <p>
+                  Value at recorded price is a reference valuation, not a live
+                  token price or an independent proof of reserves. The
+                  percentage uses the dashboard’s reported Class A shares, not
+                  free float or a fully diluted share count. These tokens do not
+                  add to the company’s shares, ENA holdings or treasury NAV.
+                </p>
+                <p>
+                  Source:
+                  <a
+                    href="https://www.binance.com/my-MM/square/post/374582526748706"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >Binance listing announcement ↗</a
+                  >
+                  ·
+                  <a
+                    href="https://www.binance.com/en/academy/articles/what-are-bstocks-a-guide-to-tokenized-stocks-on-binance"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    >bStocks methodology ↗</a
+                  >
+                </p>
+              </details>
+            </article>
             <article
               id="lighter-panel"
               class="lighter-panel"
@@ -700,7 +792,8 @@
                   >
                 </div>
                 <div class="full-metric">
-                  <label>Open interest</label><strong id="lighter-oi">N/A</strong
+                  <label>Open interest</label
+                  ><strong id="lighter-oi">N/A</strong
                   ><small>Outstanding notional · both sides matched</small>
                 </div>
                 <div class="full-metric">
@@ -1128,7 +1221,8 @@
               </div>
               <div class="full-pay-stat">
                 <div class="sx-eyebrow">Ever spent</div>
-                <strong data-pay="spending_wallets" data-format="num">N/A</strong
+                <strong data-pay="spending_wallets" data-format="num"
+                  >N/A</strong
                 ><small>Distinct card wallets</small>
               </div>
             </div>
@@ -1563,8 +1657,11 @@
           </section>
 
           <p class="seo-related">
-            <a href="/research/ethenapay-adoption-2026-10-05/">Read the EthenaPay adoption review ↗</a>
-            · <a href="/research/ethenapay-spend-events/"
+            <a href="/research/ethenapay-adoption-2026-10-05/"
+              >Read the EthenaPay adoption review ↗</a
+            >
+            ·
+            <a href="/research/ethenapay-spend-events/"
               >How EthenaPay spending is measured ↗</a
             >
             · <a href="/methodology/">Data methodology</a>
@@ -1673,5 +1770,6 @@
     <script defer src="/assets/research.js"></script>
     <script defer src="/assets/app.js"></script>
     <script defer src="/assets/lighter.js"></script>
+    <script defer src="/assets/tokenized.js"></script>
   </body>
 </html>
