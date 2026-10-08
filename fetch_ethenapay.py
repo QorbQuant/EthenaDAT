@@ -221,4 +221,13 @@ def main() -> None:
 
 
 if __name__ == "__main__":
-    main()
+    # Reuse the existing Dune-enabled refresh job. This independent feed must
+    # run even when EthenaPay is age-gated or fails, and never break that tab.
+    try:
+        main()
+    finally:
+        try:
+            from fetch_tokenized_flows import main as refresh_tokenized_flows
+            refresh_tokenized_flows()
+        except Exception as exc:
+            print(f"::warning title=USDEB history refresh failed::{type(exc).__name__}; preserving last verified history")

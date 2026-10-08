@@ -718,6 +718,131 @@
                   >
                 </div>
               </div>
+              <section
+                id="tokenized-flows"
+                aria-labelledby="tokenized-flow-title"
+              >
+                <div class="lighter-toolbar">
+                  <h4 id="tokenized-flow-title">Tokenized supply flows</h4>
+                  <div
+                    class="lighter-switch"
+                    role="group"
+                    aria-label="Supply flow period"
+                  >
+                    <button
+                      type="button"
+                      data-flow-range="24h"
+                      aria-pressed="false"
+                    >
+                      24h
+                    </button>
+                    <button
+                      type="button"
+                      data-flow-range="7d"
+                      class="active"
+                      aria-pressed="true"
+                    >
+                      7d
+                    </button>
+                    <button
+                      type="button"
+                      data-flow-range="all"
+                      aria-pressed="false"
+                    >
+                      All history
+                    </button>
+                  </div>
+                </div>
+                <p id="tokenized-period" class="full-caption">
+                  7 days ending at the snapshot
+                </p>
+                <div class="full-metrics flow-totals">
+                  <div class="full-metric">
+                    <label>Minted</label
+                    ><strong id="tokenized-minted">N/A</strong>
+                  </div>
+                  <div class="full-metric">
+                    <label>Burned</label
+                    ><strong id="tokenized-burned">N/A</strong>
+                  </div>
+                  <div class="full-metric">
+                    <label>Net issuance</label
+                    ><strong id="tokenized-net">N/A</strong>
+                  </div>
+                </div>
+                <svg
+                  id="tokenized-flow-chart"
+                  role="img"
+                  tabindex="0"
+                  aria-label="Daily USDEB mint and burn amounts. Use left and right arrow keys to inspect days."
+                ></svg>
+                <p id="tokenized-flow-empty" class="full-caption" hidden>
+                  No mint or burn events in this period.
+                </p>
+                <p
+                  id="tokenized-flow-readout"
+                  class="full-caption"
+                  aria-live="polite"
+                ></p>
+                <p id="tokenized-flow-note" class="full-caption">
+                  Raw USDEB units · blue: minted / copper: burned.
+                </p>
+                <p
+                  id="tokenized-flow-status"
+                  class="full-caption"
+                  role="status"
+                >
+                  Loading verified supply history…
+                </p>
+                <details class="full-disclosure">
+                  <summary>Daily figures &amp; flow methodology</summary>
+                  <div class="full-table-wrap">
+                    <table class="full-table">
+                      <caption class="full-caption">
+                        Raw USDEB units in the selected period. Boundary days
+                        may be partial.
+                      </caption>
+                      <thead>
+                        <tr>
+                          <th>UTC day</th>
+                          <th>Minted</th>
+                          <th>Burned</th>
+                          <th>Net issuance</th>
+                        </tr>
+                      </thead>
+                      <tbody id="tokenized-flow-table"></tbody>
+                    </table>
+                  </div>
+                  <p>
+                    Mints create tokens; burns remove tokens. We count raw
+                    Transfer events involving the zero address once per log and
+                    reconcile the full history against totalSupply at the same
+                    BNB Chain block. Ordinary transfers, exchange deposits and
+                    withdrawals, and multiplier adjustments are excluded.
+                  </p>
+                  <p>
+                    These are supply flows, not cash inflows or confirmed
+                    customer redemptions. Converting existing shares or managing
+                    issuer inventory can create or remove tokens. Issuer
+                    inventory wallets have not been independently identified.
+                  </p>
+                  <p>
+                    All history begins at contract deployment on September 28,
+                    2026 and includes issuance before the October 7 trading
+                    launch. Periods end at the displayed snapshot, rather than
+                    the current clock. The raw-unit basis excludes the
+                    corporate-action multiplier used by the live supply figure
+                    above.
+                  </p>
+                  <p id="tokenized-adjustments"></p>
+                  <p>
+                    Dune history is checked for refresh at most every six hours
+                    when the dashboard data job runs. A prior chain snapshot
+                    allows time for indexing. Failed or unreconciled refreshes
+                    preserve the last verified data and its original timestamp.
+                  </p>
+                </details>
+              </section>
               <details class="full-disclosure lighter-methodology">
                 <summary>What these figures measure</summary>
                 <p>
@@ -1771,5 +1896,6 @@
     <script defer src="/assets/app.js"></script>
     <script defer src="/assets/lighter.js"></script>
     <script defer src="/assets/tokenized.js"></script>
+    <script type="module" src="/assets/tokenized-flows.js"></script>
   </body>
 </html>

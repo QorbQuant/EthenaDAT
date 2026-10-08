@@ -1,3 +1,4 @@
+import { tokenizedFlowsResponse } from "./tokenized-flows.mjs";
 import { tokenizedResponse } from "./tokenized.mjs";
 import Ethena from "../docs/assets/data.js";
 import { lighterResponse } from "./lighter.mjs";
@@ -167,7 +168,14 @@ export function renderDashboard(template, path, feeds) {
     .on("body", {
       element(e) {
         e.append(
-          `<script type="application/json" id="dashboard-bootstrap">${safeJSON({ sx: D, pay: P, feeds: { sx: { fallback: feeds.sx.fallback }, pay: { fallback: feeds.pay.fallback } } })}</script>`,
+          `<script type="application/json" id="dashboard-bootstrap">${safeJSON({
+            sx: D,
+            pay: P,
+            feeds: {
+              sx: { fallback: feeds.sx.fallback },
+              pay: { fallback: feeds.pay.fallback },
+            },
+          })}</script>`,
           { html: true },
         );
       },
@@ -199,8 +207,8 @@ export function renderDashboard(template, path, feeds) {
         let warning = !data
           ? "Data unavailable. Please reload to retry."
           : feeds[key].fallback
-            ? "Repository feed unavailable · showing the deployed backup. "
-            : "";
+          ? "Repository feed unavailable · showing the deployed backup. "
+          : "";
         if (data && age > (key === "pay" ? 36 : 48))
           warning += "Source data is " + Math.floor(age) + " hours old. ";
         if (data && warning)
@@ -299,7 +307,9 @@ export default {
       return Response.redirect(dest, 301);
     }
     let response;
-    if (url.pathname === "/api/tokenized/stablecoinx")
+    if (url.pathname === "/api/tokenized/stablecoinx/flows")
+      response = await tokenizedFlowsResponse(ctx);
+    else if (url.pathname === "/api/tokenized/stablecoinx")
       response = await tokenizedResponse(ctx);
     else if (url.pathname === "/api/lighter/stablecoinx")
       response = await lighterResponse(ctx);
