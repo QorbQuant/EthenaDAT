@@ -1,0 +1,18 @@
+check,source,method,observed_at_utc,block,value,result
+total_supply_raw,BNB Smart Chain RPC bsc-dataseed.bnbchain.org,eth_call totalSupply on 0xdfd3ba51d4591f243481a6f26059d1a5ee95252f,2026-10-08T22:28:25Z,126523880,41856570108480000000000,equals the sum of the 41 mints less the burn
+multiplier_raw,same,eth_call 0xa60bf13d,2026-10-08T22:28:25Z,126523880,1000000000000000000,multiplier 1.0
+scaled_supply_raw,same,eth_call 0x9bea6429,2026-10-08T22:28:25Z,126523880,41856570108480000000000,equals raw supply times multiplier
+decimals,same,eth_call decimals,2026-10-08T22:28:25Z,126523880,18,
+receipts_matched,same,"eth_getTransactionReceipt for each event in the flow file, Transfer logs to or from the zero address",2026-10-08T22:27Z to 22:38Z,,41,"41 of 41 events matched on block, log index, direction and amount"
+bscscan_zero_address_transfers,BscScan token transfers filtered by 0x0000000000000000000000000000000000000000,browser read of both result pages,2026-10-08T22:31Z,,41,"41 of 41 flow-file events matched by hash, block and amount, no other mint or burn listed"
+block_time,RPC eth_getBlockByNumber,header,2026-10-08T22:38Z,124478553,2026-09-28T06:41:41Z,contract creation block
+block_time,same,header,2026-10-08T22:38Z,126498018,2026-10-08T19:14:26Z,hash prefix 0xf181dc27 matches the flow file
+block_time,same,header,2026-10-08T22:38Z,126523880,2026-10-08T22:28:25Z,the supply check block
+creation_tx,RPC eth_getTransactionReceipt 0x6728d52d4e59abebdf6cb378523f4dd01b9473ca1c857f9b9080908746fc50da,receipt,2026-10-08T22:39Z,124478553,status 1,factory call that initialised the token contract. BscScan tags the creator bStocks: Deployer
+token_identity,RPC eth_call name and symbol,0xdfd3ba51d4591f243481a6f26059d1a5ee95252f,2026-10-08T22:36:00Z,latest,StablecoinX Inc. / USDEB,name and symbol as stored in the contract
+usde_on_bnb,RPC eth_call name and symbol,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,2026-10-08T22:36:00Z,latest,USDe / USDe,"the address Ethena lists for USDe on most L2s, BNB included"
+bscscan_holders,BscScan token holders tab,browser read,2026-10-08T22:40Z,,44,"rank 1 tagged Binance 51, label Exchange, 34,442.9489 (82.2880%). Rank 2 unlabeled 7,056.6813 (16.8592%). Rank 3 Liquidity Pool 295.7405 (0.7066%)"
+proof_of_collateral,https://www.binance.com/en/proof-of-collateral/bstocks,browser read,2026-10-08T22:25:57Z,,87 entries,"no entry for USDEB, JPMB, LLYB or SECZB"
+dashboard_api,https://ethenadash.com/api/tokenized/stablecoinx,browser fetch,2026-10-08T22:33:25Z,126524546,41856.57010848,not stale
+lighter_market,https://mainnet.zklighter.elliot.ai/api/v1/orderBookDetails?market_id=229,browser fetch,2026-10-08T22:36:17Z,,STABLECOINX,"perp, active"
+mint_and_burn_counterparties,BscScan token transfers filtered by the zero address,browser read of both result pages,2026-10-08T22:45Z,,"40 mints to 1 address, 1 burn from 1 other address",addresses not recorded here. Neither is tagged by the issuer

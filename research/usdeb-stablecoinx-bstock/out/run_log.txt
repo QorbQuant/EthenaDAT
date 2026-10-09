@@ -1,0 +1,14 @@
+flow file 2026-10-08T22:27:24.822060Z observed 2026-10-08T19:14:26Z block 126498018 events 41 mints 40 burns 1
+ minted 54111.92395023 burned 12255.35384175 supply 41856.57010848
+collector checkpoint block 126523450 2026-10-08T22:25:12Z supply 41856.57010848
+cutoff block 126523880 2026-10-08T22:28:25Z totalSupply 41856.57010848 receipts 41 BscScan list 41
+first mint 2026-10-07T08:15:18Z 7 | mints before trading 4 25771 | last before trading 2026-10-07T11:25:12Z
+peak 52154.42561065 at 2026-10-07T22:15:16Z | burn 12255.35384175 at 2026-10-07T23:25:59Z block 126339681 | supply after burn 39899.0717689
+ period Before trading opened, October 7 to 12:00 UTC | mints 4 25771 | burns 0 0 | net 25771 | end 25771
+ period October 7 from 12:00 UTC | mints 27 26383.42561065 | burns 1 12255.35384175 | net 14128.0717689 | end 39899.0717689
+ period October 8 to 22:28 UTC | mints 9 1957.49833958 | burns 0 0 | net 1957.49833958 | end 41856.57010848
+seconds past a five-minute mark, mints: min 11 max 47 | burn 59
+supply at the open 25771 of 1,200,000 admitted to trading = 2.1476%
+supply 41856.57010848 Class A 24,139,375 share 0.1734% | value at 2026-10-08 close 12.79 = 535,345.53
+BscScan holders 44 | rank 1 Binance 51 82.2880 % | rank 2 16.8592 % | top two 99.1472 %
+All checks passed.

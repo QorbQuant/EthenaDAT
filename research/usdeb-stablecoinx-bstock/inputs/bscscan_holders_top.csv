@@ -1,0 +1,6 @@
+rank,bscscan_tag,bscscan_label,quantity,percentage,read_at_utc,note
+1,Binance 51,Exchange,34442.9489,82.2880,2026-10-08T22:40Z,BscScan's own tag and label
+2,,,7056.6813,16.8592,2026-10-08T22:40Z,no tag or label shown
+3,,Liquidity Pool,295.7405,0.7066,2026-10-08T22:40Z,BscScan's own label
+4,,Smart Account by Safe,21.6689,0.0518,2026-10-08T22:40Z,BscScan's own label
+all,,,,,2026-10-08T22:40Z,A total of 44 token holders. Addresses are not recorded here

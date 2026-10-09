@@ -1,0 +1,63 @@
+{
+  "cutoff_block": 126523880,
+  "cutoff_utc": "2026-10-08T22:28:25Z",
+  "supply": "41856.57010848",
+  "minted": "54111.92395023",
+  "burned": "12255.35384175",
+  "events": 41,
+  "mints": 40,
+  "burns": 1,
+  "first_mint_utc": "2026-10-07T08:15:18Z",
+  "first_mint": "7",
+  "minted_before_trading": "25771",
+  "mints_before_trading": 4,
+  "peak": "52154.42561065",
+  "peak_utc": "2026-10-07T22:15:16Z",
+  "burn": "12255.35384175",
+  "burn_utc": "2026-10-07T23:25:59Z",
+  "burn_block": 126339681,
+  "supply_after_burn": "39899.0717689",
+  "class_a_shares": 24139375,
+  "share_of_class_a_pct": "0.17339541768782331771224399968930430054630660487274",
+  "usde_close_date": "2026-10-08",
+  "usde_close": "12.79",
+  "value_at_close": "535345.5316874592",
+  "periods": [
+    {
+      "period": "Before trading opened, October 7 to 12:00 UTC",
+      "mints": "4",
+      "minted": "25771",
+      "burns": "0",
+      "burned": "0",
+      "net": "25771",
+      "supply_at_end": "25771"
+    },
+    {
+      "period": "October 7 from 12:00 UTC",
+      "mints": "27",
+      "minted": "26383.42561065",
+      "burns": "1",
+      "burned": "12255.35384175",
+      "net": "14128.0717689",
+      "supply_at_end": "39899.0717689"
+    },
+    {
+      "period": "October 8 to 22:28 UTC",
+      "mints": "9",
+      "minted": "1957.49833958",
+      "burns": "0",
+      "burned": "0",
+      "net": "1957.49833958",
+      "supply_at_end": "41856.57010848"
+    }
+  ],
+  "min_seconds_past_five_minute_mark_mints": 11,
+  "max_seconds_past_five_minute_mark_mints": 47,
+  "admitted_at_open": 1200000,
+  "supply_at_open": "25771",
+  "supply_at_open_pct_of_admitted": "2.1475833333333333333333333333333333333333333333333",
+  "deployment_utc": "2026-09-28T06:41:41Z",
+  "bscscan_holders": 44,
+  "bscscan_rank1_pct": "82.2880",
+  "bscscan_rank2_pct": "16.8592"
+}

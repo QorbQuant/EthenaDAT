@@ -1,0 +1,63 @@
+{
+  "cutoff": "Chain data through 22:28 UTC, October 8, 2026 · Sources read October 8, 2026",
+  "navigation": [
+    [
+      "Names",
+      "usde-usdew-usdeb-and-usde-are-different-instruments"
+    ],
+    [
+      "Holder rights",
+      "a-usdeb-holder-has-a-beneficial-interest-in-a-share-the-token-issuer-holds"
+    ],
+    [
+      "Supply",
+      "supply-peaked-on-october-7-and-stood-at-017-of-class-a-shares"
+    ],
+    [
+      "Checks",
+      "three-sources-agreed-on-every-mint-and-burn"
+    ],
+    [
+      "Dashboard",
+      "the-dashboard-tracks-supply-and-changes-no-other-figure"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDEB supply chart",
+  "chartFile": "chart_usdeb_supply.svg",
+  "dashboard": "/stablecoinx/#tokenized-panel",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_usdeb_supply.svg",
+    "chart_preview.png",
+    "chart_usdeb_supply.csv",
+    "usdeb_supply_events.csv",
+    "usdeb_supply_by_period.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "metadata.json",
+    "usdeb_review.py",
+    "inputs/bscscan_holders_top.csv",
+    "inputs/chain_checks.csv",
+    "inputs/data_e7fb070.json",
+    "inputs/manifest.csv",
+    "inputs/shares_out_e7fb070.csv",
+    "inputs/sources.csv",
+    "inputs/usde_close.csv",
+    "inputs/usdeb_flow_pending_e7fb070.json",
+    "inputs/usdeb_flows_e7fb070.json",
+    "out/chart_usdeb_supply.csv",
+    "out/chart_usdeb_supply.svg",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/usdeb_supply_by_period.csv",
+    "out/usdeb_supply_events.csv"
+  ]
+}

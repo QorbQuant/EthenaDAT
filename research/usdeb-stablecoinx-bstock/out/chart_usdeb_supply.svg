@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="ub-t ub-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="ub-t">USDEB outstanding on BNB Smart Chain after every mint and burn, October 7 to 8, 2026</title>
+<desc id="ub-d">Stepped line from 06:00 UTC on October 7, 2026. Supply was zero until the first mint at 08:15 UTC and reached 25,771 USDEB before trading opened at 12:00 UTC. It peaked at 52,154 at 22:15 UTC and fell to 39,899 after a burn of 12,255 at 23:26 UTC, both on October 7, and stood at 41,857 at 22:28 UTC on October 8.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">USDEB supply peaked at 52,154 on October 7 and stood at 41,857 a day later</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">USDEB outstanding after every mint and burn on BNB Smart Chain, October 7 and 8, 2026, times in UTC</text>
+<line x1="64" x2="650" y1="402.0" y2="402.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="406.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0</text>
+<line x1="64" x2="650" y1="352.3" y2="352.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="356.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">10,000</text>
+<line x1="64" x2="650" y1="302.7" y2="302.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="306.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">20,000</text>
+<line x1="64" x2="650" y1="253.0" y2="253.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="257.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">30,000</text>
+<line x1="64" x2="650" y1="203.3" y2="203.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="207.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">40,000</text>
+<line x1="64" x2="650" y1="153.7" y2="153.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="157.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">50,000</text>
+<line x1="64" x2="650" y1="104.0" y2="104.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="108.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">60,000</text>
+<line x1="64.0" x2="64.0" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="64.0" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct 7 06:00</text>
+<line x1="147.7" x2="147.7" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="147.7" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">12:00</text>
+<line x1="231.4" x2="231.4" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="231.4" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">18:00</text>
+<line x1="315.1" x2="315.1" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="315.1" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct 8 00:00</text>
+<line x1="398.9" x2="398.9" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="398.9" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">06:00</text>
+<line x1="482.6" x2="482.6" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="482.6" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">12:00</text>
+<line x1="566.3" x2="566.3" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="566.3" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">18:00</text>
+<line x1="650.0" x2="650.0" y1="402" y2="407" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="650.0" y="422" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct 9 00:00</text>
+<line x1="147.7" x2="147.7" y1="98" y2="402" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="3 4"/>
+<text x="153.7" y="394.0" fill="var(--sx-muted, #99a3b0)" font-size="11">Trading opens 12:00 UTC</text>
+<path d="M64.0,402.0 L95.5,402.0 L95.5,402.0 L100.1,402.0 L100.1,387.6 L111.7,387.6 L111.7,275.2 L139.6,275.2 L139.6,274.0 L147.8,274.0 L147.8,224.3 L150.1,224.3 L150.1,223.0 L151.2,223.0 L151.2,217.3 L152.4,217.3 L152.4,214.8 L153.6,214.8 L153.6,214.0 L154.7,214.0 L154.7,213.1 L155.9,213.1 L155.9,207.9 L157.1,207.9 L157.1,204.6 L158.3,204.6 L158.3,204.1 L159.4,204.1 L159.4,203.8 L160.6,203.8 L160.6,203.7 L162.9,203.7 L162.9,188.9 L164.0,188.9 L164.0,176.7 L165.2,176.7 L165.2,176.6 L166.4,176.6 L166.4,155.0 L173.4,155.0 L173.4,154.9 L179.2,154.9 L179.2,152.6 L188.5,152.6 L188.5,152.4 L211.7,152.4 L211.7,149.0 L214.2,149.0 L214.2,148.8 L228.0,148.8 L228.0,148.7 L229.1,148.7 L229.1,148.5 L239.6,148.5 L239.6,148.5 L264.0,148.5 L264.0,148.3 L265.2,148.3 L265.2,148.2 L271.0,148.2 L271.0,148.1 L290.8,148.1 L290.8,143.0 L307.2,143.0 L307.2,203.8 L429.2,203.8 L429.2,203.4 L440.8,203.4 L440.8,203.3 L445.4,203.3 L445.4,203.3 L450.1,203.3 L450.1,202.4 L455.9,202.4 L455.9,196.0 L465.2,196.0 L465.2,195.4 L466.3,195.4 L466.3,195.3 L488.4,195.3 L488.4,194.8 L578.0,194.8 L578.0,194.1 L628.7,194.1" fill="none" stroke="var(--sx-blue, #8aa9cf)" stroke-width="2" stroke-linejoin="round"/>
+<circle cx="147.7" cy="274.0" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="155.7" y="294.0" fill="var(--sx-text, #eeeae3)" font-size="12">25,771</text>
+<text x="155.7" y="309.0" fill="var(--sx-muted, #99a3b0)" font-size="11">minted before trading</text>
+<circle cx="290.8" cy="143.0" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="282.8" y="121.0" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Peak 52,154</text>
+<text x="282.8" y="135.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">22:15 UTC, October 7</text>
+<circle cx="307.2" cy="203.8" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="317.2" y="223.8" fill="var(--sx-text, #eeeae3)" font-size="12">Burn of 12,255</text>
+<text x="317.2" y="238.8" fill="var(--sx-muted, #99a3b0)" font-size="11">23:26 UTC, October 7</text>
+<circle cx="628.7" cy="194.1" r="4.5" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="662.0" y="190.1" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">41,857 USDEB</text>
+<text x="662.0" y="206.1" fill="var(--sx-muted, #99a3b0)" font-size="11">22:28 UTC, October 8</text>
+<text x="662.0" y="221.1" fill="var(--sx-muted, #99a3b0)" font-size="11">0.17% of Class A shares</text>
+<g><title>Before the first mint. 0.00 USDEB outstanding.</title><rect x="64.0" y="104" width="31.5" height="298" fill="transparent"/></g>
+<g><title>October 7, 08:15:18 UTC. Mint of 7.00 USDEB. 7.00 USDEB outstanding.</title><rect x="95.5" y="104" width="4.6" height="298" fill="transparent"/></g>
+<g><title>October 7, 08:35:14 UTC. Mint of 2,900.00 USDEB. 2,907.00 USDEB outstanding.</title><rect x="100.1" y="104" width="11.6" height="298" fill="transparent"/></g>
+<g><title>October 7, 09:25:14 UTC. Mint of 22,620.00 USDEB. 25,527.00 USDEB outstanding.</title><rect x="111.7" y="104" width="27.9" height="298" fill="transparent"/></g>
+<g><title>October 7, 11:25:12 UTC. Mint of 244.00 USDEB. 25,771.00 USDEB outstanding.</title><rect x="139.6" y="104" width="8.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:00:18 UTC. Mint of 10,001.00 USDEB. 35,772.00 USDEB outstanding.</title><rect x="147.8" y="104" width="2.3" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:10:11 UTC. Mint of 275.00 USDEB. 36,047.00 USDEB outstanding.</title><rect x="150.1" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:15:12 UTC. Mint of 1,145.00 USDEB. 37,192.00 USDEB outstanding.</title><rect x="151.2" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:20:18 UTC. Mint of 498.04 USDEB. 37,690.04 USDEB outstanding.</title><rect x="152.4" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:25:17 UTC. Mint of 160.00 USDEB. 37,850.04 USDEB outstanding.</title><rect x="153.6" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:30:14 UTC. Mint of 189.22 USDEB. 38,039.26 USDEB outstanding.</title><rect x="154.7" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:35:16 UTC. Mint of 1,038.00 USDEB. 39,077.26 USDEB outstanding.</title><rect x="155.9" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:40:16 UTC. Mint of 665.00 USDEB. 39,742.26 USDEB outstanding.</title><rect x="157.1" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:45:19 UTC. Mint of 108.76 USDEB. 39,851.01 USDEB outstanding.</title><rect x="158.3" y="104" width="1.1" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:50:11 UTC. Mint of 55.00 USDEB. 39,906.01 USDEB outstanding.</title><rect x="159.4" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 12:55:15 UTC. Mint of 25.01 USDEB. 39,931.03 USDEB outstanding.</title><rect x="160.6" y="104" width="2.3" height="298" fill="transparent"/></g>
+<g><title>October 7, 13:05:11 UTC. Mint of 2,969.00 USDEB. 42,900.03 USDEB outstanding.</title><rect x="162.9" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 13:10:14 UTC. Mint of 2,463.00 USDEB. 45,363.03 USDEB outstanding.</title><rect x="164.0" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 13:15:13 UTC. Mint of 25.00 USDEB. 45,388.03 USDEB outstanding.</title><rect x="165.2" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 13:20:18 UTC. Mint of 4,339.00 USDEB. 49,727.03 USDEB outstanding.</title><rect x="166.4" y="104" width="7.0" height="298" fill="transparent"/></g>
+<g><title>October 7, 13:50:29 UTC. Mint of 30.72 USDEB. 49,757.75 USDEB outstanding.</title><rect x="173.4" y="104" width="5.8" height="298" fill="transparent"/></g>
+<g><title>October 7, 14:15:18 UTC. Mint of 461.68 USDEB. 50,219.42 USDEB outstanding.</title><rect x="179.2" y="104" width="9.3" height="298" fill="transparent"/></g>
+<g><title>October 7, 14:55:20 UTC. Mint of 26.00 USDEB. 50,245.42 USDEB outstanding.</title><rect x="188.5" y="104" width="23.3" height="298" fill="transparent"/></g>
+<g><title>October 7, 16:35:22 UTC. Mint of 702.00 USDEB. 50,947.42 USDEB outstanding.</title><rect x="211.7" y="104" width="2.4" height="298" fill="transparent"/></g>
+<g><title>October 7, 16:45:47 UTC. Mint of 27.00 USDEB. 50,974.42 USDEB outstanding.</title><rect x="214.2" y="104" width="13.8" height="298" fill="transparent"/></g>
+<g><title>October 7, 17:45:14 UTC. Mint of 27.00 USDEB. 51,001.42 USDEB outstanding.</title><rect x="228.0" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 17:50:12 UTC. Mint of 36.00 USDEB. 51,037.42 USDEB outstanding.</title><rect x="229.1" y="104" width="10.5" height="298" fill="transparent"/></g>
+<g><title>October 7, 18:35:16 UTC. Mint of 10.00 USDEB. 51,047.42 USDEB outstanding.</title><rect x="239.6" y="104" width="24.4" height="298" fill="transparent"/></g>
+<g><title>October 7, 20:20:13 UTC. Mint of 25.00 USDEB. 51,072.42 USDEB outstanding.</title><rect x="264.0" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 7, 20:25:13 UTC. Mint of 25.00 USDEB. 51,097.42 USDEB outstanding.</title><rect x="265.2" y="104" width="5.8" height="298" fill="transparent"/></g>
+<g><title>October 7, 20:50:21 UTC. Mint of 25.00 USDEB. 51,122.42 USDEB outstanding.</title><rect x="271.0" y="104" width="19.7" height="298" fill="transparent"/></g>
+<g><title>October 7, 22:15:16 UTC. Mint of 1,032.00 USDEB. 52,154.43 USDEB outstanding.</title><rect x="290.8" y="104" width="16.4" height="298" fill="transparent"/></g>
+<g><title>October 7, 23:25:59 UTC. Burn of 12,255.35 USDEB. 39,899.07 USDEB outstanding.</title><rect x="307.2" y="104" width="121.9" height="298" fill="transparent"/></g>
+<g><title>October 8, 08:10:21 UTC. Mint of 95.00 USDEB. 39,994.07 USDEB outstanding.</title><rect x="429.2" y="104" width="11.6" height="298" fill="transparent"/></g>
+<g><title>October 8, 09:00:22 UTC. Mint of 10.30 USDEB. 40,004.38 USDEB outstanding.</title><rect x="440.8" y="104" width="4.6" height="298" fill="transparent"/></g>
+<g><title>October 8, 09:20:11 UTC. Mint of 8.85 USDEB. 40,013.22 USDEB outstanding.</title><rect x="445.4" y="104" width="4.7" height="298" fill="transparent"/></g>
+<g><title>October 8, 09:40:18 UTC. Mint of 176.00 USDEB. 40,189.22 USDEB outstanding.</title><rect x="450.1" y="104" width="5.8" height="298" fill="transparent"/></g>
+<g><title>October 8, 10:05:13 UTC. Mint of 1,285.00 USDEB. 41,474.22 USDEB outstanding.</title><rect x="455.9" y="104" width="9.3" height="298" fill="transparent"/></g>
+<g><title>October 8, 10:45:13 UTC. Mint of 122.01 USDEB. 41,596.23 USDEB outstanding.</title><rect x="465.2" y="104" width="1.2" height="298" fill="transparent"/></g>
+<g><title>October 8, 10:50:13 UTC. Mint of 26.00 USDEB. 41,622.23 USDEB outstanding.</title><rect x="466.3" y="104" width="22.1" height="298" fill="transparent"/></g>
+<g><title>October 8, 12:25:15 UTC. Mint of 104.34 USDEB. 41,726.57 USDEB outstanding.</title><rect x="488.4" y="104" width="89.5" height="298" fill="transparent"/></g>
+<g><title>October 8, 18:50:15 UTC. Mint of 130.00 USDEB. 41,856.57 USDEB outstanding.</title><rect x="578.0" y="104" width="50.7" height="298" fill="transparent"/></g>
+<text x="20" y="452" fill="var(--sx-muted, #99a3b0)" font-size="11">EthenaDash from USDEB Transfer logs on BNB Smart Chain, reconciled to totalSupply at block 126,523,880.</text>
+</svg>

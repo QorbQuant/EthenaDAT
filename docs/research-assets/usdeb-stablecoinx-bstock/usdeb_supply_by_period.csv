@@ -1,0 +1,4 @@
+period,mints,minted,burns,burned,net,supply_at_end
+"Before trading opened, October 7 to 12:00 UTC",4,25771,0,0,25771,25771
+October 7 from 12:00 UTC,27,26383.42561065,1,12255.35384175,14128.0717689,39899.0717689
+October 8 to 22:28 UTC,9,1957.49833958,0,0,1957.49833958,41856.57010848
