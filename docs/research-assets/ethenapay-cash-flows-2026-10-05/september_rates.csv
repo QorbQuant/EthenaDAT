@@ -1,0 +1,11 @@
+measure,paid,base,rate_pct
+"USDe rewards a year, both payers, paid Sep 2 to Oct 1",13064.13 USDe,"3444038.32 USDe average end-of-day balance, Sep 1 to 30, x 365/30",4.615
+"USDe rewards a year, both payers, paid Sep 1 to Sep 30",12586.03 USDe,"3444038.32 USDe average end-of-day balance, Sep 1 to 30, x 365/30",4.446
+"USDe rewards a year, yield payer only, paid Sep 2 to Oct 1",11569.92 USDe,"3444038.32 USDe average end-of-day balance, Sep 1 to 30, x 365/30",4.087
+"USDe rewards a year, yield payer only, paid Sep 1 to Sep 30",11178.04 USDe,"3444038.32 USDe average end-of-day balance, Sep 1 to 30, x 365/30",3.949
+"AVAX cashback, paid 2026-09-01 to 2026-09-30",$41835.80 at the payout day's average AVAX price,"1588435.13 USDe card spend, Sep 1 to 30",2.634
+"AVAX cashback, paid 2026-09-02 to 2026-10-01",$42428.96 at the payout day's average AVAX price,"1588435.13 USDe card spend, Sep 1 to 30",2.671
+"AVAX cashback, paid 2026-09-03 to 2026-10-02",$44055.52 at the payout day's average AVAX price,"1588435.13 USDe card spend, Sep 1 to 30",2.774
+"AVAX cashback, paid 2026-09-04 to 2026-10-03",$45832.08 at the payout day's average AVAX price,"1588435.13 USDe card spend, Sep 1 to 30",2.885
+"AVAX cashback, paid 2026-09-05 to 2026-10-04",$49876.99 at the payout day's average AVAX price,"1588435.13 USDe card spend, Sep 1 to 30",3.140
+"Reversals, Sep 1 to 30",73424.57 USDe,"1588435.13 USDe card spend, Sep 1 to 30",4.622

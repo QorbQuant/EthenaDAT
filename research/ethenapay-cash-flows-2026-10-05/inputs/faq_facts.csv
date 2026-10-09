@@ -1,0 +1,8 @@
+id,fact,section,read_at_utc
+auth_settle,"A card transaction is authorized when the card is used and settles later, usually within one to three business days. Only settled transactions earn cashback",When does cashback arrive,2026-10-09T00:31Z
+cashback_asset,"Cashback is paid in AVAX, converted at the AVAX-USD rate at the time of credit, calculated and paid once a day",Cashback questions,2026-10-09T00:31Z
+cashback_bands,"Standard 4% on the first $2,500 of monthly spend, Pro 4.5% on the first $8,000, VIP 5% on the first $20,000, with lower rates above. Transactions under $1.00 and excluded categories earn nothing",How much cashback do I earn,2026-10-09T00:31Z
+cashback_reversal,Cashback is reversed if the underlying transaction is later refunded or charged back,When does cashback arrive,2026-10-09T00:31Z
+boost,"Balances earn the USDe base rate, which Ethena Pay does not set. A Daily Boost tops it up to the tier total of up to 6% a year, Standard 5% up to $5,000, Pro 6% up to $100,000, VIP 6% up to $1,000,000. Balance above the cap earns only the base rate",What is the Daily Boost,2026-10-09T00:31Z
+boost_paid,"The Boost accrues daily on time-weighted average balances, is paid daily in USDe, ordinarily within 24 hours of the close of the accrual day, and needs at least one qualifying card transaction each calendar month",What is the Daily Boost,2026-10-09T00:31Z
+credit_terms,"The Spend Card is 0% APR on purchases, and late payment and returned payment fees of up to $40 and $29 may apply",What are the fees,2026-10-09T00:32Z

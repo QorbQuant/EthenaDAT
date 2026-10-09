@@ -1,0 +1,72 @@
+{
+  "cutoff": "Chain data through the end of October 5, 2026 UTC · Sources read October 9, 2026 UTC",
+  "navigation": [
+    [
+      "Flow types",
+      "six-kinds-of-transfer-change-the-usde-in-ethenapay-wallets"
+    ],
+    [
+      "Card timing",
+      "card-spend-left-wallets-on-weekends-too"
+    ],
+    [
+      "Where it went",
+      "withdrawals-took-more-usde-than-the-card"
+    ],
+    [
+      "Rewards",
+      "usde-rewards-came-to-46-a-year-on-september-balances"
+    ],
+    [
+      "One day",
+      "october-5-from-the-opening-balance-to-the-close"
+    ],
+    [
+      "Checks",
+      "a-recount-of-the-chain-matched-the-dashboard-on-all-143-days"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "EthenaPay cash-flow chart",
+  "chartFile": "chart_cash_flows.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_cash_flows.svg",
+    "chart_preview.png",
+    "daily_flows.csv",
+    "bridge_by_period.csv",
+    "worked_day_2026-10-05.csv",
+    "september_rates.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "check_article_numbers.py",
+    "ethenapay_cash_flows.py",
+    "make_chart_svg.py",
+    "metadata.json",
+    "inputs/chain_checks.csv",
+    "inputs/chain_meta_62503a1.json",
+    "inputs/daily_chain_62503a1.csv",
+    "inputs/dune_05_daily_metrics_eb01f5d.sql",
+    "inputs/dune_06_kpi_headline_eb01f5d.sql",
+    "inputs/ethenapay_5faf41f.json",
+    "inputs/faq_facts.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "out/bridge_by_period.csv",
+    "out/bridge_lifetime.csv",
+    "out/chart_bridge.csv",
+    "out/chart_cash_flows.svg",
+    "out/daily_flows.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/september_rates.csv",
+    "out/weekday_spend.csv",
+    "out/worked_day_2026-10-05.csv"
+  ]
+}

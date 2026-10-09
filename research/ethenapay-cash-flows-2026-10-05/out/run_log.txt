@@ -1,0 +1,16 @@
+manifest: all pinned inputs match their recorded size and SHA-256
+chain recount: on all 144 days the change in USDe held equals deposits - withdrawals - card spend + reversals + rewards, to the wei
+card spend: AllowanceSpent 2,470,243.65 USDe in 29556 events; USDe sent to settlement 2,470,248.65 in 29557 transfers; the gap is one 5 USDe transfer on 2026-09-24
+dashboard vs recount: 143 of 144 days compared in 7 categories and spend counts, largest gap 2.33E-9 USDe; 2026-05-30 is absent from the dashboard series and had no flows
+lifetime to 2026-10-05 | deposits 11,056,937.78 | withdrawals 4,728,153.68 (42.76%) | card spend 2,470,248.65 (22.34%) | reversals 104,428.76 | yield 14,938.58 | other rewards 2,251.33 | held 3,980,154.11 (36.00%)
+ internal transfers between programme wallets 107,350.05 | reversals 4.23% of card spend | share of deposits before the beta 11.99% | held at Aug 31 530,905.24
+September | rewards paid Sep 2 to Oct 1 13,064.13 | average end-of-day balance Sep 1 to 30 3,444,038.32 | annualized 4.615% | reversals 4.62% of card spend
+ variants | both payers, paid Sep 2 to Oct 1 4.62% | both payers, paid Sep 1 to Sep 30 4.45% | yield payer only, paid Sep 2 to Oct 1 4.09% | yield payer only, paid Sep 1 to Sep 30 3.95% | no yield paid on 2026-09-14, 2026-09-15, 2026-09-16 | paid Sep 17 1,819.65
+cashback to 2026-10-05 7,835.03 AVAX $69,351.44 | September 4,595.286079 AVAX $41,835.80 on 1,588,435.13 USDe of card spend = 2.63%
+ cashback shifted later by 0 to 4 days | 0 2.63% | 1 2.67% | 2 2.77% | 3 2.89% | 4 3.14%
+spend since the beta opened | weekend average 770.2 events and 66,137 USDe a day | weekday average 637.2 events and 57,888 USDe a day
+ weekends against the Fridays and Mondays around them | events 770.2 against 705.8 | card spend 66,137 against 67,335 USDe a day | busiest day of each week from Sep 1 Saturday, Saturday, Saturday, Saturday, Saturday | spend events Oct 5 over Sep 1 6.6
+lumpiness | three largest withdrawal days 2026-09-16, 2026-09-22, 2026-09-15 57.8% of withdrawals | two largest deposit days 21.6% of deposits | allowance payments to two outside addresses 2,006.03 USDe, 0.08% of card spend, counted as withdrawals
+dashboard | yield APY tile 4.18% over 2026-09-08 to 2026-10-07 | with the other payer 4.84% | cashback tile 2.92% | tiles to the balance gap 2,246.33 USDe = other rewards less 5
+worked day 2026-10-05 | opening 3,939,522.21 | closing 3,980,154.11 | spend events 1250 from 382 wallets | depositing wallets 168 | funded wallets 1082 | cashback 407.4936 AVAX $4,470.20 to 335 wallets
+All checks passed.

@@ -1,3 +1,4 @@
+import { meta as payCashFlowsReview } from "./content/ethenapay-cash-flows-2026-10-05.mjs";
 import { meta as usdebReview } from "./content/usdeb-stablecoinx-bstock.mjs";
 import { meta as waiverReview } from "./content/stablecoinx-lock-up-waiver-2026-10-05.mjs";
 import { meta as payAdoptionReview } from "./content/ethenapay-adoption-2026-10-05.mjs";
@@ -12,6 +13,7 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [payCashFlowsReview.path]: payCashFlowsReview,
   [usdebReview.path]: usdebReview,
   [waiverReview.path]: waiverReview,
   [payAdoptionReview.path]: payAdoptionReview,
