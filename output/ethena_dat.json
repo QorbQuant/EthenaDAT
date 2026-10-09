@@ -1154,17 +1154,17 @@
   {
     "date":"2026-10-08",
     "usde_close":12.79,
-    "ena_price":0.206855,
+    "ena_price":0.226398,
     "usdew_close":3.8849999905,
     "shares_outstanding":24139375.0,
     "ena_holdings":3029000000.0,
-    "market_cap":308742605.0,
-    "ena_nav":626563682.0,
-    "nav_per_share":25.9561,
-    "mnav":0.4928,
+    "market_cap":308742606.0,
+    "ena_nav":685760487.0,
+    "nav_per_share":28.4084,
+    "mnav":0.4502,
     "ena_unlocked":3029000000.0,
-    "nav_unlocked":626563682.0,
-    "nav_unlocked_per_share":25.9561,
-    "mnav_unlocked":0.4928
+    "nav_unlocked":685760487.0,
+    "nav_unlocked_per_share":28.4084,
+    "mnav_unlocked":0.4502
   }
 ]
