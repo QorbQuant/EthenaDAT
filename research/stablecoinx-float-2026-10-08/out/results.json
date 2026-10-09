@@ -1,0 +1,106 @@
+{
+  "class_a_aug28": 24029375,
+  "class_a_oct8": 24139375,
+  "freely_tradable": 19063653,
+  "freely_tradable_pct_aug28": "79.33",
+  "freely_tradable_pct_oct8": "78.97",
+  "placement_other": 18967304,
+  "public_left": 96349,
+  "ethena_class_a": 3621132,
+  "restricted": 4965722,
+  "restricted_pct_aug28": "20.67",
+  "locked_to_dec25": 1344590,
+  "directors": 110000,
+  "class_b": 3157754,
+  "votes_pct": {
+    "Ethena (Ethena OpCo Ltd)": "57.42",
+    "Officers and directors": "34.71",
+    "TLGY's former chairman": "4.91",
+    "Other former TLGY holders": "2.96"
+  },
+  "sessions": 73,
+  "volume_total": 380773054,
+  "average_session": "5216069",
+  "average_session_pct_free": "27.4",
+  "volume_total_yahoo": 380817400,
+  "times_free": "19.97",
+  "median_session": 1794989,
+  "median_pct_of_free": "9.4",
+  "big_days": {
+    "2026-07-02": [
+      50854315,
+      "2.67"
+    ],
+    "2026-08-21": [
+      98971190,
+      "5.19"
+    ],
+    "2026-08-27": [
+      21667372,
+      "1.14"
+    ]
+  },
+  "months": [
+    {
+      "month": "2026-06",
+      "sessions": 3,
+      "volume": 1034966,
+      "average_daily": "344989",
+      "average_daily_pct_of_free": "1.8",
+      "highest_day": 435953,
+      "times_free_in_month": "0.05"
+    },
+    {
+      "month": "2026-07",
+      "sessions": 22,
+      "volume": 82059074,
+      "average_daily": "3729958",
+      "average_daily_pct_of_free": "19.6",
+      "highest_day": 50854315,
+      "times_free_in_month": "4.30"
+    },
+    {
+      "month": "2026-08",
+      "sessions": 21,
+      "volume": 169462218,
+      "average_daily": "8069629",
+      "average_daily_pct_of_free": "42.3",
+      "highest_day": 98971190,
+      "times_free_in_month": "8.89"
+    },
+    {
+      "month": "2026-09",
+      "sessions": 21,
+      "volume": 112923814,
+      "average_daily": "5377324",
+      "average_daily_pct_of_free": "28.2",
+      "highest_day": 14892262,
+      "times_free_in_month": "5.92"
+    },
+    {
+      "month": "2026-10",
+      "sessions": 6,
+      "volume": 15292982,
+      "average_daily": "2548830",
+      "average_daily_pct_of_free": "13.4",
+      "highest_day": 4741471,
+      "times_free_in_month": "0.80"
+    }
+  ],
+  "locked_pct_median_session": "74.9",
+  "free_or_ethena_oct8": 22684785,
+  "free_or_ethena_pct_oct8": "94.0",
+  "from_elsewhere_13f": 400342,
+  "sessions_since_effective": 18,
+  "volume_since_effective": 95134942,
+  "f13_class_a": 1531657,
+  "f13_class_a_pct_free": "8.03",
+  "f13_class_a_pct_class_a": "6.37",
+  "f13_managers_class_a": 7,
+  "f13_warrants": 5927302,
+  "f13_warrant_managers": 27,
+  "f13_warrants_pct_public": "51.54",
+  "lockup_end": "2026-12-25",
+  "rule144_earliest": "2027-07-02",
+  "redemption_gap": 13817
+}

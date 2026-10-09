@@ -1,0 +1,12 @@
+{
+  "path": "/research/usde-ena-tracking-2026-10-08/",
+  "title": "USDE vs ENA: How Closely StablecoinX Stock Has Tracked ENA",
+  "headline": "How closely has StablecoinX's stock tracked ENA?",
+  "name": "USDE against ENA tracking review",
+  "description": "StablecoinX's stock, USDE, moved the same way as ENA on 50 of 72 days to October 8, 2026, with a 0.64 correlation of daily moves at the 4 pm close.",
+  "article": true,
+  "datePublished": "2026-10-09",
+  "dateModified": "2026-10-09",
+  "image": "/research-assets/usde-ena-tracking-2026-10-08/chart_preview.png",
+  "imageAlt": "Two panels. Left, USDE's 72 daily moves against ENA's, from the June 26 close to the October 8 close, with a fitted line of slope 1.37. Right, mNAV at the 4 pm close, from 0.37× on June 26 to a low of 0.13× on July 24 and a high of 0.52× on September 25."
+}

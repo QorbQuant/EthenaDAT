@@ -1,0 +1,63 @@
+{
+  "cutoff": "Short interest through the September 30, 2026 settlement date · Trading from June 26 through the October 8 close · Sources read October 9, 2026 UTC",
+  "navigation": [
+    [
+      "Short interest",
+      "short-interest-reached-281-million-shares-on-september-30"
+    ],
+    [
+      "Days to cover",
+      "short-sellers-held-less-than-half-a-days-volume"
+    ],
+    [
+      "Daily short volume",
+      "daily-short-sale-volume-measures-trading"
+    ],
+    [
+      "Price test",
+      "daily-prices-suggest-the-short-sale-price-test-covered-more-than-half-of-usdes-sessions"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDE daily close and FINRA short interest, two panels",
+  "chartFile": "chart_short_interest.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_short_interest.svg",
+    "chart_preview.png",
+    "short_interest.csv",
+    "daily_short_volume.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "stablecoinx_short_interest_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/finra_daily_fetch.js",
+    "browser/finra_short_interest_fetch.js",
+    "inputs/filing_facts.csv",
+    "inputs/finra_daily_fetch_log.csv",
+    "inputs/finra_daily_short_volume.csv",
+    "inputs/finra_recheck_log.csv",
+    "inputs/finra_short_interest_fetch_log.csv",
+    "inputs/finra_short_interest_metadata.json",
+    "inputs/finra_short_interest_usde.json",
+    "inputs/finra_short_interest_usdew.json",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/usde_daily_spglobal_stockanalysis.csv",
+    "inputs/usde_hourly_yahoo.csv",
+    "out/chart_short_interest.csv",
+    "out/chart_short_interest.svg",
+    "out/daily_short_volume.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/short_interest.csv"
+  ]
+}

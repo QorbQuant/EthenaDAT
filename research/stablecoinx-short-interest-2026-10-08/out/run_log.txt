@@ -1,0 +1,54 @@
+Short selling in USDE, StablecoinX Inc.'s Class A stock
+Sessions 2026-06-26 to 2026-10-08
+
+[ok] share counts read from filing_facts.csv
+[ok] every input matches the SHA-256 in manifest.csv . 10 files
+[ok] 74 FINRA daily files read, each HTTP 200 with the expected header and a record count equal to its trailer . 2026-10-09T15:50:03.392Z to 2026-10-09T15:51:16.605Z
+[ok] each short interest file, without its final newline, matches the logged response hash
+[ok] S&P Global's daily low is within a cent of the lowest regular-session price in Yahoo's hourly bars on every session from August 26 . 31 sessions, equal to Yahoo's rounded to the cent on 27, a cent lower on 4
+[ok] 73 USDE sessions from June 26 to October 8, none on a weekend
+[ok] the session before June 26 is June 25, TLGY's last session, which S&P Global's USDE history carries . close $9.4
+[ok] one FINRA row for USDE on each session and none on other days . 73 rows
+[ok] in every row the exempt volume is within the short volume and the short volume within the total
+[ok] the short volume includes the short exempt volume, as FINRA's file layout says, since the two together exceed the total in some rows . 14 USDE and USDEW rows
+[ok] one USDE short interest record for each settlement date FINRA had published from June 30, for StablecoinX's Class A stock . 7 records, 2026-06-30 to 2026-09-30
+[ok] FINRA's checks progress to the latest settlement date in the saved records . last checked 2026-10-09T20:37:10.803275Z
+[ok] each record's previous position equals the record before it, and the change adds up
+[ok] no record carries a revision or split flag
+[ok] every settlement date was a USDE session
+[ok] FINRA's average daily volume is within 4% of S&P Global's average over the same cycle, after the first . 0.291, 0.975, 0.981, 0.964, 0.990, 0.989, 0.979
+[ok] FINRA lists days to cover as 1 on every date
+
+FINRA short interest, USDE
+  2026-06-30: 12,599 shares (+12,599), 0.07% of freely tradable, 0.05% of Class A; close $2.75, $34,647; cycle 2026-06-26 to 2026-06-30, 3 sessions, average volume 344,989 (FINRA 100,285), days to cover 0.04
+  2026-07-15: 277,768 shares (+265,169), 1.46% of freely tradable, 1.16% of Class A; close $1.82, $505,538; cycle 2026-07-01 to 2026-07-15, 10 sessions, average volume 7,450,622 (FINRA 7,261,719), days to cover 0.04
+  2026-07-31: 261,864 shares (-15,904), 1.37% of freely tradable, 1.09% of Class A; close $1.57, $411,126; cycle 2026-07-16 to 2026-07-31, 12 sessions, average volume 629,405 (FINRA 617,370), days to cover 0.42
+  2026-08-14: 196,109 shares (-65,755), 1.03% of freely tradable, 0.82% of Class A; close $2.93, $574,599; cycle 2026-08-03 to 2026-08-14, 10 sessions, average volume 439,283 (FINRA 423,299), days to cover 0.45
+  2026-08-31: 1,232,013 shares (+1,035,904), 6.46% of freely tradable, 5.13% of Class A; close $8.87, $10,927,955; cycle 2026-08-17 to 2026-08-31, 11 sessions, average volume 15,006,308 (FINRA 14,855,799), days to cover 0.08
+  2026-09-15: 1,579,478 shares (+347,465), 8.29% of freely tradable, 6.57% of Class A; close $6.12, $9,666,405; cycle 2026-09-01 to 2026-09-15, 10 sessions, average volume 3,631,373 (FINRA 3,591,161), days to cover 0.43
+  2026-09-30: 2,810,986 shares (+1,231,508), 14.75% of freely tradable, 11.70% of Class A; close $16.08, $45,200,655; cycle 2026-09-16 to 2026-09-30, 11 sessions, average volume 6,964,553 (FINRA 6,817,858), days to cover 0.40
+  window peak close $17.25 on 2026-09-25; 2026-10-08 close $12.79
+  USDEW warrants: 2026-06-30 22,351; 2026-07-15 29,901; 2026-07-31 4,263; 2026-08-14 11,639; 2026-08-31 12,435; 2026-09-15 8,064; 2026-09-30 7,731
+[ok] the busiest session fell in the cycle to August 31
+[ok] the price test was in effect on every session with a trigger and on the session after
+
+FINRA daily short sale volume, regular-hours trades reported to FINRA's facilities
+  73 sessions: 156,995,182 shares, 41.2% of S&P Global's 380,773,054 shares; marked short 90,743,186, 57.8%; short exempt 6,969,314
+  daily short share median 54.2%, from 13.7% on 2026-08-07 to 79.6% on 2026-06-26; over half on 47 of 73
+  S&P Global volume 380,773,054 shares, 20.0 times the freely tradable shares; busiest 2026-08-21, 98,971,190 shares, 5.2 times, close 85.2%
+  cycle to 2026-06-30: 200,613 shares marked short in FINRA's files; trades 2026-06-26 to 2026-06-29, 2 sessions, 148,444 marked short; short interest change +12,599
+  cycle to 2026-07-15: 12,882,696 shares marked short in FINRA's files; trades 2026-06-30 to 2026-07-14, 10 sessions, 12,721,072 marked short; short interest change +265,169
+  cycle to 2026-07-31: 1,521,003 shares marked short in FINRA's files; trades 2026-07-15 to 2026-07-30, 12 sessions, 1,645,436 marked short; short interest change -15,904
+  cycle to 2026-08-14: 625,531 shares marked short in FINRA's files; trades 2026-07-31 to 2026-08-13, 10 sessions, 575,380 marked short; short interest change -65,755
+  cycle to 2026-08-31: 44,706,262 shares marked short in FINRA's files; trades 2026-08-14 to 2026-08-28, 11 sessions, 41,919,487 marked short; short interest change +1,035,904
+  cycle to 2026-09-15: 9,593,577 shares marked short in FINRA's files; trades 2026-08-31 to 2026-09-14, 10 sessions, 11,572,351 marked short; short interest change +347,465
+  cycle to 2026-09-30: 17,872,912 shares marked short in FINRA's files; trades 2026-09-15 to 2026-09-29, 11 sessions, 17,473,944 marked short; short interest change +1,231,508
+  cycle to August 31 without 2026-08-21: average 6,609,820 a day
+  price test triggered on 25 sessions and in effect on 39; short exempt volume on those sessions 6,163,621, 88.4% of the total
+  most short exempt volume in one session: 2026-07-02, 2,763,284 shares, 39.6% of the total; without it the sessions with the test carried 80.8%
+  without a trigger on June 26: triggered on 24, in effect on 38, 87.9% of short exempt volume
+  sessions without the price test that still had short exempt volume: 25 of 34
+  a one-cent move in any session's low: trigger can change on 2026-08-10; in effect on 39 to 40 sessions
+  lowest close $1.43 on 2026-07-24; cycle to August 31 without the busiest session, days to cover 0.19
+
+All checks passed. Tables written to out/.

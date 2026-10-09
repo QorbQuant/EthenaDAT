@@ -1,0 +1,85 @@
+STABLECOINX perpetual on Lighter against USDE on Nasdaq
+Sessions 2026-08-26 to 2026-10-08. Lighter hourly data before 2026-10-09 00:00 UTC
+
+[ok] share counts read from filing_facts.csv
+[ok] every input matches the SHA-256 in manifest.csv . 13 files
+[ok] every Lighter request returned HTTP 200 . 15 requests, 2026-10-09T13:30:14.920Z to 2026-10-09T13:30:28.939Z
+[ok] the market snapshot is STABLECOINX, a perpetual, active, created on August 26 . created 2026-08-26 17:38:44 UTC
+[ok] snapshot terms, no trading fee, 20% initial margin, no trading-hours limit, RWA funding multiplier . maintenance margin 12.0%, base interest 0.0032% per 8 hours
+[ok] price-source snapshot shows the index from Pyth, not internal, with a cap of 40% around the reference price . read 2026-10-09 13:30:29 UTC, reference 13.24498
+      the docs set the cap at the last oracle price times (1 +/- 1/L); at the snapshot's maximum leverage of 5 that would be 20%, against 40% in the snapshot
+[ok] a trade candle for every hour from 18:00 UTC on August 26 to the cutoff . 1038 hours, 499 with no trade
+[ok] a mark price candle for every hour from 17:00 UTC on August 26 to the cutoff . 1039 hours
+[ok] one funding an hour from 18:00 UTC on August 26 to 00:00 UTC on October 9, with a known side . 1039 fundings
+[ok] daily trade candles have the same days, closes and volumes as the hours they cover . 44 days
+[ok] each daily high and low equals that of the traded hours or of all the hours . 11 days include a repeated price
+[ok] each daily mark close equals the last hourly mark close of that day
+[ok] Lighter's daily volume figure covers every day and is never below the candles . higher on 23 of 44 days, by over $1,000 on 12, total $16,135,537 against $14,597,147
+[ok] the median price implied by the funding payments is within 2% of the mark . median 0.9997, with 14 of 1037 payments more than 2% from the mark, 3 more than 5%, range 0.899 to 1.096
+[ok] 31 sessions from August 26 to October 8, the same days in both daily sources, none on a weekend
+[ok] the two daily sources give the same open and close, to the cent, for every session
+[ok] every Yahoo hourly bar's New York time matches its timestamp . 521 bars
+[ok] Yahoo's hourly bars run from 04:00 to 19:00 New York time, with none from 20:00 to 03:00 . bar starts ['04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '09:30', '10:30', '11:30', '12:30', '13:30', '14:30', '15:30', '16:00', '17:00', '18:00', '19:00']
+[ok] Yahoo's hourly data has a pre-market bar ending 9 am for every session
+[ok] Yahoo's hourly data has an after-hours bar ending 8 pm for every session but the last two . missing ['2026-10-07', '2026-10-08']
+
+At the 4 pm close
+  mark: median gap 0.42%, largest 1.60% on 2026-08-26, within 1% on 30 of 31, within 0.5% on 22
+  last trade: median gap 1.40%, largest 6.40% on 2026-09-17 (hour starting 2026-09-17 14:00 New York), within 1% on 14, within 2% on 19; sessions with no trade in the 3 pm hour 7
+[ok] 30 stretches between sessions, 24 weeknights, 5 weekends and the Labor Day weekend
+[ok] no opening price equals the mark it is compared with, so no stretch is a tie
+[ok] the two largest opening moves came on September 18 and 21
+
+Between sessions, 30 stretches from a close to the next open
+  open nearer the perp than the prior close: at 4 am 17 of 30, at 9 am 23 of 30; same direction as the opening move: 4 am 20, 9 am 26
+  if the perp's moves were unrelated to the open: nearer 12.30 at 4 am and 11.60 at 9 am; same direction 15.17 and 14.67
+  20,000 shuffles of the 4 am moves (seed 20261009): at least 17 nearer in 4.5%, at least 20 in the same direction in 5.3%; fair-coin chance of a count as far from 15 as 17, 0.585
+  mean miss: prior close 6.32%, perp at 4 am 4.87%, perp at 9 am 2.84%, USDE's own pre-market price at 9 am 2.65%
+  median miss: prior close 5.35%, 4 am 4.43%, 9 am 2.72%, pre-market 2.09%
+  without September 18 and 21: nearer at 4 am 15 of 28 (unrelated 12.14, shuffles 15.7%), same direction 18; mean miss prior close 4.92%, 4 am 4.65%; median miss prior close 4.98%, 4 am 4.43%; 9 am median 2.72% against pre-market 1.88%
+  perp at 9 am nearer the open than USDE's pre-market price on 17 of 30; USDE's pre-market price nearer the open than the prior close on 25 of 30
+  USDE's last after-hours price at 8 pm nearer the open than the prior close on 16 of 29; perp at 4 am nearer than it on 14; median miss after-hours 4.97%, perp at 4 am 4.45% on the same stretches
+  correlation with the opening move, 4 am 0.71 (slope 0.88), 9 am 0.93 (slope 0.94)
+  median absolute mark move, 4 pm to 8 pm 2.47% (16 over 2%), 8 pm to 4 am 0.68% (5 over 2%), 4 am to 9 am 3.09% (20 over 2%)
+  largest 8 pm to 4 am move: 2026-09-18 to 2026-09-21, mark 10.1419 to 13.1412, 29.6%; USDE close 10.19, next open 13.05 (28.1%); perp dollar volume in those hours $2,876,249
+  mark against USDE's own extended-hours price: 8 pm median gap 0.91%, within 1% on 16 of 29; 9 am median gap 1.38%, within 1% on 12 of 30
+  weeknights: 24, nearer at 4 am 15, at 9 am 19; mean miss close 6.23%, 4 am 5.47%, 9 am 3.04%
+  weekends: 6, nearer at 4 am 2, at 9 am 4; mean miss close 6.64%, 4 am 2.45%, 9 am 2.03%
+  largest swings of the mark from 8 pm to 4 am, against the prior close:
+    2026-09-18 to 2026-09-21: high 14.3311 (40.6%) in the hour from 2026-09-20 14:00, low 10.1401 (-0.5%) in the hour from 2026-09-18 20:00; trades up to 15.5; mark at 4 am 13.1412
+    2026-09-25 to 2026-09-28: high 22.5666 (30.8%) in the hour from 2026-09-27 20:00, low 17.414 (1.0%) in the hour from 2026-09-26 04:00; trades up to 25.0; mark at 4 am 17.8046
+    2026-09-22 to 2026-09-23: high 15.596 (15.2%) in the hour from 2026-09-23 01:00, low 14.0889 (4.1%) in the hour from 2026-09-22 21:00; trades up to 15.3763; mark at 4 am 15.1154
+    2026-10-02 to 2026-10-05: high 14.1461 (-0.0%) in the hour from 2026-10-04 22:00, low 12.6651 (-10.5%) in the hour from 2026-10-04 05:00; trades up to 15.6782; mark at 4 am 14.1461
+    2026-08-31 to 2026-09-01: high 8.0327 (-9.4%) in the hour from 2026-08-31 20:00, low 7.9596 (-10.3%) in the hour from 2026-09-01 01:00; trades up to 8.0236; mark at 4 am 7.9596
+[ok] six weekend windows, five of 56 hours and the Labor Day weekend of 80
+[ok] the busiest weekend ran from Friday, September 18 to Monday, September 21
+
+  weekend 2026-08-28 to 2026-08-31: 10 of 56 hours with a trade, 3,292.23 contracts, $22,238.10, 0.7%
+  weekend 2026-09-04 to 2026-09-08: 18 of 80 hours with a trade, 121.34 contracts, $965.08, 0.0%
+  weekend 2026-09-11 to 2026-09-14: 1 of 56 hours with a trade, 1.32 contracts, $10.30, 0.0%
+  weekend 2026-09-18 to 2026-09-21: 33 of 56 hours with a trade, 238,264.73 contracts, $2,876,248.82, 89.0%
+  weekend 2026-09-25 to 2026-09-28: 17 of 56 hours with a trade, 8,181.68 contracts, $148,539.80, 4.6%
+  weekend 2026-10-02 to 2026-10-05: 15 of 56 hours with a trade, 13,544.02 contracts, $184,906.61, 5.7%
+[ok] the mark closed every hour from 9 pm Friday to 2 pm Saturday New York time at $10.2419 . low 10.239
+[ok] the mark's hourly high hit $14.2674 exactly in four hours that weekend . 2026-09-19 15:00, 2026-09-20 13:00, 2026-09-20 16:00, 2026-09-20 17:00
+[ok] one hour went higher, within the 0.5% premium of $14.2674 . 14.3311 in the hour from 2026-09-20 14:00, 0.45% above
+  September 19 and 20: mark $10.1419 at 8 pm Friday, $10.2419 at 2 pm Saturday (0.51% above the $10.19 close), $12.7288 at 3 pm (24.3%), $13.1412 at 4 am Monday
+  10 am to 2 pm Saturday: 180,721.91 contracts, $2,117,912, 73.6% of the weekend's $2,876,249, at $10.2 to $12.1498
+  counted by UTC Saturday and Sunday instead, that weekend carried 92.8% of weekend dollar volume and the Saturday morning trades 78.2% of it
+  mark high 14.3311; $14.2674 is 40.01% above the close, reached in the hours from 2026-09-19 15:00, 2026-09-20 13:00, 2026-09-20 16:00, 2026-09-20 17:00 New York time
+[ok] funding at its base rate matches the market's 0.0032% per eight hours . 0.0004% an hour
+
+Funding, percent of position value an hour, positive when longs paid shorts
+  1039 hours: longs paid in 939, shorts in 98, none in 2 (2026-09-18T18:00:00+00:00, 2026-10-09T00:00:00+00:00); base 0.0004% in 800 hours (3.504% a year)
+  net +7.0095 percentage points; $0.6677 per contract; mean 0.00675% an hour, 59.1% a year at that pace
+  largest hour for longs 0.5% (5 hours at the 0.5% cap), for shorts -0.2858%; in session hours +2.1456, outside +4.8639
+[ok] the two weeks from September 14 added more than the whole period's net . 7.4961 against 7.0095 percentage points
+[ok] session and outside hours add up
+
+Activity: 499 of 1038 hours without a trade, 38 of 212 in the session hours and 461 of 826 outside them; weekend windows 94 of 360 hours with a trade
+  $14,597,146.75 traded, 1,308,611.91 contracts; outside the session hours $8,738,527, 59.9%, $10,579 an hour against $27,635 inside
+  mark candles with no movement: 266 of 826 outside the session hours, 1 of 213 inside
+  contracts per USDE share 0.0078; open interest 56,128.89 contracts, $742,310 at the mark, 0.29% of freely tradable shares, 0.23% of Class A shares
+  Lighter's open interest figure for October 8, $1,402,458.07, is 2.00 times the October 9 open contracts at the 8 pm mark
+
+All checks passed. Tables written to out/.

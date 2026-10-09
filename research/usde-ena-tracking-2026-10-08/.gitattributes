@@ -1,0 +1,3 @@
+# Preserve source bytes so recorded SHA-256 digests survive checkout.
+inputs/** -text
+out/** -text

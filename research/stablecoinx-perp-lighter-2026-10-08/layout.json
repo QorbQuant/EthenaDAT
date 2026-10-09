@@ -1,0 +1,81 @@
+{
+  "cutoff": "Lighter data from 2 pm New York time on August 26, 2026 to 8 pm on October 8 · Market settings and open interest at 9:30 am on October 9 · USDE prices through the October 8 close · Sources read October 9, 2026 UTC",
+  "navigation": [
+    [
+      "At the close",
+      "the-perps-mark-ended-within-1-of-usdes-close-on-30-of-31-days"
+    ],
+    [
+      "Off-hours",
+      "outside-the-session-the-perps-mark-moved-most-during-usdes-extended-hours"
+    ],
+    [
+      "Before the open",
+      "by-9-am-the-perps-mark-was-nearer-the-open-than-the-prior-close-on-23-of-30-mornings"
+    ],
+    [
+      "Weekends",
+      "one-weekend-carried-89-of-weekend-trading"
+    ],
+    [
+      "Funding",
+      "longs-paid-70-in-funding-over-six-weeks"
+    ],
+    [
+      "Size",
+      "open-interest-equaled-029-of-the-freely-tradable-shares"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Lighter's StablecoinX perp's mark against USDE's next open, scatter charts",
+  "chartFile": "chart_off_hours.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_off_hours.svg",
+    "chart_preview.png",
+    "close_comparison.csv",
+    "off_hours.csv",
+    "funding_by_week.csv",
+    "weekend_activity.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "stablecoinx_perp_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/lighter_fetch.js",
+    "browser/show_chunk.js",
+    "browser/yahoo_fetch.js",
+    "browser/yahoo_hourly_fetch.js",
+    "inputs/filing_facts.csv",
+    "inputs/lighter_candles_1d.csv",
+    "inputs/lighter_candles_1h.csv",
+    "inputs/lighter_fetch_log.csv",
+    "inputs/lighter_funding_1h.csv",
+    "inputs/lighter_mark_1d.csv",
+    "inputs/lighter_mark_1h.csv",
+    "inputs/lighter_metrics_1d.csv",
+    "inputs/lighter_orderbookdetails.json",
+    "inputs/lighter_priceoracleinfo.json",
+    "inputs/manifest.csv",
+    "inputs/usde_daily_spglobal_stockanalysis.csv",
+    "inputs/usde_daily_yahoo.csv",
+    "inputs/usde_hourly_yahoo.csv",
+    "inputs/sources.csv",
+    "out/chart_off_hours.csv",
+    "out/chart_off_hours.svg",
+    "out/close_comparison.csv",
+    "out/daily_activity.csv",
+    "out/funding_by_week.csv",
+    "out/off_hours.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/weekend_activity.csv"
+  ]
+}

@@ -1,0 +1,254 @@
+{
+ "window": {
+  "first_session": "2026-06-26",
+  "last_session": "2026-10-08",
+  "sessions": 73,
+  "daily_moves": 72
+ },
+ "daily_kraken": {
+  "n": 72,
+  "correlation": 0.6439371938703714,
+  "r_squared": 0.4146551096496483,
+  "beta": 1.3740131306480625,
+  "same_direction": 50,
+  "either_unchanged": 2,
+  "sd_x": 0.0778991432057457,
+  "sd_y": 0.16621876582031242
+ },
+ "daily_coingecko": {
+  "n": 72,
+  "correlation": 0.6444411493801924,
+  "r_squared": 0.4153043950144634,
+  "beta": 1.3751852682745178,
+  "same_direction": 50,
+  "either_unchanged": 1,
+  "sd_x": 0.07789365910544062,
+  "sd_y": 0.16621876582031242
+ },
+ "daily_dashboard_midnight": {
+  "n": 72,
+  "correlation": 0.1807254563428996,
+  "r_squared": 0.03266169057034931,
+  "beta": 0.3229996274427236,
+  "same_direction": 31,
+  "either_unchanged": 1,
+  "sd_x": 0.09300308654676828,
+  "sd_y": 0.16621876582031242
+ },
+ "daily_spearman": 0.49173580294552705,
+ "daily_without_largest_three": {
+  "dates": [
+   "2026-08-21",
+   "2026-08-27",
+   "2026-07-02"
+  ],
+  "n": 69,
+  "correlation": 0.503951792480854,
+  "r_squared": 0.2539674091446657,
+  "beta": 0.9111386373412645,
+  "same_direction": 47,
+  "either_unchanged": 2,
+  "sd_x": 0.06890075879818978,
+  "sd_y": 0.12457172376373049
+ },
+ "daily_log_changes": {
+  "n": 72,
+  "correlation": 0.6175982311392693,
+  "r_squared": 0.3814275751063543,
+  "beta": 1.2361100669291414,
+  "same_direction": 50,
+  "either_unchanged": 2,
+  "sd_x": 0.07326659499142228,
+  "sd_y": 0.14664157225880178
+ },
+ "by_period": [
+  {
+   "period": "2026-06-26 to 2026-07-31",
+   "n": 24,
+   "correlation": 0.465542544227727,
+   "r_squared": 0.21672986048602516,
+   "beta": 1.203825752331526,
+   "same_direction": 16,
+   "either_unchanged": 1,
+   "sd_x": 0.047113093333508986,
+   "sd_y": 0.12182765190872309
+  },
+  {
+   "period": "2026-07-31 to 2026-08-31",
+   "n": 21,
+   "correlation": 0.6218679961458792,
+   "r_squared": 0.3867198046304912,
+   "beta": 1.4477393383969905,
+   "same_direction": 10,
+   "either_unchanged": 1,
+   "sd_x": 0.09666838104800494,
+   "sd_y": 0.2250487545423015
+  },
+  {
+   "period": "2026-08-31 to 2026-10-08",
+   "n": 27,
+   "correlation": 0.7785923184345509,
+   "r_squared": 0.6062059983252891,
+   "beta": 1.16754295767852,
+   "same_direction": 24,
+   "either_unchanged": 0,
+   "sd_x": 0.08346189635080856,
+   "sd_y": 0.12515580620523736
+  }
+ ],
+ "weekly": {
+  "weeks": 15,
+  "n": 15,
+  "correlation": 0.7949163405321069,
+  "r_squared": 0.6318919884449565,
+  "beta": 1.6230291502992042,
+  "same_direction": 9,
+  "either_unchanged": 0,
+  "sd_x": 0.23328584034753572,
+  "sd_y": 0.476313921264528
+ },
+ "mnav_4pm": {
+  "first": 0.3687498548370774,
+  "last": 0.4989177165197187,
+  "low": 0.13009564367838722,
+  "low_date": "2026-07-24",
+  "high": 0.5225126422059079,
+  "high_date": "2026-09-25",
+  "sd_daily_move": 0.12238567608610933,
+  "sessions_below_0_25": 29
+ },
+ "cumulative": {
+  "usde": 2.4567567567567563,
+  "ena_4pm": 1.5665829145728645,
+  "usde_first": 3.7,
+  "usde_last": 12.79,
+  "ena_first": 0.0796,
+  "ena_last": 0.2043
+ },
+ "overnight": {
+  "n": 72,
+  "correlation": 0.5461165260405579,
+  "r_squared": 0.2982432600146074,
+  "beta": 0.956442787999517,
+  "same_direction": 44,
+  "either_unchanged": 3,
+  "sd_x": 0.07179128243492686,
+  "sd_y": 0.1257318741550458
+ },
+ "trading_hours": {
+  "n": 72,
+  "correlation": 0.4027656417801884,
+  "r_squared": 0.16222016219860705,
+  "beta": 1.3007753674496523,
+  "same_direction": 44,
+  "either_unchanged": 1,
+  "sd_x": 0.036161768852932465,
+  "sd_y": 0.11678835850892676
+ },
+ "largest_overnight_ena": {
+  "date": "2026-09-21",
+  "ena": 0.33000390716508843,
+  "usde_gap": 0.2806673209028461
+ },
+ "overnight_spearman": 0.6284850631927593,
+ "trading_hours_spearman": 0.4534053636889832,
+ "without_largest_day": {
+  "date": "2026-08-21",
+  "overnight": {
+   "n": 71,
+   "correlation": 0.5078821953086713,
+   "r_squared": 0.25794432431155534,
+   "beta": 0.9935845198453863,
+   "same_direction": 43,
+   "either_unchanged": 3,
+   "sd_x": 0.06288198061319326,
+   "sd_y": 0.12301782399856422
+  },
+  "trading_hours": {
+   "n": 71,
+   "correlation": 0.5139324147606051,
+   "r_squared": 0.26412652694166666,
+   "beta": 1.481039978941863,
+   "same_direction": 44,
+   "either_unchanged": 1,
+   "sd_x": 0.03620194076954961,
+   "sd_y": 0.10432601652488381
+  },
+  "overnight_spearman": 0.6127636745120466,
+  "trading_hours_spearman": 0.4982562038900067
+ },
+ "august_without_two_largest": {
+  "dates": [
+   "2026-08-21",
+   "2026-08-27"
+  ],
+  "same_direction_on_those_days": true,
+  "n": 19,
+  "correlation": 0.16890525948367222,
+  "r_squared": 0.02852898668124664,
+  "beta": 0.325673524099254,
+  "same_direction": 8,
+  "either_unchanged": 1,
+  "sd_x": 0.07144949754570074,
+  "sd_y": 0.1377648613901141
+ },
+ "ci95": {
+  "daily_kraken": [
+   0.48455447221016423,
+   0.7619396015229885
+  ],
+  "daily_dashboard_midnight": [
+   -0.05316921237821804,
+   0.39582159563951563
+  ]
+ },
+ "period_tests": [
+  {
+   "periods": [
+    "2026-06-26 to 2026-07-31",
+    "2026-07-31 to 2026-08-31"
+   ],
+   "z": 0.6963739783451383,
+   "p_two_sided": 0.4861946548234311
+  },
+  {
+   "periods": [
+    "2026-06-26 to 2026-07-31",
+    "2026-08-31 to 2026-10-08"
+   ],
+   "z": 1.7985565528230243,
+   "p_two_sided": 0.07208885526182356
+  },
+  {
+   "periods": [
+    "2026-07-31 to 2026-08-31",
+    "2026-08-31 to 2026-10-08"
+   ],
+   "z": 1.0062085669750613,
+   "p_two_sided": 0.31431525198178395
+  }
+ ],
+ "weekly_extra": {
+  "spearman": 0.4142857142857143,
+  "largest_week_end": "2026-08-21",
+  "largest_week_usde": 1.52901023890785,
+  "largest_week_ena": 0.6308243727598568,
+  "without_largest_week": {
+   "n": 14,
+   "correlation": 0.60629472922453,
+   "r_squared": 0.36759329868544616,
+   "beta": 0.9803931592551861,
+   "same_direction": 8,
+   "either_unchanged": 0,
+   "sd_x": 0.18457716444940273,
+   "sd_y": 0.2984657142119067
+  }
+ },
+ "dashboard_mnav": {
+  "last": 0.4502,
+  "high": 0.6095,
+  "high_date": "2026-09-25",
+  "low": 0.1278,
+  "low_date": "2026-07-24"
+ }
+}

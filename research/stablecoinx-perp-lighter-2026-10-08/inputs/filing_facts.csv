@@ -1,0 +1,3 @@
+key,value,unit,as_of,source,location
+freely_tradable_aug28,19063653,shares,2026-08-28,Resale prospectus (424B3) of September 14 2026,"Shares Eligible for Future Sale, page 100. The prospectus says approximately"
+dashboard_class_a_oct8,24139375,shares,2026-10-08,EthenaDash docs/data.json at commit 1cc3b05,"shares_outstanding, the 24029375 Class A shares in the prospectus plus 110000 directors' restricted shares granted September 30"

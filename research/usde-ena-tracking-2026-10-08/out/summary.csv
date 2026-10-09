@@ -1,0 +1,22 @@
+measure,moves,correlation,r_squared,slope,same_direction,sd_usde,sd_ena
+"daily, Kraken 4 pm",72,0.6439,0.4147,1.374,50,0.166219,0.077899
+"daily, CoinGecko 4 pm",72,0.6444,0.4153,1.3752,50,0.166219,0.077894
+"daily, dashboard midnight UTC",72,0.1807,0.0327,0.323,31,0.166219,0.093003
+"daily, without the three largest USDE moves",69,0.504,0.254,0.9111,47,0.124572,0.068901
+"daily, log changes",72,0.6176,0.3814,1.2361,50,0.146642,0.073267
+"daily, 2026-06-26 to 2026-07-31",24,0.4655,0.2167,1.2038,16,0.121828,0.047113
+"daily, 2026-07-31 to 2026-08-31",21,0.6219,0.3867,1.4477,10,0.225049,0.096668
+"daily, 2026-08-31 to 2026-10-08",27,0.7786,0.6062,1.1675,24,0.125156,0.083462
+"daily, August without its two largest USDE moves",19,0.1689,0.0285,0.3257,8,0.137765,0.071449
+weekly,15,0.7949,0.6319,1.623,9,0.476314,0.233286
+"weekly, without the largest week",14,0.6063,0.3676,0.9804,8,0.298466,0.184577
+overnight,72,0.5461,0.2982,0.9564,44,0.125732,0.071791
+trading hours,72,0.4028,0.1622,1.3008,44,0.116788,0.036162
+"overnight, without the largest daily USDE move",71,0.5079,0.2579,0.9936,43,0.123018,0.062882
+"trading hours, without the largest daily USDE move",71,0.5139,0.2641,1.481,44,0.104326,0.036202
+"daily, ranks",72,0.4917,,,,,
+"weekly, ranks",15,0.4143,,,,,
+"overnight, ranks",72,0.6285,,,,,
+"trading hours, ranks",72,0.4534,,,,,
+"overnight, ranks, without the largest daily USDE move",71,0.6128,,,,,
+"trading hours, ranks, without the largest daily USDE move",71,0.4983,,,,,

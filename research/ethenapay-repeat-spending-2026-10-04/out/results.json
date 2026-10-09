@@ -1,0 +1,428 @@
+{
+ "cutoff": "2026-10-04",
+ "wallets_with_spend_through_cutoff": 797,
+ "cohorts": [
+  {
+   "week": "2026-06-01",
+   "wallets": 5,
+   "week_k": [
+    4,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+   ]
+  },
+  {
+   "week": "2026-06-08",
+   "wallets": 6,
+   "week_k": [
+    4,
+    3,
+    3,
+    3,
+    3,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "week": "2026-06-15",
+   "wallets": 13,
+   "week_k": [
+    10,
+    9,
+    8,
+    8,
+    10,
+    9,
+    10,
+    8
+   ]
+  },
+  {
+   "week": "2026-06-22",
+   "wallets": 3,
+   "week_k": [
+    3,
+    2,
+    2,
+    3,
+    2,
+    2,
+    3,
+    2
+   ]
+  },
+  {
+   "week": "2026-06-29",
+   "wallets": 1,
+   "week_k": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1
+   ]
+  },
+  {
+   "week": "2026-07-06",
+   "wallets": 10,
+   "week_k": [
+    7,
+    7,
+    6,
+    5,
+    5,
+    6,
+    5,
+    4
+   ]
+  },
+  {
+   "week": "2026-07-13",
+   "wallets": 2,
+   "week_k": [
+    1,
+    2,
+    1,
+    1,
+    2,
+    2,
+    2,
+    2
+   ]
+  },
+  {
+   "week": "2026-07-20",
+   "wallets": 5,
+   "week_k": [
+    5,
+    5,
+    5,
+    4,
+    5,
+    5,
+    5,
+    5
+   ]
+  },
+  {
+   "week": "2026-07-27",
+   "wallets": 19,
+   "week_k": [
+    11,
+    11,
+    10,
+    14,
+    14,
+    13,
+    14,
+    12
+   ]
+  },
+  {
+   "week": "2026-08-03",
+   "wallets": 12,
+   "week_k": [
+    8,
+    8,
+    7,
+    7,
+    7,
+    7,
+    7,
+    7
+   ]
+  },
+  {
+   "week": "2026-08-10",
+   "wallets": 16,
+   "week_k": [
+    15,
+    11,
+    13,
+    14,
+    13,
+    14,
+    13,
+    null
+   ]
+  },
+  {
+   "week": "2026-08-17",
+   "wallets": 17,
+   "week_k": [
+    12,
+    14,
+    14,
+    11,
+    11,
+    15,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-08-24",
+   "wallets": 22,
+   "week_k": [
+    13,
+    14,
+    11,
+    10,
+    10,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-08-31",
+   "wallets": 126,
+   "week_k": [
+    104,
+    88,
+    91,
+    89,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-09-07",
+   "wallets": 92,
+   "week_k": [
+    74,
+    61,
+    72,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-09-14",
+   "wallets": 173,
+   "week_k": [
+    136,
+    124,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-09-21",
+   "wallets": 128,
+   "week_k": [
+    100,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  },
+  {
+   "week": "2026-09-28",
+   "wallets": 147,
+   "week_k": [
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null,
+    null
+   ]
+  }
+ ],
+ "pre_beta": {
+  "wallets": 131,
+  "curve": [
+   {
+    "k": 1,
+    "eligible": 131,
+    "spending": 94,
+    "share": 0.7175572519083969
+   },
+   {
+    "k": 2,
+    "eligible": 131,
+    "spending": 87,
+    "share": 0.6641221374045801
+   },
+   {
+    "k": 3,
+    "eligible": 131,
+    "spending": 81,
+    "share": 0.6183206106870229
+   },
+   {
+    "k": 4,
+    "eligible": 131,
+    "spending": 81,
+    "share": 0.6183206106870229
+   },
+   {
+    "k": 5,
+    "eligible": 131,
+    "spending": 83,
+    "share": 0.6335877862595419
+   }
+  ]
+ },
+ "beta": {
+  "wallets": 519,
+  "curve": [
+   {
+    "k": 1,
+    "eligible": 519,
+    "spending": 414,
+    "share": 0.7976878612716763
+   },
+   {
+    "k": 2,
+    "eligible": 391,
+    "spending": 273,
+    "share": 0.6982097186700768
+   },
+   {
+    "k": 3,
+    "eligible": 218,
+    "spending": 163,
+    "share": 0.7477064220183486
+   },
+   {
+    "k": 4,
+    "eligible": 126,
+    "spending": 89,
+    "share": 0.7063492063492064
+   }
+  ],
+  "latest_cohort_wallets": 147
+ },
+ "months": [
+  {
+   "group": "June",
+   "wallets": 28,
+   "spent_in_september": 15,
+   "spent_in_last_week": 13,
+   "spent_on_one_day_only": 3
+  },
+  {
+   "group": "July",
+   "wallets": 32,
+   "spent_in_september": 28,
+   "spent_in_last_week": 25,
+   "spent_on_one_day_only": 1
+  },
+  {
+   "group": "August 1 to 30",
+   "wallets": 71,
+   "spent_in_september": 56,
+   "spent_in_last_week": 47,
+   "spent_on_one_day_only": 6
+  }
+ ],
+ "first_spend_on_august_31": 1,
+ "monthly_check": [
+  {
+   "period": "June 2026",
+   "spending_wallets": 28,
+   "first_spend_in_period": 28,
+   "spent_in_an_earlier_period": 0,
+   "spend_events": 453
+  },
+  {
+   "period": "July 2026",
+   "spending_wallets": 51,
+   "first_spend_in_period": 32,
+   "spent_in_an_earlier_period": 19,
+   "spend_events": 1437
+  },
+  {
+   "period": "August 2026",
+   "spending_wallets": 116,
+   "first_spend_in_period": 72,
+   "spent_in_an_earlier_period": 44,
+   "spend_events": 4034
+  },
+  {
+   "period": "September 2026",
+   "spending_wallets": 673,
+   "first_spend_in_period": 573,
+   "spent_in_an_earlier_period": 100,
+   "spend_events": 17734
+  },
+  {
+   "period": "October 1 to 4, 2026",
+   "spending_wallets": 553,
+   "first_spend_in_period": 92,
+   "spent_in_an_earlier_period": 461,
+   "spend_events": 4648
+  }
+ ],
+ "lapsed": {
+  "first_spend_before": "2026-09-21",
+  "wallets": 522,
+  "no_spend_in_last_two_weeks": 110,
+  "lapsed_with_balance": 106,
+  "lapsed_with_1_usde_or_more": 81,
+  "lapsed_with_10_usde_or_more": 53,
+  "lapsed_with_100_usde_or_more": 30,
+  "lapsed_last_spend_by_month": {
+   "June": 8,
+   "August": 16,
+   "July": 5,
+   "September": 81
+  },
+  "lapsed_spent_on_october_5": 3,
+  "lapsed_one_day_only": 45,
+  "pre_beta_wallets": 131,
+  "lapsed_pre_beta": 40,
+  "first_three_beta_cohorts_wallets": 391,
+  "lapsed_first_three_beta_cohorts": 70,
+  "still_spending": 412,
+  "still_spending_with_balance": 412,
+  "still_spending_with_1_usde_or_more": 405
+ },
+ "spend_days_first_spend_before_sep21": {
+  "2 to 5": 103,
+  "6 to 14": 161,
+  "1": 45,
+  "15 or more": 213
+ },
+ "pre_beta_no_spend_september_1_to_cutoff": {
+  "wallets": 29,
+  "with_1_usde_or_more": 20
+ },
+ "beta_week_cohort": {
+  "wallets": 126,
+  "spent_in_any_of_weeks_1_to_4": 116,
+  "spent_in_all_four": 66
+ },
+ "again_within_7_days": {
+  "eligible": 650,
+  "spent_again": 542,
+  "share": 0.8338461538461538
+ }
+}

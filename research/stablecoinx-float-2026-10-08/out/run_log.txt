@@ -1,0 +1,99 @@
+1. Pinned inputs
+  ok data_1cc3b05.json matches its SHA-256 in manifest.csv
+  ok shares_out_1cc3b05.csv matches its SHA-256 in manifest.csv
+  ok 284,954,407.29 ENA at $0.21056 is the contribution agreement's $60 million
+2. The merger's share table, page F-16 of the resale prospectus
+  ok TLGY's lines add up to 635,939
+  ok the financing subtotal is 23,329,375
+  ok the table adds up to the 24,029,375 Class A shares the prospectus reports at August 28
+  ok the table's placement shares equal the 20,775,272 in the prospectus summary
+  ok contribution shares 1,813,164
+  ok SC Assets founders' shares 700,000
+  ok the forfeiture is the 5,449,700 founder shares less the 644,590 retained
+  TLGY-origin Class A 740,939, of which TLGY's insiders retained 644,590 and public holders kept 96,349
+  ok public shares before redemption less the table's redemptions leave the same 96,349
+  public shares before the table's redemption 489,887. The closing 8-K reports 379,721 redeemed, 13,817 fewer than the table
+3. Freely tradable and restricted shares at August 28
+  ok placement shares less Ethena's plus TLGY's public remainder equal the prospectus's 19,063,653
+  ok Ethena, the founders and TLGY's insiders hold the 4,965,722 shares offered for resale
+  ok restricted plus freely tradable equal the Class A count
+  ok holder file matches the derived free groups
+  ok holder file Ethena 3,621,132
+  ok holder file founders 700,000
+  ok holder file TLGY's insiders 644,590
+  ok Class B held by Ethena, the founders and TLGY's insiders adds up to 3,157,754
+  ok only the restricted holders hold Class B
+  ok the 23 Class B holders of record are the 23 restricted holders
+  ok founders hold one Class B share for each Class A share
+  ok tlgy_insiders hold one Class B share for each Class A share
+  ok 24,029,375 plus the directors' 110,000 is the dashboard's 24,139,375
+  ok the dashboard dataset at 1cc3b05 carries 24,139,375 on its October 8 row
+  ok the dashboard's insider feed holds eight Forms 4, all acquisitions, with no sale
+4. Selling stockholders, warrants and votes
+  ok row adds up, Ethena OpCo Ltd
+  ok row adds up, TLGY Sponsors LLC
+  ok row adds up, TLGY Holdings LLC
+  ok row adds up, Trust of TLGY's former chairman
+  ok row adds up, CPC Sponsor Opportunities I, LP
+  ok row adds up, CPC Sponsor Opportunities I (Parallel), LP
+  ok row adds up, Two former TLGY directors
+  ok row adds up, Twelve other former TLGY holders
+  ok row adds up, Trust of the chairman of the board
+  ok row adds up, Chief financial officer
+  ok row adds up, Schulz von Jacob Ltd (owned by the chief technology officer)
+  ok row adds up, A former TLGY director
+  ok row adds up, A further RSU holder
+  ok the table adds up to 12,668,943
+  ok its shares add up to 4,965,722
+  ok its RSUs add up to 78,635
+  ok its warrants add up to 7,624,586, Tranche A plus Tranche B
+  ok the parallel fund's warrants derive as 2,000,689, 999,000 below the 2,999,689 in footnotes (4) and (7)
+  ok Ethena 57.42% of Class B
+  ok officers and directors 34.71%
+  ok TLGY's former chairman 4.91%
+  ok officers and directors' 1,096,130 are the founders' 700,000 and the two CPC funds' 396,130
+  ok TLGY's former chairman's 155,111 are TLGY Sponsors, TLGY Holdings and the trust
+  ok TLGY's insiders 20.41%, as the closing 8-K says
+  votes Ethena (Ethena OpCo Ltd) 1,813,164 (57.42%), Officers and directors 1,096,130 (34.71%), TLGY's former chairman 155,111 (4.91%), Other former TLGY holders 93,349 (2.96%)
+5. Daily volume, first USDE session to October 8
+  ok 73 sessions from June 26 to October 8
+  ok Yahoo has the same 73 sessions
+  ok closes agree to the cent on every session
+  ok S&P Global closes match the dashboard's series
+  ok the two sources' totals agree within 0.1%
+  total 380,773,054 shares (Yahoo 380,817,400, +44,346). Largest daily gap 2.09%
+  19.9738 times the freely tradable count
+  2026-06 sessions 3 volume 1,034,966 average 344,989 (1.8% of free) top 435,953
+  2026-07 sessions 22 volume 82,059,074 average 3,729,958 (19.6% of free) top 50,854,315
+  2026-08 sessions 21 volume 169,462,218 average 8,069,629 (42.3% of free) top 98,971,190
+  2026-09 sessions 21 volume 112,923,814 average 5,377,324 (28.2% of free) top 14,892,262
+  2026-10 sessions 6 volume 15,292,982 average 2,548,830 (13.4% of free) top 4,741,471
+  ok months add up to the total
+  all sessions average 5,216,069 = 27.4% of free
+  ok three sessions traded more than the freely tradable count
+  2026-07-02 50,854,315 = 2.67 times
+  2026-08-21 98,971,190 = 5.19 times
+  2026-08-27 21,667,372 = 1.14 times
+  median session 1,794,989 = 9.4% of free
+  ok September row
+  ok the registration took effect at 4:00 pm, when the session closed
+  ok the first session after it was September 15
+  from September 15 to October 8, 18 sessions, 95,134,942 shares
+  locked shares 1,344,590 = 74.9% of the median session
+  ok cumulative ends at the total
+6. Form 13F reports for June 30, 2026
+  ok 28 managers' warrant rows add up to 5,957,302, one of them a call row of 30,000
+  ok seven managers reported 1,531,657 Class A shares
+  ok all report June 30
+  ok without the call row, 27 managers reported 5,927,302 public warrants
+  ok at least 400,342 of the managers' shares came from neither the first three sessions nor TLGY's public holders
+  Class A 1,531,657 = 8.03% of free, 6.37% of Class A
+  warrants 5,927,302 = 51.54% of public warrants
+7. Filings and dates
+  ok no Schedule 13D or 13G and no Form 144 on the list
+  ok eight Forms 3 and eight Forms 4
+  ok the EFFECT notice is on the list
+  ok six months after June 25, 2026 is Friday, December 25, 2026, Christmas Day
+  ok the first session after it is Monday, December 28
+  ok a year after the July 2, 2026 Form 10 information is July 2, 2027
+  ok 45 days after September 30 is November 14

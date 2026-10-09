@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="si-t si-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="si-t">USDE daily close and FINRA short interest, June 26 to October 8, 2026</title>
+<desc id="si-d">Two panels on one time axis. USDE closed at $3.70 on June 26, fell to a low close of $1.43 on July 24 and rose to $17.25 on September 25 before closing at $12.79 on October 8. Short interest at the seven settlement dates was 12,599, 277,768, 261,864, 196,109, 1,232,013, 1,579,478 and 2,810,986 shares.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">USDE short interest reached 2.81 million shares on September 30</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Daily close, and short interest at each settlement date FINRA had published when checked at 20:37 UTC on October 9.</text>
+<text x="64" y="78" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">USDE daily close, dollars</text>
+<text x="64" y="286" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">Short interest, million shares</text>
+<line x1="64" x2="780" y1="252.0" y2="252.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="256.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$0</text>
+<line x1="64" x2="780" y1="207.6" y2="207.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="211.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$5</text>
+<line x1="64" x2="780" y1="163.1" y2="163.1" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="167.1" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$10</text>
+<line x1="64" x2="780" y1="118.7" y2="118.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="122.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$15</text>
+<line x1="64" x2="780" y1="420.0" y2="420.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="424.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0</text>
+<line x1="64" x2="780" y1="383.6" y2="383.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="387.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">1</text>
+<line x1="64" x2="780" y1="347.3" y2="347.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="351.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">2</text>
+<line x1="64" x2="780" y1="310.9" y2="310.9" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="314.9" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">3</text>
+<line x1="91.5" x2="91.5" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="91.5" x2="91.5" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="91.5" x2="91.5" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="91.5" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Jun 30</text>
+<line x1="194.8" x2="194.8" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="194.8" x2="194.8" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="194.8" x2="194.8" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="194.8" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Jul 15</text>
+<line x1="305.0" x2="305.0" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="305.0" x2="305.0" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="305.0" x2="305.0" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="305.0" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Jul 31</text>
+<line x1="401.3" x2="401.3" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="401.3" x2="401.3" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="401.3" x2="401.3" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="401.3" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 14</text>
+<line x1="518.4" x2="518.4" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="518.4" x2="518.4" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="518.4" x2="518.4" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="518.4" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 31</text>
+<line x1="621.7" x2="621.7" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="621.7" x2="621.7" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="621.7" x2="621.7" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="621.7" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 15</text>
+<line x1="724.9" x2="724.9" y1="92" y2="252" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="724.9" x2="724.9" y1="300" y2="420" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4" opacity="0.6"/>
+<line x1="724.9" x2="724.9" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="724.9" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 30</text>
+<line x1="780" x2="780" y1="420" y2="425" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="780" y="440" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">Oct 8</text>
+<polyline points="64.0,219.1 84.7,222.4 91.5,227.6 98.4,233.5 105.3,227.3 132.8,228.7 139.7,231.0 146.6,234.0 153.5,232.5 160.4,234.6 181.0,235.1 187.9,236.2 194.8,235.8 201.7,234.9 208.6,236.5 229.2,236.6 236.1,235.4 243.0,235.4 249.9,236.5 256.8,239.3 277.4,238.5 284.3,237.0 291.2,238.6 298.1,237.4 305.0,238.0 325.6,236.7 332.5,234.4 339.4,230.1 346.3,232.2 353.2,233.6 373.8,232.8 380.7,230.7 387.6,230.2 394.5,229.0 401.3,226.0 422.0,225.2 428.9,227.2 435.8,224.5 442.7,216.4 449.5,186.1 470.2,196.3 477.1,198.1 484.0,198.8 490.8,180.3 497.7,191.9 518.4,173.2 525.3,177.7 532.2,185.3 539.0,174.0 545.9,181.5 573.5,184.4 580.3,187.6 587.2,192.8 594.1,187.5 614.8,185.9 621.7,197.6 628.5,196.9 635.4,183.5 642.3,161.4 663.0,140.0 669.8,131.6 676.7,137.6 683.6,125.6 690.5,98.7 711.2,113.7 718.0,115.8 724.9,109.1 731.8,114.1 738.7,126.2 759.3,119.0 766.2,124.6 773.1,129.2 780.0,138.3" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round"/>
+<g><title>Jun 26 close $3.70</title><circle cx="64.0" cy="219.1" r="5" fill="transparent"/></g>
+<g><title>Jun 29 close $3.33</title><circle cx="84.7" cy="222.4" r="5" fill="transparent"/></g>
+<g><title>Jun 30 close $2.75</title><circle cx="91.5" cy="227.6" r="5" fill="transparent"/></g>
+<g><title>Jul 1 close $2.08</title><circle cx="98.4" cy="233.5" r="5" fill="transparent"/></g>
+<g><title>Jul 2 close $2.78</title><circle cx="105.3" cy="227.3" r="5" fill="transparent"/></g>
+<g><title>Jul 6 close $2.62</title><circle cx="132.8" cy="228.7" r="5" fill="transparent"/></g>
+<g><title>Jul 7 close $2.36</title><circle cx="139.7" cy="231.0" r="5" fill="transparent"/></g>
+<g><title>Jul 8 close $2.03</title><circle cx="146.6" cy="234.0" r="5" fill="transparent"/></g>
+<g><title>Jul 9 close $2.19</title><circle cx="153.5" cy="232.5" r="5" fill="transparent"/></g>
+<g><title>Jul 10 close $1.96</title><circle cx="160.4" cy="234.6" r="5" fill="transparent"/></g>
+<g><title>Jul 13 close $1.90</title><circle cx="181.0" cy="235.1" r="5" fill="transparent"/></g>
+<g><title>Jul 14 close $1.78</title><circle cx="187.9" cy="236.2" r="5" fill="transparent"/></g>
+<g><title>Jul 15 close $1.82</title><circle cx="194.8" cy="235.8" r="5" fill="transparent"/></g>
+<g><title>Jul 16 close $1.92</title><circle cx="201.7" cy="234.9" r="5" fill="transparent"/></g>
+<g><title>Jul 17 close $1.74</title><circle cx="208.6" cy="236.5" r="5" fill="transparent"/></g>
+<g><title>Jul 20 close $1.73</title><circle cx="229.2" cy="236.6" r="5" fill="transparent"/></g>
+<g><title>Jul 21 close $1.87</title><circle cx="236.1" cy="235.4" r="5" fill="transparent"/></g>
+<g><title>Jul 22 close $1.87</title><circle cx="243.0" cy="235.4" r="5" fill="transparent"/></g>
+<g><title>Jul 23 close $1.74</title><circle cx="249.9" cy="236.5" r="5" fill="transparent"/></g>
+<g><title>Jul 24 close $1.43</title><circle cx="256.8" cy="239.3" r="5" fill="transparent"/></g>
+<g><title>Jul 27 close $1.52</title><circle cx="277.4" cy="238.5" r="5" fill="transparent"/></g>
+<g><title>Jul 28 close $1.69</title><circle cx="284.3" cy="237.0" r="5" fill="transparent"/></g>
+<g><title>Jul 29 close $1.51</title><circle cx="291.2" cy="238.6" r="5" fill="transparent"/></g>
+<g><title>Jul 30 close $1.64</title><circle cx="298.1" cy="237.4" r="5" fill="transparent"/></g>
+<g><title>Jul 31 close $1.57</title><circle cx="305.0" cy="238.0" r="5" fill="transparent"/></g>
+<g><title>Aug 3 close $1.72</title><circle cx="325.6" cy="236.7" r="5" fill="transparent"/></g>
+<g><title>Aug 4 close $1.98</title><circle cx="332.5" cy="234.4" r="5" fill="transparent"/></g>
+<g><title>Aug 5 close $2.46</title><circle cx="339.4" cy="230.1" r="5" fill="transparent"/></g>
+<g><title>Aug 6 close $2.23</title><circle cx="346.3" cy="232.2" r="5" fill="transparent"/></g>
+<g><title>Aug 7 close $2.07</title><circle cx="353.2" cy="233.6" r="5" fill="transparent"/></g>
+<g><title>Aug 10 close $2.16</title><circle cx="373.8" cy="232.8" r="5" fill="transparent"/></g>
+<g><title>Aug 11 close $2.40</title><circle cx="380.7" cy="230.7" r="5" fill="transparent"/></g>
+<g><title>Aug 12 close $2.45</title><circle cx="387.6" cy="230.2" r="5" fill="transparent"/></g>
+<g><title>Aug 13 close $2.59</title><circle cx="394.5" cy="229.0" r="5" fill="transparent"/></g>
+<g><title>Aug 14 close $2.93</title><circle cx="401.3" cy="226.0" r="5" fill="transparent"/></g>
+<g><title>Aug 17 close $3.02</title><circle cx="422.0" cy="225.2" r="5" fill="transparent"/></g>
+<g><title>Aug 18 close $2.79</title><circle cx="428.9" cy="227.2" r="5" fill="transparent"/></g>
+<g><title>Aug 19 close $3.09</title><circle cx="435.8" cy="224.5" r="5" fill="transparent"/></g>
+<g><title>Aug 20 close $4.00</title><circle cx="442.7" cy="216.4" r="5" fill="transparent"/></g>
+<g><title>Aug 21 close $7.41</title><circle cx="449.5" cy="186.1" r="5" fill="transparent"/></g>
+<g><title>Aug 24 close $6.27</title><circle cx="470.2" cy="196.3" r="5" fill="transparent"/></g>
+<g><title>Aug 25 close $6.06</title><circle cx="477.1" cy="198.1" r="5" fill="transparent"/></g>
+<g><title>Aug 26 close $5.98</title><circle cx="484.0" cy="198.8" r="5" fill="transparent"/></g>
+<g><title>Aug 27 close $8.07</title><circle cx="490.8" cy="180.3" r="5" fill="transparent"/></g>
+<g><title>Aug 28 close $6.76</title><circle cx="497.7" cy="191.9" r="5" fill="transparent"/></g>
+<g><title>Aug 31 close $8.87</title><circle cx="518.4" cy="173.2" r="5" fill="transparent"/></g>
+<g><title>Sep 1 close $8.36</title><circle cx="525.3" cy="177.7" r="5" fill="transparent"/></g>
+<g><title>Sep 2 close $7.50</title><circle cx="532.2" cy="185.3" r="5" fill="transparent"/></g>
+<g><title>Sep 3 close $8.77</title><circle cx="539.0" cy="174.0" r="5" fill="transparent"/></g>
+<g><title>Sep 4 close $7.93</title><circle cx="545.9" cy="181.5" r="5" fill="transparent"/></g>
+<g><title>Sep 8 close $7.61</title><circle cx="573.5" cy="184.4" r="5" fill="transparent"/></g>
+<g><title>Sep 9 close $7.24</title><circle cx="580.3" cy="187.6" r="5" fill="transparent"/></g>
+<g><title>Sep 10 close $6.66</title><circle cx="587.2" cy="192.8" r="5" fill="transparent"/></g>
+<g><title>Sep 11 close $7.26</title><circle cx="594.1" cy="187.5" r="5" fill="transparent"/></g>
+<g><title>Sep 14 close $7.44</title><circle cx="614.8" cy="185.9" r="5" fill="transparent"/></g>
+<g><title>Sep 15 close $6.12</title><circle cx="621.7" cy="197.6" r="5" fill="transparent"/></g>
+<g><title>Sep 16 close $6.20</title><circle cx="628.5" cy="196.9" r="5" fill="transparent"/></g>
+<g><title>Sep 17 close $7.71</title><circle cx="635.4" cy="183.5" r="5" fill="transparent"/></g>
+<g><title>Sep 18 close $10.19</title><circle cx="642.3" cy="161.4" r="5" fill="transparent"/></g>
+<g><title>Sep 21 close $12.60</title><circle cx="663.0" cy="140.0" r="5" fill="transparent"/></g>
+<g><title>Sep 22 close $13.54</title><circle cx="669.8" cy="131.6" r="5" fill="transparent"/></g>
+<g><title>Sep 23 close $12.87</title><circle cx="676.7" cy="137.6" r="5" fill="transparent"/></g>
+<g><title>Sep 24 close $14.22</title><circle cx="683.6" cy="125.6" r="5" fill="transparent"/></g>
+<g><title>Sep 25 close $17.25</title><circle cx="690.5" cy="98.7" r="5" fill="transparent"/></g>
+<g><title>Sep 28 close $15.56</title><circle cx="711.2" cy="113.7" r="5" fill="transparent"/></g>
+<g><title>Sep 29 close $15.32</title><circle cx="718.0" cy="115.8" r="5" fill="transparent"/></g>
+<g><title>Sep 30 close $16.08</title><circle cx="724.9" cy="109.1" r="5" fill="transparent"/></g>
+<g><title>Oct 1 close $15.51</title><circle cx="731.8" cy="114.1" r="5" fill="transparent"/></g>
+<g><title>Oct 2 close $14.15</title><circle cx="738.7" cy="126.2" r="5" fill="transparent"/></g>
+<g><title>Oct 5 close $14.96</title><circle cx="759.3" cy="119.0" r="5" fill="transparent"/></g>
+<g><title>Oct 6 close $14.33</title><circle cx="766.2" cy="124.6" r="5" fill="transparent"/></g>
+<g><title>Oct 7 close $13.82</title><circle cx="773.1" cy="129.2" r="5" fill="transparent"/></g>
+<g><title>Oct 8 close $12.79</title><circle cx="780.0" cy="138.3" r="5" fill="transparent"/></g>
+<circle cx="690.5" cy="98.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="682.5" y="102.7" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$17.25 on Sep 25</text>
+<g><title>Jun 30 settlement: 12,599 shares of short interest</title><rect x="84.5" y="419.5" width="14" height="0.5" rx="2" fill="#d95926"/></g>
+<text x="91.5" y="413.5" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">13K</text>
+<g><title>Jul 15 settlement: 277,768 shares of short interest</title><rect x="187.8" y="409.9" width="14" height="10.1" rx="2" fill="#d95926"/></g>
+<text x="194.8" y="403.9" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">278K</text>
+<g><title>Jul 31 settlement: 261,864 shares of short interest</title><rect x="298.0" y="410.5" width="14" height="9.5" rx="2" fill="#d95926"/></g>
+<text x="305.0" y="404.5" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">262K</text>
+<g><title>Aug 14 settlement: 196,109 shares of short interest</title><rect x="394.3" y="412.9" width="14" height="7.1" rx="2" fill="#d95926"/></g>
+<text x="401.3" y="406.9" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">196K</text>
+<g><title>Aug 31 settlement: 1,232,013 shares of short interest</title><rect x="511.4" y="375.2" width="14" height="44.8" rx="2" fill="#d95926"/></g>
+<text x="518.4" y="369.2" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">1.23M</text>
+<g><title>Sep 15 settlement: 1,579,478 shares of short interest</title><rect x="614.7" y="362.6" width="14" height="57.4" rx="2" fill="#d95926"/></g>
+<text x="621.7" y="356.6" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">1.58M</text>
+<g><title>Sep 30 settlement: 2,810,986 shares of short interest</title><rect x="717.9" y="317.8" width="14" height="102.2" rx="2" fill="#d95926"/></g>
+<text x="724.9" y="311.8" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">2.81M</text>
+</svg>

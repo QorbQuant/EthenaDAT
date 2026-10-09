@@ -1,0 +1,68 @@
+{
+  "cutoff": "Prices from June 26 through the October 8, 2026 close · Sources read October 6 to 9, 2026 UTC",
+  "navigation": [
+    [
+      "Daily moves",
+      "usde-moved-the-same-way-as-ena-on-50-of-72-days"
+    ],
+    [
+      "By period",
+      "the-link-was-closest-from-september"
+    ],
+    [
+      "Large days",
+      "a-few-large-days-carried-the-fitted-slope"
+    ],
+    [
+      "Midnight prices",
+      "midnight-prices-hide-most-of-the-link"
+    ],
+    [
+      "Overnight",
+      "most-of-enas-movement-came-outside-usdes-trading-hours"
+    ],
+    [
+      "mNAV",
+      "mnav-moved-more-than-ena"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDE's daily moves against ENA's, and mNAV at the close, two panels",
+  "chartFile": "chart_usde_ena.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_usde_ena.svg",
+    "chart_preview.png",
+    "daily_moves.csv",
+    "summary.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "usde_ena_tracking_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/defillama_ena_fetch.js",
+    "browser/kraken_ena_fetch.js",
+    "inputs/dashboard_series_152e758.csv",
+    "inputs/defillama_fetch_log.csv",
+    "inputs/ena_coingecko_via_defillama.csv",
+    "inputs/filing_facts.csv",
+    "inputs/kraken_enausd_4h_20utc_00utc.csv",
+    "inputs/kraken_fetch_log.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/usde_daily_spglobal_stockanalysis.csv",
+    "out/chart_data.csv",
+    "out/chart_usde_ena.svg",
+    "out/daily_moves.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/summary.csv"
+  ]
+}

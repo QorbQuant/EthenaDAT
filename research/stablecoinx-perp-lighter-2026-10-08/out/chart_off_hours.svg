@@ -1,0 +1,128 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="oh-t oh-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="oh-t">USDE's next open against the mark of Lighter's StablecoinX perp at 4 am and 9 am New York time, August 26 to October 8, 2026</title>
+<desc id="oh-d">Two scatter charts of the 30 stretches between a close and the next open. With the perp's mark at 4 am, the open sat nearer the mark than the prior close 17 times. With the mark at 9 am, 23 times. The largest move came over the weekend of September 19 and 20, when the mark sat 29% above Friday's close at 4 am on Monday and USDE opened 28% above it.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">By 9 am the perp&#8217;s mark was a closer guide to USDE&#8217;s next open than at 4 am</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Each dot is one stretch from a close to the next open, August 26 to October 8, 2026. Each move runs from USDE&#8217;s prior close.</text>
+<circle cx="25" cy="72" r="4" fill="#3987e5" fill-opacity="0.85"/>
+<text x="36" y="76" fill="var(--sx-text, #eeeae3)" font-size="12">Open nearer the mark</text>
+<circle cx="180" cy="72" r="4" fill="none" stroke="#d95926" stroke-width="1.75"/>
+<text x="191" y="76" fill="var(--sx-text, #eeeae3)" font-size="12">Open nearer the prior close</text>
+<line x1="360" x2="380" y1="72" y2="72" stroke="var(--sx-muted, #99a3b0)" stroke-dasharray="4 3"/>
+<text x="386" y="76" fill="var(--sx-muted, #99a3b0)" font-size="12">Open equal to the mark</text>
+<line x1="535" x2="555" y1="72" y2="72" stroke="var(--sx-muted, #99a3b0)"/>
+<text x="561" y="76" fill="var(--sx-muted, #99a3b0)" font-size="12">Open equal to the prior close</text>
+<text x="64" y="94" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">Perp&#8217;s mark at 4 am New York time</text>
+<line x1="64" x2="364" y1="370.7" y2="370.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="97.3" x2="97.3" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="97.3" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">-10%</text>
+<text x="56" y="374.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">-10%</text>
+<line x1="64" x2="364" y1="304.0" y2="304.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="164.0" x2="164.0" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="164.0" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0%</text>
+<text x="56" y="308.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0%</text>
+<line x1="64" x2="364" y1="237.3" y2="237.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="230.7" x2="230.7" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="230.7" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+10%</text>
+<text x="56" y="241.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+10%</text>
+<line x1="64" x2="364" y1="170.7" y2="170.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="297.3" x2="297.3" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="297.3" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+20%</text>
+<text x="56" y="174.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+20%</text>
+<line x1="64" x2="364" y1="104.0" y2="104.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="364.0" x2="364.0" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="364.0" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+30%</text>
+<text x="56" y="108.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+30%</text>
+<line x1="64.0" y1="404.0" x2="364.0" y2="104.0" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="64" x2="364" y1="304.0" y2="304.0" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="214.0" y="438" fill="var(--sx-muted, #99a3b0)" font-size="12" text-anchor="middle">Perp&#8217;s mark against the prior close</text>
+<g><title>Aug 26 close to Aug 27 open (weeknight). Open +8.7%, mark at 4 am +3.4%</title><circle cx="186.3" cy="246.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="186.3" cy="246.0" r="10" fill="transparent"/></g>
+<g><title>Aug 27 close to Aug 28 open (weeknight). Open -10.3%, mark at 4 am -4.7%</title><circle cx="132.7" cy="372.6" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="132.7" cy="372.6" r="10" fill="transparent"/></g>
+<g><title>Aug 28 close to Aug 31 open (weekend). Open +0.0%, mark at 4 am -1.1%</title><circle cx="156.8" cy="304.0" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="156.8" cy="304.0" r="10" fill="transparent"/></g>
+<g><title>Aug 31 close to Sep 1 open (weeknight). Open -8.1%, mark at 4 am -10.3%</title><circle cx="95.6" cy="358.1" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="95.6" cy="358.1" r="10" fill="transparent"/></g>
+<g><title>Sep 1 close to Sep 2 open (weeknight). Open -3.5%, mark at 4 am -2.7%</title><circle cx="145.9" cy="327.1" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="145.9" cy="327.1" r="10" fill="transparent"/></g>
+<g><title>Sep 2 close to Sep 3 open (weeknight). Open +8.1%, mark at 4 am -2.5%</title><circle cx="147.7" cy="249.8" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="147.7" cy="249.8" r="10" fill="transparent"/></g>
+<g><title>Sep 3 close to Sep 4 open (weeknight). Open -10.3%, mark at 4 am -0.7%</title><circle cx="159.1" cy="372.4" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="159.1" cy="372.4" r="10" fill="transparent"/></g>
+<g><title>Sep 4 close to Sep 8 open (holiday weekend). Open -2.1%, mark at 4 am +0.3%</title><circle cx="165.8" cy="318.3" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="165.8" cy="318.3" r="10" fill="transparent"/></g>
+<g><title>Sep 8 close to Sep 9 open (weeknight). Open +5.3%, mark at 4 am -0.4%</title><circle cx="161.1" cy="268.9" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="161.1" cy="268.9" r="10" fill="transparent"/></g>
+<g><title>Sep 9 close to Sep 10 open (weeknight). Open -7.0%, mark at 4 am -1.6%</title><circle cx="153.5" cy="350.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="153.5" cy="350.9" r="10" fill="transparent"/></g>
+<g><title>Sep 10 close to Sep 11 open (weeknight). Open +6.6%, mark at 4 am +1.2%</title><circle cx="171.7" cy="259.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="171.7" cy="259.9" r="10" fill="transparent"/></g>
+<g><title>Sep 11 close to Sep 14 open (weekend). Open -4.1%, mark at 4 am -2.6%</title><circle cx="146.9" cy="331.5" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="146.9" cy="331.5" r="10" fill="transparent"/></g>
+<g><title>Sep 14 close to Sep 15 open (weeknight). Open -6.5%, mark at 4 am -1.9%</title><circle cx="151.3" cy="347.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="151.3" cy="347.0" r="10" fill="transparent"/></g>
+<g><title>Sep 15 close to Sep 16 open (weeknight). Open -1.0%, mark at 4 am -5.3%</title><circle cx="128.3" cy="310.5" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="128.3" cy="310.5" r="10" fill="transparent"/></g>
+<g><title>Sep 16 close to Sep 17 open (weeknight). Open +6.6%, mark at 4 am +0.7%</title><circle cx="168.7" cy="259.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="168.7" cy="259.9" r="10" fill="transparent"/></g>
+<g><title>Sep 17 close to Sep 18 open (weeknight). Open +23.7%, mark at 4 am +8.7%</title><circle cx="222.1" cy="145.7" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="222.1" cy="145.7" r="10" fill="transparent"/></g>
+<g><title>Sep 18 close to Sep 21 open (weekend). Open +28.1%, mark at 4 am +29.0%</title><circle cx="357.1" cy="116.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="357.1" cy="116.9" r="10" fill="transparent"/></g>
+<g><title>Sep 21 close to Sep 22 open (weeknight). Open +3.1%, mark at 4 am +3.5%</title><circle cx="187.1" cy="283.3" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="187.1" cy="283.3" r="10" fill="transparent"/></g>
+<g><title>Sep 22 close to Sep 23 open (weeknight). Open -2.4%, mark at 4 am +11.6%</title><circle cx="241.6" cy="319.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="241.6" cy="319.7" r="10" fill="transparent"/></g>
+<g><title>Sep 23 close to Sep 24 open (weeknight). Open -0.8%, mark at 4 am +3.6%</title><circle cx="188.3" cy="309.2" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="188.3" cy="309.2" r="10" fill="transparent"/></g>
+<g><title>Sep 24 close to Sep 25 open (weeknight). Open +9.2%, mark at 4 am +5.0%</title><circle cx="197.0" cy="242.6" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="197.0" cy="242.6" r="10" fill="transparent"/></g>
+<g><title>Sep 25 close to Sep 28 open (weekend). Open -4.0%, mark at 4 am +3.2%</title><circle cx="185.5" cy="330.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="185.5" cy="330.7" r="10" fill="transparent"/></g>
+<g><title>Sep 28 close to Sep 29 open (weeknight). Open +3.5%, mark at 4 am -1.0%</title><circle cx="157.5" cy="280.9" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="157.5" cy="280.9" r="10" fill="transparent"/></g>
+<g><title>Sep 29 close to Sep 30 open (weeknight). Open +4.7%, mark at 4 am -7.0%</title><circle cx="117.5" cy="272.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="117.5" cy="272.7" r="10" fill="transparent"/></g>
+<g><title>Sep 30 close to Oct 1 open (weeknight). Open -0.2%, mark at 4 am -0.9%</title><circle cx="158.1" cy="305.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="158.1" cy="305.7" r="10" fill="transparent"/></g>
+<g><title>Oct 1 close to Oct 2 open (weeknight). Open -1.6%, mark at 4 am -6.2%</title><circle cx="122.6" cy="314.3" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="122.6" cy="314.3" r="10" fill="transparent"/></g>
+<g><title>Oct 2 close to Oct 5 open (weekend). Open +1.5%, mark at 4 am -0.0%</title><circle cx="163.8" cy="294.1" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="163.8" cy="294.1" r="10" fill="transparent"/></g>
+<g><title>Oct 5 close to Oct 6 open (weeknight). Open -6.8%, mark at 4 am -6.0%</title><circle cx="124.3" cy="349.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="124.3" cy="349.0" r="10" fill="transparent"/></g>
+<g><title>Oct 6 close to Oct 7 open (weeknight). Open -5.4%, mark at 4 am -3.4%</title><circle cx="141.1" cy="340.3" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="141.1" cy="340.3" r="10" fill="transparent"/></g>
+<g><title>Oct 7 close to Oct 8 open (weeknight). Open -6.4%, mark at 4 am -2.7%</title><circle cx="146.3" cy="346.5" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="146.3" cy="346.5" r="10" fill="transparent"/></g>
+<text x="347.1" y="120.9" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Weekend of Sep 19</text>
+<text x="356" y="394" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">17 of 30 opens nearer the mark</text>
+<text x="464" y="94" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">Perp&#8217;s mark at 9 am New York time</text>
+<line x1="464" x2="764" y1="370.7" y2="370.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="497.3" x2="497.3" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="497.3" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">-10%</text>
+<text x="456" y="374.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">-10%</text>
+<line x1="464" x2="764" y1="304.0" y2="304.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="564.0" x2="564.0" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="564.0" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0%</text>
+<text x="456" y="308.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0%</text>
+<line x1="464" x2="764" y1="237.3" y2="237.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="630.7" x2="630.7" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="630.7" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+10%</text>
+<text x="456" y="241.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+10%</text>
+<line x1="464" x2="764" y1="170.7" y2="170.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="697.3" x2="697.3" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="697.3" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+20%</text>
+<text x="456" y="174.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+20%</text>
+<line x1="464" x2="764" y1="104.0" y2="104.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="764.0" x2="764.0" y1="104" y2="404" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="764.0" y="420" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+30%</text>
+<text x="456" y="108.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+30%</text>
+<line x1="464.0" y1="404.0" x2="764.0" y2="104.0" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="4 3"/>
+<line x1="464" x2="764" y1="304.0" y2="304.0" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="614.0" y="438" fill="var(--sx-muted, #99a3b0)" font-size="12" text-anchor="middle">Perp&#8217;s mark against the prior close</text>
+<g><title>Aug 26 close to Aug 27 open (weeknight). Open +8.7%, mark at 9 am +5.6%</title><circle cx="601.3" cy="246.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="601.3" cy="246.0" r="10" fill="transparent"/></g>
+<g><title>Aug 27 close to Aug 28 open (weeknight). Open -10.3%, mark at 9 am -6.1%</title><circle cx="523.3" cy="372.6" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="523.3" cy="372.6" r="10" fill="transparent"/></g>
+<g><title>Aug 28 close to Aug 31 open (weekend). Open +0.0%, mark at 9 am +1.9%</title><circle cx="576.5" cy="304.0" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="576.5" cy="304.0" r="10" fill="transparent"/></g>
+<g><title>Aug 31 close to Sep 1 open (weeknight). Open -8.1%, mark at 9 am -6.0%</title><circle cx="524.1" cy="358.1" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="524.1" cy="358.1" r="10" fill="transparent"/></g>
+<g><title>Sep 1 close to Sep 2 open (weeknight). Open -3.5%, mark at 9 am -0.4%</title><circle cx="561.3" cy="327.1" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="561.3" cy="327.1" r="10" fill="transparent"/></g>
+<g><title>Sep 2 close to Sep 3 open (weeknight). Open +8.1%, mark at 9 am +6.5%</title><circle cx="607.3" cy="249.8" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="607.3" cy="249.8" r="10" fill="transparent"/></g>
+<g><title>Sep 3 close to Sep 4 open (weeknight). Open -10.3%, mark at 9 am -10.2%</title><circle cx="495.8" cy="372.4" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="495.8" cy="372.4" r="10" fill="transparent"/></g>
+<g><title>Sep 4 close to Sep 8 open (holiday weekend). Open -2.1%, mark at 9 am -1.3%</title><circle cx="555.1" cy="318.3" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="555.1" cy="318.3" r="10" fill="transparent"/></g>
+<g><title>Sep 8 close to Sep 9 open (weeknight). Open +5.3%, mark at 9 am +4.3%</title><circle cx="592.6" cy="268.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="592.6" cy="268.9" r="10" fill="transparent"/></g>
+<g><title>Sep 9 close to Sep 10 open (weeknight). Open -7.0%, mark at 9 am -3.2%</title><circle cx="542.5" cy="350.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="542.5" cy="350.9" r="10" fill="transparent"/></g>
+<g><title>Sep 10 close to Sep 11 open (weeknight). Open +6.6%, mark at 9 am +8.7%</title><circle cx="621.8" cy="259.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="621.8" cy="259.9" r="10" fill="transparent"/></g>
+<g><title>Sep 11 close to Sep 14 open (weekend). Open -4.1%, mark at 9 am -1.1%</title><circle cx="556.8" cy="331.5" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="556.8" cy="331.5" r="10" fill="transparent"/></g>
+<g><title>Sep 14 close to Sep 15 open (weeknight). Open -6.5%, mark at 9 am -2.9%</title><circle cx="545.0" cy="347.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="545.0" cy="347.0" r="10" fill="transparent"/></g>
+<g><title>Sep 15 close to Sep 16 open (weeknight). Open -1.0%, mark at 9 am -0.1%</title><circle cx="563.0" cy="310.5" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="563.0" cy="310.5" r="10" fill="transparent"/></g>
+<g><title>Sep 16 close to Sep 17 open (weeknight). Open +6.6%, mark at 9 am +5.6%</title><circle cx="601.6" cy="259.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="601.6" cy="259.9" r="10" fill="transparent"/></g>
+<g><title>Sep 17 close to Sep 18 open (weeknight). Open +23.7%, mark at 9 am +27.1%</title><circle cx="744.9" cy="145.7" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="744.9" cy="145.7" r="10" fill="transparent"/></g>
+<g><title>Sep 18 close to Sep 21 open (weekend). Open +28.1%, mark at 9 am +29.1%</title><circle cx="758.3" cy="116.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="758.3" cy="116.9" r="10" fill="transparent"/></g>
+<g><title>Sep 21 close to Sep 22 open (weeknight). Open +3.1%, mark at 9 am +10.2%</title><circle cx="631.9" cy="283.3" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="631.9" cy="283.3" r="10" fill="transparent"/></g>
+<g><title>Sep 22 close to Sep 23 open (weeknight). Open -2.4%, mark at 9 am +6.3%</title><circle cx="606.0" cy="319.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="606.0" cy="319.7" r="10" fill="transparent"/></g>
+<g><title>Sep 23 close to Sep 24 open (weeknight). Open -0.8%, mark at 9 am +0.5%</title><circle cx="567.3" cy="309.2" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="567.3" cy="309.2" r="10" fill="transparent"/></g>
+<g><title>Sep 24 close to Sep 25 open (weeknight). Open +9.2%, mark at 9 am +10.6%</title><circle cx="634.6" cy="242.6" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="634.6" cy="242.6" r="10" fill="transparent"/></g>
+<g><title>Sep 25 close to Sep 28 open (weekend). Open -4.0%, mark at 9 am -0.6%</title><circle cx="559.8" cy="330.7" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="559.8" cy="330.7" r="10" fill="transparent"/></g>
+<g><title>Sep 28 close to Sep 29 open (weeknight). Open +3.5%, mark at 9 am +1.1%</title><circle cx="571.2" cy="280.9" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="571.2" cy="280.9" r="10" fill="transparent"/></g>
+<g><title>Sep 29 close to Sep 30 open (weeknight). Open +4.7%, mark at 9 am +1.4%</title><circle cx="573.4" cy="272.7" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="573.4" cy="272.7" r="10" fill="transparent"/></g>
+<g><title>Sep 30 close to Oct 1 open (weeknight). Open -0.2%, mark at 9 am -5.1%</title><circle cx="529.9" cy="305.7" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="529.9" cy="305.7" r="10" fill="transparent"/></g>
+<g><title>Oct 1 close to Oct 2 open (weeknight). Open -1.6%, mark at 9 am -6.2%</title><circle cx="522.6" cy="314.3" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="522.6" cy="314.3" r="10" fill="transparent"/></g>
+<g><title>Oct 2 close to Oct 5 open (weekend). Open +1.5%, mark at 9 am -0.5%</title><circle cx="560.5" cy="294.1" r="4" fill="none" stroke="#d95926" stroke-opacity="0.85" stroke-width="1.75"/><circle cx="560.5" cy="294.1" r="10" fill="transparent"/></g>
+<g><title>Oct 5 close to Oct 6 open (weeknight). Open -6.8%, mark at 9 am -6.0%</title><circle cx="523.9" cy="349.0" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="523.9" cy="349.0" r="10" fill="transparent"/></g>
+<g><title>Oct 6 close to Oct 7 open (weeknight). Open -5.4%, mark at 9 am -0.4%</title><circle cx="561.3" cy="340.3" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="561.3" cy="340.3" r="10" fill="transparent"/></g>
+<g><title>Oct 7 close to Oct 8 open (weeknight). Open -6.4%, mark at 9 am -2.7%</title><circle cx="546.3" cy="346.5" r="4" fill="#3987e5" fill-opacity="0.85" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/><circle cx="546.3" cy="346.5" r="10" fill="transparent"/></g>
+<text x="748.3" y="120.9" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Weekend of Sep 19</text>
+<text x="756" y="394" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">23 of 30 opens nearer the mark</text>
+<text transform="translate(16 254.0) rotate(-90)" fill="var(--sx-muted, #99a3b0)" font-size="12" text-anchor="middle">USDE&#8217;s next open against the prior close</text>
+</svg>

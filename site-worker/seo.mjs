@@ -1,3 +1,8 @@
+import { meta as trackingReview } from "./content/usde-ena-tracking-2026-10-08.mjs";
+import { meta as shortInterestReview } from "./content/stablecoinx-short-interest-2026-10-08.mjs";
+import { meta as lighterReview } from "./content/stablecoinx-perp-lighter-2026-10-08.mjs";
+import { meta as payRepeatReview } from "./content/ethenapay-repeat-spending-2026-10-04.mjs";
+import { meta as floatReview } from "./content/stablecoinx-float-2026-10-08.mjs";
 import { meta as payCashFlowsReview } from "./content/ethenapay-cash-flows-2026-10-05.mjs";
 import { meta as usdebReview } from "./content/usdeb-stablecoinx-bstock.mjs";
 import { meta as waiverReview } from "./content/stablecoinx-lock-up-waiver-2026-10-05.mjs";
@@ -13,6 +18,11 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [trackingReview.path]: trackingReview,
+  [shortInterestReview.path]: shortInterestReview,
+  [lighterReview.path]: lighterReview,
+  [payRepeatReview.path]: payRepeatReview,
+  [floatReview.path]: floatReview,
   [payCashFlowsReview.path]: payCashFlowsReview,
   [usdebReview.path]: usdebReview,
   [waiverReview.path]: waiverReview,

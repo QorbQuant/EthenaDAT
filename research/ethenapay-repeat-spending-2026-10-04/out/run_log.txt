@@ -1,0 +1,55 @@
+EthenaPay repeat spending by week of first spend
+Spend events from the first, June 4, 2026, through full weeks ending 2026-10-04
+
+[ok] every input matches the SHA-256 in manifest.csv . 6 files
+[ok] the three chain files match the recount's own manifest, as published with the adoption review . 2026-10-06T06:55:10Z to 2026-10-06T06:58:53Z
+[ok] the recount ends at block 96,839,679, with its last spend event on October 5
+[ok] the spend file holds every spend event and spending wallet in meta.json . 29,556 events, 820 wallets
+[ok] spend days run from June 4 to October 5
+[ok] each spending wallet's first spend day matches its first_spend_ts in wallet_activity.csv . 797 wallets with a spend event through 2026-10-04
+[ok] weekly spending wallets and spend events match the adoption review's published table . 10 weeks, July 27 to October 4
+[ok] monthly spending wallets, first spends, returning wallets and spend events match the adoption review's monthly table . June to October 4
+[ok] the cutoff is a Sunday, so every week counted is a full week
+[ok] every spending wallet through the cutoff falls in one cohort
+[ok] every wallet that first spent before the beta week has five later weeks in the data
+[ok] the three months hold every wallet that first spent before the beta week
+[ok] the wallets that first spent before September 21 are the pre-beta wallets and the first three beta cohorts
+
+Wallets with a spend event through 2026-10-04: 797
+  week of 2026-06-01: 5 wallets. Later weeks: 4 (80%), 0 (0%), 0 (0%), 0 (0%), 0 (0%), 0 (0%), 0 (0%), 0 (0%)
+  week of 2026-06-08: 6 wallets. Later weeks: 4 (67%), 3 (50%), 3 (50%), 3 (50%), 3 (50%), 1 (17%), 1 (17%), 1 (17%)
+  week of 2026-06-15: 13 wallets. Later weeks: 10 (77%), 9 (69%), 8 (62%), 8 (62%), 10 (77%), 9 (69%), 10 (77%), 8 (62%)
+  week of 2026-06-22: 3 wallets. Later weeks: 3 (100%), 2 (67%), 2 (67%), 3 (100%), 2 (67%), 2 (67%), 3 (100%), 2 (67%)
+  week of 2026-06-29: 1 wallets. Later weeks: 1 (100%), 1 (100%), 1 (100%), 1 (100%), 1 (100%), 1 (100%), 1 (100%), 1 (100%)
+  week of 2026-07-06: 10 wallets. Later weeks: 7 (70%), 7 (70%), 6 (60%), 5 (50%), 5 (50%), 6 (60%), 5 (50%), 4 (40%)
+  week of 2026-07-13: 2 wallets. Later weeks: 1 (50%), 2 (100%), 1 (50%), 1 (50%), 2 (100%), 2 (100%), 2 (100%), 2 (100%)
+  week of 2026-07-20: 5 wallets. Later weeks: 5 (100%), 5 (100%), 5 (100%), 4 (80%), 5 (100%), 5 (100%), 5 (100%), 5 (100%)
+  week of 2026-07-27: 19 wallets. Later weeks: 11 (58%), 11 (58%), 10 (53%), 14 (74%), 14 (74%), 13 (68%), 14 (74%), 12 (63%)
+  week of 2026-08-03: 12 wallets. Later weeks: 8 (67%), 8 (67%), 7 (58%), 7 (58%), 7 (58%), 7 (58%), 7 (58%), 7 (58%)
+  week of 2026-08-10: 16 wallets. Later weeks: 15 (94%), 11 (69%), 13 (81%), 14 (88%), 13 (81%), 14 (88%), 13 (81%)
+  week of 2026-08-17: 17 wallets. Later weeks: 12 (71%), 14 (82%), 14 (82%), 11 (65%), 11 (65%), 15 (88%)
+  week of 2026-08-24: 22 wallets. Later weeks: 13 (59%), 14 (64%), 11 (50%), 10 (45%), 10 (45%)
+  week of 2026-08-31: 126 wallets. Later weeks: 104 (83%), 88 (70%), 91 (72%), 89 (71%)
+  week of 2026-09-07: 92 wallets. Later weeks: 74 (80%), 61 (66%), 72 (78%)
+  week of 2026-09-14: 173 wallets. Later weeks: 136 (79%), 124 (72%)
+  week of 2026-09-21: 128 wallets. Later weeks: 100 (78%)
+  week of 2026-09-28: 147 wallets. Later weeks: 
+  before the beta week, 131 wallets: week 1 94/131 71.8%, week 2 87/131 66.4%, week 3 81/131 61.8%, week 4 81/131 61.8%, week 5 83/131 63.4%
+  first spend August 31 to September 27, 519 wallets: week 1 414/519 79.8%, week 2 273/391 69.8%, week 3 163/218 74.8%, week 4 89/126 70.6%
+  first spend June: 28 wallets, spent in September 15, in the last week 13, on one day only 3
+  first spend July: 32 wallets, spent in September 28, in the last week 25, on one day only 1
+  first spend August 1 to 30: 71 wallets, spent in September 56, in the last week 47, on one day only 6
+  first spend on August 31, in the beta week: 1 wallet(s)
+  June 2026: 28 spending wallets, 28 first spends, 0 that had spent in an earlier month, 453 spend events
+  July 2026: 51 spending wallets, 32 first spends, 19 that had spent in an earlier month, 1,437 spend events
+  August 2026: 116 spending wallets, 72 first spends, 44 that had spent in an earlier month, 4,034 spend events
+  September 2026: 673 spending wallets, 573 first spends, 100 that had spent in an earlier month, 17,734 spend events
+  October 1 to 4, 2026: 553 spending wallets, 92 first spends, 461 that had spent in an earlier month, 4,648 spend events
+  first spend before 2026-09-21: 522 wallets, no spend in the last two weeks 110, of which holding USDe 106, 1 USDe or more 81, spent on October 5 3. Still spending 412, all holding USDe: True
+  of the 110: pre-beta 40 of 131, first three beta cohorts 70 of 391, one spend day only 45, 10 USDe or more 53, 100 USDe or more 30. Still spending with 1 USDe or more 405
+  pre-beta wallets with no spend event from 2026-09-01 to 2026-10-04: 29 of 131, of which 1 USDe or more 20
+  cohort of the beta week, 126 wallets: spent in at least one of weeks 1 to 4 116, in all four 66
+  spend days, first spend before 2026-09-21: 1 45, 15 or more 213, 2 to 5 103, 6 to 14 161
+  spent again within 7 days of the first spend day: 542 of 650, 83.4%
+
+All checks passed. Tables written to out/.

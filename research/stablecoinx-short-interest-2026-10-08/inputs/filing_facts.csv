@@ -1,0 +1,7 @@
+key,value,unit,as_of,source,location
+class_a_outstanding_aug28,24029375,shares,2026-08-28,Resale prospectus (424B3) of September 14 2026,"The Offering, page 7. Shares Eligible for Future Sale, page 100"
+freely_tradable_aug28,19063653,shares,2026-08-28,Resale prospectus,"Shares Eligible for Future Sale, page 100. The prospectus says approximately"
+dashboard_class_a_oct8,24139375,shares,2026-10-08,EthenaDash docs/data.json at commit 1cc3b05,"shares_outstanding, the 24029375 Class A shares in the prospectus plus 110000 directors' restricted shares granted September 30"
+public_warrants,11500000,warrants,2026-08-28,Resale prospectus,"The Offering, page 7"
+ethena_registered_class_a_aug28,3621132,shares,2026-08-28,Resale prospectus,"Pages 2, 3, 42, 87, 88 and 90, read for article seven. 1,813,164 for the ENA contribution and 1,807,968 from the private placement, held by Ethena OpCo Ltd. Registered for resale, no contractual lock-up"
+resale_registration_effective,2026-09-14T16:00,New York time,2026-09-14,EDGAR notice of effectiveness for file 333-298674,"Effectiveness Date September 14, 2026 4:00 P.M., read for article seven"

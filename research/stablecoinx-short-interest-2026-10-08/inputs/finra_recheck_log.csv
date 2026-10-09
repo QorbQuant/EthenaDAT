@@ -1,0 +1,7 @@
+checked_at_utc,request_body,status,records,latest_settlement_date,bytes
+2026-10-09T16:16:12.563Z,"{""limit"":1000,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""symbolCode"",""fieldValue"":""USDE""}]}",200,6,2026-09-15,2558
+2026-10-09T16:16:12.851Z,"{""limit"":10,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""settlementDate"",""fieldValue"":""2026-09-30""}]}",204,0,,0
+2026-10-09T17:03:54.604Z,"{""limit"":1000,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""symbolCode"",""fieldValue"":""USDE""}]}",200,6,2026-09-15,2558
+2026-10-09T17:03:55.026Z,"{""limit"":5,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""settlementDate"",""fieldValue"":""2026-09-30""}]}",204,0,,0
+2026-10-09T20:37:09.011419Z,"{""limit"":1000,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""symbolCode"",""fieldValue"":""USDE""}]}",200,7,2026-09-30,2988
+2026-10-09T20:37:10.803275Z,"{""limit"":1000,""compareFilters"":[{""compareType"":""equal"",""fieldName"":""symbolCode"",""fieldValue"":""USDEW""}]}",200,7,2026-09-30,2918

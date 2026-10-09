@@ -1,0 +1,4 @@
+key,value,unit,as_of,source,location
+ena_held_dashboard,3029000000,ENA,2026-06-25,EthenaDash dataset at commit 152e758 and StablecoinX's press release on the merger,"ena_holdings in docs/data.json. The press release of June 25, 2026 (Exhibit 99.1 to the 8-K) gave about 3,029 million ENA, read for article three"
+ena_received_10q_sum,3031404421,ENA,2026-06-25,Form 10-Q for the quarter to June 30 2026,"Note 3, three receipts at the merger, 284,954,407.29 + 1,405,754,435.84 + 1,340,695,577.81, read for article three. Used only for the sensitivity of mNAV"
+first_trading_day,2026-06-26,date,2026-06-26,Closing 8-K filed 2026-07-02,"Item 2.01, read for article seven"

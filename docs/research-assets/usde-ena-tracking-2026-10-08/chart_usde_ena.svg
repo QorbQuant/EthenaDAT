@@ -1,0 +1,210 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="ue-t ue-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="ue-t">USDE against ENA, daily moves and mNAV, June 26 to October 8, 2026</title>
+<desc id="ue-d">Left, 72 daily moves, ENA across and USDE up, correlation 0.64, fitted slope 1.37. The two axes use different scales. Right, mNAV at the 4 pm close, 0.37× on June 26, a low of 0.13× on July 24, a high of 0.52× on September 25 and 0.50× on October 8.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">USDE moved the same way as ENA on 50 of 72 days</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Daily moves from one 4 pm New York close to the next, and mNAV at each close, June 26 to October 8, 2026.</text>
+<text x="74" y="78" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">Daily move, ENA across and USDE up</text>
+<text x="470" y="78" fill="var(--sx-text, #eeeae3)" font-size="13" font-weight="600">mNAV at the 4 pm close</text>
+<line x1="74" x2="384" y1="383.5" y2="383.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="387.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">−20%</text>
+<line x1="74" x2="384" y1="330.5" y2="330.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="334.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0%</text>
+<line x1="74" x2="384" y1="277.5" y2="277.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="281.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+20%</text>
+<line x1="74" x2="384" y1="224.5" y2="224.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="228.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+40%</text>
+<line x1="74" x2="384" y1="171.5" y2="171.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="175.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+60%</text>
+<line x1="74" x2="384" y1="118.5" y2="118.5" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="66" y="122.5" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">+80%</text>
+<line x1="108.4" x2="108.4" y1="92" y2="410" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="108.4" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">−10%</text>
+<line x1="177.3" x2="177.3" y1="92" y2="410" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="177.3" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0%</text>
+<line x1="246.2" x2="246.2" y1="92" y2="410" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="246.2" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+10%</text>
+<line x1="315.1" x2="315.1" y1="92" y2="410" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="315.1" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+20%</text>
+<line x1="384.0" x2="384.0" y1="92" y2="410" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="384.0" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">+30%</text>
+<line x1="74.0" y1="370.2" x2="384.0" y2="251.0" stroke="var(--sx-muted, #99a3b0)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<line x1="74.0" y1="383.3" x2="384.0" y2="219.4" stroke="#d95926" stroke-width="2"/>
+<g><title>Jun 29, ENA −1.13%, USDE −10.00%</title><circle cx="169.5" cy="357.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jun 30, ENA −10.17%, USDE −17.42%</title><circle cx="107.3" cy="376.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 1, ENA +1.56%, USDE −24.36%</title><circle cx="188.1" cy="395.1" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 2, ENA +6.96%, USDE +33.65%</title><circle cx="225.3" cy="241.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 6, ENA +2.73%, USDE −5.76%</title><circle cx="196.2" cy="345.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 7, ENA −1.27%, USDE −9.92%</title><circle cx="168.6" cy="356.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 8, ENA −4.75%, USDE −13.98%</title><circle cx="144.6" cy="367.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 9, ENA +3.64%, USDE +7.88%</title><circle cx="202.4" cy="309.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 10, ENA +4.55%, USDE −10.50%</title><circle cx="208.7" cy="358.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 13, ENA −2.24%, USDE −3.06%</title><circle cx="161.9" cy="338.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 14, ENA +7.12%, USDE −6.32%</title><circle cx="226.4" cy="347.2" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 15, ENA −1.90%, USDE +2.25%</title><circle cx="164.2" cy="324.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 16, ENA +1.69%, USDE +5.49%</title><circle cx="189.0" cy="315.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 17, ENA −2.50%, USDE −9.38%</title><circle cx="160.1" cy="355.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 20, ENA +0.61%, USDE −0.57%</title><circle cx="181.5" cy="332.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 21, ENA +4.61%, USDE +8.09%</title><circle cx="209.1" cy="309.1" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 22, ENA +7.19%, USDE +0.00%</title><circle cx="226.9" cy="330.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 23, ENA −4.11%, USDE −6.95%</title><circle cx="149.0" cy="348.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 24, ENA −1.58%, USDE −17.82%</title><circle cx="166.4" cy="377.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 27, ENA +1.03%, USDE +6.29%</title><circle cx="184.4" cy="313.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 28, ENA −5.22%, USDE +11.18%</title><circle cx="141.4" cy="300.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 29, ENA −6.83%, USDE −10.65%</title><circle cx="130.3" cy="358.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 30, ENA +6.68%, USDE +8.61%</title><circle cx="223.4" cy="307.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Jul 31, ENA −3.01%, USDE −4.27%</title><circle cx="156.6" cy="341.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 3, ENA +13.79%, USDE +9.55%</title><circle cx="272.3" cy="305.2" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 4, ENA +0.76%, USDE +15.12%</title><circle cx="182.6" cy="290.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 5, ENA −0.43%, USDE +24.24%</title><circle cx="174.3" cy="266.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 6, ENA +0.22%, USDE −9.35%</title><circle cx="178.8" cy="355.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 7, ENA +1.95%, USDE −7.17%</title><circle cx="190.8" cy="349.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 10, ENA −6.60%, USDE +4.35%</title><circle cx="131.8" cy="319.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 11, ENA +1.25%, USDE +11.11%</title><circle cx="186.0" cy="301.1" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 12, ENA −2.36%, USDE +2.08%</title><circle cx="161.0" cy="325.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 13, ENA −1.61%, USDE +5.71%</title><circle cx="166.2" cy="315.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 14, ENA −1.88%, USDE +13.13%</title><circle cx="164.4" cy="295.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 17, ENA −0.48%, USDE +3.07%</title><circle cx="174.0" cy="322.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 18, ENA +0.00%, USDE −7.62%</title><circle cx="177.3" cy="350.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 19, ENA +7.92%, USDE +10.75%</title><circle cx="231.9" cy="302.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 20, ENA +19.58%, USDE +29.45%</title><circle cx="312.2" cy="252.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 21, ENA +26.98%, USDE +85.25%</title><circle cx="363.2" cy="104.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 24, ENA +11.65%, USDE −15.38%</title><circle cx="257.6" cy="371.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 25, ENA −3.02%, USDE −3.35%</title><circle cx="156.5" cy="339.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 26, ENA −6.56%, USDE −1.32%</title><circle cx="132.1" cy="334.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 27, ENA +20.85%, USDE +34.95%</title><circle cx="321.0" cy="237.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 28, ENA −4.13%, USDE −16.23%</title><circle cx="148.9" cy="373.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Aug 31, ENA −6.69%, USDE +31.21%</title><circle cx="131.3" cy="247.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 1, ENA +5.09%, USDE −5.75%</title><circle cx="212.4" cy="345.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 2, ENA −5.23%, USDE −10.29%</title><circle cx="141.3" cy="357.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 3, ENA +14.93%, USDE +16.93%</title><circle cx="280.2" cy="285.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 4, ENA −4.27%, USDE −9.58%</title><circle cx="147.9" cy="355.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 8, ENA −2.44%, USDE −4.04%</title><circle cx="160.5" cy="341.2" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 9, ENA −4.14%, USDE −4.86%</title><circle cx="148.8" cy="343.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 10, ENA −6.01%, USDE −8.01%</title><circle cx="135.9" cy="351.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 11, ENA −0.97%, USDE +9.01%</title><circle cx="170.6" cy="306.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 14, ENA +2.11%, USDE +2.48%</title><circle cx="191.8" cy="323.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 15, ENA −2.89%, USDE −17.74%</title><circle cx="157.4" cy="377.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 16, ENA +3.47%, USDE +1.31%</title><circle cx="201.2" cy="327.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 17, ENA +5.07%, USDE +24.35%</title><circle cx="212.2" cy="266.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 18, ENA +9.45%, USDE +32.17%</title><circle cx="242.4" cy="245.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 21, ENA +27.08%, USDE +23.65%</title><circle cx="363.9" cy="267.8" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 22, ENA −2.58%, USDE +7.46%</title><circle cx="159.6" cy="310.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 23, ENA −1.11%, USDE −4.95%</title><circle cx="169.7" cy="343.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 24, ENA +8.46%, USDE +10.49%</title><circle cx="235.6" cy="302.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 25, ENA +17.39%, USDE +21.31%</title><circle cx="297.1" cy="274.0" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 28, ENA −0.65%, USDE −9.80%</title><circle cx="172.9" cy="356.5" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 29, ENA −3.96%, USDE −1.54%</title><circle cx="150.1" cy="334.6" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Sep 30, ENA +5.08%, USDE +4.96%</title><circle cx="212.3" cy="317.4" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 1, ENA −6.13%, USDE −3.54%</title><circle cx="135.1" cy="339.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 2, ENA −4.46%, USDE −8.77%</title><circle cx="146.6" cy="353.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 5, ENA +5.35%, USDE +5.72%</title><circle cx="214.2" cy="315.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 6, ENA −4.11%, USDE −4.21%</title><circle cx="149.0" cy="341.7" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 7, ENA −5.21%, USDE −3.56%</title><circle cx="141.4" cy="339.9" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<g><title>Oct 8, ENA −9.40%, USDE −7.45%</title><circle cx="112.6" cy="350.3" r="3.5" fill="#3987e5" fill-opacity="0.8" stroke="var(--sx-bg, #0d1116)" stroke-width="1"/></g>
+<line x1="74" x2="96" y1="446" y2="446" stroke="#d95926" stroke-width="2"/>
+<text x="102" y="450" fill="var(--sx-muted, #99a3b0)" font-size="11">fitted line, slope 1.37</text>
+<line x1="244" x2="266" y1="446" y2="446" stroke="var(--sx-muted, #99a3b0)" stroke-width="1.5" stroke-dasharray="4 4"/>
+<text x="272" y="450" fill="var(--sx-muted, #99a3b0)" font-size="11">equal moves</text>
+<text x="355.2" y="108.6" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Aug 21</text>
+<line x1="470" x2="780" y1="410.0" y2="410.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="414.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.0</text>
+<line x1="470" x2="780" y1="357.0" y2="357.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="361.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.1</text>
+<line x1="470" x2="780" y1="304.0" y2="304.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="308.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.2</text>
+<line x1="470" x2="780" y1="251.0" y2="251.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="255.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.3</text>
+<line x1="470" x2="780" y1="198.0" y2="198.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="202.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.4</text>
+<line x1="470" x2="780" y1="145.0" y2="145.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="149.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.5</text>
+<line x1="470" x2="780" y1="92.0" y2="92.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="462" y="96.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0.6</text>
+<line x1="484.9" x2="484.9" y1="410" y2="415" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="484.9" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Jul 1</text>
+<line x1="577.3" x2="577.3" y1="410" y2="415" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="577.3" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug 1</text>
+<line x1="669.7" x2="669.7" y1="410" y2="415" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="669.7" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep 1</text>
+<line x1="759.1" x2="759.1" y1="410" y2="415" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="759.1" y="428" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct 1</text>
+<polyline points="470.0,214.6 478.9,232.1 481.9,246.5 484.9,288.2 487.9,257.8 499.8,270.4 502.8,282.6 505.8,295.0 508.8,290.3 511.7,307.5 520.7,308.4 523.7,321.1 526.6,317.4 529.6,313.9 532.6,320.7 541.5,321.7 544.5,318.8 547.5,324.9 550.5,327.4 553.5,341.0 562.4,337.5 565.4,324.9 568.4,328.4 571.3,326.9 574.3,328.0 583.3,331.1 586.2,319.8 589.2,297.5 592.2,308.2 595.2,317.3 604.1,306.4 607.1,296.4 610.1,291.2 613.1,282.3 616.1,262.8 625.0,257.6 628.0,269.2 631.0,265.5 633.9,253.6 636.9,181.8 645.9,237.0 648.8,237.6 651.8,227.9 654.8,206.7 657.8,232.4 666.7,160.2 669.7,186.0 672.7,197.9 675.7,194.2 678.7,206.2 690.6,209.5 693.6,211.0 696.5,215.3 699.5,195.6 708.5,194.9 711.4,227.8 714.4,231.6 717.4,198.8 720.4,155.0 729.3,161.9 732.3,136.3 735.3,146.9 738.3,142.0 741.2,133.1 750.2,158.6 753.2,152.2 756.2,151.4 759.1,144.2 762.1,156.2 771.1,155.3 774.0,155.6 777.0,151.1 780.0,145.6" fill="none" stroke="#3987e5" stroke-width="2" stroke-linejoin="round"/>
+<g><title>Jun 26, mNAV 0.369×</title><circle cx="470.0" cy="214.6" r="4" fill="transparent"/></g>
+<g><title>Jun 29, mNAV 0.336×</title><circle cx="478.9" cy="232.1" r="4" fill="transparent"/></g>
+<g><title>Jun 30, mNAV 0.309×</title><circle cx="481.9" cy="246.5" r="4" fill="transparent"/></g>
+<g><title>Jul 1, mNAV 0.230×</title><circle cx="484.9" cy="288.2" r="4" fill="transparent"/></g>
+<g><title>Jul 2, mNAV 0.287×</title><circle cx="487.9" cy="257.8" r="4" fill="transparent"/></g>
+<g><title>Jul 6, mNAV 0.263×</title><circle cx="499.8" cy="270.4" r="4" fill="transparent"/></g>
+<g><title>Jul 7, mNAV 0.240×</title><circle cx="502.8" cy="282.6" r="4" fill="transparent"/></g>
+<g><title>Jul 8, mNAV 0.217×</title><circle cx="505.8" cy="295.0" r="4" fill="transparent"/></g>
+<g><title>Jul 9, mNAV 0.226×</title><circle cx="508.8" cy="290.3" r="4" fill="transparent"/></g>
+<g><title>Jul 10, mNAV 0.193×</title><circle cx="511.7" cy="307.5" r="4" fill="transparent"/></g>
+<g><title>Jul 13, mNAV 0.192×</title><circle cx="520.7" cy="308.4" r="4" fill="transparent"/></g>
+<g><title>Jul 14, mNAV 0.168×</title><circle cx="523.7" cy="321.1" r="4" fill="transparent"/></g>
+<g><title>Jul 15, mNAV 0.175×</title><circle cx="526.6" cy="317.4" r="4" fill="transparent"/></g>
+<g><title>Jul 16, mNAV 0.181×</title><circle cx="529.6" cy="313.9" r="4" fill="transparent"/></g>
+<g><title>Jul 17, mNAV 0.169×</title><circle cx="532.6" cy="320.7" r="4" fill="transparent"/></g>
+<g><title>Jul 20, mNAV 0.167×</title><circle cx="541.5" cy="321.7" r="4" fill="transparent"/></g>
+<g><title>Jul 21, mNAV 0.172×</title><circle cx="544.5" cy="318.8" r="4" fill="transparent"/></g>
+<g><title>Jul 22, mNAV 0.161×</title><circle cx="547.5" cy="324.9" r="4" fill="transparent"/></g>
+<g><title>Jul 23, mNAV 0.156×</title><circle cx="550.5" cy="327.4" r="4" fill="transparent"/></g>
+<g><title>Jul 24, mNAV 0.130×</title><circle cx="553.5" cy="341.0" r="4" fill="transparent"/></g>
+<g><title>Jul 27, mNAV 0.137×</title><circle cx="562.4" cy="337.5" r="4" fill="transparent"/></g>
+<g><title>Jul 28, mNAV 0.161×</title><circle cx="565.4" cy="324.9" r="4" fill="transparent"/></g>
+<g><title>Jul 29, mNAV 0.154×</title><circle cx="568.4" cy="328.4" r="4" fill="transparent"/></g>
+<g><title>Jul 30, mNAV 0.157×</title><circle cx="571.3" cy="326.9" r="4" fill="transparent"/></g>
+<g><title>Jul 31, mNAV 0.155×</title><circle cx="574.3" cy="328.0" r="4" fill="transparent"/></g>
+<g><title>Aug 3, mNAV 0.149×</title><circle cx="583.3" cy="331.1" r="4" fill="transparent"/></g>
+<g><title>Aug 4, mNAV 0.170×</title><circle cx="586.2" cy="319.8" r="4" fill="transparent"/></g>
+<g><title>Aug 5, mNAV 0.212×</title><circle cx="589.2" cy="297.5" r="4" fill="transparent"/></g>
+<g><title>Aug 6, mNAV 0.192×</title><circle cx="592.2" cy="308.2" r="4" fill="transparent"/></g>
+<g><title>Aug 7, mNAV 0.175×</title><circle cx="595.2" cy="317.3" r="4" fill="transparent"/></g>
+<g><title>Aug 10, mNAV 0.195×</title><circle cx="604.1" cy="306.4" r="4" fill="transparent"/></g>
+<g><title>Aug 11, mNAV 0.214×</title><circle cx="607.1" cy="296.4" r="4" fill="transparent"/></g>
+<g><title>Aug 12, mNAV 0.224×</title><circle cx="610.1" cy="291.2" r="4" fill="transparent"/></g>
+<g><title>Aug 13, mNAV 0.241×</title><circle cx="613.1" cy="282.3" r="4" fill="transparent"/></g>
+<g><title>Aug 14, mNAV 0.278×</title><circle cx="616.1" cy="262.8" r="4" fill="transparent"/></g>
+<g><title>Aug 17, mNAV 0.288×</title><circle cx="625.0" cy="257.6" r="4" fill="transparent"/></g>
+<g><title>Aug 18, mNAV 0.266×</title><circle cx="628.0" cy="269.2" r="4" fill="transparent"/></g>
+<g><title>Aug 19, mNAV 0.273×</title><circle cx="631.0" cy="265.5" r="4" fill="transparent"/></g>
+<g><title>Aug 20, mNAV 0.295×</title><circle cx="633.9" cy="253.6" r="4" fill="transparent"/></g>
+<g><title>Aug 21, mNAV 0.431×</title><circle cx="636.9" cy="181.8" r="4" fill="transparent"/></g>
+<g><title>Aug 24, mNAV 0.326×</title><circle cx="645.9" cy="237.0" r="4" fill="transparent"/></g>
+<g><title>Aug 25, mNAV 0.325×</title><circle cx="648.8" cy="237.6" r="4" fill="transparent"/></g>
+<g><title>Aug 26, mNAV 0.344×</title><circle cx="651.8" cy="227.9" r="4" fill="transparent"/></g>
+<g><title>Aug 27, mNAV 0.384×</title><circle cx="654.8" cy="206.7" r="4" fill="transparent"/></g>
+<g><title>Aug 28, mNAV 0.335×</title><circle cx="657.8" cy="232.4" r="4" fill="transparent"/></g>
+<g><title>Aug 31, mNAV 0.471×</title><circle cx="666.7" cy="160.2" r="4" fill="transparent"/></g>
+<g><title>Sep 1, mNAV 0.423×</title><circle cx="669.7" cy="186.0" r="4" fill="transparent"/></g>
+<g><title>Sep 2, mNAV 0.400×</title><circle cx="672.7" cy="197.9" r="4" fill="transparent"/></g>
+<g><title>Sep 3, mNAV 0.407×</title><circle cx="675.7" cy="194.2" r="4" fill="transparent"/></g>
+<g><title>Sep 4, mNAV 0.385×</title><circle cx="678.7" cy="206.2" r="4" fill="transparent"/></g>
+<g><title>Sep 8, mNAV 0.378×</title><circle cx="690.6" cy="209.5" r="4" fill="transparent"/></g>
+<g><title>Sep 9, mNAV 0.375×</title><circle cx="693.6" cy="211.0" r="4" fill="transparent"/></g>
+<g><title>Sep 10, mNAV 0.367×</title><circle cx="696.5" cy="215.3" r="4" fill="transparent"/></g>
+<g><title>Sep 11, mNAV 0.404×</title><circle cx="699.5" cy="195.6" r="4" fill="transparent"/></g>
+<g><title>Sep 14, mNAV 0.406×</title><circle cx="708.5" cy="194.9" r="4" fill="transparent"/></g>
+<g><title>Sep 15, mNAV 0.344×</title><circle cx="711.4" cy="227.8" r="4" fill="transparent"/></g>
+<g><title>Sep 16, mNAV 0.337×</title><circle cx="714.4" cy="231.6" r="4" fill="transparent"/></g>
+<g><title>Sep 17, mNAV 0.398×</title><circle cx="717.4" cy="198.8" r="4" fill="transparent"/></g>
+<g><title>Sep 18, mNAV 0.481×</title><circle cx="720.4" cy="155.0" r="4" fill="transparent"/></g>
+<g><title>Sep 21, mNAV 0.468×</title><circle cx="729.3" cy="161.9" r="4" fill="transparent"/></g>
+<g><title>Sep 22, mNAV 0.516×</title><circle cx="732.3" cy="136.3" r="4" fill="transparent"/></g>
+<g><title>Sep 23, mNAV 0.496×</title><circle cx="735.3" cy="146.9" r="4" fill="transparent"/></g>
+<g><title>Sep 24, mNAV 0.506×</title><circle cx="738.3" cy="142.0" r="4" fill="transparent"/></g>
+<g><title>Sep 25, mNAV 0.523×</title><circle cx="741.2" cy="133.1" r="4" fill="transparent"/></g>
+<g><title>Sep 28, mNAV 0.474×</title><circle cx="750.2" cy="158.6" r="4" fill="transparent"/></g>
+<g><title>Sep 29, mNAV 0.486×</title><circle cx="753.2" cy="152.2" r="4" fill="transparent"/></g>
+<g><title>Sep 30, mNAV 0.488×</title><circle cx="756.2" cy="151.4" r="4" fill="transparent"/></g>
+<g><title>Oct 1, mNAV 0.501×</title><circle cx="759.1" cy="144.2" r="4" fill="transparent"/></g>
+<g><title>Oct 2, mNAV 0.479×</title><circle cx="762.1" cy="156.2" r="4" fill="transparent"/></g>
+<g><title>Oct 5, mNAV 0.481×</title><circle cx="771.1" cy="155.3" r="4" fill="transparent"/></g>
+<g><title>Oct 6, mNAV 0.480×</title><circle cx="774.0" cy="155.6" r="4" fill="transparent"/></g>
+<g><title>Oct 7, mNAV 0.488×</title><circle cx="777.0" cy="151.1" r="4" fill="transparent"/></g>
+<g><title>Oct 8, mNAV 0.499×</title><circle cx="780.0" cy="145.6" r="4" fill="transparent"/></g>
+<circle cx="553.5" cy="341.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="559.5" y="357.0" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="start" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">0.13× on Jul 24</text>
+<circle cx="741.2" cy="133.1" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="735.2" y="123.1" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">0.52× on Sep 25</text>
+</svg>

@@ -1,0 +1,59 @@
+{
+  "cutoff": "Full weeks through October 4, 2026 · Balances at 15:53 UTC on October 5 · Sources read October 6 to 9, 2026 UTC",
+  "navigation": [
+    [
+      "Beta cohorts",
+      "four-in-five-spent-again-the-week-after-their-first-spend"
+    ],
+    [
+      "Before the beta week",
+      "wallets-from-before-the-beta-week-kept-spending-at-a-lower-rate"
+    ],
+    [
+      "Sep 21 to Oct 4",
+      "wallets-with-no-spend-event-from-september-21-to-october-4"
+    ],
+    [
+      "Method",
+      "how-this-review-counts"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Share of EthenaPay wallets spending in each week after their first spend, two lines",
+  "chartFile": "chart_repeat_spending.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_repeat_spending.svg",
+    "chart_preview.png",
+    "first_spend_cohorts.csv",
+    "weekly_shares.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "ethenapay_repeat_spending_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "inputs/adoption_review_months_wallets.csv",
+    "inputs/adoption_review_weeks_wallets.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain/spend_wallet_days.csv",
+    "inputs/chain/wallet_activity.csv",
+    "inputs/chain_manifest.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "out/chart_repeat_spending.svg",
+    "out/first_spend_cohorts.csv",
+    "out/first_spend_months.csv",
+    "out/monthly_check.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/weekly_check.csv",
+    "out/weekly_shares.csv"
+  ]
+}

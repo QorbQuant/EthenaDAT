@@ -1,0 +1,16 @@
+endpoint,params,status,fetched_at,chars,sha256
+candles,market_id:229;resolution:1h;start_timestamp:1787702400;end_timestamp:1788998400;count_back:500,200,2026-10-09T13:30:14.920Z,40788,ed60928225c1dc9af43ced3f1ad22761e49f00dccb61aec79c01bf715b772e67
+markPriceCandles,market_id:229;resolution:1h;start_timestamp:1787702400;end_timestamp:1788998400;count_back:500,200,2026-10-09T13:30:15.940Z,25268,f98ba5162a1bf97ffcf6ab058144b5dff71063c7f877911c93ea7b226220e38a
+fundings,market_id:229;resolution:1h;start_timestamp:1787702400;end_timestamp:1788998400;count_back:500,200,2026-10-09T13:30:16.939Z,27747,1d66ac39022c1b015b1a760cc9333c40428b4d0c2e20dbb01b44c34c3d297d9a
+candles,market_id:229;resolution:1h;start_timestamp:1788998400;end_timestamp:1790294400;count_back:500,200,2026-10-09T13:30:17.940Z,59650,ef1649b9751598563fc4348ac8c245e00dcc1c8c12364aac2e6c243898cae7b6
+markPriceCandles,market_id:229;resolution:1h;start_timestamp:1788998400;end_timestamp:1790294400;count_back:500,200,2026-10-09T13:30:18.938Z,37340,dd527217ffba955ba253bc46699015ae251f519a74f5beddb51d24ce7776d4bb
+fundings,market_id:229;resolution:1h;start_timestamp:1788998400;end_timestamp:1790294400;count_back:500,200,2026-10-09T13:30:19.938Z,40488,6265af119ae86d6c173bf002ee020467f932786b9a32e8030abe796e26e6830a
+candles,market_id:229;resolution:1h;start_timestamp:1790294400;end_timestamp:1791507600;count_back:500,200,2026-10-09T13:30:20.950Z,56826,7ac0d201c3c1ebc124409b1a96eceee55c23a10132083480f346bf8c138e14ab
+markPriceCandles,market_id:229;resolution:1h;start_timestamp:1790294400;end_timestamp:1791507600;count_back:500,200,2026-10-09T13:30:21.940Z,38678,e347bf25342b11c8a11d55b057f922e0ebd5aa4f705ed4a0a494d653bf3ab17d
+fundings,market_id:229;resolution:1h;start_timestamp:1790294400;end_timestamp:1791507600;count_back:500,200,2026-10-09T13:30:22.940Z,40546,23e12a4e599fc5ee13b5f4d082f0769154ec35062763d132e45bc98c30b80f70
+candles,market_id:229;resolution:1d;start_timestamp:1787702400;end_timestamp:1791504000;count_back:500,200,2026-10-09T13:30:23.954Z,4788,fe9a7ad90274fcad580d464133bd38ab7143972e0b42a3910587e777d7aa0eec
+markPriceCandles,market_id:229;resolution:1d;start_timestamp:1787702400;end_timestamp:1791504000;count_back:500,200,2026-10-09T13:30:24.938Z,3397,64958a0f9d22f6b28f4f24589276ecf15c6a4028b1146e40f51d6dc852221d79
+exchangeMetrics,period:all;kind:open_interest;filter:byMarket;value:STABLECOINX,200,2026-10-09T13:30:25.947Z,21814,4b93be1b701eab255e5d1e09a5e627fafd1264d06cdc85ef4693e6483fcf3fd9
+exchangeMetrics,period:all;kind:volume;filter:byMarket;value:STABLECOINX,200,2026-10-09T13:30:26.937Z,21748,bf96ae3f1080630c8e53e73cacc98d0a9ad625007654c2f4c24d36e32de54721
+orderBookDetails,market_id:229,200,2026-10-09T13:30:27.939Z,1614,e44e12d0c337461eb8b605cdb4e87d8cdc539b30642762575653664df55c8f1e
+priceOracleInfo,symbol:STABLECOINX,200,2026-10-09T13:30:28.939Z,411,242e6dc3ce148a58613ffb4d2e0eca47986b04607dca3a496cc469595c8e38a6

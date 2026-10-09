@@ -1,0 +1,2 @@
+url,status,fetched_at,bytes,sha256,candles_returned,first_candle_utc,last_candle_utc
+https://api.kraken.com/0/public/OHLC?pair=ENAUSD&interval=240&since=1782345600,200,2026-10-09T17:28:52.622Z,49858,0069233cb7fc9c0715e76b785702c3cc426890ce6be88f9b6ca10fab7abefc16,641,2026-06-25T00:00:00.000Z,2026-10-09T16:00:00.000Z

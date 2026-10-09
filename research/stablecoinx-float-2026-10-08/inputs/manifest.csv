@@ -1,0 +1,3 @@
+file,repository,path,commit,bytes,sha256
+data_1cc3b05.json,QorbQuant/EthenaDAT,docs/data.json,1cc3b05,26506,07a63c07f57365ffb8181f12ba5bef841c9ea0d7fde2defd4f5d894a9c26ea0b
+shares_out_1cc3b05.csv,QorbQuant/EthenaDAT,inputs/shares_out.csv,1cc3b05,64,a3998d563f0b2988f727b18f938d39535be458021ac05bc7f964d527a1c5234e

@@ -1,0 +1,6 @@
+period,days,spending_wallets,first_ever_spend_in_period,spent_in_an_earlier_period,previous_period_wallets,of_which_spent_again,spend_events,distinct_transactions,spend_usde,wallets_active_1_day,wallets_active_2_to_5_days,wallets_active_6_to_14_days,wallets_active_15_or_more_days
+June 2026,30,28,28,0,,,453,453,17187.93,5,10,12,1
+July 2026,31,51,32,19,28,19,1437,1357,84698.7,9,20,9,13
+August 2026,31,116,72,44,51,44,4034,4002,259791.22,15,32,36,33
+September 2026,30,673,573,100,116,98,17734,17395,1588430.13,94,219,210,150
+"October 1 to 4, 2026",4,553,92,461,673,458,4648,4492,433047.98,137,416,0,0

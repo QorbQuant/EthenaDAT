@@ -1,0 +1,74 @@
+{
+  "cutoff": "Share counts as of August 28, 2026 · Trading through the October 8, 2026 close · Filings read October 9, 2026 UTC",
+  "navigation": [
+    [
+      "Free float",
+      "the-prospectus-counted-1906-million-freely-tradable-shares"
+    ],
+    [
+      "Registered shares",
+      "ethena-sc-assets-original-shareholders-and-tlgys-insiders-held-the-rest"
+    ],
+    [
+      "Trading",
+      "usdes-volume-came-to-1997-times-the-freely-tradable-count"
+    ],
+    [
+      "13F holders",
+      "seven-form-13f-reports-listed-153-million-shares-at-june-30"
+    ],
+    [
+      "Votes",
+      "class-b-shares-hold-the-votes"
+    ],
+    [
+      "What changes it",
+      "what-can-change-the-count"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "StablecoinX trading volume chart",
+  "chartFile": "chart_turnover.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_turnover.svg",
+    "chart_preview.png",
+    "holders_reconciled.csv",
+    "daily_volume.csv",
+    "volume_by_month.csv",
+    "form13f_class_a_june30.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "stablecoinx_float_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "inputs/13f_june30_2026.csv",
+    "inputs/data_1cc3b05.json",
+    "inputs/edgar_filings_2026-10-09.csv",
+    "inputs/filing_facts.csv",
+    "inputs/holders_2026-08-28.csv",
+    "inputs/manifest.csv",
+    "inputs/merger_share_table.csv",
+    "inputs/selling_stockholders_2026-08-28.csv",
+    "inputs/shares_out_1cc3b05.csv",
+    "inputs/sources.csv",
+    "inputs/usde_daily_spglobal_stockanalysis.csv",
+    "inputs/usde_daily_yahoo.csv",
+    "out/chart_turnover.csv",
+    "out/chart_turnover.svg",
+    "out/daily_volume.csv",
+    "out/form13f_class_a_june30.csv",
+    "out/holders_reconciled.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/volume_by_month.csv",
+    "out/votes_class_b.csv"
+  ]
+}

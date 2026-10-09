@@ -1,0 +1,45 @@
+USDE against ENA, StablecoinX Inc.'s Class A stock and its treasury token
+Sessions 2026-06-26 to 2026-10-08
+
+[ok] every input matches the SHA-256 in manifest.csv . 7 files
+[ok] the dashboard's ENA count read from filing_facts.csv
+[ok] Kraken and DefiLlama each answered with HTTP 200 . Kraken 2026-10-09T17:28:52.622Z, DefiLlama 2026-10-09T17:31:38.055Z and 2026-10-09T17:31:40.258Z
+[ok] 73 USDE sessions from June 26 to October 8, none on a weekend
+[ok] the first session is the first trading day in the closing 8-K
+[ok] Kraken has both 4-hour candles for every day from June 25 to October 8, and nothing else . 212 candles
+[ok] every Kraken candle has trades, and its close lies between its low and high
+[ok] CoinGecko prices for 20:00 UTC on June 25 and every session, and for 13:30 UTC on every session
+[ok] each CoinGecko price lies within the 600-second search width of its target time . largest offset 110 s
+[ok] Kraken's 4 pm price is within 1% of CoinGecko's on every session . largest 0.88% on 2026-07-07, median 0.086%
+[ok] the dashboard series holds every session, with the same closes as S&P Global
+[ok] the dashboard's ENA price for each session is within 0.5% of Kraken's price at 00:00 UTC that day . largest 0.40%, median 0.063%
+  for comparison, against Kraken's 4 pm price the dashboard's differs by a median 3.19%
+[ok] the dashboard counts 3,029,000,000 ENA on every session
+[ok] mNAV recomputed from the dashboard's own inputs matches its mnav column to four decimals
+  dashboard Class A shares: 2026-06-26 24,029,375, 2026-09-30 24,139,375
+[ok] the three periods cover every daily move once
+[ok] ENA's 4 pm price came from the same Kraken candle on every session as the moves use
+
+Daily moves, 4 pm to 4 pm, 72 pairs
+  Kraken 4 pm: correlation 0.644, R squared 0.415, slope 1.37, same direction 50 of 72, either unchanged 2, sd USDE 16.62%, sd ENA 7.79%
+  CoinGecko 4 pm: correlation 0.644, R squared 0.415, slope 1.38, same direction 50 of 72, either unchanged 1, sd USDE 16.62%, sd ENA 7.79%
+  dashboard, midnight UTC: correlation 0.181, R squared 0.033, slope 0.32, same direction 31 of 72, either unchanged 1, sd USDE 16.62%, sd ENA 9.30%
+  Kraken, log changes: correlation 0.618, R squared 0.381, slope 1.24, same direction 50 of 72, either unchanged 2, sd USDE 14.66%, sd ENA 7.33%
+  rank correlation 0.492; without the three largest USDE moves (2026-08-21, 2026-08-27, 2026-07-02) 0.504
+  2026-06-26 to 2026-07-31: 24 moves, correlation 0.466, slope 1.20, same direction 16
+  2026-07-31 to 2026-08-31: 21 moves, correlation 0.622, slope 1.45, same direction 10
+  2026-08-31 to 2026-10-08: 27 moves, correlation 0.779, slope 1.17, same direction 24
+  weekly, last session of each week, 15 moves: correlation 0.795, slope 1.62, same direction 9
+  mNAV at 4 pm: 0.369 on 2026-06-26, 0.499 on 2026-10-08, low 0.130 on 2026-07-24, high 0.523 on 2026-09-25, sd of daily moves 12.24%, below 0.25 on 29 sessions
+  June 26 to October 8: USDE 245.7%, from $3.70 to $12.79; ENA at 4 pm 156.7%, from $0.0796 to $0.2043
+  overnight, 4 pm close to 9:30 am open: correlation 0.546, slope 0.96, same direction 44
+  trading hours, 9:30 am open to 4 pm close: correlation 0.403, slope 1.30, same direction 44
+  largest overnight ENA move: 2026-09-21, ENA 33.0%, USDE gap 28.1%
+  rank correlation overnight 0.628, trading hours 0.453; without 2026-08-21, overnight 0.508, trading hours 0.514, rank correlations 0.613 and 0.498
+  August without 2026-08-21, 2026-08-27: correlation 0.169, those days in the same direction True
+  95% intervals, Fisher: Kraken 0.48 to 0.76, dashboard midnight -0.05 to 0.40
+  period tests: 2026-06-26 to 2026-07-31 vs 2026-07-31 to 2026-08-31 p 0.486; 2026-06-26 to 2026-07-31 vs 2026-08-31 to 2026-10-08 p 0.072; 2026-07-31 to 2026-08-31 vs 2026-08-31 to 2026-10-08 p 0.314
+  weekly rank correlation 0.414; without the week to 2026-08-21 (USDE 152.9%, ENA 63.1%) 0.606
+  dashboard mNAV, midnight ENA: 0.4502 on 2026-10-08, high 0.6095 on 2026-09-25, low 0.1278 on 2026-07-24
+
+All checks passed. Tables written to out/.

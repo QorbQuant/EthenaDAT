@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="to-t to-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="to-t">Cumulative USDE volume as a multiple of the freely tradable shares, June 26 to October 8, 2026</title>
+<desc id="to-d">Line chart. From June 26 to October 8, 2026, USDE traded 380,773,054 shares, 19.97 times the 19,063,653 shares the resale prospectus counted as freely tradable on August 28. The largest single sessions were July 2 with 50,854,315 shares, 2.67 times the count, August 21 with 98,971,190 shares, 5.19 times the count, August 27 with 21,667,372 shares, 1.14 times the count.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">USDE’s volume came to 19.97 times its freely tradable shares in 73 sessions</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Cumulative volume from June 26 to October 8, 2026, divided by the 19,063,653 shares counted as freely tradable</text>
+<line x1="56" x2="708" y1="394.0" y2="394.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="398.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">0×</text>
+<line x1="56" x2="708" y1="320.2" y2="320.2" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="324.2" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">5×</text>
+<line x1="56" x2="708" y1="246.4" y2="246.4" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="250.4" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">10×</text>
+<line x1="56" x2="708" y1="172.6" y2="172.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="176.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">15×</text>
+<line x1="56" x2="708" y1="98.8" y2="98.8" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="48" y="102.8" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">20×</text>
+<line x1="56.0" x2="56.0" y1="394" y2="399" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<line x1="83.2" x2="83.2" y1="394" y2="399" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="83.2" y="414" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">July</text>
+<line x1="282.4" x2="282.4" y1="394" y2="399" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="282.4" y="414" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">August</text>
+<line x1="472.6" x2="472.6" y1="394" y2="399" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="472.6" y="414" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">September</text>
+<line x1="662.7" x2="662.7" y1="394" y2="399" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="662.7" y="414" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">October</text>
+<path d="M56.0,393.7 L65.1,393.4 L74.1,393.2 L83.2,382.7 L92.2,343.4 L101.3,341.4 L110.3,340.6 L119.4,339.8 L128.4,338.3 L137.5,337.7 L146.6,337.2 L155.6,336.1 L164.7,335.5 L173.7,334.9 L182.8,334.5 L191.8,334.2 L200.9,333.8 L209.9,333.1 L219.0,332.4 L228.1,331.5 L237.1,331.1 L246.2,330.6 L255.2,330.3 L264.3,330.0 L273.3,329.7 L282.4,329.4 L291.4,328.9 L300.5,328.2 L309.6,328.1 L318.6,327.8 L327.7,327.6 L336.7,327.2 L345.8,327.1 L354.8,326.8 L363.9,326.3 L372.9,325.8 L382.0,325.5 L391.1,325.1 L400.1,319.7 L409.2,243.0 L418.2,232.2 L427.3,228.9 L436.3,227.6 L445.4,210.8 L454.4,206.5 L463.5,198.4 L472.6,194.6 L481.6,192.2 L490.7,186.9 L499.7,183.7 L508.8,181.9 L517.8,179.2 L526.9,177.3 L535.9,174.4 L545.0,172.8 L554.1,170.3 L563.1,169.2 L572.2,158.1 L581.2,146.6 L590.3,138.3 L599.3,134.1 L608.4,132.0 L617.4,127.7 L626.5,121.5 L635.6,118.3 L644.6,115.1 L653.7,111.0 L662.7,109.3 L671.8,107.2 L680.8,103.5 L689.9,102.1 L698.9,100.5 L708.0,99.1" fill="none" stroke="var(--sx-blue, #8aa9cf)" stroke-width="2" stroke-linejoin="round"/>
+<g><title>June 26, 2026. 435,953 shares traded, 2.3% of the freely tradable count. Cumulative 435,953, 0.02 times</title><circle cx="56.0" cy="393.7" r="7" fill="transparent"/></g>
+<g><title>June 29, 2026. 342,275 shares traded, 1.8% of the freely tradable count. Cumulative 778,228, 0.04 times</title><circle cx="65.1" cy="393.4" r="7" fill="transparent"/></g>
+<g><title>June 30, 2026. 256,738 shares traded, 1.3% of the freely tradable count. Cumulative 1,034,966, 0.05 times</title><circle cx="74.1" cy="393.2" r="7" fill="transparent"/></g>
+<g><title>July 1, 2026. 13,504,655 shares traded, 70.8% of the freely tradable count. Cumulative 14,539,621, 0.76 times</title><circle cx="83.2" cy="382.7" r="7" fill="transparent"/></g>
+<g><title>July 2, 2026. 50,854,315 shares traded, 266.8% of the freely tradable count. Cumulative 65,393,936, 3.43 times</title><circle cx="92.2" cy="343.4" r="7" fill="transparent"/></g>
+<g><title>July 6, 2026. 2,475,645 shares traded, 13.0% of the freely tradable count. Cumulative 67,869,581, 3.56 times</title><circle cx="101.3" cy="341.4" r="7" fill="transparent"/></g>
+<g><title>July 7, 2026. 1,142,848 shares traded, 6.0% of the freely tradable count. Cumulative 69,012,429, 3.62 times</title><circle cx="110.3" cy="340.6" r="7" fill="transparent"/></g>
+<g><title>July 8, 2026. 1,014,619 shares traded, 5.3% of the freely tradable count. Cumulative 70,027,048, 3.67 times</title><circle cx="119.4" cy="339.8" r="7" fill="transparent"/></g>
+<g><title>July 9, 2026. 1,845,093 shares traded, 9.7% of the freely tradable count. Cumulative 71,872,141, 3.77 times</title><circle cx="128.4" cy="338.3" r="7" fill="transparent"/></g>
+<g><title>July 10, 2026. 892,907 shares traded, 4.7% of the freely tradable count. Cumulative 72,765,048, 3.82 times</title><circle cx="137.5" cy="337.7" r="7" fill="transparent"/></g>
+<g><title>July 13, 2026. 571,460 shares traded, 3.0% of the freely tradable count. Cumulative 73,336,508, 3.85 times</title><circle cx="146.6" cy="337.2" r="7" fill="transparent"/></g>
+<g><title>July 14, 2026. 1,465,883 shares traded, 7.7% of the freely tradable count. Cumulative 74,802,391, 3.92 times</title><circle cx="155.6" cy="336.1" r="7" fill="transparent"/></g>
+<g><title>July 15, 2026. 738,790 shares traded, 3.9% of the freely tradable count. Cumulative 75,541,181, 3.96 times</title><circle cx="164.7" cy="335.5" r="7" fill="transparent"/></g>
+<g><title>July 16, 2026. 752,474 shares traded, 3.9% of the freely tradable count. Cumulative 76,293,655, 4.00 times</title><circle cx="173.7" cy="334.9" r="7" fill="transparent"/></g>
+<g><title>July 17, 2026. 528,088 shares traded, 2.8% of the freely tradable count. Cumulative 76,821,743, 4.03 times</title><circle cx="182.8" cy="334.5" r="7" fill="transparent"/></g>
+<g><title>July 20, 2026. 357,592 shares traded, 1.9% of the freely tradable count. Cumulative 77,179,335, 4.05 times</title><circle cx="191.8" cy="334.2" r="7" fill="transparent"/></g>
+<g><title>July 21, 2026. 615,147 shares traded, 3.2% of the freely tradable count. Cumulative 77,794,482, 4.08 times</title><circle cx="200.9" cy="333.8" r="7" fill="transparent"/></g>
+<g><title>July 22, 2026. 858,006 shares traded, 4.5% of the freely tradable count. Cumulative 78,652,488, 4.13 times</title><circle cx="209.9" cy="333.1" r="7" fill="transparent"/></g>
+<g><title>July 23, 2026. 908,254 shares traded, 4.8% of the freely tradable count. Cumulative 79,560,742, 4.17 times</title><circle cx="219.0" cy="332.4" r="7" fill="transparent"/></g>
+<g><title>July 24, 2026. 1,122,914 shares traded, 5.9% of the freely tradable count. Cumulative 80,683,656, 4.23 times</title><circle cx="228.1" cy="331.5" r="7" fill="transparent"/></g>
+<g><title>July 27, 2026. 529,326 shares traded, 2.8% of the freely tradable count. Cumulative 81,212,982, 4.26 times</title><circle cx="237.1" cy="331.1" r="7" fill="transparent"/></g>
+<g><title>July 28, 2026. 625,201 shares traded, 3.3% of the freely tradable count. Cumulative 81,838,183, 4.29 times</title><circle cx="246.2" cy="330.6" r="7" fill="transparent"/></g>
+<g><title>July 29, 2026. 401,609 shares traded, 2.1% of the freely tradable count. Cumulative 82,239,792, 4.31 times</title><circle cx="255.2" cy="330.3" r="7" fill="transparent"/></g>
+<g><title>July 30, 2026. 413,234 shares traded, 2.2% of the freely tradable count. Cumulative 82,653,026, 4.34 times</title><circle cx="264.3" cy="330.0" r="7" fill="transparent"/></g>
+<g><title>July 31, 2026. 441,014 shares traded, 2.3% of the freely tradable count. Cumulative 83,094,040, 4.36 times</title><circle cx="273.3" cy="329.7" r="7" fill="transparent"/></g>
+<g><title>August 3, 2026. 391,508 shares traded, 2.1% of the freely tradable count. Cumulative 83,485,548, 4.38 times</title><circle cx="282.4" cy="329.4" r="7" fill="transparent"/></g>
+<g><title>August 4, 2026. 530,597 shares traded, 2.8% of the freely tradable count. Cumulative 84,016,145, 4.41 times</title><circle cx="291.4" cy="328.9" r="7" fill="transparent"/></g>
+<g><title>August 5, 2026. 916,363 shares traded, 4.8% of the freely tradable count. Cumulative 84,932,508, 4.46 times</title><circle cx="300.5" cy="328.2" r="7" fill="transparent"/></g>
+<g><title>August 6, 2026. 210,386 shares traded, 1.1% of the freely tradable count. Cumulative 85,142,894, 4.47 times</title><circle cx="309.6" cy="328.1" r="7" fill="transparent"/></g>
+<g><title>August 7, 2026. 321,746 shares traded, 1.7% of the freely tradable count. Cumulative 85,464,640, 4.48 times</title><circle cx="318.6" cy="327.8" r="7" fill="transparent"/></g>
+<g><title>August 10, 2026. 318,182 shares traded, 1.7% of the freely tradable count. Cumulative 85,782,822, 4.50 times</title><circle cx="327.7" cy="327.6" r="7" fill="transparent"/></g>
+<g><title>August 11, 2026. 465,213 shares traded, 2.4% of the freely tradable count. Cumulative 86,248,035, 4.52 times</title><circle cx="336.7" cy="327.2" r="7" fill="transparent"/></g>
+<g><title>August 12, 2026. 206,481 shares traded, 1.1% of the freely tradable count. Cumulative 86,454,516, 4.54 times</title><circle cx="345.8" cy="327.1" r="7" fill="transparent"/></g>
+<g><title>August 13, 2026. 369,661 shares traded, 1.9% of the freely tradable count. Cumulative 86,824,177, 4.55 times</title><circle cx="354.8" cy="326.8" r="7" fill="transparent"/></g>
+<g><title>August 14, 2026. 662,693 shares traded, 3.5% of the freely tradable count. Cumulative 87,486,870, 4.59 times</title><circle cx="363.9" cy="326.3" r="7" fill="transparent"/></g>
+<g><title>August 17, 2026. 603,273 shares traded, 3.2% of the freely tradable count. Cumulative 88,090,143, 4.62 times</title><circle cx="372.9" cy="325.8" r="7" fill="transparent"/></g>
+<g><title>August 18, 2026. 376,766 shares traded, 2.0% of the freely tradable count. Cumulative 88,466,909, 4.64 times</title><circle cx="382.0" cy="325.5" r="7" fill="transparent"/></g>
+<g><title>August 19, 2026. 541,197 shares traded, 2.8% of the freely tradable count. Cumulative 89,008,106, 4.67 times</title><circle cx="391.1" cy="325.1" r="7" fill="transparent"/></g>
+<g><title>August 20, 2026. 6,979,500 shares traded, 36.6% of the freely tradable count. Cumulative 95,987,606, 5.04 times</title><circle cx="400.1" cy="319.7" r="7" fill="transparent"/></g>
+<g><title>August 21, 2026. 98,971,190 shares traded, 519.2% of the freely tradable count. Cumulative 194,958,796, 10.23 times</title><circle cx="409.2" cy="243.0" r="7" fill="transparent"/></g>
+<g><title>August 24, 2026. 13,946,642 shares traded, 73.2% of the freely tradable count. Cumulative 208,905,438, 10.96 times</title><circle cx="418.2" cy="232.2" r="7" fill="transparent"/></g>
+<g><title>August 25, 2026. 4,312,545 shares traded, 22.6% of the freely tradable count. Cumulative 213,217,983, 11.18 times</title><circle cx="427.3" cy="228.9" r="7" fill="transparent"/></g>
+<g><title>August 26, 2026. 1,654,127 shares traded, 8.7% of the freely tradable count. Cumulative 214,872,110, 11.27 times</title><circle cx="436.3" cy="227.6" r="7" fill="transparent"/></g>
+<g><title>August 27, 2026. 21,667,372 shares traded, 113.7% of the freely tradable count. Cumulative 236,539,482, 12.41 times</title><circle cx="445.4" cy="210.8" r="7" fill="transparent"/></g>
+<g><title>August 28, 2026. 5,594,577 shares traded, 29.3% of the freely tradable count. Cumulative 242,134,059, 12.70 times</title><circle cx="454.4" cy="206.5" r="7" fill="transparent"/></g>
+<g><title>August 31, 2026. 10,422,199 shares traded, 54.7% of the freely tradable count. Cumulative 252,556,258, 13.25 times</title><circle cx="463.5" cy="198.4" r="7" fill="transparent"/></g>
+<g><title>September 1, 2026. 4,911,094 shares traded, 25.8% of the freely tradable count. Cumulative 257,467,352, 13.51 times</title><circle cx="472.6" cy="194.6" r="7" fill="transparent"/></g>
+<g><title>September 2, 2026. 3,149,258 shares traded, 16.5% of the freely tradable count. Cumulative 260,616,610, 13.67 times</title><circle cx="481.6" cy="192.2" r="7" fill="transparent"/></g>
+<g><title>September 3, 2026. 6,839,576 shares traded, 35.9% of the freely tradable count. Cumulative 267,456,186, 14.03 times</title><circle cx="490.7" cy="186.9" r="7" fill="transparent"/></g>
+<g><title>September 4, 2026. 4,189,359 shares traded, 22.0% of the freely tradable count. Cumulative 271,645,545, 14.25 times</title><circle cx="499.7" cy="183.7" r="7" fill="transparent"/></g>
+<g><title>September 8, 2026. 2,219,999 shares traded, 11.6% of the freely tradable count. Cumulative 273,865,544, 14.37 times</title><circle cx="508.8" cy="181.9" r="7" fill="transparent"/></g>
+<g><title>September 9, 2026. 3,518,944 shares traded, 18.5% of the freely tradable count. Cumulative 277,384,488, 14.55 times</title><circle cx="517.8" cy="179.2" r="7" fill="transparent"/></g>
+<g><title>September 10, 2026. 2,418,070 shares traded, 12.7% of the freely tradable count. Cumulative 279,802,558, 14.68 times</title><circle cx="526.9" cy="177.3" r="7" fill="transparent"/></g>
+<g><title>September 11, 2026. 3,771,240 shares traded, 19.8% of the freely tradable count. Cumulative 283,573,798, 14.88 times</title><circle cx="535.9" cy="174.4" r="7" fill="transparent"/></g>
+<g><title>September 14, 2026. 2,064,314 shares traded, 10.8% of the freely tradable count. Cumulative 285,638,112, 14.98 times</title><circle cx="545.0" cy="172.8" r="7" fill="transparent"/></g>
+<g><title>September 15, 2026. 3,231,877 shares traded, 17.0% of the freely tradable count. Cumulative 288,869,989, 15.15 times</title><circle cx="554.1" cy="170.3" r="7" fill="transparent"/></g>
+<g><title>September 16, 2026. 1,408,720 shares traded, 7.4% of the freely tradable count. Cumulative 290,278,709, 15.23 times</title><circle cx="563.1" cy="169.2" r="7" fill="transparent"/></g>
+<g><title>September 17, 2026. 14,316,923 shares traded, 75.1% of the freely tradable count. Cumulative 304,595,632, 15.98 times</title><circle cx="572.2" cy="158.1" r="7" fill="transparent"/></g>
+<g><title>September 18, 2026. 14,892,262 shares traded, 78.1% of the freely tradable count. Cumulative 319,487,894, 16.76 times</title><circle cx="581.2" cy="146.6" r="7" fill="transparent"/></g>
+<g><title>September 21, 2026. 10,660,834 shares traded, 55.9% of the freely tradable count. Cumulative 330,148,728, 17.32 times</title><circle cx="590.3" cy="138.3" r="7" fill="transparent"/></g>
+<g><title>September 22, 2026. 5,427,338 shares traded, 28.5% of the freely tradable count. Cumulative 335,576,066, 17.60 times</title><circle cx="599.3" cy="134.1" r="7" fill="transparent"/></g>
+<g><title>September 23, 2026. 2,772,599 shares traded, 14.5% of the freely tradable count. Cumulative 338,348,665, 17.75 times</title><circle cx="608.4" cy="132.0" r="7" fill="transparent"/></g>
+<g><title>September 24, 2026. 5,603,034 shares traded, 29.4% of the freely tradable count. Cumulative 343,951,699, 18.04 times</title><circle cx="617.4" cy="127.7" r="7" fill="transparent"/></g>
+<g><title>September 25, 2026. 8,004,617 shares traded, 42.0% of the freely tradable count. Cumulative 351,956,316, 18.46 times</title><circle cx="626.5" cy="121.5" r="7" fill="transparent"/></g>
+<g><title>September 28, 2026. 4,079,763 shares traded, 21.4% of the freely tradable count. Cumulative 356,036,079, 18.68 times</title><circle cx="635.6" cy="118.3" r="7" fill="transparent"/></g>
+<g><title>September 29, 2026. 4,182,448 shares traded, 21.9% of the freely tradable count. Cumulative 360,218,527, 18.90 times</title><circle cx="644.6" cy="115.1" r="7" fill="transparent"/></g>
+<g><title>September 30, 2026. 5,261,545 shares traded, 27.6% of the freely tradable count. Cumulative 365,480,072, 19.17 times</title><circle cx="653.7" cy="111.0" r="7" fill="transparent"/></g>
+<g><title>October 1, 2026. 2,146,398 shares traded, 11.3% of the freely tradable count. Cumulative 367,626,470, 19.28 times</title><circle cx="662.7" cy="109.3" r="7" fill="transparent"/></g>
+<g><title>October 2, 2026. 2,764,047 shares traded, 14.5% of the freely tradable count. Cumulative 370,390,517, 19.43 times</title><circle cx="671.8" cy="107.2" r="7" fill="transparent"/></g>
+<g><title>October 5, 2026. 4,741,471 shares traded, 24.9% of the freely tradable count. Cumulative 375,131,988, 19.68 times</title><circle cx="680.8" cy="103.5" r="7" fill="transparent"/></g>
+<g><title>October 6, 2026. 1,799,288 shares traded, 9.4% of the freely tradable count. Cumulative 376,931,276, 19.77 times</title><circle cx="689.9" cy="102.1" r="7" fill="transparent"/></g>
+<g><title>October 7, 2026. 2,046,789 shares traded, 10.7% of the freely tradable count. Cumulative 378,978,065, 19.88 times</title><circle cx="698.9" cy="100.5" r="7" fill="transparent"/></g>
+<g><title>October 8, 2026. 1,794,989 shares traded, 9.4% of the freely tradable count. Cumulative 380,773,054, 19.97 times</title><circle cx="708.0" cy="99.1" r="7" fill="transparent"/></g>
+<circle cx="92.2" cy="343.4" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="100.2" y="357.4" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="start">July 2, 2.67× in one session</text>
+<circle cx="409.2" cy="243.0" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="399.2" y="237.0" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end">August 21, 5.19× in one session</text>
+<circle cx="445.4" cy="210.8" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="455.4" y="226.8" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="start">August 27, 1.14× in one session</text>
+<circle cx="708.0" cy="99.1" r="4" fill="var(--sx-blue, #8aa9cf)" stroke="var(--sx-bg, #0d1116)" stroke-width="2"/>
+<text x="716.0" y="103.1" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">19.97×</text>
+<text x="716.0" y="118.1" fill="var(--sx-muted, #99a3b0)" font-size="11">October 8</text>
+<text x="20" y="450" fill="var(--sx-muted, #99a3b0)" font-size="11">Volume from S&amp;P Global Market Intelligence through StockAnalysis, checked against Yahoo Finance. Volume counts a share each time it trades.</text>
+</svg>
