@@ -228,6 +228,11 @@ window.mountResearch = function (initialD, initialP) {
               : id === "full-indexed"
                 ? "26 Jun 2026 = 100. Price changes exclude distributions."
                 : "Token NAV excludes other assets & liabilities. Quotes may be delayed.",
+          timeZone: pay ? "UTC" : "America/New_York",
+          annotationFormat: (v) =>
+            units[id].includes("USD") ? usd(v, 2) :
+            id === "full-mnav" ? v.toFixed(4) + "×" :
+            v.toLocaleString("en-US", { maximumFractionDigits: id === "full-ena-per-share" ? 4 : 2 }),
           rows: c.rows,
           series: c.series,
           format: c.valueFmt || c.fmt,

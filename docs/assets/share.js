@@ -80,7 +80,39 @@
       "\r\n"
     );
   }
-  const api = { read, windowRows, url, csv, esc };
+  function isTimeSeries(d) {
+    const v = d?.visual;
+    return !!(v?.rows?.length && v.series && !v.xFormat &&
+      !["scenario", "waterfall"].includes(v.type));
+  }
+  function prepareExport(d, options = {}, now = new Date()) {
+    if (!isTimeSeries(d)) return d;
+    const v = d.visual;
+    const today = new Intl.DateTimeFormat("en-CA", {
+      timeZone: v.timeZone || "UTC",
+    }).format(now);
+    const indices = v.rows.map((_, i) => i).filter((i) =>
+      options.includeToday !== false || v.rows[i].d < today);
+    if (!indices.length) throw Error("No earlier observations in this range. Include the current day or choose a wider range.");
+    const rows = indices.map(i => v.rows[i]);
+    const selected = rows.reduce((best, row) =>
+      Math.abs(row.t - (v.selected ?? rows.at(-1).t)) <
+      Math.abs(best.t - (v.selected ?? rows.at(-1).t)) ? row : best, rows[0]);
+    return {
+      ...d,
+      rows: indices.map(i => d.rows[i]),
+      state: { ...d.state, from: rows[0].d, to: rows.at(-1).d, date: selected.d },
+      period: rows[0].d + " to " + rows.at(-1).d,
+      subtitle: d.subtitle?.replace(/Selected: \d{4}-\d{2}-\d{2}/, "Selected: " + selected.d),
+      note: d.note + (options.includeToday === false ? ` Current day excluded (${v.timeZone || "UTC"}).` : ""),
+      visual: { ...v, rows, selected: selected.t, metricValues: null,
+        series: v.series.map(s => ({ ...s, data: indices.map(i => s.data[i]) })),
+        annotate: options.annotate === true,
+        through: options.includeToday === false ? rows.at(-1).d : null,
+      },
+    };
+  }
+  const api = { read, windowRows, url, csv, esc, isTimeSeries, prepareExport };
   if (typeof module !== "undefined") module.exports = api;
   else {
     scope.ChartShare = api;
@@ -102,10 +134,17 @@
             ? "valuation workspace"
             : svg.getAttribute("aria-label") || "chart",
         ) +
-        '">Share / export <span aria-hidden="true">↗</span></summary><div class="chart-tools-panel"><button type="button" data-export="link">Copy chart link</button><button type="button" data-export="png">Download PNG</button><button type="button" data-export="csv">Download CSV</button><p>Links restore this view. Source data may be revised.</p><span role="status" aria-live="polite"></span></div>';
+        '">Share / export <span aria-hidden="true">↗</span></summary><div class="chart-tools-panel"><button type="button" data-export="link">Copy chart link</button><fieldset class="chart-export-options"><legend>Download options</legend><label><input type="checkbox" data-option="today" checked> Include current day</label><label><input type="checkbox" data-option="annotate"> Label highlighted value (PNG)</label><p data-option-help></p></fieldset><button type="button" data-export="png">Download PNG</button><button type="button" data-export="csv">Download CSV</button><p>Links restore this view. Source data may be revised.</p><span role="status" aria-live="polite"></span></div>';
       const slot = document.querySelector('[data-export-slot="' + id + '"]');
       if (slot) slot.replaceWith(menu);
       else svg.insertAdjacentElement("afterend", menu);
+      menu.addEventListener("toggle", () => {
+        if (!menu.open) return;
+        const d = registry.get(id)();
+        menu.querySelector(".chart-export-options").hidden = !isTimeSeries(d);
+        menu.querySelector("[data-option-help]").textContent =
+          `Day boundary: ${d?.visual?.timeZone === "America/New_York" ? "New York" : "UTC"}. Current-day data may be partial. Hover or tap a chart point before exporting to highlight it.`;
+      });
       menu.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           menu.open = false;
@@ -118,9 +157,13 @@
         const status = menu.querySelector("[role=status]");
         button.disabled = true;
         try {
-          const d = registry.get(id)();
+          let d = registry.get(id)();
           if (!d || !d.rows.length)
             throw Error("No data available for this chart.");
+          if (button.dataset.export !== "link") d = prepareExport(d, {
+            includeToday: menu.querySelector('[data-option="today"]').checked,
+            annotate: menu.querySelector('[data-option="annotate"]').checked,
+          });
           d.url = url(location.pathname, { chart: id, ...d.state });
           if (button.dataset.export === "link") {
             try {
@@ -136,7 +179,7 @@
               input.select();
             }
           } else {
-            exportModule ??= import("/assets/export.js?v=bb224fd1e408").catch((error) => {
+            exportModule ??= import("/assets/export.js?v=20261009-annotations").catch((error) => {
               exportModule = null;
               throw error;
             });

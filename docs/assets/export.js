@@ -167,6 +167,39 @@ function seriesPlot(v, d3) {
       );
   });
   out += "</g>";
+  if (v.annotate) {
+    const labels = v.series.flatMap((s, k) => {
+      const value = selectedValues[k];
+      if (!Number.isFinite(value)) return [];
+      const formatted = (v.annotationFormat || v.format || String)(value);
+      return [{ k, color: s.color || [C.blue, C.copper][k % 2],
+        label: (v.series.length > 1 ? s.name + " · " : "") + formatted,
+        px: x(selectedX), py: y(value) }];
+    }).sort((a, b) => a.py - b.py);
+    labels.forEach((a, i) => {
+      a.ly = Math.max(t + 28, Math.min(b - 28, a.py - 65));
+      if (i) a.ly = Math.max(a.ly, labels[i - 1].ly + 68);
+    });
+    if (labels.length && labels.at(-1).ly > b - 28) {
+      const shift = labels.at(-1).ly - (b - 28);
+      labels.forEach(a => a.ly -= shift);
+    }
+    for (const a of labels) {
+      const size = v.series.length > 1 ? 24 : 32;
+      const width = Math.min(650, Math.max(90, a.label.length * size * 0.62 + 30));
+      const left = a.px > (l + r) / 2;
+      const bx = left ? Math.max(l + 8, a.px - width - 75) : Math.min(r - width - 8, a.px + 75);
+      const ax = left ? bx + width : bx, ay = a.ly;
+      const distance = Math.hypot(a.px - ax, a.py - ay) || 1;
+      const ex = a.px - (a.px - ax) / distance * 13;
+      const ey = a.py - (a.py - ay) / distance * 13;
+      out += `<g class="export-annotation"><defs><marker id="arrow-${a.k}" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="${a.color}" stroke-width="1.5"/></marker></defs>`;
+      out += line(ax, ay, ex, ey, a.color, `stroke-width="2" marker-end="url(#arrow-${a.k})"`);
+      out += `<rect x="${bx}" y="${a.ly - 25}" width="${width}" height="50" rx="4" fill="${C.bg}" fill-opacity=".94"/>`;
+      out += text(bx + width / 2, a.ly + size * 0.34, a.label, size, a.color, 'text-anchor="middle" font-weight="600"');
+      out += "</g>";
+    }
+  }
   return out;
 }
 function waterfall(v, d3) {
@@ -330,7 +363,7 @@ export function renderCard(d, d3) {
     "Source: ethenadash.com / " +
     v.source.replaceAll(" / ", ", ") +
     " · As of " +
-    sourceStamp(d.updated) +
+    sourceStamp(v.through || d.updated) +
     (explanation ? " · " + explanation : "");
   body += text(64, 865, footer, footer.length > 145 ? 17 : 20, C.muted);
   // Intrinsic SVG and canvas dimensions both use 2x resolution: no bitmap upscaling.

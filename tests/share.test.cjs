@@ -89,3 +89,40 @@ test("EthenaPay share links preserve metric, aggregation and reward view", () =>
   assert.equal(s.rewards, "daily");
   assert.equal(s.payoff, 0);
 });
+
+const { prepareExport } = require("../docs/assets/share.js");
+const exportFixture = () => ({
+  state: { date: "2026-10-09" }, note: "Daily wallets", columns: ["date", "wallets"],
+  rows: [["2026-10-07", 390], ["2026-10-08", 412], ["2026-10-09", 352]],
+  visual: {
+    timeZone: "UTC", selected: Date.parse("2026-10-09T00:00:00Z"),
+    rows: [7, 8, 9].map(day => ({ d: `2026-10-0${day}`, t: Date.parse(`2026-10-0${day}T00:00:00Z`) })),
+    series: [{ name: "Wallets", data: [390, 412, 352] }],
+  },
+});
+test("excluding today aligns PNG and CSV, clamps highlight and preserves original data", () => {
+  const d = exportFixture(), before = JSON.stringify(d);
+  const out = prepareExport(d, { includeToday: false, annotate: true }, new Date("2026-10-09T12:00:00Z"));
+  assert.equal(JSON.stringify(d), before);
+  assert.deepEqual(out.rows, d.rows.slice(0, 2));
+  assert.deepEqual(out.visual.series[0].data, [390, 412]);
+  assert.equal(out.visual.selected, d.visual.rows[1].t);
+  assert.equal(out.state.to, "2026-10-08");
+  assert.equal(out.state.date, "2026-10-08");
+  assert.equal(out.visual.through, "2026-10-08");
+  assert.equal(out.visual.annotate, true);
+});
+test("exclusion uses dataset timezone and never drops yesterday simply because it is the last row", () => {
+  const now = new Date("2026-10-09T01:00:00Z"), d = exportFixture();
+  assert.equal(prepareExport(d, { includeToday: false }, now).rows.length, 2);
+  d.visual.timeZone = "America/New_York";
+  assert.equal(prepareExport(d, { includeToday: false }, now).rows.length, 1);
+  assert.equal(prepareExport(d, { includeToday: false }, new Date("2026-10-11T12:00:00Z")).rows.length, 3);
+  assert.equal(prepareExport(d, {}, now).rows.length, 3);
+});
+test("empty exclusion reports an actionable error; hypothetical charts remain unchanged", () => {
+  const d = exportFixture();
+  assert.throws(() => prepareExport(d, { includeToday: false }, new Date("2026-10-07T12:00:00Z")), /No earlier observations/);
+  d.visual.type = "scenario";
+  assert.equal(prepareExport(d, { includeToday: false, annotate: true }), d);
+});

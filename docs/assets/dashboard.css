@@ -2020,3 +2020,26 @@ body {
   #sx-studio #tokenized-flows .lighter-switch { align-self:stretch; }
   #sx-studio #tokenized-flows .lighter-switch button { flex:1; white-space:nowrap; }
 }
+
+#sx-studio .chart-export-options {
+  border: 0;
+  border-top: 1px solid var(--sx-rule);
+  margin: 5px 0;
+  padding: 10px 8px 2px;
+}
+#sx-studio .chart-export-options[hidden] { display: none; }
+#sx-studio .chart-export-options legend { font-size: 11px; color: var(--sx-muted); }
+#sx-studio .chart-export-options label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 8px 0;
+  font-size: 12px;
+  cursor: pointer;
+}
+#sx-studio .chart-export-options input {
+  width: auto;
+  margin: 0;
+  accent-color: var(--sx-copper);
+}
+#sx-studio .chart-export-options p { padding: 4px 0; line-height: 1.5; }

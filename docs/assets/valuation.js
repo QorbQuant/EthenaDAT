@@ -921,6 +921,12 @@ window.mountValuation = function (initial) {
           source: "Public filings / market data",
           caveat:
             "Reported token NAV excludes other assets & liabilities. Class A share basis.",
+          timeZone: "America/New_York",
+          annotationFormat: (v) => factor === "multiple" ? v.toFixed(4) + "×" :
+            (factor === "holdings" ? "" : "$") + v.toLocaleString("en-US", {
+              minimumFractionDigits: factor === "holdings" ? 0 : factor === "ena" ? 4 : 2,
+              maximumFractionDigits: factor === "holdings" || factor === "ena" ? 4 : 2,
+            }),
           rows: data.map((r) => ({ d: r.date, t: r.t })),
           series: factor
             ? [
