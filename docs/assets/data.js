@@ -82,6 +82,23 @@
       date: s.date.at(-1),
     };
   }
+  function valuationSummary(d) {
+    const fallback = "Track StablecoinX’s ENA holdings, token NAV per share and mNAV.";
+    const s = d?.series, i = (s?.date?.length ?? 0) - 1;
+    const date = s?.date?.[i], mnav = s?.mnav?.[i];
+    const holdings = s?.ena_holdings?.[i], nav = s?.nav_per_share?.[i];
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(date ?? "") ||
+        ![mnav, holdings, nav].every(positive)) return fallback;
+    const at = new Date(date + "T00:00:00Z");
+    if (!Number.isFinite(+at) || at.toISOString().slice(0, 10) !== date) return fallback;
+    const label = new Intl.DateTimeFormat("en-GB", {
+      day: "numeric", month: "short", year: "numeric", timeZone: "UTC",
+    }).format(at);
+    const ena = new Intl.NumberFormat("en-US", {
+      notation: "compact", maximumFractionDigits: 3,
+    }).format(holdings);
+    return `Latest observation (${label}): USDE mNAV is ${mnav.toFixed(2)}×, based on ${ena} reported ENA and $${nav.toFixed(2)} token NAV per share. Token NAV excludes other assets and liabilities.`;
+  }
   function unlocked(d, at = new Date()) {
     const add = (p, m) => {
       const end = new Date(
@@ -217,6 +234,7 @@
     valid,
     normalizePay,
     current,
+    valuationSummary,
     unlocked,
     completedCloses,
     applyQuotes,

@@ -19,9 +19,9 @@ export const PAGES = {
   [payAdoptionReview.path]: payAdoptionReview,
   [septemberReview.path]: septemberReview,
   "/stablecoinx/": {
-    title: "StablecoinX NAV Tracker: ENA Holdings & mNAV | EthenaDash",
+    title: "StablecoinX (USDE) mNAV Tracker | ENA Holdings & NAV",
     description:
-      "Track StablecoinX (USDE) against its reported ENA treasury. Explore token NAV per share, mNAV, market history, USDEW warrants and SEC filings.",
+      "Track StablecoinX (USDE) mNAV, reported ENA holdings and token NAV per share. Compare historical valuations, explore USDEW warrants and read sourced research.",
     name: "StablecoinX NAV tracker",
     page: "sx",
   },

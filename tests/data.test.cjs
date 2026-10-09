@@ -111,3 +111,23 @@ test("lockup waiver is date-dependent and bounded by disclosed holdings", () => 
   assert.equal(E.unlocked(d, new Date("2026-10-05T00:00:00Z")), d.ena_holdings);
   assert.ok(E.unlocked(d, new Date("2026-10-04T00:00:00Z")) < d.ena_holdings);
 });
+test("valuation summary uses one dated series observation, not unrelated live quotes", () => {
+  const d = fresh(), i = d.series.date.length - 1;
+  d.series.mnav[i] = 0.42;
+  d.series.ena_holdings[i] = 3033000000;
+  d.series.nav_per_share[i] = 30.25;
+  d.usde.price = 999;
+  d.liveEna = { price: 99 };
+  assert.equal(E.valuationSummary(d), "Latest observation (5 Oct 2026): USDE mNAV is 0.42×, based on 3.033B reported ENA and $30.25 token NAV per share. Token NAV excludes other assets and liabilities.");
+  d.series.mnav[i] = 0.5;
+  assert.match(E.valuationSummary(d), /mNAV is 0\.50×/);
+});
+test("valuation summary falls back cleanly when the latest observation is incomplete", () => {
+  const fallback = E.valuationSummary(null);
+  assert.match(fallback, /^Track StablecoinX/);
+  for (const [key, value] of [["mnav", null], ["nav_per_share", NaN], ["ena_holdings", 0], ["date", "2026-02-31"]]) {
+    const d = fresh();
+    d.series[key][d.series.date.length - 1] = value;
+    assert.equal(E.valuationSummary(d), fallback);
+  }
+});

@@ -173,6 +173,7 @@
         "Holdings last reported " + day(D.ena_holdings_source?.date);
       $("#holdings-short-date").textContent =
         "Reported " + day(D.ena_holdings_source?.date);
+      $("#sx-valuation-summary").textContent = Ethena.valuationSummary(D);
       $("#sx-source-time").textContent =
         "USDE quote · " +
         stamp(D.usde.quote_time) +

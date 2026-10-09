@@ -111,3 +111,10 @@ test("initial table and headline use the recorded data, including missing values
   changed.usde.price = 20;
   assert.equal(values(changed, null).ids["sx-price"], "$20.00");
 });
+
+test("server-rendered summary includes a dated valuation and survives missing data", () => {
+  const summary = values(D, null).ids["sx-valuation-summary"];
+  assert.match(summary, /Latest observation/);
+  assert.ok(summary.includes(D.series.mnav.at(-1).toFixed(2) + "×"));
+  assert.match(values(null, null).ids["sx-valuation-summary"], /^Track StablecoinX/);
+});

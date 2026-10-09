@@ -32,7 +32,7 @@ export const stamp = (v) =>
         .replace(/:\d\d\.\d{3}Z$/, " UTC")
     : "Unavailable";
 export function values(D, P) {
-  const ids = {},
+  const ids = { "sx-valuation-summary": Ethena.valuationSummary(D) },
     market = {};
   if (D) {
     const c = Ethena.current(D),
