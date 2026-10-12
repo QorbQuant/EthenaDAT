@@ -38,8 +38,8 @@
           timeZone: "UTC",
         })} UTC · block ${format(data.blockNumber, 0)}`
       : failed
-      ? "USDEB chain data is temporarily unavailable."
-      : "Loading USDEB supply…";
+        ? "USDEB chain data is temporarily unavailable."
+        : "Loading USDEB supply…";
     el("tokenized-status").classList.toggle(
       "lighter-delayed",
       !!stale || failed,
@@ -87,6 +87,14 @@
     busy = false;
     render();
   }
+  try {
+    const boot = JSON.parse(
+      document.getElementById("dashboard-bootstrap")?.textContent || "null",
+    );
+    data = boot?.supplemental?.tokenized || data;
+    failed = !!boot?.supplemental && !data;
+  } catch {}
+  render();
   const observer = new IntersectionObserver(
     (entries) => {
       visible = entries[0].isIntersecting;

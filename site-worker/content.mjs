@@ -15,10 +15,8 @@ const sec = {
     "https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea0305686-8k_stablecoinx.htm",
   prospectus:
     "https://www.sec.gov/Archives/edgar/data/2080215/000121390026099731/ea0305435-424b3_stable.htm",
-  daily:
-    "https://github.com/QorbQuant/ethenaPay/blob/main/dune/05_daily_metrics.sql",
-  headline:
-    "https://github.com/QorbQuant/ethenaPay/blob/main/dune/06_kpi_headline.sql",
+  daily: "/ethenapay/#pay-data-rows",
+  headline: "/ethenapay/",
 };
 const byline =
   '<p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published 5 October 2026</span></p>';
@@ -66,12 +64,51 @@ export const content = {
   )}</p><div class="formula-note">Gross expiry payoff per warrant = max(share price at expiry − exercise price, 0)</div><p>If a hypothetical warrant costs $3.00 and has an $11.50 strike, the simple expiry breakeven is $14.50. At a $20 terminal share price, its gross payoff would be $8.50, or about 2.83 times the initial warrant cost. That is gross terminal value, not a 283% profit. The example excludes fees, taxes, early redemption and any changes to contract terms.</p><h2>Why the expiry chart is incomplete</h2><p>Early redemption can change the investment’s path before the stated expiry. A notice, cashless exercise provision or make-whole schedule can make the actual outcome different from holding a simple option until 2031. The dashboard includes a call-trigger tracker, but it is an observation aid, not a determination that a redemption is legally available or has been announced.</p><p>A trigger watch must use completed trading-session observations. An intraday price above a threshold does not establish a qualifying closing price. Contractual lookback rules and other conditions still need to be checked against the applicable filing.</p><h2>Exercise changes the capital structure</h2><p>Cash exercise can add both shares and exercise proceeds. A fully diluted per-share analysis therefore needs to consider both sides. Simply adding warrant shares to the denominator while ignoring cash proceeds can misstate the result. Cashless exercise has different mechanics and should be modeled from its own terms.</p><p>Private sponsor warrants are separate instruments. The dashboard lists their counts and strikes separately; the public quote for USDEW should not be treated as a quoted price for those private warrants.</p><h2>Use a scenario, not a single target</h2><p>Compare stock and warrant outcomes at several terminal stock prices. Then ask what happens if redemption occurs earlier, if the token treasury changes, or if additional shares are issued. A visually steep payoff line expresses sensitivity to assumptions, not confidence in an outcome.</p><div class="article-next"><span>Explore the contract mechanics</span><a href="/stablecoinx/#full-derivatives">Open warrants, payoff and options →</a><a href="/methodology/">Read the model limitations →</a></div>`,
   "/research/ethenapay-spend-events/": `<div class="editorial-kicker">On-chain measurement / EthenaPay</div><h1>A transaction is not a card purchase.</h1>${byline}<p class="editorial-lede">EthenaPay batches activity. One Avalanche transaction can contain spend events from multiple user wallets, so counting transaction hashes answers the wrong question.</p><h2>Count the event that represents the spend</h2><p>The relevant event is <code>AllowanceSpent(address indexed token, address indexed to, uint256 amount)</code>. The user’s smart wallet emits it, so the emitting contract address identifies the wallet. Filter the token to USDe on Avalanche C-Chain, then restrict the destination to the card programme’s settlement addresses.</p><div class="address-note"><p><strong>Network:</strong> Avalanche C-Chain, chain ID 43114</p><p><strong>USDe:</strong> <code>0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34</code> · 18 decimals</p><p><strong>Current settlement:</strong> <code>0x6070848bd19C37488d0516058f2933Dd992733dE</code></p><p><strong>Retired settlement:</strong> <code>0x3b3FFD99b87A2DEe5AD244b75d5a8e266890FdB8</code></p></div><p>The retired settlement route is needed for historical coverage. Omitting it drops earlier activity. The current ${source(
     sec.daily,
-    "daily query",
+    "daily data table",
   )} filters to both addresses and counts individual log rows.</p><h2>Three events, one transaction</h2><p>Suppose one transaction contains three qualifying events: wallet A spends 10 USDe, wallet B spends 20 USDe and wallet A spends another 5 USDe. The correct totals are 35 USDe spent, three spend events and two distinct spending wallets. Counting distinct transaction hashes would produce one, understating the event count.</p><p>A failed item in a batch emits no successful spend event. A transaction’s success alone is therefore not a reason to invent a spend row for every attempted item.</p><h2>Exclude the second hop</h2><p>The settlement address forwards funds to the issuer. That ERC20 transfer is a later movement of the same money, not another card authorization. Adding it to the wallet-emitted spend events would double-count spend. Reversals, deposits, withdrawals and rewards need their own definitions rather than being rolled into a single transfer total.</p><h2>Wallets, events and people are different measures</h2><p>Daily active wallets count distinct addresses with a qualifying spend event that day. Weekly and monthly counts require distinct addresses across those full windows. Adding seven daily wallet counts does not yield seven-day unique users, because the same wallet can appear on multiple days.</p><p>The dashboard labels the count as “Spend events” and omits median and average purchase amounts. Event-level amounts can be measured, but presenting them as verified retail receipt sizes adds an interpretation that the dashboard does not independently establish.</p><h2>Reading the dashboard</h2><p>Compare spend volume with the number of spending wallets and funded wallets. A rising balance does not itself show broad adoption; a few large accounts can move the total. The concentration view and clearly separated population measures help preserve that distinction.</p><p>Definitions: ${source(
     sec.daily,
-    "Daily metric query",
+    "Daily metric table",
   )} · ${source(
     sec.headline,
-    "Headline metric query",
+    "Headline metrics",
   )}. The newest daily observation can be partial, and independently refreshed queries may differ slightly.</p><div class="article-next"><span>Inspect the actual observations</span><a href="/ethenapay/">Open EthenaPay analytics →</a><a href="/methodology/">Read the source and refresh policy →</a></div>`,
 };
+
+const guideFindings = {
+  "/research/stablecoinx-mnav/": [
+    "mNAV is USDE share price divided by reported ENA token NAV per Class A share.",
+    "It excludes cash, other assets and liabilities. A discount is not a guaranteed return.",
+  ],
+  "/research/usdew-warrants/": [
+    "The simplified USDEW expiry payoff is the stock price minus the exercise price, with a floor of zero.",
+    "Early redemption, cashless exercise and dilution can change the outcome before expiry.",
+  ],
+  "/research/ethenapay-spend-events/": [
+    "Count successful wallet-emitted AllowanceSpent logs to both settlement addresses, not transaction hashes.",
+    "Exclude the issuer hop. Wallet counts are not people, and spend events are not independently verified retail purchases.",
+  ],
+};
+for (const [path, findings] of Object.entries(guideFindings)) {
+  content[path] = content[path].replace(
+    byline,
+    byline +
+      `<section class="key-findings" aria-label="Key findings"><h2>Key findings</h2><p class="research-cutoff">Methodology summary · October 5, 2026</p><ul>${findings.map((text) => `<li>${text}</li>`).join("")}</ul></section>`,
+  );
+}
+for (const path of Object.keys(content).filter(
+  (path) => path.startsWith("/research/") && path !== "/research/",
+)) {
+  const datasetPath = path.includes("ethenapay")
+    ? "/data/ethenapay-spending/"
+    : path.includes("usdeb")
+      ? "/data/usdeb-supply/"
+      : path.includes("lighter")
+        ? "/data/stablecoinx-perpetuals/"
+        : "/data/stablecoinx-valuation/";
+  content[path] +=
+    `<p class="dataset-related"><a href="${datasetPath}">Explore the related dataset and downloads →</a></p>`;
+}
+content["/research/"] = content["/research/"].replace(
+  '<div class="article-list">',
+  '<p><a href="/data/">Browse the data library and downloads →</a></p><div class="article-list">',
+);

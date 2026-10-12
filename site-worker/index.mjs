@@ -1,3 +1,12 @@
+import { loadSupplemental, supplementalView } from "./supplemental.mjs";
+import { DATASETS } from "./dataset-meta.mjs";
+import {
+  dataset,
+  datasetPage,
+  datasetIndex,
+  datasetDownload,
+} from "./datasets.mjs";
+import { recordReferral } from "./referrals.mjs";
 import { tokenizedFlowsResponse } from "./tokenized-flows.mjs";
 import { tokenizedResponse } from "./tokenized.mjs";
 import Ethena from "../docs/assets/data.js";
@@ -72,13 +81,15 @@ export async function loadFeed(
   } catch {}
   return { data: null, fallback: true };
 }
-export function renderDashboard(template, path, feeds) {
+export function renderDashboard(template, path, feeds, supplemental = {}) {
   const page = PAGES[path],
     D = feeds.sx.data,
     P = feeds.pay.data ? Ethena.normalizePay(feeds.pay.data) : null,
     { ids, market } = values(D, P),
     active = page.page,
     modified = (active === "sx" ? D : P)?.generated_at;
+  const extra = supplementalView(supplemental, D);
+  if (active === "sx") Object.assign(ids, extra.ids);
   let rewriter = new HTMLRewriter()
     .on("title", {
       element(e) {
@@ -171,6 +182,7 @@ export function renderDashboard(template, path, feeds) {
           `<script type="application/json" id="dashboard-bootstrap">${safeJSON({
             sx: D,
             pay: P,
+            supplemental,
             feeds: {
               sx: { fallback: feeds.sx.fallback },
               pay: { fallback: feeds.pay.fallback },
@@ -180,6 +192,30 @@ export function renderDashboard(template, path, feeds) {
         );
       },
     });
+  if (active === "sx") {
+    rewriter = rewriter.on("#tokenized-flow-table", {
+      element(e) {
+        e.setInnerContent(extra.flowRows, { html: true });
+      },
+    });
+    if (extra.priceChart?.length)
+      rewriter = rewriter.on("#lighter-chart", {
+        element(e) {
+          e.setAttribute("viewBox", "0 0 800 320");
+          e.setInnerContent(
+            chart(
+              extra.priceChart.map((r) =>
+                new Date(r.t).toISOString().slice(11, 16),
+              ),
+              extra.priceChart.map((r) => r.close),
+              "Lighter hourly trade closes (UTC)",
+              true,
+            ),
+            { html: true },
+          );
+        },
+      });
+  }
   // Bootstrap must precede deferred scripts; those execute only after parsing.
   for (const [id, value] of Object.entries(ids))
     rewriter = rewriter.on("#" + id, {
@@ -207,8 +243,8 @@ export function renderDashboard(template, path, feeds) {
         let warning = !data
           ? "Data unavailable. Please reload to retry."
           : feeds[key].fallback
-          ? "Repository feed unavailable · showing the deployed backup. "
-          : "";
+            ? "Repository feed unavailable · showing the deployed backup. "
+            : "";
         if (data && age > (key === "pay" ? 36 : 48))
           warning += "Source data is " + Math.floor(age) + " hours old. ";
         if (data && warning)
@@ -325,14 +361,48 @@ export default {
         "User-agent: *\nAllow: /\n\nSitemap: " + ORIGIN + "/sitemap.xml\n",
         { headers: { "Content-Type": "text/plain; charset=utf-8" } },
       );
-    else if (content[path]) response = documentPage(path, content[path]);
+    else if (path === "/data/") response = datasetIndex();
+    else if (
+      DATASETS[path] ||
+      /^\/data\/[^/]+\/download\.(csv|json)$/.test(url.pathname)
+    ) {
+      const datasetPath = DATASETS[path]
+        ? path
+        : url.pathname.replace(/download\.(csv|json)$/, "");
+      if (!DATASETS[datasetPath])
+        response = new Response("Not found", { status: 404 });
+      else {
+        const key = DATASETS[datasetPath].key;
+        const [sx, pay, markets] = await Promise.all([
+          key === "valuation"
+            ? loadFeed("data.json", "sx", env, url.origin, ctx)
+            : null,
+          key === "spending"
+            ? loadFeed("ethenapay.json", "pay", env, url.origin, ctx)
+            : null,
+          loadSupplemental(
+            ctx,
+            key === "supply"
+              ? ["flows"]
+              : key === "perpetuals"
+                ? ["lighter"]
+                : [],
+          ),
+        ]);
+        const d = dataset(datasetPath, { sx, pay }, markets);
+        response = DATASETS[path]
+          ? datasetPage(datasetPath, d)
+          : datasetDownload(d, url.pathname.endsWith(".csv") ? "csv" : "json");
+      }
+    } else if (content[path]) response = documentPage(path, content[path]);
     else if (PAGES[path]?.page) {
-      const [template, sx, pay] = await Promise.all([
+      const [template, sx, pay, markets] = await Promise.all([
         env.ASSETS.fetch(new Request(url.origin + "/")),
         loadFeed("data.json", "sx", env, url.origin, ctx),
         loadFeed("ethenapay.json", "pay", env, url.origin, ctx),
+        loadSupplemental(ctx, PAGES[path].page === "sx" ? undefined : []),
       ]);
-      response = renderDashboard(template, path, { sx, pay });
+      response = renderDashboard(template, path, { sx, pay }, markets);
     } else {
       response = await env.ASSETS.fetch(request);
       if (response.status === 404)
@@ -344,6 +414,7 @@ export default {
           },
         );
     }
+    if (!local && path && response.ok) recordReferral(request, env, path);
     return request.method === "HEAD"
       ? new Response(null, {
           status: response.status,

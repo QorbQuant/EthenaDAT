@@ -1,5 +1,5 @@
 {
-  "cutoff": "Prices through the September 30 close \u00b7 Filings reviewed through October 5, 2026",
+  "cutoff": "Prices through the September 30 close · Filings reviewed through October 5, 2026",
   "navigation": [
     [
       "Attribution",
@@ -21,7 +21,7 @@
   "chartLabel": "mNAV comparison chart",
   "chartFile": "chart_mnav_two_timestamps.svg",
   "dashboard": "/stablecoinx/",
-  "dashboardLabel": "Open the StablecoinX dashboard \u2192",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
   "assets": [
     "chart_mnav_two_timestamps.svg",
     "chart_preview.png",
@@ -49,5 +49,10 @@
     "out/results.json",
     "out/window_table.csv",
     "usde_sept2026_review.py"
+  ],
+  "keyFindings": [
+    "USDE gained 81.3% in September 2026. Matching ENA to the stock-market close changes how that return is attributed.",
+    "Token NAV per share rose 75.6% on the matched-close series, compared with 66.9% on the dashboard daily series.",
+    "The decomposition describes endpoint arithmetic. It does not prove what caused investors to buy or sell."
   ]
 }

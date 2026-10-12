@@ -39,8 +39,8 @@ if (panel) {
           Date.parse(data.observedAt),
         )} · reconciled to on-chain supply.`
       : failed
-      ? "Supply-flow history is temporarily unavailable."
-      : "Loading verified supply history…";
+        ? "Supply-flow history is temporarily unavailable."
+        : "Loading verified supply history…";
     $("tokenized-flow-status").classList.toggle(
       "lighter-delayed",
       !!delayed || failed,
@@ -54,8 +54,8 @@ if (panel) {
       range === "all"
         ? "Since contract deployment"
         : range === "24h"
-        ? "24 hours ending at the snapshot"
-        : "7 days ending at the snapshot";
+          ? "24 hours ending at the snapshot"
+          : "7 days ending at the snapshot";
     $("tokenized-flow-note").textContent =
       "Raw USDEB units · blue: minted / copper: burned · UTC days · boundary days may be partial.";
     $("tokenized-adjustments").textContent = data.adjustments.length
@@ -195,8 +195,8 @@ if (panel) {
           event.key === "Home"
             ? 0
             : event.key === "End"
-            ? w.rows.length - 1
-            : focusIndex + (event.key === "ArrowRight" ? 1 : -1),
+              ? w.rows.length - 1
+              : focusIndex + (event.key === "ArrowRight" ? 1 : -1),
         );
       }
     });
@@ -232,6 +232,14 @@ if (panel) {
       render();
     }),
   );
+  try {
+    const boot = JSON.parse(
+      document.getElementById("dashboard-bootstrap")?.textContent || "null",
+    );
+    data = boot?.supplemental?.flows || data;
+    failed = !!boot?.supplemental && !data;
+  } catch {}
+  render();
   new IntersectionObserver(
     (entries) => {
       visible = entries[0].isIntersecting;

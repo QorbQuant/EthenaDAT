@@ -70,5 +70,10 @@
     "out/run_log.txt",
     "out/volume_by_month.csv",
     "out/votes_class_b.csv"
+  ],
+  "keyFindings": [
+    "The August 28 filing identified 19,063,653 freely tradable Class A shares, 79.3% of the 24,029,375 then outstanding.",
+    "A further 3,621,132 shares held by Ethena were registered and not contractually locked; 1,344,590 remained locked until December 25.",
+    "Subsequent director issuance raised Class A shares to 24,139,375. Trading volume and voting control measure different things from freely tradable supply."
   ]
 }

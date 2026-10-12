@@ -46,11 +46,13 @@ def build(source):
     for _, anchor in layout['navigation']:
         if f'id="{anchor}"' not in body:
             raise ValueError(f"Missing article section: {slug}#{anchor}")
+    findings = '<section class="key-findings" aria-label="Key findings"><h2>Key findings</h2><ul>' + ''.join('<li>' + html.escape(item) + '</li>' for item in layout.get('keyFindings', [])) + '</ul></section>' if layout.get('keyFindings') else ''
     header = f'''<article class="research-article">
 <header class="research-header"><div class="editorial-kicker">{html.escape(blocks[1])}</div>
 <h1>{html.escape(meta['headline'])}</h1>
 <p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published <time datetime="{meta['datePublished']}">{display_date}</time></span></p>
 <p class="research-cutoff">{html.escape(layout['cutoff'])}</p></header>
+{findings}
 <nav class="research-contents" aria-label="In this article"><span>In this review</span>{navigation}</nav>
 '''
     end = f'''<div class="article-next"><span>Continue exploring</span><a href="{html.escape(layout['dashboard'])}">{html.escape(layout['dashboardLabel'])}</a><a href="/research/">All research and guides →</a></div></article>'''

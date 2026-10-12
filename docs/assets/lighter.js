@@ -57,8 +57,8 @@
     r > 0
       ? "Longs pay shorts"
       : r < 0
-      ? "Shorts pay longs"
-      : "No funding payment";
+        ? "Shorts pay longs"
+        : "No funding payment";
   function status() {
     const stale =
       data &&
@@ -70,8 +70,8 @@
           stale ? "Refresh delayed · showing last snapshot. " : ""
         }Source: Lighter · retrieved ${time(data.fetchedAt)}`
       : failed
-      ? "Lighter is temporarily unavailable. Stock, warrant and options data remain available."
-      : "Loading Lighter market data…";
+        ? "Lighter is temporarily unavailable. Stock, warrant and options data remain available."
+        : "Loading Lighter market data…";
     $("#lighter-status").classList.toggle("lighter-delayed", !!stale || failed);
   }
   function render() {
@@ -314,6 +314,14 @@
         draw();
       }),
     );
+  try {
+    const boot = JSON.parse(
+      document.getElementById("dashboard-bootstrap")?.textContent || "null",
+    );
+    data = boot?.supplemental?.lighter || data;
+    failed = !!boot?.supplemental && !data;
+  } catch {}
+  render();
   new IntersectionObserver(
     (entries) => {
       visible = entries[0].isIntersecting;

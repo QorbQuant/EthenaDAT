@@ -55,5 +55,10 @@
     "out/run_log.txt",
     "out/weekly_check.csv",
     "out/weekly_shares.csv"
+  ],
+  "keyFindings": [
+    "Of 126 wallets that first spent in beta-launch week, 104 spent the following week and 89 spent in week four.",
+    "The first four beta cohorts contained 519 wallets, but only the earliest 126 could be observed at week four by October 4, 2026.",
+    "A return in a later week does not mean uninterrupted weekly activity. Wallet cohorts are not verified people."
   ]
 }

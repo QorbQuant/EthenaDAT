@@ -59,5 +59,10 @@
     "out/results.json",
     "out/run_log.txt",
     "out/short_interest.csv"
+  ],
+  "keyFindings": [
+    "Reported USDE short interest was 2,810,986 shares at September 30, 2026, up 78% from September 15.",
+    "That equals 14.75% of the August 28 freely tradable share count. The denominator is dated, not a current verified float.",
+    "Short interest is an outstanding position at a settlement date. Daily short-sale volume measures trading flow and cannot substitute for it."
   ]
 }

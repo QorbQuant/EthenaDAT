@@ -59,5 +59,10 @@
     "out/run_log.txt",
     "out/usdeb_supply_by_period.csv",
     "out/usdeb_supply_events.csv"
+  ],
+  "keyFindings": [
+    "USDEB is a bStock linked to StablecoinX Class A shares. It is distinct from USDE stock, USDEW warrants and Ethena’s USDe.",
+    "At 22:28 UTC on October 8, 2026, 41,856.57 USDEB were outstanding, about 0.17% of the reported Class A share count.",
+    "Mint and burn totals reconcile to token supply. That does not independently verify the shares held in custody."
   ]
 }

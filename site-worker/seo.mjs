@@ -1,3 +1,4 @@
+import { DATA_PAGES } from "./dataset-meta.mjs";
 import { meta as trackingReview } from "./content/usde-ena-tracking-2026-10-08.mjs";
 import { meta as shortInterestReview } from "./content/stablecoinx-short-interest-2026-10-08.mjs";
 import { meta as lighterReview } from "./content/stablecoinx-perp-lighter-2026-10-08.mjs";
@@ -18,6 +19,7 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  ...DATA_PAGES,
   [trackingReview.path]: trackingReview,
   [shortInterestReview.path]: shortInterestReview,
   [lighterReview.path]: lighterReview,
@@ -54,6 +56,7 @@ export const PAGES = {
       "How to calculate StablecoinX token NAV, ENA per share and mNAV, and why a discount to reported token assets is not a guaranteed return.",
     name: "StablecoinX mNAV explained",
     article: true,
+    dateModified: "2026-10-11",
   },
   "/research/usdew-warrants/": {
     title: "USDEW Warrants Explained: Payoff, Dilution & Redemption",
@@ -61,6 +64,7 @@ export const PAGES = {
       "Understand StablecoinX USDEW warrants: exercise-price mechanics, expiry payoff, dilution and why redemption terms matter before expiration.",
     name: "USDEW warrants explained",
     article: true,
+    dateModified: "2026-10-11",
   },
   "/research/ethenapay-spend-events/": {
     title: "How EthenaPay Spending Is Measured On-Chain | EthenaDash",
@@ -68,6 +72,7 @@ export const PAGES = {
       "Why EthenaPay card analytics count AllowanceSpent log events rather than transaction hashes, include both settlement addresses and exclude the issuer hop.",
     name: "Measuring EthenaPay spending",
     article: true,
+    dateModified: "2026-10-11",
   },
   "/methodology/": {
     title: "Data Sources & Calculation Methodology | EthenaDash",
@@ -128,8 +133,8 @@ export function graph(path, modified) {
               ...(p.image ? { image: ORIGIN + p.image } : {}),
             }
           : modified
-          ? { dateModified: modified }
-          : {}),
+            ? { dateModified: modified }
+            : {}),
         breadcrumb: { "@id": url + "#breadcrumb" },
       },
       {
@@ -142,19 +147,19 @@ export function graph(path, modified) {
             name: "EthenaDash",
             item: ORIGIN + "/stablecoinx/",
           },
-          ...(p.article
+          ...(p.article || p.dataset
             ? [
                 {
                   "@type": "ListItem",
                   position: 2,
-                  name: "Research",
-                  item: ORIGIN + "/research/",
+                  name: p.dataset ? "Data" : "Research",
+                  item: ORIGIN + (p.dataset ? "/data/" : "/research/"),
                 },
               ]
             : []),
           {
             "@type": "ListItem",
-            position: p.article ? 3 : 2,
+            position: p.article || p.dataset ? 3 : 2,
             name: p.name,
             item: url,
           },
@@ -163,7 +168,13 @@ export function graph(path, modified) {
     ],
   };
 }
-export function extraHead(path, modified) {
+export function extraHead(path, modified, entity) {
+  const structured = graph(path, modified);
+  if (entity) {
+    const { ["@context"]: context, ...node } = entity;
+    structured["@graph"].push(node);
+    structured["@graph"][2].mainEntity = { "@id": entity["@id"] };
+  }
   const page = PAGES[path];
   const image = page.image
     ? `<meta property="og:image" content="${
@@ -179,7 +190,7 @@ export function extraHead(path, modified) {
   }"><meta property="og:site_name" content="EthenaDash"><meta name="twitter:card" content="${
     page.image ? "summary_large_image" : "summary"
   }"><meta name="twitter:creator" content="@Degenerate_DeFi">${image}<link rel="icon" type="image/svg+xml" href="/assets/favicon.svg"><script type="application/ld+json">${safeJSON(
-    graph(path, modified),
+    structured,
   )}</script>`;
 }
 export function nav(path) {
@@ -192,9 +203,9 @@ export function nav(path) {
   }>Research</a></nav></header>`;
 }
 export function footer() {
-  return `<footer class="full-footer"><span>ethenadash</span><nav class="full-footer-links" aria-label="Site information"><a href="/research/">Research</a><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="https://x.com/Degenerate_DeFi" target="_blank" rel="noopener noreferrer">By @Degenerate_DeFi ↗</a></nav></footer>`;
+  return `<footer class="full-footer"><span>ethenadash</span><nav class="full-footer-links" aria-label="Site information"><a href="/research/">Research</a><a href="/data/">Data</a><a href="/methodology/">Methodology</a><a href="/about/">About</a><a href="https://x.com/Degenerate_DeFi" target="_blank" rel="noopener noreferrer">By @Degenerate_DeFi ↗</a></nav></footer>`;
 }
-export function documentPage(path, content, status = 200) {
+export function documentPage(path, content, status = 200, entity = null) {
   const p = PAGES[path];
   return new Response(
     `<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#0d1116"><title>${esc(
@@ -211,10 +222,16 @@ export function documentPage(path, content, status = 200) {
       ORIGIN + path
     }"><link rel="stylesheet" href="/assets/dashboard.css">${extraHead(
       path,
+      entity?.dateModified,
+      entity,
     )}</head><body><div id="sx-studio"><div class="sx-shell">${nav(
       path,
     )}<main class="editorial"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="/stablecoinx/">EthenaDash</a><span>/</span>${
-      p.article ? '<a href="/research/">Research</a><span>/</span>' : ""
+      p.dataset
+        ? '<a href="/data/">Data</a><span>/</span>'
+        : p.article
+          ? '<a href="/research/">Research</a><span>/</span>'
+          : ""
     }<span aria-current="page">${esc(
       p.name,
     )}</span></nav>${content}</main>${footer()}</div></div></body></html>`,

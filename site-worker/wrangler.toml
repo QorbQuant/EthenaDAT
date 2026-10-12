@@ -15,3 +15,7 @@ routes = [
   { pattern = "www.ethenadash.com", custom_domain = true },
   { pattern = "new.ethenadash.com", custom_domain = true },
 ]
+
+[[analytics_engine_datasets]]
+binding = "AI_REFERRALS"
+dataset = "ethenadash_ai_referrals"

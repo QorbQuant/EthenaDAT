@@ -1,5 +1,5 @@
 {
-  "cutoff": "Chain data through October 5, 2026 at 15:53 UTC \u00b7 Full weeks through October 4 \u00b7 Full months through September",
+  "cutoff": "Chain data through October 5, 2026 at 15:53 UTC · Full weeks through October 4 · Full months through September",
   "navigation": [
     [
       "Wallet growth",
@@ -21,7 +21,7 @@
   "chartLabel": "Weekly EthenaPay spending wallets",
   "chartFile": "chart_weekly_spending_wallets.svg",
   "dashboard": "/ethenapay/",
-  "dashboardLabel": "Open the EthenaPay dashboard \u2192",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
   "assets": [
     "chart_weekly_spending_wallets.svg",
     "chart_preview.png",
@@ -81,5 +81,10 @@
     "out/weeks.csv",
     "out/weeks_wallets.csv",
     "test_chain_recount.cjs"
+  ],
+  "keyFindings": [
+    "617 distinct wallets spent in the seven full days ending October 4, 2026.",
+    "At the October 5 cutoff, 816 wallets had ever spent and 1,100 had received USDe, out of 14,047 created.",
+    "Created wallets are not verified users. Limited beta access and concentrated balances complicate adoption comparisons."
   ]
 }

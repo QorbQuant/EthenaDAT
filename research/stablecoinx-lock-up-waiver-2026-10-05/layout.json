@@ -1,5 +1,5 @@
 {
-  "cutoff": "Dashboard rows through the October 7, 2026 close \u00b7 Filings reviewed through October 8, 2026",
+  "cutoff": "Dashboard rows through the October 7, 2026 close · Filings reviewed through October 8, 2026",
   "navigation": [
     [
       "Old schedule",
@@ -29,7 +29,7 @@
   "chartLabel": "Locked ENA schedule chart",
   "chartFile": "chart_locked_schedule.svg",
   "dashboard": "/stablecoinx/",
-  "dashboardLabel": "Open the StablecoinX dashboard \u2192",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
   "assets": [
     "chart_locked_schedule.svg",
     "chart_preview.png",
@@ -66,5 +66,10 @@
     "out/run_log.txt",
     "out/tpa_schedule.csv",
     "out/unlocked_multiple_bridge.csv"
+  ],
+  "keyFindings": [
+    "The waiver took effect on October 5, 2026, ending the ENA lock-ups covered by agreements with Ethena.",
+    "Foundation consent rights and company approval requirements remain. Unlocked does not mean freely saleable.",
+    "The change affects the unlocked classification, not total reported ENA or token NAV. Historical unlocked figures included assumptions."
   ]
 }

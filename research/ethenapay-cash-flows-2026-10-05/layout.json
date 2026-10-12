@@ -68,5 +68,10 @@
     "out/september_rates.csv",
     "out/weekday_spend.csv",
     "out/worked_day_2026-10-05.csv"
+  ],
+  "keyFindings": [
+    "From May 15 through October 5, 2026, EthenaPay wallets received 11.06 million USDe in deposits and ended with 3.98 million USDe.",
+    "Withdrawals represented 43% of deposits and card spend 22%; reversals and USDe rewards added funds back.",
+    "Realized reward rates depend on eligibility, caps, timing and balances. Aggregate payouts do not establish what any one wallet should receive."
   ]
 }

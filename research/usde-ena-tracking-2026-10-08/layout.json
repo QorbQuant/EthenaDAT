@@ -64,5 +64,10 @@
     "out/results.json",
     "out/run_log.txt",
     "out/summary.csv"
+  ],
+  "keyFindings": [
+    "Across 72 matched daily moves through October 8, 2026, USDE and ENA moved in the same direction 50 times, opposite directions 20 times, with either price unchanged twice.",
+    "Daily-return correlation was 0.64. The estimated slope fell from 1.37 to 0.91 when the three largest USDE moves were removed.",
+    "Matched stock-market closing times are essential. This short historical sample does not establish a stable future relationship."
   ]
 }
