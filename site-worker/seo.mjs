@@ -53,10 +53,10 @@ export const PAGES = {
   "/research/stablecoinx-mnav/": {
     title: "StablecoinX mNAV Explained: ENA Treasury vs Share Price",
     description:
-      "How to calculate StablecoinX token NAV, ENA per share and mNAV, and why a discount to reported token assets is not a guaranteed return.",
+      "How StablecoinX mNAV is calculated, why Class A shares differ from float, and how warrants, asset definitions and price timestamps change the multiple.",
     name: "StablecoinX mNAV explained",
     article: true,
-    dateModified: "2026-10-11",
+    dateModified: "2026-10-12",
   },
   "/research/usdew-warrants/": {
     title: "USDEW Warrants Explained: Payoff, Dilution & Redemption",
