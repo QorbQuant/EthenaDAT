@@ -179,7 +179,7 @@
               input.select();
             }
           } else {
-            exportModule ??= import("/assets/export.js?v=20261009-annotations").catch((error) => {
+            exportModule ??= import("/assets/export.js?v=20261012-compact").catch((error) => {
               exportModule = null;
               throw error;
             });

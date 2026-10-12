@@ -47,6 +47,14 @@ function sourceStamp(value) {
     : "Unavailable";
 }
 const safeFormat = (f, v) => (Number.isFinite(v) ? f(v) : "N/A");
+function annotationLabel(v, value) {
+  const formatted = (v.annotationFormat || v.format || String)(value);
+  if (Math.abs(value) < 1e6) return formatted;
+  const sign = value < 0 ? "−" : "";
+  const currency = formatted.includes("$") ? "$" : "";
+  const suffix = formatted.match(/[×%]$/)?.[0] || "";
+  return sign + currency + (Math.abs(value) / 1e6).toFixed(2) + "M" + suffix;
+}
 const bounds = { l: 156, r: 1536, t: 185, b: 760 };
 function axes(y, fmt) {
   const { l, r } = bounds;
@@ -171,7 +179,7 @@ function seriesPlot(v, d3) {
     const labels = v.series.flatMap((s, k) => {
       const value = selectedValues[k];
       if (!Number.isFinite(value)) return [];
-      const formatted = (v.annotationFormat || v.format || String)(value);
+      const formatted = annotationLabel(v, value);
       return [{ k, color: s.color || [C.blue, C.copper][k % 2],
         label: (v.series.length > 1 ? s.name + " · " : "") + formatted,
         px: x(selectedX), py: y(value) }];

@@ -40,7 +40,7 @@ export const DATASETS = {
     key: "supply",
     name: "USDEB supply and net issuance data",
     description:
-      "StablecoinX bStock supply, daily mints, burns and net issuance on BNB Chain. Reconciled on-chain observations with CSV and JSON downloads.",
+      "StablecoinX bStock supply, daily mints, burns and net issuance on BNB Chain. Reconciled onchain observations with CSV and JSON downloads.",
     dashboard: "/stablecoinx/#tokenized-panel",
     guide: "/research/usdeb-stablecoinx-bstock/",
     definition:

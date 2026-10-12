@@ -137,6 +137,24 @@ test("annotation handles overlapping series and edge points without invalid geom
     assert.doesNotMatch(xml, /NaN|Infinity|undefined/);
   }
 });
+test("million-plus annotations are compact while smaller amounts retain precision", () => {
+  const d = fixture();
+  d.visual.annotate = true;
+  d.visual.annotationFormat = value => "$" + value.toLocaleString("en-US", {
+    minimumFractionDigits: 2, maximumFractionDigits: 2,
+  });
+  for (const [value, label] of [
+    [6022689.07, "$6.02M"], [1000000, "$1.00M"],
+    [-6022689.07, "−$6.02M"], [999999.99, "$999,999.99"],
+  ]) {
+    d.visual.series[0].data[1] = value;
+    assert.ok(renderCard(d, d3).includes(`>${label}</text>`));
+    assert.equal(d.visual.series[0].data[1], value);
+  }
+  d.visual.annotationFormat = value => value.toLocaleString("en-US");
+  d.visual.series[0].data[1] = 2500000;
+  assert.ok(renderCard(d, d3).includes(">2.50M</text>"));
+});
 test("excluded current day uses the last included date in the image footer", () => {
   const d = fixture();
   d.visual.through = "2026-10-04";

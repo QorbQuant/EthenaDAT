@@ -61,7 +61,7 @@ export const PAGES = {
   "/research/": {
     title: "Ethena & StablecoinX Research and Analysis | EthenaDash",
     description:
-      "Original StablecoinX market reviews and sourced guides to ENA treasury valuation, USDEW warrants and EthenaPay on-chain spending.",
+      "Original StablecoinX market reviews and sourced guides to ENA treasury valuation, USDEW warrants and EthenaPay onchain spending.",
     name: "Research",
   },
   "/research/stablecoinx-mnav/": {
@@ -81,7 +81,7 @@ export const PAGES = {
     dateModified: "2026-10-11",
   },
   "/research/ethenapay-spend-events/": {
-    title: "How EthenaPay Spending Is Measured On-Chain | EthenaDash",
+    title: "How EthenaPay Spending Is Measured Onchain | EthenaDash",
     description:
       "Why EthenaPay card analytics count AllowanceSpent log events rather than transaction hashes, include both settlement addresses and exclude the issuer hop.",
     name: "Measuring EthenaPay spending",
@@ -97,7 +97,7 @@ export const PAGES = {
   "/about/": {
     title: "About Qorban Ferrell & EthenaDash",
     description:
-      "EthenaDash is created and maintained by Qorban Ferrell (@Degenerate_DeFi), covering StablecoinX treasury valuation and EthenaPay on-chain activity.",
+      "EthenaDash is created and maintained by Qorban Ferrell (@Degenerate_DeFi), covering StablecoinX treasury valuation and EthenaPay onchain activity.",
     name: "About EthenaDash",
   },
 };

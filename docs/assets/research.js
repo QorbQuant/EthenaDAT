@@ -215,7 +215,7 @@ window.mountResearch = function (initialD, initialP) {
                         : "Daily observations") + " · "
                     : "") + units[id],
           source: pay
-            ? "On-chain data · Avalanche"
+            ? "Onchain data · Avalanche"
             : id === "full-indexed"
               ? "Yahoo Finance / CoinGecko"
               : "Public filings / market data",

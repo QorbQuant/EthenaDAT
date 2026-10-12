@@ -73,7 +73,7 @@ export function supplementalView(markets = {}, sx, now = Date.now()) {
   if (f) {
     const w = flowWindow(f, "7d");
     ids["tokenized-flow-status"] =
-      `${f.stale || now - Date.parse(f.observedAt) > 36 * 3600000 ? "Refresh delayed · " : ""}Source: Dune / BNB Chain · through ${stamp(f.observedAt)} · reconciled to on-chain supply.`;
+      `${f.stale || now - Date.parse(f.observedAt) > 36 * 3600000 ? "Refresh delayed · " : ""}Source: Dune / BNB Chain · through ${stamp(f.observedAt)} · reconciled to onchain supply.`;
     ids["tokenized-minted"] = decimal(w.minted);
     ids["tokenized-burned"] = decimal(w.burned);
     ids["tokenized-net"] = signed(w.net);

@@ -37,7 +37,7 @@ if (panel) {
           delayed ? "Refresh delayed · " : ""
         }Source: Dune / BNB Chain · through ${stamp(
           Date.parse(data.observedAt),
-        )} · reconciled to on-chain supply.`
+        )} · reconciled to onchain supply.`
       : failed
         ? "Supply-flow history is temporarily unavailable."
         : "Loading verified supply history…";

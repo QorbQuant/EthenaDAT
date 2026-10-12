@@ -88,7 +88,7 @@ The panel shows no USDEB price, holder count or net buying. The dashboard's note
 
 ## What this review could not check
 
-Binance's proof-of-collateral page had no USDEB entry at 22:26 or at 23:26 UTC on October 8, so this review could not compare the shares held for the tokens with on-chain supply. Binance's [list of approved bStocks prospectuses](https://www.binance.com/en/about-legal-disclosures/bstocks-digital-securities-documentation-prospectuses) had no USDEB entry either, and its newest approval was dated September 22, so this review could not read the ADGM prospectus for USDEB. No document reviewed says whether holders can vote or what they receive if a party in the chain fails. When last checked, at 23:26 UTC on October 8, StablecoinX's newest SEC filings were five Forms 4, reports of insiders' holdings, filed on October 2, before Binance listed USDEB.
+Binance's proof-of-collateral page had no USDEB entry at 22:26 or at 23:26 UTC on October 8, so this review could not compare the shares held for the tokens with onchain supply. Binance's [list of approved bStocks prospectuses](https://www.binance.com/en/about-legal-disclosures/bstocks-digital-securities-documentation-prospectuses) had no USDEB entry either, and its newest approval was dated September 22, so this review could not read the ADGM prospectus for USDEB. No document reviewed says whether holders can vote or what they receive if a party in the chain fails. When last checked, at 23:26 UTC on October 8, StablecoinX's newest SEC filings were five Forms 4, reports of insiders' holdings, filed on October 2, before Binance listed USDEB.
 
 ## Reproduce the numbers
 
@@ -103,4 +103,4 @@ reference value   = supply in USDEB × USDE Nasdaq close on October 8
 
 The Class A count adds 110,000 shares from five director restricted-stock awards, reported on Forms 4 on October 2, to the 24,029,375 shares the StablecoinX prospectus reported as of August 28, 2026. The [USDEW warrant guide](https://ethenadash.com/research/usdew-warrants/) explains the warrants, and the [lock-up waiver review](https://ethenadash.com/research/stablecoinx-lock-up-waiver-2026-10-05/) covers what the company may do with its ENA.
 
-Analysis of public documents and on-chain data. Not investment advice.
+Analysis of public documents and onchain data. Not investment advice.
