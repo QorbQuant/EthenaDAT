@@ -1,0 +1,16 @@
+direction,counterparty,transfers,usde
+into wallets,rhino.fi bridge contract,4690,12605496.43
+into wallets,other accounts,2688,1470246.15
+into wallets,arrived from another chain,1,10.00
+into wallets,settlement recipients,0,0.00
+into wallets,Uniswap v3 pool,0,0.00
+into wallets,reward accounts,51524,21398.94
+into wallets,"settlement addresses, returns",2516,139986.48
+out of wallets,"settlement addresses, card payments",37731,2945283.40
+out of wallets,other accounts,1146,5306540.87
+out of wallets,rhino.fi bridge contract,4,36.05
+out of wallets,left Avalanche,1,2.00
+out of wallets,Uniswap v3 pool,0,0.00
+out of wallets,settlement recipients,0,0.00
+out of wallets,reward accounts,0,0.00
+between wallets,EthenaPay wallets,2340,119834.44

@@ -1,0 +1,508 @@
+{
+ "recount_spend": {
+  "spend_events": 29556,
+  "card_payments": 29557,
+  "gap_date": "2026-09-24",
+  "gap_usde": "5.00"
+ },
+ "end": {
+  "date": "2026-10-11",
+  "supply_usde": "10542847.89",
+  "holders": 1680,
+  "wallets_created": 14740,
+  "groups": {
+   "wallets": {
+    "accounts": 1216,
+    "usde": "5985275.68",
+    "share_pct": "56.77"
+   },
+   "settlement": {
+    "accounts": 1,
+    "usde": "325047.37",
+    "share_pct": "3.08"
+   },
+   "reward_accounts": {
+    "accounts": 3,
+    "usde": "29405.98",
+    "share_pct": "0.28"
+   },
+   "settlement_recipients": {
+    "accounts": 3,
+    "usde": "2555254.55",
+    "share_pct": "24.24"
+   },
+   "rhino_fi_bridge_contract": {
+    "accounts": 1,
+    "usde": "135692.19",
+    "share_pct": "1.29"
+   },
+   "uniswap_v3_pool": {
+    "accounts": 1,
+    "usde": "298106.73",
+    "share_pct": "2.83"
+   },
+   "other_accounts": {
+    "accounts": 455,
+    "usde": "1214065.40",
+    "share_pct": "11.52"
+   }
+  },
+  "ethenapay_linked_usde": "8894983.58",
+  "ethenapay_linked_share_pct": "84.37",
+  "ethenapay_linked_accounts": 1223,
+  "outside_wallets_usde": "4557572.21",
+  "holders_outside_ethenapay_usde": "1647864.31",
+  "holders_outside_ethenapay_share_pct": "15.63",
+  "non_wallet_holders": 464
+ },
+ "growth": {
+  "supply_2026_05_14_usde": "191615.18",
+  "holders_2026_05_14": 397,
+  "multiple": "55.0",
+  "increase_usde": "10351232.71",
+  "wallets_first_above_half": {
+   "date": "2026-09-02",
+   "share_pct": "64.28"
+  },
+  "largest_one_day_move": {
+   "date": "2026-09-22",
+   "points": "8.61",
+   "days_moving_3_points_or_more": 7,
+   "day_pairs": 39
+  },
+  "wallet_share_since": {
+   "low_date": "2026-10-05",
+   "low_pct": "48.07",
+   "high_date": "2026-09-08",
+   "high_pct": "76.91",
+   "days_below_half": 7,
+   "days": 40
+  }
+ },
+ "month_ends": [
+  {
+   "date": "2025-08-31",
+   "supply_usde": "2740740.09",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "2740740.09",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "12",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2025-09-30",
+   "supply_usde": "3178368.07",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "3178368.07",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "108",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2025-10-31",
+   "supply_usde": "103109.83",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "103109.83",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "192",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2025-11-30",
+   "supply_usde": "57991.91",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "57991.91",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "224",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2025-12-31",
+   "supply_usde": "62858.10",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "62858.10",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "241",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-01-31",
+   "supply_usde": "131532.84",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "131532.84",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "258",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-02-28",
+   "supply_usde": "1743505.32",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "1743505.32",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "275",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-03-31",
+   "supply_usde": "223663.42",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "223663.42",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "294",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-04-30",
+   "supply_usde": "189945.41",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "189945.41",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "369",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-05-14",
+   "supply_usde": "191615.18",
+   "ethenapay_wallets_usde": "0.00",
+   "settlement_and_reward_accounts_usde": "0.00",
+   "holders_outside_ethenapay_usde": "191615.18",
+   "wallets_share_pct": "0.00",
+   "accounts_tied_to_ethenapay_share_pct": "0.00",
+   "holders": "397",
+   "wallets_with_usde": "0",
+   "wallets_created": "0"
+  },
+  {
+   "date": "2026-05-31",
+   "supply_usde": "194042.79",
+   "ethenapay_wallets_usde": "3870.16",
+   "settlement_and_reward_accounts_usde": "99.92",
+   "holders_outside_ethenapay_usde": "190072.71",
+   "wallets_share_pct": "1.99",
+   "accounts_tied_to_ethenapay_share_pct": "2.05",
+   "holders": "429",
+   "wallets_with_usde": "15",
+   "wallets_created": "1873"
+  },
+  {
+   "date": "2026-06-30",
+   "supply_usde": "498680.33",
+   "ethenapay_wallets_usde": "32821.83",
+   "settlement_and_reward_accounts_usde": "22292.35",
+   "holders_outside_ethenapay_usde": "443566.16",
+   "wallets_share_pct": "6.58",
+   "accounts_tied_to_ethenapay_share_pct": "11.05",
+   "holders": "511",
+   "wallets_with_usde": "66",
+   "wallets_created": "2096"
+  },
+  {
+   "date": "2026-07-31",
+   "supply_usde": "750535.83",
+   "ethenapay_wallets_usde": "128980.95",
+   "settlement_and_reward_accounts_usde": "107480.24",
+   "holders_outside_ethenapay_usde": "514074.64",
+   "wallets_share_pct": "17.19",
+   "accounts_tied_to_ethenapay_share_pct": "31.51",
+   "holders": "591",
+   "wallets_with_usde": "123",
+   "wallets_created": "2243"
+  },
+  {
+   "date": "2026-08-31",
+   "supply_usde": "1491580.61",
+   "ethenapay_wallets_usde": "530905.24",
+   "settlement_and_reward_accounts_usde": "358404.23",
+   "holders_outside_ethenapay_usde": "602271.15",
+   "wallets_share_pct": "35.59",
+   "accounts_tied_to_ethenapay_share_pct": "59.62",
+   "holders": "646",
+   "wallets_with_usde": "233",
+   "wallets_created": "2534"
+  },
+  {
+   "date": "2026-09-30",
+   "supply_usde": "7397742.08",
+   "ethenapay_wallets_usde": "3712925.71",
+   "settlement_and_reward_accounts_usde": "1948798.75",
+   "holders_outside_ethenapay_usde": "1736017.62",
+   "wallets_share_pct": "50.19",
+   "accounts_tied_to_ethenapay_share_pct": "76.53",
+   "holders": "1383",
+   "wallets_with_usde": "931",
+   "wallets_created": "13318"
+  },
+  {
+   "date": "2026-10-11",
+   "supply_usde": "10542847.89",
+   "ethenapay_wallets_usde": "5985275.68",
+   "settlement_and_reward_accounts_usde": "2909707.90",
+   "holders_outside_ethenapay_usde": "1647864.31",
+   "wallets_share_pct": "56.77",
+   "accounts_tied_to_ethenapay_share_pct": "84.37",
+   "holders": "1680",
+   "wallets_with_usde": "1216",
+   "wallets_created": "14740"
+  }
+ ],
+ "before": {
+  "deploy_block": 66748921,
+  "deploy_time": "2025-08-08T09:46:04Z",
+  "first_mint_date": "2025-08-15",
+  "first_mint_wei": "30000000000000",
+  "first_1000_date": "2025-08-19",
+  "first_1000_usde": "9995.00",
+  "first_million_date": "2025-08-28",
+  "first_million_usde": "2497499.41",
+  "peak_2025_date": "2025-10-23",
+  "peak_2025_usde": "5237412.27",
+  "peak_2025_holders": 179,
+  "largest_one_day_fall_date": "2025-10-29",
+  "largest_one_day_fall_net_usde": "4997231.62",
+  "largest_one_day_fall_burned_usde": "5051606.19",
+  "supply_after_fall_usde": "212309.61",
+  "supply_2025_12_31_usde": "62858.10",
+  "holders_2025_12_31": 241,
+  "peak_2026_before_wallets_date": "2026-03-05",
+  "peak_2026_before_wallets_usde": "1910531.50",
+  "fall_2026_date": "2026-03-06",
+  "fall_2026_burned_usde": "1803364.65",
+  "supply_after_fall_2026_usde": "107166.85",
+  "minted_before_wallets_usde": "21926539.18",
+  "burned_before_wallets_usde": "21734924.00",
+  "end_over_2025_high": "2.01"
+ },
+ "since_first_wallet": {
+  "minted_usde": "16505582.27",
+  "mints": 289,
+  "burned_usde": "6154349.56",
+  "burns": 193,
+  "net_usde": "10351232.71",
+  "minted_to": {
+   "rhino_fi_bridge_contract": "13485247.44",
+   "other_accounts": "2974524.83",
+   "reward_accounts": "45800.00",
+   "ethenapay_wallets": "10.00"
+  },
+  "minted_to_rhino_share_pct": "81.70",
+  "burned_from": {
+   "other_accounts": "6154347.56",
+   "ethenapay_wallets": "2.00",
+   "settlement": "0.00",
+   "rhino_fi_bridge_contract": "0.00"
+  }
+ },
+ "wallets": {
+  "received_from_outside_usde": "14075752.58",
+  "rhino_share_of_outside_pct": "89.55",
+  "into": {
+   "rhino_fi_bridge_contract": {
+    "usde": "12605496.43",
+    "transfers": 4690
+   },
+   "other_accounts": {
+    "usde": "1470246.15",
+    "transfers": 2688
+   },
+   "minted": {
+    "usde": "10.00",
+    "transfers": 1
+   },
+   "settlement_recipients": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "uniswap_v3_pool": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "reward_accounts": {
+    "usde": "21398.94",
+    "transfers": 51524
+   },
+   "settlement": {
+    "usde": "139986.48",
+    "transfers": 2516
+   }
+  },
+  "out": {
+   "settlement": {
+    "usde": "2945283.40",
+    "transfers": 37731
+   },
+   "other_accounts": {
+    "usde": "5306540.87",
+    "transfers": 1146
+   },
+   "rhino_fi_bridge_contract": {
+    "usde": "36.05",
+    "transfers": 4
+   },
+   "burned": {
+    "usde": "2.00",
+    "transfers": 1
+   },
+   "uniswap_v3_pool": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "settlement_recipients": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "reward_accounts": {
+    "usde": "0.00",
+    "transfers": 0
+   }
+  },
+  "between_wallets_usde": "119834.44",
+  "in_total_usde": "14237138.00",
+  "out_total_usde": "8251862.32",
+  "deposits_to_2026_10_05_usde": "11056937.78",
+  "deposits_2026_10_06_to_11_usde": "3018814.80"
+ },
+ "settlement": {
+  "into": {
+   "ethenapay_wallets": {
+    "usde": "2945283.40",
+    "transfers": 37731
+   },
+   "other_accounts": {
+    "usde": "75010.00",
+    "transfers": 7
+   }
+  },
+  "out": {
+   "ethenapay_wallets": {
+    "usde": "139986.48",
+    "transfers": 2516
+   },
+   "settlement_recipients": {
+    "usde": "2555259.55",
+    "transfers": 83
+   },
+   "burned": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "other_accounts": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "rhino_fi_bridge_contract": {
+    "usde": "0.00",
+    "transfers": 0
+   },
+   "uniswap_v3_pool": {
+    "usde": "0.00",
+    "transfers": 0
+   }
+  },
+  "received_usde": "3020293.40",
+  "to_recipients_share_of_received_pct": "84.60",
+  "balance_usde": "325047.37",
+  "card_payments_net_of_returns_usde": "2805296.92",
+  "on_avalanche_usde": "2880301.92"
+ },
+ "recipients": {
+  "accounts": 3,
+  "held_usde": "2555254.55",
+  "largest_held_usde": "2468211.09",
+  "largest_received_usde": "2468211.09",
+  "largest_sent_usde": "0.00",
+  "largest_first_received": "2026-08-08",
+  "received_usde": "2555259.55",
+  "largest_share_of_received_pct": "96.59",
+  "share_of_supply_pct": "24.24",
+  "sent_on_usde": "5.00"
+ },
+ "rhino": {
+  "rank": 4,
+  "first_received": "2026-03-05",
+  "minted_to_usde": "13545334.12",
+  "received_usde": "13580384.17",
+  "minted_share_of_received_pct": "99.74",
+  "sent_usde": "13444691.98",
+  "sent_to_wallets_usde": "12605496.43",
+  "sent_to_wallets_share_pct": "93.76",
+  "sent_to_wallets_transfers": 4690,
+  "sent_to_others_usde": "839195.55",
+  "sent_since_first_wallet_usde": "13372363.38",
+  "to_wallets_share_since_first_wallet_pct": "94.27",
+  "balance_usde": "135692.19",
+  "minted_to_since_first_wallet_usde": "13485247.44"
+ },
+ "pool": {
+  "rank": 3,
+  "pair": "USDe/USDC",
+  "fee_pct": "0.05",
+  "balance_usde": "298106.73",
+  "received_usde": "3728125.48",
+  "sent_usde": "3430018.76",
+  "first_received": "2026-06-29"
+ },
+ "largest_other": {
+  "balance_usde": "500992.49",
+  "minted_to_usde": "500897.00",
+  "first_received": "2026-09-17",
+  "sent_usde": "100078.13",
+  "is_contract": false
+ },
+ "other_rest": {
+  "accounts": 447,
+  "usde": "14592.86"
+ },
+ "recount_match": {
+  "days": 144,
+  "first": "2026-05-15",
+  "last": "2026-10-05",
+  "held_2026_10_05_usde": "3980154.11"
+ },
+ "read": {
+  "deploy_block": 66748921,
+  "end_block": 97318132,
+  "wallets": 14740,
+  "transfer_records_listed": 147715,
+  "transfer_logs_kept": 147652,
+  "records_with_no_value": 63,
+  "mints": 1233,
+  "burns": 838,
+  "run_started_utc": "2026-10-12T12:52:13.431Z",
+  "run_finished_utc": "2026-10-12T12:55:31.214Z",
+  "tie_block": 97362128,
+  "tie_block_before": 97362127,
+  "factory_creations": 14743,
+  "factory_created_not_create2": 3,
+  "total_supply_usde": "10532847.89",
+  "burned_after_usde": "10000.00"
+ },
+ "checks_passed": 74
+}

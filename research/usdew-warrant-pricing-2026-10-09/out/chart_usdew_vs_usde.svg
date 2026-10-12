@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="wp-t wp-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="wp-t">USDEW against USDE at each close, with the estimated $10 call value and the exercise value, June 29 to October 9, 2026</title>
+<desc id="wp-d">71 dots, one per session. 55 sessions before September 18, with USDE between $1.43 and $8.87 and USDEW between $0.36 and $2.20. 16 sessions from September 18, with USDE between $10.19 and $17.25, all but the first below the call line. From September 21 to October 7 each sat below its own session's call value, by as much as 18.2% on September 22, and on October 8 and 9 within 0.5% of it. On October 9 USDEW closed at $3.64 against a call value of $3.66. The call line rises from $2.55 at $10 to $6.50 at $18, where it meets the exercise value line, which starts at the $11.50 exercise price.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">USDEW closed below its estimated call value from September 21 to October 7</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">USDEW's close against USDE's close at each session, June 29 to October 9, 2026. The call line uses October 9's months to expiry.</text>
+<circle cx="26" cy="74" r="4" fill="#3987e5"/>
+<text x="36" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Sessions before Sep 18</text>
+<circle cx="190" cy="74" r="4" fill="#d95926"/>
+<text x="200" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Sessions from Sep 18</text>
+<line x1="346" x2="368" y1="74" y2="74" stroke="var(--sx-text, #eeeae3)" stroke-width="2"/>
+<text x="374" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Call value, estimated</text>
+<line x1="500" x2="522" y1="74" y2="74" stroke="var(--sx-muted, #99a3b0)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<text x="528" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Exercise value, USDE less $11.50</text>
+<line x1="64" x2="760" y1="412.0" y2="412.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="416.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$0</text>
+<line x1="64" x2="760" y1="368.0" y2="368.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="372.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$1</text>
+<line x1="64" x2="760" y1="324.0" y2="324.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="328.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$2</text>
+<line x1="64" x2="760" y1="280.0" y2="280.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="284.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$3</text>
+<line x1="64" x2="760" y1="236.0" y2="236.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="240.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$4</text>
+<line x1="64" x2="760" y1="192.0" y2="192.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="196.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$5</text>
+<line x1="64" x2="760" y1="148.0" y2="148.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="152.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$6</text>
+<line x1="64" x2="760" y1="104.0" y2="104.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="56" y="108.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$7</text>
+<line x1="64.0" x2="64.0" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="64.0" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$0</text>
+<line x1="141.3" x2="141.3" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="141.3" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$2</text>
+<line x1="218.7" x2="218.7" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="218.7" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$4</text>
+<line x1="296.0" x2="296.0" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="296.0" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$6</text>
+<line x1="373.3" x2="373.3" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="373.3" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$8</text>
+<line x1="450.7" x2="450.7" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="450.7" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$10</text>
+<line x1="528.0" x2="528.0" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="528.0" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$12</text>
+<line x1="605.3" x2="605.3" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="605.3" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$14</text>
+<line x1="682.7" x2="682.7" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="682.7" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$16</text>
+<line x1="760.0" x2="760.0" y1="412" y2="417" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="760.0" y="431" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">$18</text>
+<text x="760" y="452" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">USDE close</text>
+<text x="20" y="452" fill="var(--sx-muted, #99a3b0)" font-size="10">Closes, S&amp;P Global Market Intelligence via StockAnalysis. Make-whole table, StablecoinX warrant agreement.</text>
+<text x="20" y="94" fill="var(--sx-muted, #99a3b0)" font-size="11">USDEW close</text>
+<line x1="450.7" x2="450.7" y1="104" y2="412" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="444.7" y="116" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$10 test price</text>
+<line x1="760.0" x2="760.0" y1="104" y2="412" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="754.0" y="116" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$18 test price</text>
+<polyline points="508.7,412.0 518.3,401.0 528.0,390.0 537.7,379.0 547.3,368.0 557.0,357.0 566.7,346.0 576.3,335.0 586.0,324.0 595.7,313.0 605.3,302.0 615.0,291.0 624.7,280.0 634.3,269.0 644.0,258.0 653.7,247.0 663.3,236.0 673.0,225.0 682.7,214.0 692.3,203.0 702.0,192.0 711.7,181.0 721.3,170.0 731.0,159.0 740.7,148.0 750.3,137.0 760.0,126.0" fill="none" stroke="var(--sx-muted, #99a3b0)" stroke-width="1.5" stroke-dasharray="5 4"/>
+<polyline points="450.7,300.0 460.3,294.9 470.0,289.8 479.7,284.5 489.3,279.1 499.0,273.9 508.7,268.5 518.3,263.1 528.0,257.5 537.7,252.2 547.3,246.7 557.0,241.1 566.7,235.5 576.3,230.0 586.0,224.4 595.7,218.8 605.3,213.0 615.0,207.4 624.7,201.8 634.3,196.0 644.0,190.2 653.7,184.6 663.3,178.9 673.0,173.2 682.7,167.3 692.3,161.7 702.0,156.1 711.7,150.4 721.3,144.6 731.0,140.0 740.7,135.4 750.3,130.7 760.0,126.0" fill="none" stroke="var(--sx-text, #eeeae3)" stroke-width="2" stroke-linejoin="round"/>
+<g><title>Jun 29, USDE $3.33, USDEW $0.68</title><circle cx="192.8" cy="382.1" r="8" fill="transparent"/><circle cx="192.8" cy="382.1" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jun 30, USDE $2.75, USDEW $0.41</title><circle cx="170.3" cy="394.0" r="8" fill="transparent"/><circle cx="170.3" cy="394.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 1, USDE $2.08, USDEW $0.45</title><circle cx="144.4" cy="392.2" r="8" fill="transparent"/><circle cx="144.4" cy="392.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 2, USDE $2.78, USDEW $0.70</title><circle cx="171.5" cy="381.2" r="8" fill="transparent"/><circle cx="171.5" cy="381.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 6, USDE $2.62, USDEW $0.74</title><circle cx="165.3" cy="379.4" r="8" fill="transparent"/><circle cx="165.3" cy="379.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 7, USDE $2.36, USDEW $0.64</title><circle cx="155.3" cy="383.8" r="8" fill="transparent"/><circle cx="155.3" cy="383.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 8, USDE $2.03, USDEW $0.53</title><circle cx="142.5" cy="388.7" r="8" fill="transparent"/><circle cx="142.5" cy="388.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 9, USDE $2.19, USDEW $0.66</title><circle cx="148.7" cy="383.0" r="8" fill="transparent"/><circle cx="148.7" cy="383.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 10, USDE $1.96, USDEW $0.62</title><circle cx="139.8" cy="384.7" r="8" fill="transparent"/><circle cx="139.8" cy="384.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 13, USDE $1.90, USDEW $0.60</title><circle cx="137.5" cy="385.6" r="8" fill="transparent"/><circle cx="137.5" cy="385.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 14, USDE $1.78, USDEW $0.60</title><circle cx="132.8" cy="385.6" r="8" fill="transparent"/><circle cx="132.8" cy="385.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 15, USDE $1.82, USDEW $0.60</title><circle cx="134.4" cy="385.6" r="8" fill="transparent"/><circle cx="134.4" cy="385.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 16, USDE $1.92, USDEW $0.55</title><circle cx="138.2" cy="387.8" r="8" fill="transparent"/><circle cx="138.2" cy="387.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 20, USDE $1.73, USDEW $0.53</title><circle cx="130.9" cy="388.7" r="8" fill="transparent"/><circle cx="130.9" cy="388.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 21, USDE $1.87, USDEW $0.64</title><circle cx="136.3" cy="383.8" r="8" fill="transparent"/><circle cx="136.3" cy="383.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 22, USDE $1.87, USDEW $0.56</title><circle cx="136.3" cy="387.4" r="8" fill="transparent"/><circle cx="136.3" cy="387.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 23, USDE $1.74, USDEW $0.55</title><circle cx="131.3" cy="387.8" r="8" fill="transparent"/><circle cx="131.3" cy="387.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 24, USDE $1.43, USDEW $0.51</title><circle cx="119.3" cy="389.6" r="8" fill="transparent"/><circle cx="119.3" cy="389.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 27, USDE $1.52, USDEW $0.41</title><circle cx="122.8" cy="394.0" r="8" fill="transparent"/><circle cx="122.8" cy="394.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 28, USDE $1.69, USDEW $0.50</title><circle cx="129.3" cy="390.0" r="8" fill="transparent"/><circle cx="129.3" cy="390.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 29, USDE $1.51, USDEW $0.36</title><circle cx="122.4" cy="396.2" r="8" fill="transparent"/><circle cx="122.4" cy="396.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 30, USDE $1.64, USDEW $0.36</title><circle cx="127.4" cy="396.2" r="8" fill="transparent"/><circle cx="127.4" cy="396.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jul 31, USDE $1.57, USDEW $0.37</title><circle cx="124.7" cy="395.7" r="8" fill="transparent"/><circle cx="124.7" cy="395.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 3, USDE $1.72, USDEW $0.40</title><circle cx="130.5" cy="394.4" r="8" fill="transparent"/><circle cx="130.5" cy="394.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 4, USDE $1.98, USDEW $0.45</title><circle cx="140.6" cy="392.2" r="8" fill="transparent"/><circle cx="140.6" cy="392.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 5, USDE $2.46, USDEW $0.47</title><circle cx="159.1" cy="391.3" r="8" fill="transparent"/><circle cx="159.1" cy="391.3" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 6, USDE $2.23, USDEW $0.40</title><circle cx="150.2" cy="394.4" r="8" fill="transparent"/><circle cx="150.2" cy="394.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 7, USDE $2.07, USDEW $0.36</title><circle cx="144.0" cy="396.2" r="8" fill="transparent"/><circle cx="144.0" cy="396.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 10, USDE $2.16, USDEW $0.37</title><circle cx="147.5" cy="395.7" r="8" fill="transparent"/><circle cx="147.5" cy="395.7" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 11, USDE $2.40, USDEW $0.43</title><circle cx="156.8" cy="393.1" r="8" fill="transparent"/><circle cx="156.8" cy="393.1" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 12, USDE $2.45, USDEW $0.51</title><circle cx="158.7" cy="389.6" r="8" fill="transparent"/><circle cx="158.7" cy="389.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 13, USDE $2.59, USDEW $0.45</title><circle cx="164.1" cy="392.2" r="8" fill="transparent"/><circle cx="164.1" cy="392.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 14, USDE $2.93, USDEW $0.50</title><circle cx="177.3" cy="390.0" r="8" fill="transparent"/><circle cx="177.3" cy="390.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 17, USDE $3.02, USDEW $0.60</title><circle cx="180.8" cy="385.6" r="8" fill="transparent"/><circle cx="180.8" cy="385.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 19, USDE $3.09, USDEW $0.60</title><circle cx="183.5" cy="385.6" r="8" fill="transparent"/><circle cx="183.5" cy="385.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 20, USDE $4.00, USDEW $0.72</title><circle cx="218.7" cy="380.3" r="8" fill="transparent"/><circle cx="218.7" cy="380.3" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 21, USDE $7.41, USDEW $1.45</title><circle cx="350.5" cy="348.2" r="8" fill="transparent"/><circle cx="350.5" cy="348.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 24, USDE $6.27, USDEW $1.05</title><circle cx="306.4" cy="365.8" r="8" fill="transparent"/><circle cx="306.4" cy="365.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 25, USDE $6.06, USDEW $1.34</title><circle cx="298.3" cy="353.0" r="8" fill="transparent"/><circle cx="298.3" cy="353.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 26, USDE $5.98, USDEW $1.50</title><circle cx="295.2" cy="346.0" r="8" fill="transparent"/><circle cx="295.2" cy="346.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 27, USDE $8.07, USDEW $1.72</title><circle cx="376.0" cy="336.3" r="8" fill="transparent"/><circle cx="376.0" cy="336.3" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 28, USDE $6.76, USDEW $1.48</title><circle cx="325.4" cy="346.9" r="8" fill="transparent"/><circle cx="325.4" cy="346.9" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Aug 31, USDE $8.87, USDEW $1.80</title><circle cx="407.0" cy="332.8" r="8" fill="transparent"/><circle cx="407.0" cy="332.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 1, USDE $8.36, USDEW $1.76</title><circle cx="387.3" cy="334.6" r="8" fill="transparent"/><circle cx="387.3" cy="334.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 2, USDE $7.50, USDEW $1.68</title><circle cx="354.0" cy="338.1" r="8" fill="transparent"/><circle cx="354.0" cy="338.1" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 3, USDE $8.77, USDEW $2.15</title><circle cx="403.1" cy="317.4" r="8" fill="transparent"/><circle cx="403.1" cy="317.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 4, USDE $7.93, USDEW $2.05</title><circle cx="370.6" cy="321.8" r="8" fill="transparent"/><circle cx="370.6" cy="321.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 8, USDE $7.61, USDEW $2.09</title><circle cx="358.3" cy="320.0" r="8" fill="transparent"/><circle cx="358.3" cy="320.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 9, USDE $7.24, USDEW $1.90</title><circle cx="343.9" cy="328.4" r="8" fill="transparent"/><circle cx="343.9" cy="328.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 10, USDE $6.66, USDEW $1.50</title><circle cx="321.5" cy="346.0" r="8" fill="transparent"/><circle cx="321.5" cy="346.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 11, USDE $7.26, USDEW $1.76</title><circle cx="344.7" cy="334.6" r="8" fill="transparent"/><circle cx="344.7" cy="334.6" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 14, USDE $7.44, USDEW $1.75</title><circle cx="351.7" cy="335.0" r="8" fill="transparent"/><circle cx="351.7" cy="335.0" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 15, USDE $6.12, USDEW $1.71</title><circle cx="300.6" cy="336.8" r="8" fill="transparent"/><circle cx="300.6" cy="336.8" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 16, USDE $6.20, USDEW $1.65</title><circle cx="303.7" cy="339.4" r="8" fill="transparent"/><circle cx="303.7" cy="339.4" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 17, USDE $7.71, USDEW $2.20</title><circle cx="362.1" cy="315.2" r="8" fill="transparent"/><circle cx="362.1" cy="315.2" r="4" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 18, USDE $10.19, USDEW $2.92, call value $2.64</title><circle cx="458.0" cy="283.5" r="8" fill="transparent"/><circle cx="458.0" cy="283.5" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 21, USDE $12.60, USDEW $3.38, call value $3.81</title><circle cx="551.2" cy="263.3" r="8" fill="transparent"/><circle cx="551.2" cy="263.3" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 22, USDE $13.54, USDEW $3.51, call value $4.29</title><circle cx="587.5" cy="257.6" r="8" fill="transparent"/><circle cx="587.5" cy="257.6" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 23, USDE $12.87, USDEW $3.30, call value $3.95</title><circle cx="561.6" cy="266.8" r="8" fill="transparent"/><circle cx="561.6" cy="266.8" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 24, USDE $14.22, USDEW $4.00, call value $4.64</title><circle cx="613.8" cy="236.0" r="8" fill="transparent"/><circle cx="613.8" cy="236.0" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 25, USDE $17.25, USDEW $6.02, call value $6.18</title><circle cx="731.0" cy="147.1" r="8" fill="transparent"/><circle cx="731.0" cy="147.1" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 28, USDE $15.56, USDEW $4.84, call value $5.33</title><circle cx="665.7" cy="199.0" r="8" fill="transparent"/><circle cx="665.7" cy="199.0" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 29, USDE $15.32, USDEW $4.53, call value $5.21</title><circle cx="656.4" cy="212.7" r="8" fill="transparent"/><circle cx="656.4" cy="212.7" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Sep 30, USDE $16.08, USDEW $5.17, call value $5.60</title><circle cx="685.8" cy="184.5" r="8" fill="transparent"/><circle cx="685.8" cy="184.5" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 1, USDE $15.51, USDEW $4.70, call value $5.30</title><circle cx="663.7" cy="205.2" r="8" fill="transparent"/><circle cx="663.7" cy="205.2" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 2, USDE $14.15, USDEW $4.00, call value $4.60</title><circle cx="611.1" cy="236.0" r="8" fill="transparent"/><circle cx="611.1" cy="236.0" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 5, USDE $14.96, USDEW $4.44, call value $5.02</title><circle cx="642.5" cy="216.6" r="8" fill="transparent"/><circle cx="642.5" cy="216.6" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 6, USDE $14.33, USDEW $4.06, call value $4.69</title><circle cx="618.1" cy="233.4" r="8" fill="transparent"/><circle cx="618.1" cy="233.4" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 7, USDE $13.82, USDEW $4.10, call value $4.43</title><circle cx="598.4" cy="231.6" r="8" fill="transparent"/><circle cx="598.4" cy="231.6" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 8, USDE $12.79, USDEW $3.89, call value $3.90</title><circle cx="558.5" cy="240.8" r="8" fill="transparent"/><circle cx="558.5" cy="240.8" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Oct 9, USDE $12.30, USDEW $3.64, call value $3.66</title><circle cx="539.6" cy="251.8" r="8" fill="transparent"/><circle cx="539.6" cy="251.8" r="4" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<text x="721.0" y="137.1" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Sep 25, USDE $17.25, USDEW $6.02</text>
+<line x1="420.0" y1="202.0" x2="534.6" y2="246.8" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="238.0" y="192.0" fill="var(--sx-text, #eeeae3)" font-size="11" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Oct 9, USDEW $3.64</text>
+<text x="238.0" y="206.0" fill="var(--sx-text, #eeeae3)" font-size="11" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">against a call value of $3.66</text>
+<text x="648.0" y="180.2" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Call value</text>
+<text x="623.1" y="309.2" fill="var(--sx-muted, #99a3b0)" font-size="11" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Exercise value</text>
+</svg>

@@ -1,0 +1,109 @@
+{
+ "end_block": 97161009,
+ "end_block_time": "2026-10-09T23:59:59Z",
+ "next_block_time": "2026-10-10T00:00:01Z",
+ "start_block": 85400000,
+ "price_start_block": 93220397,
+ "price_start_block_time": "2026-08-20T00:00:00Z",
+ "rows_from": "2026-08-15T00:00:00Z",
+ "prices_from": "2026-08-20T00:00:00Z",
+ "prices_to": "2026-10-10T00:00:00Z",
+ "recount_block": 96815525,
+ "wallets": 14555,
+ "wallets_v1": 2006,
+ "wallets_v2": 12549,
+ "other_factory_contracts": 3,
+ "usde_transfers_scanned": 128798,
+ "usde_transfers_touching_wallets": 95318,
+ "card_payments": 34993,
+ "card_payment_wei": "2776914460000000000000000",
+ "reversals": 2349,
+ "reversal_wei": "133204120000000000000000",
+ "spend_logs_by_token": {
+  "current_settlement": {
+   "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34": 34156
+  },
+  "retired_settlement": {
+   "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34": 836
+  }
+ },
+ "spend_events": {
+  "usde_logs": 34992,
+  "usde_wei": "2776909460000000000000000",
+  "from_wallets": 34992,
+  "matched_to_card_payments": 34992,
+  "matched_wei": "2776909460000000000000000",
+  "card_payments_without_event": 1,
+  "card_payments_without_event_wei": "5000000000000000000",
+  "events_without_card_payment": 0,
+  "to_october_5": {
+   "logs": 29556,
+   "usde_wei": "2470243650000000000000000"
+  }
+ },
+ "cashback_account_rows": [
+  {
+   "rows": 8852,
+   "out_failed": 0,
+   "out_zero": 0,
+   "in_rows": 14,
+   "in_failed_or_zero": 0,
+   "neither": 1
+  },
+  {
+   "rows": 219,
+   "out_failed": 0,
+   "out_zero": 0,
+   "in_rows": 2,
+   "in_failed_or_zero": 0,
+   "neither": 0
+  }
+ ],
+ "cashback_account_incoming": [
+  {
+   "transfers": 14,
+   "avax_wei": "19550000000000000000000",
+   "senders": 1
+  },
+  {
+   "transfers": 2,
+   "avax_wei": "136226415090000000000",
+   "senders": 2
+  }
+ ],
+ "cashback_transfers": [
+  8821,
+  215
+ ],
+ "cashback_avax_wei": [
+  "9048317893132787353742",
+  "171115331825054621598"
+ ],
+ "cashback_wallets": 845,
+ "cashback_first": "2026-05-20T17:35:14Z",
+ "cashback_last": "2026-10-09T02:30:04Z",
+ "other_recipient_transfers": 18,
+ "other_recipients": 1,
+ "other_recipient_avax_wei": "19696326415090000000000",
+ "other_recipient_passed_through": 16,
+ "chainlink": {
+  "proxy": "0x0a77230d17318075983913bc2145db16c7366156",
+  "aggregator": "0xcfbfe648ba88bf7d9776d970417a0b26c315feb4",
+  "phase": 2,
+  "decimals": 8,
+  "rounds": 57407,
+  "first_round": "771738",
+  "first_updated": "2026-08-19T22:26:20Z",
+  "last_round": "829144",
+  "last_updated": "2026-10-09T23:59:16Z"
+ },
+ "cross_checks": {
+  "recount_wallet_rows": 1106,
+  "recount_wallet_rows_sha256": "f73102e8cee8ec8e46a5b6981335415adc2a3d9dc135c662640e3d23617b73c8",
+  "recount_balance_sum_wei": "3968569937883897150765318",
+  "utc_days_compared": 144,
+  "utc_days_sha256": "53d1f0a991b974ec968c2fc54e4fe772f0f91844e9d09aca7b8b9fa38c1b7067"
+ },
+ "run_started_utc": "2026-10-12T04:13:57.857Z",
+ "run_finished_utc": "2026-10-12T04:15:51.999Z"
+}

@@ -4,7 +4,7 @@ Market review / USDE short interest
 
 By [Qorban Ferrell · @Degenerate\_DeFi](https://ethenadash.com/about/) · Published 9 October 2026 · Short interest through the September 30, 2026 settlement date · Trading from June 26 through the October 8 close · Sources read October 9, 2026 UTC
 
-Short sellers held 2,810,986 shares of USDE, the Class A stock of StablecoinX Inc. on Nasdaq, on September 30, 2026, the latest settlement date in FINRA's data when this review last checked it, at 20:37 UTC on October 9. That was 14.7% of the roughly 19.06 million Class A shares that the company's resale prospectus counted as freely tradable on August 28. Short interest rose by 1,231,508 shares, or 78.0%, from September 15.
+Short sellers held 2,810,986 shares of USDE, the Class A stock of StablecoinX Inc. on Nasdaq, on September 30, 2026. That was the latest settlement date in FINRA's data when this review read it at 22:20 UTC on October 9, the day FINRA published the September 30 figures. The position was 14.7% of the roughly 19.06 million Class A shares that the company's resale prospectus counted as freely tradable on August 28, and 78% more than the 1,579,478 shares held short on September 15.
 
 Short interest is the number of shares sold short and not yet bought back. Member firms report it to FINRA, the self-regulatory body for US broker-dealers, for two settlement dates a month, one in the middle and one at the end. A short sale counts once it has settled, one business day after the trade.
 
@@ -12,7 +12,7 @@ The short position was small next to USDE's trading. In the 11 sessions to Septe
 
 FINRA's daily short sale volume, a separate measure that some websites present as short interest, counts the share volume of trades. Of the 157.0 million USDE shares traded in regular hours and reported to FINRA's trade reporting facilities, the systems that record trades made away from exchanges, 57.8% were marked short. A short sale counts there even if the seller buys the shares back the same day, so the 57.8% measures trading.
 
-USDE closed at $6.12 on September 15, reached a peak close of $17.25 on September 25 and finished September at $16.08. FINRA's September 30 figures, published on October 9, show that aggregate short interest increased across that period. The two snapshots do not reveal when individual positions were opened or closed.
+USDE closed at $6.12 on September 15, at a peak of $17.25 on September 25 and at $16.08 on September 30. Short sellers as a group held 1,231,508 more shares short on September 30 than on September 15. Short interest is a snapshot at each settlement date, so it does not show when in between positions were opened or closed.
 
 ## Short interest reached 2.81 million shares on September 30
 
@@ -28,13 +28,13 @@ FINRA collects short positions from its member firms in every exchange-listed an
 | September 15 | 1,579,478 | +347,465 | 8.29% | $6.12 | 0.43 |
 | September 30 | 2,810,986 | +1,231,508 | 14.75% | $16.08 | 0.40 |
 
-This review divides by the prospectus's approximate count of 19,063,653 freely tradable shares on August 28 at every date. From 4 pm on September 14 the resale prospectus also registered for sale the 3,621,132 Class A shares of Ethena OpCo Ltd, an Ethena company, which the prospectus says carry no contractual lock-up. Against those and the freely tradable shares, 22,684,785 in all, the September 30 short interest came to 12.39%. Against all 24,029,375 Class A shares it came to 11.70%. At the $16.08 close it was worth $45.20 million.
+This review divides by the prospectus's approximate count of 19,063,653 freely tradable shares on August 28 at every date. From 4 pm on September 14 the resale prospectus also registered for sale the 3,621,132 Class A shares of Ethena OpCo Ltd, an Ethena company, which the prospectus says carry no contractual lock-up. Against those and the freely tradable shares, 22,684,785 in all, the September 30 short interest came to 12.39%. Against the 24,029,375 Class A shares outstanding on August 28 it came to 11.70%. At the $16.08 close it was worth $45.20 million.
 
 ![Two panels on one time axis, June 26 to October 8, 2026. USDE closed at $3.70 on June 26, fell to a low close of $1.43 on July 24 and rose to $17.25 on September 25 before closing at $12.79 on October 8. Short interest at the seven settlement dates was 12,599, 277,768, 261,864, 196,109, 1,232,013, 1,579,478 and 2,810,986 shares.](/research-assets/stablecoinx-short-interest-2026-10-08/chart_short_interest.svg)
 
 *Short interest from FINRA's consolidated short interest data. Daily closes from S&P Global Market Intelligence through StockAnalysis.*
 
-Short interest also rose sharply in the second half of August, when short interest grew by 1,035,904 shares and USDE's close rose from $2.93 to $8.87. Short interest in the warrants, USDEW, was 7,731 warrants on September 30, 0.07% of the 11.5 million public warrants.
+The two largest rises came in the second half of August, when short interest grew by 1,035,904 shares as USDE's close rose from $2.93 to $8.87, and in the second half of September, when it grew by 1,231,508 shares as the close rose from $6.12 to $16.08. Short interest in the warrants, USDEW, was 7,731 warrants on September 30, 0.07% of the 11.5 million public warrants.
 
 ## Short sellers held less than half a day's volume
 
@@ -59,7 +59,7 @@ FINRA's [daily short sale volume files](https://www.finra.org/finra-data/browse-
 
 The files count only trades published on the consolidated tape, the public feed of trades, according to a [FINRA notice of May 2019](https://www.finra.org/rules-guidance/notices/information-notice-051019). When a firm fills a customer's sale by first selling short from its own account to another firm and then buying the customer's shares at the same price, only the short sale appears in them, which can make the share marked short look high.
 
-Short interest counts the positions open at a settlement date. The daily files count short sales as they trade, including those bought back within hours. In the 11 sessions from August 14 to 28, whose trades settled by August 31, the files counted 41.9 million shares marked short, while short interest rose by 1.04 million. In the ten sessions from August 31 to September 14 they counted 11.6 million, while short interest rose by 347,465.
+Short interest counts the positions open at a settlement date. The daily files count short sales as they trade, including those bought back within hours. In the 11 sessions from August 14 to 28, whose trades settled by August 31, the files counted 41.9 million shares marked short, while short interest rose by 1.04 million. In the ten sessions from August 31 to September 14 they counted 11.6 million, while short interest rose by 347,465. In the 11 sessions from September 15 to 29 they counted 17.5 million, while short interest rose by 1.23 million.
 
 ## Daily prices suggest the short sale price test covered more than half of USDE's sessions
 
@@ -73,13 +73,13 @@ S&P Global's history for USDE includes a $9.40 close on June 25 on 145 shares, t
 
 FINRA's figures do not say who held the short positions, why, or what borrowing the shares cost. Some short sales may hedge other positions, such as the warrants, and the data cannot show that.
 
-The September 30 figures were published on October 9 and are the latest settlement snapshot included here. They do not establish the short position at the October 8 close. Each record flags a revision of the figure before it. None of the seven records read flagged one.
+The September 30 snapshot does not establish the short position at the October 8 close. FINRA published the figures for September 30 on October 9, as its schedule set, and this review read them at 22:20 UTC that day. Each record flags a revision of the figure before it, so a revision of the September 30 figure would show in the record for October 15. None of the seven records read flagged one.
 
 FINRA's daily files leave out trades reported outside regular hours, so the 41.2% ratio is not a measure of all off-exchange trading in USDE. The price test count rests on S&P Global's daily lows. For the 31 sessions from August 26 each was within a cent of the lowest regular-session price in Yahoo Finance's hourly data, and earlier sessions had no second source. Moving any session's low by a cent would add at most one session to the count.
 
 ## Reproduce the numbers
 
-This review read FINRA's short interest records from its public Query API and its daily files from FINRA's public file server on October 9, 2026 UTC, with the SHA-256 of each response. The main script checks every input against its recorded hash, that each record's previous position matches the record before it, that FINRA's files hold one USDE row for each session, and that the price test logic marks the day after each trigger. If any check fails, the script stops before writing its tables. Download the [short interest table](/research-assets/stablecoinx-short-interest-2026-10-08/short_interest.csv), the [daily short sale volume](/research-assets/stablecoinx-short-interest-2026-10-08/daily_short_volume.csv), or the [calculation files and source inputs](/research-assets/stablecoinx-short-interest-2026-10-08/calculation-files.zip).
+This review read FINRA's short interest records from its public Query API and its daily files from FINRA's public file server in a browser on October 9, 2026 UTC, with the SHA-256 of each response. The main script checks every input against its recorded hash, that each record's previous position matches the record before it, that FINRA's files hold one USDE row for each session, and that the price test logic marks the day after each trigger. If any check fails, the script stops before writing its tables. Download the [short interest table](/research-assets/stablecoinx-short-interest-2026-10-08/short_interest.csv), the [daily short sale volume](/research-assets/stablecoinx-short-interest-2026-10-08/daily_short_volume.csv), or the [calculation files and source inputs](/research-assets/stablecoinx-short-interest-2026-10-08/calculation-files.zip).
 
 ```text
 share of freely tradable = short interest ÷ 19,063,653 freely tradable shares

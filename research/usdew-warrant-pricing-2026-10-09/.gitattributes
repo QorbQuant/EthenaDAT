@@ -1,0 +1,3 @@
+# Preserve evidence bytes used by the reproducibility manifests.
+inputs/** -text
+out/** -text

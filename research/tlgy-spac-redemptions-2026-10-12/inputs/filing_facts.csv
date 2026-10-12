@@ -1,0 +1,144 @@
+id,value,unit,source_key,file,quote,shows
+ipo_date,2021-12-03,date,ipo_8k,2,"On December 3, 2021, TLGY Acquisition Corporation","December 3, 2021"
+ipo_units,20000000,units,ipo_8k,1,"of 20,000,000 units","20,000,000"
+unit_price,10.00,usd per unit,ipo_8k,1,"The Units were sold at a price of $10.00 per Unit",$10.00
+option_date,2021-12-08,date,ipo_8k2,1,"on December 8, 2021, the underwriters purchased an additional 3,000,000 Units","December 8, 2021"
+option_units,3000000,units,ipo_8k2,1,"on December 8, 2021, the underwriters purchased an additional 3,000,000 Units","3,000,000"
+trust_initial,234600000,usd,ipo_8k2,1,"An aggregate of approximately $234,600,000 of the proceeds","$234,600,000"
+trust_per_unit,10.20,usd per unit,ipo_424b4,1,($10.20 per unit in either case),$10.20
+unit_warrant_fraction,0.5,warrants per unit,ipo_424b4,1,consists of one Class A ordinary share and one-half of one redeemable warrant,one-half
+right_min_fraction,0.25,warrants per unit,ipo_424b4,1,a contingent right to receive at least one-fourth of one redeemable warrant,one-fourth
+right_aggregate,5750000,warrants,ipo_424b4,1,"(or 5,750,000 warrants if the over-allotment option is exercised in full)","5,750,000"
+right_pro_rata,pro rata to public shares left after the merger redemptions,text,ipo_424b4,1,on a pro-rata basis only to holders of record of Class A ordinary shares issued in this offering,
+right_forfeit,redeeming a share gives up its right,text,ipo_424b4,1,Public shareholders who exercise their redemption rights will also be deemed to have tendered their contingent right,
+separate_trading,shares and warrants trade apart,text,ipo_424b4,2,detachable redeemable warrants comprising the units to begin separate trading on the 52nd day,
+ext1_date,2023-02-23,date,ext1_8k,1,"On February 23, 2023, shareholders of TLGY Acquisition Corporation","February 23, 2023"
+ext1_shares,15681818,shares,ext1_8k,1,"15,681,818 ordinary shares of the Company were rendered for redemp","15,681,818"
+ext1_price_8k,10.40,usd per share,ext1_8k,1,calculated to be approximately $10.40 per share,$10.40
+ext1_cash,163150810,usd,q1_2023_10q,1,"Cash withdrawn from Trust Account 163,150,810","163,150,810"
+ext1_cash_paid,163150810,usd,q1_2023_10q,1,"Redemptions of Class A ordinary shares (163,150,810)","163,150,810"
+shares_2022_12_31,23000000,shares,q1_2023_10q,1,"the 7,318,182 and 23,000,000 Class A ordinary shares, respectively, subject to possible redemption in the amount of $77,021,741 and $237,501,000","23,000,000"
+trust_2022_12_31,237501000,usd,q1_2023_10q,1,"the 7,318,182 and 23,000,000 Class A ordinary shares, respectively, subject to possible redemption in the amount of $77,021,741 and $237,501,000","$237,501,000"
+shares_2023_03_31,7318182,shares,q1_2023_10q,1,"the 7,318,182 and 23,000,000 Class A ordinary shares, respectively, subject to possible redemption in the amount of $77,021,741 and $237,501,000","7,318,182"
+trust_2023_03_31,77021741,usd,q1_2023_10q,1,"the 7,318,182 and 23,000,000 Class A ordinary shares, respectively, subject to possible redemption in the amount of $77,021,741 and $237,501,000","$77,021,741"
+ext2_date,2023-10-17,date,ext2_8k,1,"On October 17, 2023, shareholders of TLGY Acquisition Corporation","October 17, 2023"
+ext2_shares,1395317,shares,ext2_8k,1,"1,395,317 ordinary shares of the Company were rendered for redemp","1,395,317"
+ext2_price_8k,10.96,usd per share,ext2_8k,1,calculated to be approximately $10.96 per share,$10.96
+deposit_terms_2023,"lesser of $0.04 a share and $200,000 a month, then lesser of $0.033 and $110,000",text,ext2_8k,1,"from the lesser of $0.04 per outstanding share and $200,000 to the lesser of (x) $0.033 per outstanding share and (y) $110,000",
+y2023_shares,17077135,shares,k10_2023,1,"an aggregate of 17,077,135 shares were redeemed by public shareholders","17,077,135"
+y2023_cash,178438540,usd,k10_2023,1,"$178,438,540 was withdrawn from the Trust Account in order to pay those redeeming shareholders","$178,438,540"
+trust_2023_12_31,65954638,usd,k10_2023,1,"$65,954,638 remains in the Company","$65,954,638"
+shares_2023_12_31,5922865,shares,k10_2024,2,"the 3,717,207 and 5,922,865, respectively, Class A ordinary shares subject to possible redemption in the amount of $44,332,605 and $65,954,638","5,922,865"
+ext3_date,2024-04-16,date,ext3_8k,1,"On April 16, 2024, shareholders of TLGY Acquisition Corporation","April 16, 2024"
+ext3_shares,2205658,shares,ext3_8k,1,"2,205,658 ordinary shares of the Company were tendered for redemp","2,205,658"
+ext3_price_8k,11.33,usd per share,ext3_8k,1,calculated to be approximately $11.33 per share,$11.33
+deposit_terms_2024,"lesser of $0.033 a share and $110,000 a month, then lesser of $0.02 and a cap",text,ext3_8k,1,"from the lesser of $0.033 per outstanding share and $110,000 to the lesser of (x) $0.02 per outstanding share",
+ext3_cash,25092549,usd,k10_2024,1,"an aggregate of 2,205,658 shares were redeemed by public shareholders. Accordingly, $25,092,549 was withdrawn from the Trust Account","$25,092,549"
+shares_2024_06_30,3717207,shares,q2_2024_10q,2,"at June 30, 2024 and December 31, 2023, the 3,717,207 and 5,922,865 Class A ordinary shares, subject to possible redemption in the amount of $42,901,415 and $65,954,638","3,717,207"
+trust_2024_06_30,42901415,usd,q2_2024_10q,2,"at June 30, 2024 and December 31, 2023, the 3,717,207 and 5,922,865 Class A ordinary shares, subject to possible redemption in the amount of $42,901,415 and $65,954,638","$42,901,415"
+trust_2024_12_31,44332605,usd,k10_2024,1,"$44,332,605 remains in the Company","$44,332,605"
+shares_2024_12_31,3717207,shares,k10_2025,1,"489,887 and 3,717,207 shares (at redemption value of $12.95 and $11.92) at December 31, 2025 and 2024, respectively 6,344,916 44,332,605","3,717,207"
+trust_ps_2024_12_31,11.92,usd per share,k10_2025,1,"489,887 and 3,717,207 shares (at redemption value of $12.95 and $11.92) at December 31, 2025 and 2024, respectively 6,344,916 44,332,605",$11.92
+nasdaq_notice,2024-12-02,date,k8_2024_12_05,1,"On December 2, 2024, TLGY Acquisition Corporation","December 2, 2024"
+nasdaq_otc,intends to trade over the counter,text,k8_2024_12_05,1,intends to trade on the over the counter (OTC) market,
+nasdaq_suspension,2024-12-09,date,k8_2024_12_05,1,"will be suspended at the opening of business on December 9, 2024","December 9, 2024"
+form25_date,2025-05-08,date,f25_2025_05_08,1,2025-05-08 By,2025-05-08
+form25_classes,"Class A shares, warrants and units",text,f25_2025_05_08,1,"Class A Ordinary Share, Warrants, Units",
+ext4_date,2025-04-15,date,ext4_8k,1,"On April 15, 2025, TLGY Acquisition Corp.","April 15, 2025"
+right_cancelled,the contingent right was cancelled,text,ext4_8k,1,the detachment and cancellation of the contingent right,
+right_cancel_for,2030299,votes,ext4_8k,1,"For Against Abstain 2,030,299 66,750 0","2,030,299"
+right_cancel_against,66750,votes,ext4_8k,1,"For Against Abstain 2,030,299 66,750 0","66,750"
+ext4_shares,3227320,shares,ext4_8k,1,"holders of 3,227,320 Class A ordinary shares properly exercised their right to redeem","3,227,320"
+ext4_price_8k,12.12,usd per share,ext4_8k,1,a redemption price of approximately $12.12 per share,$12.12
+ext4_cash_8k,39.1,usd million,ext4_8k,1,for an aggregate of approximately $39.1 million,$39.1
+ext4_trust_after,5.9,usd million,ext4_8k,1,expected to be approximately $5.9 million,$5.9
+class_a_after_ext4,5834587,shares,ext4_8k,1,"approximately 5,834,587 Class A ordinary shares outstanding","5,834,587"
+public_after_ext4,489887,shares,ext4_8k,1,"approximately 489,887 Class A ordinary shares are subject to future redemptions","489,887"
+ext4_cash,39113394,usd,q2_2025_10q,1,"As a result, $39,113,394 was removed from the Trust Account","$39,113,394"
+trust_2025_06_30,6072600,usd,q2_2025_10q,1,"489,887 and 3,717,207 Class A ordinary shares subject to possible redemption in the amount of $6,072,600 and $44,332,605","$6,072,600"
+trust_cash_2025_06_30,6051707,usd,defm14a,1,"as of June 30, 2025 which was $6,051,707","$6,051,707"
+trust_2025_09_30,6210376,usd,defm14a,1,"Trust Account Value $ 6,210,376.00 Total Public Shares 489,887 Trust Account Value per Public Share $ 12.68","6,210,376.00"
+trust_ps_2025_09_30,12.68,usd per share,defm14a,1,"Trust Account Value $ 6,210,376.00 Total Public Shares 489,887 Trust Account Value per Public Share $ 12.68",12.68
+founders_excluded,founder shares take no part of the trust,text,defm14a,2,will be excluded from the pro rata calculation used to determine the per-share Redemption Price,
+founder_shares_class_b,the founder shares were Class B shares,text,k8_2024_06_21,5,"3,542,305 Class B ordinary shares of the Company (the “Founder Shares”)",
+founders_converted,the sponsors and TLGY Sponsors LLC converted their Class B shares into Class A shares,text,ext4_8k,1,the Sponsors and TLGY Sponsors LLC converted all of their Class B ordinary shares into Class A ordinary shares,
+private_placement_warrants,warrants were sold in a private placement at the IPO,text,ipo_8k,1,the proceeds of the sale of the Private Placement Warrants,
+public_warrants,11500000,warrants,defm14a,2,"11,500,000 StablecoinX Warrants issued for the TLGY Warrants with a strike price of $11.50 per share","11,500,000"
+warrant_strike,11.50,usd per share,defm14a,2,"11,500,000 StablecoinX Warrants issued for the TLGY Warrants with a strike price of $11.50 per share",$11.50
+warrant_one_share,each whole warrant buys one share,text,closing_8k,1,each issued and outstanding whole warrant representing the right to purchase one TLGY Class A Ordinary Share,
+trust_2025_12_31,6344916,usd,k10_2025,1,"489,887 and 3,717,207 shares (at redemption value of $12.95 and $11.92) at December 31, 2025 and 2024, respectively 6,344,916 44,332,605","6,344,916"
+trust_ps_2025_12_31,12.95,usd per share,k10_2025,1,"As of December 31, 2025, the amount in the trust account was $12.95 per public share",$12.95
+trust_cash_2025_12_31,6344805,usd,k10_2025,1,"cash and investments held in the trust account of $6,344,805","$6,344,805"
+trust_investments,Treasury securities of 185 days or less or money market funds,text,k10_2025,2,with a maturity of 185 days or less or in any open-ended investment company that holds itself out as a money market fund,
+bc_date,2026-03-10,date,bc_vote_8k,1,"On March 10, 2026, TLGY Acquisition Corporation","March 10, 2026"
+bc_record_class_a,5834587,shares,bc_vote_8k,1,"there were 5,834,587 Class A ordinary shares","5,834,587"
+bc_for,5759409,votes,bc_vote_8k,1,"For Against Abstain 5,759,409 2,000 0 Shareholder Proposal No. 2","5,759,409"
+bc_against,2000,votes,bc_vote_8k,1,"For Against Abstain 5,759,409 2,000 0 Shareholder Proposal No. 2","2,000"
+bc_elections,388406,shares,bc_vote_8k,1,"shareholders holding 388,406 Class A Ordinary Shares exercised their right to redeem","388,406"
+bc_record_estimate,13.05,usd per share,defm14a,1,this would have amounted to approximately $13.05 per Public Share,$13.05
+bc_unpaid_march_31,388406,shares,q1_2026_10q,1,"holders of 388,406 Class A ordinary shares exercised their right to redeem their shares. As of March 31, 2026, these shares have not yet been redeemed","388,406"
+deposit_terms_2025,"lesser of $0.02 a share and $60,000 a month, then lesser of $0.05 and $25,000",text,ext4_8k,3,"from the lesser of $0.02 per outstanding share and $60,000 to the lesser of (x) $0.05 per outstanding share and (y) $25,000",
+warrants_not_redeemable,the trust redeemed shares only,text,def14a_2026,3,There will be no redemption rights or liquidating distributions with respect to our warrants,
+merger_requests_movable,a merger-vote request could be redeemed at the April 2026 vote,text,def14a_2026,3,"other than any shares previously properly tendered for redemption in connection with the Business Combination and not subsequently reversed, unless you have instructed our transfer agent to redeem such shares in connection with the Extension",
+deposit_march_2026,24494.35,usd,k8_2026_03_16,2,"depositing $24,494.35","$24,494.35"
+deposit_terms_2026,"lesser of $0.05 a share and $25,000 a month, then lesser of $0.05 and $10,000",text,q1_2026_10q,1,"from the lesser of (x) $0.05 per outstanding share and (y) $25,000 to the lesser of (x) $0.05 per outstanding share and (y) $10,000",
+trust_2026_03_31,6463122,usd,q1_2026_10q,1,"(at redemption value of $13.19 and $12.95 at March 31, 2026 and December 31, 2025, respectively) 6,463,122 6,344,916","6,463,122"
+trust_ps_2026_03_31,13.19,usd per share,q1_2026_10q,1,"(at redemption value of $13.19 and $12.95 at March 31, 2026 and December 31, 2025, respectively) 6,463,122 6,344,916",$13.19
+ext5_record_date,2026-03-20,date,def14a_2026,1,"Our Board has fixed the close of business on March 20, 2026","March 20, 2026"
+ext5_record_public,489887,shares,def14a_2026,1,"of which 489,887 were public shares","489,887"
+ext5_estimate,13.19,usd per share,def14a_2026,1,will be approximately $13.19 at the time of the Extraordinary General Meeting,$13.19
+ext5_trust_record,6.5,usd million,def14a_2026,1,"the approximately $6.5 million that was in the Trust Account as of March 20, 2026",$6.5
+ext5_date,2026-04-15,date,ext5_8k,1,"On April 15, 2026, TLGY Acquisition Corporation","April 15, 2026"
+ext5_shares,13817,shares,ext5_8k,1,"shareholders holding 13,817 Class A Ordinary Shares exercised their right to redeem","13,817"
+ext5_cash,182409,usd,q1_2026_10q,1,"As a result, $182,409 was removed from the Trust Account","$182,409"
+ext5_price_note,13.19,usd per share,q1_2026_10q,1,"or approximately $13.19 per share. As a result, $182,409",$13.19
+ext5_price_mdna,13.20,usd per share,q1_2026_10q,1,redeemed at a per-share price of approximately $13.20 per share,$13.20
+closing_date,2026-06-25,date,closing_8k,1,"on June 25, 2026 (the","June 25, 2026"
+merger_shares,379721,shares,closing_8k,1,"a total of 379,721 Public Shares were redeemed at a redemption price of approximately $13.35 per share","379,721"
+merger_price_8k,13.35,usd per share,closing_8k,1,"a total of 379,721 Public Shares were redeemed at a redemption price of approximately $13.35 per share",$13.35
+merger_cash,5068095,usd,closing_8k,1,"for an aggregate redemption amount of approximately $5,068,095","$5,068,095"
+units_separated,units were split into shares and warrants before the merger,text,closing_8k,1,each issued and outstanding unit of TLGY,
+exchange_one_for_one,1,shares per share,closing_8k,1,"was exchanged, on a one-for-one basis, for one share of Class A common stock",one share
+warrants_carried,each whole TLGY warrant became a StablecoinX warrant,text,closing_8k,1,became a warrant to acquire one share of StablecoinX Class A Common Stock,
+first_trade,2026-06-26,date,closing_8k,1,"respectively, on June 26, 2026","June 26, 2026"
+table_start,5834587,shares,sx_q2_10q,1,"TLGY Class A common stock, outstanding prior to the Merger 5,834,587","5,834,587"
+table_forfeiture,4805110,shares,sx_q2_10q,1,"Sponsor forfeiture (4,805,110)","4,805,110"
+table_redemption,393538,shares,sx_q2_10q,1,"Redemption of TLGY Class A common stock (393,538)","393,538"
+table_tlgy_class_a,635939,shares,sx_q2_10q,1,"Class A common stock of TLGY 635,939","635,939"
+deadline_rule,without a merger by the deadline the trust repays the public shares,text,def14a_2026,4,"we will (i) cease all operations except for the purpose of winding up, (ii) as promptly as reasonably possible but not more than ten business days thereafter, redeem the public shares",
+price_includes_interest,the redemption price includes the trust's interest,text,def14a_2026,4,"equal to the aggregate amount then on deposit in the Trust Account, including interest earned on the funds held in the Trust Account",
+trust_funded_2021,234600000,usd,k10_2022,4,"Cash deposited into Trust Account — (234,600,000)","234,600,000"
+income_2022,2901000,usd,k10_2022,4,"Income earned on Investments held in Trust Account 2,901,000","2,901,000"
+income_2023,5072178,usd,k10_2023,4,"Income earned on investments held in Trust Account 5,072,178 2,901,000","5,072,178"
+deposits_2023,1820000,usd,k10_2023,4,"Cash deposited into Trust Account (1,820,000)","1,820,000"
+income_2024,2598427,usd,k10_2024,4,"Income earned on investments held in Trust Account 2,598,427 5,072,178","2,598,427"
+withdrawn_2023,178438540,usd,k10_2024,4,"Cash withdrawn from Trust Account in connection with redemptions 25,092,549 178,438,540","178,438,540"
+withdrawn_2024,25092549,usd,k10_2024,4,"Cash withdrawn from Trust Account in connection with redemptions 25,092,549 178,438,540","25,092,549"
+deposits_2024,872089,usd,k10_2024,4,"Cash deposited into Trust Account (872,089) (1,820,000)","872,089"
+income_2025,725255,usd,k10_2025,4,"Income earned on cash and investments held in Trust Account 725,255 2,598,427","725,255"
+withdrawn_2025,39113505,usd,k10_2025,4,"Cash withdrawn from Trust Account 39,113,505 25,092,549 Cash deposited into Trust Account (400,450) (872,089)","39,113,505"
+deposits_2025,400450,usd,k10_2025,4,"Cash withdrawn from Trust Account 39,113,505 25,092,549 Cash deposited into Trust Account (400,450) (872,089)","400,450"
+income_q1_2026,44722,usd,q1_2026_10q,4,"Income earned on cash and investments held in Trust Account 44,722 466,024","44,722"
+income_q1_2025,466024,usd,q1_2026_10q,4,"Income earned on cash and investments held in Trust Account 44,722 466,024","466,024"
+deposits_q1_2026,73483,usd,q1_2026_10q,4,"Cash deposited into Trust Account (73,483) (180,000)","73,483"
+deposits_q1_2025,180000,usd,q1_2026_10q,4,"Cash deposited into Trust Account (73,483) (180,000)","180,000"
+vote_price_formula,the price is the trust including interest net of taxes and of up to 100000 for dissolution expenses over the shares,text,ext1_8k,5,"equal to the aggregate amount then on deposit in the Trust Account, including interest earned on the Trust Account deposits (which interest shall be net of taxes payable and up to $100,000 of interest to pay dissolution expenses)",
+nasdaq_subject_to_delisting,not in compliance and subject to delisting,text,k8_2024_12_05,5,"it was not in compliance with Nasdaq IM 5101-2, and was therefore subject to delisting",
+sponsor_change_date,2024-06-19,date,k8_2024_06_21,5,"at a closing on June 19, 2024","June 19, 2024"
+sponsor_change_buyers,two CPC Sponsor Opportunities funds,text,k8_2024_06_21,5,"CPC Sponsor Opportunities I, LP and CPC Sponsor Opportunities I (Parallel), LP",
+sponsor_change_shares,3542305,shares,k8_2024_06_21,5,"purchased 3,542,305 Class B ordinary shares of the Company","3,542,305"
+sponsor_change_price,1.00,usd,k8_2024_06_21,5,for an aggregate purchase price of $1.00,$1.00
+restatement_2023,the 2023 accounts were restated for convertible notes,text,k8_2024_08_19,5,related to the recording of convertible promissory notes,
+restatement_amount,1253224,usd,k8_2024_08_19,5,"understated by $1,253,224","$1,253,224"
+bca_date,2025-07-21,date,bc_vote_8k,5,"the business combination agreement, dated July 21, 2025","July 21, 2025"
+warrants_after_merger,11499988,warrants,closing_8k,5,"StablecoinX also had 11,499,988 Public Warrants outstanding","11,499,988"
+table_caption,shares outstanding immediately after the merger,text,sx_q2_10q,5,The number of shares of common stock outstanding immediately following the consummation of the Merger,
+table_pipe,20775272,shares,sx_q2_10q,5,"PIPE shares 20,775,272","20,775,272"
+table_ethena,1813164,shares,sx_q2_10q,5,"Ethena contribution shares 1,813,164","1,813,164"
+table_class_b,105000,shares,sx_q2_10q,5,"TLGY Class B common stock, outstanding prior to the Merger 105,000","105,000"
+table_legacy,700000,shares,sx_q2_10q,5,"Legacy Stablecoin X Assets Shares 700,000","700,000"
+table_total,24029375,shares,sx_q2_10q,5,"Class A Common Stock immediately after the Merger 24,029,375","24,029,375"
+closing_class_a,24029375,shares,closing_8k,1,"consisting of 24,029,375 shares of StablecoinX Class A Common Stock","24,029,375"
+income_2023_in_2024_10k,5072178,usd,k10_2024,4,"Income earned on investments held in Trust Account 2,598,427 5,072,178","5,072,178"
+deposits_2023_in_2024_10k,1820000,usd,k10_2024,4,"Cash deposited into Trust Account (872,089) (1,820,000)","1,820,000"
+trust_2023_12_31_in_2024_10k,65954638,usd,k10_2024,2,"the 3,717,207 and 5,922,865, respectively, Class A ordinary shares subject to possible redemption in the amount of $44,332,605 and $65,954,638","$65,954,638"

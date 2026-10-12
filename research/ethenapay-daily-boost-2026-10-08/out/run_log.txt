@@ -1,0 +1,174 @@
+EthenaPay Daily Boost review
+Inputs
+ok    input cashflow_results.json matches its SHA-256
+ok    input chain/activity.csv matches its SHA-256
+ok    input chain/batches.csv matches its SHA-256
+ok    input chain/meta.json matches its SHA-256
+ok    input chain/month_wallets.csv matches its SHA-256
+ok    input chain/periods.csv matches its SHA-256
+ok    input chain/utc_days_after_recount.csv matches its SHA-256
+ok    input chain/wallet_day_2026-10-01.csv matches its SHA-256
+ok    input chain/wallet_day_2026-10-08.csv matches its SHA-256
+ok    input chain_manifest.csv matches its SHA-256
+ok    input recount/daily_chain_62503a1.csv matches its SHA-256
+ok    input recount/meta.json matches its SHA-256
+ok    input recount/wallet_activity.csv matches its SHA-256
+ok    input sources.csv matches its SHA-256
+ok    input terms_facts.csv matches its SHA-256
+ok    the manifest lists every input file  (15 files)
+ok    chain file meta.json is the one the run wrote
+ok    chain file meta.json came from this boost_recount.cjs
+ok    chain file periods.csv is the one the run wrote
+ok    chain file periods.csv came from this boost_recount.cjs
+ok    chain file activity.csv is the one the run wrote
+ok    chain file activity.csv came from this boost_recount.cjs
+ok    chain file batches.csv is the one the run wrote
+ok    chain file batches.csv came from this boost_recount.cjs
+ok    chain file utc_days_after_recount.csv is the one the run wrote
+ok    chain file utc_days_after_recount.csv came from this boost_recount.cjs
+ok    chain file wallet_day_2026-10-01.csv is the one the run wrote
+ok    chain file wallet_day_2026-10-01.csv came from this boost_recount.cjs
+ok    chain file wallet_day_2026-10-08.csv is the one the run wrote
+ok    chain file wallet_day_2026-10-08.csv came from this boost_recount.cjs
+ok    chain file month_wallets.csv is the one the run wrote
+ok    chain file month_wallets.csv came from this boost_recount.cjs
+
+Cross-checks with the published recount
+ok    every wallet's first USDe and its balance at block 96,815,525 match the published recount  (1106 wallets)
+ok    the balances sum to the recount's balanceOf total  (3968569.937884 USDe)
+ok    daily flows and USDe held on all 144 days to October 5 match the published recount to the wei
+ok    the wallet count to October 5 matches the recount  (14555 wallets to October 9)
+
+The chain read
+ok    block 97,161,009 is the last block of October 9 UTC
+ok    every card debit log to either settlement address is in USDe  (34156 and 836 logs)
+ok    no wallet sent USDe back to either reward account
+ok    the pilot's top-up account made its 150 payments before the window
+ok    the script's daily factors match (1 + rate) ** (1/365) - 1 to ten significant digits
+  simple annual rates: base_4_5 4.40195%, base_4_0 3.92228%, standard_0_5 0.49876%, standard_1_0 0.99505%, six_1_5 1.48889%, six_2_0 1.98032%
+
+Payments
+ok    every payment period equals the sum of its batches  (71 periods)
+ok    base payments on 2026-10-06 UTC equal the day's batches
+ok    topup payments on 2026-10-06 UTC equal the day's batches
+ok    base payments on 2026-10-07 UTC equal the day's batches
+ok    topup payments on 2026-10-07 UTC equal the day's batches
+ok    base payments on 2026-10-08 UTC equal the day's batches
+ok    topup payments on 2026-10-08 UTC equal the day's batches
+ok    base payments on 2026-10-09 UTC equal the day's batches
+ok    topup payments on 2026-10-09 UTC equal the day's batches
+ok    base pays October 1 in a period of its own
+ok    topup pays October 1 in a period of its own
+ok    base pays October 2 in a period of its own
+ok    topup pays October 2 in a period of its own
+ok    base pays October 3 in a period of its own
+ok    topup pays October 3 in a period of its own
+ok    base pays October 4 in a period of its own
+ok    topup pays October 4 in a period of its own
+ok    base pays October 5 in a period of its own
+ok    topup pays October 5 in a period of its own
+ok    base pays October 6 in a period of its own
+ok    topup pays October 6 in a period of its own
+ok    base pays October 7 in a period of its own
+ok    topup pays October 7 in a period of its own
+ok    base pays October 8 in a period of its own
+ok    topup pays October 8 in a period of its own
+
+Wallet files
+ok    2026-10-01 wallet file sums to the base payments of the day
+ok    2026-10-01 wallet file sums to the top-up payments of the day
+ok    2026-10-01 wallet file holds every funded wallet  (968 wallets)
+ok    2026-10-01 time-weighted balances add up to the period's total
+ok    2026-10-01 tested wallets match the period  (497 wallets)
+ok    2026-10-01 base fits on utc days recomputed from the wallet file  (478)
+ok    2026-10-01 base fits on cet days recomputed from the wallet file  (406)
+ok    2026-10-01 base fits on cest days recomputed from the wallet file  (380)
+ok    2026-10-01 topup fits on utc days recomputed from the wallet file  (462)
+ok    2026-10-01 topup fits on cet days recomputed from the wallet file  (404)
+ok    2026-10-01 topup fits on cest days recomputed from the wallet file  (380)
+ok    2026-10-01 class A (all) recomputed from the wallet file  (284 of 344 paid)
+ok    2026-10-01 class B (all) recomputed from the wallet file  (224 of 352 paid)
+ok    2026-10-01 class C (all) recomputed from the wallet file  (7 of 28 paid)
+ok    2026-10-01 class D (all) recomputed from the wallet file  (79 of 244 paid)
+ok    2026-10-01 class A (ge100) recomputed from the wallet file  (264 of 264 paid)
+ok    2026-10-01 class B (ge100) recomputed from the wallet file  (178 of 179 paid)
+ok    2026-10-01 class C (ge100) recomputed from the wallet file  (3 of 3 paid)
+ok    2026-10-01 class D (ge100) recomputed from the wallet file  (51 of 51 paid)
+ok    2026-10-08 wallet file sums to the base payments of the day
+ok    2026-10-08 wallet file sums to the top-up payments of the day
+ok    2026-10-08 wallet file holds every funded wallet  (1153 wallets)
+ok    2026-10-08 time-weighted balances add up to the period's total
+ok    2026-10-08 tested wallets match the period  (585 wallets)
+ok    2026-10-08 base fits on utc days recomputed from the wallet file  (567)
+ok    2026-10-08 base fits on cet days recomputed from the wallet file  (497)
+ok    2026-10-08 base fits on cest days recomputed from the wallet file  (463)
+ok    2026-10-08 topup fits on utc days recomputed from the wallet file  (556)
+ok    2026-10-08 topup fits on cet days recomputed from the wallet file  (498)
+ok    2026-10-08 topup fits on cest days recomputed from the wallet file  (466)
+ok    2026-10-08 class A (all) recomputed from the wallet file  (537 of 701 paid)
+ok    2026-10-08 class B (all) recomputed from the wallet file  (66 of 154 paid)
+ok    2026-10-08 class C (all) recomputed from the wallet file  (2 of 24 paid)
+ok    2026-10-08 class D (all) recomputed from the wallet file  (84 of 274 paid)
+ok    2026-10-08 class A (ge100) recomputed from the wallet file  (467 of 467 paid)
+ok    2026-10-08 class B (ge100) recomputed from the wallet file  (52 of 53 paid)
+ok    2026-10-08 class C (ge100) recomputed from the wallet file  (2 of 2 paid)
+ok    2026-10-08 class D (ge100) recomputed from the wallet file  (63 of 63 paid)
+
+Results
+ok    the base account paid 4.5% on every tested wallet-day it fitted in October
+ok    in October the top-up fits the 0.5% and 1.5% models, and the rates of September 1 to 15 at most once  (4132 and 1 of 4133 fits)
+  October 1 to 8 base: 4214 of 4351 tested wallet-days within 1% of 4.5%, 4336 within 5%, 8 unpaid. CET 3668, CEST 3396
+  October 1 to 8 top-up: 4133 of 4351 within 1% (3439 at 0.5% capped at $5,000, 685 at 1.5%, 8 at 1.5% capped at $100,000), 4249 within 5%, 8 unpaid. CET 3650, CEST 3395
+ok    both accounts' October periods cover the same balances
+  October 1 to 8 paid 4771.00 USDe on 32299438 USDe-days, 5.3915% a year simple (base 4.4005%, top-up 0.9910%), 5.5390% compounded
+ok    every October median payment is the daily share of a compounded rate, 4.40195% and 0.49876% a year, not 4.5% and 0.5% divided by 365
+ok    the base periods cover every September day once
+ok    the topup periods cover every September day once
+ok    both accounts' September periods cover the same balances
+  September accrual days paid 13064.13 USDe on 101352971 USDe-days, 4.7048% a year simple. The cash-flow review's payment-date rate was 4.6151%
+ok    the September accrual days' payments equal the cash-flow review's September rewards, 13,064.13 USDe
+ok    over September the base account paid within 0.5% of 4.0% a year to September 16 and 4.5% from September 17  (11569.92 against 11538.01 USDe)
+ok    the median top-up fell from 1.0% to 0.5% a year between the accrual days of September 15 and 16
+ok    the median base payment rose from 4.0% to 4.5% a year between the accrual days of September 16 and 17
+ok    on the regular days to September 15 the top-up matched only 1.0% to $5,000 and 2.0%, and from September 16 only 0.5% and 1.5% but twice  (1789 and 236 wallet-days before, 8396 and 1534 after)
+  periods whose median payment matches no model: base 2026-09-09 0.00000%; base 2026-09-10 7.84424%; base 2026-09-12 0.00000%; base 2026-09-25 4.41175%; base 2026-09-28 4.45441%; base 2026-09-29 8.80334%; topup 2026-09-04 0.00000%; topup 2026-09-07 2.98450%; topup 2026-09-08 1.98993%
+ok    the periods whose median matches no model are the ones the article names  (9 periods)
+ok    from September 17 to 28 the median base payment was 4.40% to 4.46% a year
+ok    the base account paid September 13 to 16 in one payment on September 17, its median at 4.0%
+ok    October 1: every tested wallet with an October card spend was paid
+ok    October 8: every tested wallet that never used the card was paid
+  October 1 to 8: 1169 of 1177 tested wallet-days without an October card spend were paid the top-up, 436 of 436 for wallets that never used the card. They received 220.17 and 143.65 USDe of 876.92
+  September 9 to 30: 886 of 887 tested wallet-days of never-used wallets paid
+
+Calendar months, wallet by wallet
+ok    every wallet's card payments to September 30, and every wallet with none to October 9, agree with its first spend event in the published recount  (1716 wallet-months)
+ok    2026-09 wallet rows add up to the top-up paid for the month's accrual days  (1494.213396 USDe)
+ok    2026-09 wallet rows hold every tested wallet-day
+ok    2026-09 wallet rows are one per wallet  (799 wallets)
+  2026-09 spent in the month: 518 of 519 paid, 1363.15 USDe (91.23%), 143 exchanged USDe with another wallet, 134 with one that spent in the month
+  2026-09 spent only after the month: 11 of 11 paid, 1.48 USDe (0.10%), 4 exchanged USDe with another wallet, 4 with one that spent in the month
+  2026-09 spent only before the month: 2 of 2 paid, 35.45 USDe (2.37%), 2 exchanged USDe with another wallet, 2 with one that spent in the month
+  2026-09 never used the card: 40 of 40 paid, 92.46 USDe (6.19%), 7 exchanged USDe with another wallet, 6 with one that spent in the month
+ok    2026-10 wallet rows add up to the top-up paid for the month's accrual days  (876.915998 USDe)
+ok    2026-10 wallet rows hold every tested wallet-day
+ok    2026-10 wallet rows are one per wallet  (917 wallets)
+ok    no card spend falls after October in a read that ends on October 9
+  2026-10 spent in the month: 541 of 541 paid, 685.75 USDe (78.20%), 131 exchanged USDe with another wallet, 127 with one that spent in the month
+  2026-10 spent only before the month: 56 of 57 paid, 48.39 USDe (5.52%), 14 exchanged USDe with another wallet, 12 with one that spent in the month
+  2026-10 never used the card: 61 of 61 paid, 141.99 USDe (16.19%), 11 exchanged USDe with another wallet, 10 with one that spent in the month
+  September: 42 of 42 tested wallets with no card spend from September 1 to October 9 were paid 127.91 USDe, 8.56% of the September top-up
+ok    September: every tested wallet that never used the card through October 9 received the top-up  (40 wallets)
+ok    the minimum top-up payment on October 1 and October 8 is 0.001 USDe or more
+ok    every standard wallet above $5,000 received 5,000 x the 0.5% daily factor on October 1 and October 8, 0.068323 USDe  (0.068322953)
+ok    October top-up wallet-days add up: matched, unpaid and other
+ok    October 8: every wallet with 100 USDe or more that never used the card through October 9 was paid the top-up  (59 wallets)
+ok    the one tested wallet unpaid on October 8 received no base payment either
+  October 8: 4366721 USDe time-weighted in 1153 wallets. Paid 5.4026% a year simple (5.5508% compounded). Boosted 77.2848%, above a cap 21.3320%. 6% group 98 wallets with 60.1576%
+  October 8: 63 of 63 tested wallets that never used the card were paid, holding 714883 USDe
+  where the day boundary matters: 2026-10-01 topup 56 only UTC, 0 only Central Europe of 92; 2026-10-01 base 69 only UTC, 0 only Central Europe of 92; 2026-10-08 topup 58 only UTC, 0 only Central Europe of 89; 2026-10-08 base 70 only UTC, 0 only Central Europe of 89
+ok    where the day boundary matters, payments matched the UTC day and never only a Central European day
+ok    every wallet that never used the card, was paid for September and held 100 USDe or more on October 8 was paid a tier rate that day  (32 wallets)
+ok    wallets that never averaged 100 USDe in a period were paid about their 0.5% accrual over October 1 to 8, in lumps  (258 wallets, median 1.000)
+  of those, 8 were first funded from another EthenaPay wallet and 15 received their first USDe after October 5
+
+All 138 checks passed. Tables written to out/.

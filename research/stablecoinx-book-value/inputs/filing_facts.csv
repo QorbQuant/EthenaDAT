@@ -1,0 +1,82 @@
+id,value,unit,source_key,location,as_of
+cash,18856144,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+digital_assets_receivable_related_party,61468,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+digital_assets_restricted,53366,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+prepaid_insurance,25210,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+prepaid_and_other_current,42149,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_current_assets,19038337,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+digital_intangible_assets,212918841,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+intangible_assets_net,602000,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_assets,232559178,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+sponsor_convertible_demand_notes,6879325,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column, convertible demand notes payable to former sponsors",2026-06-30
+demand_notes_related_party,118796,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+accounts_payable,216764,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+accounts_payable_related_party,340000,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+accrued_expenses,6022119,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_current_liabilities,13577004,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+warrant_liability,4715000,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_liabilities,18292004,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+class_a_par,2403,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+class_b_par,316,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+additional_paid_in_capital,249170198,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+accumulated_deficit,-34905743,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_stockholders_equity,214267174,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+total_liabilities_and_equity,232559178,usd,q2,"Condensed consolidated balance sheet, June 30, 2026 column",2026-06-30
+class_a_shares_june30,24029375,shares,q2,"Condensed consolidated balance sheet, June 30, 2026 column, Class A line, issued and outstanding",2026-06-30
+class_a_shares_cover,24029375,shares,q2,"Cover page, shares outstanding as of August 12, 2026",2026-08-12
+class_b_shares_cover,3157754,shares,q2,"Cover page, shares outstanding as of August 12, 2026",2026-08-12
+class_b_rights,voting only,text,q2,"Note on earnings per share and stockholders' equity, Class B shares carry voting rights only and no right to dividends or to assets in a liquidation",2026-06-30
+ena_gross_carrying,249120581,usd,q2,"Note 7 Digital Intangible Assets, ENA tokens, gross carrying amount",2026-06-30
+ena_accumulated_impairments,36201740,usd,q2,"Note 7 Digital Intangible Assets, ENA tokens, accumulated impairments",2026-06-30
+ena_net_carrying,212918841,usd,q2,"Note 7 Digital Intangible Assets, ENA tokens, net carrying amount",2026-06-30
+ena_tokens_contribution,284954407.29,tokens,q2,"Note 3, Ethena Contribution",2026-06-25
+ena_value_contribution,23417531.14,usd,q2,"Note 3, Ethena Contribution, value as of June 25, 2026",2026-06-25
+ena_tokens_pipe_initial,1405754435.84,tokens,q2,"Note 3, PIPE Shares, Initial PIPE Investors",2026-06-25
+ena_value_pipe_initial,115524790.73,usd,q2,"Note 3, PIPE Shares, value as of June 25, 2026",2026-06-25
+cash_pipe_initial,1734252,usd,q2,"Note 3, PIPE Shares, Initial PIPE Investors",2026-06-25
+ena_tokens_pipe_additional,1340695577.81,tokens,q2,"Note 3, PIPE Shares, Additional PIPE Investors",2026-06-25
+ena_value_pipe_additional,110178258.81,usd,q2,"Note 3, PIPE Shares, value as of June 25, 2026",2026-06-25
+cash_pipe_additional,16000000,usd,q2,"Note 3, PIPE Shares, Additional PIPE Investors",2026-06-25
+ena_outside_fair_value_scope,related party,text,q2,"Note 2, Digital Intangible Assets, ENA falls outside ASC 350-60 because Ethena, a related party, created it, so it is carried at cost less impairment",2026-06-30
+impairment_measure,lowest intraday price since acquisition,text,q2,"Note 2, Digital Intangible Assets, impairment tested quarterly at the lowest intraday price on an active exchange since acquisition, never adjusted upward, gains recorded only on sale",2026-06-30
+eth_fair_value,ASU 2023-08,text,q2,"Note 2, Digital Assets and Adoption of ASU 2023-08, ETH tokens at fair value",2026-06-30
+impairment_q2,36201740,usd,q2,"Condensed consolidated statement of operations, three months ended June 30, 2026",2026-06-30
+warrant_fair_value_gain_q2,2185000,usd,q2,"Statement of operations, change in fair value of warrant liabilities, a gain",2026-06-30
+net_loss_q2,-34180809,usd,q2,"Statement of operations, three months ended June 30, 2026",2026-06-30
+warrant_liability_assumed,6900000,usd,q2,"Fair value note, warrant liability assumed in merger",2026-06-25
+warrant_liability_basis,"public warrants, quoted price",text,q2,"Fair value note, Level 1 instruments include public warrants valued at quoted prices",2026-06-30
+sponsor_notes_default,neither repaid nor converted,text,q2,"Note 10 Debt, the notes were neither repaid nor converted at the merger, a default, and the company assumed about $6.9 million",2026-06-25
+sponsor_notes_working_capital,4.2,usd_millions,q2,"Note 10 Debt, working capital loans outstanding",2026-06-30
+sponsor_notes_extension,2.7,usd_millions,q2,"Note 10 Debt, time extension funding loans outstanding",2026-06-30
+sponsor_notes_term_sheet,2026-08-05,date,q2,"Note 1 Liquidity, non-binding term sheet with the sponsors to restructure the notes, definitive agreement in progress",2026-08-14
+going_concern_basis,"going concern basis, no substantial doubt language",text,q2,"Note 1 Liquidity and MD&A, statements prepared on a going concern basis, depending on factors including the ability to monetize unlocked ENA",2026-08-14
+release_treasury_value,218.4,usd_millions,rel,"Second paragraph on the ENA treasury, valued at $218.4 million as of June 30, 2026",2026-06-30
+release_ena_price,0.07204,usd,rel,"Same paragraph, the closing market value of ENA on June 30, 2026",2026-06-30
+release_value_per_share,9.09,usd,rel,"Same paragraph, approximately $9.09 per share on 24,029,375 Class A shares",2026-06-30
+release_carrying_date,2026-06-27,date,rel,"Footnote 1, financial statements carry ENA at cost less impairment per ASC 350-30 as of June 27, 2026",2026-06-30
+director_award_shares,22000,shares,f4,"Each of five Forms 4 filed October 2, 2026 reports 22,000 Class A shares of restricted stock at a price of zero, read for an earlier review",2026-09-30
+director_awards,5,awards,f4,Accession numbers 0001225208-26-008116 to 008120,2026-09-30
+public_warrants_at_closing,11499988,warrants,s8k,"Closing 8-K of July 2, 2026, holders of record paragraph, read for an earlier review",2026-06-25
+sponsor_notes_original_principal,6.9,usd_millions,w8k,"Item 1.01, aggregate original principal of the Prior Notes, about $6.9 million",2026-06-25
+sponsor_restructuring_agreement,2026-08-21,date,w8k,"Item 1.01, Note Consolidation and Restructuring Agreements entered on August 21, 2026",2026-08-21
+sponsor_cash_share,5,percent,w8k,"Item 1.01, 5% of original principal paid in cash",2026-08-21
+sponsor_tranche_a_share,47.5,percent,w8k,"Item 1.01, 47.5% paid in Tranche A Warrants at $1.00 per warrant, exercise price $11.50, expiring June 25, 2031",2026-08-21
+sponsor_tranche_a_warrant_price,1.00,usd,w8k,Item 1.01,2026-08-21
+sponsor_tranche_b_share,47.5,percent,w8k,"Item 1.01, 47.5% paid in Tranche B Warrants at $0.75 per warrant, exercise price $15.00, expiring eight years after issuance",2026-08-21
+sponsor_tranche_b_warrant_price,0.75,usd,w8k,Item 1.01,2026-08-21
+sponsor_claims_waived,yes,text,w8k,"Item 1.01, each Former SPAC Sponsor waived its claims under the Prior Notes",2026-08-21
+tranche_a_warrants,3267679,warrants,p914,Cover page and Sponsor Warrants section,2026-08-21
+tranche_b_warrants,4356907,warrants,p914,Cover page and Sponsor Warrants section,2026-08-21
+software_license_net,402000,usd,q2,"Note 8 Intangible Assets, Net, software license, gross 502,500 less accumulated amortization 100,500",2026-06-30
+capitalized_software,200000,usd,q2,"Note 8 Intangible Assets, Net, capitalized software",2026-06-30
+eth_restricted_tokens,33.91,tokens,q2,"Note 5 Digital Assets, Ethereum ETH tokens, total digital assets restricted",2026-06-30
+eth_restricted_cost_basis,149156,usd,q2,"Note 5 Digital Assets, cost basis",2026-06-30
+eth_restricted_fair_value,53366,usd,q2,"Note 5 Digital Assets, fair value, Level 1 in Note 6",2026-06-30
+dvn_revenue_q2,61468,usd,q2,"Note 4 Revenue, DVN services recognized over time, three months ended June 30, and Note 14, digital assets receivable due from Ethena of 61,468",2026-06-30
+class_b_excluded_from_eps,voting rights only,text,q2,"Net Loss Per Share policy, Class B shares are not included in EPS as they represent voting rights only and are not entitled to dividends or to assets in a dissolution, liquidation or winding up",2026-06-30
+class_a_no_vote,not entitled to vote,text,q2,"Stockholders' equity note, holders of Class A common stock are not entitled to vote",2026-06-30
+impairment_cost_method,"first-in, first-out",text,q2,"Note 2, Digital Intangible Assets, FIFO assigns costs for impairment and realized gains and losses",2026-06-30
+impairment_q2_text,36.2,usd_millions,q2,"Note 2, impairment expense of $36.2 million for the three and six months ended June 30, 2026",2026-06-30
+warrant_liability_level,Level 1,text,q2,"Note 6 Fair Value Measurements, warrant liability of 4,715,000 in Level 1",2026-06-30
+dvn_fees_paid_in,ENA tokens,text,q2,"Note 4 Revenue, DVN Services, a Decentralized Verifier Node service under an agreement of April 14, 2026 with Ethena OpCo, a related party, providing cross-chain verification with LayerZero messaging, its fees paid in ENA tokens",2026-06-30
+note7_quantity,none given,text,q2,"Note 7 Digital Intangible Assets, the table gives the gross carrying amount, accumulated impairments and net carrying amount for ENA tokens at June 30 with no token quantity, and no other passage of the 10-Q gives a token count dated June 30",2026-06-30

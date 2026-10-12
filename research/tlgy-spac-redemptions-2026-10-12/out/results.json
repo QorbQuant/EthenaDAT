@@ -1,0 +1,332 @@
+{
+ "ipo": {
+  "date": "2021-12-03",
+  "public_shares": 23000000,
+  "unit_price": 10.0,
+  "trust": 234600000,
+  "trust_a_share": 10.2,
+  "public_warrants": 11500000,
+  "right_warrants": 5750000
+ },
+ "votes": {
+  "ext1": {
+   "name": "First extension",
+   "date": "2023-02-23",
+   "vote": "2023-02-23",
+   "before": 23000000,
+   "shares": 15681818,
+   "of_before": 0.6818181739130434,
+   "of_ipo": 0.6818181739130434,
+   "cash": 163150810,
+   "a_share": 10.40381988873994,
+   "after": 7318182,
+   "stated": {
+    "8-K": 10.4
+   },
+   "against_unit_price": 0.04038198887399407
+  },
+  "ext2": {
+   "name": "Second extension",
+   "date": "2023-10-17",
+   "vote": "2023-10-17",
+   "before": 7318182,
+   "shares": 1395317,
+   "of_before": 0.1906644300456042,
+   "of_ipo": 0.06066595652173913,
+   "cash": 15287730,
+   "a_share": 10.956456489815576,
+   "after": 5922865,
+   "stated": {
+    "8-K": 10.96
+   },
+   "against_unit_price": 0.0956456489815576
+  },
+  "ext3": {
+   "name": "Third extension",
+   "date": "2024-04-16",
+   "vote": "2024-04-16",
+   "before": 5922865,
+   "shares": 2205658,
+   "of_before": 0.3723971422613887,
+   "of_ipo": 0.09589817391304348,
+   "cash": 25092549,
+   "a_share": 11.376445940395111,
+   "after": 3717207,
+   "stated": {
+    "8-K": 11.33
+   },
+   "against_unit_price": 0.13764459403951113
+  },
+  "ext4": {
+   "name": "Fourth extension",
+   "date": "2025-04-15",
+   "vote": "2025-04-15",
+   "before": 3717207,
+   "shares": 3227320,
+   "of_before": 0.8682109982037589,
+   "of_ipo": 0.14031826086956523,
+   "cash": 39113394,
+   "a_share": 12.119465686699801,
+   "after": 489887,
+   "stated": {
+    "8-K": 12.12
+   },
+   "against_unit_price": 0.21194656866998005
+  },
+  "ext5": {
+   "name": "Fifth extension",
+   "date": "2026-04-15",
+   "vote": "2026-04-15",
+   "before": 489887,
+   "shares": 13817,
+   "of_before": 0.028204463478312347,
+   "of_ipo": 0.0006007391304347826,
+   "cash": 182409,
+   "a_share": 13.201780415430267,
+   "after": 476070,
+   "stated": {
+    "10-Q note": 13.19,
+    "10-Q discussion": 13.2,
+    "proxy": 13.19
+   },
+   "against_unit_price": 0.3201780415430267
+  },
+  "merger": {
+   "name": "Merger",
+   "date": "2026-06-25",
+   "vote": "2026-03-10",
+   "before": 476070,
+   "shares": 379721,
+   "of_before": 0.7976158968218959,
+   "of_ipo": 0.016509608695652173,
+   "cash": 5068095,
+   "a_share": 13.346891533520663,
+   "after": 96349,
+   "stated": {
+    "8-K": 13.35
+   },
+   "against_unit_price": 0.3346891533520664
+  }
+ },
+ "redeemed": 22903651,
+ "redeemed_share": 0.9958109130434782,
+ "cash": 247894987,
+ "average_a_share": 10.823383005617751,
+ "kept": 96349,
+ "kept_share": 0.004189086956521739,
+ "merger_vote_requests": 388406,
+ "requests_less_redeemed_at_closing": 8685,
+ "share_table": {
+  "start": 5834587,
+  "redemption": 393538,
+  "closing_8k": 379721,
+  "gap": 13817
+ },
+ "trust_steps": [
+  {
+   "from": "IPO",
+   "to": "First extension",
+   "start": "2021-12-03",
+   "end": "2023-02-23",
+   "days": 447,
+   "start_value": 10.2,
+   "end_value": 10.40381988873994,
+   "a_year": 0.016287004964171237
+  },
+  {
+   "from": "First extension",
+   "to": "Second extension",
+   "start": "2023-02-23",
+   "end": "2023-10-17",
+   "days": 236,
+   "start_value": 10.40381988873994,
+   "end_value": 10.956456489815576,
+   "a_year": 0.0833370855080684
+  },
+  {
+   "from": "Second extension",
+   "to": "Third extension",
+   "start": "2023-10-17",
+   "end": "2024-04-16",
+   "days": 182,
+   "start_value": 10.956456489815576,
+   "end_value": 11.376445940395111,
+   "a_year": 0.07835743990316502
+  },
+  {
+   "from": "Third extension",
+   "to": "Fourth extension",
+   "start": "2024-04-16",
+   "end": "2025-04-15",
+   "days": 364,
+   "start_value": 11.376445940395111,
+   "end_value": 12.119465686699801,
+   "a_year": 0.06549729593199993
+  },
+  {
+   "from": "Fourth extension",
+   "to": "Fifth extension",
+   "start": "2025-04-15",
+   "end": "2026-04-15",
+   "days": 365,
+   "start_value": 12.119465686699801,
+   "end_value": 13.201780415430267,
+   "a_year": 0.08930383209205539
+  },
+  {
+   "from": "Fifth extension",
+   "to": "Merger",
+   "start": "2026-04-15",
+   "end": "2026-06-25",
+   "days": 71,
+   "start_value": 13.201780415430267,
+   "end_value": 13.346891533520663,
+   "a_year": 0.05780791143975428
+  }
+ ],
+ "ipo_to_merger": {
+  "days": 1665,
+  "trust_growth": 0.3085187777961435,
+  "trust_a_year": 0.060719154692252975,
+  "unit_price_growth": 0.3346891533520664,
+  "unit_price_a_year": 0.06533386937043661
+ },
+ "trust_by_year": [
+  {
+   "year": "2022",
+   "start": 234600000,
+   "income": 2901000,
+   "deposits": 0,
+   "paid": 0,
+   "end_reported": 237501000,
+   "end": 237501000
+  },
+  {
+   "year": "2023",
+   "income": 5072178,
+   "deposits": 1820000,
+   "paid": 178438540,
+   "end_reported": 65954638,
+   "start": 237501000,
+   "end": 65954638
+  },
+  {
+   "year": "2024",
+   "income": 2598427,
+   "deposits": 872089,
+   "paid": 25092549,
+   "end_reported": 44332605,
+   "start": 65954638,
+   "end": 44332605
+  },
+  {
+   "year": "2025",
+   "income": 725255,
+   "deposits": 400450,
+   "paid": 39113505,
+   "end_reported": 6344805,
+   "start": 44332605,
+   "end": 6344805
+  }
+ ],
+ "income_2022_2025": 11296860,
+ "deposits_2022_2025": 3092539,
+ "withdrawn_2025_beyond_vote": 111,
+ "deposits_from_april_2025": {
+  "monthly": 24494.35,
+  "a_share_a_year": 0.6,
+  "rise_fourth_to_fifth": 1.0823147287304666,
+  "share_of_rise": 0.5543673980153517
+ },
+ "deposit_a_share_a_month_early_2025": 0.016141151138475744,
+ "first_quarter_2026": {
+  "income": 44722,
+  "deposits": 73483,
+  "end_from_roll_forward": 6463010,
+  "redemption_value": 6463122
+ },
+ "usde": {
+  "sessions": 74,
+  "first": {
+   "date": "2026-06-26",
+   "close": 3.7,
+   "vs": -0.7227818933938689
+  },
+  "low": {
+   "date": "2026-07-24",
+   "close": 1.43,
+   "vs": -0.8928589479873601
+  },
+  "high": {
+   "date": "2026-09-25",
+   "close": 17.25,
+   "vs": 0.29243576728534093
+  },
+  "last": {
+   "date": "2026-10-09",
+   "close": 12.3,
+   "vs": -0.07843710506610473
+  },
+  "at_or_above": [
+   "2026-09-22",
+   "2026-09-24",
+   "2026-09-25",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01",
+   "2026-10-02",
+   "2026-10-05",
+   "2026-10-06",
+   "2026-10-07"
+  ],
+  "merger_cash_a_share": 13.346891533520663
+ },
+ "usdew": {
+  "first": {
+   "date": "2026-06-29",
+   "close": 0.68
+  },
+  "last": {
+   "date": "2026-10-09",
+   "close": 3.64
+  }
+ },
+ "kept_value": {
+  "kept_shares": 96349,
+  "at_merger_cash": 1285959.6523631825,
+  "at_first_close": 356491.3,
+  "at_last_close": 1185092.7,
+  "at_high_close": 1662020.25,
+  "at_low_close": 137779.07
+ },
+ "left_before_fifth_vote_share": 0.021299434782608696,
+ "before_merger_agreement": {
+  "date": "2025-07-21",
+  "shares": 22510113,
+  "share": 0.9787005652173913,
+  "days_from_fourth_vote_to_closing": 436
+ },
+ "extension_votes": {
+  "shares": 22523930,
+  "share": 0.9793013043478261
+ },
+ "merger_share_of_ipo": 0.016509608695652173,
+ "warrants_after_merger": 11499988,
+ "sponsor_change": {
+  "date": "2024-06-19",
+  "founder_shares": 3542305,
+  "price": 1.0
+ },
+ "share_table_total": 24029375,
+ "rows_before_listing": {
+  "rows": 22,
+  "first": "2026-04-09",
+  "last": "2026-06-25",
+  "volume_low": 100,
+  "volume_high": 1660,
+  "close_low": 9.01,
+  "close_high": 12.0
+ },
+ "right_if_kept": 59.67887575377015
+}

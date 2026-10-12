@@ -1,3 +1,10 @@
+import { meta as octoberReview0 } from "./content/avalanche-usde-ethenapay-2026-10-11.mjs";
+import { meta as octoberReview1 } from "./content/ethenapay-cashback-2026-10-09.mjs";
+import { meta as octoberReview2 } from "./content/ethenapay-daily-boost-2026-10-08.mjs";
+import { meta as octoberReview3 } from "./content/ethenapay-vs-susde-2026-10-08.mjs";
+import { meta as octoberReview4 } from "./content/stablecoinx-book-value.mjs";
+import { meta as octoberReview5 } from "./content/tlgy-spac-redemptions-2026-10-12.mjs";
+import { meta as octoberReview6 } from "./content/usdew-warrant-pricing-2026-10-09.mjs";
 import { DATA_PAGES } from "./dataset-meta.mjs";
 import { meta as trackingReview } from "./content/usde-ena-tracking-2026-10-08.mjs";
 import { meta as shortInterestReview } from "./content/stablecoinx-short-interest-2026-10-08.mjs";
@@ -19,6 +26,13 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [octoberReview0.path]: octoberReview0,
+  [octoberReview1.path]: octoberReview1,
+  [octoberReview2.path]: octoberReview2,
+  [octoberReview3.path]: octoberReview3,
+  [octoberReview4.path]: octoberReview4,
+  [octoberReview5.path]: octoberReview5,
+  [octoberReview6.path]: octoberReview6,
   ...DATA_PAGES,
   [trackingReview.path]: trackingReview,
   [shortInterestReview.path]: shortInterestReview,

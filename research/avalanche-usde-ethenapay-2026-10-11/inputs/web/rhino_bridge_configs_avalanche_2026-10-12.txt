@@ -1,0 +1,8 @@
+source https://api.rhino.fi/bridge/configs
+read_at 2026-10-12T10:50:34.752Z
+status 200
+bytes 24319
+sha256 007d15390afe1b429ab0cf3d953ebf76867016dfee701472a4306f101cd6d2b6
+AVALANCHE {"name":"Avalanche","type":"EVM","networkId":"43114","contractAddress":"0x5e023c31e1d3dcd08a1b3e8c96f6ef8aa8fcacd1","multicallContractAddress":"0x73699b0c5542472b927dd779f2a1085ac9bd2704","confirmationBlocks":3,"avgBlockTime":2,"nativeTokenName":"AVAX","nativeTokenDecimals":18,"nativeTokenSafeguard":0.02,"blockExplorer":"https://subnets.avax.network/c-chain","rpc":"https://api.avax.network/ext/bc/C/rpc","site":"https://www.avax.network","status":"enabled","gasBoostEnabled":true,"enabledDepositAddress":true}
+AVALANCHE_USDE [["USDe",{"token":"USDe","address":"0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34","decimals":18}]]
+SAME_CONTRACT ARC,AVALANCHE,CELO,GNOSIS,HYPEREVM,INK,MANTLE,PLASMA,ROBINHOOD,STABLE,TEMPO

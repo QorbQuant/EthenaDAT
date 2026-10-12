@@ -1,0 +1,84 @@
+{
+  "cutoff": "Filings read October 12, 2026 UTC · Prices through the October 9, 2026 close",
+  "navigation": [
+    [
+      "Six votes",
+      "six-votes-cut-23000000-public-shares-to-96349"
+    ],
+    [
+      "The trust",
+      "cash-a-share-in-the-trust-grew-309-before-the-merger"
+    ],
+    [
+      "13,817 shares",
+      "the-13817-share-gap-matches-the-fifth-vote"
+    ],
+    [
+      "USDE",
+      "holders-who-kept-their-shares-got-usde"
+    ],
+    [
+      "Warrants",
+      "redemptions-left-the-warrants-in-place"
+    ],
+    [
+      "Method",
+      "how-the-figures-were-built"
+    ],
+    [
+      "Limits",
+      "what-these-figures-leave-out"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "TLGY's trust value a public share and the cash a share paid for redemptions at each vote, December 2021 to June 2026, and USDE's close against the merger's cash a share, June 26 to October 9, 2026",
+  "chartFile": "chart_tlgy_redemptions.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_tlgy_redemptions.svg",
+    "chart_preview.png",
+    "redemption_votes.csv",
+    "trust_by_year.csv",
+    "trust_a_share.csv",
+    "usde_against_merger_cash.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "metadata.json",
+    "tlgy_redemption_review.py",
+    "browser/edgar_and_yahoo_fetch.js",
+    "browser/sec_extract.js",
+    "browser/stockanalysis_history_fetch.js",
+    "inputs/edgar_filings_tlgy_2026-10-12.csv",
+    "inputs/filing_facts.csv",
+    "inputs/manifest.csv",
+    "inputs/sec_extracts_2026-10-12.txt",
+    "inputs/sec_extracts_2_2026-10-12.txt",
+    "inputs/sec_extracts_3_2026-10-12.txt",
+    "inputs/sec_extracts_4_2026-10-12.txt",
+    "inputs/sec_extracts_5_2026-10-12.txt",
+    "inputs/sources.csv",
+    "inputs/usde_daily_stockanalysis_2026-10-12.csv",
+    "inputs/usde_daily_yahoo_2026-10-12.csv",
+    "inputs/usdew_daily_stockanalysis_2026-10-12.csv",
+    "out/chart_preview.png",
+    "out/chart_tlgy_redemptions.svg",
+    "out/redemption_votes.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/trust_a_share.csv",
+    "out/trust_by_year.csv",
+    "out/usde_against_merger_cash.csv"
+  ],
+  "keyFindings": [
+    "Holders redeemed 22,903,651 of TLGY’s 23 million public shares across six votes for approximately $247.9 million.",
+    "The remaining 96,349 public shares became USDE. Redemption cash, post-merger stock prices and retained warrants are separate parts of the outcome."
+  ]
+}

@@ -1,0 +1,74 @@
+EthenaPay's reward next to sUSDe
+Inputs
+ok    input cashflow_results.json matches its SHA-256
+ok    input chain/events.csv matches its SHA-256
+ok    input chain/meta.json matches its SHA-256
+ok    input chain/midnights.csv matches its SHA-256
+ok    input chain/rewards.csv matches its SHA-256
+ok    input chain_manifest.csv matches its SHA-256
+ok    input dailyboost_results.json matches its SHA-256
+ok    input sources.csv matches its SHA-256
+ok    input terms_facts.csv matches its SHA-256
+ok    chain file events.csv matches its SHA-256
+ok    chain file events.csv was written by this susde_read.cjs
+ok    chain file meta.json matches its SHA-256
+ok    chain file meta.json was written by this susde_read.cjs
+ok    chain file midnights.csv matches its SHA-256
+ok    chain file midnights.csv was written by this susde_read.cjs
+ok    chain file rewards.csv matches its SHA-256
+ok    chain file rewards.csv was written by this susde_read.cjs
+
+The chain read
+ok    the events match the read's counts  (965 deposits, 1368 withdrawals, 126 reward logs)
+ok    events and rewards are in block order with no log twice
+ok    every log lies in the blocks read
+ok    block times never run backwards
+ok    each midnight's block is the last before it
+ok    the read covers 00:00 August 30 to the end of October 10 UTC
+
+The share price
+ok    the price never falls by more than one part in a billion from one event to the next  (25 falls, the largest 3.95e-19, all from the contract's rounding)
+ok    every fall happens inside one block's second
+ok    a price at every midnight from August 31 to October 10  (41 midnights, October 11 has no event after it)
+ok    the events either side of each midnight are less than four hours apart  (widest 3.41 hours)
+ok    no reward payment, end of a vesting window or left-out record falls between the events either side of a midnight  (41 midnights, 252 payment times and window ends, 8 left-out records)
+  september, 2026-09-01 to 2026-10-01, 4.7246% a year before compounding, 4.8283% after
+  october 1 to 8, 2026-10-01 to 2026-10-09, 4.8901% a year before compounding, 5.0088% after
+  september 1 to 15, 2026-09-01 to 2026-09-16, 4.6705% a year before compounding, 4.7766% after
+  september 16, 2026-09-16 to 2026-09-17, 4.8681% a year before compounding, 4.9882% after
+  september 17 to 30, 2026-09-17 to 2026-10-01, 4.7618% a year before compounding, 4.8724% after
+  september 17 to october 8, 2026-09-17 to 2026-10-09, 4.8117% a year before compounding, 4.9220% after
+  august 31 to october 9, 2026-08-31 to 2026-10-10, 4.7625% a year before compounding, 4.8647% after
+  days from September 1 to October 8 ran from 4.49% on 2026-09-05 to 5.28% on 2026-10-01
+
+Rewards
+ok    three reward payments a day, about eight hours apart  (126 payments, gaps of 28812 to 28896 seconds)
+ok    each full week's 21 payments are the same amount, with the amount changing every seven days within an hour  (7 amounts, changes on 2026-09-04, 2026-09-11, 2026-09-18, 2026-09-25, 2026-10-02, 2026-10-09)
+  126 payments, 5,174,575.33 USDe in September
+ok    October 9's rewards over the contract's USDe come within 2% of that day's measured rate  (4.739% against 4.7489% before compounding)
+ok    the contract's price on October 12 is above the price at 00:00 October 10 and close to its trend  (1.252629292265, the explorer's latest block 26174153)
+
+What moved the rate
+ok    the payments over the USDe behind sUSDe match every day's rate to within 0.001 of a point  (40 days, largest gap 0.000692 of a point, starting from 1,337.3 million USDe at 00:00 UTC August 31)
+ok    the USDe behind sUSDe at the end of October 10 is within 1% of the contract's totalAssets read on October 12  (1,213.6 million against 1,215.4 million)
+ok    leaving out a deposit or withdrawal of 500,000 USDe at noon on September 5, 20 or October 5 widens the largest gap past 0.001 of a point  (0.00123 to 0.00205 of a point)
+ok    the week from October 2 paid less a payment than the week from September 4 and a higher rate on every day  (54,933.39 against 56,881.00 USDe, 4.93% and up against 4.78% and down, days 2026-10-03 to 2026-10-08 and 2026-09-05 to 2026-09-10)
+  the USDe behind sUSDe averaged most on 2026-09-05, 1,416.6 million, and sUSDe's lowest day was 2026-09-05
+
+EthenaPay
+ok    the Pricing page, FAQ and Terms set Standard at 5% to $5,000 and Pro and VIP at 6% to $100,000 and $1,000,000
+ok    the Daily Boost review dates the rate change
+ok    the Daily Boost review's September total is the cash-flow review's  (13064.13 USDe)
+ok    the daily shares reproduce the Daily Boost review's models
+ok    the standard and 6% totals match the Daily Boost review's compounded figures
+  within the caps 5.02% and 6.07% after compounding, base 4.0% then 4.5%
+  all balances, September 4.70% before compounding, October 1 to 8 5.39% and 5.54%
+ok    standard, the balance where EthenaPay's rate meets sUSDe's lies above the cap  (6,187 USDe)
+ok    pro, the balance where EthenaPay's rate meets sUSDe's lies above the cap  (369,372 USDe)
+ok    vip, the balance where EthenaPay's rate meets sUSDe's lies above the cap  (3,693,720 USDe)
+  balances where EthenaPay's rates from September 17 meet sUSDe's 4.9220% for the same days, standard 6,187, pro 369,372, vip 3,693,720
+ok    the days above the Standard rate split into 8 in the two largest weeks and 2 others, September 16 and October 8
+ok    sUSDe paid more than the base rate and less than the Pro and VIP rate on every day compared
+  sUSDe above the Standard rate on 10 of 38 days
+
+All 46 checks passed. Tables written to out/.

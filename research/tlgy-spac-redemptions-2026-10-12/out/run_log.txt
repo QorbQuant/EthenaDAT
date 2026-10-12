@@ -1,0 +1,57 @@
+[ok] every input matches the SHA-256 and size in manifest.csv, and the manifest lists every input . 11 files
+[ok] every filing in the extracts was served with status 200 and every anchor was found . 21, 7, 2, 6 and 7 documents
+[ok] documents read in more than one extract were served identically each time . bc_vote_8k, closing_8k, def14a_2026, defm14a, ext1_8k, ext4_8k, ipo_424b4, ipo_8k, k10_2023, k10_2024, k10_2025, k8_2024_12_05, q1_2026_10q, sx_q2_10q
+[ok] every row of filing_facts.csv quotes its filing window and the quote shows the row's value . 143 rows
+[ok] TLGY's filing list has six 8-Ks reporting a shareholder vote, one for each vote counted here . 2023-02-27, 2023-10-19, 2024-04-16, 2025-04-21, 2026-03-11, 2026-04-20
+[ok] TLGY's last filing in the list is its June 26, 2026 deregistration
+[ok] the IPO's 20,000,000 units and 3,000,000 over-allotment units make the 23,000,000 public shares in the first 10-Q of 2023
+[ok] $234,600,000 in trust over 23,000,000 shares is the $10.20 a unit the prospectus set
+[ok] half a warrant a unit gives the 11,500,000 public warrants the merger proxy counts
+[ok] a quarter of a warrant a unit gives the right's 5,750,000 warrants
+[ok] the two 2023 votes add up to the 17,077,135 shares the 2023 10-K counts
+[ok] public shares left after each vote match the filings, 7,318,182, 5,922,865, 3,717,207 and 489,887
+[ok] the fifth vote's 13,817 and the closing's 379,721 add up to the 393,538 redeemed shares in StablecoinX's share table . 13,817 + 379,721
+[ok] the share table starts from the 5,834,587 Class A shares outstanding after April 2025, before the fifth vote
+[ok] public shares kept come to 96,349 by the vote counts and by the share table, 489,887 less 393,538, the count in the site's float review . 96,349 kept, 0.42% of the IPO's shares
+[ok] the share table's lines add up to its 24,029,375 Class A shares, the count in StablecoinX's closing 8-K, a check on the table's arithmetic
+  22,903,651 redeemed for $247,894,987, $10.82 a share on average
+[ok] four votes, every one before the July 21, 2025 merger agreement, redeemed 22,510,113 public shares, the last of them more than a year before the closing . 97.87% of the IPO's shares, 436 days before the closing. All five extension votes 22,523,930, 97.93%, the merger 1.65%
+[ok] StablecoinX counted 11,499,988 public warrants after the merger, 12 fewer than the 11,500,000 in the units, though 99.6% of the public shares had been redeemed
+  First extension   February 23, 2023, 15,681,818 shares,  $163,150,810, 10.4038 a share, 8-K 10.40. 68.2% of the 23,000,000 then outstanding, 7,318,182 left
+  Second extension  October 17, 2023,  1,395,317 shares,   $15,287,730, 10.9565 a share, 8-K 10.96. 19.1% of the 7,318,182 then outstanding, 5,922,865 left
+  Third extension   April 16, 2024,  2,205,658 shares,   $25,092,549, 11.3764 a share, 8-K 11.33. 37.2% of the 5,922,865 then outstanding, 3,717,207 left
+  Fourth extension  April 15, 2025,  3,227,320 shares,   $39,113,394, 12.1195 a share, 8-K 12.12. 86.8% of the 3,717,207 then outstanding, 489,887 left
+  Fifth extension   April 15, 2026,     13,817 shares,      $182,409, 13.2018 a share, 10-Q note 13.19, 10-Q discussion 13.20, proxy 13.19. 2.8% of the 489,887 then outstanding, 476,070 left
+  Merger            June 25, 2026,    379,721 shares,    $5,068,095, 13.3469 a share, 8-K 13.35. 79.8% of the 476,070 then outstanding, 96,349 left
+[ok] the cash a share agrees with each filing's rounded price within half a cent, except the third vote's 8-K, and the fifth vote's 10-Q note and proxy estimate . third vote paid 11.3764 against the 8-K's $11.33, fifth paid 13.2018 against $13.19 in the note and the proxy and $13.20 in the discussion
+[ok] the fourth vote's $39,113,394 is the 8-K's about $39.1 million, and its 489,887 shares at $12.12 the about $5.9 million left
+[ok] the March 2026 extension deposit of $24,494.35 is $0.05 for each of the 489,887 public shares
+[ok] the proxy's about $6.5 million in trust on March 20, 2026 fits 489,887 shares at its $13.19 estimate
+[ok] redemption requests at the March 10 merger vote, 388,406 shares, exceed the 379,721 redeemed at the closing . by 8,685
+[ok] the trust's balance rolls forward exactly each year from 2022 to 2025, start plus income plus the sponsors' deposits less the cash taken out giving the next reported balance . 2022 ends $237,501,000, 2023 ends $65,954,638, 2024 ends $44,332,605, 2025 ends $6,344,805
+[ok] the 10-K for 2024, filed after the August 2024 restatement of the 2023 accounts for convertible notes, repeats the 2023 trust figures of the 10-K for 2023 . the restatement concerned $1,253,224 in the convertible note accounts
+[ok] the cash withdrawn in 2023 and 2024 is what the votes of those years paid
+[ok] the 2025 cash flow shows $111 more withdrawn than the fourth vote's redemptions, the same $111 by which the redemption value at December 31, 2025 exceeds the trust's reported cash
+[ok] the first quarter of 2026 leaves the trust at about $6.5 million, within $112 of the March 31 redemption value . $6,463,010 from the roll-forward
+[ok] the first-quarter deposits fit three months at the monthly caps, $60,000 in 2025 and $24,494.35 in 2026
+[ok] deposits from April to December 2025 and in the first quarter of 2026 fit $24,494.35 a month to within a dollar . $220,450 against nine months at $24,494.35, $73,483 against three
+  deposits from April 2025, 0.60 a share a year, against a rise of 1.0823 from the fourth vote to the fifth, 55.4%. Early 2025, 0.0161 a share a month
+  2022 to 2025, income $11,296,860, sponsors' deposits $3,092,539, redemptions $242,644,594
+[ok] the trust's value a public share rose at every step, from $10.20 at the IPO to the merger's payout . 10.20 < 10.33 < 10.40 < 10.52 < 10.96 < 11.14 < 11.38 < 11.54 < 11.93 < 12.12 < 12.40 < 12.68 < 12.95 < 13.19 < 13.20 < 13.35
+[ok] the filings' own values a share, $11.92, $12.68, $12.95 and $13.19, round from the computed ones but December 31, 2024's, which the 10-K gives a cent lower than $44,332,605 over 3,717,207 shares . December 31, 2024 computes to 11.9263
+[ok] the two June 30, 2025 trust figures differ, the 10-Q's $6,072,600 against the merger proxy's $6,051,707 in cash . the series uses the 10-Q's
+  IPO to First extension, 447 days, 10.2000 to 10.4038, 1.63% a year
+  First extension to Second extension, 236 days, 10.4038 to 10.9565, 8.33% a year
+  Second extension to Third extension, 182 days, 10.9565 to 11.3764, 7.84% a year
+  Third extension to Fourth extension, 364 days, 11.3764 to 12.1195, 6.55% a year
+  Fourth extension to Fifth extension, 365 days, 12.1195 to 13.2018, 8.93% a year
+  Fifth extension to Merger, 71 days, 13.2018 to 13.3469, 5.78% a year
+  IPO to the merger, 1665 days, trust 30.9% or 6.07% a year. Against the $10.00 unit price 33.5% or 6.53% a year
+[ok] USDE's history has 74 sessions from its first Nasdaq session on June 26 to October 9, 2026 . 22 earlier rows from 2026-04-09 to 2026-06-25, closes 9.01 to 12.00 on 100 to 1,660 shares, are left out as TLGY's over-the-counter shares
+[ok] every USDE close matches Yahoo Finance's to the cent, on the same 74 dates
+[ok] USDE closed at or above the merger's cash a share on 11 sessions, every one from September 22 to October 7 but September 23
+[ok] USDEW's history starts June 29 and closed at $3.64 on October 9
+  merger cash a share 13.3469. First close 3.70 (-72.3%), low 1.43 on 2026-07-24 (-89.3%), high 17.25 on 2026-09-25 (29.2%), last 12.30 (-7.8%)
+  96,349 shares at the merger's cash $1,285,960, at the October 9 close $1,185,093
+[ok] spread over the 96,349 shares kept, the right's 5,750,000 warrants would have come to about 59.7 a share . the right was cancelled on April 15, 2025, so this is arithmetic only
+All checks passed. Tables written to out/.

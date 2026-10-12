@@ -1,0 +1,133 @@
+# SEC filing extracts for the TLGY redemption review. Each block gives the address, the read time, the size and SHA-256 of the raw document as served, and fixed windows of its text after removing script, style and the inline XBRL header, deleting zero-width characters and collapsing whitespace. @n is the character offset of the anchor in that text.
+
+### ipo_8k https://www.sec.gov/Archives/edgar/data/1879814/000119312521353043/d260802d8k.htm
+# status 200 read 2026-10-12T08:03:53.222Z raw_bytes 21825 raw_sha256 68729b5ae088eab965ad6c81f60bd9bb5b861e855d998504d56344d90c4a398d text_chars 5810
+- @2602 ember 3, 2021, TLGY Acquisition Corporation (the “Company”) consummated its initial public offering (the “IPO”) of 20,000,000 units (the “Units”). Each Unit co
+- @2689 Each Unit consists of (i) one Class A ordinary share of the Company, par value $0.0001 per share (a “Class A Ordinary Share”), (ii) one-half of one detachable redeemable warrant of the Company (each, a “Detachable Redeemable Warrant”), and (iii) a contingent right to receive at least one-fourth of one redeemable warrant following the initial business combination redemption time (together with the Detachable Redeemable Warrants, the “Warr
+- @3289 The Units were sold at a price of $10.00 per Unit, generating gross proceeds to the Company of $200,000,000. 
+- @3744 A total of $204,000,000, comprised of $196,000,000 of the net proceeds from the IPO, including approximately $7,000,000 of the underwriters’ deferred discount, and $8,000,000 of the proceeds of the sale of the Private Placement Warrants, were placed in a trust account maintained by Continental Stock Transfer & Trust Company, acting as trustee (the “Tr
+
+### ipo_8k2 https://www.sec.gov/Archives/edgar/data/1879814/000119312521356482/d261970d8k.htm
+# status 200 read 2026-10-12T08:03:54.254Z raw_bytes 24733 raw_sha256 f179ca18142c1670a9f703c5dac72d2fe77007bb985ac9d5154fa444dcc6769b text_chars 6098
+- @3559 ported, on December 6, 2021, the underwriters exercised their over-allotment option, and on December 8, 2021, the underwriters purchased an additional 3,000,000 Units (the “Option Units”) at $10.00 per Option Unit, generating gross proceeds to the Company of $30,000,000. Simultaneously
+- @4575 An aggregate of approximately $234,600,000 of the proceeds from the IPO (including the Option Units) and the private placement with the Sponsor (including the Additional Private Placement Warrants), have been deposited in a trust account maintained by Continental Stock Tr
+
+### ipo_424b4 https://www.sec.gov/Archives/edgar/data/1879814/000119312521346884/d166704d424b4.htm
+# status 200 read 2026-10-12T08:03:55.296Z raw_bytes 1559734 raw_sha256 a7d5b55925ad839bbb84ddd21ad683b48872085239bf6d15c95e70b49118270a text_chars 871633
+- @1008 Each unit has an offering price of $10.00 and consists of one Class A ordinary share and one-half of one redeemable warrant (the “detachable redeemable warrants”) and a contingent right to receive at least one-fourth of one redeemable warrant following the initial business combination redemption time (as defined below) under certain circumstances and subject to adjustment as further described in this prospectus (the “distributable redeemable warrants”). At the distribution time (as defined below), we will effect a distribution of a number of warrants equal to the number of units issued in this offering multiplied by one-fourth (i.e., 5,000,000 warrants (or 5,750,000 warrants if the over-allotment option is exercised in full) (the “Aggregate Warrant Amount”)) on a pro-rata basis only to holders of record of Class A ordinary shares issued in this offering (whether such shares were acquired during or after this offering) that remain outstanding after we redeem any Class A ordinary shares that the holders thereof have elected to redeem in connection with our initial business combination. Public shareholders who exercise their redemption rights will also be deemed to have tendered their contingent right to receive distributable redeemable warrants for no additional consideration and as a result are not entitled to receive any distribution of distributable redeemable warrant
+- @11939 nderwriters. Of the proceeds we receive from this offering and the sale of the private placement warrants described in this prospectus, $204,000,000, or $234,600,000 if the underwriters’ over-allotment option is exercised in full ($10.20 per unit in either case), will be deposited into a trust account
+
+### ext1_8k https://www.sec.gov/Archives/edgar/data/1879814/000110465923025551/tm237896d1_8k.htm
+# status 200 read 2026-10-12T08:03:56.252Z raw_bytes 41728 raw_sha256 9a1d1e1b1287fbcf2bc4e19316a4f804216d2796ed34b0645d02779809cfb8c0 text_chars 6830
+- @2412 On February 23, 2023, shareholders of TLGY Acquisition Corporation (the “Company”) held an extraordinary general meeting of shareholders (the “Extraordinary General Meeting”), where the shareholders of the Company approved by special resolution an amendment (the “
+- @5001  connection with the votes to approve the Charter Amendment Proposal, 15,681,818 ordinary shares of the Company were rendered for redemp
+- @5496 . The per-share redemption amount has been calculated to be approximately $10.40 per share
+
+### ext2_8k https://www.sec.gov/Archives/edgar/data/1879814/000110465923110132/tm2328709d1_8k.htm
+# status 200 read 2026-10-12T08:03:57.252Z raw_bytes 41855 raw_sha256 5e535fb67bf5d96cb3fc8d188a124142b84b98a9a868145ee5d670a9ad10c872 text_chars 5890
+- @2411 On October 17, 2023, shareholders of TLGY Acquisition Corporation (the “Company”) held an annual general meeting of shareholders (the “Annual General Meeting”), where the shareholders of the Company approved by special resolution an amendment (the “Charter Amendment”) to the Amended and Restated Memorandum and Articles of Association of the Company (the “Charter”) to modify the monthly amount that its Sponsor or its affiliates or designees must deposit into the Trust Account in order to extend the period of time to consummate a business combination by one month, up to seven times (starting from the first date on which such modified extension payment is made), if requested by the Sponsor and accepted by the Company, from the lesser of $0.04 per outstanding share and $200,000 to the lesser of (x) $0.033 per outstanding share and (y) $110,000. 
+- @4653  connection with the votes to approve the Charter Amendment Proposal, 1,395,317 ordinary shares of the Company were rendered for redemp
+- @5147 . The per-share redemption amount has been calculated to be approximately $10.96 per share
+
+### ext3_8k https://www.sec.gov/Archives/edgar/data/1879814/000110465924047788/tm2411664d3_8k.htm
+# status 200 read 2026-10-12T08:03:58.253Z raw_bytes 41344 raw_sha256 a6e5c245a5830456a244f5491c0c32c2cf7afd18757644757bce88c34988874c text_chars 5910
+- @2409 On April 16, 2024, shareholders of TLGY Acquisition Corporation (the “Company”) held an extraordinary general meeting of shareholders (the “Extraordinary General Meeting”), where the shareholders of the Company approved by special resolution an amendment (the “Charter Amendment”) to the Amended and Restated Memorandum and Articles of Association of the Company (the “Charter”) to modify the monthly amount that its Sponsor or its affiliates or designees must deposit into the Trust Account in order to extend the period of time to consummate a business combination by one month, up to twelve times (starting from the first date on which such modified extension payment is made), if requested by the Sponsor and accepted by the Company, from the lesser of $0.033 per outstanding share and $110,000 to the lesser of (x) $0.02 per outstanding share and (y) $60,0
+- @4676  connection with the votes to approve the Charter Amendment Proposal, 2,205,658 ordinary shares of the Company were tendered for redemp
+- @5171 . The per-share redemption amount has been calculated to be approximately $11.33 per share
+
+### ext4_8k https://www.sec.gov/Archives/edgar/data/1879814/000110465925036860/tm2512558d1_8k.htm
+# status 200 read 2026-10-12T08:03:59.252Z raw_bytes 43060 raw_sha256 e9dd4cab53c5732de9723fb50da779ea950ca73554427503823aff46e883a551 text_chars 8020
+- @2688 On April 15, 2025, TLGY Acquisition Corp. (the “Company”) held an extraordinary general meeting of its shareholders (the “Extension Meeting”) to approve each of the proposals set forth below. Each of the proposals was
+- @2218 Proposal 1 - Extension Amendment Proposal,” “Proposal 2 - Redemption Limitation Amendment Proposal” and “Proposal 3 - Founder Share Amendment Proposal” (collectively, the “Charter Amendments”) is incorporated by reference into this Item 5.03 to the extent required. A copy of the special resolutions adopting the Charter Amendments is filed herewith as Exhibit 3.1 and is incorporated herein by reference. Item 5.07. Submission of Matters to a Vote of Security Holders. On April 15, 2025, TLGY Acquisition Corp. (the “Company”) held an extraordinary general meeting of its shareholders (the “Extension Meeting”) to approve each of the proposals set forth below. Each of the proposals was approved at the Extens
+- @5457 Proposal 4 – Contingent Right Proposal The Class A ordinary shareholders approved, by special resolution, the detachment and cancellation of the contingent right attached to each non-redeemed Class A ordinary share sold in the Company’s initial public offering, which right entitles the holder of such Class A ordinary shares to receive at least one-fourth of one redeemable warrant following the business combination redemption t
+- @5966 voting results for such proposal were as follows: For Against Abstain 2,030,299 66,750 0 In connect
+- @6039 holders of 3,227,320 Class A ordinary shares properly exercised their right to redeem their shares for cash at a redemption price of approximately $12.12 per share, for an aggregate of approximately $39.1 million. After the satisfaction of such
+- @6301 ch redemptions, the balance in the Company’s trust account is expected to be approximately $5.9 million. Following the Ext
+- @6558 e Extension Meeting, the Sponsors and TLGY Sponsors LLC converted all of their Class B ordinary shares into Class A ordinary shares and, as a result, there are approximately 5,834,587 Class A ordinary shares outstanding, of which approximately 489,887 Class A ordinary shares are subject to future redemptions. Item 8.01 Other Ev
+
+### ext5_8k https://www.sec.gov/Archives/edgar/data/1879814/000121390026045658/ea0286515-8k_tlgyacq.htm
+# status 200 read 2026-10-12T08:04:00.253Z raw_bytes 45959 raw_sha256 8b8e181d9da026ff0cc909657458c797679c126a8fd0a4a203563ad9909a2615 text_chars 5902
+- @2295 On April 15, 2026, TLGY Acquisition Corporation, a Cayman Islands exempted company (“TLGY” or the “Company”), held an extraordinary general meeting of shareholders (the “TLGY Shareholders’ Meeting”) at which its shareholders approved a proposal to
+- @4193 onnection with the TLGY Shareholders’ Meeting, shareholders holding 13,817 Class A Ordinary Shares exercised their right to redeem such shares for a pro rata portion of the funds in the Trust Account maintained by Continental Stock Transfer & Trust Company. 
+
+### bc_vote_8k https://www.sec.gov/Archives/edgar/data/1879814/000121390026025809/ea0280899-8k425_tlgyacq.htm
+# status 200 read 2026-10-12T08:04:01.253Z raw_bytes 61826 raw_sha256 05f1079b70b33271c05a991a010805ddafa12ad8868c67812d5ac7c892a60de5 text_chars 18514
+- @1914 On March 10, 2026, TLGY Acquisition Corporation, a Cayman Islands exempted company (“TLGY”), held an extraordinary general meeting of shareholders (the “TLGY Shareholders’ Meeting”) in connection with its proposed business combination (the “Business Combination”) with Stableco
+- @2222 On February 4, 2026, the record date for the TLGY Shareholders’ Meeting, there were 5,834,587 Class A ordinary shares, par value $0.0001 per share, of TLGY (“Class A Ordinary Shares”) and 105,000 Class B ordinary shares, par value $0.0001 per share (“Class B Ordinary Shares” and together with the Class A Ordinary Shares, the “Ordinary Shares”), entitled to be vote
+- @2777 or approximately 97.00% of the shares entitled to vote at the TLGY Shareholders’ Meeting, were represented in person or by proxy, which constituted a quorum. TLGY’s shareholders voted on t
+- @3008 Shareholder Proposal No. 1 - Business Combination Proposal A proposal to approve, by ordinary resolution, the business combination agreement, date
+- @4324 For Against Abstain 5,759,409 2,000 0 Shareholder Proposal No. 2 - SPAC Merger Proposal A proposal to approve, by special resolution, 
+- @7001 0 0 2 In connection with the TLGY Shareholders’ Meeting, shareholders holding 388,406 Class A Ordinary Shares exercised their right to redeem such shares for a pro rata portion of the funds in TLGY’s trust account maintained by Continental Stock Transfer & Tr
+
+### k8_2024_12_05 https://www.sec.gov/Archives/edgar/data/1879814/000110465924125922/tm2430127d1_8k.htm
+# status 200 read 2026-10-12T08:04:02.252Z raw_bytes 32596 raw_sha256 b7c66389f85ee204499499968e7559c7f4d494c8252a40297a5bdc8e626b63c3 text_chars 3653
+- @2439 On December 2, 2024, TLGY Acquisition Corporation (the “Company”) received a notice from the staff of the Listing Qualifications Department of The Nasdaq Stock Market LLC (“Nasdaq”) stating that because the Company had not completed an initial business combination within 36 months of the effective date of its registration statement in connection with its initial public offering, it was not in compliance with Nasdaq IM 5101-2, and was t
+- @3021 request a hearing before the Nasdaq Hearings Panel (the “Panel”), but will not request a hearing before the Panel and intends to trade on the over the counter (OTC) market. Tra
+- @3124 Trading in the Company’s securities on Nasdaq will be suspended at the opening of business on December 9, 2024, and trading of the Company’s securities on the OTC market is expected to commence shortly thereafter
+
+### f25_2025_05_08 https://www.sec.gov/Archives/edgar/data/1879814/000135445725000389/xslF25X02/primary_doc.xml
+# status 200 read 2026-10-12T08:04:03.252Z raw_bytes 10275 raw_sha256 fe301539aa122ebf097ddc5044ba1d479e75dd3180c9bb27b4bbc6b3a109cffb text_chars 2122
+- @369 Issuer: TLGY ACQUISITION CORP Exchange: Nasdaq Stock Market LLC (Exact name of 
+- @730 Class A Ordinary Share, Warrants, Units (Description of class of securities) Pl
+- @1762 2025-05-08 By Aravind Menon Hearings Advisor Date Nam
+
+### def14a_2026 https://www.sec.gov/Archives/edgar/data/1879814/000121390026040497/ea0285135-01.htm
+# status 200 read 2026-10-12T08:04:17.825Z raw_bytes 681780 raw_sha256 7be8dfaeeeb69b74808a9ea27e2f068d0b3ffd5777a05d691902d854d1d9f3fc text_chars 197910
+- @12666 Our Board has fixed the close of business on March 20, 2026 as the date for determining the Company shareholders entitl
+- @13079 On the record date, there were a total of 5,939,587 ordinary shares issued and outstanding, consisting of 5,834,587 Class A ordinary shares, of which 489,887 were public shares, and 105,000 Class B ordinary shares. Based 
+- @13492 t of funds in the Trust Account as of the record date, the Company anticipates that the per-share price at which public shares will be redeemed from cash held in the Trust Account will be approximately $13.19 at the time of the Extraordinary General Meeting
+- @30891 if the Extension Proposal is approved and the amount remaining in the Trust Account may be only a small fraction of the approximately $6.5 million that was in the Trust Account as of March 20, 2026, the record date. A
+
+### q1_2026_10q https://www.sec.gov/Archives/edgar/data/1879814/000121390026056223/ea0287797-10q_tlgyacq.htm
+# status 200 read 2026-10-12T08:04:19.258Z raw_bytes 549925 raw_sha256 be5f5318411fbf63f42d56c94f216b2f887b9d19e582462451fe9dffde0c0ae1 text_chars 128886
+- @4698 CONTINGENCIES Class A ordinary shares subject to possible redemption; 489,887 shares (at redemption value of $13.19 and $12.95 at March 31, 2026 and December 31, 2025, respectively) 6,463,122 6,344,916 Shareholders’ deficit: Preference 
+- @18770 026, the Company held an extraordinary general meeting of shareholders in connection with its proposed business combination with StablecoinX Assets Inc., following which holders of 388,406 Class A ordinary shares exercised their right to redeem their shares. As of March 31, 2026, these shares have not yet been redeemed and the pro rata portion of funds in the Company’s Trust Account has not been wit
+- @91145 from the lesser of (x) $0.05 per outstanding share and (y) $25,000 to the lesser of (x) $0.05 per outstanding share and (y) $10,000. In connection
+- @91373 ith the Fifth Extension Meeting, on April 15, 2026, public shareholders holding 13,817 Class A ordinary shares elected to redeem such shares for a pro rata portion of the funds in the Company’s Trust Account, or approximately $13.19 per share. As a result, $182,409 was removed from the Trust Account in connection with the redemption in 
+- @107070  initial Business Combination, and in connection therewith, 13,817 Class A ordinary shares were rendered for redemption. The Class A ordinary shares were redeemed at a per-share price of approximately $13.20 per share. 
+
+### k10_2025 https://www.sec.gov/Archives/edgar/data/1879814/000121390026036938/ea0275867-10k_tlgyacq.htm
+# status 200 read 2026-10-12T08:04:20.253Z raw_bytes 1009058 raw_sha256 5e1ea30211c5eae59ec2c1aab48328dea3b3f14d172f49641e669dc361c8f59e text_chars 339925
+- @54877 As of December 31, 2025, the amount in the trust account was $12.95 per public share
+- @242469 CONTINGENCIES Class A ordinary shares subject to possible redemption; 489,887 and 3,717,207 shares (at redemption value of $12.95 and $11.92) at December 31, 2025 and 2024, respectively 6,344,916 44,332,605 Shareholders’ deficit: Preferred s
+- @129258 As of December 31, 2025, we had cash and investments held in the trust account of $6,344,805
+
+### defm14a https://www.sec.gov/Archives/edgar/data/1879814/000121390026017535/ea0277387-01.htm
+# status 200 read 2026-10-12T08:04:21.253Z raw_bytes 18355287 raw_sha256 1ece68bcd7eabc95d0726297fc1fd428f7eba8ac05402c157bd767b4df0db8bc text_chars 3340331
+- @173089 rios. As ofSeptember 30, 2025 Trust Account Value $ 6,210,376.00 Total Public Shares 489,887 Trust Account Value per Public Share $ 12.68 No Redemptions(1) 50% Redemptions(2)
+- @848097 the value of the cash held in the Trust Account as of June 30, 2025 which was $6,051,707, divided by (ii) 489,887, which is the number of outstanding Public Shares subject to redemption as of June 30, 2025. This summar
+- @56575 rative purposes, as of the Record Date, this would have amounted to approximately $13.05 per Public Share
+- @188732 As of the close of business on the Record Date for the extraordinary general meeting, there were 5,939,587 TLGY Ordinary Shares issued and outstanding, of which 489,887 were issued and outstanding Public Shares. The TLGY Ins
+
+### closing_8k https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm
+# status 200 read 2026-10-12T08:04:25.255Z raw_bytes 280161 raw_sha256 352d9edd7c7e6ea9cd822e6cc0e694186188e34ddb60cd901da11a4eb5aa5de4 text_chars 109398
+- @2867 ement”). Pursuant to the terms of the Business Combination Agreement, on June 25, 2026 (the “Closing” and such date, the “Closing Date”), (1) SPAC Merg
+- @8611  connection with the Closing, a total of 379,721 Public Shares were redeemed at a redemption price of approximately $13.35 per share, for an aggregate redemption amount of approximately $5,068,095
+- @9948 prior to the SPAC Merger, (1) each issued and outstanding unit of TLGY (the “TLGY Units”) were separated into its component parts,
+- @10623 (1) each issued and outstanding TLGY Class A Ordinary Share (that was not redeemed pursuant to the Redemption) was exchanged, on a one-for-one basis, for one share of Class A common stock, par value $0.0001 per share, of StablecoinX (the “StablecoinX Class A Commo
+- @10980 A Common Stock”), and (2) each issued and outstanding whole warrant representing the right to purchase one TLGY Class A Ordinary Share (each, a “TLGY Warrant”) became a warrant to acquire one share of StablecoinX Class A Common Stock (each, a “StablecoinX Warrant”) in accordance with its term
+- @17671 there were 27,187,129 shares of StablecoinX Common Stock issued and outstanding, consisting of 24,029,375 shares of StablecoinX Class A Common Stock and 3,157,754 shares of StablecoinX Cla
+- @18279 0.41% of StablecoinX’s voting power at the Closing. StablecoinX’s Class A Common Stock and Public Warrants commenced trading on the Nasdaq Capital Market (“Nasdaq”) under the symbols “USDE” and “USDEW,” respectively, on June 26, 2026. FORM 10 INFORMATION Item 2.01(f) of Form 8-K states that if the predecessor registrant was a “shell company” (as such 
+
+### sx_q2_10q https://www.sec.gov/Archives/edgar/data/2080215/000121390026090250/ea0301482-10q_stable.htm
+# status 200 read 2026-10-12T08:04:26.252Z raw_bytes 841745 raw_sha256 dfd5bf182e0ffb0176681e9bb3942801b44b0b274848017622f2fa149c625075 text_chars 166142
+- @52816 TLGY Class A common stock, outstanding prior to the Merger 5,834,587 Sponsor forfeiture (4,805,110) Redemption of TLGY Class A common stock (393,538) Class A common stock of TLGY 635,939 PIPE shares 20,775,272 Ethena c
+
+### q1_2023_10q https://www.sec.gov/Archives/edgar/data/1879814/000110465923059752/tlgyu-20230331x10q.htm
+# status 200 read 2026-10-12T08:04:27.268Z raw_bytes 824912 raw_sha256 6b3e823a0ca019b76facf88c43504fcb03f411aaf8bc0eeeec364ed1350a1afc text_chars 104382
+- @8855 Cash withdrawn from Trust Account 163,150,810
+- @8995 Redemptions of Class A ordinary shares (163,150,810)
+- @37364 ents. Accordingly, at March 31, 2023 and December 31, 2022, the 7,318,182 and 23,000,000 Class A ordinary shares, respectively, subject to possible redemption in the amount of $77,021,741 and $237,501,000 at redemption value per Pub
+
+### k10_2023 https://www.sec.gov/Archives/edgar/data/1879814/000110465924039031/tlgyu-20231231x10k.htm
+# status 200 read 2026-10-12T08:04:28.252Z raw_bytes 1405129 raw_sha256 9e61e7afd4cba8f4cdddec1565eec349a1e8bdfd6c49e90c681e10f158b75941 text_chars 310576
+- @246091 As of December 31, 2023, an aggregate of 17,077,135 shares were redeemed by public shareholders. Accordingly, $178,438,540 was withdrawn from the Trust Account in order to pay those redeeming shareholders. Following the redemptions for the year ended December 31, 2023, $65,954,638 remains in the Company’s Trust Account.If the Comp
+
+### k10_2024 https://www.sec.gov/Archives/edgar/data/1879814/000141057825000276/tlgyu-20241231x10k.htm
+# status 200 read 2026-10-12T08:04:29.255Z raw_bytes 1528408 raw_sha256 260ba7474ba62d2a8af73609e7e49c30299df38f9886f00867d1d03a90ca21c7 text_chars 363866
+- @277067 ombination. During the fiscal year ended December 31, 2024, an aggregate of 2,205,658 shares were redeemed by public shareholders. Accordingly, $25,092,549 was withdrawn from the Trust Account in order to pay those redeeming shareholders. Following the redemptions for the year ended December 31, 2024, $44,332,605 remains in the Company’s Trust Account.If
+
+### q2_2025_10q https://www.sec.gov/Archives/edgar/data/1879814/000141057825001609/tlgyu-20250630x10q.htm
+# status 200 read 2026-10-12T08:04:30.253Z raw_bytes 1241550 raw_sha256 4a769024f6af6eeeb8ee38d735caed44ae5dd38f86356f8919a343c77052ac2e text_chars 161674
+- @49000 sion Meeting (as defined herein), on April 15, 2025 Public Shareholders holding 3,227,320 Class A ordinary shares elected to redeem such shares for a pro rata portion of the funds in the Company’s Trust Account, or approximately $12.12 per share. As a result, $39,113,394 was removed from the Trust Account in connection with the redemption in order to pay such holders. As of June 30, 2025 
+- @49345 December 31, 2024, there were 489,887 and 3,717,207 Class A ordinary shares subject to possible redemption in the amount of $6,072,600 and $44,332,605, respectively, at redem

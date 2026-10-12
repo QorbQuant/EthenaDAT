@@ -1,0 +1,23 @@
+what was checked whether Ethena Pay's FAQ or Terms of Use name rhino.fi, a bridge or LayerZero
+how browser, page text, searched with regular expressions that ignore case, nothing downloaded
+
+first search
+source https://pay.ethena.fi/faq
+title FAQ — Ethena Pay
+read_at 2026-10-12T11:11:58.588Z
+page_text_chars 11866
+search /rhino|bridge|deposit|cross-chain|network fee|top up|top-up|fund your|add funds/i
+result three paragraphs matched, all on the word deposit in the sense of a bank deposit. They say the Daily Boost is not a deposit, that Ethena Pay does not accept deposits or hold customer funds, and that digital assets are not deposits. No paragraph names rhino.fi, a bridge or a way to move USDe between chains
+
+source https://pay.ethena.fi/terms
+title Terms of Use — Ethena Pay
+read_at 2026-10-12T11:12:20.200Z
+page_text_chars 137285
+last_updated September 22, 2026
+search /rhino|bridg|cross-chain|layerzero|avalanche/i
+result one paragraph matched, on the word Avalanche, where the card cashback is credited in AVAX, the Avalanche network's own token. No paragraph names rhino.fi, a bridge or LayerZero
+
+second search, after the independent review, the same pattern on both pages
+pattern /rhino|bridg|layer\s?zero|cross-chain|crosschain|omnichain/gi
+source https://pay.ethena.fi/faq read_at 2026-10-12T12:07:32.524Z page_text_chars 11866 hits none
+source https://pay.ethena.fi/terms read_at 2026-10-12T12:07:42.814Z page_text_chars 137285 last_updated September 22, 2026 hits none

@@ -1,0 +1,77 @@
+{
+ "token": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+ "chain": "Avalanche C-Chain",
+ "deploy_block": 66748921,
+ "deploy_block_time": "2025-08-08T09:46:04Z",
+ "end_block": 97318132,
+ "end_block_time": "2026-10-11T23:59:59Z",
+ "next_block_time": "2026-10-12T00:00:00Z",
+ "first_day": "2025-08-08",
+ "last_day": "2026-10-11",
+ "days": 430,
+ "wallets": 14740,
+ "factory_rows": [
+  2007,
+  12736
+ ],
+ "factory_created_not_create2": [
+  {
+   "factory": "0x313be708df16979d9e5fe9db5ac4969b8add7207",
+   "type": "create",
+   "address": "0x85d133fde5660220b0401600e113ae25ad9aebef",
+   "block": 85497626
+  },
+  {
+   "factory": "0xac66ca9a79fb0d3c64cba44cd29610cd58602d6f",
+   "type": "create",
+   "address": "0xc831ea25deb7654679a438c78c4c5d1c313c8448",
+   "block": 87652557
+  },
+  {
+   "factory": "0xac66ca9a79fb0d3c64cba44cd29610cd58602d6f",
+   "type": "create",
+   "address": "0xddaffdb1c5f0774ee734cf3491aafd4f0a678127",
+   "block": 87652557
+  }
+ ],
+ "factory_rows_not_creations": 0,
+ "transfer_records_listed": 147715,
+ "transfer_logs_kept": 147652,
+ "records_with_no_value": 63,
+ "records_with_no_value_checked_against_receipts": 63,
+ "records_with_no_value_found_in_their_receipts": 0,
+ "records_with_no_value_touching_ethenapay": 0,
+ "records_with_no_value_by_month": {
+  "2025-08": 1,
+  "2025-09": 62
+ },
+ "records_with_no_value_empty_amount": 63,
+ "records_with_no_value_empty_block_hash": 63,
+ "mints": 1233,
+ "burns": 838,
+ "minted_wei": "38432121456105000000000000",
+ "burned_wei": "27889273563368000000000000",
+ "supply_at_end_wei": "10542847892737000000000000",
+ "tie_to_contract": {
+  "block_before": 97362127,
+  "block_after": 97362128,
+  "total_supply_wei": "10532847892737000000000000",
+  "minted_after_wei": "0",
+  "mints_after": 0,
+  "burned_after_wei": "10000000000000000000000",
+  "burns_after": 1,
+  "records_with_no_value_after": 0,
+  "supply_at_end_from_contract_wei": "10542847892737000000000000",
+  "equal": true
+ },
+ "holders_at_end": 1680,
+ "settlement_recipients": 3,
+ "wallets_received_from_outside_wei": "14075752577963510490598834",
+ "flow_periods": [
+  "2025-08-08 to 2026-05-14",
+  "2026-05-15 to 2026-10-05",
+  "2026-10-06 to 2026-10-11"
+ ],
+ "run_started_utc": "2026-10-12T12:52:13.431Z",
+ "run_finished_utc": "2026-10-12T12:55:31.214Z"
+}

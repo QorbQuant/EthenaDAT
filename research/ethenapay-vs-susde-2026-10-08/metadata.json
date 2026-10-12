@@ -1,0 +1,12 @@
+{
+  "path": "/research/ethenapay-vs-susde-2026-10-08/",
+  "title": "EthenaPay vs sUSDe: Rates to Oct 8, 2026",
+  "headline": "Did EthenaPay pay more than staked USDe?",
+  "name": "EthenaPay and sUSDe review",
+  "description": "sUSDe paid 4.83% a year in September 2026. EthenaPay's rates were higher within the Daily Boost caps and lower above them, and level across all balances.",
+  "article": true,
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "image": "/research-assets/ethenapay-vs-susde-2026-10-08/chart_preview.png",
+  "imageAlt": "Line chart of 38 days from September 1 to October 8, 2026. sUSDe's rate a year after compounding ranged between 4.49% on September 5 and 5.28% on October 1. Step lines show EthenaPay's rates, about 6.07% for Pro and VIP balances within their caps, about 5.02% for the first $5,000 of a Standard balance, and a base rate of 4.0% until September 16 and 4.5% from September 17. Both tier lines dip on September 16, to 5.56% and 4.52%. sUSDe stayed above the base rate and below the Pro and VIP rate on every day and paid more than the Standard rate on 10 days."
+}

@@ -1,0 +1,36 @@
+[ok] every input matches the SHA-256 and size in manifest.csv . 5 files
+[ok] the warrant terms read from filing_facts.csv agree with each other . expiry 2031-06-25, five years after the 2026-06-25 closing, the date page 97 gives the Tranche A warrants
+[ok] the warrant agreement and the prospectus set the price test at 20 closes within 30 trading days, the 10-Q's Note 9 describes it as 10 within 20, and the June 25 amendment left the redemption section alone
+[ok] 74 USDE sessions from its first on June 26 to October 9, none on a weekend
+[ok] USDEW has a close on every USDE session from June 29 to October 9 but two, and on no other day . 71 of 73 sessions, none on 2026-07-17, 2026-08-18
+[ok] the price history matches the closes the prospectus cover gives for September 8 . USDE $7.61, USDEW $2.09
+[ok] the table has 21 rows from 60 months to 0 in steps of 3 and nine prices from $10.00 to $18.00
+[ok] shares rise with the price along every row and fall toward expiry down every column
+[ok] every value in the $18.00 column is the 0.361 cap, and no value exceeds it
+[ok] at $18.00 the cap is worth what paying the exercise price is worth, within a cent . 0.361 x $18.00 = $6.498, $18.00 - $11.50 = $6.50
+[ok] below $18.00 the table gives more than paying $11.50 would, at every quarter dollar from $10.00, for a notice on October 9
+[ok] the interpolation returns the table's own values at its rows and prices
+[ok] USDE first closed at or above $10.00 on September 18 and closed there at every session after it . 16 sessions
+[ok] USDE never closed at or above $18.00 . highest close $17.25
+[ok] USDEW never closed below its exercise value
+[ok] the 30 sessions to October 9 hold 16 closes at or above $10.00, short of the 20 the call needs
+[ok] under the 10-Q's wording USDE would have reached 10 closes at or above $10.00 within 20 sessions on October 1 . 2026-10-01
+[ok] from September 21 to October 7 USDEW closed below its call value with the redemption date 30, 60 or 90 days out . 30 days 2.65% to 18.18% below, 60 days 2.59% to 17.97% below, 90 days 2.52% to 17.76% below
+[ok] the source's daily changes, from both neighboring days, put USDEW's September 25, September 30 and October 8 closes at half cents . 2026-09-25 6.0148 and 6.0147, 2026-09-30 5.1651 and 5.1648, 2026-10-08 3.8852 and 3.8852
+[ok] EDGAR listed no filing after October 2 and no 8-K after September 17 . 31 filings from June 25
+
+USDEW against USDE
+  71 sessions with both closes, 2026-06-29 to 2026-10-09
+  before 2026-09-18: share ratio 0.1491 to 0.3566
+  from 2026-09-18: share ratio 0.2564 on 2026-09-23 to 0.3490 on 2026-09-25; table shares 0.2595 to 0.3585
+  USDEW against table value from 2026-09-18: -18.2% on 2026-09-22 to +10.4% on 2026-09-18
+  2026-09-25: USDE $17.25, USDEW $6.02, exercise value $5.75, time value $0.27, ratio 0.3490, table 0.3585 shares at 56.01 months = $6.1842, USDEW -2.65%
+  2026-10-08: USDE $12.79, USDEW $3.89, exercise value $1.29, time value $2.60, ratio 0.3041, table 0.3052 shares at 55.58 months = $3.9038, USDEW -0.35%
+  2026-10-09: USDE $12.30, USDEW $3.64, exercise value $0.80, time value $2.84, ratio 0.2959, table 0.2973 shares at 55.55 months = $3.6574, USDEW -0.48%
+  closes at or above $10.00 in the 30 sessions to 2026-10-09: 16 of 20 needed
+  September 21 to October 7: USDEW 2.65% to 18.18% below call value, median 11.56%
+  redemption date 60 days out: October 8 -0.03%, October 9 -0.14%
+  redemption date 90 days out: October 8 +0.31%, October 9 +0.23%
+  half-cent closes: 2026-09-25 $6.015 gap -2.74%, 2026-09-30 $5.165 gap -7.81%, 2026-10-08 $3.885 gap -0.48%
+  a $10.00 call settled at the 2026-10-09 close: 11,499,988 x 0.2973495 = 3,419,515 shares, 14.23% of 24,029,375 and 14.17% of 24,139,375 Class A shares; paying $11.50 for each: 11,499,988 shares and $132,249,862
+All checks passed. Tables written to out/.

@@ -150,3 +150,5 @@ The [methodology page](https://ethenadash.com/methodology/) defines the dashboar
 Analysis of public filings and market data. Not investment advice.
 
 Related research: [Read the separate FINRA short-interest review through September 30.](/research/stablecoinx-short-interest-2026-10-08/)
+
+Follow-up published October 12: [The TLGY redemption review traces all six votes and examines the 13,817-share difference.](/research/tlgy-spac-redemptions-2026-10-12/)

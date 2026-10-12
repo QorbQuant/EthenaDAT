@@ -13,7 +13,7 @@ Sources.
   FINRA's trade reporting facilities, with the volume marked short and short exempt.
   USDE daily prices and volume from S&P Global Market Intelligence through StockAnalysis.
   The resale prospectus's share counts for August 28, 2026.
-  FINRA's later checks for the September 30 settlement date, in finra_recheck_log.csv.
+  FINRA's checks for the September 30 settlement date, the last of which found it, in finra_recheck_log.csv.
 
 A short interest cycle runs from the session after one settlement date to the next settlement
 date, both counted in New York trading days. Days to cover is the short interest divided by
@@ -168,7 +168,7 @@ check("the short volume includes the short exempt volume, as FINRA's file layout
 # ---------------------------------------------------------------- FINRA short interest
 si = sorted(json.load(open(os.path.join(INP, "finra_short_interest_usde.json"))), key=lambda r: r["settlementDate"])
 siw = sorted(json.load(open(os.path.join(INP, "finra_short_interest_usdew.json"))), key=lambda r: r["settlementDate"])
-SCHEDULE = ["2026-06-30", "2026-07-15", "2026-07-31", "2026-08-14", "2026-08-31", "2026-09-15", "2026-09-30"]
+SCHEDULE = ["2026-06-30", "2026-07-15", "2026-07-31", "2026-08-14", "2026-08-31", "2026-09-15", "2026-09-30", "2026-10-15"]
 got = [r["settlementDate"] for r in si]
 check("one USDE short interest record for each settlement date FINRA had published from June 30, for StablecoinX's "
       "Class A stock",
@@ -176,12 +176,24 @@ check("one USDE short interest record for each settlement date FINRA had publish
       and all(r["symbolCode"] == "USDE" and r["issueName"].startswith("StablecoinX Inc. Class A") for r in si),
       f"{len(got)} records, {got[0]} to {got[-1]}")
 rechecks = read_csv("finra_recheck_log.csv")
-LAST_CHECK = rechecks[-1]["checked_at_utc"]
-check("FINRA's checks progress to the latest settlement date in the saved records",
-      all(not r["latest_settlement_date"] or r["latest_settlement_date"] <= got[-1] for r in rechecks)
-      and rechecks[-1]["latest_settlement_date"] == got[-1]
-      and rechecks[-1]["status"] == "200" and int(rechecks[-1]["records"]) == len(got),
-      f"last checked {LAST_CHECK}")
+# The read used is the USDE request in the fetch log. It must be the first check that found the latest settlement date.
+# The checks before it, by symbol or filtered on that date, found none, and no check found a later date.
+usde_read = [r for r in si_log if '"USDE"' in r["request_body"]]
+used = [r for r in rechecks if usde_read and r["checked_at_utc"] == usde_read[0]["fetched_at"]]
+first_found = next((r for r in rechecks if r["latest_settlement_date"] == got[-1]), None)
+earlier = [r for r in rechecks if first_found and r["checked_at_utc"] < first_found["checked_at_utc"]]
+by_date = [r for r in earlier if f'"{got[-1]}"' in r["request_body"]]
+LAST_CHECK = used[0]["checked_at_utc"] if used else ""
+check("FINRA's data had no record for the latest settlement date at the checks before the read used here, that read "
+      "found every record, and no check found a later date",
+      len(usde_read) == 1 and len(used) == 1 and used[0] is first_found
+      and used[0]["status"] == "200" and int(used[0]["records"]) == len(got)
+      and used[0]["bytes"] == usde_read[0]["bytes"]
+      and len(by_date) >= 1 and all(r["status"] == "204" and r["records"] == "0" for r in by_date)
+      and all(r["latest_settlement_date"] in ("",) + tuple(got[:-1]) for r in earlier)
+      and all(r["latest_settlement_date"] in ("",) + tuple(got) for r in rechecks)
+      and all(r["status"] == "204" for r in rechecks if any(f'"{d}"' in r["request_body"] for d in SCHEDULE[len(got):])),
+      f"{got[-1]} first found at {LAST_CHECK}, after {len(by_date)} logged checks on that date without it")
 check("each record's previous position equals the record before it, and the change adds up",
       si[0]["previousShortPositionQuantity"] == 0
       and all(b["previousShortPositionQuantity"] == a["currentShortPositionQuantity"] for a, b in zip(si, si[1:]))
@@ -219,9 +231,6 @@ for c in cycles:
         f"{c['settlement']}, {c['sessions']} sessions, average volume {c['spglobal_adv']:,.0f} (FINRA {c['finra_adv']:,}), "
         f"days to cover {c['days_to_cover']:.2f}")
 last = cycles[-1]
-peak_close = max(sessions, key=lambda d: px[d]["close"])
-after = [d for d in sessions if d > last["settlement"]]
-say(f"  window peak close ${px[peak_close]['close']} on {peak_close}; {LAST} close ${px[LAST]['close']}")
 say("  USDEW warrants: " + "; ".join(f"{r['settlementDate']} {r['currentShortPositionQuantity']:,}" for r in siw))
 
 # ---------------------------------------------------------------- daily short sale volume and the price test
@@ -377,9 +386,7 @@ results = {
                                      "ethena_registered": ETHENA,
                                      "of_freely_tradable_and_ethena": last["short_interest"] / (FREELY_TRADABLE + ETHENA),
                                      "of_class_a": last["short_interest"] / CLASS_A_AUG28,
-                                     "of_freely_tradable_finra_adv_days": last["short_interest"] / last["finra_adv"]},
-    "after_last_settlement": {"peak_close_date": str(peak_close), "peak_close": px[peak_close]["close"],
-                              "last_close": px[LAST]["close"], "sessions_after": len(after)},
+                                     "days_to_cover_on_finra_adv": last["short_interest"] / last["finra_adv"]},
     "daily_flow": flow,
 }
 with open(os.path.join(OUT, "results.json"), "w") as f:

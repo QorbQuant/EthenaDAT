@@ -1,0 +1,23 @@
+{
+ "contract": "0x9d39a5de30e57443bff2a8307a4256c8797a3497",
+ "start_block": 25864359,
+ "end_block": 26165481,
+ "logs_from": "2026-08-30T00:00:00Z",
+ "logs_to_before": "2026-10-11T00:00:00Z",
+ "deposits": 965,
+ "withdrawals": 1368,
+ "rewards": 126,
+ "first_event": "2026-08-30T01:46:47Z",
+ "last_event": "2026-10-10T20:29:35Z",
+ "now": {
+  "block_before_calls": 26174153,
+  "convert_to_assets_1e18": "1252629292265331700",
+  "total_assets_wei": "1215406357228981985090337652",
+  "total_supply_wei": "971129917948391057031168743",
+  "cooldown_duration_s": "86400",
+  "read_utc": "2026-10-12T06:00:55.618Z",
+  "block_after_calls": 26174153
+ },
+ "run_started_utc": "2026-10-12T05:58:37.200Z",
+ "run_finished_utc": "2026-10-12T06:00:56.295Z"
+}

@@ -1,0 +1,35 @@
+id,value,unit,source_key,location,as_of
+public_warrants,11500000,warrants,pro,"Cover page, Public Warrants, also the 10-Q's business combination note",2026-09-14
+exercise_price,11.50,usd per share,pro,"Description of Capital Stock, Public Warrants, page 93",2026-09-14
+closing_date,2026-06-25,date,pro,"Cover page, the Closing Date of the Business Combination",2026-06-25
+term_years,5,years after the closing,pro,"Public Warrants, page 93, expire five years after the completion of the Business Combination at 5:00 p.m. New York City time",2026-09-14
+tranche_a_expiry,2031-06-25,date,pro,"Sponsor Warrants, page 97, the Tranche A Warrants at the same $11.50 exercise price expire on June 25, 2031",2026-09-14
+call18_trigger,18.00,usd per share,pro,"Redemption of Warrants when the price per share of Class A Common Stock equals or exceeds $18.00, page 94",2026-09-14
+call18_price,0.01,usd per warrant,pro,page 94,2026-09-14
+call10_trigger,10.00,usd per share,pro,"Redemption of Public Warrants when the price per share of Class A Common Stock equals or exceeds $10.00, page 94",2026-09-14
+call10_price,0.10,usd per warrant,pro,"page 94, and unexercised warrants redeemed for $0.10, page 96",2026-09-14
+trigger_closes,20,trading days,pro,"page 94, closing price at or above the trigger for any 20 trading days",2026-09-14
+trigger_window,30,trading days,pro,"page 94, within a 30-trading day period",2026-09-14
+trigger_lag,3,business days,pro,"page 94, the period ends three business days before the notice is sent",2026-09-14
+notice_days,30,days,pro,"page 94, a minimum of 30 days' prior written notice",2026-09-14
+redemption_fmv_days,10,trading days,pro,"page 95, volume-weighted average price for the ten trading days immediately following the date the notice is sent",2026-09-14
+make_whole_cap,0.361,shares per warrant,pro,"page 96, in no event more than 0.361 shares per Public Warrant",2026-09-14
+interpolation,straight-line,rule,pro,"page 96, straight-line interpolation between prices and between redemption dates, on a 365- or 366-day year",2026-09-14
+tranche_a_count,3267679,warrants,pro,"Cover page and Sponsor Warrants, page 97, exercise price $11.50",2026-09-14
+tranche_b_count,4356907,warrants,pro,"Cover page and Sponsor Warrants, page 97, exercise price $15.00, expire eight years after issue on August 21, 2026",2026-09-14
+sponsor_not_redeemable,true,flag,pro,"page 98, not redeemable by the Company while held by a Former SPAC Sponsor or its Permitted Transferees",2026-09-14
+class_a_outstanding_aug28,24029375,shares,pro,"The Offering, page 7, read for article seven",2026-08-28
+prospectus_close_usde_sep8,7.61,usd,pro,"Cover page, closing price of the Class A Common Stock on September 8, 2026",2026-09-08
+prospectus_close_usdew_sep8,2.09,usd,pro,"Cover page, closing price of the Public Warrants on September 8, 2026",2026-09-08
+public_warrants_outstanding,11499988,warrants,k8,"Closing 8-K, Form 10 information, Public Warrants outstanding held of record by one holder",2026-06-25
+usdew_first_trading_day,2026-06-26,date,k8,"Closing 8-K, the Class A Common Stock and Public Warrants commenced trading on Nasdaq as USDE and USDEW on June 26, 2026",2026-06-26
+agreement_test_closes,20,trading days,wa,"Warrant agreement Section 6.1, the Reference Value, last sales price at least the trigger on each of twenty trading days within the thirty trading-day period ending on the third trading day before the notice, applied to the $10.00 call by Section 6.2",2021-11-30
+agreement_test_window,30,trading days,wa,Warrant agreement Section 6.1,2021-11-30
+agreement_notice_days,30,days,wa,"Warrant agreement Section 6.3, notice not less than thirty days before the Redemption Date",2021-11-30
+agreement_expiry,"5 years after the business combination, 5:00 p.m. New York City time",term,wa,Warrant agreement Section 3.2,2021-11-30
+agreement_private_excluded,true,flag,wa,"Warrant agreement Section 6.5, redemption does not apply to Private Placement Warrants held by the Sponsor or its Permitted Transferees",2021-11-30
+amendment_redemption_unchanged,true,flag,am,"Warrant Assignment, Assumption and Amendment Agreement, Section 2 amends the preamble, recitals, Sections 2.4, 2.5, 4.1.1, 4.1.2, 4.3, 4.9, 5.6 and 9.2 and does not touch Section 3.2 or Section 6",2026-06-25
+tenq_test_closes,10,trading days,q2,"Note 9, Warrants, both redemption tests described as any 10 trading days within a 20-trading day period ending on the third trading day before the notice",2026-06-30
+tenq_test_window,20,trading days,q2,"Note 9, Warrants",2026-06-30
+tenq_expiry,2031-06-25,date,q2,"Note 9, Warrants, the public warrants expire five years after the completion of the Merger, June 25, 2031",2026-06-30
+dataset_class_a_oct8,24139375,shares,dash,"docs/data.json shares_outstanding at commit dda5a00, the August 28 count plus 110,000 directors restricted shares granted September 30",2026-10-08

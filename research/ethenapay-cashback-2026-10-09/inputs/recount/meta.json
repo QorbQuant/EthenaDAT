@@ -1,0 +1,190 @@
+{
+ "end_block": 96839679,
+ "start_block": 85400000,
+ "day_0": "2026-05-15",
+ "factory_created_contracts": 14106,
+ "wallets": 14103,
+ "wallets_v1": 2006,
+ "wallets_v2": 12097,
+ "other_factory_contracts": [
+  {
+   "address": "0x85d133fde5660220b0401600e113ae25ad9aebef",
+   "factory": "v1",
+   "block": 85497626,
+   "time": "2026-05-15T12:46:34Z"
+  },
+  {
+   "address": "0xc831ea25deb7654679a438c78c4c5d1c313c8448",
+   "factory": "v2",
+   "block": 87652557,
+   "time": "2026-06-10T11:29:34Z"
+  },
+  {
+   "address": "0xddaffdb1c5f0774ee734cf3491aafd4f0a678127",
+   "factory": "v2",
+   "block": 87652557,
+   "time": "2026-06-10T11:29:34Z"
+  }
+ ],
+ "first_wallet_created": "2026-05-15T14:55:04Z",
+ "last_wallet_created": "2026-10-05T23:59:08Z",
+ "spend_events": 29556,
+ "spend_events_current_settlement": 28720,
+ "spend_events_retired_settlement": 836,
+ "first_spend_event": "2026-06-04T15:04:37Z",
+ "last_spend_event": "2026-10-05T23:59:49Z",
+ "spend_wei": "2470243650000000000000000",
+ "settlement_addresses": [
+  {
+   "role": "current",
+   "spend_events": 28720,
+   "spend_cents": "243130177",
+   "first_spend_event": "2026-07-13T07:40:17Z",
+   "last_spend_event": "2026-10-05T23:59:49Z"
+  },
+  {
+   "role": "retired",
+   "spend_events": 836,
+   "spend_cents": "3894188",
+   "first_spend_event": "2026-06-04T15:04:37Z",
+   "last_spend_event": "2026-07-13T06:09:31Z"
+  }
+ ],
+ "usde_transfers_scanned": 109823,
+ "usde_transfers_touching_wallets": 81077,
+ "wallet_to_settlement_transfers": 29557,
+ "wallet_to_settlement_wei": "2470248650000000000000000",
+ "spend_events_equal_wallet_to_settlement_transfers": false,
+ "wallets_that_ever_received_usde": 1106,
+ "wallets_that_ever_spent": 820,
+ "first_usde_received_at_last_snapshot": {
+  "wallets": 1100,
+  "from_outside_the_programme": 892,
+  "from_another_programme_wallet": 208,
+  "from_a_reversal_or_reward": 0,
+  "programme_wallets_that_sent_a_first_usde": 46,
+  "first_funded_by_the_largest_such_sender": 111,
+  "first_funded_by_each_of_the_five_largest": [
+   111,
+   14,
+   11,
+   6,
+   5
+  ]
+ },
+ "raw_row_sha256": {
+  "wallets": "77622b9608024bf8092bbc9f70afbcd900411a5f2feddc9acd242813d08d987d",
+  "spend_events": "09a27f2ccab172a02c665443b9902a77a423d13083067ef48026bbb719e1bb51",
+  "transfers_touching_wallets": "c0297d7e40326528fb45f3c51f742fbbc602af8cead877e166c0c8dc98863b13"
+ },
+ "other_destinations": {
+  "usde_allowance_spent_logs_block_0_to_end": 29681,
+  "to_a_settlement_address": 29556,
+  "to_any_other_destination": 125,
+  "other_from_programme_wallets": 113,
+  "other_from_addresses_that_are_not_programme_wallets": 12,
+  "other_destinations_with_no_event_from_a_programme_wallet": 2,
+  "programme_wallets_with_other_destination_events": 32,
+  "of_which_never_spent_to_a_settlement_address": 8,
+  "destinations": [
+   {
+    "destination": "destination 1",
+    "destination_is_programme_wallet": false,
+    "events_from_programme_wallets": 56,
+    "usde_from_programme_wallets": "1096.49",
+    "programme_wallets": 12,
+    "of_which_never_spent_to_a_settlement_address": 7,
+    "first": "2026-05-15T22:01:38Z",
+    "last": "2026-06-10T17:04:20Z"
+   },
+   {
+    "destination": "destination 2",
+    "destination_is_programme_wallet": false,
+    "events_from_programme_wallets": 46,
+    "usde_from_programme_wallets": "909.54",
+    "programme_wallets": 18,
+    "of_which_never_spent_to_a_settlement_address": 1,
+    "first": "2026-06-11T17:04:20Z",
+    "last": "2026-10-05T01:30:00Z"
+   },
+   {
+    "destination": "destination 3",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 3,
+    "usde_from_programme_wallets": "1133.3886002133820778",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 0,
+    "first": "2026-06-11T13:05:51Z",
+    "last": "2026-06-18T12:28:37Z"
+   },
+   {
+    "destination": "destination 4",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 2,
+    "usde_from_programme_wallets": "383.411297901990128851",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 0,
+    "first": "2026-06-29T15:34:11Z",
+    "last": "2026-06-29T15:53:21Z"
+   },
+   {
+    "destination": "destination 5",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 2,
+    "usde_from_programme_wallets": "137.060314221298669938",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 0,
+    "first": "2026-06-16T09:32:28Z",
+    "last": "2026-06-16T09:44:40Z"
+   },
+   {
+    "destination": "destination 6",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 1,
+    "usde_from_programme_wallets": "1.94",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 0,
+    "first": "2026-06-26T11:09:49Z",
+    "last": "2026-06-26T11:09:49Z"
+   },
+   {
+    "destination": "destination 7",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 1,
+    "usde_from_programme_wallets": "26.953038622163130852",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 1,
+    "first": "2026-06-16T15:38:31Z",
+    "last": "2026-06-16T15:38:31Z"
+   },
+   {
+    "destination": "destination 8",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 1,
+    "usde_from_programme_wallets": "3.97",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 0,
+    "first": "2026-06-11T15:17:04Z",
+    "last": "2026-06-11T15:17:04Z"
+   },
+   {
+    "destination": "destination 9",
+    "destination_is_programme_wallet": true,
+    "events_from_programme_wallets": 1,
+    "usde_from_programme_wallets": "9.260215492128333456",
+    "programme_wallets": 1,
+    "of_which_never_spent_to_a_settlement_address": 1,
+    "first": "2026-06-16T15:21:22Z",
+    "last": "2026-06-16T15:21:22Z"
+   }
+  ]
+ },
+ "balance_check": {
+  "block": 96815525,
+  "wallets_checked": 14047,
+  "mismatches": [],
+  "wallets_with_balance": 1076,
+  "sum_wei": "3968569937883897150765318",
+  "mismatch_count": 0
+ }
+}

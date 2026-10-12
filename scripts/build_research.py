@@ -27,6 +27,9 @@ def build(source):
     layout = json.loads((source / "layout.json").read_text())
     published = date.fromisoformat(meta["datePublished"])
     display_date = f"{published.day} {published.strftime('%B %Y')}"
+    modified = date.fromisoformat(meta.get("dateModified", meta["datePublished"]))
+    update_label = (f'<span>Updated <time datetime="{modified.isoformat()}">{modified.day} {modified.strftime("%B %Y")}</time></span>'
+                    if modified > published else '')
     blocks = (source / "article_draft.md").read_text().split("\n\n", 3)
     body = markdown.markdown(blocks[3], extensions=["tables", "fenced_code", "toc"])
     body = body.replace('href="https://ethenadash.com/', 'href="/')
@@ -50,7 +53,7 @@ def build(source):
     header = f'''<article class="research-article">
 <header class="research-header"><div class="editorial-kicker">{html.escape(blocks[1])}</div>
 <h1>{html.escape(meta['headline'])}</h1>
-<p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published <time datetime="{meta['datePublished']}">{display_date}</time></span></p>
+<p class="article-byline">By <a href="/about/">Qorban Ferrell · @Degenerate_DeFi</a><span>Published <time datetime="{meta['datePublished']}">{display_date}</time></span>{update_label}</p>
 <p class="research-cutoff">{html.escape(layout['cutoff'])}</p></header>
 {findings}
 <nav class="research-contents" aria-label="In this article"><span>In this review</span>{navigation}</nav>

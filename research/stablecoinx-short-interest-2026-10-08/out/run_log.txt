@@ -12,7 +12,7 @@ Sessions 2026-06-26 to 2026-10-08
 [ok] in every row the exempt volume is within the short volume and the short volume within the total
 [ok] the short volume includes the short exempt volume, as FINRA's file layout says, since the two together exceed the total in some rows . 14 USDE and USDEW rows
 [ok] one USDE short interest record for each settlement date FINRA had published from June 30, for StablecoinX's Class A stock . 7 records, 2026-06-30 to 2026-09-30
-[ok] FINRA's checks progress to the latest settlement date in the saved records . last checked 2026-10-09T20:37:10.803275Z
+[ok] FINRA's data had no record for the latest settlement date at the checks before the read used here, that read found every record, and no check found a later date . 2026-09-30 first found at 2026-10-09T22:20:27.636Z, after 2 logged checks on that date without it
 [ok] each record's previous position equals the record before it, and the change adds up
 [ok] no record carries a revision or split flag
 [ok] every settlement date was a USDE session
@@ -27,7 +27,6 @@ FINRA short interest, USDE
   2026-08-31: 1,232,013 shares (+1,035,904), 6.46% of freely tradable, 5.13% of Class A; close $8.87, $10,927,955; cycle 2026-08-17 to 2026-08-31, 11 sessions, average volume 15,006,308 (FINRA 14,855,799), days to cover 0.08
   2026-09-15: 1,579,478 shares (+347,465), 8.29% of freely tradable, 6.57% of Class A; close $6.12, $9,666,405; cycle 2026-09-01 to 2026-09-15, 10 sessions, average volume 3,631,373 (FINRA 3,591,161), days to cover 0.43
   2026-09-30: 2,810,986 shares (+1,231,508), 14.75% of freely tradable, 11.70% of Class A; close $16.08, $45,200,655; cycle 2026-09-16 to 2026-09-30, 11 sessions, average volume 6,964,553 (FINRA 6,817,858), days to cover 0.40
-  window peak close $17.25 on 2026-09-25; 2026-10-08 close $12.79
   USDEW warrants: 2026-06-30 22,351; 2026-07-15 29,901; 2026-07-31 4,263; 2026-08-14 11,639; 2026-08-31 12,435; 2026-09-15 8,064; 2026-09-30 7,731
 [ok] the busiest session fell in the cycle to August 31
 [ok] the price test was in effect on every session with a trigger and on the session after

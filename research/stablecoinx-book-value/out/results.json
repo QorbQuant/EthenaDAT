@@ -1,0 +1,123 @@
+{
+  "window": [
+    "2026-06-30",
+    "2026-10-08"
+  ],
+  "sessions": 71,
+  "book_value": 214267174,
+  "class_a_shares_june30": 24029375,
+  "class_b_shares": 3157754,
+  "book_value_per_class_a_share": 8.916885020937915,
+  "book_value_per_class_a_and_b_share": 7.881199004131698,
+  "ena_net_carrying": 212918841,
+  "ena_per_class_a_share_at_carrying": 8.860773157853668,
+  "non_ena_net_assets": 1348333,
+  "non_ena_net_assets_per_share": 0.056111863084245844,
+  "cash": 18856144,
+  "other_assets": 784193,
+  "total_liabilities": 18292004,
+  "other_liabilities": 675560,
+  "tokens": "3031404420.94",
+  "ena_cost": "249120580.68",
+  "cost_per_token": 0.08217992270485337,
+  "carrying_per_token": 0.07023768901609524,
+  "lot_prices": [
+    0.08217992261536711,
+    0.08217992259862147,
+    0.08217992259657783
+  ],
+  "kraken_low_merger_to_june30": [
+    0.0702,
+    [
+      "2026-06-30"
+    ]
+  ],
+  "kraken_low_q3": [
+    0.0706,
+    [
+      "2026-07-01"
+    ]
+  ],
+  "q3_low_above_carrying_pct": 0.5158355705890771,
+  "release_value": 218382374.4845176,
+  "release_value_per_share": 9.08814209626832,
+  "release_less_carrying": 5463533.4845176,
+  "book_less_release": -4115200.4845176,
+  "carrying_above_kraken_low": 3.768901609524351e-05,
+  "warrants_sep30_rise": 54739937.96,
+  "warrants_sep30_rise_share_of_book": 0.25547514786376,
+  "warrants_june30": 4714995.08,
+  "warrant_price_assumed": 0.6000006260876098,
+  "warrants_sep30_at_close": 59454937.96,
+  "usdew_june30": 0.41,
+  "usdew_sep30": 5.17,
+  "sponsor_cash_part": 343966.25,
+  "tranche_a_calc": 3267679.375,
+  "tranche_b_calc": 4356905.833333333,
+  "director_awards_total": 110000,
+  "june30": {
+    "date": "2026-06-30",
+    "usde_close": 2.75,
+    "ena_price_20utc": 0.0707,
+    "class_a_shares": 24029375,
+    "ena_market_value": 214320292.560458,
+    "ena_per_share": 8.919095588647561,
+    "price_to_book": 0.30840366266276514,
+    "mnav": 0.30832722585687566
+  },
+  "first_close_above_book": {
+    "date": "2026-09-18",
+    "usde_close": 10.19,
+    "ena_price_20utc": 0.168,
+    "class_a_shares": 24029375,
+    "ena_market_value": 509275942.71792,
+    "ena_per_share": 21.193890507677374,
+    "price_to_book": 1.1427757536485734,
+    "mnav": 0.480798935726724
+  },
+  "sessions_above_book": 15,
+  "lowest_price_to_book": {
+    "date": "2026-07-24",
+    "usde_close": 1.43,
+    "ena_price_20utc": 0.0872,
+    "class_a_shares": 24029375,
+    "ena_market_value": 264338465.505968,
+    "ena_per_share": 11.000638406365875,
+    "price_to_book": 0.16036990458463787,
+    "mnav": 0.12999245563534606
+  },
+  "highest_price_to_book": {
+    "date": "2026-09-25",
+    "usde_close": 17.25,
+    "ena_price_20utc": 0.2619,
+    "class_a_shares": 24029375,
+    "ena_market_value": 793924817.844186,
+    "ena_per_share": 33.03976145214705,
+    "price_to_book": 1.9345320657937086,
+    "mnav": 0.5220982005267786
+  },
+  "highest_ena_per_share": {
+    "date": "2026-09-25",
+    "usde_close": 17.25,
+    "ena_price_20utc": 0.2619,
+    "class_a_shares": 24029375,
+    "ena_market_value": 793924817.844186,
+    "ena_per_share": 33.03976145214705,
+    "price_to_book": 1.9345320657937086,
+    "mnav": 0.5220982005267786
+  },
+  "october8": {
+    "date": "2026-10-08",
+    "usde_close": 12.79,
+    "ena_price_20utc": 0.2043,
+    "class_a_shares": 24139375,
+    "ena_market_value": 619315923.198042,
+    "ena_per_share": 25.65583919211007,
+    "price_to_book": 1.434357398347915,
+    "mnav": 0.49852198964254907
+  },
+  "october8_value_over_carrying": 2.908694788537018,
+  "october8_mnav_with_3029m": 0.4989177165197187,
+  "october8_dashboard_mnav": 0.4502,
+  "october8_dashboard_ena_price": 0.226398
+}

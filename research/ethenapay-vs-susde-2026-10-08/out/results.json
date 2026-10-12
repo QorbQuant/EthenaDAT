@@ -1,0 +1,340 @@
+{
+ "events": {
+  "deposits": 965,
+  "withdrawals": 1368,
+  "used_for_price": 2325,
+  "left_out_under_0_001_susde": 8
+ },
+ "price_at_midnight": {
+  "2026-08-31": "1.245762232202",
+  "2026-09-01": "1.245922457046",
+  "2026-09-02": "1.246081532156",
+  "2026-09-03": "1.246239380922",
+  "2026-09-04": "1.246395913808",
+  "2026-09-05": "1.246547084313",
+  "2026-09-06": "1.246697155506",
+  "2026-09-07": "1.246848960478",
+  "2026-09-08": "1.247001922653",
+  "2026-09-09": "1.247157302722",
+  "2026-09-10": "1.247315019636",
+  "2026-09-11": "1.247474589643",
+  "2026-09-12": "1.247640450407",
+  "2026-09-13": "1.247807944128",
+  "2026-09-14": "1.247976735563",
+  "2026-09-15": "1.248146156277",
+  "2026-09-16": "1.248313848171",
+  "2026-09-17": "1.248480338390",
+  "2026-09-18": "1.248647114676",
+  "2026-09-19": "1.248805003775",
+  "2026-09-20": "1.248961322864",
+  "2026-09-21": "1.249117386611",
+  "2026-09-22": "1.249273831442",
+  "2026-09-23": "1.249429130771",
+  "2026-09-24": "1.249584833545",
+  "2026-09-25": "1.249741146387",
+  "2026-09-26": "1.249907589827",
+  "2026-09-27": "1.250076334317",
+  "2026-09-28": "1.250245601723",
+  "2026-09-29": "1.250415842305",
+  "2026-09-30": "1.250587248556",
+  "2026-10-01": "1.250760617761",
+  "2026-10-02": "1.250936917734",
+  "2026-10-03": "1.251103093183",
+  "2026-10-04": "1.251268200538",
+  "2026-10-05": "1.251433820173",
+  "2026-10-06": "1.251599838046",
+  "2026-10-07": "1.251766050120",
+  "2026-10-08": "1.251933042001",
+  "2026-10-09": "1.252101176206",
+  "2026-10-10": "1.252264084061"
+ },
+ "periods": {
+  "september": {
+   "from": "2026-09-01",
+   "to": "2026-10-01",
+   "days": 30,
+   "growth_pct": "0.388320",
+   "before_compounding_pct": "4.7246",
+   "after_compounding_pct": "4.8283"
+  },
+  "october_1_to_8": {
+   "from": "2026-10-01",
+   "to": "2026-10-09",
+   "days": 8,
+   "growth_pct": "0.107179",
+   "before_compounding_pct": "4.8901",
+   "after_compounding_pct": "5.0088"
+  },
+  "september_1_to_15": {
+   "from": "2026-09-01",
+   "to": "2026-09-16",
+   "days": 15,
+   "growth_pct": "0.191937",
+   "before_compounding_pct": "4.6705",
+   "after_compounding_pct": "4.7766"
+  },
+  "september_16": {
+   "from": "2026-09-16",
+   "to": "2026-09-17",
+   "days": 1,
+   "growth_pct": "0.013337",
+   "before_compounding_pct": "4.8681",
+   "after_compounding_pct": "4.9882"
+  },
+  "september_17_to_30": {
+   "from": "2026-09-17",
+   "to": "2026-10-01",
+   "days": 14,
+   "growth_pct": "0.182644",
+   "before_compounding_pct": "4.7618",
+   "after_compounding_pct": "4.8724"
+  },
+  "september_17_to_october_8": {
+   "from": "2026-09-17",
+   "to": "2026-10-09",
+   "days": 22,
+   "growth_pct": "0.290020",
+   "before_compounding_pct": "4.8117",
+   "after_compounding_pct": "4.9220"
+  },
+  "august_31_to_october_9": {
+   "from": "2026-08-31",
+   "to": "2026-10-10",
+   "days": 40,
+   "growth_pct": "0.521918",
+   "before_compounding_pct": "4.7625",
+   "after_compounding_pct": "4.8647"
+  }
+ },
+ "daily_range": {
+  "lowest_day": "2026-09-05",
+  "lowest_after_pct": "4.49",
+  "highest_day": "2026-10-01",
+  "highest_after_pct": "5.28",
+  "september_days_below_4_5": 1,
+  "september_days_above_5": 9
+ },
+ "rewards": {
+  "payments": 126,
+  "september_usde": "5174575.33",
+  "september_payments": 90,
+  "smallest_per_payment_usde": "52598.97",
+  "largest_per_payment_usde": "59215.34",
+  "weeks": [
+   {
+    "from": "2026-08-30T02:19:23Z",
+    "per_payment_usde": "57439.85",
+    "payments": 15,
+    "week_usde": "1206236.95"
+   },
+   {
+    "from": "2026-09-04T02:24:23Z",
+    "per_payment_usde": "56881.00",
+    "payments": 21,
+    "week_usde": "1194500.95"
+   },
+   {
+    "from": "2026-09-11T02:32:23Z",
+    "per_payment_usde": "58643.95",
+    "payments": 21,
+    "week_usde": "1231522.98"
+   },
+   {
+    "from": "2026-09-18T02:39:11Z",
+    "per_payment_usde": "55510.32",
+    "payments": 21,
+    "week_usde": "1165716.66"
+   },
+   {
+    "from": "2026-09-25T02:45:11Z",
+    "per_payment_usde": "59215.34",
+    "payments": 21,
+    "week_usde": "1243522.05"
+   },
+   {
+    "from": "2026-10-02T02:49:47Z",
+    "per_payment_usde": "54933.39",
+    "payments": 21,
+    "week_usde": "1153601.21"
+   },
+   {
+    "from": "2026-10-09T02:54:47Z",
+    "per_payment_usde": "52598.97",
+    "payments": 6,
+    "week_usde": "1104578.36"
+   }
+  ]
+ },
+ "contract_now": {
+  "read_utc": "2026-10-12T06:00:55.618Z",
+  "explorer_latest_block": 26174153,
+  "usde_per_susde": "1.252629",
+  "total_assets_usde": "1215406357",
+  "total_supply_susde": "971129918",
+  "total_assets_over_total_supply": "1.251538",
+  "gap_from_convert_to_assets_pct": "0.087",
+  "cooldown_seconds": 86400,
+  "cooldown_days": "1.00"
+ },
+ "staking": {
+  "start_usde_august_31": "1337310902",
+  "days": 40,
+  "largest_gap_points": "0.000692",
+  "missing_500000_usde_largest_gap_points": [
+   "0.0012",
+   "0.0020"
+  ],
+  "highest_day": "2026-09-05",
+  "highest_average_usde": "1416638286",
+  "lowest_rate_day": "2026-09-05",
+  "october_9_average_usde": "1218802588",
+  "end_october_10_usde": "1213648814",
+  "contract_october_12_usde": "1215406357",
+  "week_from_september_4": {
+   "per_payment_usde": "56881.00",
+   "days": [
+    "2026-09-05",
+    "2026-09-10"
+   ],
+   "highest_after_pct": "4.78"
+  },
+  "week_from_october_2": {
+   "per_payment_usde": "54933.39",
+   "days": [
+    "2026-10-03",
+    "2026-10-08"
+   ],
+   "lowest_after_pct": "4.93"
+  }
+ },
+ "ethenapay": {
+  "standard_within_cap_after_pct": "5.02",
+  "six_within_cap_after_pct": "6.07",
+  "standard_within_cap_before_change_after_pct": "5.04",
+  "six_within_cap_before_change_after_pct": "6.08",
+  "base_until_sep_16_pct": "4.0",
+  "base_from_sep_17_pct": "4.5",
+  "september_all_balances_before_pct": "4.70",
+  "october_1_to_8_all_balances_before_pct": "5.39",
+  "october_1_to_8_all_balances_after_pct": "5.54",
+  "cashflow_review_september_pct": "4.6",
+  "above_cap_share_october_8_pct": "21.3"
+ },
+ "break_even": {
+  "susde_period": "september_17_to_october_8",
+  "susde_after_pct": "4.9220",
+  "standard": "6187",
+  "pro": "369372",
+  "vip": "3693720"
+ },
+ "break_even_sensitivity": {
+  "september": {
+   "susde_after_pct": "4.8283",
+   "standard": "7948",
+   "pro": "474538",
+   "vip": "4745382"
+  },
+  "october_1_to_8": {
+   "susde_after_pct": "5.0088",
+   "standard": "5133",
+   "pro": "306471",
+   "vip": "3064715"
+  },
+  "august_31_to_october_9": {
+   "susde_after_pct": "4.8647",
+   "standard": "7156",
+   "pro": "427268",
+   "vip": "4272681"
+  }
+ },
+ "examples": [
+  {
+   "tier": "standard",
+   "balance": 1000,
+   "ethenapay_after_pct": "5.02"
+  },
+  {
+   "tier": "standard",
+   "balance": 5000,
+   "ethenapay_after_pct": "5.02"
+  },
+  {
+   "tier": "standard",
+   "balance": 10000,
+   "ethenapay_after_pct": "4.76"
+  },
+  {
+   "tier": "standard",
+   "balance": 25000,
+   "ethenapay_after_pct": "4.60"
+  },
+  {
+   "tier": "pro",
+   "balance": 100000,
+   "ethenapay_after_pct": "6.07"
+  },
+  {
+   "tier": "pro",
+   "balance": 250000,
+   "ethenapay_after_pct": "5.12"
+  },
+  {
+   "tier": "pro",
+   "balance": 1000000,
+   "ethenapay_after_pct": "4.66"
+  },
+  {
+   "tier": "vip",
+   "balance": 1000000,
+   "ethenapay_after_pct": "6.07"
+  },
+  {
+   "tier": "vip",
+   "balance": 5000000,
+   "ethenapay_after_pct": "4.81"
+  }
+ ],
+ "days_compared": {
+  "days": 38,
+  "susde_above_base": 38,
+  "susde_below_six": 38,
+  "susde_above_standard": 10,
+  "susde_above_standard_days": [
+   "2026-09-13",
+   "2026-09-14",
+   "2026-09-16",
+   "2026-09-26",
+   "2026-09-27",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01",
+   "2026-10-08"
+  ],
+  "september_16_standard_pct": "4.52",
+  "september_16_six_pct": "5.56",
+  "lowest_from_september_17_pct": "4.64",
+  "above_standard_in_two_largest_weeks": 9,
+  "two_largest_weeks_from": [
+   "2026-09-11T02:32:23Z",
+   "2026-09-25T02:45:11Z"
+  ],
+  "above_standard_at_usual_rate_in_two_largest_weeks": [
+   "2026-09-13",
+   "2026-09-14",
+   "2026-09-26",
+   "2026-09-27",
+   "2026-09-28",
+   "2026-09-29",
+   "2026-09-30",
+   "2026-10-01"
+  ],
+  "above_standard_other_days": [
+   "2026-09-16",
+   "2026-10-08"
+  ],
+  "october_8_lead_points": "0.0013"
+ },
+ "checks_passed": 46,
+ "read_through": "2026-10-11T00:00:00Z"
+}

@@ -1,0 +1,31 @@
+# Second set of SEC filing extracts for the TLGY redemption review, made the same way as sec_extracts_2026-10-12.txt.
+
+### ipo_8k https://www.sec.gov/Archives/edgar/data/1879814/000119312521353043/d260802d8k.htm
+# status 200 read 2026-10-12T08:13:04.176Z raw_bytes 21825 raw_sha256 68729b5ae088eab965ad6c81f60bd9bb5b861e855d998504d56344d90c4a398d text_chars 5810
+- @2602 tem 3.02. Item 8.01 Other Events. On December 3, 2021, TLGY Acquisition Corporation (the “Company”) consummated its initial public offering (the “IPO”) of 20,000,000 units (the “Units”). Each Unit co
+
+### ipo_424b4 https://www.sec.gov/Archives/edgar/data/1879814/000119312521346884/d166704d424b4.htm
+# status 200 read 2026-10-12T08:13:05.279Z raw_bytes 1559734 raw_sha256 a7d5b55925ad839bbb84ddd21ad683b48872085239bf6d15c95e70b49118270a text_chars 871633
+- @8995 bal Market, or NASDAQ, under the symbol “TLGYU”. We expect that our units will be listed on the NASDAQ on or promptly after the date of this prospectus. We expect the Class A ordinary shares and detachable redeemable warrants comprising the units to begin separate trading on the 52nd day following the date of this prospectus (or, if such date is not a business day, the following business day) unless Mizuho Securities USA LLC, the representative of the underwriters, in
+
+### k8_2026_03_16 https://www.sec.gov/Archives/edgar/data/1879814/000121390026027981/ea0280898-8k_tlgy.htm
+# status 200 read 2026-10-12T08:13:07.255Z raw_bytes 21493 raw_sha256 39535186143d367e5514d55308ea893803bf3b7cd2b0c78049935ef8316263cd text_chars 2833
+- @1876 On March 11, 2026, the Company notified Continental Stock Transfer & Trust Company of its intention to extend the period of time that the Company has to complete its initial business combination (the “Termination Date”) by an additional month for the period from March 17, 2026 to April 16, 2026, subject to the Company’s sponsor or its affiliates or designees depositing $24,494.35 (the “Extension Deposit”) into the trust account. On March 13, 2026, the Com
+- @2309 On March 13, 2026, the Company’s sponsor or its affiliates or designees deposited the Extension Deposit into the trust account and as a result the Termination Date was extended by one month until April 16, 2026. 1 SIG
+
+### q2_2024_10q https://www.sec.gov/Archives/edgar/data/1879814/000141057824001531/tlgyu-20240630x10q.htm
+# status 200 read 2026-10-12T08:13:08.255Z raw_bytes 1136643 raw_sha256 32698f6e23806729f7bb8490ba949309cc0dba6d102837c72d4169722e2432f7 text_chars 147221
+- @49016 vents. Accordingly, at June 30, 2024 and December 31, 2023, the 3,717,207 and 5,922,865 Class A ordinary shares, subject to possible redemption in the amount of $42,901,415 and $65,954,638 at redemption value per Public Share are presented a
+
+### k10_2024 https://www.sec.gov/Archives/edgar/data/1879814/000141057825000276/tlgyu-20241231x10k.htm
+# status 200 read 2026-10-12T08:13:09.256Z raw_bytes 1528408 raw_sha256 260ba7474ba62d2a8af73609e7e49c30299df38f9886f00867d1d03a90ca21c7 text_chars 363866
+- @301510  future events. Accordingly, at December 31, 2024 and 2023, the 3,717,207 and 5,922,865, respectively, Class A ordinary shares subject to possible redemption in the amount of $44,332,605 and $65,954,638 at redemption value per Public Share a
+
+### k10_2025 https://www.sec.gov/Archives/edgar/data/1879814/000121390026036938/ea0275867-10k_tlgyacq.htm
+# status 200 read 2026-10-12T08:13:10.256Z raw_bytes 1009058 raw_sha256 5e1ea30211c5eae59ec2c1aab48328dea3b3f14d172f49641e669dc361c8f59e text_chars 339925
+- @16880 e units in the IPO and the private placement was placed in the trust account which may be invested in U.S. government securities, within the meaning set forth in Section 2(a)(16) of the Investment Company Act of 1940, as amended (the “Investment Company Act”), with a maturity of 185 days or less or in any open-ended investment company that holds itself out as a money market fund selected by the Company meeting the conditions
+
+### defm14a https://www.sec.gov/Archives/edgar/data/1879814/000121390026017535/ea0277387-01.htm
+# status 200 read 2026-10-12T08:13:11.253Z raw_bytes 18355287 raw_sha256 1ece68bcd7eabc95d0726297fc1fd428f7eba8ac05402c157bd767b4df0db8bc text_chars 3340331
+- @22544 res held by the Sponsors and the other Founder Shareholders will be excluded from the pro rata calculation used to determine the per-share Redemption Price
+- @847903  Retained Founder Shares, and 11,500,000 StablecoinX Warrants issued for the TLGY Warrants with a strike price of $11.50 per share, with a value of $12.35 per share of St

@@ -1,0 +1,91 @@
+{
+  "cutoff": "Chain read to the end of October 11, 2026 UTC · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "Holders",
+      "who-held-the-usde-at-the-end-of-october-11"
+    ],
+    [
+      "Growth",
+      "the-supply-rose-to-55-times-its-may-14-level"
+    ],
+    [
+      "rhino.fi",
+      "most-of-the-new-usde-arrived-at-the-rhinofi-bridge-contract"
+    ],
+    [
+      "Settlement",
+      "most-usde-paid-to-the-settlement-addresses-went-on-to-three-accounts"
+    ],
+    [
+      "Wallet flows",
+      "where-the-wallets-usde-went"
+    ],
+    [
+      "Before EthenaPay",
+      "before-ethenapay"
+    ],
+    [
+      "Method",
+      "how-the-count-was-made"
+    ],
+    [
+      "Limits",
+      "what-the-count-leaves-out"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDe on Avalanche C-Chain by holder at the end of each UTC day, May 15 to October 11, 2026",
+  "chartFile": "chart_avax_usde_holders.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_avax_usde_holders.svg",
+    "chart_preview.png",
+    "holders_at_end.csv",
+    "month_ends.csv",
+    "wallet_flows.csv",
+    "settlement_flows.csv",
+    "chart_daily.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "avax_usde_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "avax_usde_read.cjs",
+    "test_avax_usde_read.cjs",
+    "inputs/chain/daily.csv",
+    "inputs/chain/flows.csv",
+    "inputs/chain/holders.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain_manifest.csv",
+    "inputs/manifest.csv",
+    "inputs/recount/05_daily_metrics_eb01f5d.sql",
+    "inputs/recount/daily_chain.csv",
+    "inputs/sources.csv",
+    "inputs/web/ethena_key_addresses_2026-10-12.txt",
+    "inputs/web/ethena_pay_pages_2026-10-12.txt",
+    "inputs/web/explorer_contracts_2026-10-12.txt",
+    "inputs/web/rhino_bridge_configs_avalanche_2026-10-12.txt",
+    "out/chart_avax_usde_holders.svg",
+    "out/chart_daily.csv",
+    "out/chart_preview.png",
+    "out/holders_at_end.csv",
+    "out/month_ends.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/settlement_flows.csv",
+    "out/wallet_flows.csv"
+  ],
+  "keyFindings": [
+    "At the end of October 11, 2026 UTC, EthenaPay wallets held 5.99 million of the 10.54 million USDe on Avalanche C-Chain, 56.8%, and accounts tied to EthenaPay held 84.4%.",
+    "The supply was 55 times its May 14 level. From May 15 the rhino.fi bridge contract supplied 89.6% of the wallets' deposits.",
+    "The chain does not show who controls the three settlement recipients, which held 24.2%, or why deposits went through rhino.fi. Wallets are not people."
+  ]
+}

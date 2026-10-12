@@ -1,0 +1,95 @@
+USDe on Avalanche C-Chain and EthenaPay wallets
+Inputs
+ok    input chain/daily.csv matches its SHA-256
+ok    input chain/flows.csv matches its SHA-256
+ok    input chain/holders.csv matches its SHA-256
+ok    input chain/meta.json matches its SHA-256
+ok    input chain_manifest.csv matches its SHA-256
+ok    input recount/05_daily_metrics_eb01f5d.sql matches its SHA-256
+ok    input recount/daily_chain.csv matches its SHA-256
+ok    input sources.csv matches its SHA-256
+ok    input web/ethena_key_addresses_2026-10-12.txt matches its SHA-256
+ok    input web/ethena_pay_pages_2026-10-12.txt matches its SHA-256
+ok    input web/explorer_contracts_2026-10-12.txt matches its SHA-256
+ok    input web/rhino_bridge_configs_avalanche_2026-10-12.txt matches its SHA-256
+ok    chain file daily.csv matches its SHA-256
+ok    chain file daily.csv was written by this avax_usde_read.cjs
+ok    chain file holders.csv matches its SHA-256
+ok    chain file holders.csv was written by this avax_usde_read.cjs
+ok    chain file flows.csv matches its SHA-256
+ok    chain file flows.csv was written by this avax_usde_read.cjs
+ok    chain file meta.json matches its SHA-256
+ok    chain file meta.json was written by this avax_usde_read.cjs
+
+The chain read
+ok    the read is of USDe on Avalanche C-Chain
+ok    the read runs from the token's deployment on August 8, 2025 to the last block of October 11, 2026 UTC  (blocks 66,748,921 to 97,318,132)
+ok    daily.csv has one row for each of the 430 days
+ok    each day's supply is all USDe minted less all USDe burned to the end of that day
+ok    the five groups of holders add up to the supply on every day
+ok    the days add up to the read's totals  (147,652 transfer logs, 38,432,121.46 minted and 27,889,273.56 burned)
+ok    the 63 records with no value were all checked against their receipts, none was in one, none touched EthenaPay, all fell in August and September 2025
+ok    each of the 63 records with no value had both an empty amount and an empty block hash
+ok    the supply at the end of October 11 ties to the token contract's totalSupply  (totalSupply 10,532,847.89 read between blocks 97,362,127 and 97,362,128, with no USDe minted or burned between them, plus 10,000.00 burned and less 0.00 minted after October 11 up to block 97,362,128)
+ok    both wallet factories were created after the block where the read of their internal transactions starts, the first on May 15, 2026, so the read misses no wallet  (read from block 85,400,000, factories created in block 85,497,626 on 2026-05-15, block 87,652,557 on 2026-06-10)
+ok    no wallet existed or held USDe before May 15, 2026
+ok    every contract the factories created is a wallet made with CREATE2 or one of three made with CREATE in a factory's own creating transaction  (14,743 creations, 14,740 wallets)
+ok    the dashboard's query removes by hand the second factory's two CREATE contracts and a contract the second factory's creator made without a factory, and not the first factory's CREATE contract  (made at block 87,652,526, the second factory at 87,652,557)
+ok    none of those four contracts sent or received USDe to the end of October 11
+
+Holders at the end of October 11, 2026 UTC
+ok    holders.csv holds no address
+ok    the group balances in holders.csv match the last day of daily.csv
+ok    the holders add up to the accounts with USDe at the end of the day  (1,680 accounts, 1,216 of them wallets)
+ok    the listed holders are ranked by balance, the ten largest holders outside EthenaPay and every settlement recipient
+ok    every listed settlement recipient received USDe only from the settlement addresses
+ok    the rhino.fi bridge contract and the Uniswap v3 pool are among the listed holders, and both are contracts  (ranks 4 and 3)
+
+Flows between groups
+ok    flows.csv has the read's three periods and counts every transfer log once
+ok    the flows out of the zero address and into it are the USDe minted and burned
+ok    in each period the USDe minted less the USDe burned equals the change in supply
+ok    for every group, USDe in less USDe out gives its balance at the end
+ok    the rhino.fi bridge contract's flows match its row in holders.csv
+ok    the Uniswap v3 pool's flows match its row in holders.csv
+ok    the settlement addresses sent the three recipients what holders.csv says they received from them
+ok    the wallets' deposits match the read's total  (14,075,752.58 USDe)
+ok    the USDe minted into wallets and burned from them match the daily columns
+
+The published recount, May 15 to October 5, 2026
+ok    the recount covers the 144 days from May 15 to October 5 with no balance below zero
+ok    the USDe in wallets matches the recount to the wei on all 144 days  (3,980,154.11 USDe on October 5)
+ok    the wallets created match the recount on all 144 days
+ok    the wallets holding USDe match the recount's funded wallets on all 144 days
+ok    the deposits from May 15 to October 5 match the recount to the wei  (11,056,937.78 USDe)
+ok    the withdrawals from May 15 to October 5 match the recount to the wei  (4,728,153.68 USDe)
+ok    the card spend from May 15 to October 5 match the recount to the wei  (2,470,248.65 USDe)
+ok    the returns, the recount's reversals, from May 15 to October 5 match the recount to the wei  (104,428.76 USDe)
+ok    the rewards from May 15 to October 5 match the recount to the wei  (17,189.90 USDe)
+ok    the transfers between wallets from May 15 to October 5 match the recount to the wei  (107,350.05 USDe)
+ok    the recount's card spend events to October 5 are one fewer than the card payments, and their amounts differ only on September 24, by 5 USDe  (29,556 spend events, 29,557 card payments)
+
+Names and addresses
+ok    the dashboard's daily query names the two factories, the two settlement addresses, the three reward accounts and USDe
+ok    the read uses the query's addresses
+ok    rhino.fi's bridge configuration gives the labeled contract as its Avalanche contract and USDe at the token's address
+ok    Ethena's key addresses page gives the token's address for USDe on most L2s
+ok    the explorer's verified source names USDe's contract USDeOFT, the pool UniswapV3Pool, and the rhino.fi contract a proxy for DVFDepositContract
+ok    the pool pairs USDe with USDC at a fee of 0.05%
+ok    EthenaPay's FAQ and Terms of Use, as searched twice, name no bridge
+ok    in USDeOFT's source only LayerZero's OFT contract calls _mint and _burn, and nothing else touches the supply
+ok    in USDeOFT's source _credit is called only in _lzReceive, on a message from another chain, and _debit only in send and in USDeOFT's own _debit
+
+Results
+ok    the accounts in each group add up to all holders
+  supply 10,542,847.89 USDe, wallets 5,985,275.68 (56.77%), accounts tied to EthenaPay 8,894,983.58 (84.37%)
+ok    the largest one-day fall in supply came after the 2025 peak
+ok    the wallets' flows from May 15 give their balance at the end
+ok    the settlement addresses' flows give their balance at the end, and they burned none
+ok    the settlement addresses received USDe only from May 15 on
+  supply on May 14 191,615.18, 55.0 times by October 11
+  minted from May 15 16,505,582.27, 81.70% of it to the rhino.fi bridge contract, burned 6,154,349.56
+  wallets received 14,075,752.58 from outside, 89.55% from the rhino.fi bridge contract
+  card payments 2,945,283.40, returned 139,986.48, to the three recipients 2,555,259.55, held at the end 325,047.37
+
+All 74 checks passed. Tables written to out/.

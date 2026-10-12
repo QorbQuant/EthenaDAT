@@ -1,0 +1,123 @@
+EthenaPay cashback review
+Inputs
+ok    input cashflow_results.json matches its SHA-256
+ok    input chain/batches.csv matches its SHA-256
+ok    input chain/cashback.csv matches its SHA-256
+ok    input chain/meta.json matches its SHA-256
+ok    input chain/other_recipients.csv matches its SHA-256
+ok    input chain/prices_hourly.csv matches its SHA-256
+ok    input chain/spends.csv matches its SHA-256
+ok    input chain_manifest.csv matches its SHA-256
+ok    input recount/daily_chain_62503a1.csv matches its SHA-256
+ok    input recount/meta.json matches its SHA-256
+ok    input recount/wallet_activity.csv matches its SHA-256
+ok    input sources.csv matches its SHA-256
+ok    input terms_facts.csv matches its SHA-256
+ok    the manifest lists every input file  (13 files)
+ok    chain file meta.json is the one the run wrote
+ok    chain file meta.json came from this cashback_recount.cjs
+ok    chain file spends.csv is the one the run wrote
+ok    chain file spends.csv came from this cashback_recount.cjs
+ok    chain file cashback.csv is the one the run wrote
+ok    chain file cashback.csv came from this cashback_recount.cjs
+ok    chain file batches.csv is the one the run wrote
+ok    chain file batches.csv came from this cashback_recount.cjs
+ok    chain file other_recipients.csv is the one the run wrote
+ok    chain file other_recipients.csv came from this cashback_recount.cjs
+ok    chain file prices_hourly.csv is the one the run wrote
+ok    chain file prices_hourly.csv came from this cashback_recount.cjs
+ok    the chain manifest lists every chain file
+
+Cross-checks with the published recount
+ok    every wallet's first USDe and its balance at block 96,815,525 match the published recount  (1106 wallets)
+ok    the balances sum to the recount's balanceOf total  (3968569.937884 USDe)
+ok    daily flows and USDe held on all 144 days to October 5 match the published recount to the wei
+ok    the wallet count to October 5 matches the recount  (14555 wallets to October 9)
+ok    September card spend in the recount's daily file equals the USDe transfers to settlement addresses in spends.csv to the wei
+ok    transfers to settlement addresses to October 5 in the recount, plus those after it here, equal the run's total to the wei  (2,776,914.46 USDe in 34,993 transfers)
+
+The chain read
+ok    block 97,161,009 is the last block of October 9 UTC
+ok    block 93,220,397 is the first block of August 20 UTC
+ok    the Chainlink AVAX / USD proxy points to the phase 2 aggregator, with 8 decimals
+ok    a Chainlink round was in force at 00:00 UTC on August 20 and the last one read is from October 9  (57,407 rounds)
+ok    every row the explorer returned for cashback account 0 is counted once  (8,852 rows)
+ok    every row the explorer returned for cashback account 1 is counted once  (219 rows)
+ok    the two accounts paid wallets 9,036 times
+ok    every AllowanceSpent log to a settlement address was for USDe and came from a wallet  (34,992 spend events)
+ok    each spend event matched one transfer to a settlement address, and one such transfer of 5 USDe had no spend event
+ok    spends.csv marks that one transfer, on September 24
+ok    all reversals and no transfers to a settlement address leave the spend-event column empty
+ok    account 0's batches add up to its transfers and AVAX  (86 batches, 9,048.317893 AVAX)
+ok    account 1's batches add up to its transfers and AVAX  (32 batches, 171.115332 AVAX)
+ok    the first and last cashback transfers match the run's dates
+ok    cashback.csv holds every transfer of every batch from August 15 and nothing earlier  (8,213 transfers in 56 batches)
+ok    from August 15 each batch paid each wallet once
+ok    every transfer from August 20 carries a Chainlink price and none before it does
+ok    each batch's first transfer carries the batch's round, and later transfers in a batch never an earlier one
+ok    every price read is between $5 and $20 an AVAX
+ok    the hourly table runs from 00:00 UTC August 20 to 00:00 UTC October 10 with no gap
+
+Cross-checks with the cash-flow review
+ok    September's USDe transfers to the settlement addresses equal the review's card spend  (1,588,435.13 USDe)
+ok    September's spend events equal the review's spend-event total  (1,588,430.13 USDe)
+ok    spend events to the end of October 5 equal the review's count and total  (29,556 events)
+ok    September reversals match the review's reversal rate  (73,424.57 USDe)
+ok    cashback in September batches equals the review's September cashback  (4,595.286079 AVAX)
+ok    cashback to the end of October 5 equals the review's total, which came from the dashboard's daily sums, to a billionth of an AVAX  (7,835.026995 AVAX)
+ok    the October 5 batch matches the review's worked day
+ok    the schedule gives the FAQ's worked example, $380 for $9,000 of Pro spend
+ok    Standard cashback stops at $115 a month however much is spent
+ok    terms_facts.csv records the bands the script uses
+
+What the two accounts paid
+  9,036 transfers, 9,219.433225 AVAX, 845 wallets, 2026-05-20T17:35:14Z to 2026-10-09T02:30:04Z
+  2026-05: 3 batches, 4 transfers, 0.09 AVAX
+  2026-06: 16 batches, 82 transfers, 50.43 AVAX
+  2026-07: 29 batches, 362 transfers, 549.96 AVAX
+  2026-08: 31 batches, 966 transfers, 1,307.37 AVAX
+ok    2026-09 transfers in cashback.csv equal the month's batches
+  2026-09: 30 batches, 4,972 transfers, 4,595.29 AVAX, 622 wallets, $41,604.25
+ok    2026-10 transfers in cashback.csv equal the month's batches
+  2026-10: 9 batches, 2,650 transfers, 2,716.30 AVAX, 671 wallets, $29,731.35
+ok    the months add up to the total
+ok    from September 19 every second transaction came within a minute or about half an hour after the first
+  from August 15: 56 batches, 53 starting at 02:30 UTC, others {'03:00': 2, '05:30': 1}
+  price in force at most 116 s old at a batch, 129 s on the hour
+ok    from August 15 to October 9 there was one batch a day
+ok    the run's count of pass-through transfers agrees with other_recipients.csv
+ok    every AVAX the two accounts received by internal transfer left again in the same transaction
+  to other addresses: 18 transfers, 19,696.33 AVAX, 16 passed straight through
+
+September
+  1,588,430.13 USDe of card payments, 4,595.286079 AVAX of cashback worth $41,604.25 at Chainlink (2.6192%), dashboard $41,835.80
+  windows: +0 2.6192%, +1 2.6561%, +2 2.7582%, +3 2.8694%, +4 3.1238%
+
+Isolated card payments
+  216 isolated card payments of $1 or more, 181 with one cashback transfer: median 3.983%, quartiles ['3.922', '4.058'], 148 within a quarter point of 4%
+  batches waited {1: 8, 2: 83, 3: 59, 4: 19, 5: 10, 6: 2}, median 2.00 days
+ok    the isolated-payment test found more than 150 single matches
+  sensitivity quiet_5_days: 139 matches, median 3.982%
+  sensitivity quiet_7_days: 99 matches, median 3.992%
+  transfers by dollar value around $30: {'28.5_to_29.5': 16, '29.5_to_30.5': 19, '30.5_to_31.5': 20}
+  isolated card payments under $1: 16, 15 with no cashback in six days
+
+September wallet by wallet
+ok    the September 3 to October 1 window holds 29 batches
+ok    every unmatched wallet falls in one of the four gaps between the schedules
+  unmatched {'under_standard': 7, 'between_standard_and_pro': 13, 'between_pro_and_vip': 5, 'over_vip': 7, 'over_vip_rate_range_pct': ['4.4', '6.1'], 'over_vip_with_card_payments_august_25_to_31': 6, 'over_vip_paid_over_5_pct': 5, 'crossed_4000_on_september_29_or_30': 10, 'matched_any_schedule': 46}
+  78 wallets reached $4,000 by September 28; 28 were paid within 5% of $115 ($109.39 to $119.92) on $303,085.31 of September spend; 6 matched Pro and 12 VIP within 5%, 32 none
+ok    every wallet paid within 5% of $115 spent at least $4,000 by September 28
+ok    no wallet that reached $4,000 is within 5% of two schedules
+ok    the capped wallets paid in the batches of October 2 to 9 are the ones that used the card from October 1 to 7  (23 wallets)
+  the capped wallets spent $68,277.05 from September 25 to 30 and were paid $510.46 from September 27 to October 1; $55,846.25 from October 1 to 7 and $1,686.88 paid October 2 to 9
+ok    the groups' shortfalls from 4% add up, with the cashback paid to wallets that spent nothing in September
+ok    the groups hold every wallet that spent in September and all its spend
+  under $2,500: 524 wallets, 19.1% of spend, paid 3.58%
+  $2,500 to $4,000: 61 wallets, 11.6% of spend, paid 3.19%
+  $4,000 or more: 88 wallets, 69.3% of spend, paid 2.28%
+  with the window to October 2: under $2,500 3.77%, $2,500 to $4,000 3.27%, $4,000 or more 2.39%
+ok    the bands hold all of September's spend
+  schedules on September's spend: standard 1.80%, pro 3.32%, vip 4.39%, flat_4_pct 4.00%
+
+All 79 checks passed. Tables written to out/.

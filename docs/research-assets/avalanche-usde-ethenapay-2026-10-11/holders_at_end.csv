@@ -1,0 +1,9 @@
+group,label,accounts,usde,share_of_supply_pct
+wallets,EthenaPay wallets,1216,5985275.68,56.77
+settlement,Settlement addresses,1,325047.37,3.08
+settlement_recipients,Settlement recipients,3,2555254.55,24.24
+reward_accounts,Reward accounts,3,29405.98,0.28
+rhino_fi_bridge_contract,rhino.fi bridge contract,1,135692.19,1.29
+uniswap_v3_pool,Uniswap v3 pool,1,298106.73,2.83
+other_accounts,Other accounts,455,1214065.40,11.52
+all,All holders,1680,10542847.89,100.00

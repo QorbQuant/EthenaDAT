@@ -1,0 +1,12 @@
+{
+  "path": "/research/ethenapay-cashback-2026-10-09/",
+  "title": "EthenaPay Cashback: Rates Paid to Oct 9, 2026",
+  "headline": "What EthenaPay's card cashback paid",
+  "name": "EthenaPay cashback review",
+  "description": "Isolated EthenaPay card payments earned a median 3.98% in cashback, but the Standard tier stops at $115 a month. September came to 2.62% of card spend.",
+  "article": true,
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "image": "/research-assets/ethenapay-cashback-2026-10-09/chart_preview.png",
+  "imageAlt": "Scatter chart of 580 EthenaPay wallets with $10 or more of card payments from September 1 to 28, 2026 and some cashback paid from September 3 to October 1, each placed by the two amounts in dollars, the cashback at Chainlink's AVAX price, on log scales. Lines show the Standard, Pro and VIP schedules. Light-spending wallets sit near the Standard line, 28 heavy-spending wallets sit on the flat Standard line at about $115, 12 sit near the VIP line and 6 near the Pro line."
+}

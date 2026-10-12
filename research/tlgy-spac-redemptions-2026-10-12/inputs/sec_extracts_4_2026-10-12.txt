@@ -1,0 +1,31 @@
+# Fourth set of SEC filing extracts for the TLGY redemption review, made the same way as sec_extracts_2026-10-12.txt.
+
+### k10_2022 https://www.sec.gov/Archives/edgar/data/1879814/000110465923023530/tlgyu-20221231x10k.htm
+# status 200 read 2026-10-12T08:29:47.312Z raw_bytes 1313936 raw_sha256 8946a4555479e056f86d3c3803d9b32ceac9df41be86b8fbf98878f4e51b68fd text_chars 304365
+- @236502 Income earned on Investments held in Trust Account 2,901,000
+- @239218 Cash deposited into Trust Account — (234,600,000)
+
+### k10_2023 https://www.sec.gov/Archives/edgar/data/1879814/000110465924039031/tlgyu-20231231x10k.htm
+# status 200 read 2026-10-12T08:29:48.232Z raw_bytes 1405129 raw_sha256 9e61e7afd4cba8f4cdddec1565eec349a1e8bdfd6c49e90c681e10f158b75941 text_chars 310576
+- @233897 Income earned on investments held in Trust Account 5,072,178 2,901,000
+- @236338 Cash deposited into Trust Account (1,820,000)
+
+### k10_2024 https://www.sec.gov/Archives/edgar/data/1879814/000141057825000276/tlgyu-20241231x10k.htm
+# status 200 read 2026-10-12T08:29:49.227Z raw_bytes 1528408 raw_sha256 260ba7474ba62d2a8af73609e7e49c30299df38f9886f00867d1d03a90ca21c7 text_chars 363866
+- @264316 Income earned on investments held in Trust Account 2,598,427 5,072,178
+- @266585 Cash withdrawn from Trust Account in connection with redemptions 25,092,549 178,438,540
+- @266672 Cash deposited into Trust Account (872,089) (1,820,000)
+
+### k10_2025 https://www.sec.gov/Archives/edgar/data/1879814/000121390026036938/ea0275867-10k_tlgyacq.htm
+# status 200 read 2026-10-12T08:29:50.425Z raw_bytes 1009058 raw_sha256 5e1ea30211c5eae59ec2c1aab48328dea3b3f14d172f49641e669dc361c8f59e text_chars 339925
+- @243771 Income earned on cash and investments held in Trust Account 725,255 2,598,427
+- @246278 Cash withdrawn from Trust Account 39,113,505 25,092,549 Cash deposited into Trust Account (400,450) (872,089)
+
+### q1_2026_10q https://www.sec.gov/Archives/edgar/data/1879814/000121390026056223/ea0287797-10q_tlgyacq.htm
+# status 200 read 2026-10-12T08:29:52.288Z raw_bytes 549925 raw_sha256 be5f5318411fbf63f42d56c94f216b2f887b9d19e582462451fe9dffde0c0ae1 text_chars 128886
+- @5917 Income earned on cash and investments held in Trust Account 44,722 466,024
+- @8630 Cash deposited into Trust Account (73,483) (180,000)
+
+### def14a_2026 https://www.sec.gov/Archives/edgar/data/1879814/000121390026040497/ea0285135-01.htm
+# status 200 read 2026-10-12T08:29:53.228Z raw_bytes 681780 raw_sha256 7be8dfaeeeb69b74808a9ea27e2f068d0b3ffd5777a05d691902d854d1d9f3fc text_chars 197910
+- @15163 bination by the Current Termination Date, or if the Extension Proposal is approved and the Extension is implemented but we do not consummate an initial business combination by the extended Termination Date in accordance with the Charter, we will (i) cease all operations except for the purpose of winding up, (ii) as promptly as reasonably possible but not more than ten business days thereafter, redeem the public shares, at a per-share price, payable in cash, equal to the aggregate amount then on deposit in the Trust Account, including interest earned on the funds held in the Trust Account(less taxes payable), divided by the number

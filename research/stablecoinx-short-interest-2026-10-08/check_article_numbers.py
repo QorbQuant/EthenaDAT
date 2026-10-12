@@ -93,16 +93,28 @@ LASTS = SETTLE[-1]
 fetched = rows("finra_short_interest_fetch_log.csv")
 assert all(r["fetched_at"].startswith("2026-10-09") for r in fetched)
 rechecks = rows("finra_recheck_log.csv")
-last_check = datetime.fromisoformat(rechecks[-1]["checked_at_utc"].replace("Z", "+00:00"))
-assert all(not r["latest_settlement_date"] or r["latest_settlement_date"] <= str(LASTS) for r in rechecks)
-assert rechecks[-1]["latest_settlement_date"] == str(LASTS)
+# The read used is the USDE request in the fetch log, the first check to find the latest settlement date. The two
+# logged checks filtered on that date before it, at 16:16 and 17:03 UTC, returned HTTP 204 with no records.
+usde_fetch = [r for r in fetched if '"USDE"' in r["request_body"]]
+assert len(usde_fetch) == 1
+first_hit = [i for i, r in enumerate(rechecks) if r["latest_settlement_date"] == str(LASTS)][0]
+used = rechecks[first_hit]
+assert used["checked_at_utc"] == usde_fetch[0]["fetched_at"] and used["bytes"] == usde_fetch[0]["bytes"]
+assert used["status"] == "200" and int(used["records"]) == len(SETTLE)
+by_date = [r for r in rechecks[:first_hit] if f'"{LASTS}"' in r["request_body"]]
+assert [r["checked_at_utc"][11:16] for r in by_date] == ["16:16", "17:03"]
+assert all(r["status"] == "204" and r["records"] == "0" for r in by_date)
+assert all(r["latest_settlement_date"] in ("", str(SETTLE[-2])) for r in rechecks[:first_hit])
+assert all(r["latest_settlement_date"] in ("",) + tuple(str(x) for x in SETTLE) for r in rechecks)
+last_check = datetime.fromisoformat(used["checked_at_utc"].replace("Z", "+00:00"))
 CHECK = f"{last_check:%H:%M} UTC"
 
-# FINRA's schedule, as read from its Short Interest Reporting Deadlines page: publication on the seventh
-# business day after the settlement date.
+# FINRA's 2026 schedule, as read in the browser from its Short Interest Reporting page on October 9, at 16:54 UTC for
+# the dates through September 30 and at 22:53 UTC for October 15. Publication falls on the seventh business day after
+# the settlement date.
 SCHEDULE = {date(2026, 6, 30): date(2026, 7, 10), date(2026, 7, 15): date(2026, 7, 24), date(2026, 7, 31): date(2026, 8, 11),
             date(2026, 8, 14): date(2026, 8, 25), date(2026, 8, 31): date(2026, 9, 10), date(2026, 9, 15): date(2026, 9, 24),
-            date(2026, 9, 30): date(2026, 10, 9)}
+            date(2026, 9, 30): date(2026, 10, 9), date(2026, 10, 15): date(2026, 10, 26)}
 
 
 def seventh_business_day(s):
@@ -116,7 +128,8 @@ def seventh_business_day(s):
 
 assert all(seventh_business_day(s) == p for s, p in SCHEDULE.items())
 assert SETTLE == sorted(SCHEDULE)[:len(SETTLE)]
-assert SCHEDULE[LASTS] == date(2026, 10, 9)
+NEXT = sorted(SCHEDULE)[len(SETTLE)]
+assert NEXT == date(2026, 10, 15) and SCHEDULE[NEXT] == date(2026, 10, 26)
 
 # cycles, from the session after one settlement date to the next, and the trade windows, from the earlier
 # settlement date through the session before the later one, since trades settle one business day later
@@ -131,21 +144,24 @@ dtc = {s: Q[s] / adv[s] for s in SETTLE}
 
 # ---------------------------------------------------------------- byline, title and lead
 s15, a14, a31 = Q[date(2026, 9, 15)], Q[date(2026, 8, 14)], Q[date(2026, 8, 31)]
-latest = Q[LASTS]
+s30 = Q[date(2026, 9, 30)]
 assert LASTS == date(2026, 9, 30)
 need("Short interest through the September 30, 2026 settlement date")
 need("Trading from June 26 through the October 8 close")
 need("Sources read October 9, 2026 UTC")
 need("# How much StablecoinX stock was sold short in September 2026?")
 need("USDE Short Interest in September 2026: How Much Was Shorted", META["title"])
-need(f"Short sellers held {latest:,} shares of USDE")
-need(f"on {md(LASTS)}, 2026, the latest settlement date in FINRA's data when this review last checked it, at {CHECK} on "
-     "October 9.")
-need(f"That was {latest / FT * 100:.1f}% of the roughly {FT / 1e6:.2f} million Class A shares that the company's resale "
+need(f"Short sellers held {s30:,} shares of USDE")
+need(f"on {md(LASTS)}, 2026. That was the latest settlement date in FINRA's data when this review read it at {CHECK} on "
+     f"October 9, the day FINRA published the {md(LASTS)} figures.")
+assert SCHEDULE[LASTS] == date(2026, 10, 9)
+need(f"The position was {s30 / FT * 100:.1f}% of the roughly {FT / 1e6:.2f} million Class A shares that the company's resale "
      "prospectus counted as freely tradable on August 28")
-need(f"Short interest rose by {latest - s15:,} shares, or {(latest / s15 - 1) * 100:.1f}%, from September 15.")
+need(f"and {round((s30 / s15 - 1) * 100)}% more than the {s15:,} shares held short on September 15.")
+assert round((s30 / s15 - 1) * 100, 2) == si["2026-09-30"]["changePercent"]
 need("A short sale counts once it has settled, one business day after the trade.")
-assert len(cyc[LASTS]) == 11
+c30 = cyc[LASTS]
+assert len(c30) == 11
 need(f"In the 11 sessions to September 30 the stock traded an average of {adv[LASTS] / 1e6:.2f} million shares "
      f"a day, so short sellers held {dtc[LASTS]:.2f} days of volume, a ratio called days to cover.")
 total_vol = sum(vol[d] for d in SESSIONS)
@@ -160,10 +176,14 @@ need(f"Of the {fin_total / 1e6:.1f} million USDE shares traded in regular hours 
      "short.")
 need(f"so the {fin_short / fin_total * 100:.1f}% measures trading.")
 peak = max(SESSIONS, key=lambda d: close[d])
-assert peak < LASTS
-need(f"USDE closed at ${close[date(2026, 9, 15)]:.2f} on September 15, reached a peak close of ${close[peak]:.2f} on "
-     f"{md(peak)} and finished September at ${close[LASTS]:.2f}.")
-need("FINRA's September 30 figures, published on October 9, show that aggregate short interest increased across that period.")
+sep15 = date(2026, 9, 15)
+assert sep15 < peak < LASTS
+need(f"USDE closed at ${close[sep15]:.2f} on September 15, at a peak of ${close[peak]:.2f} on {md(peak)} and at "
+     f"${close[LASTS]:.2f} on {md(LASTS)}.")
+assert s30 > s15
+need(f"Short sellers as a group held {s30 - s15:,} more shares short on {md(LASTS)} than on September 15.")
+need("Short interest is a snapshot at each settlement date, so it does not show when in between positions were opened or "
+     "closed.")
 need("FINRA publishes the totals on the seventh business day after each settlement date.")
 need(f"Its [short interest data](https://www.finra.org/finra-data/browse-catalog/equity-short-interest) for USDE starts at "
      f"{md(SETTLE[0])}, the first settlement date after the stock's first session.")
@@ -180,9 +200,9 @@ for s in SETTLE:
 need(f"This review divides by the prospectus's approximate count of {FT:,} freely tradable shares on August 28 at every date.")
 need(f"also registered for sale the {ETHENA:,} Class A shares of Ethena OpCo Ltd")
 need(f"Against those and the freely tradable shares, {FT + ETHENA:,} in all, the September 30 short interest came to "
-     f"{latest / (FT + ETHENA) * 100:.2f}%.")
-need(f"Against all {CA:,} Class A shares it came to {latest / CA * 100:.2f}%.")
-need(f"At the ${close[LASTS]:.2f} close it was worth ${latest * close[LASTS] / 1e6:.2f} million.")
+     f"{s30 / (FT + ETHENA) * 100:.2f}%.")
+need(f"Against the {CA:,} Class A shares outstanding on August 28 it came to {s30 / CA * 100:.2f}%.")
+need(f"At the ${close[LASTS]:.2f} close it was worth ${s30 * close[LASTS] / 1e6:.2f} million.")
 
 # chart text and image descriptions
 words = {6: "six", 7: "seven"}
@@ -193,21 +213,23 @@ alt = (f"USDE closed at ${close[SESSIONS[0]]:.2f} on {md(SESSIONS[0])}, fell to 
        + ", ".join(f"{Q[s]:,}" for s in SETTLE[:-1]) + f" and {Q[LASTS]:,} shares.")
 need(alt, ARTICLE)
 need(alt, SVG)
-need(f"USDE short interest reached {latest / 1e6:.2f} million shares on {md(LASTS)}", SVG)
+need(f"USDE short interest reached {s30 / 1e6:.2f} million shares on {md(LASTS)}", SVG)
 need(f"when checked at {CHECK} on October 9.", SVG)
 need(f"FINRA short interest at {words[len(SETTLE)]} settlement dates, from {Q[SETTLE[0]]:,} shares on {md(SETTLE[0])} to "
-     f"{latest:,} on {md(LASTS)}.", META["imageAlt"])
-need(f"Short sellers held {latest / 1e6:.2f} million USDE shares on {md(LASTS)}, 2026, {latest / FT * 100:.1f}% of the stock "
+     f"{s30:,} on {md(LASTS)}.", META["imageAlt"])
+need(f"Short sellers held {s30 / 1e6:.2f} million USDE shares on {md(LASTS)}, 2026, {s30 / FT * 100:.1f}% of the stock "
      "StablecoinX's prospectus counted as freely tradable in August.", META["description"])
 assert len(META["description"]) <= 160 and len(META["title"]) <= 60
-need(f"## Short interest reached {latest / 1e6:.2f} million shares on {md(LASTS)}")
+need(f"## Short interest reached {s30 / 1e6:.2f} million shares on {md(LASTS)}")
 
 rise = a31 - a14
-assert rise > (s15 - a14) / 2
-need(f"when short interest grew by {rise:,} shares and USDE's close rose from ${close[date(2026, 8, 14)]:.2f} to "
-     f"${close[date(2026, 8, 31)]:.2f}.")
-w15 = siw[str(LASTS)]["currentShortPositionQuantity"]
-need(f"was {w15:,} warrants on {md(LASTS)}, {w15 / WARRANTS * 100:.2f}% of the {WARRANTS / 1e6:.1f} million public warrants.")
+changes = sorted(SETTLE, key=lambda x: si[str(x)]["changePreviousNumber"], reverse=True)
+assert changes[:2] == [LASTS, date(2026, 8, 31)]
+need(f"when short interest grew by {rise:,} shares as USDE's close rose from ${close[date(2026, 8, 14)]:.2f} to "
+     f"${close[date(2026, 8, 31)]:.2f}, and in the second half of September, when it grew by {s30 - s15:,} shares as the close "
+     f"rose from ${close[sep15]:.2f} to ${close[LASTS]:.2f}.")
+w30 = siw[str(LASTS)]["currentShortPositionQuantity"]
+need(f"was {w30:,} warrants on {md(LASTS)}, {w30 / WARRANTS * 100:.2f}% of the {WARRANTS / 1e6:.1f} million public warrants.")
 
 # ---------------------------------------------------------------- days to cover
 assert all(si[str(s)]["daysToCoverQuantity"] == 1 for s in SETTLE)
@@ -257,6 +279,10 @@ need(f"In the 11 sessions from August 14 to 28, whose trades settled by August 3
      f"{sum(fin[d][0] for d in w31) / 1e6:.1f} million shares marked short, while short interest rose by {rise / 1e6:.2f} million.")
 need(f"In the ten sessions from August 31 to September 14 they counted {sum(fin[d][0] for d in w15w) / 1e6:.1f} million, while "
      f"short interest rose by {s15 - a31:,}.")
+w30w = win[LASTS]
+assert (w30w[0], w30w[-1], len(w30w)) == (date(2026, 9, 15), date(2026, 9, 29), 11)
+need(f"In the 11 sessions from September 15 to 29 they counted {sum(fin[d][0] for d in w30w) / 1e6:.1f} million, while short "
+     f"interest rose by {(s30 - s15) / 1e6:.2f} million.")
 
 # ---------------------------------------------------------------- the price test
 trig = {d: low[d] <= 0.9 * close[prior[d]] for d in SESSIONS}
@@ -308,11 +334,13 @@ need("Moving any session's low by a cent would add at most one session to the co
 
 # ---------------------------------------------------------------- limits, revision flags and the formula block
 assert all(si[k]["revisionFlag"] is None for k in si) and all(siw[k]["revisionFlag"] is None for k in siw)
-need("The September 30 figures were published on October 9 and are the latest settlement snapshot included here.")
+need(f"FINRA published the figures for September 30 on October 9, as its schedule set, and this review read them at {CHECK} "
+     "that day.")
+need(f"so a revision of the September 30 figure would show in the record for {md(NEXT)}.")
 need(f"None of the {words[len(SETTLE)]} records read flagged one.")
 need(f"so the {fin_total / total_vol * 100:.1f}% ratio is not a measure of all off-exchange trading in USDE.")
-need(f"= {latest:,} ÷ {FT:,} = {latest / FT * 100:.2f}% on {md(LASTS)}")
-need(f"= {latest:,} ÷ {adv[LASTS]:,.0f} = {dtc[LASTS]:.2f}")
+need(f"= {s30:,} ÷ {FT:,} = {s30 / FT * 100:.2f}% on {md(LASTS)}")
+need(f"= {s30:,} ÷ {adv[LASTS]:,.0f} = {dtc[LASTS]:.2f}")
 need(f"= {fin_short:,.0f} ÷ {fin_total:,.0f} = {fin_short / fin_total * 100:.1f}%")
 
 print(f"{found} phrases found")

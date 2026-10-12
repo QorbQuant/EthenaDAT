@@ -1,0 +1,10 @@
+tier,balance_usde,ethenapay_after_compounding_pct,susde_september_17_to_october_8_after_compounding_pct
+standard,1000,5.02,4.92
+standard,5000,5.02,4.92
+standard,10000,4.76,4.92
+standard,25000,4.60,4.92
+pro,100000,6.07,4.92
+pro,250000,5.12,4.92
+pro,1000000,4.66,4.92
+vip,1000000,6.07,4.92
+vip,5000000,4.81,4.92

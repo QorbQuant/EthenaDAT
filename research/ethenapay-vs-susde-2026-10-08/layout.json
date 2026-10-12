@@ -1,0 +1,77 @@
+{
+  "cutoff": "sUSDe read to the end of October 10 UTC · EthenaPay payments read to the end of October 9 UTC · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "Two ways",
+      "two-ways-to-be-paid-on-usde"
+    ],
+    [
+      "Rates compared",
+      "the-rates-compared-september-1-to-october-8"
+    ],
+    [
+      "Weekly payments",
+      "susdes-rate-followed-the-weekly-payments"
+    ],
+    [
+      "By balance",
+      "where-a-balance-stood-against-susde"
+    ],
+    [
+      "Method",
+      "how-this-review-measured"
+    ],
+    [
+      "Limits",
+      "what-the-comparison-leaves-out"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "sUSDe's daily rate against EthenaPay's rates, September 1 to October 8, 2026",
+  "chartFile": "chart_susde_vs_ethenapay.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_susde_vs_ethenapay.svg",
+    "chart_preview.png",
+    "susde_daily.csv",
+    "periods.csv",
+    "balances.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "susde_vs_ethenapay_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "susde_read.cjs",
+    "test_susde_read.cjs",
+    "inputs/cashflow_results.json",
+    "inputs/chain/events.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain/midnights.csv",
+    "inputs/chain/rewards.csv",
+    "inputs/chain_manifest.csv",
+    "inputs/dailyboost_results.json",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/terms_facts.csv",
+    "out/balances.csv",
+    "out/chart_points.csv",
+    "out/chart_preview.png",
+    "out/chart_susde_vs_ethenapay.svg",
+    "out/periods.csv",
+    "out/results.json",
+    "out/reward_weeks.csv",
+    "out/run_log.txt",
+    "out/susde_daily.csv"
+  ],
+  "keyFindings": [
+    "sUSDe’s September 2026 growth annualized to 4.83% after compounding. EthenaPay’s relative rate depended on balance size and Daily Boost caps.",
+    "Across all EthenaPay balances, September’s realized simple annualized rate was 4.70%, versus 4.72% for sUSDe. Historical rates do not promise future rewards."
+  ]
+}

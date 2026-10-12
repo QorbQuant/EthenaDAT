@@ -20,6 +20,7 @@ res = json.loads((HERE / "out" / "results.json").read_text())
 si = [(date.fromisoformat(r["date"]), int(r["short_interest_shares"])) for r in rows if r["short_interest_shares"]]
 assert len(rows) == res["window"]["sessions"] == 73
 assert [c["short_interest"] for c in res["short_interest"]] == [q for _, q in si]
+assert max(q for _, q in si) <= 3.0e6, "a short interest bar would leave its panel"
 
 BG, RULE, TEXT, MUTED = ("var(--sx-bg, #0d1116)", "var(--sx-rule, #29313a)", "var(--sx-text, #eeeae3)",
                          "var(--sx-muted, #99a3b0)")
@@ -32,7 +33,7 @@ L, R = 64, 780
 D0, D1 = date(2026, 6, 26), date(2026, 10, 8)
 TOP_Y0, TOP_Y1 = 92, 252     # price panel
 BOT_Y0, BOT_Y1 = 300, 420    # short interest panel
-P_MAX, S_MAX = 18, 3.3e6
+P_MAX, S_MAX = 18, 3.0e6
 
 
 def X(d):
@@ -90,7 +91,7 @@ a(f'<text x="{L}" y="{BOT_Y0 - 14}" fill="{TEXT}" font-size="13" font-weight="60
 for v in (0, 5, 10, 15):
     a(f'<line x1="{L}" x2="{R}" y1="{YP(v):.1f}" y2="{YP(v):.1f}" stroke="{RULE}" stroke-width="1"/>')
     a(f'<text x="{L - 8}" y="{YP(v) + 4:.1f}" fill="{MUTED}" font-size="11" text-anchor="end">${v}</text>')
-for v in (0, 1e6, 2e6, 3e6):
+for v in (0, 1.0e6, 2.0e6, 3.0e6):
     a(f'<line x1="{L}" x2="{R}" y1="{YS(v):.1f}" y2="{YS(v):.1f}" stroke="{RULE}" stroke-width="1"/>')
     a(f'<text x="{L - 8}" y="{YS(v) + 4:.1f}" fill="{MUTED}" font-size="11" text-anchor="end">{v / 1e6:g}</text>')
 # settlement dates, dashed in each panel, with the axis marked at each date and at the last session

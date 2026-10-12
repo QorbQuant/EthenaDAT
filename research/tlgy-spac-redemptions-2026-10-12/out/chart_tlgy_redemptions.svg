@@ -1,0 +1,179 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="tr-t tr-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="tr-t">TLGY's trust value a public share and the cash a share paid for redemptions at each vote, December 2021 to June 2026, and USDE's close against the merger's cash a share, June 26 to October 9, 2026</title>
+<desc id="tr-d">Two panels on one dollar scale. Left, the trust's value a public share, $10.20 at the IPO on December 3, 2021, rising at every report date and extension vote to $13.35 paid at the merger closing on June 25, 2026. Filled dots mark the cash a share paid for redemptions at the six votes, $10.40, $10.96, $11.38, $12.12, $13.20, $13.35. Hollow dots mark the trust's value a share at the IPO and at nine report dates. Right, USDE's close at 74 sessions from June 26, 2026 to October 9, 2026, against a dashed line at $13.35. It closed at $3.70 on its first day, fell to $1.43 on July 24, 2026, rose to $17.25 on September 25, 2026 and closed at $12.30 on October 9, 2026. It closed at or above the dashed line in 11 sessions, all from September 22 to October 7. A dotted line marks the $10.00 IPO unit price in both panels.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">Redemptions paid $10.40 to $13.35 a share. USDE closed below $13.35 in 63 of 74 sessions</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Left, cash a TLGY public share from the 2021 IPO to the 2026 merger. Right, USDE's close from its first session on June 26.</text>
+<circle cx="26" cy="74" r="4.5" fill="#3987e5"/>
+<text x="36" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Redemption cash a share</text>
+<circle cx="190" cy="74" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/>
+<text x="200" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">Trust value a share in a filing</text>
+<line x1="372" x2="394" y1="74" y2="74" stroke="#d95926" stroke-width="2"/>
+<text x="400" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">USDE close</text>
+<line x1="478" x2="500" y1="74" y2="74" stroke="var(--sx-text, #eeeae3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+<text x="506" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">$13.35 paid at the merger</text>
+<line x1="652" x2="674" y1="74" y2="74" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4"/>
+<text x="680" y="78" fill="var(--sx-muted, #99a3b0)" font-size="11">$10.00 unit price</text>
+<text x="58" y="112" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">In the trust</text>
+<text x="452" y="112" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">After the merger</text>
+<line x1="58" x2="418" y1="404.0" y2="404.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="404.0" y2="404.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="408.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$0</text>
+<line x1="58" x2="418" y1="372.9" y2="372.9" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="372.9" y2="372.9" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="376.9" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$2</text>
+<line x1="58" x2="418" y1="341.8" y2="341.8" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="341.8" y2="341.8" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="345.8" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$4</text>
+<line x1="58" x2="418" y1="310.7" y2="310.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="310.7" y2="310.7" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="314.7" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$6</text>
+<line x1="58" x2="418" y1="279.6" y2="279.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="279.6" y2="279.6" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="283.6" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$8</text>
+<line x1="58" x2="418" y1="248.4" y2="248.4" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="248.4" y2="248.4" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="252.4" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$10</text>
+<line x1="58" x2="418" y1="217.3" y2="217.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="217.3" y2="217.3" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="221.3" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$12</text>
+<line x1="58" x2="418" y1="186.2" y2="186.2" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="186.2" y2="186.2" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="190.2" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$14</text>
+<line x1="58" x2="418" y1="155.1" y2="155.1" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="155.1" y2="155.1" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="159.1" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$16</text>
+<line x1="58" x2="418" y1="124.0" y2="124.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<line x1="452" x2="772" y1="124.0" y2="124.0" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="50" y="128.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">$18</text>
+<line x1="70.6" x2="70.6" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="70.6" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2022</text>
+<line x1="145.7" x2="145.7" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="145.7" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2023</text>
+<line x1="220.9" x2="220.9" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="220.9" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2024</text>
+<line x1="296.3" x2="296.3" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="296.3" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2025</text>
+<line x1="371.5" x2="371.5" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="371.5" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">2026</text>
+<line x1="484.3" x2="484.3" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="484.3" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Jul</text>
+<line x1="567.6" x2="567.6" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="567.6" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Aug</text>
+<line x1="651.0" x2="651.0" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="651.0" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Sep</text>
+<line x1="731.7" x2="731.7" y1="404" y2="409" stroke="var(--sx-muted, #99a3b0)" stroke-width="1"/>
+<text x="731.7" y="423" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">Oct</text>
+<text x="20" y="450" fill="var(--sx-muted, #99a3b0)" font-size="10">SEC filings of TLGY Acquisition Corp. and StablecoinX Inc. Closes, S&amp;P Global Market Intelligence via StockAnalysis.</text>
+<line x1="58" x2="418" y1="248.4" y2="248.4" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4"/>
+<line x1="452" x2="772" y1="248.4" y2="248.4" stroke="var(--sx-muted, #99a3b0)" stroke-width="1" stroke-dasharray="2 4"/>
+<line x1="452" x2="772" y1="196.4" y2="196.4" stroke="var(--sx-text, #eeeae3)" stroke-width="1.5" stroke-dasharray="6 4"/>
+<polyline points="64.6,245.3 145.5,243.4 156.6,242.2 164.1,240.3 205.3,233.6 220.7,230.8 242.7,227.0 258.2,224.5 296.1,218.5 317.7,215.5 333.4,211.2 352.3,206.8 371.2,202.5 389.8,198.8 392.9,198.6 407.5,196.4" fill="none" stroke="#3987e5" stroke-width="1.5" stroke-opacity="0.6" stroke-linejoin="round"/>
+<g><title>IPO, Dec 3, 2021, $10.20 a unit in trust</title><circle cx="64.6" cy="245.3" r="9" fill="transparent"/><circle cx="64.6" cy="245.3" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Dec 31, 2022, trust $10.33 a share</title><circle cx="145.5" cy="243.4" r="9" fill="transparent"/><circle cx="145.5" cy="243.4" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>First extension vote, Feb 23, 2023, $10.40 a share paid</title><circle cx="156.6" cy="242.2" r="9" fill="transparent"/><circle cx="156.6" cy="242.2" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Mar 31, 2023, trust $10.52 a share</title><circle cx="164.1" cy="240.3" r="9" fill="transparent"/><circle cx="164.1" cy="240.3" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Second extension vote, Oct 17, 2023, $10.96 a share paid</title><circle cx="205.3" cy="233.6" r="9" fill="transparent"/><circle cx="205.3" cy="233.6" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Dec 31, 2023, trust $11.14 a share</title><circle cx="220.7" cy="230.8" r="9" fill="transparent"/><circle cx="220.7" cy="230.8" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Third extension vote, Apr 16, 2024, $11.38 a share paid</title><circle cx="242.7" cy="227.0" r="9" fill="transparent"/><circle cx="242.7" cy="227.0" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jun 30, 2024, trust $11.54 a share</title><circle cx="258.2" cy="224.5" r="9" fill="transparent"/><circle cx="258.2" cy="224.5" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Dec 31, 2024, trust $11.93 a share</title><circle cx="296.1" cy="218.5" r="9" fill="transparent"/><circle cx="296.1" cy="218.5" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Fourth extension vote, Apr 15, 2025, $12.12 a share paid</title><circle cx="317.7" cy="215.5" r="9" fill="transparent"/><circle cx="317.7" cy="215.5" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Jun 30, 2025, trust $12.40 a share</title><circle cx="333.4" cy="211.2" r="9" fill="transparent"/><circle cx="333.4" cy="211.2" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Sep 30, 2025, trust $12.68 a share</title><circle cx="352.3" cy="206.8" r="9" fill="transparent"/><circle cx="352.3" cy="206.8" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Dec 31, 2025, trust $12.95 a share</title><circle cx="371.2" cy="202.5" r="9" fill="transparent"/><circle cx="371.2" cy="202.5" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Mar 31, 2026, trust $13.19 a share</title><circle cx="389.8" cy="198.8" r="9" fill="transparent"/><circle cx="389.8" cy="198.8" r="3.5" fill="var(--sx-bg, #0d1116)" stroke="#3987e5" stroke-width="1.5"/></g>
+<g><title>Fifth extension vote, Apr 15, 2026, $13.20 a share paid</title><circle cx="392.9" cy="198.6" r="9" fill="transparent"/><circle cx="392.9" cy="198.6" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<g><title>Merger closing, Jun 25, 2026, $13.35 a share paid</title><circle cx="407.5" cy="196.4" r="9" fill="transparent"/><circle cx="407.5" cy="196.4" r="4.5" fill="#3987e5" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/></g>
+<text x="156.6" y="230.2" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$10.40</text>
+<text x="205.3" y="255.6" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$10.96</text>
+<text x="242.7" y="215.0" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$11.38</text>
+<text x="317.7" y="203.5" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$12.12</text>
+<text x="386.9" y="220.6" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$13.20</text>
+<text x="413.5" y="184.4" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$13.35</text>
+<text x="66.6" y="267.3" fill="var(--sx-muted, #99a3b0)" font-size="11" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">$10.20 IPO</text>
+<polyline points="470.8,346.4 478.9,352.2 481.6,361.2 484.3,371.6 487.0,360.8 497.7,363.2 500.4,367.3 503.1,372.4 505.8,369.9 508.5,373.5 516.5,374.4 519.2,376.3 521.9,375.7 524.6,374.1 527.3,376.9 535.4,377.1 538.1,374.9 540.7,374.9 543.4,376.9 546.1,381.8 554.2,380.4 556.9,377.7 559.6,380.5 562.3,378.5 564.9,379.6 573.0,377.2 575.7,373.2 578.4,365.7 581.1,369.3 583.8,371.8 591.8,370.4 594.5,366.7 597.2,365.9 599.9,363.7 602.6,358.4 610.7,357.0 613.3,360.6 616.0,355.9 618.7,341.8 621.4,288.7 629.5,306.5 632.2,309.7 634.9,311.0 637.5,278.5 640.2,298.8 648.3,266.0 651.0,274.0 653.7,287.3 656.4,267.6 659.1,280.6 669.8,285.6 672.5,291.4 675.2,300.4 677.9,291.1 685.9,288.3 688.6,308.8 691.3,307.6 694.0,284.1 696.7,245.5 704.8,208.0 707.5,193.4 710.2,203.8 712.8,182.8 715.5,135.7 723.6,162.0 726.3,165.7 729.0,153.9 731.7,162.7 734.4,183.9 742.4,171.3 745.1,181.1 747.8,189.0 750.5,205.0 753.2,212.7" fill="none" stroke="#d95926" stroke-width="2" stroke-linejoin="round"/>
+<g><title>Jun 26, USDE $3.70, below $13.35</title><circle cx="470.8" cy="346.4" r="5" fill="transparent"/></g>
+<g><title>Jun 29, USDE $3.33, below $13.35</title><circle cx="478.9" cy="352.2" r="5" fill="transparent"/></g>
+<g><title>Jun 30, USDE $2.75, below $13.35</title><circle cx="481.6" cy="361.2" r="5" fill="transparent"/></g>
+<g><title>Jul 1, USDE $2.08, below $13.35</title><circle cx="484.3" cy="371.6" r="5" fill="transparent"/></g>
+<g><title>Jul 2, USDE $2.78, below $13.35</title><circle cx="487.0" cy="360.8" r="5" fill="transparent"/></g>
+<g><title>Jul 6, USDE $2.62, below $13.35</title><circle cx="497.7" cy="363.2" r="5" fill="transparent"/></g>
+<g><title>Jul 7, USDE $2.36, below $13.35</title><circle cx="500.4" cy="367.3" r="5" fill="transparent"/></g>
+<g><title>Jul 8, USDE $2.03, below $13.35</title><circle cx="503.1" cy="372.4" r="5" fill="transparent"/></g>
+<g><title>Jul 9, USDE $2.19, below $13.35</title><circle cx="505.8" cy="369.9" r="5" fill="transparent"/></g>
+<g><title>Jul 10, USDE $1.96, below $13.35</title><circle cx="508.5" cy="373.5" r="5" fill="transparent"/></g>
+<g><title>Jul 13, USDE $1.90, below $13.35</title><circle cx="516.5" cy="374.4" r="5" fill="transparent"/></g>
+<g><title>Jul 14, USDE $1.78, below $13.35</title><circle cx="519.2" cy="376.3" r="5" fill="transparent"/></g>
+<g><title>Jul 15, USDE $1.82, below $13.35</title><circle cx="521.9" cy="375.7" r="5" fill="transparent"/></g>
+<g><title>Jul 16, USDE $1.92, below $13.35</title><circle cx="524.6" cy="374.1" r="5" fill="transparent"/></g>
+<g><title>Jul 17, USDE $1.74, below $13.35</title><circle cx="527.3" cy="376.9" r="5" fill="transparent"/></g>
+<g><title>Jul 20, USDE $1.73, below $13.35</title><circle cx="535.4" cy="377.1" r="5" fill="transparent"/></g>
+<g><title>Jul 21, USDE $1.87, below $13.35</title><circle cx="538.1" cy="374.9" r="5" fill="transparent"/></g>
+<g><title>Jul 22, USDE $1.87, below $13.35</title><circle cx="540.7" cy="374.9" r="5" fill="transparent"/></g>
+<g><title>Jul 23, USDE $1.74, below $13.35</title><circle cx="543.4" cy="376.9" r="5" fill="transparent"/></g>
+<g><title>Jul 24, USDE $1.43, below $13.35</title><circle cx="546.1" cy="381.8" r="5" fill="transparent"/></g>
+<g><title>Jul 27, USDE $1.52, below $13.35</title><circle cx="554.2" cy="380.4" r="5" fill="transparent"/></g>
+<g><title>Jul 28, USDE $1.69, below $13.35</title><circle cx="556.9" cy="377.7" r="5" fill="transparent"/></g>
+<g><title>Jul 29, USDE $1.51, below $13.35</title><circle cx="559.6" cy="380.5" r="5" fill="transparent"/></g>
+<g><title>Jul 30, USDE $1.64, below $13.35</title><circle cx="562.3" cy="378.5" r="5" fill="transparent"/></g>
+<g><title>Jul 31, USDE $1.57, below $13.35</title><circle cx="564.9" cy="379.6" r="5" fill="transparent"/></g>
+<g><title>Aug 3, USDE $1.72, below $13.35</title><circle cx="573.0" cy="377.2" r="5" fill="transparent"/></g>
+<g><title>Aug 4, USDE $1.98, below $13.35</title><circle cx="575.7" cy="373.2" r="5" fill="transparent"/></g>
+<g><title>Aug 5, USDE $2.46, below $13.35</title><circle cx="578.4" cy="365.7" r="5" fill="transparent"/></g>
+<g><title>Aug 6, USDE $2.23, below $13.35</title><circle cx="581.1" cy="369.3" r="5" fill="transparent"/></g>
+<g><title>Aug 7, USDE $2.07, below $13.35</title><circle cx="583.8" cy="371.8" r="5" fill="transparent"/></g>
+<g><title>Aug 10, USDE $2.16, below $13.35</title><circle cx="591.8" cy="370.4" r="5" fill="transparent"/></g>
+<g><title>Aug 11, USDE $2.40, below $13.35</title><circle cx="594.5" cy="366.7" r="5" fill="transparent"/></g>
+<g><title>Aug 12, USDE $2.45, below $13.35</title><circle cx="597.2" cy="365.9" r="5" fill="transparent"/></g>
+<g><title>Aug 13, USDE $2.59, below $13.35</title><circle cx="599.9" cy="363.7" r="5" fill="transparent"/></g>
+<g><title>Aug 14, USDE $2.93, below $13.35</title><circle cx="602.6" cy="358.4" r="5" fill="transparent"/></g>
+<g><title>Aug 17, USDE $3.02, below $13.35</title><circle cx="610.7" cy="357.0" r="5" fill="transparent"/></g>
+<g><title>Aug 18, USDE $2.79, below $13.35</title><circle cx="613.3" cy="360.6" r="5" fill="transparent"/></g>
+<g><title>Aug 19, USDE $3.09, below $13.35</title><circle cx="616.0" cy="355.9" r="5" fill="transparent"/></g>
+<g><title>Aug 20, USDE $4.00, below $13.35</title><circle cx="618.7" cy="341.8" r="5" fill="transparent"/></g>
+<g><title>Aug 21, USDE $7.41, below $13.35</title><circle cx="621.4" cy="288.7" r="5" fill="transparent"/></g>
+<g><title>Aug 24, USDE $6.27, below $13.35</title><circle cx="629.5" cy="306.5" r="5" fill="transparent"/></g>
+<g><title>Aug 25, USDE $6.06, below $13.35</title><circle cx="632.2" cy="309.7" r="5" fill="transparent"/></g>
+<g><title>Aug 26, USDE $5.98, below $13.35</title><circle cx="634.9" cy="311.0" r="5" fill="transparent"/></g>
+<g><title>Aug 27, USDE $8.07, below $13.35</title><circle cx="637.5" cy="278.5" r="5" fill="transparent"/></g>
+<g><title>Aug 28, USDE $6.76, below $13.35</title><circle cx="640.2" cy="298.8" r="5" fill="transparent"/></g>
+<g><title>Aug 31, USDE $8.87, below $13.35</title><circle cx="648.3" cy="266.0" r="5" fill="transparent"/></g>
+<g><title>Sep 1, USDE $8.36, below $13.35</title><circle cx="651.0" cy="274.0" r="5" fill="transparent"/></g>
+<g><title>Sep 2, USDE $7.50, below $13.35</title><circle cx="653.7" cy="287.3" r="5" fill="transparent"/></g>
+<g><title>Sep 3, USDE $8.77, below $13.35</title><circle cx="656.4" cy="267.6" r="5" fill="transparent"/></g>
+<g><title>Sep 4, USDE $7.93, below $13.35</title><circle cx="659.1" cy="280.6" r="5" fill="transparent"/></g>
+<g><title>Sep 8, USDE $7.61, below $13.35</title><circle cx="669.8" cy="285.6" r="5" fill="transparent"/></g>
+<g><title>Sep 9, USDE $7.24, below $13.35</title><circle cx="672.5" cy="291.4" r="5" fill="transparent"/></g>
+<g><title>Sep 10, USDE $6.66, below $13.35</title><circle cx="675.2" cy="300.4" r="5" fill="transparent"/></g>
+<g><title>Sep 11, USDE $7.26, below $13.35</title><circle cx="677.9" cy="291.1" r="5" fill="transparent"/></g>
+<g><title>Sep 14, USDE $7.44, below $13.35</title><circle cx="685.9" cy="288.3" r="5" fill="transparent"/></g>
+<g><title>Sep 15, USDE $6.12, below $13.35</title><circle cx="688.6" cy="308.8" r="5" fill="transparent"/></g>
+<g><title>Sep 16, USDE $6.20, below $13.35</title><circle cx="691.3" cy="307.6" r="5" fill="transparent"/></g>
+<g><title>Sep 17, USDE $7.71, below $13.35</title><circle cx="694.0" cy="284.1" r="5" fill="transparent"/></g>
+<g><title>Sep 18, USDE $10.19, below $13.35</title><circle cx="696.7" cy="245.5" r="5" fill="transparent"/></g>
+<g><title>Sep 21, USDE $12.60, below $13.35</title><circle cx="704.8" cy="208.0" r="5" fill="transparent"/></g>
+<g><title>Sep 22, USDE $13.54, at or above $13.35</title><circle cx="707.5" cy="193.4" r="5" fill="transparent"/><circle cx="707.5" cy="193.4" r="2.5" fill="#d95926"/></g>
+<g><title>Sep 23, USDE $12.87, below $13.35</title><circle cx="710.2" cy="203.8" r="5" fill="transparent"/></g>
+<g><title>Sep 24, USDE $14.22, at or above $13.35</title><circle cx="712.8" cy="182.8" r="5" fill="transparent"/><circle cx="712.8" cy="182.8" r="2.5" fill="#d95926"/></g>
+<g><title>Sep 25, USDE $17.25, at or above $13.35</title><circle cx="715.5" cy="135.7" r="5" fill="transparent"/><circle cx="715.5" cy="135.7" r="2.5" fill="#d95926"/></g>
+<g><title>Sep 28, USDE $15.56, at or above $13.35</title><circle cx="723.6" cy="162.0" r="5" fill="transparent"/><circle cx="723.6" cy="162.0" r="2.5" fill="#d95926"/></g>
+<g><title>Sep 29, USDE $15.32, at or above $13.35</title><circle cx="726.3" cy="165.7" r="5" fill="transparent"/><circle cx="726.3" cy="165.7" r="2.5" fill="#d95926"/></g>
+<g><title>Sep 30, USDE $16.08, at or above $13.35</title><circle cx="729.0" cy="153.9" r="5" fill="transparent"/><circle cx="729.0" cy="153.9" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 1, USDE $15.51, at or above $13.35</title><circle cx="731.7" cy="162.7" r="5" fill="transparent"/><circle cx="731.7" cy="162.7" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 2, USDE $14.15, at or above $13.35</title><circle cx="734.4" cy="183.9" r="5" fill="transparent"/><circle cx="734.4" cy="183.9" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 5, USDE $14.96, at or above $13.35</title><circle cx="742.4" cy="171.3" r="5" fill="transparent"/><circle cx="742.4" cy="171.3" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 6, USDE $14.33, at or above $13.35</title><circle cx="745.1" cy="181.1" r="5" fill="transparent"/><circle cx="745.1" cy="181.1" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 7, USDE $13.82, at or above $13.35</title><circle cx="747.8" cy="189.0" r="5" fill="transparent"/><circle cx="747.8" cy="189.0" r="2.5" fill="#d95926"/></g>
+<g><title>Oct 8, USDE $12.79, below $13.35</title><circle cx="750.5" cy="205.0" r="5" fill="transparent"/></g>
+<g><title>Oct 9, USDE $12.30, below $13.35</title><circle cx="753.2" cy="212.7" r="5" fill="transparent"/></g>
+<text x="699.4" y="164.4" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">11 closes at or above $13.35</text>
+<circle cx="470.8" cy="346.4" r="3.5" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="474.8" y="336.4" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="start" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Jun 26 $3.70</text>
+<circle cx="546.1" cy="381.8" r="3.5" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="546.1" y="397.8" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Jul 24 $1.43</text>
+<circle cx="715.5" cy="135.7" r="3.5" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="715.5" y="125.7" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="middle" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Sep 25 $17.25</text>
+<circle cx="753.2" cy="212.7" r="3.5" fill="#d95926" stroke="var(--sx-bg, #0d1116)" stroke-width="1.5"/>
+<text x="759.2" y="228.7" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end" style="paint-order:stroke;stroke:var(--sx-bg, #0d1116);stroke-width:4px;stroke-linejoin:round">Oct 9 $12.30</text>
+</svg>

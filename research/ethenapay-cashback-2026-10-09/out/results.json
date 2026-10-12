@@ -1,0 +1,417 @@
+{
+ "read_through": "2026-10-09T23:59:59Z",
+ "run_utc": [
+  "2026-10-12T04:13:57.857Z",
+  "2026-10-12T04:15:51.999Z"
+ ],
+ "lifetime": {
+  "transfers": 9036,
+  "avax": "9219.433225",
+  "wallets": 845,
+  "first": "2026-05-20T17:35:14Z",
+  "last": "2026-10-09T02:30:04Z",
+  "by_account": [
+   {
+    "transfers": 8821,
+    "avax": "9048.317893",
+    "batches": 86,
+    "first": "2026-07-15T21:30:03Z",
+    "last": "2026-10-09T02:30:04Z"
+   },
+   {
+    "transfers": 215,
+    "avax": "171.115332",
+    "batches": 32,
+    "first": "2026-05-20T17:35:14Z",
+    "last": "2026-07-14T08:00:04Z"
+   }
+  ]
+ },
+ "months": [
+  {
+   "month": "2026-05",
+   "batches": 3,
+   "transfers": 4,
+   "avax": "0.087822",
+   "wallets": "",
+   "usd_at_chainlink": ""
+  },
+  {
+   "month": "2026-06",
+   "batches": 16,
+   "transfers": 82,
+   "avax": "50.431401",
+   "wallets": "",
+   "usd_at_chainlink": ""
+  },
+  {
+   "month": "2026-07",
+   "batches": 29,
+   "transfers": 362,
+   "avax": "549.960709",
+   "wallets": "",
+   "usd_at_chainlink": ""
+  },
+  {
+   "month": "2026-08",
+   "batches": 31,
+   "transfers": 966,
+   "avax": "1307.371569",
+   "wallets": "",
+   "usd_at_chainlink": ""
+  },
+  {
+   "month": "2026-09",
+   "batches": 30,
+   "transfers": 4972,
+   "avax": "4595.286079",
+   "wallets": 622,
+   "usd_at_chainlink": "41604.25"
+  },
+  {
+   "month": "2026-10",
+   "batches": 9,
+   "transfers": 2650,
+   "avax": "2716.295646",
+   "wallets": 671,
+   "usd_at_chainlink": "29731.35"
+  }
+ ],
+ "batch_times": {
+  "batches_from_august_15": 56,
+  "first_transfer_at_0230": 53,
+  "other_first_times": {
+   "03:00": 2,
+   "05:30": 1
+  },
+  "september_october_batches": 39,
+  "september_october_at_0230": 38,
+  "september_october_batches_in_two_transactions": 19,
+  "first_two_transaction_batch": "2026-09-19",
+  "largest_batch_transfers": 391,
+  "largest_batch_date": "2026-10-07",
+  "current_account_first_batch": "2026-07-15T21:30:03Z",
+  "two_transaction_gap_under_1_minute": 6,
+  "two_transaction_gap_29_to_31_minutes": 13,
+  "batches_from_september_19": 21
+ },
+ "price_age": {
+  "max_seconds_at_batch_first_transfer": 116,
+  "max_seconds_on_the_hour": 129
+ },
+ "september_batch_prices": {
+  "first_batch": "2026-09-01T02:30:04Z",
+  "first_price": "7.2551",
+  "last_batch": "2026-09-30T02:30:02Z",
+  "last_price": "11.3363",
+  "low": "7.1790",
+  "high": "11.3363"
+ },
+ "other_addresses": {
+  "transfers": 18,
+  "recipients": 1,
+  "avax": "19696.326415",
+  "passed_through": 16,
+  "passed_through_avax": "19686.226415",
+  "not_passed_through_avax": "10.100000",
+  "received": [
+   {
+    "transfers": 14,
+    "avax": "19550.000000",
+    "senders": 1
+   },
+   {
+    "transfers": 2,
+    "avax": "136.226415",
+    "senders": 2
+   }
+  ]
+ },
+ "september": {
+  "card_spend": "1588430.13",
+  "card_payments": 17734,
+  "spending_wallets": 673,
+  "reversals": "73424.57",
+  "cashback_transfers": 4972,
+  "cashback_wallets": 622,
+  "cashback_avax": "4595.286079",
+  "cashback_usd_at_transfer": "41604.25",
+  "rate_pct_at_transfer": "2.6192",
+  "cashback_usd_at_batch_first_transfer": "41628.88",
+  "rate_pct_at_batch_first_transfer": "2.6208",
+  "dashboard_usd": "41835.80",
+  "dashboard_rate_pct": "2.6338",
+  "average_price_usd": "9.0537",
+  "card_payments_under_1_dollar": 709,
+  "card_spend_under_1_dollar": "378.19"
+ },
+ "september_windows": [
+  {
+   "days_later": 0,
+   "first_day": "2026-09-01",
+   "last_day": "2026-09-30",
+   "usd_at_chainlink": "41604.25",
+   "rate_pct": "2.6192",
+   "dashboard_rate_pct": "2.6338"
+  },
+  {
+   "days_later": 1,
+   "first_day": "2026-09-02",
+   "last_day": "2026-10-01",
+   "usd_at_chainlink": "42189.82",
+   "rate_pct": "2.6561",
+   "dashboard_rate_pct": "2.6711"
+  },
+  {
+   "days_later": 2,
+   "first_day": "2026-09-03",
+   "last_day": "2026-10-02",
+   "usd_at_chainlink": "43812.78",
+   "rate_pct": "2.7582",
+   "dashboard_rate_pct": "2.7735"
+  },
+  {
+   "days_later": 3,
+   "first_day": "2026-09-04",
+   "last_day": "2026-10-03",
+   "usd_at_chainlink": "45578.21",
+   "rate_pct": "2.8694",
+   "dashboard_rate_pct": "2.8854"
+  },
+  {
+   "days_later": 4,
+   "first_day": "2026-09-05",
+   "last_day": "2026-10-04",
+   "usd_at_chainlink": "49619.06",
+   "rate_pct": "3.1238",
+   "dashboard_rate_pct": "3.1400"
+  }
+ ],
+ "single_payments": {
+  "payments": 216,
+  "no_cashback": 8,
+  "one_cashback": 181,
+  "more_than_one": 27,
+  "median_pct": "3.983",
+  "quartiles_pct": [
+   "3.922",
+   "4.058"
+  ],
+  "near_4_pct": 148,
+  "near_4_5_pct": 19,
+  "near_5_pct": 3,
+  "elsewhere": 11,
+  "within_0_25_point_of_4_pct_share": "81.8",
+  "batches_waited": {
+   "1": 8,
+   "2": 83,
+   "3": 59,
+   "4": 19,
+   "5": 10,
+   "6": 2
+  },
+  "second_or_third_batch_share_pct": "78.5",
+  "median_days_to_cashback": "2.00",
+  "card_payments_from": "2026-08-21",
+  "card_payments_before": "2026-10-03"
+ },
+ "single_payments_sensitivity": {
+  "quiet_5_days": {
+   "payments": 145,
+   "no_cashback": 6,
+   "one_cashback": 139,
+   "more_than_one": 0,
+   "median_pct": "3.982",
+   "quartiles_pct": [
+    "3.921",
+    "4.058"
+   ],
+   "near_4_pct": 115,
+   "near_4_5_pct": 13,
+   "near_5_pct": 3,
+   "elsewhere": 8,
+   "within_0_25_point_of_4_pct_share": "82.7"
+  },
+  "quiet_7_days": {
+   "payments": 103,
+   "no_cashback": 4,
+   "one_cashback": 99,
+   "more_than_one": 0,
+   "median_pct": "3.992",
+   "quartiles_pct": [
+    "3.935",
+    "4.066"
+   ],
+   "near_4_pct": 84,
+   "near_4_5_pct": 8,
+   "near_5_pct": 3,
+   "elsewhere": 4,
+   "within_0_25_point_of_4_pct_share": "84.8"
+  }
+ },
+ "thirty_dollar_check": {
+  "28.5_to_29.5": 16,
+  "29.5_to_30.5": 19,
+  "30.5_to_31.5": 20
+ },
+ "small_payments": {
+  "isolated_under_1_dollar": 16,
+  "with_no_cashback": 15
+ },
+ "heavy": {
+  "wallets_4000_by_sep_28": 78,
+  "standard_ceiling_within_5pct": 28,
+  "standard_ceiling_month_spend": "303085.31",
+  "standard_ceiling_spend_share_pct": "19.08",
+  "standard_ceiling_paid": "3240.84",
+  "standard_ceiling_rate_pct": "1.069",
+  "standard_ceiling_min_paid": "109.39",
+  "standard_ceiling_max_paid": "119.92",
+  "standard_ceiling_largest_month_spend": "47670.88",
+  "standard_ceiling_smallest_month_spend": "4161.54",
+  "standard_ceiling_at_4_pct": "12123.41",
+  "pro_within_5pct": 6,
+  "vip_within_5pct": 12,
+  "matching_no_schedule": 32,
+  "paid_over_140": 38,
+  "paid_under_100": 4,
+  "largest_month_spend": "126019.43",
+  "largest_spending_wallet": {
+   "month_spend": "126019.43",
+   "paid": "1688.76",
+   "vip": "1730.10",
+   "rate_pct": "1.34",
+   "fit": "vip"
+  }
+ },
+ "heavy_unmatched": {
+  "under_standard": 7,
+  "between_standard_and_pro": 13,
+  "between_pro_and_vip": 5,
+  "over_vip": 7,
+  "over_vip_rate_range_pct": [
+   "4.4",
+   "6.1"
+  ],
+  "over_vip_with_card_payments_august_25_to_31": 6,
+  "over_vip_paid_over_5_pct": 5,
+  "crossed_4000_on_september_29_or_30": 10,
+  "matched_any_schedule": 46
+ },
+ "reset": {
+  "late_september_spend": "68277.05",
+  "late_september_paid": "510.46",
+  "late_september_wallets_spending": 24,
+  "october_1_7_spend": "55846.25",
+  "october_2_9_paid": "1686.88",
+  "october_wallets_spending": 23,
+  "october_wallets_paid": 23,
+  "late_rate_pct": "0.75",
+  "october_rate_pct": "3.02"
+ },
+ "groups": [
+  {
+   "group": "under $2,500",
+   "wallets": 524,
+   "card_spend": "302870.93",
+   "share_pct": "19.1",
+   "paid": "10846.64",
+   "rate_pct": "3.58",
+   "unpaid_wallets": 37,
+   "unpaid_spend": "3367.90",
+   "at_4_pct": "12114.84",
+   "short_of_4_pct": "1268.20",
+   "reversal_pct": "4.17"
+  },
+  {
+   "group": "$2,500 to $4,000",
+   "wallets": 61,
+   "card_spend": "184253.64",
+   "share_pct": "11.6",
+   "paid": "5873.04",
+   "rate_pct": "3.19",
+   "unpaid_wallets": 4,
+   "unpaid_spend": "13276.90",
+   "at_4_pct": "7370.15",
+   "short_of_4_pct": "1497.11",
+   "reversal_pct": "2.28"
+  },
+  {
+   "group": "$4,000 or more",
+   "wallets": 88,
+   "card_spend": "1101305.56",
+   "share_pct": "69.3",
+   "paid": "25097.36",
+   "rate_pct": "2.28",
+   "unpaid_wallets": 0,
+   "unpaid_spend": "0.00",
+   "at_4_pct": "44052.22",
+   "short_of_4_pct": "18954.87",
+   "reversal_pct": "5.14"
+  }
+ ],
+ "groups_total": {
+  "wallets": 673,
+  "card_spend": "1588430.13",
+  "paid_in_window": "41823.80",
+  "paid_to_wallets_without_september_spend": "6.77",
+  "rate_pct": "2.633",
+  "at_4_pct": "63537.21",
+  "short_of_4_pct": "21713.41",
+  "heavy_share_of_shortfall_pct": "87.3",
+  "capped_shortfall": "8882.57",
+  "capped_share_of_shortfall_pct": "40.9",
+  "largest_spending_wallet_shortfall": "3352.02"
+ },
+ "groups_window_to_october_2": [
+  {
+   "group": "under $2,500",
+   "rate_pct": "3.77"
+  },
+  {
+   "group": "$2,500 to $4,000",
+   "rate_pct": "3.27"
+  },
+  {
+   "group": "$4,000 or more",
+   "rate_pct": "2.39"
+  }
+ ],
+ "light_wallets": {
+  "wallets_100_to_2500": 365,
+  "median_pct": "3.87"
+ },
+ "schedule_totals": {
+  "standard": {
+   "usd": "28652.37",
+   "rate_pct": "1.80"
+  },
+  "pro": {
+   "usd": "52742.63",
+   "rate_pct": "3.32"
+  },
+  "vip": {
+   "usd": "69705.98",
+   "rate_pct": "4.39"
+  },
+  "flat_4_pct": {
+   "usd": "63537.21",
+   "rate_pct": "4.00"
+  }
+ },
+ "spend_by_standard_band": {
+  "first_2500": {
+   "usd": "675370.93",
+   "share_pct": "42.5"
+  },
+  "2500_to_4000": {
+   "usd": "163753.64",
+   "share_pct": "10.3"
+  },
+  "over_4000": {
+   "usd": "749305.56",
+   "share_pct": "47.2"
+  }
+ },
+ "checks_passed": 79
+}

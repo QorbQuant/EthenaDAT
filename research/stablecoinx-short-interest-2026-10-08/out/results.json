@@ -50,7 +50,7 @@
    "spglobal_adv": 7450621.5,
    "days_to_cover": 0.0372811852004561,
    "finra_adv_over_spglobal": 0.9746460748274489,
-   "finra_short_volume": 12882695.610233001,
+   "finra_short_volume": 12882695.610233,
    "finra_volume": 20910073.469069,
    "spglobal_volume": 74506215,
    "trade_window_first": "2026-06-30",
@@ -74,13 +74,13 @@
    "spglobal_adv": 629404.9166666666,
    "days_to_cover": 0.416050134128017,
    "finra_adv_over_spglobal": 0.9808788963225714,
-   "finra_short_volume": 1521002.8447300002,
+   "finra_short_volume": 1521002.84473,
    "finra_volume": 3674590.055801,
    "spglobal_volume": 7552859,
    "trade_window_first": "2026-07-15",
    "trade_window_last": "2026-07-30",
    "trade_window_sessions": 12,
-   "finra_short_volume_trade_window": 1645436.2483700002
+   "finra_short_volume_trade_window": 1645436.24837
   },
   {
    "settlement": "2026-08-14",
@@ -98,13 +98,13 @@
    "spglobal_adv": 439283,
    "days_to_cover": 0.4464297502976441,
    "finra_adv_over_spglobal": 0.9636134337090213,
-   "finra_short_volume": 625531.4255359999,
+   "finra_short_volume": 625531.425536,
    "finra_volume": 1617744.640315,
    "spglobal_volume": 4392830,
    "trade_window_first": "2026-07-31",
    "trade_window_last": "2026-08-13",
    "trade_window_sessions": 10,
-   "finra_short_volume_trade_window": 575379.9530339999
+   "finra_short_volume_trade_window": 575379.953034
   },
   {
    "settlement": "2026-08-31",
@@ -128,7 +128,7 @@
    "trade_window_first": "2026-08-14",
    "trade_window_last": "2026-08-28",
    "trade_window_sessions": 11,
-   "finra_short_volume_trade_window": 41919487.48774101
+   "finra_short_volume_trade_window": 41919487.487741
   },
   {
    "settlement": "2026-09-15",
@@ -146,7 +146,7 @@
    "spglobal_adv": 3631373.1,
    "days_to_cover": 0.43495337892985986,
    "finra_adv_over_spglobal": 0.9889264752222788,
-   "finra_short_volume": 9593577.302993001,
+   "finra_short_volume": 9593577.302993,
    "finra_volume": 16008483.425827,
    "spglobal_volume": 36313731,
    "trade_window_first": "2026-08-31",
@@ -171,7 +171,7 @@
    "days_to_cover": 0.40361326850409496,
    "finra_adv_over_spglobal": 0.9789369109546585,
    "finra_short_volume": 17872912.102958,
-   "finra_volume": 30561679.722718004,
+   "finra_volume": 30561679.722718,
    "spglobal_volume": 76610083,
    "trade_window_first": "2026-09-15",
    "trade_window_last": "2026-09-29",
@@ -209,29 +209,23 @@
    "short_interest": 7731
   }
  ],
- "last_check_utc": "2026-10-09T20:37:10.803275Z",
+ "last_check_utc": "2026-10-09T22:20:27.636Z",
  "last_settlement_alternatives": {
   "settlement": "2026-09-30",
   "short_interest": 2810986,
   "ethena_registered": 3621132,
   "of_freely_tradable_and_ethena": 0.12391503820732706,
   "of_class_a": 0.11698123650739979,
-  "of_freely_tradable_finra_adv_days": 0.4122975280505989
- },
- "after_last_settlement": {
-  "peak_close_date": "2026-09-25",
-  "peak_close": 17.25,
-  "last_close": 12.79,
-  "sessions_after": 6
+  "days_to_cover_on_finra_adv": 0.4122975280505989
  },
  "daily_flow": {
   "sessions": 73,
   "spglobal_volume": 380773054,
-  "finra_volume": 156995182.39175496,
+  "finra_volume": 156995182.39175498,
   "finra_short": 90743185.51363501,
   "finra_exempt": 6969314.432227,
-  "finra_share_of_spglobal": 0.4123064401289146,
-  "short_share": 0.5779998094922475,
+  "finra_share_of_spglobal": 0.41230644012891465,
+  "short_share": 0.5779998094922474,
   "median_daily_short_share": 0.5421500718844448,
   "min_daily_short_share": 0.13728751567109432,
   "max_daily_short_share": 0.7963491735419135,

@@ -1,0 +1,66 @@
+{
+  "cutoff": "Balance sheet at June 30, 2026 · Prices to the October 8, 2026 close · Sources read October 6 to 9, 2026 UTC",
+  "navigation": [
+    [
+      "Balance sheet",
+      "ena-made-up-almost-all-of-the-june-30-balance-sheet"
+    ],
+    [
+      "ENA at cost",
+      "the-10-q-carries-ena-close-to-its-lowest-trade-since-the-merger"
+    ],
+    [
+      "Against USDE",
+      "usde-closed-above-june-30-book-value-from-september-18-to-october-8"
+    ],
+    [
+      "Since June 30",
+      "what-changed-after-june-30"
+    ],
+    [
+      "Method",
+      "how-this-review-counts"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Book value, token NAV and USDE per Class A share, June 30 to October 8, 2026",
+  "chartFile": "chart_book_value.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_book_value.svg",
+    "chart_preview.png",
+    "balance_sheet.csv",
+    "per_share_by_session.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "stablecoinx_book_value_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/kraken_ena_daily_fetch.js",
+    "inputs/dashboard_series_dda5a00.csv",
+    "inputs/edgar_filings_2026-10-09.csv",
+    "inputs/filing_facts.csv",
+    "inputs/kraken_enausd_4h_20utc_00utc.csv",
+    "inputs/kraken_enausd_daily.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/usde_daily_spglobal_stockanalysis.csv",
+    "inputs/usdew_daily_spglobal_stockanalysis.csv",
+    "out/balance_sheet.csv",
+    "out/chart_book_value.svg",
+    "out/per_share_by_session.csv",
+    "out/results.json",
+    "out/run_log.txt"
+  ],
+  "keyFindings": [
+    "At June 30, 2026, reported book value was $214.3 million, or $8.92 per Class A share. ENA was carried at cost less impairment.",
+    "The October 8 stock close was 1.43 times that historical book value and 0.50 times token NAV at matched closing prices. These measures use different asset valuations."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "path": "/research/usdew-warrant-pricing-2026-10-09/",
+  "title": "USDEW Warrant Pricing and the $10 Call: October 9, 2026",
+  "headline": "How were StablecoinX's USDEW warrants priced through October 9, 2026?",
+  "name": "USDEW warrant pricing review",
+  "description": "USDEW closed 2.7% to 18.2% below an estimate of its $10 call value from September 21 to October 7, 2026, and within 0.5% of it on October 8 and 9.",
+  "article": true,
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "image": "/research-assets/usdew-warrant-pricing-2026-10-09/chart_preview.png",
+  "imageAlt": "Scatter chart of USDEW's close against USDE's close at 71 sessions from June 29 to October 9, 2026, with the estimated call value and the exercise value as lines. From September 21 to October 7 every USDEW close sat below that session's call value, and on October 8 and 9 within 0.5% of it. The call line rises from $2.55 at a $10 USDE price to $6.50 at $18, where the dashed exercise value line meets it. On October 9 USDEW closed at $3.64 against a call value of $3.66."
+}

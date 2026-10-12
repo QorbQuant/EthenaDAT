@@ -1,0 +1,16 @@
+source https://docs.ethena.fi/technical-design/key-addresses
+title Key Addresses | Ethena
+read_at 2026-10-12T10:50:52.595Z
+page_text_chars 8035
+excerpt With the exceptions of Solana, ZKSync, and Zircuit, token addresses on all chains are identical, as summarized below:
+
+Chain
+ENA
+USDe
+sUSDe
+
+Most L2s (Other Than As Indicated Below)
+
+0x58538e6A46E07434d7E7375Bc268D3cb839C0133
+
+0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34

@@ -1,0 +1,83 @@
+{
+  "cutoff": "Accrual days through October 8, 2026 · Payments read to the end of October 9 UTC · Sources read October 10, 2026 UTC",
+  "navigation": [
+    [
+      "Rates and caps",
+      "the-boost-topped-the-base-up-to-5-or-6"
+    ],
+    [
+      "Where the USDe sits",
+      "most-of-the-usde-was-in-the-6-group"
+    ],
+    [
+      "Card condition",
+      "wallets-that-never-used-the-card-were-paid-the-boost"
+    ],
+    [
+      "UTC days",
+      "payments-fitted-utc-days-not-central-european-days"
+    ],
+    [
+      "September",
+      "in-september-the-rates-changed-and-some-days-were-paid-late"
+    ],
+    [
+      "Method",
+      "how-this-review-counts"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Boost paid for October 8 against each wallet's balance, with the tier lines from Ethena Pay's terms",
+  "chartFile": "chart_boost_rates.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_boost_rates.svg",
+    "chart_preview.png",
+    "october_days.csv",
+    "month_groups.csv",
+    "chart_points.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "ethenapay_boost_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "boost_recount.cjs",
+    "test_boost_recount.cjs",
+    "inputs/cashflow_results.json",
+    "inputs/chain/activity.csv",
+    "inputs/chain/batches.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain/month_wallets.csv",
+    "inputs/chain/periods.csv",
+    "inputs/chain/utc_days_after_recount.csv",
+    "inputs/chain/wallet_day_2026-10-01.csv",
+    "inputs/chain/wallet_day_2026-10-08.csv",
+    "inputs/chain_manifest.csv",
+    "inputs/manifest.csv",
+    "inputs/recount/daily_chain_62503a1.csv",
+    "inputs/recount/meta.json",
+    "inputs/recount/wallet_activity.csv",
+    "inputs/sources.csv",
+    "inputs/terms_facts.csv",
+    "out/chart_boost_rates.svg",
+    "out/chart_lines.csv",
+    "out/chart_points.csv",
+    "out/month_groups.csv",
+    "out/october_days.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/september_days.csv",
+    "out/wallets_2026-10-08.csv"
+  ],
+  "keyFindings": [
+    "For October 1 to 8, 2026, observed payments matched a 0.5% or 1.5% annual Daily Boost over a 4.5% base, subject to balance caps.",
+    "Wallets with no observed card spend also received Boost payments. Wallets are not people, and the chain cannot establish users’ eligibility or other qualifying activity."
+  ]
+}

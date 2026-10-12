@@ -1,0 +1,87 @@
+{
+  "cutoff": "Cashback read to the end of October 9 UTC · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "Schedule",
+      "the-published-schedule"
+    ],
+    [
+      "What was paid",
+      "two-accounts-paid-921943-avax-to-845-wallets"
+    ],
+    [
+      "Isolated payments",
+      "isolated-card-payments-earned-about-4"
+    ],
+    [
+      "The $115 ceiling",
+      "standard-cashback-stopped-at-115"
+    ],
+    [
+      "September rate",
+      "why-september-came-to-262"
+    ],
+    [
+      "Method",
+      "how-this-review-counts"
+    ],
+    [
+      "Limits",
+      "what-the-chain-cannot-show"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Cashback paid for September against each wallet's card payments, with the three tier schedules",
+  "chartFile": "chart_cashback_schedules.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_cashback_schedules.svg",
+    "chart_preview.png",
+    "months.csv",
+    "single_payments.csv",
+    "september_wallets.csv",
+    "spend_groups.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "ethenapay_cashback_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "cashback_recount.cjs",
+    "test_cashback_recount.cjs",
+    "inputs/cashflow_results.json",
+    "inputs/chain/batches.csv",
+    "inputs/chain/cashback.csv",
+    "inputs/chain/meta.json",
+    "inputs/chain/other_recipients.csv",
+    "inputs/chain/prices_hourly.csv",
+    "inputs/chain/spends.csv",
+    "inputs/chain_manifest.csv",
+    "inputs/manifest.csv",
+    "inputs/recount/daily_chain_62503a1.csv",
+    "inputs/recount/meta.json",
+    "inputs/recount/wallet_activity.csv",
+    "inputs/sources.csv",
+    "inputs/terms_facts.csv",
+    "out/chart_cashback_schedules.svg",
+    "out/chart_lines.csv",
+    "out/chart_points.csv",
+    "out/months.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/september_wallets.csv",
+    "out/september_windows.csv",
+    "out/single_payments.csv",
+    "out/spend_groups.csv"
+  ],
+  "keyFindings": [
+    "A filtered sample of 181 isolated spend events matched to one cashback transfer had a median reward ratio of 3.98%. These are inferred matches, not verified merchant receipts.",
+    "Cashback paid in September was worth $41,604.25 at transfer-time Chainlink prices, or 2.62% of that month’s card spend. Payout timing and tier bands affect the comparison."
+  ]
+}

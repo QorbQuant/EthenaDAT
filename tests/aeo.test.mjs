@@ -210,9 +210,9 @@ test("referral payload contains only provider, canonical path and attribution, a
     ),
   );
 });
-test("all thirteen research articles have concise findings and a related dataset", () => {
+test("all research articles have concise findings and a related dataset", () => {
   const articles = Object.keys(PAGES).filter((p) => PAGES[p].article);
-  assert.equal(articles.length, 13);
+  assert.equal(articles.length, 20);
   for (const path of articles) {
     assert.ok(content[path].includes('class="key-findings"'), path);
     assert.ok(content[path].includes('class="dataset-related"'), path);

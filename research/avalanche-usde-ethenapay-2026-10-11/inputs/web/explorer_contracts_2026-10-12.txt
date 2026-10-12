@@ -1,0 +1,68 @@
+source https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api
+how browser, from the API's own page, module=contract action=getsourcecode, and module=proxy action=eth_call at the latest block
+read 2026-10-12T11:02:26.344Z to 2026-10-12T11:02:30.578Z
+
+getsourcecode
+address 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34 read_at 2026-10-12T11:02:26.510Z ContractName USDeOFT CompilerVersion v0.8.22+commit.4fc1097e Proxy 0 source_chars 140728
+address 0x5e023c31e1d3dcd08a1b3e8c96f6ef8aa8fcacd1 read_at 2026-10-12T11:02:26.555Z ContractName TransparentUpgradeableProxy CompilerVersion v0.8.9+commit.e5eed63a Proxy 1 Implementation 0x2ef3ab3f8b30f2fa2b092ef1f6a9f46730547d50 source_chars 45915
+address 0x2ef3ab3f8b30f2fa2b092ef1f6a9f46730547d50 read_at 2026-10-12T11:02:27.422Z ContractName DVFDepositContract CompilerVersion v0.8.4+commit.c7e474f2 Proxy 0 source_chars 66150
+address 0x833e0ff43a8691f623cb8730ddb3e3180c7de08b read_at 2026-10-12T11:02:27.487Z ContractName UniswapV3Pool CompilerVersion v0.7.6+commit.7338295f Proxy 0 source_chars 150145
+address 0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e read_at 2026-10-12T11:02:30.427Z ContractName FiatTokenProxy CompilerVersion v0.6.12+commit.27d51765 Proxy 1 Implementation 0xa3fa3d254bf6af295b5b22cc6730b04144314890 source_chars 14294
+
+eth_call at the latest block
+to 0x833e0ff43a8691f623cb8730ddb3e3180c7de08b data 0x0dfe1681 token0() read_at 2026-10-12T11:02:27.874Z result 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34
+to 0x833e0ff43a8691f623cb8730ddb3e3180c7de08b data 0xd21220a7 token1() read_at 2026-10-12T11:02:28.293Z result 0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e
+to 0x833e0ff43a8691f623cb8730ddb3e3180c7de08b data 0xddca3f43 fee() read_at 2026-10-12T11:02:28.725Z result 500
+to 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34 data 0x95d89b41 symbol() read_at 2026-10-12T11:02:28.751Z result USDe
+to 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34 data 0x313ce567 decimals() read_at 2026-10-12T11:02:29.135Z result 18
+to 0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e data 0x95d89b41 symbol() read_at 2026-10-12T11:02:29.581Z result USDC
+to 0xb97ef9ef8734c71904d8002f8b6bc66dd9c48a6e data 0x313ce567 decimals() read_at 2026-10-12T11:02:29.998Z result 6
+
+USDeOFT verified source, read 2026-10-12T11:02:51.045Z
+files 42, among them contracts/usde/USDeOFT.sol, contracts/libs/OFTOwnable2Step.sol, contracts/libs/RateLimiter.sol, @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol, @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol and @openzeppelin/contracts/token/ERC20/ERC20.sol
+search every file for "_mint(" and "_burn("
+  @openzeppelin/contracts/token/ERC20/ERC20.sol defines _mint and _burn
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol calls _mint in _credit, which credits tokens received from another chain, with the comment "Default OFT mints on dst."
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol calls _burn in _debit, which debits tokens sent to another chain
+  no other file calls _mint or _burn
+contracts/usde/USDeOFT.sol overrides _debit only to check and update a rate limit for the destination before calling the parent _debit
+what this means for the count. On Avalanche USDe is created only when it arrives from another chain through LayerZero and destroyed only when it is sent to another chain
+
+wallet factories, getcontractcreation, eth_getTransactionByHash and eth_getBlockByNumber, read 2026-10-12T12:06:55.083Z to 2026-10-12T12:07:01.370Z
+factory 0x313be708df16979d9e5fe9db5ac4969b8add7207 created block 85497626 time 2026-05-15T12:46:34Z read_at 2026-10-12T12:06:58.863Z
+factory 0xac66ca9a79fb0d3c64cba44cd29610cd58602d6f created block 87652557 time 2026-06-10T11:29:34Z read_at 2026-10-12T12:07:01.370Z
+
+USDeOFT verified source, second search, read 2026-10-12T12:07:02.784Z
+files 42
+occurrences of each pattern by file, every file searched
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol _mint( 1, _burn( 1, function _credit 1, function _debit 1
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol function _credit 1, function _debit 2, the declarations and _debitView
+  @layerzerolabs/lz-evm-protocol-v2/contracts/interfaces/IMessagingChannel.sol function burn 1, an endpoint function on messages, not on tokens
+  @openzeppelin/contracts/token/ERC20/ERC20.sol _mint( 1, _burn( 1, _update( 4, _totalSupply 4, _balances[ 4
+  contracts/usde/USDeOFT.sol function _debit 1
+patterns _mint( _burn( _update( _totalSupply _balances[ function _credit function _debit function mint function burn
+what this adds. No file other than ERC20.sol calls or overrides _update or touches _totalSupply or _balances, and ERC20.sol's four calls to _update are in transfers, its definition, _mint and _burn, so the supply changes only through _mint and _burn
+
+USDeOFT verified source, third search, for every use of _credit and _debit, read 2026-10-12T12:52:14.512Z
+files 42, every file searched for "_credit(" and "_debit(", each hit sorted into a definition or a call, with the function a call sits in
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFT.sol defines _credit and _debit
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol declares _credit and _debit
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol calls _credit in _lzReceive, the function that handles a message received through LayerZero
+  @layerzerolabs/lz-evm-oapp-v2/contracts/oft/OFTCore.sol calls _debit in send, the function that sends tokens to another chain
+  contracts/usde/USDeOFT.sol defines _debit and calls the parent _debit in it
+  hits 8, no other call of _credit or _debit in any file
+what this adds. _mint runs only through _credit, which runs only in _lzReceive, and _burn runs only through _debit, which runs only in send
+
+contracts the wallet factories created other than wallets, and the addresses the dashboard's query removes by hand, getcontractcreation, eth_getTransactionByHash and eth_getBlockByNumber, read 2026-10-12T12:58:17.512Z to 2026-10-12T12:58:47.902Z
+created 0x85d133fde5660220b0401600e113ae25ad9aebef factory 0x313be708df16979d9e5fe9db5ac4969b8add7207 in the transaction that created that factory read_at 2026-10-12T12:58:17.512Z
+created 0xc831ea25deb7654679a438c78c4c5d1c313c8448 factory 0xac66ca9a79fb0d3c64cba44cd29610cd58602d6f in the transaction that created that factory read_at 2026-10-12T12:58:17.512Z
+created 0xddaffdb1c5f0774ee734cf3491aafd4f0a678127 factory 0xac66ca9a79fb0d3c64cba44cd29610cd58602d6f in the transaction that created that factory read_at 2026-10-12T12:58:17.512Z
+created 0xb4446da2e3970776dcfd44e78b034c8243f91c75 factory none, by the account that created the second factory, block 87652526 time 2026-06-10T11:29:03Z read_at 2026-10-12T12:58:46.864Z
+the creating accounts' addresses and the transaction hashes are not kept
+
+USDe Transfer records from and to each of the four, getLogs on the token for blocks 66748921 to 97318132, read 2026-10-12T13:00:01.759Z to 2026-10-12T13:00:12.253Z
+transfers 0x85d133fde5660220b0401600e113ae25ad9aebef from 0 to 0
+transfers 0xc831ea25deb7654679a438c78c4c5d1c313c8448 from 0 to 0
+transfers 0xddaffdb1c5f0774ee734cf3491aafd4f0a678127 from 0 to 0
+transfers 0xb4446da2e3970776dcfd44e78b034c8243f91c75 from 0 to 0
+control, read 2026-10-12T13:00:50.364Z, the same query returned 169 records to the rhino.fi bridge contract and a full page of 1,000 from it, each with the queried address in place

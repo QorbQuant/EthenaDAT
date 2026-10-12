@@ -1,0 +1,9 @@
+direction,counterparty,transfers,usde
+into the settlement addresses,"EthenaPay wallets, card payments",37731,2945283.40
+into the settlement addresses,other accounts,7,75010.00
+out of the settlement addresses,"EthenaPay wallets, returns",2516,139986.48
+out of the settlement addresses,settlement recipients,83,2555259.55
+out of the settlement addresses,left Avalanche,0,0.00
+out of the settlement addresses,other accounts,0,0.00
+out of the settlement addresses,rhino.fi bridge contract,0,0.00
+out of the settlement addresses,Uniswap v3 pool,0,0.00

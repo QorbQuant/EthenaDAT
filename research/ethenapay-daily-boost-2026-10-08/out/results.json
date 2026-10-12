@@ -1,0 +1,947 @@
+{
+ "models_simple_pct": {
+  "base_4_5": "4.401954",
+  "base_4_0": "3.922282",
+  "standard_0_5": "0.498758",
+  "standard_1_0": "0.995047",
+  "six_1_5": "1.488892",
+  "six_2_0": "1.980316"
+ },
+ "total_simple_pct": {
+  "standard": "4.900712",
+  "six": "5.890846"
+ },
+ "total_compounded_pct": {
+  "standard": "5.0224",
+  "six": "6.0673"
+ },
+ "standard_cap_daily_usde": "0.068322953",
+ "simple_if_not_compounded_pct": {
+  "base_4_5": "4.5",
+  "standard_0_5": "0.5"
+ },
+ "october_1_to_8": {
+  "base": {
+   "tested_wallets": 4351,
+   "fit_utc": 4214,
+   "fit_cet": 3668,
+   "fit_cest": 3396,
+   "fit_utc_within_5pct": 4336,
+   "unpaid": 8,
+   "other": 129,
+   "other_without_flows": 0,
+   "base_4_5": 4214,
+   "base_4_0": 0,
+   "standard_0_5": 0,
+   "six_1_5": 0,
+   "six_1_5_cap_100k": 0,
+   "standard_1_0": 0,
+   "six_2_0": 0,
+   "six_2_0_cap_100k": 0,
+   "funded_wallets": 8526,
+   "paid_wallets": 8290,
+   "paid_usde": "3894.08772232953517954",
+   "twa_usde_days": "32299438.496007934104121684"
+  },
+  "topup": {
+   "tested_wallets": 4351,
+   "fit_utc": 4133,
+   "fit_cet": 3650,
+   "fit_cest": 3395,
+   "fit_utc_within_5pct": 4249,
+   "unpaid": 8,
+   "other": 210,
+   "other_without_flows": 16,
+   "base_4_5": 0,
+   "base_4_0": 0,
+   "standard_0_5": 3439,
+   "six_1_5": 685,
+   "six_1_5_cap_100k": 8,
+   "standard_1_0": 0,
+   "six_2_0": 1,
+   "six_2_0_cap_100k": 0,
+   "funded_wallets": 8526,
+   "paid_wallets": 5187,
+   "paid_usde": "876.915998485254112242",
+   "twa_usde_days": "32299438.496007934104121684"
+  }
+ },
+ "october_topup_models": {
+  "current_rates": 4132,
+  "september_1_to_15_rates": 1
+ },
+ "october_avg_simple_pct": {
+  "base": "4.4005",
+  "topup": "0.9910",
+  "both": "5.3915"
+ },
+ "october_avg_compounded_pct": "5.5390",
+ "october_paid_usde": {
+  "base": "3894.08772232953517954",
+  "topup": "876.915998485254112242",
+  "both": "4771.003721",
+  "twa_usde_days": "32299438.496008",
+  "average_balance_usde": "4037429.81"
+ },
+ "september": {
+  "base_paid": "11569.916555",
+  "topup_paid": "1494.213396",
+  "twa_usde_days": "101352970.906059",
+  "base_simple_pct": "4.1666",
+  "topup_simple_pct": "0.5381",
+  "both_simple_pct": "4.7048",
+  "cashflow_review_rate_pct": "4.6151"
+ },
+ "september_base_vs_model": {
+  "paid": "11569.916555",
+  "model": "11538.006034",
+  "ratio": "1.0028",
+  "lowest_day": "2026-09-12",
+  "lowest_ratio": "0.021",
+  "highest_day": "2026-09-29",
+  "highest_ratio": "2.010"
+ },
+ "rate_changes": {
+  "topup_last_1_0": "2026-09-15",
+  "topup_first_0_5": "2026-09-16",
+  "base_last_4_0": "2026-09-16",
+  "base_first_4_5": "2026-09-17"
+ },
+ "topup_rates_matched": {
+  "before": {
+   "days": [
+    "2026-09-01",
+    "2026-09-02",
+    "2026-09-03",
+    "2026-09-09",
+    "2026-09-10",
+    "2026-09-11",
+    "2026-09-12",
+    "2026-09-13",
+    "2026-09-14",
+    "2026-09-15"
+   ],
+   "standard_1_0": 1789,
+   "six_2_0": 236,
+   "six_2_0_cap_100k": 0,
+   "standard_0_5": 0,
+   "six_1_5": 0
+  },
+  "after": {
+   "days": 23,
+   "standard_0_5": 8396,
+   "six_1_5": 1534,
+   "old_rates": 2
+  }
+ },
+ "periods_off_model": [
+  [
+   "base",
+   "2026-09-09",
+   "0.00000"
+  ],
+  [
+   "base",
+   "2026-09-10",
+   "7.84424"
+  ],
+  [
+   "base",
+   "2026-09-12",
+   "0.00000"
+  ],
+  [
+   "base",
+   "2026-09-25",
+   "4.41175"
+  ],
+  [
+   "base",
+   "2026-09-28",
+   "4.45441"
+  ],
+  [
+   "base",
+   "2026-09-29",
+   "8.80334"
+  ],
+  [
+   "topup",
+   "2026-09-04",
+   "0.00000"
+  ],
+  [
+   "topup",
+   "2026-09-07",
+   "2.98450"
+  ],
+  [
+   "topup",
+   "2026-09-08",
+   "1.98993"
+  ]
+ ],
+ "base_sep_17_28": {
+  "periods": "12",
+  "tested": "4825",
+  "fit": "1916",
+  "fit_4_5": "1903",
+  "other": "2458",
+  "unpaid": "451",
+  "median_low": "4.40126",
+  "median_high": "4.45441"
+ },
+ "base_sep_13_16": {
+  "last_day": "2026-09-16",
+  "paid_utc": "2026-09-17T04:12:24Z",
+  "batches": "1",
+  "tested": "305",
+  "fit_4_0": "76",
+  "fit_4_5": "7",
+  "other": "214",
+  "unpaid": "8",
+  "median": "3.92215",
+  "paid_usde": "1819.649232"
+ },
+ "base_sep_29": {
+  "median": "8.80334",
+  "other": "457",
+  "tested": "464"
+ },
+ "irregular": {
+  "topup_sep_4_6": {
+   "days": "2026-09-04 to 2026-09-06",
+   "tested": "194",
+   "unpaid": "166",
+   "paid_wallets": "28",
+   "batches": "1",
+   "first_payment": "2026-09-07T03:00:02Z"
+  },
+  "base_sep_9": {
+   "days": "2026-09-09 to 2026-09-09",
+   "tested": "234",
+   "unpaid": "164",
+   "paid_wallets": "150",
+   "batches": "1",
+   "first_payment": "2026-09-10T04:12:56Z"
+  },
+  "base_sep_12": {
+   "days": "2026-09-12 to 2026-09-12",
+   "tested": "254",
+   "unpaid": "215",
+   "paid_wallets": "76",
+   "batches": "1",
+   "first_payment": "2026-09-13T04:11:48Z"
+  },
+  "base_sep_13_16": {
+   "days": "2026-09-13 to 2026-09-16",
+   "tested": "305",
+   "unpaid": "8",
+   "paid_wallets": "560",
+   "batches": "1",
+   "first_payment": "2026-09-17T04:12:24Z"
+  }
+ },
+ "activity_october": {
+  "2026-10-01": {
+   "A": {
+    "wallets": 264,
+    "paid": 264,
+    "model": 241,
+    "twa": "1940002.848117631860813994",
+    "topup": "55.493302824623982916"
+   },
+   "B": {
+    "wallets": 179,
+    "paid": 178,
+    "model": 173,
+    "twa": "1137404.899644252827851699",
+    "topup": "24.358192821872567345"
+   },
+   "C": {
+    "wallets": 3,
+    "paid": 3,
+    "model": 3,
+    "twa": "101458.325991868455921446",
+    "topup": "4.117113570115295618"
+   },
+   "D": {
+    "wallets": 51,
+    "paid": 51,
+    "model": 45,
+    "twa": "597914.233168638740198635",
+    "topup": "17.764177300373425318"
+   }
+  },
+  "2026-10-02": {
+   "A": {
+    "wallets": 351,
+    "paid": 351,
+    "model": 322,
+    "twa": "2653597.974164371187069504",
+    "topup": "79.176196681023269601"
+   },
+   "B": {
+    "wallets": 118,
+    "paid": 117,
+    "model": 115,
+    "twa": "513085.946459008934771333",
+    "topup": "3.778054236135919684"
+   },
+   "C": {
+    "wallets": 3,
+    "paid": 3,
+    "model": 3,
+    "twa": "101474.677603608780079715",
+    "topup": "4.11777772979189391"
+   },
+   "D": {
+    "wallets": 48,
+    "paid": 48,
+    "model": 46,
+    "twa": "571464.2348842965387654",
+    "topup": "16.935795577176863433"
+   }
+  },
+  "2026-10-03": {
+   "A": {
+    "wallets": 380,
+    "paid": 380,
+    "model": 362,
+    "twa": "2735756.039960927952500765",
+    "topup": "80.432404649528228305"
+   },
+   "B": {
+    "wallets": 97,
+    "paid": 96,
+    "model": 96,
+    "twa": "458807.825742360876738055",
+    "topup": "3.203686934813701012"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100803.628597303076386809",
+    "topup": "4.109048881317102578"
+   },
+   "D": {
+    "wallets": 49,
+    "paid": 49,
+    "model": 46,
+    "twa": "580825.663153161047864492",
+    "topup": "17.030093432392803026"
+   }
+  },
+  "2026-10-04": {
+   "A": {
+    "wallets": 401,
+    "paid": 401,
+    "model": 379,
+    "twa": "2851348.943398528999633459",
+    "topup": "83.014546370053639703"
+   },
+   "B": {
+    "wallets": 82,
+    "paid": 81,
+    "model": 81,
+    "twa": "413418.414981010682229894",
+    "topup": "2.831609542733538116"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100819.891371393319089721",
+    "topup": "4.109710250853705735"
+   },
+   "D": {
+    "wallets": 49,
+    "paid": 49,
+    "model": 47,
+    "twa": "574916.321673549257440369",
+    "topup": "16.954400206020127163"
+   }
+  },
+  "2026-10-05": {
+   "A": {
+    "wallets": 420,
+    "paid": 420,
+    "model": 397,
+    "twa": "2850979.913746567982863561",
+    "topup": "82.662117551401486646"
+   },
+   "B": {
+    "wallets": 71,
+    "paid": 70,
+    "model": 68,
+    "twa": "407741.174992007347637626",
+    "topup": "2.621423668332285424"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100836.158039579229112478",
+    "topup": "4.11037521806679551"
+   },
+   "D": {
+    "wallets": 55,
+    "paid": 55,
+    "model": 54,
+    "twa": "587558.369239432994854416",
+    "topup": "17.145852843585043998"
+   }
+  },
+  "2026-10-06": {
+   "A": {
+    "wallets": 440,
+    "paid": 440,
+    "model": 416,
+    "twa": "3009923.967813112067572716",
+    "topup": "87.82854719910389863"
+   },
+   "B": {
+    "wallets": 64,
+    "paid": 63,
+    "model": 63,
+    "twa": "395543.010026768628869386",
+    "topup": "2.476952046189118979"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100852.41889536714152307",
+    "topup": "4.113921874429393389"
+   },
+   "D": {
+    "wallets": 59,
+    "paid": 59,
+    "model": 59,
+    "twa": "607326.320170072706320118",
+    "topup": "17.328801956792774187"
+   }
+  },
+  "2026-10-07": {
+   "A": {
+    "wallets": 451,
+    "paid": 451,
+    "model": 436,
+    "twa": "3180354.036230386366601826",
+    "topup": "93.777455524936753587"
+   },
+   "B": {
+    "wallets": 59,
+    "paid": 58,
+    "model": 56,
+    "twa": "377438.830056994937217092",
+    "topup": "2.297717697919255981"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100868.682266765339687416",
+    "topup": "4.114585801098493975"
+   },
+   "D": {
+    "wallets": 62,
+    "paid": 62,
+    "model": 59,
+    "twa": "707965.279130748662057285",
+    "topup": "20.210754651279890332"
+   }
+  },
+  "2026-10-08": {
+   "A": {
+    "wallets": 467,
+    "paid": 467,
+    "model": 442,
+    "twa": "3233954.311354371273654335",
+    "topup": "93.237902924107430185"
+   },
+   "B": {
+    "wallets": 53,
+    "paid": 52,
+    "model": 52,
+    "twa": "305546.98842251616157079",
+    "topup": "2.048840475696293117"
+   },
+   "C": {
+    "wallets": 2,
+    "paid": 2,
+    "model": 2,
+    "twa": "100876.033360943422290231",
+    "topup": "4.114886271212517554"
+   },
+   "D": {
+    "wallets": 63,
+    "paid": 63,
+    "model": 60,
+    "twa": "714883.833830701812953613",
+    "topup": "20.276419320348990071"
+   }
+  }
+ },
+ "oct1": {
+  "tested": 497,
+  "paid": 496,
+  "with_october_spend": 264,
+  "without_october_spend": 233,
+  "without_october_spend_paid": 232,
+  "never": 51,
+  "never_paid": 51
+ },
+ "oct8": {
+  "tested": 585,
+  "paid": 584,
+  "with_october_spend": 467,
+  "without_october_spend": 118,
+  "without_october_spend_paid": 117,
+  "never": 63,
+  "never_paid": 63,
+  "never_twa": "714883.833830701812953613",
+  "never_model": 60
+ },
+ "october_wallet_days": {
+  "without_october_spend": 1177,
+  "without_october_spend_paid": 1169,
+  "never": 436,
+  "never_paid": 436,
+  "topup_never_usde": "143.646295",
+  "topup_without_october_spend_usde": "220.170192",
+  "topup_tested_usde": "875.792666",
+  "topup_all_usde": "876.915998485254112242"
+ },
+ "september_never": {
+  "days": 28,
+  "wallet_days": 1103,
+  "paid": 1047
+ },
+ "september_never_from_9": {
+  "days": 22,
+  "wallet_days": 887,
+  "paid": 886
+ },
+ "months": {
+  "2026-09": {
+   "wallets_tested": 572,
+   "topup_usde": "1494.213396",
+   "topup_to_tested_usde": "1492.532737",
+   "spent in the month": {
+    "wallets": 519,
+    "paid": 518,
+    "tested_wallet_days": 8575,
+    "topup_usde": "1363.147497",
+    "share_of_month_topup_pct": "91.23",
+    "average_balance_usde": "3172691.50",
+    "exchanged_usde_with_another_wallet": 143,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 134,
+    "no_exchange_wallets": 376,
+    "no_exchange_paid": 375,
+    "no_exchange_topup_usde": "402.253717"
+   },
+   "spent only after the month": {
+    "wallets": 11,
+    "paid": 11,
+    "tested_wallet_days": 100,
+    "topup_usde": "1.476421",
+    "share_of_month_topup_pct": "0.10",
+    "average_balance_usde": "3667.24",
+    "exchanged_usde_with_another_wallet": 4,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 4,
+    "no_exchange_wallets": 7,
+    "no_exchange_paid": 7,
+    "no_exchange_topup_usde": "0.753742"
+   },
+   "spent only before the month": {
+    "wallets": 2,
+    "paid": 2,
+    "tested_wallet_days": 54,
+    "topup_usde": "35.449893",
+    "share_of_month_topup_pct": "2.37",
+    "average_balance_usde": "29199.89",
+    "exchanged_usde_with_another_wallet": 2,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 2,
+    "no_exchange_wallets": 0,
+    "no_exchange_paid": 0,
+    "no_exchange_topup_usde": "0.000000"
+   },
+   "never used the card": {
+    "wallets": 40,
+    "paid": 40,
+    "tested_wallet_days": 605,
+    "topup_usde": "92.458926",
+    "share_of_month_topup_pct": "6.19",
+    "average_balance_usde": "169601.05",
+    "exchanged_usde_with_another_wallet": 7,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 6,
+    "no_exchange_wallets": 33,
+    "no_exchange_paid": 33,
+    "no_exchange_topup_usde": "86.109432"
+   },
+   "no_spend_from_month_start_to_october_9": {
+    "wallets": 42,
+    "paid": 42,
+    "topup_usde": "127.908819",
+    "share_pct": "8.56"
+   }
+  },
+  "2026-10": {
+   "wallets_tested": 659,
+   "topup_usde": "876.915998",
+   "topup_to_tested_usde": "876.133112",
+   "spent in the month": {
+    "wallets": 541,
+    "paid": 541,
+    "tested_wallet_days": 3563,
+    "topup_usde": "685.753077",
+    "share_of_month_topup_pct": "78.20",
+    "average_balance_usde": "3123461.59",
+    "exchanged_usde_with_another_wallet": 131,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 127,
+    "no_exchange_wallets": 410,
+    "no_exchange_paid": 410,
+    "no_exchange_topup_usde": "296.231832"
+   },
+   "spent only before the month": {
+    "wallets": 57,
+    "paid": 56,
+    "tested_wallet_days": 423,
+    "topup_usde": "48.393809",
+    "share_of_month_topup_pct": "5.52",
+    "average_balance_usde": "300897.92",
+    "exchanged_usde_with_another_wallet": 14,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 12,
+    "no_exchange_wallets": 43,
+    "no_exchange_paid": 43,
+    "no_exchange_topup_usde": "12.952801"
+   },
+   "never used the card": {
+    "wallets": 61,
+    "paid": 61,
+    "tested_wallet_days": 365,
+    "topup_usde": "141.986226",
+    "share_of_month_topup_pct": "16.19",
+    "average_balance_usde": "605625.70",
+    "exchanged_usde_with_another_wallet": 11,
+    "exchanged_with_a_wallet_that_spent_in_the_month": 10,
+    "no_exchange_wallets": 50,
+    "no_exchange_paid": 50,
+    "no_exchange_topup_usde": "139.374870"
+   },
+   "no_spend_from_month_start_to_october_9": {
+    "wallets": 118,
+    "paid": 117,
+    "topup_usde": "190.380035",
+    "share_pct": "21.71"
+   }
+  }
+ },
+ "day_detail": {
+  "2026-10-01": {
+   "wallets": 968,
+   "funded": 968,
+   "twa_usde": "3786232.872824",
+   "base_paid": "456.391509",
+   "topup_paid": "101.861501",
+   "base_simple_pct": "4.3997",
+   "topup_simple_pct": "0.9820",
+   "both_simple_pct": "5.3817",
+   "both_compounded_pct": "5.5287",
+   "groups": {
+    "other": {
+     "wallets": 17,
+     "twa": "73264.704508",
+     "topup": "3.095245",
+     "base": "8.832880",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    },
+    "six_1_5": {
+     "wallets": 72,
+     "twa": "2049003.759522",
+     "topup": "83.577965",
+     "base": "247.100785",
+     "boosted": "2049003.759522",
+     "above_cap": "0.000000"
+    },
+    "six_1_5_cap_100k": {
+     "wallets": 1,
+     "twa": "104803.437192",
+     "topup": "4.079155",
+     "base": "12.639420",
+     "boosted": "100000.000000",
+     "above_cap": "4803.437192"
+    },
+    "six_1_5_within_5pct": {
+     "wallets": 3,
+     "twa": "42657.381580",
+     "topup": "1.718605",
+     "base": "5.081108",
+     "boosted": "42657.381580",
+     "above_cap": "0.000000"
+    },
+    "small": {
+     "wallets": 471,
+     "twa": "9452.566150",
+     "topup": "0.128714",
+     "base": "1.119724",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    },
+    "standard_0_5": {
+     "wallets": 389,
+     "twa": "1499755.300160",
+     "topup": "9.175293",
+     "base": "180.864151",
+     "boosted": "671465.583951",
+     "above_cap": "828289.716209"
+    },
+    "standard_0_5_within_5pct": {
+     "wallets": 14,
+     "twa": "6295.720502",
+     "topup": "0.086524",
+     "base": "0.753441",
+     "boosted": "6295.720502",
+     "above_cap": "0.000000"
+    },
+    "unpaid": {
+     "wallets": 1,
+     "twa": "1000.003210",
+     "topup": "0.000000",
+     "base": "0.000000",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    }
+   },
+   "boosted_usde": "2869422.445555",
+   "above_cap_usde": "833093.153401",
+   "boosted_share_pct": "75.7857",
+   "above_cap_share_pct": "22.0032",
+   "tested": 497,
+   "tested_twa": "3776780.306674",
+   "six_wallets": 76,
+   "six_twa": "2196464.578294",
+   "six_share_pct": "58.0119",
+   "six_over_100k_uncapped": 6,
+   "standard_wallets": 403,
+   "standard_over_5k": 62,
+   "never_tested": 51,
+   "never_paid": 51,
+   "never_twa": "597914.233144",
+   "never_topup": "17.764177",
+   "never_six": 4,
+   "small_paid": 98,
+   "min_topup_usde": "0.001000603",
+   "standard_capped_topup_range": [
+    "0.068323",
+    "0.068323"
+   ]
+  },
+  "2026-10-08": {
+   "wallets": 1153,
+   "funded": 1153,
+   "twa_usde": "4366721.125096",
+   "base_paid": "526.529117",
+   "topup_paid": "119.815405",
+   "base_simple_pct": "4.4011",
+   "topup_simple_pct": "1.0015",
+   "both_simple_pct": "5.4026",
+   "both_compounded_pct": "5.5508",
+   "groups": {
+    "other": {
+     "wallets": 13,
+     "twa": "47941.941826",
+     "topup": "2.389816",
+     "base": "5.778989",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    },
+    "six_1_5": {
+     "wallets": 94,
+     "twa": "2486055.421356",
+     "topup": "101.414649",
+     "base": "299.835271",
+     "boosted": "2486055.421356",
+     "above_cap": "0.000000"
+    },
+    "six_1_5_cap_100k": {
+     "wallets": 1,
+     "twa": "104135.264706",
+     "topup": "4.079155",
+     "base": "12.558861",
+     "boosted": "100000.000000",
+     "above_cap": "4135.264706"
+    },
+    "six_1_5_within_5pct": {
+     "wallets": 3,
+     "twa": "36721.762213",
+     "topup": "1.517368",
+     "base": "4.446348",
+     "boosted": "36721.762213",
+     "above_cap": "0.000000"
+    },
+    "small": {
+     "wallets": 568,
+     "twa": "11459.958414",
+     "topup": "0.137356",
+     "base": "1.365255",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    },
+    "standard_0_5": {
+     "wallets": 461,
+     "twa": "1672992.796423",
+     "topup": "10.189165",
+     "base": "201.778047",
+     "boosted": "745618.901028",
+     "above_cap": "927373.895395"
+    },
+    "standard_0_5_within_5pct": {
+     "wallets": 12,
+     "twa": "6413.976948",
+     "topup": "0.087896",
+     "base": "0.766347",
+     "boosted": "6413.976948",
+     "above_cap": "0.000000"
+    },
+    "unpaid": {
+     "wallets": 1,
+     "twa": "1000.003210",
+     "topup": "0.000000",
+     "base": "0.000000",
+     "boosted": "0.000000",
+     "above_cap": "0.000000"
+    }
+   },
+   "boosted_usde": "3374810.061545",
+   "above_cap_usde": "931509.160101",
+   "boosted_share_pct": "77.2848",
+   "above_cap_share_pct": "21.3320",
+   "tested": 585,
+   "tested_twa": "4355261.166682",
+   "six_wallets": 98,
+   "six_twa": "2626912.448275",
+   "six_share_pct": "60.1576",
+   "six_over_100k_uncapped": 7,
+   "standard_wallets": 473,
+   "standard_over_5k": 61,
+   "never_tested": 63,
+   "never_paid": 63,
+   "never_twa": "714883.833799",
+   "never_topup": "20.276419",
+   "never_six": 4,
+   "small_paid": 105,
+   "min_topup_usde": "0.001000525",
+   "standard_capped_topup_range": [
+    "0.068323",
+    "0.068323"
+   ]
+  }
+ },
+ "october_topup_unmatched": {
+  "tested": 4351,
+  "matched_current": 4132,
+  "matched_old_rate": 1,
+  "unpaid": 8,
+  "other": 210,
+  "other_without_flows": 16,
+  "other_with_flows": 194
+ },
+ "never_through_oct9_on_oct8": {
+  "tested": 59,
+  "paid": 59,
+  "twa_usde": "712368.965460",
+  "share_of_all_usde_pct": "16.3136",
+  "six_group": 4,
+  "topup_usde": "20.240959",
+  "largest_twa_usde": "381079.67"
+ },
+ "oct8_unpaid_tested": [
+  {
+   "wallet": "3980",
+   "twa": "1000.00",
+   "base": "0.000000"
+  }
+ ],
+ "day_boundaries": {
+  "2026-10-01 topup": {
+   "wallet_days": 92,
+   "only_utc": 56,
+   "only_central_europe": 0,
+   "both": 9,
+   "neither": 27
+  },
+  "2026-10-01 base": {
+   "wallet_days": 92,
+   "only_utc": 69,
+   "only_central_europe": 0,
+   "both": 5,
+   "neither": 18
+  },
+  "2026-10-08 topup": {
+   "wallet_days": 89,
+   "only_utc": 58,
+   "only_central_europe": 0,
+   "both": 10,
+   "neither": 21
+  },
+  "2026-10-08 base": {
+   "wallet_days": 89,
+   "only_utc": 70,
+   "only_central_europe": 0,
+   "both": 4,
+   "neither": 15
+  }
+ },
+ "never_paid_september_on_oct8": {
+  "wallets": 32,
+  "at_a_tier_rate_within_1pct": 32
+ },
+ "small_balances_october": {
+  "wallets_paid": 258,
+  "paid_on_one_day": 117,
+  "median_paid_over_accrual": "1.000",
+  "lower_quartile": "0.958",
+  "upper_quartile": "1.125",
+  "balance_for_0_001_a_day": "73.18",
+  "73_to_100_usde_paid": {
+   "2026-10-01": "31 of 31",
+   "2026-10-08": "43 of 43"
+  },
+  "example": {
+   "wallet": "2356",
+   "twa_usde": "5.296988",
+   "topup_usde": "0.001012426",
+   "days_of_accrual": "13.99"
+  }
+ },
+ "standard_over_100k_oct8": 3,
+ "never_oct8_first_funded_by_wallet": 8,
+ "never_oct8_created_after_recount": 15,
+ "payment_times": {
+  "base": [
+   "2026-10-02T04:14:26Z",
+   "2026-10-03T04:14:20Z",
+   "2026-10-04T04:14:35Z",
+   "2026-10-05T04:14:52Z",
+   "2026-10-06T04:16:04Z",
+   "2026-10-07T04:17:32Z",
+   "2026-10-08T21:54:23Z",
+   "2026-10-09T04:15:50Z"
+  ],
+  "topup": [
+   "2026-10-02T02:30:07Z",
+   "2026-10-03T02:30:06Z",
+   "2026-10-04T02:30:08Z",
+   "2026-10-05T02:30:07Z",
+   "2026-10-06T02:30:06Z",
+   "2026-10-07T02:30:08Z",
+   "2026-10-08T02:30:08Z",
+   "2026-10-09T02:30:07Z"
+  ]
+ },
+ "checks_passed": 138
+}

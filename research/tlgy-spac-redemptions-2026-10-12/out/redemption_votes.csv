@@ -1,0 +1,7 @@
+vote,vote_date,date_used,public_shares_before,shares_redeemed,share_of_those_before,cash_paid_usd,cash_basis,cash_a_share,filing_price_a_share,public_shares_after
+First extension,2023-02-23,2023-02-23,23000000,15681818,0.681818,163150810,"first 10-Q of 2023, cash withdrawn from the trust",10.4038,8-K 10.40,7318182
+Second extension,2023-10-17,2023-10-17,7318182,1395317,0.190664,15287730,"2023 10-K total for both 2023 votes, less the first",10.9565,8-K 10.96,5922865
+Third extension,2024-04-16,2024-04-16,5922865,2205658,0.372397,25092549,"2024 10-K, cash withdrawn to pay redeeming holders",11.3764,8-K 11.33,3717207
+Fourth extension,2025-04-15,2025-04-15,3717207,3227320,0.868211,39113394,"second 10-Q of 2025, cash removed from the trust",12.1195,8-K 12.12,489887
+Fifth extension,2026-04-15,2026-04-15,489887,13817,0.028204,182409,"first 10-Q of 2026, cash removed from the trust",13.2018,"10-Q note 13.19, 10-Q discussion 13.20, proxy 13.19",476070
+Merger,2026-03-10,2026-06-25,476070,379721,0.797616,5068095,"closing 8-K, about $5,068,095",13.3469,8-K 13.35,96349

@@ -1,0 +1,11 @@
+group,line,usd,usd_millions,per_class_a_share
+asset,"ENA, at cost less impairment",212918841,212.9,8.8608
+asset,Cash,18856144,18.9,0.7847
+asset,Other assets,784193,0.8,0.0326
+asset,Total assets,232559178,232.6,9.6781
+liability,Convertible notes owed to former sponsors,6879325,6.9,0.2863
+liability,Accrued expenses,6022119,6.0,0.2506
+liability,Warrant liability,4715000,4.7,0.1962
+liability,Other liabilities,675560,0.7,0.0281
+liability,Total liabilities,18292004,18.3,0.7612
+equity,Book value,214267174,214.3,8.9169

@@ -1,0 +1,74 @@
+{
+ "end_block": 97161009,
+ "end_block_time": "2026-10-09T23:59:59Z",
+ "next_block_time": "2026-10-10T00:00:01Z",
+ "start_block": 85400000,
+ "recount_block": 96815525,
+ "accrual_days": {
+  "first": "2026-09-01",
+  "last": "2026-10-08",
+  "day_starts_utc": "00:00",
+  "count": 38
+ },
+ "wallets": 14555,
+ "wallets_v1": 2006,
+ "wallets_v2": 12549,
+ "other_factory_contracts": 3,
+ "last_wallet_created": "2026-10-09T23:22:48Z",
+ "usde_transfers_scanned": 128798,
+ "usde_transfers_touching_wallets": 95318,
+ "wallets_with_any_transfer": 1195,
+ "transfers_from_wallets_to_reward_accounts": 0,
+ "usde_wei_from_wallets_to_reward_accounts": "0",
+ "card_debit_logs_by_token": {
+  "current_settlement": {
+   "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34": 34156
+  },
+  "retired_settlement": {
+   "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34": 836
+  }
+ },
+ "base_payments": 28706,
+ "topup_payments": 19057,
+ "topup_payments_by_account": [
+  18907,
+  150
+ ],
+ "models_daily": {
+  "base_4_5": 0.00012060147839498825,
+  "base_4_0": 0.00010745978202786333,
+  "standard_0_5": 0.000013664590650108721,
+  "standard_1_0": 0.000027261552008939205,
+  "six_1_5": 0.00004079155111358368,
+  "six_2_0": 0.00005425524517677083,
+  "six_1_5_cap_100k": 0.00004079155111358368,
+  "six_2_0_cap_100k": 0.00005425524517677083
+ },
+ "models_order": {
+  "base": [
+   "base_4_5",
+   "base_4_0"
+  ],
+  "topup": [
+   "standard_0_5",
+   "standard_1_0",
+   "six_1_5",
+   "six_2_0",
+   "six_1_5_cap_100k",
+   "six_2_0_cap_100k"
+  ]
+ },
+ "tolerance": 0.01,
+ "tolerance_loose": 0.05,
+ "tested_minimum_usde_per_day": 100,
+ "batch_gap_hours": 3,
+ "cross_checks": {
+  "recount_wallet_rows": 1106,
+  "recount_wallet_rows_sha256": "f73102e8cee8ec8e46a5b6981335415adc2a3d9dc135c662640e3d23617b73c8",
+  "recount_balance_sum_wei": "3968569937883897150765318",
+  "utc_days_compared": 144,
+  "utc_days_sha256": "53d1f0a991b974ec968c2fc54e4fe772f0f91844e9d09aca7b8b9fa38c1b7067"
+ },
+ "run_started_utc": "2026-10-10T01:32:53.240Z",
+ "run_finished_utc": "2026-10-10T01:33:23.619Z"
+}

@@ -1,0 +1,12 @@
+{
+  "path": "/research/avalanche-usde-ethenapay-2026-10-11/",
+  "title": "USDe on Avalanche: EthenaPay Wallets' Share, Oct 11, 2026",
+  "headline": "How much of Avalanche's USDe was in EthenaPay wallets?",
+  "name": "Avalanche USDe holder review",
+  "description": "EthenaPay wallets held 56.8% of the 10.54 million USDe on Avalanche on October 11, 2026. Most USDe arriving from May 15 went to the rhino.fi bridge contract.",
+  "article": true,
+  "datePublished": "2026-10-12",
+  "dateModified": "2026-10-12",
+  "image": "/research-assets/avalanche-usde-ethenapay-2026-10-11/chart_preview.png",
+  "imageAlt": "Stacked area chart of the USDe on Avalanche C-Chain at the end of each UTC day from May 15 to October 11, 2026. The supply rose from 0.187 million to 10.543 million, most of it from September on. EthenaPay wallets held 5.985 million on October 11, the settlement and reward accounts 2.910 million and holders outside EthenaPay 1.648 million. The settlement and reward accounts are the settlement addresses, the settlement recipients and the reward accounts. A dashed line marks the 2025 high of 5.237 million."
+}

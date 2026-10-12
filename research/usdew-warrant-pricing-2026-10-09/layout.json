@@ -1,0 +1,65 @@
+{
+  "cutoff": "Prices through the October 9, 2026 close · Sources read October 9 to 10, 2026 UTC",
+  "navigation": [
+    [
+      "Against the call",
+      "usdew-closed-below-its-call-value-from-september-21-to-october-7"
+    ],
+    [
+      "The $10 call",
+      "how-a-10-call-would-work"
+    ],
+    [
+      "Price test",
+      "the-price-test-had-not-been-met-by-october-9"
+    ],
+    [
+      "Share count",
+      "a-10-call-would-add-about-34-million-shares"
+    ],
+    [
+      "Method",
+      "how-the-figures-were-built"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDEW against USDE at each close, with the estimated $10 call value and the exercise value, June 29 to October 9, 2026",
+  "chartFile": "chart_usdew_vs_usde.svg",
+  "dashboard": "/stablecoinx/#full-derivatives",
+  "dashboardLabel": "Open the StablecoinX warrants section →",
+  "assets": [
+    "chart_usdew_vs_usde.svg",
+    "chart_preview.png",
+    "usdew_by_session.csv",
+    "chart_curves.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "usdew_warrant_pricing_review.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/stockanalysis_history_fetch.js",
+    "browser/prospectus_table_fetch.js",
+    "inputs/edgar_filings_2026-10-09.csv",
+    "inputs/filing_facts.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/usde_daily_stockanalysis_2026-10-09.csv",
+    "inputs/usdew_daily_stockanalysis_2026-10-09.csv",
+    "inputs/warrant_make_whole_table.csv",
+    "out/chart_curves.csv",
+    "out/chart_usdew_vs_usde.svg",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/usdew_by_session.csv"
+  ],
+  "keyFindings": [
+    "USDEW closed 2.7% to 18.2% below an estimated $10-call payout from September 21 to October 7, 2026; October 8 and 9 were within 0.5%.",
+    "The 20-of-30-session price test had not been met by October 9. This estimated payout is conditional, not a guaranteed value or evidence that a call will occur."
+  ]
+}

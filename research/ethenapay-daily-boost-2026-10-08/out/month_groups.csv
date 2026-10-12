@@ -1,0 +1,8 @@
+month,card_spend,tested_wallets,paid_wallets,tested_wallet_days,topup_usde,share_of_month_topup_pct,average_balance_usde,exchanged_usde_with_another_wallet,exchanged_with_a_wallet_that_spent_in_the_month,no_exchange_wallets,no_exchange_paid,no_exchange_topup_usde
+2026-09,spent in the month,519,518,8575,1363.147497,91.23,3172691.50,143,134,376,375,402.253717
+2026-09,spent only after the month,11,11,100,1.476421,0.10,3667.24,4,4,7,7,0.753742
+2026-09,spent only before the month,2,2,54,35.449893,2.37,29199.89,2,2,0,0,0.000000
+2026-09,never used the card,40,40,605,92.458926,6.19,169601.05,7,6,33,33,86.109432
+2026-10,spent in the month,541,541,3563,685.753077,78.20,3123461.59,131,127,410,410,296.231832
+2026-10,spent only before the month,57,56,423,48.393809,5.52,300897.92,14,12,43,43,12.952801
+2026-10,never used the card,61,61,365,141.986226,16.19,605625.70,11,10,50,50,139.374870

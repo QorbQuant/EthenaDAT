@@ -1,0 +1,29 @@
+# Fifth set of SEC filing extracts for the TLGY redemption review, made the same way as sec_extracts_2026-10-12.txt.
+
+### ext1_8k https://www.sec.gov/Archives/edgar/data/1879814/000110465923025551/tm237896d1_8k.htm
+# status 200 read 2026-10-12T09:07:15.928Z raw_bytes 41728 raw_sha256 9a1d1e1b1287fbcf2bc4e19316a4f804216d2796ed34b0645d02779809cfb8c0 text_chars 6830
+- @5073 The ordinary shares will be redeemed at a per-share price, payable in cash, equal to the aggregate amount then on deposit in the Trust Account, including interest earned on the Trust Account deposits (which interest shall be net of taxes payable and up to $100,000 of interest to pay dissolution expenses), divided by the number of then outstanding ordinary share. The per-share redemption amount has bee
+
+### k8_2024_12_05 https://www.sec.gov/Archives/edgar/data/1879814/000110465924125922/tm2430127d1_8k.htm
+# status 200 read 2026-10-12T09:07:17.227Z raw_bytes 32596 raw_sha256 b7c66389f85ee204499499968e7559c7f4d494c8252a40297a5bdc8e626b63c3 text_chars 3653
+- @2821 it was not in compliance with Nasdaq IM 5101-2, and was therefore subject to delisting. The Company has un
+
+### k8_2024_06_21 https://www.sec.gov/Archives/edgar/data/1879814/000110465924073933/tm2417671d1_8k.htm
+# status 200 read 2026-10-12T09:07:18.228Z raw_bytes 67805 raw_sha256 54c683f07c6e84f7f91f7d9b2a6be9edde4f170bd0edcc1535cb203f4d939bb2 text_chars 20237
+- @5251 Item 5.01 Changes in Control of Registrant. On April 16, 2024, the Company, the Former Sponsor, TLGY Holdings LLC, which is the holding company of the Former Sponsor, CPC Sponsor Opportunities I, LP and CPC Sponsor Opportunities I (Parallel), LP (CPC Sponsor Opportunities I, LP and CPC Sponsor Opportunities I (Parallel), LP, together, the “Buyers”), the Buyers being current stakeholders of economic interests in the Former Sponsor, entered into a securities transfer agreement (“Securities Transfer Agreement”), pursuant to which, at a closing on June 19, 2024 (the “Closing”), Buyers, for an aggregate purchase price of $1.00 (the “Purchase Price”), (i) purchased 3,542,305 Class B ordinary shares of the Company (the “Founder Shares”) from the Former Sponsor, certain investors who held the Founder Shares, and three present or previous independent directors of the Company, and (ii) purchased 3,940,825 
+
+### k8_2024_08_19 https://www.sec.gov/Archives/edgar/data/1879814/000110465924090895/tm2421982d1_8k.htm
+# status 200 read 2026-10-12T09:07:19.228Z raw_bytes 36171 raw_sha256 ddb18448249e9a76930eda9f2065b6f9c015f3351d14a45c56d616bf3ddaa1de text_chars 5836
+- @2326 Item 4.02. Non-Reliance on Previously Issued Financial Statements or a Related Audit Report or Completed Interim Review. In connection with the preparation of the financial statements of TLGY Acquisition Corporation (the “Company”) as of and for the quarterly period ended June 30, 2024, the Company’s management identified an error in amounts reported in certain previously issued financial statements as of and for the year ended December 31, 2023 related to the recording of convertible promissory notes. The Company had incorrectly marked the Company’s convertible promissory notes to fair value from the inception of the notes. As a result, the Company’s management determined that the Convertible Promissory Notes Payable account was understated by $1,253,224 and the change in fair value of convertible promissory notes account was overstated by $1,253,224 for the year ended December 31, 2023. Based on an analysis of quantitative and qualitative factors in accordance with SEC Staff Accounting Bulletins 99, Materiality and 108, Considering the Effects of Prior Year Misstatements when Quantifying Mi
+
+### bc_vote_8k https://www.sec.gov/Archives/edgar/data/1879814/000121390026025809/ea0280899-8k425_tlgyacq.htm
+# status 200 read 2026-10-12T09:07:20.231Z raw_bytes 61826 raw_sha256 05f1079b70b33271c05a991a010805ddafa12ad8868c67812d5ac7c892a60de5 text_chars 18514
+- @3114 the business combination agreement, dated July 21, 2025 (as amended on January 21, 2026 and as may be further amended, supplemented or otherw
+
+### closing_8k https://www.sec.gov/Archives/edgar/data/2080215/000121390026074559/ea0296210-8k_stablecoinx.htm
+# status 200 read 2026-10-12T09:07:21.227Z raw_bytes 280161 raw_sha256 352d9edd7c7e6ea9cd822e6cc0e694186188e34ddb60cd901da11a4eb5aa5de4 text_chars 109398
+- @93332 ord by 138 holders and 3,157,754 shares of StablecoinX Class B Common Stock issued and outstanding held of record by 23 holders. StablecoinX also had 11,499,988 Public Warrants outstanding held of record by one holder. Such numbers do not include Depository Trust Company particip
+
+### sx_q2_10q https://www.sec.gov/Archives/edgar/data/2080215/000121390026090250/ea0301482-10q_stable.htm
+# status 200 read 2026-10-12T09:07:22.228Z raw_bytes 841745 raw_sha256 dfd5bf182e0ffb0176681e9bb3942801b44b0b274848017622f2fa149c625075 text_chars 166142
+- @52713 The number of shares of common stock outstanding immediately following the consummation of the Merger: TLGY Class A common stock, outstanding prior to the Merger 5,834,587 Sponsor forfeiture (4,805,110) Redemption of TLGY Class A common stock (393,538) Class A common stock of TLGY 635,939 PIPE shares 20,775,272 Ethena contribution shares 1,813,164 TLGY Class B common stock, outstanding prior to the Merger 105,000 Merger and PIPE financing shares 23,329,375 Legacy Stablecoin X Assets Shares 700,000 Issuance of common stock to advisors - Class A Common Stock immediately after the Merger 24,029,375 TLGY was not an op
