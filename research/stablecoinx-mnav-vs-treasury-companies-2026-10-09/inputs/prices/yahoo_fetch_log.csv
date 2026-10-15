@@ -1,0 +1,7 @@
+ticker,url,status,fetched_at,bytes,sha256,exchange,currency,sessions
+USDE,https://query1.finance.yahoo.com/v8/finance/chart/USDE?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:23.109Z,1378,ae9c3b6acf607e1ac8d4d0b38237551ac1a1413b761693a3d024416fe1aa18f3,NCM,USD,2
+MSTR,https://query1.finance.yahoo.com/v8/finance/chart/MSTR?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:24.338Z,1405,eb39da7e7284d472ccc9d5f368ff77270cdb3cb1b6f05d9792e3b840b186d6c3,NMS,USD,2
+ASST,https://query1.finance.yahoo.com/v8/finance/chart/ASST?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:25.362Z,1405,aa5162f59c331a52373c98c0e93f690fa7c9256f05597fe39905a3605d7d1a40,NGM,USD,2
+BMNR,https://query1.finance.yahoo.com/v8/finance/chart/BMNR?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:26.324Z,1425,53e074fd7c2237a43244a98c89ec12dded85b0140468b04a950e835719bfce69,NYQ,USD,2
+FWDI,https://query1.finance.yahoo.com/v8/finance/chart/FWDI?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:27.347Z,1416,6b0365fe56ae5ebfd557742f27797bafb9270e7857213e45159b78ba3c30c429,NCM,USD,2
+HYPD,https://query1.finance.yahoo.com/v8/finance/chart/HYPD?period1=1791417600&period2=1791676800&interval=1d,200,2026-10-12T15:43:28.337Z,1408,2ae74333b029ab885ae74ff3e4940dfde0ffe9624388f38cb7d43c5c5b15dfaa,NCM,USD,2

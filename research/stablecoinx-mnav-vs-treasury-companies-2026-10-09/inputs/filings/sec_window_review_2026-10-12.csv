@@ -1,0 +1,150 @@
+ticker,filing_date,document,kind,passage_sha256_12,verdict,note
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,c24c3b04e509,not a holding or share count,"shares offered for resale, a fully diluted percentage"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,token count,0e7264312dc4,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,token count,18034d3824c4,not a holding or share count,"ENA supply, not the holding"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,a099384a1317,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,f30e5795e88a,same count as used,the warrants the article cites from the prospectus
+USDE,2026-09-14,ea0305435-424b3_stable.htm,token count,ef984464c167,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,d7393da544f8,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,87d6cae5a093,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,9e367279e748,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,token count,a450892bf615,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,c010d6d21d3f,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,1d7088602bde,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,f82bcb4068df,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-14,ea0305435-424b3_stable.htm,share count,caf595c79363,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-14,ea0305435-424b3_stable.htm,token count,ee0ceff2a9b1,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,300da69db053,not a holding or share count,"shares offered for resale, a fully diluted percentage"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,token count,12445cb25475,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,token count,4090bc9f8c0c,not a holding or share count,"ENA supply, not the holding"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,2e63b9cb19de,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,edca3a11a683,same count as used,the warrants the article cites from the prospectus
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,token count,7d0c258f61b2,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,698aa05a2307,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,694c0d8c4548,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,f580b227b6ec,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,token count,935a76a6ffd7,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,06b4812eb94f,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,01649099ac55,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,40818b35f0e8,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,share count,128bfe963c23,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-09-09,ea0304920-s1a1_stable.htm,token count,36236d43d3b7,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-09-08,ea030476401ex99-1.htm,token count,fd6ff0d28d01,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,3bc8fbd4a6fc,not a holding or share count,"shares offered for resale, a fully diluted percentage"
+USDE,2026-08-31,ea0303782-s1_stable.htm,token count,2b9680204a49,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-31,ea0303782-s1_stable.htm,token count,f2716690ee3d,not a holding or share count,"ENA supply, not the holding"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,9f86ae080637,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,b8f7ae4a22b8,same count as used,the warrants the article cites from the prospectus
+USDE,2026-08-31,ea0303782-s1_stable.htm,token count,6e831c7b67c4,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,786e854044cf,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,ddad4de36b47,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,68d2aa41211c,earlier count,"the June 25 closing count, 24,029,375 Class A shares, the same as on August 28"
+USDE,2026-08-31,ea0303782-s1_stable.htm,token count,8046619c9338,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,ab9a05fd340e,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,6ccc7865326c,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,90e9eebb2548,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-08-31,ea0303782-s1_stable.htm,share count,4d1f35793e80,not a holding or share count,balance sheets of predecessor entities before the merger
+USDE,2026-08-31,ea0303782-s1_stable.htm,token count,e5db0055cbb5,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-08-14,ea0301482-10q_stable.htm,token count,f7506c7e9c6e,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-14,ea0301482-10q_stable.htm,token count,afae3016a8e4,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,04129ee73249,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,25e73f942aa7,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,bbe2cdc825ff,not a holding or share count,"ENA supply, not the holding"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,041120008cc6,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,16ba6de2c750,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,0aba04402b8d,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,1715196d62dc,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,a8937a30e50b,not a holding or share count,"dollar amounts of the ENA at cost, carrying value or market value, not a token count"
+USDE,2026-08-14,ea030188301ex99-1.htm,token count,3727f5021d83,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-07-02,ea0296210-8k_stablecoinx.htm,token count,dec35222ca9a,rounded restatement,"the same holding rounded to 3.0 billion or 3.03 billion ENA, or its rounded parts"
+USDE,2026-07-02,ea0296210-8k_stablecoinx.htm,token count,30d06a4b9891,not a holding or share count,"ENA supply, not the holding"
+USDE,2026-07-02,ea029621001ex99-2.htm,token count,32cac7205fdb,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-07-02,ea029621001ex99-4.htm,token count,44cd687e052f,not a holding or share count,earnout terms or another investor's holding
+USDE,2026-06-26,ea029602401ex99-1.htm,token count,94c4c93f7821,same count as used,the closing release of June 25 that the article uses
+USDE,2026-06-26,ea029602401ex99-1.htm,token count,763cf030151f,same count as used,the closing release of June 25 that the article uses
+USDE,2026-06-26,ea029602401ex99-1.htm,token count,9ca7aa850893,same count as used,the closing release of June 25 that the article uses
+MSTR,2026-10-05,mstr-20261005.htm,token count,5e096b9ff826,earlier count,"847,666 BTC on September 30, before the October 4 count"
+MSTR,2026-10-05,d503578ddef14a.htm,share count,4de003dbaf4d,same count as used,the September 25 record date count the article uses
+MSTR,2026-10-05,d503578ddef14a.htm,share count,56e6820599b8,not a holding or share count,authorized preferred shares and redemption terms
+MSTR,2026-10-05,d503578ddef14a.htm,share count,dc08c2f33acb,not a holding or share count,authorized preferred shares and redemption terms
+MSTR,2026-10-05,d503578ddef14a.htm,share count,50288e1987a0,not a holding or share count,authorized preferred shares and redemption terms
+MSTR,2026-10-05,d503578ddef14a.htm,share count,393f0dea8c2f,not a holding or share count,authorized preferred shares and redemption terms
+MSTR,2026-10-05,d503578ddef14a.htm,share count,738cc0a306ce,not a holding or share count,authorized preferred shares and redemption terms
+MSTR,2026-10-05,d503578ddef14a.htm,share count,4cb5d339c553,not a holding or share count,authorized preferred shares and redemption terms
+ASST,2026-10-05,asst-20261005.htm,share count,49f6698575c6,same count as used,the October 2 table the article uses
+ASST,2026-10-05,asst-20261005.htm,token count,042608865a6f,earlier count,"the September 30 balance sheet with 28,000 BTC, before the October 2 count"
+ASST,2026-10-05,asst-20261005.htm,token count,2c95cc9a8a84,earlier count,"the September 30 balance sheet with 28,000 BTC, before the October 2 count"
+ASST,2026-10-05,asst-20261005.htm,token count,d06f828a4be2,earlier count,"the September 30 balance sheet with 28,000 BTC, before the October 2 count"
+ASST,2026-10-05,asst-20261005.htm,token count,d44792558654,earlier count,"the September 30 balance sheet with 28,000 BTC, before the October 2 count"
+FWDI,2026-10-01,forward_ex9901.htm,token count,624f3af575cf,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,3d9adf440967,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,share count,8435e1bf83c2,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,17c5674ae1a4,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,share count,bffa8f608807,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,b208d5683ac6,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,267f1e017a79,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,42c1e3e8ab95,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,63ac1777bc87,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,a07abcb53723,same count as used,the September 30 table the article uses
+FWDI,2026-10-01,forward_ex9901.htm,token count,d7b0d473d3dc,same count as used,the September 30 table the article uses
+HYPD,2026-08-13,hypd-20260630x10q.htm,preferred count,4e03f7041454,earlier count,"the earnings per share note's 16,307,691 as-converted shares for 2025, when 5,435,897 preferred shares were outstanding"
+HYPD,2026-08-13,hypd-20260630x10q.htm,preferred count,a996bdcf2169,not a holding or share count,"subsequent events to August 13, a dividend paid in 235,618 common shares, no new preferred stock"
+HYPD,2026-08-13,hypd-20260630x10q.htm,preferred count,a4424ba3939a,not a holding or share count,"subsequent events to August 13, a dividend paid in 235,618 common shares, no new preferred stock"
+HYPD,2026-08-13,hypd-20260630x10q.htm,preferred count,0cb1a819bb0d,not a holding or share count,"subsequent events to August 13, a dividend paid in 235,618 common shares, no new preferred stock"
+BMNR,2026-10-05,ex99-1.htm,token count,a2b8553d3338,same count as used,"the October 4 holding the article uses, rounded"
+BMNR,2026-10-05,ex99-1.htm,token count,d92b1d6ee08f,same count as used,"the October 4 holding the article uses, rounded"
+BMNR,2026-10-05,ex99-1.htm,token count,7a295d03ed64,not a holding or share count,the staked part of the holding
+BMNR,2026-10-05,ex99-1.htm,token count,e4bbe559170f,not a holding or share count,the staked part of the holding
+BMNR,2026-10-05,ex99-1.htm,token count,787c0d3ca9d6,same count as used,"the October 4 holding the article uses, rounded"
+BMNR,2026-10-05,ex99-1.htm,token count,4d6912b2a43b,not a holding or share count,"goals, forward-looking statements or the holding's share of ETH supply"
+BMNR,2026-10-05,ex99-1.htm,token count,fa39f6e51b80,not a holding or share count,the staked part of the holding
+BMNR,2026-10-05,ex99-1.htm,token count,e85535613f84,not a holding or share count,"goals, forward-looking statements or the holding's share of ETH supply"
+BMNR,2026-10-05,ex99-1.htm,token count,664f677889e3,not a holding or share count,"goals, forward-looking statements or the holding's share of ETH supply"
+BMNR,2026-10-05,ex99-1.htm,token count,281c9a5d1404,not a holding or share count,"goals, forward-looking statements or the holding's share of ETH supply"
+BMNR,2026-07-14,bmnr-20260531.htm,share count,6c92acfa180b,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+BMNR,2026-07-14,bmnr-20260531.htm,share count,7e188995c85c,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+BMNR,2026-07-14,bmnr-20260531.htm,share count,e6609f7d4bed,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+BMNR,2026-07-14,bmnr-20260531.htm,share count,4dacec7e7ab0,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+BMNR,2026-07-14,bmnr-20260531.htm,share count,a4793ec184eb,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+BMNR,2026-07-14,bmnr-20260531.htm,share count,e6cffde9279d,not a holding or share count,weighted averages for periods ended May 31 or acquisition terms
+PURR,2026-10-02,d290166ddef14a.htm,share count,64f72b126bed,same count as used,the September 30 record date count the article uses
+PURR,2026-10-02,d290166ddef14a.htm,share count,d354cf52150c,not a holding or share count,terms of a purchase agreement or of shares issued at the 2025 closing
+PURR,2026-10-02,d290166ddef14a.htm,share count,408ba9344823,not a holding or share count,terms of a purchase agreement or of shares issued at the 2025 closing
+PURR,2026-10-02,d290166ddef14a.htm,share count,0cc6a7b521df,not a holding or share count,terms of a purchase agreement or of shares issued at the 2025 closing
+PURR,2026-09-23,d168095d424b3.htm,token count,aae528e4ae4a,earlier count,"holding at the December 2, 2025 closing, in dollars"
+PURR,2026-09-23,d168095d424b3.htm,token count,017ae8df8928,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,e558404d4b6c,"later count, used","33.2 million HYPE on September 8, the latest HYPE count. The article uses it with the 237,919,288 shares of the same date"
+PURR,2026-09-23,d168095d424b3.htm,token count,a71b4e4a4e68,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,21457b93b3a5,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,868c5b9809e4,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,337482a99f56,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,0a58983b4613,"later count, used","33.2 million HYPE on September 8, the latest HYPE count. The article uses it with the 237,919,288 shares of the same date"
+PURR,2026-09-23,d168095d424b3.htm,token count,11ca471e708e,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-23,d168095d424b3.htm,token count,d8d77b3aa622,same count as used,"how the 33.2 million HYPE of September 8 were staked, 25.1 million plus 8.1 million"
+PURR,2026-09-23,d168095d424b3.htm,token count,b9a76f0b8028,not a holding or share count,proceeds of an earlier offering
+PURR,2026-09-15,d168095ds1.htm,token count,6ba21d219aba,earlier count,"holding at the December 2, 2025 closing, in dollars"
+PURR,2026-09-15,d168095ds1.htm,token count,5d0be2fe2efe,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,3228b503eb71,"later count, used","33.2 million HYPE on September 8, the latest HYPE count. The article uses it with the 237,919,288 shares of the same date"
+PURR,2026-09-15,d168095ds1.htm,token count,2005351a2349,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,989847d152f7,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,e35111bb670b,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,8c4087d63ad6,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,c8ba7660b5e6,"later count, used","33.2 million HYPE on September 8, the latest HYPE count. The article uses it with the 237,919,288 shares of the same date"
+PURR,2026-09-15,d168095ds1.htm,token count,6d1990ecbc03,not a holding or share count,"market, network or supply figure, not the company's holding"
+PURR,2026-09-15,d168095ds1.htm,token count,81b1db54aab0,same count as used,"how the 33.2 million HYPE of September 8 were staked, 25.1 million plus 8.1 million"
+PURR,2026-09-15,d168095ds1.htm,token count,9e53b5309ed5,not a holding or share count,proceeds of an earlier offering
+PURR,2026-08-27,pro._supp._3_to_chardan_.htm,token count,bb0efd33833b,not a holding or share count,proceeds of an earlier offering
+PURR,2026-08-27,pro._supp._1_to_advisor_.htm,token count,880bdb153745,not a holding or share count,proceeds of an earlier offering
+PURR,2026-08-27,purr-20260630.htm,token count,e0662d4b3ced,not a holding or share count,proceeds of an earlier offering
+PURR,2026-08-27,purr-ex99_1.htm,token count,35f14347df76,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_1.htm,token count,5617eb1b2955,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,ef271a803077,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,e54cd60d6f9c,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,efb5580eb9fe,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,60dbb80c748e,earlier count,"investor presentation of August 27 with the fiscal year's figures, before the September 8 count"
+PURR,2026-08-27,purr-ex99_2.htm,token count,8c3600b9279d,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,302015554cb1,not a holding or share count,"income, tax, protocol or ranking figure"
+PURR,2026-08-27,purr-ex99_2.htm,token count,faa171033dc2,earlier count,"investor presentation of August 27 with the fiscal year's figures, before the September 8 count"
+PURR,2026-08-27,purr-ex99_2.htm,token count,a567dde36633,earlier count,"investor presentation of August 27 with the fiscal year's figures, before the September 8 count"
+PURR,2026-08-27,purr-ex99_2.htm,token count,f14b30fbc46b,earlier count,"investor presentation of August 27 with the fiscal year's figures, before the September 8 count"
+PURR,2026-08-27,purr-ex99_2.htm,token count,f26ba97d74d3,earlier count,"investor presentation of August 27 with the fiscal year's figures, before the September 8 count"

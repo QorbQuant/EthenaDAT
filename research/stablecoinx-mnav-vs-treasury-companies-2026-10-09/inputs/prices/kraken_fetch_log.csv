@@ -1,0 +1,6 @@
+token,url,status,fetched_at,bytes,sha256,pair_key,candles_returned
+BTC,https://api.kraken.com/0/public/OHLC?pair=XBTUSD&interval=60&since=1791504000,200,2026-10-12T15:44:04.324Z,7286,d6be6acb9dd1962defe72fc5f0718311514500cc956bfc1384e0ba0a3a99faf0,XXBTZUSD,88
+ETH,https://api.kraken.com/0/public/OHLC?pair=ETHUSD&interval=60&since=1791504000,200,2026-10-12T15:44:06.511Z,7363,581054c71d46d1f2b1e7d15f88cdcd0d93659a62e5f3648eadf1dc6993e5300d,XETHZUSD,88
+SOL,https://api.kraken.com/0/public/OHLC?pair=SOLUSD&interval=60&since=1791504000,200,2026-10-12T15:44:08.507Z,6999,850d18427fbd55fbb19c1562b89460c09edf117bbbd3730e89c0b422aab0b8e9,SOLUSD,88
+ENA,https://api.kraken.com/0/public/OHLC?pair=ENAUSD&interval=60&since=1791504000,200,2026-10-12T15:44:10.513Z,6836,319e41db99bc8076ab709cc436745b5ff2a0b55692cf2dfbdd6bc265516396bf,ENAUSD,88
+HYPE,https://api.kraken.com/0/public/OHLC?pair=HYPEUSD&interval=60&since=1791504000,200,2026-10-12T15:44:12.498Z,6466,bc036e14147e580f51739adad2b53d572add5f66802be8a515be21e7655267e8,HYPEUSD,88

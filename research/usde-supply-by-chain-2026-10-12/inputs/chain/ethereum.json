@@ -1,0 +1,210 @@
+{
+ "rpc1": "https://ethereum-rpc.publicnode.com",
+ "rpc2": "https://eth.drpc.org",
+ "block": 26178253,
+ "time_utc": "2026-10-12T18:41:35.000Z",
+ "adapter": "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34",
+ "usde": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+ "psm_custodian": "0xd7fcade52afb60fbf0e1e5f72a683f43820f56a0",
+ "usde_total_supply_raw": "4746167897222275502523503861",
+ "adapter_balance_raw": "2292201958395178471165449406",
+ "psm_custodian_balance_raw": "558392000000000000",
+ "usde_decimals": 18,
+ "adapter_token": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+ "adapter_approval_required": 1,
+ "adapter_shared_decimals": 6,
+ "adapter_decimal_conversion_rate": "1000000000000",
+ "rpc2_usde_total_supply_raw": "4746167897222275502523503861",
+ "rpc2_adapter_balance_raw": "2292201958395178471165449406",
+ "lz_metadata_sha256": "4e14055eebcc2b66029545f36161a6e213aa3fc12ad255aa585fcc84dca1ec08",
+ "lz_metadata_bytes": 4516324,
+ "peer_logs": {
+  "blockscout": {
+   "status": 200,
+   "count": 49,
+   "sha256": "0d8e0642b32710517a48a7209acafdb1cfbee5b54bd5944f4ef1fc1c817e22cf"
+  },
+  "routescan": {
+   "status": 200,
+   "count": 49,
+   "sha256": "bc666f648ed74268ff7605a7ee7fd1ebb7e4e61c6750a7b204662f6174311fa6"
+  },
+  "agree": true
+ },
+ "started_utc": "2026-10-12T18:41:27.625Z",
+ "snapshot_started_utc": "2026-10-12T18:41:46.892Z",
+ "snapshot_finished_utc": "2026-10-12T18:42:15.699Z",
+ "finished_utc": "2026-10-12T18:47:07.290Z",
+ "rpc_checks": {
+  "bsc": [
+   "https://api.zan.top/bsc-mainnet 56",
+   "https://binance.llamarpc.com no answer",
+   "https://bsc.drpc.org 56",
+   "https://bsc-rpc.publicnode.com 56"
+  ],
+  "avalanche": [
+   "https://1rpc.io/avax/c no answer",
+   "https://api.zan.top/avax-mainnet/ext/bc/C/rpc 43114",
+   "https://api.avax.network/ext/bc/C/rpc 43114",
+   "https://avalanche.drpc.org 43114"
+  ],
+  "arbitrum": [
+   "https://api.zan.top/arb-one 42161",
+   "https://arbitrum.drpc.org 42161",
+   "https://arbitrum-one-rpc.publicnode.com 42161"
+  ],
+  "optimism": [
+   "https://1rpc.io/op no answer",
+   "https://optimism.gateway.tenderly.co 10",
+   "https://gateway.tenderly.co/public/optimism 10",
+   "https://optimism-rpc.publicnode.com 10"
+  ],
+  "metis": [
+   "https://metis-andromeda.rpc.thirdweb.com 1088",
+   "https://metis.drpc.org 1088",
+   "https://metis-rpc.publicnode.com 1088"
+  ],
+  "zksync": [
+   "https://1rpc.io/zksync2-era no answer",
+   "https://rpc.ankr.com/zksync_era no answer",
+   "https://api.zan.top/zksync-mainnet 324",
+   "https://mainnet.era.zksync.io 324",
+   "https://zksync.drpc.org 324"
+  ],
+  "kava": [
+   "https://rpc.ankr.com/kava_evm 2222",
+   "https://kava.drpc.org 2222",
+   "https://kava-evm-rpc.publicnode.com 2222"
+  ],
+  "mantle": [
+   "https://1rpc.io/mantle no answer",
+   "https://mantle.drpc.org 5000",
+   "https://mantle-rpc.publicnode.com 5000",
+   "https://mantle-public.nodies.app no answer",
+   "https://rpc.mantle.xyz 5000"
+  ],
+  "linea": [
+   "https://1rpc.io/linea no answer",
+   "https://linea.drpc.org 59144",
+   "https://rpc.linea.build 59144",
+   "https://linea-rpc.publicnode.com 59144"
+  ],
+  "base": [
+   "https://1rpc.io/base no answer",
+   "https://api.zan.top/base-mainnet 8453",
+   "https://gateway.tenderly.co/public/base 8453",
+   "https://base.gateway.tenderly.co 8453"
+  ],
+  "scroll": [
+   "https://1rpc.io/scroll no answer",
+   "https://rpc.scroll.io 534352",
+   "https://scroll.drpc.org 534352",
+   "https://scroll-rpc.publicnode.com 534352"
+  ],
+  "manta": [
+   "https://pacific-rpc.manta.network/http 169",
+   "https://manta-pacific.drpc.org 169",
+   "https://1rpc.io/manta no answer",
+   "https://manta.nirvanalabs.xyz/mantapublic no answer"
+  ],
+  "blast": [
+   "https://blast.drpc.org 81457",
+   "https://blast-rpc.publicnode.com 81457",
+   "https://blast-public.nodies.app no answer",
+   "https://blast.gateway.tenderly.co no answer",
+   "https://rpc.blast.io 81457"
+  ],
+  "fraxtal": [
+   "https://rpc.frax.com 252",
+   "https://fraxtal.drpc.org 252",
+   "https://fraxtal-rpc.publicnode.com 252"
+  ],
+  "mode": [
+   "https://1rpc.io/mode no answer",
+   "https://mainnet.mode.network 34443",
+   "https://mode.drpc.org 34443"
+  ],
+  "xlayer": [
+   "https://rpc.ankr.com/xlayer no answer",
+   "https://xlayer.drpc.org 196",
+   "https://xlayerrpc.okx.com 196",
+   "https://xlayer.rpc.blxrbdn.com no answer",
+   "https://okx-xlayer.rpc.blxrbdn.com no answer",
+   "https://flap-xlayer.rpc.blxrbdn.com no answer",
+   "https://rpc.xlayer.tech 196"
+  ],
+  "zircuit": [
+   "https://mainnet.zircuit.com 48900",
+   "https://mainnet.aurora.dev 1313161554",
+   "https://zircuit1-mainnet.p2pify.com no answer",
+   "https://zircuit-mainnet.drpc.org no answer",
+   "https://zircuit1-mainnet.liquify.com no answer"
+  ],
+  "plume": [
+   "https://rpc-plume-mainnet-0.t.conduit.xyz no answer"
+  ],
+  "morph": [
+   "https://rpc-quicknode.morphl2.io 2818",
+   "https://rpc.morphl2.io 2818"
+  ],
+  "swell": [
+   "https://swell.drpc.org 1923",
+   "https://rpc.ankr.com/swell no answer",
+   "https://swell-mainnet.alt.technology no answer"
+  ],
+  "ink": [
+   "https://ink.drpc.org 57073",
+   "https://rpc-qnd.inkonchain.com 57073",
+   "https://rpc-gel.inkonchain.com 57073"
+  ],
+  "bera": [
+   "https://berachain-rpc.publicnode.com 80094",
+   "https://berachain.drpc.org 80094",
+   "https://rpc.berachain-apis.com 80094"
+  ],
+  "hyperliquid": [
+   "https://hyperliquid.drpc.org 999",
+   "https://rpc.hyperliquid.xyz/evm 999",
+   "https://rpc.countzero.xyz/evm no answer",
+   "https://rpc.hyperlend.finance no answer",
+   "https://hyperliquid.rpc.blxrbdn.com no answer",
+   "https://hyperliquid.api.onfinality.io/evm/public 999"
+  ],
+  "plasma": [
+   "https://plasma.drpc.org no answer",
+   "https://rpc.plasma.to 9745"
+  ],
+  "monad": [
+   "https://monad-mainnet.drpc.org 143",
+   "https://rpc.monad.xyz 143",
+   "https://monad-mainnet-rpc.spidernode.net 143"
+  ],
+  "ethereal": [
+   "https://rpc.ethereal.trade 5064014"
+  ],
+  "doma": [
+   "https://doma.drpc.org 97477",
+   "https://rpc.doma.xyz 97477"
+  ],
+  "megaeth": [
+   "https://mainnet.megaeth.com/rpc 4326"
+  ],
+  "tempo": [
+   "https://rpc.mainnet.tempo.xyz 4217"
+  ],
+  "robinhood": [
+   "https://rpc.mainnet.chain.robinhood.com 4663"
+  ],
+  "tron": [
+   "https://api.trongrid.io/jsonrpc 728126428"
+  ]
+ },
+ "solana": [
+  {
+   "mint": "DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT",
+   "mint_authority": "4x3oQtX4MhjTKGBeXDZbtTSLZ9cUWo5waN2UChAuthtS",
+   "freeze_authority": null,
+   "oft_store": "4x3oQtX4MhjTKGBeXDZbtTSLZ9cUWo5waN2UChAuthtS"
+  }
+ ]
+}

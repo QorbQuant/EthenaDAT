@@ -1,0 +1,108 @@
+{
+ "active14_days": 118,
+ "active14_first": "2025-08-03",
+ "active14_last": "2025-11-28",
+ "avg14_10b_days": 81,
+ "avg14_10b_first": "2025-08-15",
+ "avg14_10b_last": "2025-11-03",
+ "avg14_last_day": "4865356639.346528",
+ "below_since_first": "2025-11-29",
+ "best_30d": [
+  "2024-02-05",
+  "2024-03-06",
+  "426.6789",
+  "667658471.599787"
+ ],
+ "best_90d": [
+  "2024-01-13",
+  "2024-04-12",
+  "1924.9210",
+  "2272751018.360873"
+ ],
+ "blockworks_407_vs_aug26_pct": "0.5704",
+ "blockworks_407_vs_aug27_pct": "0.6722",
+ "checks": 21,
+ "days": 1016,
+ "days14_at_or_above": {
+  "5": 118,
+  "10": 81,
+  "15": 0,
+  "20": 0,
+  "25": 0
+ },
+ "days_below_since": 318,
+ "days_daily_at_or_above": {
+  "5": 117,
+  "10": 80,
+  "15": 0,
+  "20": 0,
+  "25": 0
+ },
+ "fall_to_low_pct": "74.6724",
+ "first_cross_14d": "2025-08-03",
+ "first_cross_daily": "2025-07-27",
+ "gap14_to_first": "2634643360.653472",
+ "gap_day_to_first": "2732845058.289439",
+ "growth14_needed_pct": "54.1511",
+ "growth_day_needed_pct": "57.3265",
+ "last14_first_day": "2026-09-29",
+ "last14_sum": "68114992950.851395",
+ "last_day": "2026-10-12",
+ "low_day": "2026-04-27",
+ "low_supply": "3753508213.584313",
+ "measures": {
+  "1": {
+   "active": 117,
+   "changes": 4,
+   "days_to_first": 0,
+   "first": "2025-07-27",
+   "last": "2025-11-20",
+   "peak": "14819842076.321218",
+   "peak_day": "2025-10-03"
+  },
+  "14": {
+   "active": 118,
+   "changes": 4,
+   "days_to_first": 7,
+   "first": "2025-08-03",
+   "last": "2025-11-28",
+   "peak": "14648426209.504192",
+   "peak_day": "2025-10-09"
+  },
+  "30": {
+   "active": 120,
+   "changes": 4,
+   "days_to_first": 14,
+   "first": "2025-08-10",
+   "last": "2025-12-07",
+   "peak": "14240309058.575211",
+   "peak_day": "2025-10-10"
+  },
+  "90": {
+   "active": 141,
+   "changes": 4,
+   "days_to_first": 34,
+   "first": "2025-08-30",
+   "last": "2026-01-17",
+   "peak": "12376950879.138672",
+   "peak_day": "2025-11-01"
+  }
+ },
+ "peak14_short_of_15b": "351573790.495808",
+ "read_block": 26179856,
+ "read_block_time_utc": "2026-10-13T00:02:59Z",
+ "recent60_top_day": "2026-10-06",
+ "recent60_top_supply": "4979459075.993660",
+ "rise14_2025_days": 74,
+ "rise14_2025_from_day": "2025-05-21",
+ "rise_2025_days": 75,
+ "rise_2025_from_day": "2025-05-13",
+ "rise_2025_from_supply": "4754867947.299870",
+ "rise_since_low_pct": "27.0053",
+ "since_vote_pct": "17.9164",
+ "supply_last_day": "4767154941.710561",
+ "supply_read_block": "4767154941.710561",
+ "top_day": "2025-10-03",
+ "top_supply": "14819842076.321218",
+ "vote_day_supply": "4042825373.532880"
+}

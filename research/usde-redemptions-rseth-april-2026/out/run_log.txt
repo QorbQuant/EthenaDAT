@@ -1,0 +1,57 @@
+USDe's redemptions after the rsETH exploit, run at 2026-10-15T22:53:38Z
+PASS every input matches its size and SHA-256 in inputs/manifest.csv | 10 files
+PASS the browser's files match the SHA-256 digests the browser computed | 5 files
+PASS the scripts in browser/ match the SHA-256 digests recorded when the browser ran them
+PASS day_reads.csv is the file the USDe supply read of October 13, 2026 wrote
+PASS the supply read runs without a gap from January 1, 2024, each day at its last block, the same on two archive RPCs | 1016 days, 2024-01-01 to 2026-10-12
+PASS the state was read on every day of both windows, at the same day-end blocks as the supply read | 183 days
+PASS USDe's total supply in the state read equals the supply read on every one of those days
+PASS the second archive RPC gave the same six values on every day | 183 of 183 days
+PASS mints and burns were read for every day of both flow windows, from the block after the previous day end to the day end | 91 days
+PASS on every day, USDe minted less USDe burned equals the change in total supply between the day ends, to the smallest unit | 91 days
+PASS the counts in run.json agree with the files | 6463 events
+PASS sUSDe held at least as much USDe as its assets on every day, the difference being rewards not yet vested
+PASS the cooldown silo was the same on both RPCs | 0x7fc7c91d556b400afa565013e3f32055a0713425
+PASS the USDe outside sUSDe and its silo was positive on every day
+PASS on every day read for flows, the largest single burn was no larger than the day's burns, and a day with no burns burned nothing
+PASS the exploit's block falls on April 18, 2026 UTC, after the end of April 17 and at or before the end of April 18 | day-end blocks 24903024 and 24910201
+the last block of April 18, 24910201 at 2026-04-18T23:59:59Z, came 1916 blocks after the exploit's block
+PASS sUSDe's cooldown was 7 days at every day end read before March 16, 2026 and 1 day at every day end read from March 16 to May 31, 2026 | 106 and 77 days, last 7 day reading 2026-03-15
+april_2026: 2026-04-19 to 2026-04-27, supply 5,829,728,799.04 to 3,753,508,213.58 (-2,076,220,585.46, -35.61%), burned 2,156,741,247.42 in 1399 burns, minted 80,520,661.96 in 149 mints; held by sUSDe -1,363,308,556.80 (-38.64%), silo 20,391,369.64, outside -733,303,398.29 (-32.25%); sUSDe and silo 64.68% of the fall, outside 35.32%, against 60.99% of supply at the start; cooldown 1 days
+october_2025: 2025-10-10 to 2025-10-18, supply 14,664,266,147.03 to 12,138,006,615.86 (-2,526,259,531.17, -17.23%), burned 2,575,379,021.74 in 1331 burns, minted 49,119,490.57 in 127 mints; held by sUSDe -252,484,534.31 (-4.32%), silo 176,438,921.76, outside -2,450,213,918.62 (-28.31%); sUSDe and silo 3.01% of the fall, outside 96.99%, against 40.98% of supply at the start; cooldown 7 days
+PASS the April 2026 wave ends at the lowest day-end supply from the 2025 peak to the last day read | 2026-04-27
+PASS the day of the exploit, April 18, 2026, burned no more than the largest day of the two weeks before it | 12,500,491.90 burned on April 18
+April 19 to 23: burned 1,943,147,105.56, minted 76,402,971.28, supply -1,866,744,134.28 (-32.02%), 90.10% of the wave's burns
+half of the wave's fall had come by the end of 2026-04-21
+silo peaks: 2026-04-20 434,900,537.04, 2025-10-23 582,381,184.06
+largest 1 day falls: 2025-10-10 to 2025-10-11 -11.14%, 2026-04-21 to 2026-04-22 -9.49%, 2026-04-20 to 2026-04-21 -9.46%, 2026-04-22 to 2026-04-23 -7.51%, 2026-04-19 to 2026-04-20 -5.71%
+largest 3 day falls: 2026-04-20 to 2026-04-23 -24.21%, 2026-04-19 to 2026-04-22 -22.73%, 2026-04-18 to 2026-04-21 -18.79%, 2026-04-21 to 2026-04-24 -18.54%, 2025-10-09 to 2025-10-12 -14.07%
+largest 7 day falls: 2026-04-18 to 2026-04-25 -34.38%, 2026-04-17 to 2026-04-24 -33.88%, 2026-04-19 to 2026-04-26 -32.14%, 2026-04-16 to 2026-04-23 -32.06%, 2026-04-20 to 2026-04-27 -28.21%
+largest 9 day falls: 2026-04-18 to 2026-04-27 -35.61%, 2026-04-17 to 2026-04-26 -35.48%, 2026-04-16 to 2026-04-25 -34.42%, 2026-04-15 to 2026-04-24 -33.84%, 2026-04-14 to 2026-04-23 -32.00%
+largest 30 day falls: 2025-10-09 to 2025-11-08 -41.88%, 2025-10-08 to 2025-11-07 -41.08%, 2025-10-10 to 2025-11-09 -40.73%, 2025-10-07 to 2025-11-06 -40.33%, 2025-10-06 to 2025-11-05 -39.54%
+PASS four of the five largest one-day falls since January 2, 2024 came on April 20 to 23, 2026, and five of the seven on April 19 to 23 | largest -11.14 on 2025-10-11
+PASS over three, seven and nine days the April 2026 falls were the largest since January 2024, and over 30 days October and November 2025 | 3 days -24.21% to 2026-04-23; 7 days -34.38% to 2026-04-25; 9 days -35.61% to 2026-04-27; 30 days -41.88% to 2025-11-08
+PASS the nine-day fall to April 27, 2026 is the April wave
+PASS the largest 30-day fall began at the start of the October wave, and sUSDe and its silo made up less than 15% of it | 2025-10-09 to 2025-11-08, 14.83%
+largest 1 day fall in the April wave 2026-04-21 to 2026-04-22, 9.49%, 2.31 times the benchmark of 4.1%
+largest 3 day fall in the April wave 2026-04-20 to 2026-04-23, 24.21%, 2.63 times the benchmark of 9.2%
+largest 7 day fall in the April wave 2026-04-18 to 2026-04-25, 34.38%, 2.87 times the benchmark of 12.0%
+PASS in the April wave the falls over one, three and seven days were above the 99th percentile benchmarks the cooldown was set against
+days in the April wave whose fall was above 4.1% of the previous day-end supply: 2026-04-19, 2026-04-20, 2026-04-21, 2026-04-22, 2026-04-23
+Tier 1 capacity of $1.88 billion: the largest day's burns 26.96%, the largest three-day net fall 1,265,680,745.86, 67.32%
+PASS the attestation dates and supplies used here are those in the update's table, as the sources file copies it | 11 rows
+PASS every attestation but April 19 equals the day-end supply of its day or the day before, to the update's two decimals in billions | 10 of 11
+PASS the April 19 attestation lies between the day-end supplies of April 18 and April 19
+April 16 to 30 day ends: burned 2,198,952,489.02, minted 265,099,799.19, change -1,933,852,689.83. April 23 to 27 -209,476,451.18, April 27 to 30 145,453,884.34, April 23 to 30 -64,022,566.83
+2026-02-26: sUSDe assets 3,517,041,486.24, shares 2,878,490,566.53, 1.2218 USDe a share, assets 57.96% of supply, shares 47.44%
+2026-02-27: sUSDe assets 3,517,255,829.71, shares 2,878,464,598.41, 1.2219 USDe a share, assets 57.99% of supply, shares 47.46%
+2026-02-28: sUSDe assets 3,511,159,650.55, shares 2,873,095,090.92, 1.2221 USDe a share, assets 58.06% of supply, shares 47.51%
+2026-04-18: sUSDe assets 3,528,251,596.60, shares 2,873,717,758.70, 1.2278 USDe a share, assets 60.52% of supply, shares 49.29%
+2026-04-27: sUSDe assets 2,164,941,867.83, shares 1,761,236,992.62, 1.2292 USDe a share, assets 57.68% of supply, shares 46.92%
+2026-04-30: sUSDe assets 2,107,677,005.06, shares 1,713,913,857.57, 1.2297 USDe a share, assets 54.06% of supply, shares 43.96%
+PASS the update's $1.71 billion of sUSDe at the end of April matches sUSDe's token count, not its assets, at the end of April 30 | 1,713,913,857.57 tokens, 2,107,677,005.06 USDe of assets
+PASS the update's 44.0% matches the token count over supply at the end of April 30 to one decimal, and its 57.96% for February the assets over supply at the end of February 26 to two decimals, the assets ratio staying between 57.96% and 58.07% to February 28 while the token count was below 48% of supply | 43.96%, 57.96%, 57.99% and 58.06%
+after the low: 4,505,725,104.91 on May 31, 4,767,154,941.71 on 2026-10-12, 27.01% above the low
+largest single burn in either flow window 10,000,000.00 USDe, on 26 days
+
+all 29 checks passed

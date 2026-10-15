@@ -12,7 +12,7 @@ import {
   datasetDownload,
 } from "../site-worker/datasets.mjs";
 import { classifyReferral, recordReferral } from "../site-worker/referrals.mjs";
-import { PAGES, sitemap } from "../site-worker/seo.mjs";
+import { PAGES, sitemap, graph } from "../site-worker/seo.mjs";
 import { content } from "../site-worker/content.mjs";
 const read = (p) => JSON.parse(readFileSync(new URL(p, import.meta.url)));
 const sx = read("../docs/data.json"),
@@ -212,10 +212,25 @@ test("referral payload contains only provider, canonical path and attribution, a
 });
 test("all research articles have concise findings and a related dataset", () => {
   const articles = Object.keys(PAGES).filter((p) => PAGES[p].article);
-  assert.equal(articles.length, 20);
+  assert.equal(articles.length, 25);
   for (const path of articles) {
     assert.ok(content[path].includes('class="key-findings"'), path);
     assert.ok(content[path].includes('class="dataset-related"'), path);
     assert.ok(!content[path].includes("\u2014"), path);
+  }
+});
+
+test("new research citations match visible sources and point readers to relevant data", () => {
+  const paths = Object.keys(PAGES).filter((path) => PAGES[path].datePublished === "2026-10-15");
+  assert.equal(paths.length, 5);
+  for (const path of paths) {
+    const article = graph(path)["@graph"].find((item) => item["@type"] === "Article");
+    assert.equal(article.datePublished, "2026-10-15");
+    assert.ok(article.citation.length > 0);
+    for (const source of article.citation) assert.ok(content[path].includes(source), source);
+    if (!path.includes("mnav-vs-treasury")) {
+      assert.ok(content[path].includes(`href="${path}#reproduce-the-numbers"`));
+      assert.ok(content[path].includes('id="reproduce-the-numbers"'));
+    }
   }
 });

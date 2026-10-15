@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="mp-t mp-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="mp-t">Token-only mNAV of five crypto treasury companies at the October 9, 2026 close</title>
+<desc id="mp-d">Horizontal bar chart of five crypto treasury companies, which hold one crypto token as their main treasury asset. Token-only mNAV, the share price divided by the value of the reported tokens per common share, at the October 9, 2026 close. Hyperion DeFi (HYPD), which holds HYPE, 0.34. StablecoinX (USDE), which holds ENA, 0.46. Forward Industries (FWDI), which holds SOL, 0.61. Strategy (MSTR), which holds BTC, 0.93. Strive (ASST), which holds BTC, 1.16. A dashed line marks 1, where the share price equals token NAV per share.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">StablecoinX was second lowest of five crypto treasury companies on token-only mNAV</text>
+<text x="20" y="52" fill="var(--sx-muted, #99a3b0)" font-size="12">Share price divided by token NAV per share at 4 pm New York time on October 9, 2026</text>
+<line x1="250.0" x2="250.0" y1="98" y2="352" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="250.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0×</text>
+<line x1="340.0" x2="340.0" y1="98" y2="352" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="340.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0.25×</text>
+<line x1="430.0" x2="430.0" y1="98" y2="352" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="430.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0.5×</text>
+<line x1="520.0" x2="520.0" y1="98" y2="352" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="520.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0.75×</text>
+<line x1="610.0" x2="610.0" y1="98" y2="352" stroke="var(--sx-text, #eeeae3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="610.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">1×</text>
+<line x1="700.0" x2="700.0" y1="98" y2="352" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="700.0" y="370" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">1.25×</text>
+<text x="604.0" y="94" fill="var(--sx-text, #eeeae3)" font-size="11" text-anchor="end">Share price equals token NAV per share</text>
+<g><title>Hyperion DeFi (HYPD). 1,850,000 HYPE reported as of September 30, 2026, 15,442,482 common shares as of September 30, 2026. Close $3.40. HYPE $83.38, the last Kraken trade before 20:00 UTC. Token NAV per share $9.99, mNAV 0.340</title>
+<text x="238" y="125.0" fill="var(--sx-text, #eeeae3)" font-size="13" text-anchor="end">Hyperion DeFi (HYPD)</text>
+<text x="238" y="141.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">holds HYPE</text>
+<path d="M250,112 H368.5 a4,4 0 0 1 4,4 V140 a4,4 0 0 1 -4,4 H250 Z" fill="#5b6573"/>
+<text x="380.5" y="133.0" fill="var(--sx-text, #eeeae3)" font-size="14" font-weight="600">0.34×</text>
+</g>
+<g><title>StablecoinX (USDE). 3,029,000,000 ENA reported as of June 25, 2026, 24,139,375 common shares as of September 30, 2026. Close $12.30. ENA $0.2112, the last Kraken trade before 20:00 UTC. Token NAV per share $26.50, mNAV 0.464</title>
+<text x="238" y="175.0" fill="var(--sx-text, #eeeae3)" font-size="13" text-anchor="end">StablecoinX (USDE)</text>
+<text x="238" y="191.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">holds ENA</text>
+<path d="M250,162 H413.1 a4,4 0 0 1 4,4 V190 a4,4 0 0 1 -4,4 H250 Z" fill="#3987e5"/>
+<text x="425.1" y="183.0" fill="var(--sx-text, #eeeae3)" font-size="14" font-weight="600">0.46×</text>
+</g>
+<g><title>Forward Industries (FWDI). 8,501,298 SOL reported as of September 30, 2026, 76,288,215 common shares as of September 30, 2026. Close $7.34. SOL $108.38, the last Kraken trade before 20:00 UTC. Token NAV per share $12.08, mNAV 0.608</title>
+<text x="238" y="225.0" fill="var(--sx-text, #eeeae3)" font-size="13" text-anchor="end">Forward Industries (FWDI)</text>
+<text x="238" y="241.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">holds SOL</text>
+<path d="M250,212 H464.8 a4,4 0 0 1 4,4 V240 a4,4 0 0 1 -4,4 H250 Z" fill="#5b6573"/>
+<text x="476.8" y="233.0" fill="var(--sx-text, #eeeae3)" font-size="14" font-weight="600">0.61×</text>
+</g>
+<g><title>Strategy (MSTR). 848,000 BTC reported as of October 4, 2026, 422,070,802 common shares as of October 4, 2026. Close $154.34. BTC $82,252.40, the last Kraken trade before 20:00 UTC. Token NAV per share $165.26, mNAV 0.934</title>
+<text x="238" y="275.0" fill="var(--sx-text, #eeeae3)" font-size="13" text-anchor="end">Strategy (MSTR)</text>
+<text x="238" y="291.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">holds BTC</text>
+<path d="M250,262 H582.2 a4,4 0 0 1 4,4 V290 a4,4 0 0 1 -4,4 H250 Z" fill="#5b6573"/>
+<text x="578.2" y="283.0" fill="#ffffff" font-size="14" font-weight="600" text-anchor="end">0.93×</text>
+</g>
+<g><title>Strive (ASST). 29,462 BTC reported as of October 2, 2026, 100,938,986 common shares as of October 2, 2026. Close $27.80. BTC $82,252.40, the last Kraken trade before 20:00 UTC. Token NAV per share $24.01, mNAV 1.158</title>
+<text x="238" y="325.0" fill="var(--sx-text, #eeeae3)" font-size="13" text-anchor="end">Strive (ASST)</text>
+<text x="238" y="341.0" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="end">holds BTC</text>
+<path d="M250,312 H662.9 a4,4 0 0 1 4,4 V340 a4,4 0 0 1 -4,4 H250 Z" fill="#5b6573"/>
+<text x="674.9" y="333.0" fill="var(--sx-text, #eeeae3)" font-size="14" font-weight="600">1.16×</text>
+</g>
+<line x1="610.0" x2="610.0" y1="98" y2="352" stroke="var(--sx-text, #eeeae3)" stroke-width="1.5" stroke-dasharray="4 3"/>
+<text x="20" y="412" fill="var(--sx-muted, #99a3b0)" font-size="10">Token NAV per share is each company's token count from its SEC filings to October 9 times the token's last Kraken trade</text>
+<text x="20" y="426" fill="var(--sx-muted, #99a3b0)" font-size="10">before 20:00 UTC, divided by common shares from its filings. Cash, other assets, debt and preferred stock are left out.</text>
+<text x="20" y="440" fill="var(--sx-muted, #99a3b0)" font-size="10">Closes from S&amp;P Global Market Intelligence through StockAnalysis, matched with Yahoo Finance. Sources read October 12, 2026 UTC.</text>
+</svg>

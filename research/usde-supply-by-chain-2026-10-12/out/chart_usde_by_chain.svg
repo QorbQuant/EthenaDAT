@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 466" role="img" aria-labelledby="uc-t uc-d" font-family="Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<title id="uc-t">USDe by chain at about 18:41 UTC on October 12, 2026</title>
+<desc id="uc-d">Horizontal bar chart of the USDe on each chain read, connected to Ethena's LayerZero adapter on Ethereum or dropped from it, at about 18:41 UTC on October 12, 2026, Swellchain's at 06:39 UTC, largest first, in millions of USDe and as a share of the USDe the adapter held. Plasma, 578.5 million, 25.2%. Solana, 468.5 million, 20.4%. Base, 392.2 million, 17.1%. Robinhood Chain, 372.5 million, 16.3%. TON, 169.1 million, 7.4%. Monad, 114.6 million, 5.0%. Mantle, 82.5 million, 3.6%. BNB Chain, 78.4 million, 3.4%. Berachain, 13.0 million, 0.6%. Avalanche, 10.9 million, 0.5%. 25 other chains, 12.1 million, 0.5%.</desc>
+<rect width="800" height="466" fill="var(--sx-bg, #0d1116)"/>
+<text x="20" y="30" fill="var(--sx-text, #eeeae3)" font-size="16" font-weight="600">Five chains held USDe equal to 86% of the USDe locked on Ethereum</text>
+<text x="20" y="50" fill="var(--sx-muted, #99a3b0)" font-size="12">USDe on each chain at about 18:41 UTC on October 12, 2026, in millions, and its share of the USDe locked on Ethereum</text>
+<line x1="170.0" x2="170.0" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="170.0" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">0</text>
+<line x1="248.3" x2="248.3" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="248.3" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">100</text>
+<line x1="326.7" x2="326.7" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="326.7" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">200</text>
+<line x1="405.0" x2="405.0" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="405.0" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">300</text>
+<line x1="483.3" x2="483.3" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="483.3" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">400</text>
+<line x1="561.7" x2="561.7" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="561.7" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">500</text>
+<line x1="640.0" x2="640.0" y1="72" y2="397" stroke="var(--sx-rule, #29313a)" stroke-width="1"/>
+<text x="640.0" y="411" fill="var(--sx-muted, #99a3b0)" font-size="11" text-anchor="middle">600</text>
+<g><title>Plasma. 578,451,105.774464 USDe, 25.24% of the USDe locked on Ethereum</title>
+<text x="160" y="94.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Plasma</text>
+<path d="M170,80 H619.1 a4,4 0 0 1 4,4 V97 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="631.1" y="94.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">578.5<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  25.2%</tspan></text>
+</g>
+<g><title>Solana. 468,500,550.235087 USDe, 20.44% of the USDe locked on Ethereum</title>
+<text x="160" y="123.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Solana</text>
+<path d="M170,109 H533.0 a4,4 0 0 1 4,4 V126 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="545.0" y="123.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">468.5<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  20.4%</tspan></text>
+</g>
+<g><title>Base. 392,201,135.673345 USDe, 17.11% of the USDe locked on Ethereum</title>
+<text x="160" y="152.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Base</text>
+<path d="M170,138 H473.2 a4,4 0 0 1 4,4 V155 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="485.2" y="152.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">392.2<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  17.1%</tspan></text>
+</g>
+<g><title>Robinhood Chain. 372,492,882.384583 USDe, 16.25% of the USDe locked on Ethereum</title>
+<text x="160" y="181.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Robinhood Chain</text>
+<path d="M170,167 H457.8 a4,4 0 0 1 4,4 V184 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="469.8" y="181.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">372.5<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  16.3%</tspan></text>
+</g>
+<g><title>TON. 169,126,158.747542 USDe, 7.38% of the USDe locked on Ethereum</title>
+<text x="160" y="210.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">TON</text>
+<path d="M170,196 H298.5 a4,4 0 0 1 4,4 V213 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="310.5" y="210.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">169.1<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  7.4%</tspan></text>
+</g>
+<g><title>Monad. 114,589,612.488229 USDe, 5.00% of the USDe locked on Ethereum</title>
+<text x="160" y="239.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Monad</text>
+<path d="M170,225 H255.8 a4,4 0 0 1 4,4 V242 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="267.8" y="239.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">114.6<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  5.0%</tspan></text>
+</g>
+<g><title>Mantle. 82,495,874.649432 USDe, 3.60% of the USDe locked on Ethereum</title>
+<text x="160" y="268.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Mantle</text>
+<path d="M170,254 H230.6 a4,4 0 0 1 4,4 V271 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="242.6" y="268.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">82.5<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  3.6%</tspan></text>
+</g>
+<g><title>BNB Chain. 78,399,747.235971 USDe, 3.42% of the USDe locked on Ethereum</title>
+<text x="160" y="297.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">BNB Chain</text>
+<path d="M170,283 H227.4 a4,4 0 0 1 4,4 V300 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="239.4" y="297.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">78.4<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  3.4%</tspan></text>
+</g>
+<g><title>Berachain. 12,976,410.377795 USDe, 0.57% of the USDe locked on Ethereum</title>
+<text x="160" y="326.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Berachain</text>
+<path d="M170,312 H176.2 a4,4 0 0 1 4,4 V329 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="188.2" y="326.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">13.0<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  0.6%</tspan></text>
+</g>
+<g><title>Avalanche. 10,884,149.271788 USDe, 0.47% of the USDe locked on Ethereum</title>
+<text x="160" y="355.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">Avalanche</text>
+<path d="M170,341 H174.5 a4,4 0 0 1 4,4 V358 a4,4 0 0 1 -4,4 H170 Z" fill="#3987e5"/>
+<text x="186.5" y="355.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">10.9<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  0.5%</tspan></text>
+</g>
+<g><title>25 other chains. 12,084,236.104486 USDe, 0.53% of the USDe locked on Ethereum</title>
+<text x="160" y="384.5" fill="var(--sx-text, #eeeae3)" font-size="12" text-anchor="end">25 other chains</text>
+<path d="M170,370 H175.5 a4,4 0 0 1 4,4 V387 a4,4 0 0 1 -4,4 H170 Z" fill="#5b6573"/>
+<text x="187.5" y="384.5" fill="var(--sx-text, #eeeae3)" font-size="12" font-weight="600">12.1<tspan fill="var(--sx-muted, #99a3b0)" font-weight="400">  ·  0.5%</tspan></text>
+</g>
+<text x="20" y="426" fill="var(--sx-muted, #99a3b0)" font-size="10">Supplies read from each chain at about 18:41 UTC on October 12, 2026, Swellchain's from a block of 06:39 UTC. Stellar's came from the Stellar Expert explorer.</text>
+<text x="20" y="440" fill="var(--sx-muted, #99a3b0)" font-size="10">Ethereal's figure is the USDe that the adapter's peer on Ethereal received less the USDe it sent. The 25 other chains include 10 dropped chains.</text>
+<text x="20" y="454" fill="var(--sx-muted, #99a3b0)" font-size="10">The adapter held 2,292,201,958.40 USDe at Ethereum block 26,178,253. Plume's 2024 network could not be read. Sources read October 12, 2026 UTC.</text>
+</svg>

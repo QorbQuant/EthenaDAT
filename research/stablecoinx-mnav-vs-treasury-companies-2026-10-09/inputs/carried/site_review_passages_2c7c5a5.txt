@@ -1,0 +1,13 @@
+research/usde-ena-tracking-2026-10-08/article_draft.md at commit 2c7c5a5, blob ed2f1c1df3549b791d1bdedf6dde5568a263ec67, line 13
+The figures depend on pricing ENA at the moment of each close. This site's [StablecoinX dashboard](https://ethenadash.com/stablecoinx/), in its dataset of October 9, pairs each close with ENA's price at midnight UTC, 8 pm in New York the evening before. Measured with those prices, the correlation was 0.18, and USDE moved the same way as ENA on 31 of 72 days.
+
+research/usde-ena-tracking-2026-10-08/article_draft.md at commit 2c7c5a5, blob ed2f1c1df3549b791d1bdedf6dde5568a263ec67, line 59
+The dashboard records one ENA price for each date, from CoinGecko according to its methodology page. On every session that price was within 0.5% of Kraken's price at midnight UTC, 8 pm in New York the evening before the close, and on the median session it was 3.2% away from ENA's price at the close.
+
+research/stablecoinx-lock-up-waiver-2026-10-05/article_draft.md at commit 2c7c5a5, blob 0e832bd1b7c4296daf24fcc00ac235912e9166cd, line 7
+StablecoinX can sell its ENA only with the Ethena Foundation's consent, even though the lock-ups covered by the waiver ended on October 5, 2026. ENA is the governance token of the Ethena protocol, and the company holds it as its treasury. A [waiver letter](https://www.sec.gov/Archives/edgar/data/2080215/000121390026100751/ea030568601ex10-1.htm) that Ethena OpCo and the Foundation signed on September 14 released every lock-up that agreements with them placed on that ENA, from October 5. That included the 48-month schedule in the two agreements under which Ethena OpCo sold the company most of its ENA.
+
+research/stablecoinx-lock-up-waiver-2026-10-05/layout.json at commit 2c7c5a5, blob 55bd5385d4a0e2133000467e9108096fb17c3d06, keyFindings
+The waiver took effect on October 5, 2026, ending the ENA lock-ups covered by agreements with Ethena.
+Foundation consent rights and company approval requirements remain. Unlocked does not mean freely saleable.
+The change affects the unlocked classification, not total reported ENA or token NAV. Historical unlocked figures included assumptions.

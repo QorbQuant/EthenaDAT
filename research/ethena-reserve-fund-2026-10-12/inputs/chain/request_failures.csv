@@ -1,0 +1,142 @@
+time_utc,label,url,method,status,bytes
+2026-10-12T21:14:15.345Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:15.540Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:15.553Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:15.564Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:15.560Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:21.653Z,Uniswap slot0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:21.657Z,Uniswap feeGrowthGlobal1X128,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:28.049Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:28.231Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:28.439Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:35.654Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:35.832Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:35.867Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:35.851Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:36.054Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:43.662Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:43.827Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:43.852Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:44.036Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:44.047Z,positions 680386,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:50.823Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:51.020Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:51.017Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:51.018Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:51.229Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:58.294Z,balanceOf sDAI,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:58.292Z,balanceOf USDC,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:59.300Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:14:59.435Z,positions 680386,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:06.671Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:06.680Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:06.693Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:06.687Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:12.651Z,Uniswap slot0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:12.659Z,Uniswap feeGrowthGlobal1X128,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:19.045Z,balanceOf USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:19.048Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:19.242Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:19.235Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:25.653Z,Uniswap slot0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:25.660Z,Uniswap feeGrowthGlobal0X128,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:32.023Z,balanceOf USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:32.026Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:32.229Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:39.435Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:39.635Z,totalSupply USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:39.811Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:46.934Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:46.934Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:46.933Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:46.935Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:47.121Z,positions 680386,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:53.844Z,eth balance,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:15:59.882Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:00.061Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:00.488Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:07.258Z,balanceOf USDC,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:07.672Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:08.051Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:08.215Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:08.241Z,positions 680386,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:15.227Z,balanceOf USDC,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:15.867Z,totalSupply USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:15.872Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:15.875Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:21.475Z,convertToAssets sDAI,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:29.378Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:29.570Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:30.001Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:36.448Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:36.640Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:36.646Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:36.650Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:43.091Z,balanceOf USDC,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:43.115Z,balanceOf DAI,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:43.120Z,balanceOf USDS,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:44.140Z,totalSupply USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:51.289Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:51.484Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:51.490Z,totalSupply USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:58.106Z,balanceOf USDT,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:58.687Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:58.877Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:16:59.075Z,positions 700726,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:06.250Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:06.247Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:06.442Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:13.272Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:13.469Z,totalSupply USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:13.653Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:13.661Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:20.032Z,balanceOf USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:20.038Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:20.052Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:26.080Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:26.080Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:26.252Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:26.623Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:33.092Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:33.102Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:33.282Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:33.280Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:33.287Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:39.670Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:46.050Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:46.055Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:46.648Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:53.028Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:53.204Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:17:53.862Z,positions 700726,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:00.449Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:00.462Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:00.457Z,Curve totalSupply,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:00.472Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:00.495Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:06.819Z,block 0x17a20e2,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:12.734Z,balanceOf BUIDL,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:12.878Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:12.889Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:13.080Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:13.103Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:18.673Z,positions 700726,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:19.217Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:19.217Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:31.045Z,balanceOf USDtb,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:31.044Z,balanceOf sUSDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:31.236Z,balanceOf USTB,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:31.253Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:38.277Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:38.277Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:38.448Z,Curve balances 1,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:38.913Z,positions 700726,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:46.721Z,totalSupply USDe,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:46.728Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:46.922Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:47.119Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:47.111Z,positions 658523,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:54.274Z,balanceOf CurveLP,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:54.320Z,Curve balances 0,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:54.524Z,Chainlink ETH/USD latestRoundData,https://gateway.tenderly.co/public/mainnet,POST,429,80
+2026-10-12T21:18:54.704Z,positions 658530,https://gateway.tenderly.co/public/mainnet,POST,429,80

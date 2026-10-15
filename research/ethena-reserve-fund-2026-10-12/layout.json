@@ -1,0 +1,107 @@
+{
+  "cutoff": "Read at Ethereum block 26,178,998, 21:10:59 UTC on October 12, 2026 · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "Holdings",
+      "what-the-fund-held"
+    ],
+    [
+      "Sources",
+      "where-the-6210-million-came-from"
+    ],
+    [
+      "History",
+      "how-the-holdings-changed"
+    ],
+    [
+      "Risk Committee",
+      "what-the-risk-committee-decided"
+    ],
+    [
+      "Against USDe",
+      "the-fund-against-usdes-supply"
+    ],
+    [
+      "Method",
+      "how-the-reads-were-made"
+    ],
+    [
+      "Caveats",
+      "caveats"
+    ],
+    [
+      "Primary sources",
+      "primary-sources"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Ethena's reserve fund at the end of each month, January 2024 to September 2026",
+  "chartFile": "chart_reserve_fund_by_month.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_reserve_fund_by_month.svg",
+    "chart_preview.png",
+    "holdings.csv",
+    "sources_of_value.csv",
+    "month_end.csv",
+    "flows.csv",
+    "episodes.csv",
+    "risk_committee_comparison.csv",
+    "chart_data.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "layout.json",
+    "reserve_fund_review.py",
+    "univ3.py",
+    "make_chart_svg.py",
+    "check_article_numbers.py",
+    "browser/reserve_fund_read.js",
+    "browser/safe_transactions.js",
+    "browser/bundle_files.js",
+    "inputs/sources.csv",
+    "inputs/manifest.csv",
+    "inputs/classification.csv",
+    "inputs/chain/browser_digests.json",
+    "inputs/chain/code_check_2026-10-12.txt",
+    "inputs/chain/counterparties_public.csv",
+    "inputs/chain/events.csv",
+    "inputs/chain/month_reads.csv",
+    "inputs/chain/month_sources.csv",
+    "inputs/chain/once_reads.csv",
+    "inputs/chain/request_failures.csv",
+    "inputs/chain/request_summary.csv",
+    "inputs/chain/run.json",
+    "inputs/chain/safe_transactions.csv",
+    "inputs/chain/snapshot_reads.csv",
+    "inputs/chain/tokens_public.csv",
+    "inputs/chain/transfers_blockscout_public.csv",
+    "inputs/chain/transfers_routescan_public.csv",
+    "inputs/web/ethena_governance_forum_2026-10-12.txt",
+    "inputs/web/ethena_reserve_fund_docs_2026-10-12.txt",
+    "inputs/web/usde_chain_review_carried_2026-10-12.txt",
+    "out/holdings.csv",
+    "out/sources_of_value.csv",
+    "out/month_end.csv",
+    "out/flows.csv",
+    "out/episodes.csv",
+    "out/risk_committee_comparison.csv",
+    "out/unlisted_tokens.csv",
+    "out/chart_data.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/chart_reserve_fund_by_month.svg",
+    "out/chart_preview.png"
+  ],
+  "keyFindings": [
+    "At 21:10:59 UTC on October 12, 2026, Ethena's reserve fund, the Safe its key addresses page named, held $62,096,266.02 with stablecoins at $1, equal to 1.31% of USDe's supply. USDtb, held directly and through a Curve pool, made up 85.85% of it.",
+    "The sUSDe Payout Fund sent the fund $35,665,296.40 from February 2 to December 12, 2024, and a second Safe and two other addresses sent $23,240,242.66. The fund's positions and the interest on its USDtb earned $3,255,661.18, and minting USDtb, swaps and conversions cost $65,690.51. No asset arrived after November 3, 2025.",
+    "Stablecoins and BUIDL are valued at $1, and USTB's month-end prices are interpolated. Ethena's transparency dashboard could not be read, and assets held outside the fund's address, if any, are not counted."
+  ]
+}

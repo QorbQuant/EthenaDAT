@@ -1,0 +1,19 @@
+{
+  "path": "/research/usde-redemptions-rseth-april-2026/",
+  "title": "USDe Redemptions After the rsETH Exploit, April 2026",
+  "headline": "How much USDe was redeemed after the rsETH exploit?",
+  "name": "USDe redemptions after the rsETH exploit",
+  "description": "In the nine days after the rsETH exploit of April 18, 2026, 2.16 billion USDe was burned and supply fell 35.61%, its steepest nine-day fall since 2024.",
+  "article": true,
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "image": "/research-assets/usde-redemptions-rseth-april-2026/chart_preview.png",
+  "imageAlt": "Stacked areas of USDe's total supply on Ethereum at the end of each day from January 31 to May 31, 2026, in billions, split into the USDe held by sUSDe, the USDe in sUSDe's cooldown silo and the USDe outside both. sUSDe's cooldown was cut from seven days to one on March 16, 2026. At the end of April 18, the day of the rsETH exploit, supply was 5.83 billion, of which sUSDe held 3.53 billion. At the end of April 27 it was 3.75 billion, of which sUSDe held 2.16 billion. The silo peaked at 0.43 billion on April 20. On May 31 supply was 4.51 billion, of which sUSDe held 1.79 billion.",
+  "citation": [
+    "https://governance.aave.com/t/24580",
+    "https://gov.ethenafoundation.com/t/791",
+    "https://gov.ethenafoundation.com/t/759",
+    "https://docs.ethena.fi/technical-design/minting-usde/mint-and-redeem-key-functions"
+  ],
+  "researchDataPath": "/research/usde-redemptions-rseth-april-2026/#reproduce-the-numbers"
+}

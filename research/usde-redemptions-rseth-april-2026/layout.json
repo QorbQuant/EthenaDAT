@@ -1,0 +1,94 @@
+{
+  "cutoff": "Reads of Ethereum at the end of each UTC day, made 00:03 to 02:18 UTC on October 13, 2026 · Supply series to October 12, 2026 · Sources read October 12 and 13, 2026 UTC",
+  "navigation": [
+    [
+      "Nine days",
+      "the-nine-days-after-the-exploit"
+    ],
+    [
+      "Holdings",
+      "which-holdings-fell"
+    ],
+    [
+      "Cooldown",
+      "the-one-day-cooldown"
+    ],
+    [
+      "Largest falls",
+      "the-largest-falls-since-2024"
+    ],
+    [
+      "Attestations",
+      "the-attestations-against-the-chain"
+    ],
+    [
+      "Method",
+      "how-the-reads-were-made"
+    ],
+    [
+      "Caveats",
+      "caveats"
+    ],
+    [
+      "Primary sources",
+      "primary-sources"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDe's total supply on Ethereum at the end of each day, split into the USDe held by sUSDe, in its cooldown silo and outside both, January 31 to May 31, 2026",
+  "chartFile": "chart_usde_redemptions_april_2026.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_usde_redemptions_april_2026.svg",
+    "chart_preview.png",
+    "daily_state.csv",
+    "april_days.csv",
+    "waves.csv",
+    "largest_falls.csv",
+    "attestations.csv",
+    "staking_ratio.csv",
+    "chart_data.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "layout.json",
+    "redemption_waves.py",
+    "make_chart_svg.py",
+    "check_article_numbers.py",
+    "browser/redemption_waves_read.js",
+    "browser/bundle_files.js",
+    "inputs/sources.csv",
+    "inputs/manifest.csv",
+    "inputs/chain/browser_digests.json",
+    "inputs/chain/day_flows.csv",
+    "inputs/chain/day_reads.csv",
+    "inputs/chain/day_state.csv",
+    "inputs/chain/request_failures.csv",
+    "inputs/chain/request_summary.csv",
+    "inputs/chain/run.json",
+    "inputs/web/redemption_sources_2026-10-13.txt",
+    "inputs/web/usde_chain_review_carried_2026-10-12.txt",
+    "out/daily_state.csv",
+    "out/april_days.csv",
+    "out/waves.csv",
+    "out/largest_falls.csv",
+    "out/attestations.csv",
+    "out/staking_ratio.csv",
+    "out/chart_data.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/chart_usde_redemptions_april_2026.svg",
+    "out/chart_preview.png"
+  ],
+  "keyFindings": [
+    "USDe's total supply on Ethereum fell 35.61% in the nine UTC days after the rsETH exploit of April 18, 2026, from 5,829,728,799.04 to 3,753,508,213.58, as 2,156,741,247.42 USDe was burned and 80,520,661.96 minted. As a share of supply it was the largest fall over three, seven or nine days since January 1, 2024, while October 2025 was larger in USDe.",
+    "With sUSDe's cooldown at one day since March 16, 2026, sUSDe and its cooldown silo made up 64.68% of the April fall, a little above their 60.99% share of supply. In the nine days from October 10, 2025, under a seven-day cooldown, they held 40.98% of supply and made up 3.01% of the fall, and 14.83% of the 30-day fall to November 8.",
+    "The read counted every burn as a redemption without checking what triggered it, and day-end reads miss moves within a day. The split between sUSDe, its silo and the USDe outside sUSDe compares holdings at day ends, so it does not show whose USDe was redeemed or that the cooldown caused the difference."
+  ]
+}

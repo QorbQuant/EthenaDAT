@@ -1,0 +1,37 @@
+eid,chain_key,chain_name,chain_type,native_chain_id,usde_token,usde_token_type,usde_decimals,usde_proxy,rpcs_listed
+30102,bsc,BNB Chain,evm,56,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,30
+30106,avalanche,Avalanche,evm,43114,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,10
+30108,aptos,Aptos,aptos,1,0xf37a8864fe737eb8ec2c2931047047cbaed1beed3fb0e5b7c5526dafd3b9c2e9,ERC20,6,0x9674429dcc02d2ed0d50fa24cb25262d349a5722b1a02502cff92e3cc85924b3,1
+30110,arbitrum,Arbitrum,evm,42161,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,13
+30111,optimism,Optimism,evm,10,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,12
+30151,metis,Metis,evm,1088,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,8
+30165,zksync,zkSync Era Mainnet,evm,324,0x39fe7a0dacce31bd90418e3e659fb0b5f0b3db0d,NativeOFT,18,,7
+30168,solana,solana,solana,101,DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT,ERC20,9,4x3oQtX4MhjTKGBeXDZbtTSLZ9cUWo5waN2UChAuthtS,1
+30177,kava,Kava,evm,2222,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,10
+30181,mantle,Mantle,evm,5000,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,7
+30183,linea,Linea,evm,59144,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,5
+30184,base,Base,evm,8453,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,18
+30214,scroll,Scroll,evm,534352,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,7
+30217,manta,Manta,evm,169,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,4
+30243,blast,Blast,evm,81457,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,7
+30255,fraxtal,Fraxtal,evm,252,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,5
+30260,mode,Mode,evm,34443,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,3
+30274,xlayer,xlayer,evm,196,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,7
+30303,zircuit,zircuit,evm,48900,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,5
+30318,plume,plume,evm,98865,,,,,1
+30322,morph,morph,evm,2818,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,2
+30326,initia,initia,initia,,,,,,0
+30335,swell,swell,evm,1923,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,2
+30339,ink,ink,evm,57073,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,5
+30343,ton,ton,ton,,0x086fa2a675f74347b08dd4606a549b8fdb98829cb282bc1949d3b12fbaed9dcc,ERC20,6,0x23a676145f8dee3632f722aac50392f22cf0b4be8f624e038279a6f5005fb669,0
+30362,bera,bera,evm,80094,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,4
+30367,hyperliquid,hyperliquid,evm,999,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,8
+30383,plasma,plasma,evm,9745,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,2
+30390,monad,monad,evm,143,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,11
+30391,ethereal,ethereal,evm,5064014,0x0000000000000000000000000000000000000000,NativeToken,18,0x80f981abc18a48cfdbde5556f9b72e6a726f0ff3,1
+30393,doma,doma,evm,97477,,,,,2
+30398,megaeth,megaeth,evm,4326,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,1
+30410,tempo,tempo,evm,4217,0x20c0000000000000000000002f52d5cc21a3207b,ERC20,6,0xf8b6aa0cee4e1ad87ee259dab5e556eb62297d7f,1
+30416,robinhood,robinhood,evm,4663,0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34,NativeOFT,18,,1
+30420,tron,Tron,tron,728126428,0xd472876d3fecd73b8759c46c918ff0134d0bf593,NativeOFT,18,,1
+30600,stellar,stellar,stellar,,0x9aeafaf5469dd0ca60deb7a3223485163206bf458ca67a0a47908eb90884e9ae,ERC20,7,0x1603ddbe4d4cc5db11c804aca19ece44ec8f125ea2af67da6d24e7f102c58081,1

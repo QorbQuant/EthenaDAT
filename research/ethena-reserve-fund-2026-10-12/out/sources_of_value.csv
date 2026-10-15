@@ -1,0 +1,19 @@
+category,kind,line,usd
+payout,in,Allocations from the sUSDe Payout Fund,35665296.40
+safe_a,in,Transfers from Safe 0xa2af...cced92,10000321.66
+other_in,in,Transfers from addresses that are not contracts,13239921.00
+interest,in,USDtb interest transfers,959648.17
+dust,in,Transfers under 1 USDC of unknown purpose,0.11
+savings,sleeve,sDAI and sUSDS savings vaults,1649259.20
+ustb,sleeve,Superstate USTB,106245.27
+uniswap,sleeve,Uniswap V3 USDe/USDT positions,416681.69
+buidl,sleeve,"BUIDL, bought and its dividend",28526.50
+curve,sleeve,Curve USDtb/USDC pool,95300.34
+usdtb_mint,sleeve,USDtb minted for BUIDL and USDC,-29097.71
+swap,sleeve,Swaps through CoW Protocol and Curve's router,-30840.36
+safe_b,sleeve,Conversions through Safe 0x4423...9d9d,-5752.43
+eth,in,"ETH held since January 2024, at Chainlink's price",756.19
+paid_in,subtotal,"Paid in by the sUSDe Payout Fund, Safe 0xa2af...cced92 and the two addresses",58905539.05
+earned,subtotal,"Earned by the vaults, funds, pools and USDtb interest",3255661.18
+costs,subtotal,"Cost of minting USDtb, swaps and conversions",-65690.51
+total,,Value at the read block,62096266.02

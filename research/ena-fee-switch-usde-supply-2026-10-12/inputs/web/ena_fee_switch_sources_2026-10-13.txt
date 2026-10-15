@@ -1,0 +1,110 @@
+ENA fee switch, passages used. Read in a browser on 2026-10-12 and 2026-10-13 UTC. The passages are
+summaries in this review's words with the sources' figures, not quotations.
+
+1. Ethena Foundation governance forum, topic 830, ENA Fee Switch Activation
+The raw text of the topic, https://gov.ethenafoundation.com/raw/830 , was read at 2026-10-12T23:58:26Z. It had
+33371 characters and the SHA-256 45ccdceeb6410b652550cc79d20641f56433a1f8b9ec28ba34e58fb7d606dab5, the same
+text as read at 21:46:21Z for the reserve fund review of the same day. The topic held six posts. Each post's
+raw text was read from https://gov.ethenafoundation.com/raw/830/<post number>.
+
+post | account             | created (UTC)        | characters | SHA-256 of the raw post
+1    | EthenaLabs_Research | 2026-08-27 13:59:31  | 1814       | bf8d2fc0069d277f08167fcf0e44e29cd9c837d4033c12a8685fce28e6724aeb
+2    | BlockworksAdvisory  | 2026-08-27 14:12:05  | 20362      | 5d9b2b41ad70210fa8fc29c6f579cb9a309337dfaabecf498c0a7b2c8d0c9506
+3    | Kairos_Res          | 2026-08-27 14:12:13  | 290        | b63c69cb7f59bc76efca7525b8161542bd66a4269fc7e0c9341327e429eaf29f
+4    | OAKResearch         | 2026-08-27 15:56:21  | 6478       | 60ae2956883df0e44f410b6a6f08bc8e6ce1b00850a167ccd4f648e7ccf08a93
+5    | governanceforum     | 2026-09-08 10:48:47  | 360        | 8e58b9dba0a929c20ec712f5abbf8cabea580a88a519f132685537ef50cd9bb7
+6    | an individual       | 2026-10-12 14:43:46  | 3613       | a5659ba017ce99e03666e14ff0b54e5de2b6a4e591e56634277a15d3d5dd1a6a
+
+P1. Ethena Labs Research, writing with the Ethena Risk Committee, proposed milestones for turning on the ENA
+fee switch and put them to a vote of ENA holders. The share of protocol revenue that goes to buying back ENA
+rises at each milestone of USDe circulating supply. The schedule was meant to support growth back to about
+$15b of USDe supply, the level of 2025, and the milestones replace parameters the Risk Committee had suggested
+earlier. Ethena had three business lines, USDe savings, whitelabel stablecoins and Ethena [X], which was to
+launch the following week. Once the first milestone is reached, 95% of the net revenue of these lines that is
+paid to the Ethena Foundation would go to ENA buybacks, which the transparency dashboard would track. The Risk
+Committee had signed off on the rates, the thresholds and the mechanics. If the vote passed, buybacks would
+begin when the milestones are reached. The post's table is an image, described in section 3.
+
+P2. Blockworks Advisory supported the design and backtested it on 705 days of Ethena data, from 19 September
+2024 to 24 August 2026, covering USDe circulating supply, protocol revenue, sUSDe and sUSDS yields and ENA
+prices. It described the take as a share of gross protocol revenue, rising with USDe supply, 5% at $7.5B, 10%
+at $10B, 15% at $15B and 20% at $20B, and wrote that at the USDe supply of the day, $4.07B, the schedule takes
+nothing. The take comes off gross revenue in proportion to everything that revenue funds, which over the
+previous 30 days had been $175M a year, 34.3% to sUSDe staking, 34.3% to partner payouts and 31.4% to Aave
+liquid leverage. Daily supply first crossed $7.5B on 27 July 2025. Its table of supply measures gave, for each
+measure, the days to the first buyback counted from 27 July 2025, the active days, the rung changes, and the
+capture per panel year and while active. Daily target 0, 117, 4, $8.79M, $53.0M. 14 day average 7, 118, 4,
+$8.82M, $52.7M. 30 day average 14, 120, 4, $8.64M, $50.8M. 90 day average 34, 141, 4, $7.66M, $38.3M. Each
+measure changed rung four times and switched the buyback on once and off once. The 14 day average peaked at
+$14.65B in October 2025, 2.3% short of the $15B rung, and the 90 day average at $12.38B. It recommended a 14 day
+trailing average of USDe supply as the trigger, because one large mint can move a single day's supply. Its
+table of annual buybacks at each rung, at a 6% illustrative and a 4.60% realized protocol APY, gave $7.5B and
+5%, $22.5M and $17.3M. $10B and 10%, $60.0M and $46.0M. $15B and 15%, $135.0M and $103.5M. $20B and 20%, $240.0M
+and $184.1M. Protocol APY, 30 day annualized revenue over USDe supply, had exceeded 6% on 121 of the 705 days.
+The $15B and $20B rungs had never been reached. ENA gross unlocks run to April 2028 at 267,187,500 tokens a
+month, and ENA's market capitalization was $1.57B.
+
+P3. Kairos Research supported turning on the fee switch once the thresholds are met.
+
+P4. OAK Research supported the architecture, the supply anchors and the tier levels, and supported the 14 day
+moving average Blockworks Advisory recommended in place of its own earlier 30 day ramp. Its table gave USDe
+supply $7.5B, $10B, $15B and $20B, protocol APY 6.0%, annualized gross revenue $450M, $600M, $900M and $1.2B,
+take rates 5%, 10%, 15% and 20%, and annualized captured revenue $22.5M, $60M, $135M and $240M. It wrote that
+the vote concerns the supply milestones and that implementation, a benchmark for stablecoin yields, a
+continuity reserve and sENA rewards would be addressed in separate proposals.
+
+P5. The forum account confirmed on September 8, 2026 that the ENA snapshot vote had passed and linked the
+Snapshot proposal.
+
+P6. An individual contributor, on October 12, 2026, suggested a mechanism for executing buybacks, noting that
+implementation specifics were to be discussed separately. The account's name is not kept here.
+
+2. Snapshot proposal
+The proposal 0xcb6b9ed95bf0c64b6101ff7d3a770af86e07701d8419b541cf91a6894022f2a3 in the space
+ethenagovernance.eth was read from Snapshot's GraphQL API, https://hub.snapshot.org/graphql , at
+2026-10-12T23:58:42Z. The response had 457 bytes and the SHA-256
+ff1de459f9ab04286e3884c7135c45fd41b83184e6f7979ce7fb6c48384ed031. Title ENA Fee Switch. Choices For, Against and
+Abstain. Voting from 2026-08-27 13:59:52 UTC to 2026-09-02 13:59:52 UTC, with voting power taken at Ethereum
+block 25,847,012. State closed. Scores 17,786,102.45 For, 0 Against and 0 Abstain, from 88 votes, against a
+quorum of 5,000,000.
+A second query at 2026-10-13T01:07:06Z, made from the forum's page for post 1, asked for the same fields with
+the proposal's text and voting strategies. The response had 3816 characters and the SHA-256
+062efa4386695bc15693a4d14b2d5f09cfec635569d067f8e52e160dfcab4d68, and its title, choices, dates, block, state,
+scores, votes and quorum were the same as above. The proposal's text had 1828 characters and the SHA-256
+5a11ae8767c12c087237aa94cbd1e2383c805a365adde0a324024323c7dcd56e. Post 1, read again at the same time from
+https://gov.ethenafoundation.com/raw/830/1 , had 1814 characters and the same SHA-256 as in the table above. Both
+texts have 14 nonblank lines, and they differ only in formatting and one list number. The post escapes a tilde and two brackets, the
+image's address is a forum upload in the post and an IPFS address on Snapshot, the third business line is
+numbered ii) in the post and iii) on Snapshot, and the post has spaces at the ends of some lines. The proposal
+has four voting strategies. Two count balances of ENA, 0x57e114b691db790c35207b2e685d4a43181e6061, and of sENA,
+0x8be3460a480c80728a8c4d7a5d5303c85ba7b3b9. Two count ENA and sENA deposited in the contract
+0x8707f238936c12c309bfc2b9959c35828acfc512, read through its stakes function.
+Post 1 was read and searched again at about 01:20 UTC on 2026-10-13, the same 1814 characters with the same SHA-256. It contains none of
+the words average, trailing, moving, window, day, measure or defin(e), so neither text says how USDe circulating
+supply is measured, over what window it is averaged or when a change of rate takes effect. Circulating appears
+once, in the sentence on the milestones. Net revenue appears once, in the sentence on the 95%, and is not
+defined.
+
+3. The milestone table in post 1
+https://canada1.discourse-cdn.com/flex003/uploads/ethena/original/1X/6536cd49e9a83d2dec19f80f90bbcbd75d65ec73.jpeg
+was read at 2026-10-12T23:58:42Z, 130,337 bytes, 1650 by 674 pixels, SHA-256
+66ab77ddcc0042e23d86f68d339ab18344e14ebd9e00e401868f8757e4963413. Its text was read by eye. It is headed as an
+illustration of ENA buybacks scaling with USDe supply. Its columns are USDe supply of $7.5B, $10B, $15B, $20B
+and $25B+. Gross protocol APY is 6.0% in every column. Annualized gross revenue is $450m, $600m, $900m and
+$1,200m, with none given for $25B+. The net revenue take rate for buybacks is 5%, 10%, 15%, 20% and 25%.
+Annualized buyback volume is $22.5m, $60m, $135m and $240m, with none given for $25B+. A note says that the
+figures are illustrative, that they hold protocol APY at 6.0%, below Ethena's realised gross protocol APY since
+inception, and that actual amounts will vary with realised rewards and the composition of USDe's backing.
+
+4. Ethena documentation, ENA page
+https://docs.ethena.fi/overview/ena.md was read at 2026-10-13T00:00:14Z, 3329 characters, SHA-256
+4548165cf831a8baec2610443eba0289789ee3ae4e33739733e12dc44a6b9735. ENA is Ethena's governance token. sENA is
+staked ENA, an ERC-4626 wrapper with a cooldown before ENA can be withdrawn. The Risk Committee sets risk
+parameters across the protocol, including the activation conditions for mechanisms such as the fee switch.
+
+5. Ethena documentation, Risk Committee page, carried from the reserve fund review of October 12, 2026
+https://docs.ethena.fi/protocol-overview/governance/risk-committee.md was read at 2026-10-12T22:11:15Z for that
+review, as Markdown, 4798 characters of page text, the SHA-256 of the page text beginning 155f957636049840. The
+Committee's members for the current six-month term were Blockworks Advisory, LlamaRisk and Kairos Research. A
+member proposes a change in the governance forum, the members deliberate for seven days and then vote. Ethena
+Labs Research sits on the Committee as a nonvoting member that may make proposals.

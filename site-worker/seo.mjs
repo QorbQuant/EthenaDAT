@@ -1,3 +1,8 @@
+import { meta as october15Review0 } from "./content/ena-fee-switch-usde-supply-2026-10-12.mjs";
+import { meta as october15Review1 } from "./content/ethena-reserve-fund-2026-10-12.mjs";
+import { meta as october15Review2 } from "./content/stablecoinx-mnav-vs-treasury-companies-2026-10-09.mjs";
+import { meta as october15Review3 } from "./content/usde-redemptions-rseth-april-2026.mjs";
+import { meta as october15Review4 } from "./content/usde-supply-by-chain-2026-10-12.mjs";
 import { meta as octoberReview0 } from "./content/avalanche-usde-ethenapay-2026-10-11.mjs";
 import { meta as octoberReview1 } from "./content/ethenapay-cashback-2026-10-09.mjs";
 import { meta as octoberReview2 } from "./content/ethenapay-daily-boost-2026-10-08.mjs";
@@ -26,6 +31,12 @@ export const AUTHOR = {
   sameAs: ["https://x.com/Degenerate_DeFi"],
 };
 export const PAGES = {
+  [october15Review0.path]: october15Review0,
+  [october15Review1.path]: october15Review1,
+  [october15Review2.path]: october15Review2,
+  [october15Review3.path]: october15Review3,
+  [october15Review4.path]: october15Review4,
+
   [octoberReview0.path]: octoberReview0,
   [octoberReview1.path]: octoberReview1,
   [octoberReview2.path]: octoberReview2,
@@ -61,7 +72,7 @@ export const PAGES = {
   "/research/": {
     title: "Ethena & StablecoinX Research and Analysis | EthenaDash",
     description:
-      "Original StablecoinX market reviews and sourced guides to ENA treasury valuation, USDEW warrants and EthenaPay onchain spending.",
+      "Original research on Ethena, USDe supply, reserve assets, ENA buybacks, StablecoinX valuation and EthenaPay onchain spending.",
     name: "Research",
   },
   "/research/stablecoinx-mnav/": {
@@ -144,6 +155,7 @@ export function graph(path, modified) {
               datePublished: p.datePublished || "2026-10-05",
               dateModified: p.dateModified || "2026-10-05",
               mainEntityOfPage: url,
+              ...(p.citation?.length ? { citation: p.citation } : {}),
               ...(p.image ? { image: ORIGIN + p.image } : {}),
             }
           : modified

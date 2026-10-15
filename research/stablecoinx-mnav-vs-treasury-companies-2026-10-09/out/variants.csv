@@ -1,0 +1,14 @@
+variant,label,value,note
+mstr_high_shares,"Strategy, adding the 1,469,165 shares sold September 21 to 27",0.9372,shares 423539967
+usde_10q_count,"StablecoinX on the 10-Q's 3,031,404,421 ENA",0.4638,
+usde_net,StablecoinX adding June 30 cash and subtracting all liabilities,0.4637,net 640288940
+hypd_as_converted,Hyperion DeFi counting its June 30 preferred stock as the common shares it converts into,0.6866,"shares 31150173, September 30 common plus 3 x June 30 preferred"
+asst_net,"Strive adding cash and STRC and subtracting SATA at $100 a share, October 2",1.9924,"SATA 1349808200, net 1408414009, per share 13.95"
+fwdi_own_oct9,"Forward on its own definition, SOL at the October 9 close, other lines at September 30",0.7105,NAV 788090113
+fwdi_token_sep30,Forward token-only on its own September 30 prices,0.5929,
+fwdi_own_sep30_common,"Forward's own mNAV on common shares, September 30",0.6837,company figure 0.684x
+fwdi_token_fd_oct9,Forward token-only on its fully diluted count,0.8407,
+usde_dashboard_oct9,The dashboard's own October 9 mNAV,0.4747,ENA 0.206502
+usde_breakeven_ena,ENA price at which USDE's close equals token NAV per share,0.0980,
+bmnr_if_no_issuance,"BitMine on the July 9 count less 20.8 million shares bought back, if no shares were issued",0.9399,"shares 582426394, ETH NAV 14891346620"
+bmnr_per_10m_shares,BitMine's mNAV rises by this much for each 10 million shares issued since July 9,0.0161,

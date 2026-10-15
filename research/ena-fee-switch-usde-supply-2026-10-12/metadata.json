@@ -1,0 +1,16 @@
+{
+  "path": "/research/ena-fee-switch-usde-supply-2026-10-12/",
+  "title": "ENA Fee Switch Milestones vs USDe Supply, Oct 12, 2026",
+  "headline": "How far is USDe's supply from the first ENA buyback milestone?",
+  "name": "ENA fee switch and USDe supply",
+  "description": "USDe's 14 day average supply was $4.87 billion on October 12, 2026. It needed to rise 54.15% to reach $7.5 billion, the first ENA fee switch milestone.",
+  "article": true,
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "image": "/research-assets/ena-fee-switch-usde-supply-2026-10-12/chart_preview.png",
+  "imageAlt": "Line chart of USDe's total supply on Ethereum at the end of each day and its 14 day trailing average from January 1, 2024 to October 12, 2026, in billions, with dashed lines at the fee switch milestones of 7.5, 10 and 15 billion. Day-end supply peaked at 14.82 billion on October 3, 2025. The 14 day average was at or above 7.5 billion from August 3 to November 28, 2025. On October 12, 2026 day-end supply was 4.77 billion and the 14 day average 4.87 billion.",
+  "citation": [
+    "https://gov.ethenafoundation.com/t/ena-fee-switch-activation/830"
+  ],
+  "researchDataPath": "/research/ena-fee-switch-usde-supply-2026-10-12/#reproduce-the-numbers"
+}

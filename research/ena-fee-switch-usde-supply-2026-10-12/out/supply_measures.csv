@@ -1,0 +1,5 @@
+measure,first_active_day,last_active_day,days_to_first,days_to_first_published,active_days,active_days_published,rung_changes,rung_changes_published,peak_billion,peak_day,peak_published_billion
+daily,2025-07-27,2025-11-20,0,0,117,117,4,4,14.8198,2025-10-03,
+14 day average,2025-08-03,2025-11-28,7,7,118,118,4,4,14.6484,2025-10-09,14.65
+30 day average,2025-08-10,2025-12-07,14,14,120,120,4,4,14.2403,2025-10-10,
+90 day average,2025-08-30,2026-01-17,34,34,141,141,4,4,12.3770,2025-11-01,12.38

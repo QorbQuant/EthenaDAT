@@ -1,0 +1,16 @@
+{
+  "path": "/research/usde-supply-by-chain-2026-10-12/",
+  "title": "USDe Supply by Chain, Reconciled to Ethereum, Oct 12, 2026",
+  "headline": "How much USDe was on each chain, and did it add up?",
+  "name": "USDe supply by chain",
+  "description": "On October 12, 2026, Ethena's LayerZero adapter on Ethereum held 2.29 billion USDe, and the USDe on 35 other chains came within 95.45 USDe of it.",
+  "article": true,
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "image": "/research-assets/usde-supply-by-chain-2026-10-12/chart_preview.png",
+  "imageAlt": "Horizontal bar chart of USDe on each chain read at about 18:41 UTC on October 12, 2026, in millions, and its share of the USDe locked on Ethereum. Plasma 578.5, 25.2%. Solana 468.5, 20.4%. Base 392.2, 17.1%. Robinhood Chain 372.5, 16.3%. TON 169.1, 7.4%. Monad 114.6, 5.0%. Mantle 82.5, 3.6%. BNB Chain 78.4, 3.4%. Berachain 13.0, 0.6%. Avalanche 10.9, 0.5%. 25 other chains 12.1, 0.5%.",
+  "citation": [
+    "https://docs.ethena.fi/technical-design/key-addresses"
+  ],
+  "researchDataPath": "/research/usde-supply-by-chain-2026-10-12/#reproduce-the-numbers"
+}

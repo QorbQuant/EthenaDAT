@@ -1,0 +1,59 @@
+USDe by chain, reconciled with Ethena's USDe OFT adapter on Ethereum
+
+PASS every input matches its size and SHA-256 in inputs/manifest.csv | 21 files, review copy only and absent here inputs/chain/raw_reads_redacted.jsonl
+PASS the browser's files match the SHA-256 digests the browser computed | 13 files
+PASS the read script in browser/ is the one the browser ran | fe64869223e633d4
+PASS the confirming script in browser/ is the one the browser ran | 6717b62ee63db8d6
+PASS Stellar Expert's asset record matches the digest the browser computed
+PASS the DefiLlama extract matches the digest the browser computed
+
+Ethereum
+PASS the adapter's token() is USDe on Ethereum
+PASS the adapter reports approvalRequired, so it locks USDe rather than minting it
+PASS the adapter's shared decimals are 6 and its conversion rate 10^12
+PASS a second RPC gave the same USDe supply and adapter balance at the same block | https://eth.drpc.org
+PASS the raw Ethereum response gives the block, its time, USDe's supply, the adapter's balance and the custodian's | block 26178253 at 2026-10-12T18:41:35.000Z
+  USDe supply 4746167897.22, adapter 2292201958.40 (48.30%), on Ethereum outside the adapter 2453965938.83
+
+Peer history
+PASS Blockscout and Routescan returned the same 49 PeerSet records
+PASS at the read block the adapter's peers match the last PeerSet record for every one of the 186 endpoint IDs, on both RPCs
+PASS the adapter had 25 peers at the read and had removed 11
+PASS chains.csv has one row for each of the 36 chains
+PASS chains.csv marks the same chains connected
+PASS every EVM contract and the Solana store read is the adapter's last peer for that chain
+
+Chain reads
+PASS Stellar Expert's asset is the contract LayerZero's metadata gives for USDe on Stellar | CCNOV6XVI2O5BSTA3232GIRUQULDEBV7IWGKM6QKI6II5OIIQTU24JJN
+PASS every chain was read except Plume's 2024 network, whose only RPC did not answer | plume
+PASS for every EVM chain and Tron the raw responses give the block, its time, the supply, the decimals, the custodian's balance and the contract's peer for Ethereum | 30 chains
+PASS two Solana RPCs gave the same USDe supply | slots 456148929, 456148932
+PASS the Solana mint's authority is the adapter's peer on Solana and it has no freeze authority | 4x3oQtX4MhjTKGBeXDZbtTSLZ9cUWo5waN2UChAuthtS
+PASS two Aptos endpoints gave the same supply at the same ledger version | version 7585872277
+PASS toncenter and tonapi gave the same TON jetton supply
+PASS Initia's bank module and its Move view gave the same supply at the same height
+PASS Ethereal's USDe is what the adapter's peer there received less what it sent, by chain and in all | 185867690.74 received, 184585238.83 sent, 23652 and 29129 records
+PASS every second read made with the first gave the same supply, at the same block or ledger version except on Solana, three slots later, and TON, less than a second later | 27 chains, aptos, arbitrum, base, bera, blast, doma, fraxtal, hyperliquid, initia, ink, kava, linea, manta, mantle, megaeth, metis, mode, monad, morph, optimism, robinhood, scroll, solana, tempo, ton, xlayer, zksync
+PASS the later second reads equal the first except Avalanche's, which rose after the first read | same at a later block: bsc, plasma, robinhood, tempo
+PASS every connected EVM chain's contract names the adapter as its peer for Ethereum
+PASS the peer reads on the other chains failed only on Arbitrum, read again on a second RPC
+PASS every peer the contracts on the EVM chains and Tron named for Ethereum or the other 35 chains was the adapter or the contract the adapter last named for that chain | 37 peers named, Ethereal's contract names 7 other chains: arbitrum, base, bsc, hyperliquid, plasma, robinhood, solana
+PASS on the dropped EVM chains read, only Metis's contract still names a peer, the adapter | no peers on doma, kava, linea, manta, mode, scroll, swell, zksync
+PASS Swellchain's only answering RPC served a block about 12 hours old | block time 2026-10-12T06:39:21.000Z
+
+Reconciliation
+PASS recomputed from the read blocks and times, the messages' flags match the browser's except those of Stellar, which the browser read separately | 153 messages, 2 recomputed
+PASS the only message left between chains at the reads is one of 0.9995 USDe from Ethereum to Stellar that failed on arrival
+  Sum of 35 chains 2292201862.942722, adapter 2292201958.395178, difference 95.452456919165449406, in transit 0.999500, unexplained 94.452956919165449406
+PASS the chains' USDe adds up to the adapter's balance within 100 USDe, less than 0.000005% of it | 94.452956919165449406 USDe unexplained, 0.0000041% of the adapter's balance
+PASS every chain's supply is a whole number of millionths of a USDe except Solana's | Solana's remainder 0.000000552000000000 USDe
+PASS the adapter's balance has a remainder below a millionth of a USDe, which only a transfer to it made outside the bridge can leave | 0.000000471165449406
+PASS Ethena's PSM custodian held USDe only on Avalanche among the 28 EVM chains and Tron where its balance was read, and 0.558392 USDe on Ethereum | Avalanche 500992.493208 USDe, not read on Aptos, Ethereal, Initia, Plume's 2024 network, Solana, Stellar, TON
+  Largest: Plasma 578451106, Solana 468500550, Base 392201136, Robinhood Chain 372492882, TON 169126159 | 86.41% of the adapter
+PASS five chains hold more than 85% of the adapter's USDe | 86.41%
+PASS seven chains were dropped on September 24 and 30, 2026, holding 14245.50 USDe at the reads
+PASS Ethena's list of 22 chains includes 8 the adapter no longer accepted and leaves out 11 it did
+PASS DefiLlama's figures match the reads to the millionth on 25 chains, net of the custodian's USDe | Plasma, TON, Monad, Mantle, BNB Chain, Berachain, Avalanche, HyperEVM, Arbitrum, Blast, MegaETH, Morph, Zircuit, Ink, Fraxtal, OP Mainnet, Linea, ZKsync Era, Scroll, Manta Pacific, Mode, Metis, Kava, X Layer, Tempo
+  DefiLlama differs on Solana, Base, Robinhood Chain, Swellchain, leaves out Ethereal, Aptos, Tron, Initia, Stellar, Doma, Plume's 2024 network and adds Movement
+
+43 checks, 0 failed

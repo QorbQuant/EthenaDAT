@@ -1,0 +1,56 @@
+Ethena documentation, passages used. Read in a browser on 2026-10-12. The passages are summaries in this
+review's words with the pages' figures and addresses, not quotations.
+
+1. Reserve Fund page
+Requested https://docs.ethena.fi/solution-design/reserve-fund.md at 2026-10-12T21:12:04Z. It redirected to
+https://docs.ethena.fi/protocol-overview/reserve-fund.md, Markdown, 3148 characters as page text, SHA-256 of the
+page text 91e947411a79b903851b3b9462cf4983d10dc09c3c1107f85dbaf400f15dadfe.
+Summary. The Reserve Fund is a pool of assets that the protocol holds as an extra margin of safety for USDe. It
+was funded with part of the protocol's revenue in periods of high revenue and keeps a balance that supports
+USDe's backing. Governance sets the share of revenue it receives, and the page put that share at 0% at present,
+with all revenue going to incentive rewards, promotional distributions and distribution incentives. The fund is
+meant to bear the cost when the cost of keeping the backing's positions exceeds what the backing earns from
+funding, lending, real-world assets and stablecoin rewards, so that periods of negative revenue fall on the fund
+rather than on the core reserves. It can also be used to cover shortfalls in backing from the risks the
+documentation lists. The page pointed to the Transparency dashboard, https://app.ethena.fi/dashboards/transparency,
+for the fund's current size.
+
+2. Key Addresses page
+https://docs.ethena.fi/technical-design/key-addresses.md read at 2026-10-12T21:12:17Z, Markdown, 12587 characters
+as page text, SHA-256 of the page text c56a7822a09ae28367a92169bfb093e3c64031c452214d4aa7da3089a3c6dc33, the same
+text as read at 19:15 UTC for the USDe chain review. Its time element gave 2026-09-17T18:50:03.509Z as the last
+update.
+Summary. Under Liquidity Pool Contracts, after seven Curve pools, the page listed a USDT and USDe Uniswap v3 pool
+linked to Uniswap's page for 0x435664008f38b0650fbc1c9fc971d0a3bc2f1e47. Under Multisig Wallets it listed, each
+linked to Etherscan, the Dev multisig 0x3b0aaf6e6fcd4a7ceef8c92c32dfea9e64dc1862, with 5/11 signers, which owns
+Ethena's mainnet contracts and can change their parameters; the sUSDe Payout Fund
+0x71e4f98e8f20c88112489de3dded4489802a3a87, with 3/11 signers, which distributes USDe to the staking rewards
+distributor; the Reserve Fund 0x2b5ab59163a6e93b4486f6055d33ca4a115dd4d5, with 4/10 signers, described as the
+protocol's funds to be paid out when net negative funding or another impairment of USDe's backing occurs; and a
+USDe PSM custodian held in Coinbase's MPC custody.
+
+3. Transparency dashboard
+https://app.ethena.fi/dashboards/transparency was opened in the same browser twice, the second time at
+2026-10-12T21:13:03Z. Both times it redirected to https://ethena.fi/restricted, a page saying that access was
+restricted. Its figure for the Reserve Fund was not read, and the restriction was not worked around.
+
+4. Counterparties named on the Key Addresses page
+At 2026-10-12T22:02:39Z the Key Addresses page was read again in the browser. Its page text had 12587
+characters and a SHA-256 beginning c56a7822a09ae283, the same text as above, and contained 44 distinct
+Ethereum addresses. Blockscout's list of the Reserve Fund's token transfers, fetched again from that page at
+about 22:03 UTC, still had 182 transfers in 4 pages, with 40 counterparties other than the fund, 15 of them,
+the zero address among them, marked by Blockscout as not contracts. Of the 40, the page named only the Uniswap V3 USDe/USDT pool
+0x435664008f38b0650fbc1c9fc971d0a3bc2f1e47 and the sUSDe Payout Fund
+0x71e4f98e8f20c88112489de3dded4489802a3a87. It did not name the Safes 0xa2af0b03aaf167cfc9624c6ef587581b6fcced92
+or 0x4423198f26764a8ce9ac8f1683c476854c885d9d, the Curve USDtb/USDC pool
+0xc2921134073151490193ac7369313c8e0b08e1e7, or any of the 15 that Blockscout marked as not contracts. The check
+ran in the browser and kept no address of a counterparty that is not a contract.
+
+5. Risk Committee page
+https://docs.ethena.fi/solution-overview/governance/risk-committee.md redirected to
+https://docs.ethena.fi/protocol-overview/governance/risk-committee.md. Read in the browser before the forum
+topics and again at 2026-10-12T22:11:15Z, Markdown, 4798 characters as page text, SHA-256 of the page text beginning
+155f957636049840. Summary. The Committee's mandate is to identify, evaluate and manage risk in the ecosystem. Its
+members for the current six-month term were Blockworks Advisory, LlamaRisk and Kairos Research. A member proposes
+a change in the governance forum, the members deliberate for seven days and then vote. Ethena Labs Research sits
+on the Committee as a nonvoting member that may make proposals.

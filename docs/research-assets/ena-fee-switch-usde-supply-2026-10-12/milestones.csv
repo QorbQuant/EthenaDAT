@@ -1,0 +1,6 @@
+usde_supply_billion,take_pct,ethena_revenue_6pct_musd,ethena_buyback_6pct_musd,blockworks_buyback_6pct_musd,blockworks_buyback_460_musd,gap_from_14d_avg_usd,growth_needed_14d_pct,gap_from_last_day_usd,growth_needed_last_day_pct,days_daily_at_or_above,days_14d_at_or_above
+7.5,5,450,22.5,22.5,17.3,2634643360.65,54.15,2732845058.29,57.33,117,118
+10.0,10,600,60,60.0,46.0,5134643360.65,105.53,5232845058.29,109.77,80,81
+15.0,15,900,135,135.0,103.5,10134643360.65,208.30,10232845058.29,214.65,0,0
+20.0,20,"1,200",240,240.0,184.1,15134643360.65,311.07,15232845058.29,319.54,0,0
+25.0,25,,,,,20134643360.65,413.84,20232845058.29,424.42,0,0

@@ -1,0 +1,107 @@
+tx,category,episode,note
+tx-1,safe_a,2024-01 funding,"USDe, USDT and USDC from Safe 0xa2af...cced92"
+tx-2,swap,2024-01 funding,USDC to USDT through CoW Protocol
+tx-3,uniswap,2024-01 Uniswap V3,two positions opened in the USDe/USDT 0.01% pool
+tx-4,uniswap,2024-01 Uniswap V3,two positions opened in the USDe/USDT 0.01% pool
+tx-5,payout,2024 allocations,from the sUSDe Payout Fund
+tx-6,safe_a,2024-02 funding,USDC from Safe 0xa2af...cced92
+tx-7,swap,2024-02 Uniswap V3,USDC to USDT and USDe through Curve's router
+tx-8,swap,2024-02 Uniswap V3,USDC to USDT and USDe through Curve's router
+tx-9,uniswap,2024-02 Uniswap V3,a third position opened
+tx-10,payout,2024 allocations,from the sUSDe Payout Fund
+tx-11,safe_a,2024-02 funding,USDC from Safe 0xa2af...cced92
+tx-12,payout,2024 allocations,from the sUSDe Payout Fund
+tx-13,payout,2024 allocations,from the sUSDe Payout Fund
+tx-14,swap,2024-03 sDAI,USDC and USDT to DAI through CoW Protocol
+tx-15,payout,2024 allocations,from the sUSDe Payout Fund
+tx-16,swap,2024-03 sDAI,USDC and USDT to DAI through CoW Protocol
+tx-17,savings,2024-03 sDAI,DAI deposited in sDAI
+tx-18,payout,2024 allocations,from the sUSDe Payout Fund
+tx-19,payout,2024 allocations,from the sUSDe Payout Fund
+tx-20,safe_b,2024-04 Uniswap V3,USDT sent to Safe 0x4423...9d9d and USDe received from it
+tx-21,safe_b,2024-04 Uniswap V3,USDT sent to Safe 0x4423...9d9d and USDe received from it
+tx-22,uniswap,2024-04 Uniswap V3,a fourth position opened
+tx-23,payout,2024 allocations,from the sUSDe Payout Fund
+tx-25,other_in,2024-04 transfer,USDT from an address that is not a contract
+tx-26,safe_b,2024-04 conversion,USDe sent to Safe 0x4423...9d9d and USDT received from it
+tx-27,payout,2024 allocations,from the sUSDe Payout Fund
+tx-28,safe_b,2024-04 conversion,USDe sent to Safe 0x4423...9d9d and USDT received from it
+tx-29,payout,2024 allocations,from the sUSDe Payout Fund
+tx-30,payout,2024 allocations,from the sUSDe Payout Fund
+tx-31,payout,2024 allocations,from the sUSDe Payout Fund
+tx-32,payout,2024 allocations,from the sUSDe Payout Fund
+tx-33,payout,2024 allocations,from the sUSDe Payout Fund
+tx-34,payout,2024 allocations,from the sUSDe Payout Fund
+tx-35,payout,2024 allocations,from the sUSDe Payout Fund
+tx-36,payout,2024 allocations,from the sUSDe Payout Fund
+tx-37,payout,2024 allocations,from the sUSDe Payout Fund
+tx-39,payout,2024 allocations,from the sUSDe Payout Fund
+tx-41,swap,2024-10 BUIDL,USDT to USDC through CoW Protocol
+tx-42,swap,2024-10 BUIDL,USDT to USDC through CoW Protocol
+tx-43,swap,2024-10 BUIDL,USDT to USDC through CoW Protocol
+tx-44,swap,2024-10 BUIDL,USDT to USDC through CoW Protocol
+tx-45,buidl,2024-10 BUIDL,1 USDC test sent to BUIDL's contract and 1 USDC received back from an address that is not a contract
+tx-46,buidl,2024-10 BUIDL,1 USDC test sent to BUIDL's contract and 1 USDC received back from an address that is not a contract
+tx-47,buidl,2024-10 BUIDL,USDC sent to BUIDL's contract and BUIDL minted
+tx-48,buidl,2024-10 BUIDL,USDC sent to BUIDL's contract and BUIDL minted
+tx-49,dust,2024-10 BUIDL,a transfer of 0 USDC
+tx-51,savings,2024-10 sUSDS,sDAI migrated to sUSDS through Sky's MigrationActions
+tx-52,savings,2024-10 sUSDS,sDAI migrated to sUSDS through Sky's MigrationActions
+tx-53,savings,2024-10 sUSDS,sDAI migrated to sUSDS through Sky's MigrationActions
+tx-54,buidl,2024-11 BUIDL,"BUIDL minted to the fund with no payment, the form of BUIDL's monthly dividend"
+tx-55,payout,2024 allocations,from the sUSDe Payout Fund
+tx-56,uniswap,2024-12 exit,liquidity removed from the four positions
+tx-57,uniswap,2024-12 exit,liquidity removed from the four positions
+tx-58,uniswap,2024-12 exit,liquidity removed from the four positions
+tx-59,uniswap,2024-12 exit,liquidity removed from the four positions
+tx-60,usdtb_mint,2024-12 USDtb,BUIDL sent and USDtb minted
+tx-61,usdtb_mint,2024-12 USDtb,BUIDL sent and USDtb minted
+tx-62,usdtb_mint,2024-12 USDtb,BUIDL sent and USDtb minted
+tx-63,swap,2024-12 USDtb,USDT and USDe to USDC through CoW Protocol
+tx-64,swap,2024-12 USDtb,USDT and USDe to USDC through CoW Protocol
+tx-65,curve,2024-12 USDtb,USDC and USDtb added to the Curve USDtb/USDC pool
+tx-66,usdtb_mint,2024-12 USDtb,BUIDL sent and USDtb minted
+tx-67,other_in,2024-12 transfer,USDC from an address that is not a contract
+tx-68,usdtb_mint,2024-12 USDtb,USDC sent and USDtb minted
+tx-69,usdtb_mint,2024-12 USDtb,USDC sent and USDtb minted
+tx-70,uniswap,2025-02 exit,the last liquidity removed
+tx-71,swap,2025-02 exit,USDe and USDT to USDC through CoW Protocol
+tx-72,swap,2025-02 exit,USDe and USDT to USDC through CoW Protocol
+tx-73,ustb,2025-02 USTB,"test: 10 USDC for USTB, redeemed for 10.01 USDC"
+tx-74,dust,2025-02 USTB,0.101 USDC from an address that is not a contract
+tx-75,ustb,2025-02 USTB,"test: 10 USDC for USTB, redeemed for 10.01 USDC"
+tx-77,ustb,2025-02 USTB,"test: 10 USDC for USTB, redeemed for 10.01 USDC"
+tx-78,ustb,2025-02 USTB,"test: 10 USDC for USTB, redeemed for 10.01 USDC"
+tx-81,ustb,2025-02 USTB,"test: 11 USDC for USTB, redeemed for 11 USDC"
+tx-84,ustb,2025-02 USTB,"test: 11 USDC for USTB, redeemed for 11 USDC"
+tx-85,ustb,2025-02 USTB,"test: 11 USDC for USTB, redeemed for 11 USDC"
+tx-86,ustb,2025-02 USTB,"test: 11 USDC for USTB, redeemed for 11 USDC"
+tx-87,ustb,2025-02 USTB,USDC for USTB
+tx-88,ustb,2025-02 USTB,USDC for USTB
+tx-89,dust,2025-02 USTB,"0.01 USDC from, and 0 USDC to, an address that is not a contract"
+tx-91,ustb,2025-02 USTB,USDC for USTB
+tx-92,dust,2025-02 USTB,"0.01 USDC from, and 0 USDC to, an address that is not a contract"
+tx-93,ustb,2025-02 USTB,USDC for USTB
+tx-95,interest,2025 interest,USDtb from addresses that are not contracts
+tx-96,interest,2025 interest,USDtb from addresses that are not contracts
+tx-98,interest,2025 interest,USDtb from addresses that are not contracts
+tx-99,interest,2025 interest,USDtb from addresses that are not contracts
+tx-106,interest,2025 interest,USDtb from addresses that are not contracts
+tx-107,interest,2025 interest,USDtb from addresses that are not contracts
+tx-110,ustb,2025-08 exit,USTB redeemed for USDC
+tx-111,ustb,2025-08 exit,USTB redeemed for USDC
+tx-112,ustb,2025-08 exit,USTB redeemed for USDC
+tx-113,ustb,2025-08 exit,USTB redeemed for USDC
+tx-115,savings,2025-08 exit,100 sUSDS redeemed for USDS
+tx-116,savings,2025-09 exit,sUSDS sold for USDC through CoW Protocol
+tx-117,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-119,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-121,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-123,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-125,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-127,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-129,savings,2025-09 exit,sDAI sold for USDC through CoW Protocol
+tx-130,usdtb_mint,2025-09 USDtb,USDC sent and USDtb minted
+tx-133,interest,2025 interest,USDtb from addresses that are not contracts
+tx-134,interest,2025 interest,USDtb from addresses that are not contracts
+tx-135,interest,2025 interest,USDtb from addresses that are not contracts

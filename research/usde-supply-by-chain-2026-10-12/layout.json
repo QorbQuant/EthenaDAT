@@ -1,0 +1,101 @@
+{
+  "cutoff": "Chains read at about 18:41 UTC on October 12, 2026 · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "USDe by chain",
+      "usde-on-each-connected-chain"
+    ],
+    [
+      "Reconciliation",
+      "how-the-count-adds-up"
+    ],
+    [
+      "Dropped chains",
+      "chains-ethena-dropped"
+    ],
+    [
+      "Other counts",
+      "how-other-counts-compare"
+    ],
+    [
+      "Method",
+      "how-the-reads-were-made"
+    ],
+    [
+      "Caveats",
+      "caveats"
+    ],
+    [
+      "Primary sources",
+      "primary-sources"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDe on each chain at about 18:41 UTC on October 12, 2026",
+  "chartFile": "chart_usde_by_chain.svg",
+  "dashboard": "/ethenapay/",
+  "dashboardLabel": "Open the EthenaPay dashboard →",
+  "assets": [
+    "chart_usde_by_chain.svg",
+    "chart_preview.png",
+    "chains_table.csv",
+    "reconciliation.csv",
+    "dropped_chains.csv",
+    "peer_timeline.csv",
+    "defillama_comparison.csv",
+    "chart_data.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "layout.json",
+    "usde_chains_review.py",
+    "make_chart_svg.py",
+    "check_article_numbers.py",
+    "browser/usde_chains_read.js",
+    "browser/usde_chains_confirm.js",
+    "browser/redact_raw_reads.js",
+    "inputs/sources.csv",
+    "inputs/manifest.csv",
+    "inputs/chain/adapter_peers_at_read.csv",
+    "inputs/chain/arbitrum_peers.csv",
+    "inputs/chain/browser_digests.json",
+    "inputs/chain/browser_run.json",
+    "inputs/chain/chains.csv",
+    "inputs/chain/confirm_supply.csv",
+    "inputs/chain/ethereal_flows.csv",
+    "inputs/chain/ethereum.json",
+    "inputs/chain/lz_chains.csv",
+    "inputs/chain/lzscan_messages.csv",
+    "inputs/chain/lzscan_queries.csv",
+    "inputs/chain/lzscan_window.json",
+    "inputs/chain/peer_history.csv",
+    "inputs/chain/peer_matrix.csv",
+    "inputs/chain/raw_reads_public.jsonl",
+    "inputs/chain/request_log.csv",
+    "inputs/chain/stellar_expert_usde_asset.json",
+    "inputs/web/adapter_source_2026-10-12.txt",
+    "inputs/web/defillama_usde_extract_2026-10-12.json",
+    "inputs/web/ethena_key_addresses_2026-10-12.txt",
+    "out/chains_table.csv",
+    "out/reconciliation.csv",
+    "out/in_transit.csv",
+    "out/dropped_chains.csv",
+    "out/defillama_comparison.csv",
+    "out/peer_timeline.csv",
+    "out/chart_data.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/chart_usde_by_chain.svg",
+    "out/chart_preview.png"
+  ],
+  "keyFindings": [
+    "At 18:41 UTC on October 12, 2026, Ethena's LayerZero adapter on Ethereum held 2,292,201,958.40 USDe, 48.30% of USDe's total supply on Ethereum, and the USDe on the 35 other chains read added up to it within 95.45 USDe.",
+    "At 18:41 UTC on October 12, 2026, five chains held USDe equal to 86.41% of the USDe locked on Ethereum. Plasma held 578.5 million, Solana 468.5 million, Base 392.2 million, Robinhood Chain 372.5 million and TON 169.1 million.",
+    "The review could not read Plume's 2024 network, read Swellchain only at a block from 06:39 UTC on October 12, 2026, and could not tell what left 94.45 USDe unexplained."
+  ]
+}

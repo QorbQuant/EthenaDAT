@@ -1,0 +1,18 @@
+{
+ "read_script": "browser/usde_chains_read.js",
+ "read_script_sha256_in_browser": "fe64869223e633d4079bdb31b7fc0e5010b4f5d21c59bb00a2fea35d38d41efe",
+ "confirm_script": "browser/usde_chains_confirm.js",
+ "confirm_script_sha256_prefix_in_browser": "6717b62ee63db8d6",
+ "page": "https://arbitrum.publicnode.com/",
+ "run_started_utc": "2026-10-12T18:41:27.625Z",
+ "messages_read_utc": "2026-10-12T18:48:21.272Z",
+ "confirm_started_utc": "2026-10-12T18:52:16.391Z",
+ "stellar_read": {
+  "page": "https://api.stellar.expert/explorer/public/asset/USDE-GDJ5BNU5NN6NQ54D7OX6NQTUYNBZ42CAT33QGM5BIQ2QIYADAC5ICH47-1",
+  "read_utc": "2026-10-12T18:41:49.185Z",
+  "status": 200,
+  "sha256_prefix_in_browser": "fdeb2bbbb3d6"
+ },
+ "defillama_extract_sha256_prefix_in_browser": "4e4d51857d63",
+ "transfer": "The files left the browser as one gzip-compressed JSON bundle in base64, 518 lines checked one by one against their SHA-256 in the browser, and every file was checked against the browser's SHA-256 after decoding."
+}

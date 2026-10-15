@@ -1,0 +1,99 @@
+{
+  "cutoff": "Prices at the October 9, 2026 close · Filings to October 9, 2026 · Sources read October 12, 2026 UTC",
+  "navigation": [
+    [
+      "Five companies",
+      "the-five-companies-at-the-october-9-close"
+    ],
+    [
+      "Implied prices",
+      "what-each-close-implied-for-the-token"
+    ],
+    [
+      "Method",
+      "how-the-counts-were-chosen"
+    ],
+    [
+      "Beyond token NAV",
+      "beyond-token-nav"
+    ],
+    [
+      "Companies left out",
+      "companies-left-out"
+    ],
+    [
+      "Caveats",
+      "caveats"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "Token-only mNAV of five crypto treasury companies at the October 9, 2026 close",
+  "chartFile": "chart_mnav_peers.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_mnav_peers.svg",
+    "chart_preview.png",
+    "companies.csv",
+    "variants.csv",
+    "left_out.csv",
+    "chart_data.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "layout.json",
+    "dat_mnav_review.py",
+    "review_flagged_passages.py",
+    "check_article_numbers.py",
+    "make_chart_svg.py",
+    "browser/yahoo_closes_fetch.js",
+    "browser/kraken_tokens_fetch.js",
+    "browser/defillama_tokens_fetch.js",
+    "browser/sec_filings_fetch.js",
+    "browser/sec_quotes_check.js",
+    "browser/sec_window_search.js",
+    "browser/sec_window_extra.js",
+    "inputs/facts.csv",
+    "inputs/manifest.csv",
+    "inputs/sources.csv",
+    "inputs/prices/yahoo_daily_2026-10-08_09.csv",
+    "inputs/prices/yahoo_fetch_log.csv",
+    "inputs/prices/kraken_1h_2026-10-09_19utc_20utc.csv",
+    "inputs/prices/kraken_fetch_log.csv",
+    "inputs/prices/coingecko_via_defillama_2026-10-09_20utc.csv",
+    "inputs/prices/defillama_fetch_log.csv",
+    "inputs/prices/stockanalysis_closes_read_2026-10-12.csv",
+    "inputs/filings/sec_quotes_2026-10-12.csv",
+    "inputs/filings/sec_documents_2026-10-12.csv",
+    "inputs/filings/sec_filings_2026-09-01_to_10-09.csv",
+    "inputs/filings/sec_fetch_log.csv",
+    "inputs/filings/sec_window_documents_2026-10-12.csv",
+    "inputs/filings/sec_window_flagged_2026-10-12.csv",
+    "inputs/filings/sec_window_review_2026-10-12.csv",
+    "inputs/filings/sec_window_filings_2026-10-12.csv",
+    "inputs/filings/sec_window_pdfs_2026-10-12.csv",
+    "inputs/carried/form4_director_awards_2026-10-02.csv",
+    "inputs/carried/stablecoinx_10q_facts_from_book_value_review.csv",
+    "inputs/carried/dashboard_series_2c7c5a5_october.csv",
+    "inputs/carried/usde_ena_tracking_chart_data_2c7c5a5.csv",
+    "inputs/carried/site_review_passages_2c7c5a5.txt",
+    "out/chart_mnav_peers.svg",
+    "out/chart_preview.png",
+    "out/companies.csv",
+    "out/variants.csv",
+    "out/left_out.csv",
+    "out/chart_data.csv",
+    "out/results.json",
+    "out/run_log.txt"
+  ],
+  "keyFindings": [
+    "At the October 9, 2026 close, StablecoinX's stock, USDE, was priced at 0.46 times the value of the ENA tokens it reported per share, second lowest of five crypto treasury companies on a token-only measure.",
+    "Hyperion DeFi was at 0.34 on its common shares alone, Forward Industries at 0.61, Strategy at 0.93 and Strive at 1.16. USDE's close would have equaled the value of StablecoinX's ENA per share at an ENA price of $0.0980.",
+    "Token NAV, the value of a company's reported tokens, leaves out cash, debt, preferred stock and warrants and uses reported counts, not verified balances. BitMine Immersion Technologies and Hyperliquid Strategies were left out because their filed counts could not be matched."
+  ]
+}

@@ -1,0 +1,89 @@
+{
+  "cutoff": "Supply at the end of each UTC day to October 12, 2026, read at Ethereum block 26,179,856, 00:02:59 UTC on October 13, 2026 · Sources read October 12 and 13, 2026 UTC",
+  "navigation": [
+    [
+      "Milestones",
+      "the-milestones-ena-holders-approved"
+    ],
+    [
+      "Supply now",
+      "where-usdes-supply-stood-on-october-12-2026"
+    ],
+    [
+      "2025",
+      "the-2025-stretch-above-75-billion"
+    ],
+    [
+      "Backtest",
+      "the-backtest-rebuilt-onchain"
+    ],
+    [
+      "Which supply",
+      "which-supply-counts"
+    ],
+    [
+      "Method",
+      "how-the-reads-were-made"
+    ],
+    [
+      "Caveats",
+      "caveats"
+    ],
+    [
+      "Primary sources",
+      "primary-sources"
+    ],
+    [
+      "Download data",
+      "reproduce-the-numbers"
+    ]
+  ],
+  "chartLabel": "USDe's supply at the end of each day and its 14 day average against the ENA fee switch milestones, January 2024 to October 2026",
+  "chartFile": "chart_usde_supply_milestones.svg",
+  "dashboard": "/stablecoinx/",
+  "dashboardLabel": "Open the StablecoinX dashboard →",
+  "assets": [
+    "chart_usde_supply_milestones.svg",
+    "chart_preview.png",
+    "daily_supply.csv",
+    "milestones.csv",
+    "supply_measures.csv",
+    "chart_data.csv"
+  ],
+  "archiveFiles": [
+    "README.md",
+    "article_draft.md",
+    "metadata.json",
+    "layout.json",
+    "fee_switch_supply.py",
+    "make_chart_svg.py",
+    "check_article_numbers.py",
+    "browser/usde_supply_read.js",
+    "browser/bundle_files.js",
+    "browser/finality_check.js",
+    "inputs/sources.csv",
+    "inputs/manifest.csv",
+    "inputs/chain/browser_digests.json",
+    "inputs/chain/day_reads.csv",
+    "inputs/chain/finality_check.json",
+    "inputs/chain/read_block.csv",
+    "inputs/chain/request_failures.csv",
+    "inputs/chain/request_summary.csv",
+    "inputs/chain/run.json",
+    "inputs/web/ena_fee_switch_sources_2026-10-13.txt",
+    "inputs/web/usde_chain_review_carried_2026-10-12.txt",
+    "out/daily_supply.csv",
+    "out/milestones.csv",
+    "out/supply_measures.csv",
+    "out/chart_data.csv",
+    "out/results.json",
+    "out/run_log.txt",
+    "out/chart_usde_supply_milestones.svg",
+    "out/chart_preview.png"
+  ],
+  "keyFindings": [
+    "USDe's total supply on Ethereum was 4,767,154,941.71 at the end of October 12, 2026 UTC, and its 14 day trailing average was 4,865,356,639.35. The average had to rise 54.15% to reach $7.5 billion, the first milestone of the ENA fee switch that ENA holders approved, and below it the schedule sends nothing to ENA buybacks.",
+    "Day-end supply read onchain reproduced all twelve counts in the table of supply measures in the backtest that Blockworks Advisory, a member of Ethena's Risk Committee, posted with the proposal. The 14 day average stood at or above $7.5 billion for 118 days, from August 3 to November 28, 2025, peaked at $14.65 billion and never reached $15 billion.",
+    "The vote named USDe circulating supply as the trigger without a definition or an averaging window. The 14 day average used here was recommended by Blockworks Advisory and supported by OAK Research, which posted its own analysis of the proposal. Revenue was not read, so no dollar figure is given for buybacks beyond the sources' illustrations."
+  ]
+}

@@ -1,0 +1,74 @@
+{
+ "reserve_fund": "0x2b5ab59163a6e93b4486f6055d33ca4a115dd4d5",
+ "read_block": 26178998,
+ "snapshot_blocks": {
+  "https://ethereum-rpc.publicnode.com": {
+   "number": 26178998,
+   "time": 1791839459,
+   "hash": "0x57fcf3ac2e4a6f635b2b6a378f958e83649315f5a1926df911f5c832e7f979f3"
+  },
+  "https://eth.drpc.org": {
+   "number": 26178998,
+   "time": 1791839459,
+   "hash": "0x57fcf3ac2e4a6f635b2b6a378f958e83649315f5a1926df911f5c832e7f979f3"
+  }
+ },
+ "started_utc": "2026-10-12T21:11:46.881Z",
+ "finished_utc": "2026-10-12T21:19:02.757Z",
+ "latest_rpcs": [
+  "https://ethereum-rpc.publicnode.com",
+  "https://eth.drpc.org"
+ ],
+ "archive_rpcs": [
+  "https://eth.drpc.org",
+  "https://gateway.tenderly.co/public/mainnet"
+ ],
+ "uniswap_pool": "0x435664008f38b0650fbc1c9fc971d0a3bc2f1e47",
+ "uniswap_pool_tokens": [
+  "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+  "0xdac17f958d2ee523a2206206994597c13d831ec7",
+  100
+ ],
+ "position_ids": [
+  658523,
+  658530,
+  680386,
+  700726
+ ],
+ "blockscout_pages": 4,
+ "blockscout_transfers": 182,
+ "routescan": {
+  "tokentx": 205,
+  "tokennfttx": 5,
+  "token1155tx": 6
+ },
+ "fund_transactions": 146,
+ "fund_transactions_sent_to_safe": 146,
+ "failed_safe_transactions": 63,
+ "counterparties_not_contracts": 19,
+ "transactions_labelled": 166,
+ "months": 33,
+ "requests": 3390,
+ "event_queries": [
+  [
+   "sDAI in 5 blocks",
+   "ok",
+   4
+  ],
+  [
+   "sUSDS in 5 blocks",
+   "ok",
+   4
+  ],
+  [
+   "Curve in 1 blocks",
+   "ok",
+   1
+  ],
+  [
+   "NPM in 9 blocks",
+   "ok",
+   14
+  ]
+ ]
+}

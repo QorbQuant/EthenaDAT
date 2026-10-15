@@ -1,0 +1,132 @@
+Ethena Foundation governance forum, passages used. Read in a browser on 2026-10-12.
+
+The forum is at https://gov.ethenafoundation.com. Each topic's raw Markdown was read from
+https://gov.ethenafoundation.com/raw/<topic id>, which returns every post of the topic, at
+2026-10-12T21:44:48Z, and topics 808 and 830 again at 21:46:20Z and 21:46:21Z. The digest is the SHA-256
+of that raw text, computed in the browser. The passages below are summaries in this review's words with
+the figures as the posts gave them. They are not quotations unless set in quotation marks.
+
+id  | first post (UTC)     | raw characters | SHA-256 of the raw topic
+13  | 2024-06-19 14:54:15  | 918    | e9228f86d708c932d5e7615a0536806f7d769d9483661805b3b3b71a17171481
+235 | 2024-10-10 11:49:19  | 3860   | 06c158e1be7b77944e291ee9fb3a37d7523803c1526600ccb62d17ae09fcb909
+385 | 2024-11-27 17:27:23  | 21926  | 0d247094088a2e60cdbb4098be78a30573e224ebf571542799edcef643bf60f4
+555 | 2025-04-25 13:21:28  | 16684  | 5b38a963db700533b608a53c21b80cfcca5b463bf31740b10df897437faf9303
+596 | 2025-06-13 08:31:51  | 8299   | ac8bb65806a732f5ed177ac8f37d6091ec36c171407669aac34ccb2fefdedf07
+613 | 2025-07-03 08:58:17  | 6283   | e22b6caf433e2e4be72313c4d3059ec853c10958d80fb8aa78f55847d64389de
+623 | 2025-07-17 15:37:37  | 8382   | b8971d16b8b16fa0aac751551dd445956f249bbaae485622f6661488028086cb
+670 | 2025-08-12 10:55:11  | 9035   | a7a52c66a778a472d1f20ba32922d15e7404e828c8a70997fd946aa5df05c5c1
+685 | 2025-08-26 08:29:59  | 9362   | c2f6ddb63094e37473e6304e496c3a638aa8f9a79ee3c0f0794c7e0b3ba63821
+689 | 2025-09-04 07:59:31  | 10022  | 787830c4f57d4c70b13c0f766a203e1a3721db871061ac375fba0e5dec52c492
+703 | 2025-10-09 20:42:49  | 8700   | 67ffb979e6f3100da0cf0490e4952d8123abc21d3c4d2a7daf579ae50a8bcbbc
+704 | 2025-10-09 20:45:46  | 9483   | df3d10827cc71d55ed4fb4fa01b0816d027a95371be3078cc66e0bbec101ed15
+709 | 2025-11-03 15:46:57  | 8001   | 144c348ede242e268c2bc516ed991a05db08de4beec2056167baae17899f540e
+727 | 2025-12-09 14:50:03  | 8038   | 0c436c18d5df4344e8e8e4e284c2f990bbc4fe4755f9dba85513d74d4533f20b
+734 | 2026-01-15 17:25:31  | 8832   | 505146ab93a0c862999dead0398d548d1a99f7d69346a782e4ea8fa2d426d0aa
+748 | 2026-02-10 09:20:35  | 8526   | 0e16ce2273b1f074b444c3b36bcd28527961c3d73e40d5b17fb0e5dae55a8015
+753 | 2026-03-06 17:13:50  | 11206  | b7837662a0697ba077d29d86601ddc49911731caa611409127ca288786c01749
+775 | 2026-04-08 12:51:31  | 9201   | 9012bbb4c648af90d8b632dc298f54f38f939c8910a7b2d11fe68bd3e3b6efd2
+791 | 2026-05-28 14:12:11  | 33352  | 96ed9cb3e2765690c8a42dfe7409851bf1ad648230aaa58fd0de6acae0836a14
+796 | 2026-06-05 10:45:06  | 17495  | 1f3857d0ebbce01e16873dcbf086d675436ed6103e60a6efe38604833674e535
+808 | 2026-07-17 15:31:54  | 12351  | 89c4e495f2ba8966fcbdf88622ee3d63e1f457a453b3f2fce777f0f8258441fe
+830 | 2026-08-27 13:59:31  | 33371  | 45ccdceeb6410b652550cc79d20641f56433a1f8b9ec28ba34e58fb7d606dab5
+830 post 2 (/raw/830/2)   | 20362  | 5d9b2b41ad70210fa8fc29c6f579cb9a309337dfaabecf498c0a7b2c8d0c9506
+
+T13. About the Reserve Fund category (forum account, June 19, 2024, edited June 24, 2024).
+The reserve fund is a margin of safety behind USDe, a source of capital to pay for periods of negative
+funding and a bidder of last resort for USDe. Its composition is stablecoins including USDC and USDT, and
+other assets as governance decides.
+
+T235. RWA Reserve Fund Allocation: Winners (Ethena Labs Research, October 10, 2024).
+The Risk Committee received 25 submissions for an allocation of the Reserve Fund and linked the fund's
+holdings to a DeBank profile of 0x2b5ab59163a6e93b4486f6055d33ca4a115dd4d5. Result of the vote, with the
+allocation weights: BUIDL (Securitize/BlackRock) 40%, USDS (Sky) 29%, USDM (Mountain) 16.5%, USTB
+(Superstate) 14.5%. The Ethena Foundation approved the result. An sDAI allocation had been approved
+before Maker's move to Sky, and the sDAI in the fund was to be migrated to USDS. The members' notes on USTB
+said that it had lower fees than BUIDL and the same underlying assets, with mints and burns once a day.
+
+T385. Proposal: USDtb as a USDe Backing Asset and Eligible Asset for the Reserve Fund (Ethena Labs
+Research, November 27, 2024, with replies from BA Labs, Blockworks Advisory and LlamaRisk on December 6,
+Gauntlet on December 10 and Steakhouse on December 11, 2024).
+The proposal asked the Risk Committee to approve USDtb, a stablecoin created by Ethena Labs and backed
+mainly by BlackRock's BUIDL, as an eligible asset for the Reserve Fund. Every reply supported it. Blockworks
+Advisory recommended that the fund avoid an overly concentrated position in BUIDL or BUIDL-backed assets.
+LlamaRisk wrote that the reserve fund multisig, linked to Etherscan's page for 0x2b5ab5...d4d5, had been
+approved as a whitelisted minter of BUIDL, that BUIDL was about 40% of the fund, and that the combined
+allocation of USDtb and BUIDL was expected not to exceed 50% of the fund's capital. LlamaRisk also described
+BUIDL as BlackRock's fund that invests all of its assets in cash, US Treasury bills and repurchase agreements,
+offers a stable redemption value of $1 a token and pays the dividends that accrue daily to holders' wallets
+as new tokens each month.
+
+T555. Proposal: Allocating a portion of excess Reserve Fund assets to USDe backing (Ethena Labs Research,
+April 25, 2025, and a reply from LlamaRisk on April 29, 2025).
+The proposal put the fund at $60.9m and asked to move $5m of it to USDe's backing. LlamaRisk, writing for
+itself and Blockworks Advisory, supported it and listed the composition from LlamaRisk's dashboard of
+April 25, 2025: USTB $5.2m, USDtb $19.2m, Curve USDtb-USDC LP $20m, sUSDS $14.1m, sDAI $2.3m.
+
+T596. Reserve Fund Subcommittee June 2025 Update (LlamaRisk, June 13, 2025).
+The proposal of topic 555 was approved but later abandoned as market conditions shifted.
+
+T613. Ethena's June 2025 Governance Update (July 3, 2025). Reserve Fund $61.1M.
+
+T623. Reserve Fund Subcommittee July 2025 Update (LlamaRisk, July 17, 2025). No composition figures used.
+
+T670. Ethena's July 2025 Governance Update (August 12, 2025). Reserve Fund $61.2 million.
+
+T685. Reserve Fund Subcommittee August 2025 Update (LlamaRisk, August 26, 2025).
+The composition, linked to the DeBank profile of 0x2b5ab5...d4d5: in the wallet $19,710,412 USDtb and
+$5,319,310 USTB; Curve USDtb-USDC pool $19,995,255, being 9,433,492.9619 USDC and 10,563,258.3796
+USDtb; sUSDS $14,328,881. The list named no sDAI. The Reserve Fund Subcommittee had reviewed and accepted a
+proposal to consolidate all Reserve Fund assets into USDtb, on condition that the USDC and USDT in USDtb's
+backing consistently exceeded the fund's size. About $340M of USDC and USDT backed USDtb.
+
+T689. Ethena's August 2025 Governance Update (September 4, 2025). Reserve Fund $62M in one passage and
+$61.7M in another. The consolidation into USDtb was approved.
+
+T703. Reserve Fund Subcommittee September 2025 Update (LlamaRisk, October 9, 2025).
+Linked to the DeBank profile of 0x2b5ab5...d4d5, about $61.84M, being $41.8M of USDtb and a Curve USDtb-USDC pool position of $19.9M (10M USDC and 9.9M
+USDtb). The composition had changed because of the accepted proposal to consolidate into USDtb.
+
+T704. Ethena's September 2025 Governance Update (October 9, 2025). Reserve Fund $62m.
+
+T709. Reserve Fund Subcommittee October 2025 Update (LlamaRisk, November 3, 2025). About $61.88M, of
+USDtb and the USDtb/USDC pool position, linked to the DeBank profile of 0x2b5ab5...d4d5.
+
+T727. Reserve Fund Subcommittee November 2025 Update (LlamaRisk, December 9, 2025). About $62.08M, of
+USDtb and the USDtb/USDC pool position, linked to the DeBank profile of 0x2b5ab5...d4d5.
+
+T734. Ethena's December 2025 Governance Update (January 15, 2026). Reserve Fund $62.09 million.
+
+T748. Reserve Fund: January & Early February 2026 Update (LlamaRisk, February 10, 2026).
+About $62M, linked to the DeBank profile of 0x2b5ab5...d4d5: USDtb $41.93M and USDtb-USDC $19.99M, from
+LlamaRisk's dashboard of February 7, 2026.
+
+T753. Ethena's January and February 2026 Governance Update (March 6, 2026). Reserve Fund $62.51 million in
+the summary and $62.54 million in the body.
+
+T775. Reserve Fund: March 2026 Update (LlamaRisk, April 8, 2026, presented with Blockworks Advisory).
+About $62M: USDtb $41.98M and USDtb-USDC $20.02M, from LlamaRisk's dashboard of April 2, 2026. Interest on
+the fund's USDtb is transferred to the multisig by hand and does not accrue in the token. None had been
+paid in over four months. The last transfer was about 169k USDtb about four months earlier, and the ones
+before it about 103k and 500 USDtb about six months earlier. Blockworks Advisory's reserve ratio, the fund
+as a share of USDe supply, was 1.16% in July 2025, 0.35% at its low in late September or early October
+2025 and 1.061% at the end of March 2026. The recommendation: direct the USDtb interest of the past four
+months, and future USDtb interest, to sUSDe holders for as long as the fund exceeds twice the higher of
+the two members' estimates, then a floor of about $14M.
+
+T791. Ethena's March and April 2026 Governance Update (May 28, 2026).
+Its table of weekly attestations, which its list of sources attributes to Chaos Labs' proof-of-reserves
+API of signed weekly attestations, put the Reserve Fund at $62.00M to $62.07M on the 11 dates from February
+27 to April 30, 2026, at $62.04M on April 23, 2026, being $41.98M in USDtb and $20.02M in the USDtb/USDC
+pool position, and at $62.06M on April 30, 2026. The fund was not drawn during the April 2026 redemptions. The
+fee allocation tables showed $0 for the Reserve Fund in March and April 2026.
+
+T796. Ethena's May 2026 Governance Update (June 5, 2026).
+The Reserve Fund balance was $62.5M, 1.387% of USDe supply, against a recommended minimum of $2.84M. No
+Reserve Fund accruals were occurring, and future USDtb interest was going to sUSDe stakers under the
+April recommendation.
+
+T808. Ethena's June 2026 Governance Update (July 17, 2026). The Reserve Fund was about $62.0M.
+
+T830. ENA Fee Switch Activation (topic of August 27, 2026). Post 2, by Blockworks Advisory on August 27,
+2026: the Reserve Fund had received no allocation since 12 December 2024, having taken $35.7M in all
+before that.

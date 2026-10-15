@@ -1,0 +1,38 @@
+USDe supply against the ENA fee switch milestones, run at 2026-10-15T22:53:38Z
+PASS every input matches its size and SHA-256 in inputs/manifest.csv | 10 files
+PASS the browser's files match the SHA-256 digests the browser computed | 5 files
+PASS the scripts in browser/ match the SHA-256 digests recorded when the browser ran them
+PASS the day ends run without a gap from January 1, 2024 to the day before the read | 1016 days, 2024-01-01 to 2026-10-12
+PASS each day is read at the last block at or before 23:59:59 UTC, whose next block came after it
+PASS the second archive RPC gave the same supply and the same block hash on every day | 1016 of 1016 days
+PASS after the read, every day-end block was at or below the finalized block on two RPCs and the day-end block hashes were unchanged | finalized block 26,179,923 at 2026-10-13T00:16:23Z, last day-end block 26,179,841
+PASS two RPCs served the same read block and gave the same supply there | block 26,179,856 at 2026-10-13T00:02:59Z
+PASS the read block came after the last day end
+PASS every supply read is a positive whole number of USDe's smallest unit
+PASS daily supply first reached $7.5 billion on July 27, 2025, the date Blockworks Advisory gave | 2025-07-27, 7,500,232,731.98 USDe, the day before 7,286,610,711.74
+panel 2024-09-19 to 2026-08-24, daily: first active 2025-07-27, 0 days after July 27, 2025, 117 active days, 4 rung changes, peak 14.820B on 2025-10-03, rungs [0, 5, 10]
+panel 2024-09-19 to 2026-08-24, 14-day average: first active 2025-08-03, 7 days after July 27, 2025, 118 active days, 4 rung changes, peak 14.648B on 2025-10-09, rungs [0, 5, 10]
+panel 2024-09-19 to 2026-08-24, 30-day average: first active 2025-08-10, 14 days after July 27, 2025, 120 active days, 4 rung changes, peak 14.240B on 2025-10-10, rungs [0, 5, 10]
+panel 2024-09-19 to 2026-08-24, 90-day average: first active 2025-08-30, 34 days after July 27, 2025, 141 active days, 4 rung changes, peak 12.377B on 2025-11-01, rungs [0, 5, 10]
+PASS over Blockworks Advisory's panel the onchain supply reproduces its days to the first buyback, active days and rung changes for the daily, 14, 30 and 90 day measures | 4 of 4 measures equal
+PASS the 14 day average peaked at $14.65 billion in October 2025 and the 90 day average at $12.38 billion, as Blockworks Advisory wrote | 14.6484 on 2025-10-09, 12.3770 on 2025-11-01
+PASS on August 27, 2026, the day Blockworks Advisory put USDe's supply at $4.07 billion, the onchain supply was within 1% of it | 4,042,825,373.53 USDe at the day's end, 4,046,914,763.94 USDe the day before
+read block 26179856: 4,767,154,941.71 USDe. Day end 2026-10-12: 4,767,154,941.71 USDe, 14 day average 4,865,356,639.35
+PASS the 14 day average was at or above $7.5 billion in one unbroken stretch, and below it on every day since | 2025-08-03 to 2025-11-28, 118 days
+PASS at the last day end the 14 day average was below the first milestone, so the schedule took nothing | 4,865,356,639.35, 2,634,643,360.65 short of $7.5 billion
+highest day-end supply 14,819,842,076.32 on 2025-10-03. Days at or above each milestone, daily {5: 117, 10: 80, 15: 0, 20: 0, 25: 0}, 14 day average {5: 118, 10: 81, 15: 0, 20: 0, 25: 0}
+in 2025 the day-end supply last stood at or below 4,767,154,941.71 on 2025-05-13 (4,754,867,947.30) and reached $7.5 billion 75 days later
+the 14 day average last stood at or below 4,865,356,639.35 on 2025-05-21 and reached $7.5 billion on 2025-08-03, 74 days later
+PASS in 2025 the 14 day average first reached $7.5 billion on August 3, seven days after daily supply, as the 14 day row of the table implies
+largest 30 day rise in day-end supply: 2024-02-05 to 2024-03-06, 426.7%, 667,658,471.60 USDe
+largest 90 day rise in day-end supply: 2024-01-13 to 2024-04-12, 1924.9%, 2,272,751,018.36 USDe
+after the peak the day-end supply fell to 3,753,508,213.58 on 2026-04-27, 74.67% below the peak, and rose 27.01% from there to 2026-10-12
+highest day-end supply in the last 60 days 4,979,459,075.99 on 2026-10-06
+PASS the 14 day average was below $7.5 billion on all 318 days from the day after its last day above it to the last day
+14 day average at or above $10 billion on 81 days, 2025-08-15 to 2025-11-03
+PASS the 14 day average was at or above $10 billion in one unbroken stretch
+PASS from August 27, 2026, when voting opened, to the last day, the day-end supply and its 14, 30 and 90 day averages stayed below $7.5 billion on every day | daily 4.979B, 14 day 4.918B, 30 day 4.847B, 90 day 4.327B
+PASS the last 14 day average is the sum of the 14 day-end supplies from 2026-09-29 to 2026-10-12 over 14
+day-end supply 4,767,154,941.71 on 2026-10-12 against 4,042,825,373.53 on 2026-08-27, 17.9%
+
+all 21 checks passed

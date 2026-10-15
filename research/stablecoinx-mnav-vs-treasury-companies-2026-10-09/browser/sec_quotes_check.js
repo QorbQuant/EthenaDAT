@@ -1,0 +1,124 @@
+// Fetches each SEC document behind the review's token and share counts, hashes it as served,
+// collapses its text's whitespace and checks that every quoted passage the review relies on appears
+// in it word for word. Paste into the developer console on any page of https://www.sec.gov/ .
+// Read-only GET requests, no login. Results in window.__q.
+window.__qRun = (async () => {
+  const A = "https://www.sec.gov/Archives/edgar/data/";
+  const DOCS = {
+    usde_release: A + "2080215/000121390026072231/ea029602401ex99-1.htm",
+    usde_10q: A + "2080215/000121390026090250/ea0301482-10q_stable.htm",
+    mstr_8k_1005: A + "1050446/000119312526413164/mstr-20261005.htm",
+    mstr_def14a: A + "1050446/000119312526413159/d503578ddef14a.htm",
+    mstr_8k_0928: A + "1050446/000119312526403417/mstr-20260914.htm",
+    asst_8k_1005: A + "1920406/000162828026064753/asst-20261005.htm",
+    fwdi_release_1001: A + "38264/000168316826007543/forward_ex9901.htm",
+    bmnr_10q: A + "1829311/000162828026048157/bmnr-20260531.htm",
+    bmnr_release_1005: A + "1829311/000149315226045699/ex99-1.htm",
+    bmnr_release_0817: A + "1829311/000149315226038652/ex99-1.htm",
+    bmnr_chairman_1007: A + "1829311/000149315226046088/ex99-2.htm",
+    purr_10k: A + "2078856/000119312526370281/purr-20260630.htm",
+    purr_def14a: A + "2078856/000119312526412569/d290166ddef14a.htm",
+    purr_424b3_0923: A + "2078856/000119312526399511/d168095d424b3.htm",
+    hypd_release_1002: A + "1682639/000110465926113050/tm2626852d1_ex99-1.htm",
+    hypd_release_0812: A + "1682639/000110465926094849/tm2622908d1_ex99-1.htm",
+    mpu_6k_ex991: A + "1953021/000121390026105759/ea030681101ex99-1.htm",
+    mstr_10q: A + "1050446/000105044626000044/mstr-20260630.htm",
+    mpu_20f: A + "1953021/000121390026044335/ea0281860-20f_mega.htm",
+    usde_results_0814: A + "2080215/000121390026089504/ea030188301ex99-1.htm",
+    usde_ceo_0908: A + "2080215/000121390026097877/ea030476401ex99-1.htm",
+    usde_424b3_0914: A + "2080215/000121390026099731/ea0305435-424b3_stable.htm",
+    hypd_10q: A + "1682639/000110465926095181/hypd-20260630x10q.htm",
+    hypd_8k_1002: A + "1682639/000110465926113050/tm2626852d1_8k.htm",
+  };
+  const Q = [
+    ["usde_ena", "usde_release", "StablecoinX holds approximately 3,029 million ENA tokens"],
+    ["usde_results_0814", "usde_results_0814", "The Company’s ENA treasury totaled approximately 3.0 billion tokens"],
+    ["usde_ceo_0908", "usde_ceo_0908", "anchored by approximately 3.03 billion ENA tokens"],
+    ["usde_424b3_0914", "usde_424b3_0914", "As a result of the Closing, the Company holds approximately 3.03 billion ENA"],
+    ["usde_class_a_aug12", "usde_10q", "As of August 12, 2026, 24,029,375 shares of Class A common stock"],
+    ["usde_class_b_count", "usde_10q", "and 3,157,754 shares of Class B common stock, par value $0.0001 per share, were issued and outstanding"],
+    ["usde_class_b_rights", "usde_10q", "Holders of Class B common stock are entitled to one vote per share held and are not entitled to participate in dividends or receipt of any of the Company’s assets in the event of any dissolution, liquidation or winding up."],
+    ["usde_class_a_aug28", "usde_424b3_0914", "Shares of Class A Common Stock outstanding prior to this offering 24,029,375 shares of Class A Common Stock (as of August 28, 2026) (excludes the issuance of 19,124,586 shares of Class A Common Stock upon exercise of all outstanding Warrants and 78,635 shares of Class A Common Stock upon vesting and settlement of outstanding RSUs)."],
+    ["usde_warrants", "usde_424b3_0914", "In addition, we also have outstanding: (i)19,124,586 Warrants, consisting of approximately 11,500,000 Public Warrants and 7,624,586 Sponsor Warrants; and (ii)3,157,754 shares of Class B Common Stock."],
+    ["mstr_btc_oct4", "mstr_8k_1005", "As of October 4, 2026* Aggregate BTC Holdings Aggregate Purchase Price (in billions) (2) Average Purchase Price (2) 848,000"],
+    ["mstr_btc_time", "mstr_8k_1005", "Bitcoin activity and holdings information is presented as of 4:00 p.m. Eastern Time on the last day indicated"],
+    ["mstr_sales_sep28_30", "mstr_8k_1005", "During Period September 28, 2026 to September 30, 2026 As of September 30, 2026 Security Shares Sold Notional Value (in millions) (1) Net Proceeds (in millions) (2) Available for Issuance and Sale (in millions) STRF Stock - $ - $ - $ 1,619.3 10.00% Series A Perpetual Strife Preferred Stock STRC Stock - $ - $ - $ 17,510.8 Variable Rate Series A Perpetual Stretch Preferred Stock STRK Stock - $ - $ - $ 2,100.0 8.00% Series A Perpetual Strike Preferred Stock STRD Stock - $ - $ - $ 4,014.8 10.00% Series A Perpetual Stride Preferred Stock MSTR Stock - $ - $ - $ 18,844.4 Class A Common Stock Total $ - During Period October 1, 2026 to October 4, 2026"],
+    ["mstr_sales_oct1_4", "mstr_8k_1005", "MSTR Stock 92,894 $ - $ 15.7 (4)"],
+    ["mstr_sales_unsettled", "mstr_8k_1005", "(3) Includes shares sold but not yet settled as of October 2, 2026."],
+    ["mstr_usd_reserve", "mstr_8k_1005", "As of October 4, 2026, the balances of the USD Reserve and USD Cash were $4.88 billion and $833.4 million, respectively."],
+    ["mstr_strf_listed", "mstr_8k_1005", "par value per share STRF The Nasdaq Global Select Market"],
+    ["mstr_strc_listed", "mstr_8k_1005", "par value per share STRC The Nasdaq Global Select Market"],
+    ["mstr_strk_listed", "mstr_8k_1005", "par value per share STRK The Nasdaq Global Select Market"],
+    ["mstr_strd_listed", "mstr_8k_1005", "par value per share STRD The Nasdaq Global Select Market"],
+    ["mstr_class_b_convertible", "mstr_10q", "Each share of class B common stock is convertible at any time, at the option of the holder, into one share of class A common stock."],
+    ["mstr_convertible_notes", "mstr_10q", "0% Convertible Senior Notes due 2029 (the “2029 Convertible Notes”)"],
+    ["mstr_convertible_outstanding", "mstr_10q", "of the 2029 Convertible Notes remained outstanding as of June 30, 2026."],
+    ["mstr_record_date", "mstr_def14a", "at the close of business on September 25, 2026 (the “record date”)"],
+    ["mstr_stre", "mstr_def14a", "As of September 15, 2026, there were 7,750,000 shares of STRE Stock outstanding."],
+    ["mstr_record_shares", "mstr_def14a", "On the record date, there were an aggregate of 402,337,658 shares of our Class A Stock and 19,640,250 shares of our Class B Stock outstanding and entitled to vote."],
+    ["mstr_sales_sep21_27_period", "mstr_8k_0928", "During Period September 21, 2026 to September 27, 2026 As of September 27, 2026 Security Shares Sold"],
+    ["mstr_sales_sep21_27", "mstr_8k_0928", "MSTR Stock 1,469,165 $ - $ 246.2 (3)"],
+    ["asst_dates", "asst_8k_1005", "As of September 25, 2026As of October 2, 2026Change"],
+    ["asst_cash", "asst_8k_1005", "Cash and cash equivalents (in thousands)$248,800 $284,700 $35,900"],
+    ["asst_strc", "asst_8k_1005", "Fair value of STRC Stock (in thousands)$49,763 $50,202 $439"],
+    ["asst_btc", "asst_8k_1005", "Bitcoin held27,462 29,462 2,000"],
+    ["asst_shares", "asst_8k_1005", "Shares outstanding: (1)Class A common stock88,453,68591,708,8043,255,119Class B common stock9,198,0369,230,18232,146Effective Common Shares Outstanding (2)97,651,721100,938,9863,287,265"],
+    ["asst_sata_shares", "asst_8k_1005", "SATA Stock12,193,18013,498,0821,304,902"],
+    ["asst_shares_note", "asst_8k_1005", "(1) Includes shares outstanding and shares sold through 4:00pm EST, which will be issued on the following business day."],
+    ["asst_effective_note", "asst_8k_1005", "(2) Effective Common Shares Outstanding is calculated as the sum of Class A common stock and Class B common stock."],
+    ["asst_sata_sep30", "asst_8k_1005", "As of September 30, 2026, the Company had 88,814,706 shares of Class A common stock, 9,198,036 shares of Class B common stock, and 12,940,621 shares of SATA Stock outstanding."],
+    ["asst_balance_sep30", "asst_8k_1005", "9/30/2026Balance Sheet Cash and cash equivalents (in thousands)$284,722 Bitcoin held28,000 Fair value of bitcoin held (in thousands)$2,340,192 Shares of STRC held505,000 Fair value of STRC Stock (in thousands)$50,172 Total treasury value (in thousands)$2,675,086 Debt and Preferred Debt principal balance (in thousands)$— SATA stated amount (in thousands)$1,294,062"],
+    ["fwdi_date", "fwdi_release_1001", "The tables below present Forward’s net asset value and capitalization as of September 30, 2026."],
+    ["fwdi_sol", "fwdi_release_1001", "Total FV of SOL Treasury* 8,501,298 $118.06 $1,003,663,266"],
+    ["fwdi_other", "fwdi_release_1001", "Other digital assets – FV 42,587,366 Various $26,927,436"],
+    ["fwdi_cash", "fwdi_release_1001", "Cash $7,292,000 $1.00 $7,292,000"],
+    ["fwdi_debt", "fwdi_release_1001", "Institutional debt ($167,500,000) $1.00 ($167,500,000)"],
+    ["fwdi_nav", "fwdi_release_1001", "Total net asset value $870,382,702"],
+    ["fwdi_sol_note", "fwdi_release_1001", "* Includes SOL, fwdSOL, pledged SOL, and excludes borrowed SOL"],
+    ["fwdi_common", "fwdi_release_1001", "Common shares 76,288,215 $7.80 $595,048,077 $11.41 0.684x"],
+    ["fwdi_fully_diluted", "fwdi_release_1001", "Fully diluted share count 105,535,801 $7.80 $823,179,248 $8.25 0.946x"],
+    ["fwdi_nav_def", "fwdi_release_1001", "Net asset value is the fair value of treasury and other assets less institutional debt. mNAV is the FWDI share price divided by net asset value per share."],
+    ["bmnr_shares_jul9", "bmnr_10q", "The number of shares outstanding of the registrant’s common stock as of July 9, 2026 was 603,226,394 shares."],
+    ["bmnr_eth_oct4", "bmnr_release_1005", "As of October 4, 2026 at 6:30pm ET, the Company’s crypto holdings are comprised of 6,016,414 ETH"],
+    ["bmnr_cash_oct4", "bmnr_release_1005", "(“moonshots”) and total cash & marketable securities of $643 million."],
+    ["bmnr_eth_aug16", "bmnr_release_0817", "As of August 16, 2026 at 9:30pm ET, the Company’s crypto holdings are comprised of 5,815,164 ETH"],
+    ["bmnr_cash_aug16", "bmnr_release_0817", "(“moonshots”) and total cash & marketable securities of $78 million."],
+    ["bmnr_buyback", "bmnr_release_0817", "Since July 1, 2026, Bitmine has repurchased 20.8 million shares of common stock"],
+    ["bmnr_buyback_dates", "bmnr_chairman_1007", "On July 14th, Bitmine began a stock buyback, which was pretty much at the lows. Then we bought back 21 million shares, the largest crypto buyback ever, $350 million, and we completed that on August 17th."],
+    ["purr_hype_sep8", "purr_424b3_0923", "Current HYPE Token Holdings As of September 8, 2026, the Company holds approximately 33.2 million HYPE Tokens"],
+    ["purr_shares_sep8", "purr_424b3_0923", "Common Stock outstanding prior to the Offering 237,919,288 shares as of September 8, 2026"],
+    ["purr_website", "purr_10k", "The Company’s HYPE balance is published on its website (hypestrat.xyz), updated weekly with a one-week data delay."],
+    ["purr_record_date", "purr_def14a", "Wednesday, September 30, 2026 (the “Record Date”)"],
+    ["purr_shares_sep30", "purr_def14a", "As of the Record Date, we had 278,271,288 issued and outstanding shares of Common Stock"],
+    ["hypd_sep30", "hypd_release_1002", "As of September 30, 2026, the Company had approximately 15,442,482 outstanding HYPD common shares, held $14.5 million in cash, cash equivalents, and stablecoins and owned 1.85 million Gross HYPE tokens."],
+    ["hypd_gross_sep30", "hypd_8k_1002", "Sale of HYPE Tokens During the three months ended September 30, 2026, the Company sold a total of 200,000 HYPE and HYPE liquid staking tokens. Net of dispositions and staking rewards, as of September 30, 2026, the Company holds an aggregate of 1.85 million Gross HYPE tokens."],
+    ["hypd_reconciliation", "hypd_release_0812", "As of June 30, 2026 Value $ Token Count Token Price $ HYPE digital assets 74,119,231 1,141,174 64.95 Add: HiHYPE at Carrying Value 8,828,972 398,277 22.17 kHYPE at Carrying Value 15,897,330 455,434 34.91 kmHYPE at Carrying Value 597,068 28,888 20.67 Unrealized accretion (dilution) expected upon LST to HYPE reconversion(11) 33,192,611 18,340 N.M.* Gross HYPE Holdings(4) 132,635,212 Gross HYPE Tokens(2) 2,042,113"],
+    ["hypd_lst_def", "hypd_10q", "each referred to as a “HYPE LST”) which can be traded, sold, or redeemed for HYPE"],
+    ["hypd_preferred", "hypd_10q", "5,235,897 and 5,435,897 shares issued and outstanding as of June 30, 2026 and December 31, 2025, respectively with a liquidation preference of $50,740,000 as of June 30, 2026"],
+    ["hypd_conversion", "hypd_10q", "Each share of Series A Preferred Stock is convertible into three shares of common stock."],
+    ["hypd_non_gaap", "hypd_release_0812", "This press release includes certain non-GAAP financial measures (including on a forward-looking basis) such as Adjusted Gross Profit, Gross HYPE Holdings, Net Asset Value"],
+    ["mpu_treasury", "mpu_20f", "We commenced purchase of digital assets, including Ethna (“ENA”), Bitcoin (“BTC”) and Ethereum (“ETH”) to hold as a treasury reserve asset."],
+    ["mpu_ena", "mpu_6k_ex991", "As of June 30, 2026 and December 31, 2025, the Company held 5,203,582 and 5,203,582 tokens of ENA, respectively."],
+    ["mpu_total", "mpu_6k_ex991", "Digital asset holdings were comprised of the following: June 30, December 31, 2026 2025 BTC $ 1,464,000 $ 2,187,600 AA 1,248,100 - USDT 433,200 2,534,100 ENA 374,900 1,038,700 ETH 1,600 - $ 3,521,800 $ 5,760,400"],
+  ];
+  const hex = (buf) => [...new Uint8Array(buf)].map((b) => b.toString(16).padStart(2, "0")).join("");
+  const sha = async (bytes) => hex(await crypto.subtle.digest("SHA-256", bytes));
+  const docs = {};
+  for (const [key, url] of Object.entries(DOCS)) {
+    const r = await fetch(url, { cache: "no-store" });
+    const buf = await r.arrayBuffer();
+    const t = new DOMParser().parseFromString(new TextDecoder().decode(buf), "text/html").body.innerText.replace(/\s+/g, " ");
+    docs[key] = { url, status: r.status, bytes: buf.byteLength, sha: await sha(buf), text: t, at: new Date().toISOString() };
+    await new Promise((ok) => setTimeout(ok, 250));
+  }
+  const esc = (s) => '"' + s.replace(/"/g, '""') + '"';
+  const csv = ["fact,document,found,quote", ...Q.map(([fact, doc, quote]) => [fact, doc, docs[doc].text.includes(quote), esc(quote)].join(","))].join("\n") + "\n";
+  const doccsv = ["document,url,status,fetched_at,bytes,sha256,text_chars", ...Object.entries(docs).map(([k, d]) => [k, d.url, d.status, d.at, d.bytes, d.sha, d.text.length].join(","))].join("\n") + "\n";
+  const files = { "sec_quotes_2026-10-12.csv": csv, "sec_documents_2026-10-12.csv": doccsv };
+  const digests = {};
+  for (const [name, txt] of Object.entries(files)) digests[name] = await sha(new TextEncoder().encode(txt));
+  window.__q = { files, digests };
+  const missing = Q.filter(([f, d, q]) => !docs[d].text.includes(q)).map(([f]) => f);
+  return `docs ${Object.keys(docs).length}, quotes ${Q.length}, missing ${missing.length} ${missing.join(" ")}, ${Object.entries(digests).map(([k, v]) => k + " " + v.slice(0, 12)).join(" ")}`;
+})();
+await window.__qRun;

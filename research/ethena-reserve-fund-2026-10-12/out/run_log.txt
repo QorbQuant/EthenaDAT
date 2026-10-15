@@ -1,0 +1,59 @@
+Ethena reserve fund review, run at 2026-10-15T22:53:38Z
+PASS every input present matches its size and SHA-256 in inputs/manifest.csv | 20 files
+PASS the browser's files present match the SHA-256 digests the browser computed | 9 files, the four private files not in this copy
+PASS the scripts in browser/ match the SHA-256 digests recorded when the browser ran them
+PASS the public copies equal the browser's token list, transfer lists and counterparties with token names that contain a web address replaced and the one delegated account labeled eoa-20 | private files not in this copy, public files checked on their own
+PASS the read block is 26,178,998 and the fund is the multisig with 4/10 signers that the key addresses page names as the Reserve Fund
+PASS two RPCs served the same block and gave the same answer to all 23 reads | block 26178998 at 2026-10-12T21:10:59Z
+PASS no read at the block returned an error
+PASS the Safe needs 4 of its 10 owners to sign, as the key addresses page says, and runs Safe version 1.3.0 | threshold 4, owners 10, version 1.3.0
+PASS the Safe's nonce, 82, equals the number of its executed transactions in Blockscout's list | 82 executed, 3 reverted, 60 other failed calls, 146 sent to the Safe in all
+PASS the fund owns the four Uniswap V3 positions
+PASS the Curve pool's coins are USDC and USDtb
+PASS every tracked token's decimals match the review's table
+PASS the positions are in the USDe/USDT pool with a 0.01% fee that the key addresses page lists
+PASS the month ends run from January 2024 to September 2026 | 33 months
+PASS each month end is read at the last block at or before 23:59:59 UTC, and two archive RPCs gave identical answers there
+PASS the only errors in the month-end reads are for positions not yet created | []
+PASS Blockscout listed 182 token transfers of the fund in 4 pages
+PASS Routescan's list differs from Blockscout's only by missing one transfer, repeating six tracked-token rows under a second transaction label, and adding untracked tokens | missing tx-29, 6 repeated rows, 29 untracked-token rows, of which 2 repeat Blockscout rows
+tracked-token transfers 152, untracked-token transfers 30
+PASS every transaction that moved a tracked token is classified exactly once, and nothing else is | 106 transactions, 106 rows
+PASS every transaction's legs fit its category: the counterparties, tokens and directions the category allows
+PASS the event-log queries in the blocks found by the explorers and by the sDAI balance search all answered | sDAI in 5 blocks 4; sUSDS in 5 blocks 4; Curve in 1 blocks 1; NPM in 9 blocks 14
+PASS the fund's one sDAI deposit used the DAI it sent in the same block | 15,060,722.34 DAI for 14,195,794.59 sDAI
+PASS the three sDAI withdrawals went through Sky's MigrationActions, and each block's sUSDS deposit took the same assets and minted the sUSDS the fund received | 1,000.00 sDAI on 2024-10-15, 1,000,000.00 sDAI on 2024-10-16, 11,156,224.00 sDAI on 2024-10-31
+PASS for all 12 tracked tokens, Blockscout's transfers, with sDAI's Deposit and Withdraw records, add up to the balance read at each of the 33 month ends and at the read block
+PASS each position's own tokens, counted within its category, net to what the fund held of them at the read block
+PASS every Uniswap deposit and withdrawal matches the position manager's IncreaseLiquidity and Collect records, and each position's liquidity at every month end matches its records
+PASS at the read block all four positions held no liquidity and no uncollected tokens
+PASS the fund's one Curve deposit added 9,990,474 USDC and 9,990,474 USDtb and minted 19,980,948 LP tokens, the pool's whole supply then
+PASS in Blockscout's list, 13 transfers of tokens named like USDC from contracts other than USDC's appear as sent from the fund, each in the amount of a real USDC transfer from it, and 17 other tokens were sent to the fund and never left
+untracked tokens: 22 in Blockscout's list, 42 in either explorer's list
+PASS no token named USDM, which the Risk Committee's October 2024 vote gave 16.5%, appears among the tokens either explorer listed for the fund | 54 tokens listed
+value at the read block 62,096,266.02; USDtb 42,019,153.46; pool share 99.9984% worth 20,076,248.34 (USDC 8,787,469.70, USDtb 11,288,778.64)
+PASS at the read block the fund's value at $1 a stablecoin was $62.10 million, and USDtb and the Curve pool share made up all but under $1,000 of it | other lines 864.21
+PASS the fund equaled 1.31% of USDe's total supply on Ethereum, 4,749,058,127.00 USDe
+PASS USDtb, held directly and through the pool, was 85.85% of the fund's value and 11.33% of USDtb's total supply on Ethereum
+ETH 0.3000 at $2,520.62, updated 2026-10-12T20:33:11Z
+PASS the fund bought 492,917.002825 USTB for 5,217,093.73 USDC and redeemed the same amount for 5,323,338.99 USDC, and held USTB only at month ends between the two | price 10.5841 then 10.7997 USDC per USTB, months 2025-02, 2025-03, 2025-04, 2025-05, 2025-06, 2025-07
+highest month-end share of USDe 2.015% in 2024-02; lowest 0.420% in 2025-09
+PASS the fund's value rose from every month end to the next, and the read block's value is above September 2026's | smallest rise 1,004.08
+PASS from September 2025 to September 2026 every month-end value was between $61.8 million and $62.1 million | 61,857,094.63 to 62,095,873.73
+PASS from December 2024 to August 2025 USDtb, held directly and through the pool, stayed below 50% of the fund at every month end, highest at 48.34% in 2025-07
+PASS the inflows, the result of every exchange and position, and ETH add up to the fund's value at the read block, to the unit | 62,096,266.018308 vs 62,096,266.018308
+PASS the sUSDe Payout Fund sent 20 transfers worth 35,665,296.40, the last on 2024-12-12, matching Blockworks Advisory's $35.7M and 12 December 2024
+PASS every tracked token that left the fund went into a swap, a conversion or a pool or vault position, apart from transfers of 0 USDC
+PASS no transfer of any token in either explorer's list came after November 3, 2025, and the fund held 0.3 ETH at every month end and at the read block | 2025-11-03T23:04:47Z
+USDtb interest transfers 9, 959,648.17 USDtb, 2025-03-14 to 2025-11-03, from eoa-14 1, eoa-6 8
+paid in 58,905,539.05, earned 3,255,661.18, costs -65,690.51, ETH and transfers under 1 USDC 756.30
+transfers from addresses that are not contracts: 3,239,921.00 USDT on 2024-04-16; 10,000,000.00 USDC on 2024-12-20
+PASS from the end of September 2025 to the read block the value rose by the last interest transfer, the pool share's gain and the change in the ETH's value, to the unit | rise 239,171.38, interest 169,048.07, pool 70,610.74, ETH -487.42
+sDAI: 14,195,794.59 shares deposited, 12,157,224.00 migrated, 2,038,570.59 sold on 2025-09-04
+USDtb minted: 18,703,440.27 for 18,722,199.00 BUIDL, 32,346,539.02 for 32,356,878.00 USDC
+PASS the Uniswap line from the transfers equals the Collect amounts less the IncreaseLiquidity amounts in the position manager's records | fees 416,890.23, tokens -208.54
+PASS of the 35 published figures, the 32 other than three governance update figures are within 0.35% of the onchain values beyond their rounding and 27 within 0.1%, and the three are $0.4 million to $0.5 million above them | largest other gap beyond rounding 0.346% (T555 LlamaRisk reply, its dashboard, sDAI), higher figures by 423,488.93, 463,844.94, 493,844.94
+PASS at the end of August 2025 the fund still held sDAI worth 2,374,844.59, which the August 2025 update's list left out
+Uniswap deposits 4,931,916.95 USDe and 6,278,217.13 USDT; BUIDL bought 18,675,000.00, 39.95% of the fund at the end of October 2024
+
+all 45 checks passed

@@ -1,0 +1,231 @@
+{
+ "ethereum_block": 26178253,
+ "ethereum_time_utc": "2026-10-12T18:41:35.000Z",
+ "snapshot_started_utc": "2026-10-12T18:41:46.892Z",
+ "snapshot_finished_utc": "2026-10-12T18:42:15.699Z",
+ "usde_supply": "4746167897.222275502523503861",
+ "adapter_balance": "2292201958.395178471165449406",
+ "adapter_share_pct": "48.30",
+ "ethereum_outside_adapter": "2453965938.827097031358054455",
+ "chains_sum": "2292201862.942721552000000000",
+ "difference": "95.452456919165449406",
+ "in_transit": "0.999500000000000000",
+ "unexplained": "94.452956919165449406",
+ "unexplained_pct_of_adapter": "0.0000041",
+ "chains_in_history": 36,
+ "chains_connected": 25,
+ "chains_dropped": 11,
+ "chains_read": 35,
+ "top5": [
+  [
+   "Plasma",
+   "578451105.774464",
+   "25.24"
+  ],
+  [
+   "Solana",
+   "468500550.235087",
+   "20.44"
+  ],
+  [
+   "Base",
+   "392201135.673345",
+   "17.11"
+  ],
+  [
+   "Robinhood Chain",
+   "372492882.384583",
+   "16.25"
+  ],
+  [
+   "TON",
+   "169126158.747542",
+   "7.38"
+  ]
+ ],
+ "top5_share_pct": "86.41",
+ "dropped_sept": [
+  [
+   "Linea",
+   "2026-09-30",
+   "6486.855093"
+  ],
+  [
+   "ZKsync Era",
+   "2026-09-24",
+   "2568.993231"
+  ],
+  [
+   "Scroll",
+   "2026-09-24",
+   "1953.769226"
+  ],
+  [
+   "Manta Pacific",
+   "2026-09-24",
+   "1749.236200"
+  ],
+  [
+   "Mode",
+   "2026-09-24",
+   "974.768300"
+  ],
+  [
+   "Metis",
+   "2026-09-24",
+   "372.015891"
+  ],
+  [
+   "Kava",
+   "2026-09-24",
+   "139.859354"
+  ]
+ ],
+ "dropped_sept_sum": "14245.497295",
+ "dropped_read_sum": "29032.896437",
+ "swell": "14785.216132",
+ "swell_block_time": "2026-10-12T06:39:21.000Z",
+ "psm_avalanche": "500992.493208",
+ "psm_ethereum": "0.558392",
+ "adapter_dust": "0.000000471165449406",
+ "solana_dust": "0.000000552000000000",
+ "ethereal": {
+  "usde": "1282451.915590",
+  "received": "185867690.742058",
+  "sent": "184585238.826468",
+  "received_count": 23652,
+  "sent_count": 29129
+ },
+ "docs_listed_not_connected": [
+  "Kava",
+  "Linea",
+  "Manta Pacific",
+  "Metis",
+  "Mode",
+  "Scroll",
+  "Swellchain",
+  "ZKsync Era"
+ ],
+ "docs_missing_connected": [
+  "Avalanche",
+  "Ethereal",
+  "HyperEVM",
+  "Ink",
+  "MegaETH",
+  "Monad",
+  "Plasma",
+  "Robinhood Chain",
+  "Stellar",
+  "Tempo",
+  "Tron"
+ ],
+ "defillama_equal": [
+  "Plasma",
+  "TON",
+  "Monad",
+  "Mantle",
+  "BNB Chain",
+  "Berachain",
+  "Avalanche",
+  "HyperEVM",
+  "Arbitrum",
+  "Blast",
+  "MegaETH",
+  "Morph",
+  "Zircuit",
+  "Ink",
+  "Fraxtal",
+  "OP Mainnet",
+  "Linea",
+  "ZKsync Era",
+  "Scroll",
+  "Manta Pacific",
+  "Mode",
+  "Metis",
+  "Kava",
+  "X Layer",
+  "Tempo"
+ ],
+ "defillama_different": [
+  "Solana",
+  "Base",
+  "Robinhood Chain",
+  "Swellchain"
+ ],
+ "defillama_missing": [
+  "Ethereal",
+  "Aptos",
+  "Tron",
+  "Initia",
+  "Stellar",
+  "Doma",
+  "Plume's 2024 network"
+ ],
+ "defillama_extra": [
+  "Movement"
+ ],
+ "defillama_ethereum": "2453473551.790572",
+ "two_source_chains": [
+  "aptos",
+  "arbitrum",
+  "base",
+  "bera",
+  "blast",
+  "doma",
+  "fraxtal",
+  "hyperliquid",
+  "initia",
+  "ink",
+  "kava",
+  "linea",
+  "manta",
+  "mantle",
+  "megaeth",
+  "metis",
+  "mode",
+  "monad",
+  "morph",
+  "optimism",
+  "robinhood",
+  "scroll",
+  "solana",
+  "tempo",
+  "ton",
+  "xlayer",
+  "zksync"
+ ],
+ "messages": {
+  "window_start": "2026-10-11T18:41:46.892Z",
+  "window_end": "2026-10-12T19:11:46.892Z",
+  "usde_messages": 153
+ },
+ "added_by_year": {
+  "2024": 19,
+  "2025": 10,
+  "2026": 7
+ },
+ "inputs_sha256": {
+  "inputs/chain/adapter_peers_at_read.csv": "7dc3a13968467d7411658bb60504892a30d17107cb04a305e0eeeee5cc4f0260",
+  "inputs/chain/arbitrum_peers.csv": "f17cf01e21f3505662094ce9a69ab0dc20ee2d83cdd8aeffbf8ea3e5d6f53c41",
+  "inputs/chain/browser_digests.json": "9281465f5e508784f115a2e94b4d9baadfafd1adc54a679a30352f9144bd3d13",
+  "inputs/chain/browser_run.json": "8ee2c4949adf32cf3fa4da1893c3502e6b0c1b19a4e3d72c7b58f2360f90b9dd",
+  "inputs/chain/chains.csv": "9a9c35e3e37bb540405b12ea9ebd311194b59049c2289c3e92e0c7ed70417d75",
+  "inputs/chain/confirm_supply.csv": "d1037d49e3f6f87fdd131c2417bd9724656cbec2bb59e3dff2e7448abb8cd014",
+  "inputs/chain/ethereal_flows.csv": "cc43414368eef4b0320bd51b7011ae0d31ced2ab304d11f2a69493fbb40d4e7e",
+  "inputs/chain/ethereum.json": "942abb37b708f52a3daff0ade60ea3074df3ae1973d3855637cf06e718d84bf9",
+  "inputs/chain/lz_chains.csv": "209ae16c767568c5acf2257ecf9446724c780af09e19df87c6663bfb4cf6a5d0",
+  "inputs/chain/lzscan_messages.csv": "b363453c0523299df15e8a2789f9925624bb42db070e5340d8d4424f4fabf0a1",
+  "inputs/chain/lzscan_queries.csv": "62a8ba44bc68b226f51365f3f0a664e287524cb381ce0a916c6edba99ba6f6a3",
+  "inputs/chain/lzscan_window.json": "f70d7b5a11a30832be890be055f6c700f3e87b0231eff89ef668ce21f97df955",
+  "inputs/chain/peer_history.csv": "9ea69818be25582421053be170311f99a8daad6f7bc42f0575a0b5daa24d2f9f",
+  "inputs/chain/peer_matrix.csv": "69b37f098c0b648edb5f9a4b5d5b0ac20672610069f2b87ecafbe83c230e65bd",
+  "inputs/chain/raw_reads_public.jsonl": "4f56372761efa741f9f8efe95721c73e080fa2bba0ab513a57f3b00eaee4ce3c",
+  "inputs/chain/raw_reads_redacted.jsonl": "5506ca70a893f1c1f24d61f3abc874f2b2bd38c414b72c85d7265ce3ee913857",
+  "inputs/chain/request_log.csv": "d1c7daf1cc592154eb85f9d1cbf6694003fa7386d4654b7b28b79d8be602c151",
+  "inputs/chain/stellar_expert_usde_asset.json": "fdeb2bbbb3d6a057763020c20a1de26a3867f3b26ad88156596301035f0f38f3",
+  "inputs/web/adapter_source_2026-10-12.txt": "0250acc4041a78216ef653ff7472f1ed01cf33f97ef590a59f6b75d80b1ab479",
+  "inputs/web/defillama_usde_extract_2026-10-12.json": "4e4d51857d6375f5aacf935fffb026b89291acaccbb4679692b64e9da63c6b6a",
+  "inputs/web/ethena_key_addresses_2026-10-12.txt": "ee0712425d872d46e29b8670e04b27a162295fe4d917a1ea3f0f9b77aa81e3ec",
+  "inputs/sources.csv": "d353b190b6b59347ef08d78474389397c3d5703e7bf53ea7288e955c0ca512eb"
+ }
+}

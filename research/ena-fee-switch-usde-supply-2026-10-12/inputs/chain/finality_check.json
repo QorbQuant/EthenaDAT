@@ -1,0 +1,24 @@
+{
+ "started_utc": "2026-10-13T00:31:36.446Z",
+ "finished_utc": "2026-10-13T00:33:08.067Z",
+ "finalized": [
+  {
+   "rpc_host": "ethereum-rpc.publicnode.com",
+   "block": 26179923,
+   "block_time_unix": 1791850583
+  },
+  {
+   "rpc_host": "eth.drpc.org",
+   "block": 26179923,
+   "block_time_unix": 1791850583
+  }
+ ],
+ "hash_rpc_host": "eth.drpc.org",
+ "day_end_blocks": 1016,
+ "last_day_end_block": 26179841,
+ "every_day_end_block_at_or_below_finalized": true,
+ "sha256_day_end_block_hashes_now": "baa3364f2ec72d4bac507daeaafaae5e6bab7966c9190dd36b3c622e69cd13e7",
+ "sha256_day_end_block_hashes_in_run": "baa3364f2ec72d4bac507daeaafaae5e6bab7966c9190dd36b3c622e69cd13e7",
+ "same_digest": true,
+ "requests": 341
+}

@@ -1,0 +1,14 @@
+USDe chain review of October 12, 2026, figures carried into this review.
+
+The review "USDe Supply by Chain, Reconciled to Ethereum, Oct 12, 2026", prepared the same day and not yet
+published, read Ethena's USDe OFT adapter on Ethereum, 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34, and USDe on
+35 other chains at about 18:41 UTC on October 12, 2026. Its out/results.json had the SHA-256
+ad7789f863350418a16fab5c84fe008a5a0acb621192cc2d428dee7a438b40f0 and its inputs/chain/ethereum.json
+942abb37b708f52a3daff0ade60ea3074df3ae1973d3855637cf06e718d84bf9.
+
+Figures used. The adapter's token() was USDe, 0x4c9edd5852cd905f086c759e8383e09bff1e68b3, and its
+approvalRequired() was true, so it locks USDe on Ethereum when USDe moves to another chain rather than burning
+it. At Ethereum block 26,178,253, 18:41:35 UTC, USDe's total supply on Ethereum was 4,746,167,897.22 and the
+adapter held 2,292,201,958.40 of it, 48.30%. The USDe on the 35 other chains read came to 2,292,201,862.94,
+within 95.45 USDe of the adapter's balance. USDe's total supply on Ethereum therefore counts the USDe locked to
+back USDe on other chains, and the USDe on other chains is not in addition to it.

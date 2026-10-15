@@ -1,0 +1,37 @@
+chain,reads_less_custodian_usde,defillama_peggedUSD,difference_usde,result
+Plasma,578451105.774464,578451105.774464,0.000000,equal to the millionth
+Solana,468500550.235087,469157963.6008326,-657413.365746,different
+Base,392201135.673345,392001081.02758497,200054.645760,different
+Robinhood Chain,372492882.384583,372375811.294936,117071.089647,different
+TON,169126158.747542,169126158.747542,0.000000,equal to the millionth
+Monad,114589612.488229,114589612.488229,0.000000,equal to the millionth
+Mantle,82495874.649432,82495874.649432,0.000000,equal to the millionth
+BNB Chain,78399747.235971,78399747.235971,0.000000,equal to the millionth
+Berachain,12976410.377795,12976410.377795,0.000000,equal to the millionth
+Avalanche,10383156.778580,10383156.778579919,0.000000,equal to the millionth
+HyperEVM,7529626.809692,7529626.809692,0.000000,equal to the millionth
+Arbitrum,1933931.180740,1933931.18074,0.000000,equal to the millionth
+Ethereal,1282451.915590,,,not listed by DefiLlama
+Blast,712090.123853,712090.123853,0.000000,equal to the millionth
+MegaETH,331249.263550,331249.26355000003,0.000000,equal to the millionth
+Morph,78421.577200,78421.57720000001,0.000000,equal to the millionth
+Zircuit,66721.333014,66721.333014,0.000000,equal to the millionth
+Ink,64935.232338,64935.232338,0.000000,equal to the millionth
+Fraxtal,30672.758368,30672.758368,0.000000,equal to the millionth
+OP Mainnet,24917.215955,24917.215955,0.000000,equal to the millionth
+Swellchain,14785.216132,0,14785.216132,different
+Linea,6486.855093,6486.855093,0.000000,equal to the millionth
+ZKsync Era,2568.993231,2568.993231,0.000000,equal to the millionth
+Scroll,1953.769226,1953.7692260000001,0.000000,equal to the millionth
+Manta Pacific,1749.236200,1749.2362,0.000000,equal to the millionth
+Mode,974.768300,974.7683,0.000000,equal to the millionth
+Metis,372.015891,372.015891,0.000000,equal to the millionth
+Kava,139.859354,139.859354,0.000000,equal to the millionth
+Aptos,95.292916,,,not listed by DefiLlama
+X Layer,62.781732,62.781732,0.000000,equal to the millionth
+Tempo,22.256021,22.256021,0.000000,equal to the millionth
+Tron,3.699380,,,not listed by DefiLlama
+Initia,2.183010,,,not listed by DefiLlama
+Stellar,1.767700,,,not listed by DefiLlama
+Doma,0.000000,,,not listed by DefiLlama
+Plume's 2024 network,,,,not listed by DefiLlama

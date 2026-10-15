@@ -1,0 +1,32 @@
+USDe OFT adapter on Ethereum, 0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34, verified source
+Read 2026-10-12T19:18:38.313Z in a browser from Routescan's Etherscan-compatible API for Ethereum, module=contract action=getsourcecode, https://api.routescan.io/v2/network/mainnet/evm/1/etherscan/api
+ContractName USDeOFTAdapter. CompilerVersion v0.8.22+commit.4fc1097e. Proxy 0, so the code at the address is the code below and no other contract's.
+39 source files. Searches of every file, with the number of hits:
+  usde/USDeOFTAdapter.sol [function _debit] 1
+  oft/OFTAdapter.sol [function _debit] 1
+  oft/OFTAdapter.sol [function _credit] 1
+  oft/OFTAdapter.sol [safeTransferFrom(] 1
+  oft/OFTAdapter.sol [safeTransfer(] 1
+  oft/OFTCore.sol [function _debit] 2
+  oft/OFTCore.sol [function _credit] 1
+  oft/OFTCore.sol [function _removeDust] 1
+  extensions/IERC20Permit.sol [safeTransferFrom(] 1
+  utils/SafeERC20.sol [safeTransferFrom(] 1
+  utils/SafeERC20.sol [safeTransfer(] 2
+  oapp/OAppSender.sol [safeTransferFrom(] 1
+  interfaces/ISendLib.sol [withdraw] 2
+No file contains "rescue" or "sweep". "withdraw" appears only in ISendLib.sol, LayerZero's interface for its send libraries.
+
+contracts/usde/USDeOFTAdapter.sol declares
+  contract USDeOFTAdapter is OFTOwnable2StepAdapter, RateLimiter
+and overrides _debit only to check and update the rate limit for the destination before calling the parent _debit:
+  _checkAndUpdateRateLimit(_dstEid, _amountLD);
+  return super._debit(_amountLD, _minAmountLD, _dstEid);
+
+oft/OFTAdapter.sol, the parent, locks and unlocks USDe:
+  _debit: (amountSentLD, amountReceivedLD) = _debitView(_amountLD, _minAmountLD, _dstEid);
+          innerToken.safeTransferFrom(msg.sender, address(this), amountSentLD);
+  _credit: innerToken.safeTransfer(_to, _amountLD);
+           return _amountLD;
+
+What this adds. The adapter moves USDe in only in _debit, which locks the amount sent after _debitView removes the dust below the shared decimals, and out only in _credit, which unlocks the amount a message carries. With 6 shared decimals and 18 local decimals, both are whole multiples of 10^12 of USDe's smallest unit. Any part of the adapter's balance below 10^12 of that unit therefore came in by a plain transfer to the adapter's address.

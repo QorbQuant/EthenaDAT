@@ -1,0 +1,68 @@
+company,item,value,unit,as_of,quote_fact,quote_token,note
+USDE,tokens,3029000000,ENA,2026-06-25,usde_ena,"3,029 million",closing release. approximately 3.029 billion ENA. the dashboard's count
+USDE,class_a_aug12,24029375,shares,2026-08-12,usde_class_a_aug12,"24,029,375",10-Q cover
+USDE,director_awards,110000,shares,2026-09-30,form4,,five Forms 4 of 22000 restricted Class A shares each
+USDE,cash_jun30,18856144,usd,2026-06-30,book_value_facts,,10-Q balance sheet as carried in the book value review's inputs
+USDE,liabilities_jun30,18292004,usd,2026-06-30,book_value_facts,,10-Q balance sheet as carried in the book value review's inputs
+USDE,class_b_aug12,3157754,shares,2026-08-12,usde_class_b_count,"3,157,754",10-Q cover. votes only. no dividends or liquidation rights
+USDE,class_a_aug28,24029375,shares,2026-08-28,usde_class_a_aug28,"24,029,375 shares of Class A Common Stock (as of August 28, 2026)",resale prospectus of September 14
+USDE,warrants_aug28,19124586,warrants,2026-08-28,usde_class_a_aug28,"19,124,586 shares of Class A Common Stock upon exercise of all outstanding Warrants",resale prospectus of September 14
+USDE,rsus_aug28,78635,shares,2026-08-28,usde_class_a_aug28,"78,635 shares of Class A Common Stock upon vesting",restricted stock units. resale prospectus of September 14
+USDE,sponsor_warrants,7624586,warrants,2026-09-14,usde_warrants,"7,624,586 Sponsor Warrants",resale prospectus of September 14
+MSTR,tokens,848000,BTC,2026-10-04,mstr_btc_oct4,"848,000",8-K of October 5. 4 pm ET on October 4
+MSTR,class_a_record,402337658,shares,2026-09-25,mstr_record_shares,"402,337,658",special meeting proxy. record date
+MSTR,class_b_record,19640250,shares,2026-09-25,mstr_record_shares,"19,640,250",special meeting proxy. record date
+MSTR,sold_sep21_27,1469165,shares,2026-09-27,mstr_sales_sep21_27,"1,469,165",8-K of September 28
+MSTR,sold_sep28_30,0,shares,2026-09-30,mstr_sales_sep28_30,"MSTR Stock - $ - $ - $ 18,844.4",8-K of October 5. no class A sales
+MSTR,sold_oct1_4,92894,shares,2026-10-04,mstr_sales_oct1_4,"92,894",8-K of October 5. includes shares not yet settled
+MSTR,usd_reserve,4880000000,usd,2026-10-04,mstr_usd_reserve,$4.88 billion,8-K of October 5
+MSTR,usd_cash,833400000,usd,2026-10-04,mstr_usd_reserve,$833.4 million,8-K of October 5
+MSTR,stre_sep15,7750000,shares,2026-09-15,mstr_stre,"7,750,000 shares of STRE Stock outstanding",a fifth series of preferred stock
+ASST,tokens,29462,BTC,2026-10-02,asst_btc,"29,462",8-K of October 5
+ASST,shares,100938986,shares,2026-10-02,asst_shares,"Effective Common Shares Outstanding (2)97,651,721100,938,986",effective common shares. class A plus class B. includes shares sold through 4 pm
+ASST,cash,284700000,usd,2026-10-02,asst_cash,"$284,700",in thousands in the filing
+ASST,strc,50202000,usd,2026-10-02,asst_strc,"$50,202",in thousands in the filing
+ASST,sata_shares,13498082,shares,2026-10-02,asst_sata_shares,"13,498,082",SATA preferred shares outstanding
+ASST,sata_shares_sep30,12940621,shares,2026-09-30,asst_sata_sep30,"12,940,621 shares of SATA Stock outstanding",SATA preferred shares outstanding
+ASST,sata_stated_sep30,1294062000,usd,2026-09-30,asst_balance_sep30,"SATA stated amount (in thousands)$1,294,062",in thousands in the filing
+ASST,class_a_sep30,88814706,shares,2026-09-30,asst_sata_sep30,"88,814,706 shares of Class A common stock",
+ASST,class_b_sep30,9198036,shares,2026-09-30,asst_sata_sep30,"9,198,036 shares of Class B common stock",
+ASST,class_a_oct2,91708804,shares,2026-10-02,asst_shares,"Class A common stock88,453,68591,708,804",includes shares sold through 4 pm
+ASST,class_b_oct2,9230182,shares,2026-10-02,asst_shares,"Class B common stock9,198,0369,230,182",
+ASST,debt_sep30,0,usd,2026-09-30,asst_balance_sep30,Debt and Preferred Debt principal balance (in thousands)$—,no debt
+FWDI,tokens,8501298,SOL,2026-09-30,fwdi_sol,"8,501,298",includes SOL. fwdSOL and pledged SOL. excludes borrowed SOL
+FWDI,shares,76288215,shares,2026-09-30,fwdi_common,"76,288,215",common shares
+FWDI,fully_diluted,105535801,shares,2026-09-30,fwdi_fully_diluted,"105,535,801",fully diluted share count
+FWDI,sol_price_sep30,118.06,usd,2026-09-30,fwdi_sol,$118.06,price used in the company's table
+FWDI,close_sep30_in_table,7.80,usd,2026-09-30,fwdi_common,$7.80,share price used in the company's table
+FWDI,other_assets,26927436,usd,2026-09-30,fwdi_other,"$26,927,436",other digital assets at fair value
+FWDI,cash,7292000,usd,2026-09-30,fwdi_cash,"$7,292,000",
+FWDI,debt,167500000,usd,2026-09-30,fwdi_debt,"($167,500,000)",institutional debt
+FWDI,nav,870382702,usd,2026-09-30,fwdi_nav,"$870,382,702",the company's net asset value
+FWDI,own_mnav_common,0.684,x,2026-09-30,fwdi_common,0.684x,the company's mNAV on common shares
+FWDI,own_mnav_fully_diluted,0.946,x,2026-09-30,fwdi_fully_diluted,0.946x,the company's mNAV on fully diluted shares
+HYPD,shares_sep30,15442482,shares,2026-09-30,hypd_sep30,"15,442,482",approximately. common shares
+HYPD,gross_hype_sep30,1850000,HYPE,2026-09-30,hypd_gross_sep30,1.85 million Gross HYPE tokens,the company's gross HYPE tokens. HYPE plus liquid staking tokens counted as HYPE
+HYPD,sold_q3,200000,HYPE,2026-09-30,hypd_gross_sep30,"sold a total of 200,000 HYPE and HYPE liquid staking tokens",third quarter
+HYPD,cash_sep30,14500000,usd,2026-09-30,hypd_sep30,"held $14.5 million in cash, cash equivalents, and stablecoins",rounded in the release
+HYPD,gross_hype_jun30,2042113,HYPE,2026-06-30,hypd_reconciliation,"Gross HYPE Tokens(2) 2,042,113",release of August 12
+HYPD,hype_jun30,1141174,HYPE,2026-06-30,hypd_reconciliation,"HYPE digital assets 74,119,231 1,141,174",
+HYPD,hihype_jun30,398277,HiHYPE,2026-06-30,hypd_reconciliation,"HiHYPE at Carrying Value 8,828,972 398,277",a HYPE liquid staking token
+HYPD,khype_jun30,455434,kHYPE,2026-06-30,hypd_reconciliation,"kHYPE at Carrying Value 15,897,330 455,434",a HYPE liquid staking token
+HYPD,kmhype_jun30,28888,kmHYPE,2026-06-30,hypd_reconciliation,"kmHYPE at Carrying Value 597,068 28,888",a HYPE liquid staking token
+HYPD,accretion_jun30,18340,HYPE,2026-06-30,hypd_reconciliation,"reconversion(11) 33,192,611 18,340",HYPE expected on converting the liquid staking tokens
+HYPD,preferred_jun30,5235897,shares,2026-06-30,hypd_preferred,"5,235,897",Series A convertible preferred stock. 10-Q balance sheet
+HYPD,liquidation_preference_jun30,50740000,usd,2026-06-30,hypd_preferred,"$50,740,000",
+HYPD,conversion_ratio,3,common per preferred,2026-06-30,hypd_conversion,convertible into three shares of common stock,
+BMNR,shares_jul9,603226394,shares,2026-07-09,bmnr_shares_jul9,"603,226,394",10-Q cover
+BMNR,tokens,6016414,ETH,2026-10-04,bmnr_eth_oct4,"6,016,414",release of October 5. 6:30 pm ET on October 4
+BMNR,cash_oct4,643000000,usd,2026-10-04,bmnr_cash_oct4,$643 million,cash and marketable securities
+BMNR,eth_aug16,5815164,ETH,2026-08-16,bmnr_eth_aug16,"5,815,164",release of August 17
+BMNR,cash_aug16,78000000,usd,2026-08-16,bmnr_cash_aug16,$78 million,cash and marketable securities
+BMNR,buyback_since_jul1,20800000,shares,2026-08-16,bmnr_buyback,20.8 million,rounded in the release
+PURR,tokens_sep8,33200000,HYPE,2026-09-08,purr_hype_sep8,approximately 33.2 million HYPE Tokens,approximate. resale prospectus of September 23
+PURR,shares_sep8,237919288,shares,2026-09-08,purr_shares_sep8,"237,919,288 shares as of September 8, 2026",resale prospectus of September 23
+PURR,shares_sep30,278271288,shares,2026-09-30,purr_shares_sep30,"278,271,288",proxy record date
+MPU,ena_jun30,5203582,ENA,2026-06-30,mpu_ena,"5,203,582",interim statements
+MPU,ena_value_jun30,374900,usd,2026-06-30,mpu_total,"ENA 374,900",interim statements. rounded to the nearest hundred dollars
+MPU,digital_assets_jun30,3521800,usd,2026-06-30,mpu_total,"$ 3,521,800",total digital assets

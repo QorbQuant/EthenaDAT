@@ -1,0 +1,22 @@
+{
+ "usde": "0x4c9edd5852cd905f086c759e8383e09bff1e68b3",
+ "read_block": 26179856,
+ "read_block_time_unix": 1791849779,
+ "started_utc": "2026-10-13T00:03:42.238Z",
+ "finished_utc": "2026-10-13T00:17:21.177Z",
+ "first_day": "2024-01-01",
+ "last_day": "2026-10-12",
+ "days": 1016,
+ "archive_rpcs": [
+  "https://eth.drpc.org",
+  "https://gateway.tenderly.co/public/mainnet"
+ ],
+ "latest_rpcs": [
+  "https://ethereum-rpc.publicnode.com",
+  "https://eth.drpc.org"
+ ],
+ "requests": 3359,
+ "sha256_primary_day_end_block_hashes": "baa3364f2ec72d4bac507daeaafaae5e6bab7966c9190dd36b3c622e69cd13e7",
+ "days_same_supply": 1016,
+ "days_same_hash": 1016
+}

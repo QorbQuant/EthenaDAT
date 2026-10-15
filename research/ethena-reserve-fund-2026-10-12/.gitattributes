@@ -1,0 +1,3 @@
+# Preserve evidence bytes used by reproducibility checks.
+inputs/** -text
+out/** -text

@@ -1,0 +1,28 @@
+chain_key,rpc,chain_id_answer,block_requested,read_at,read_time_utc,supply_raw,note,read_utc
+bsc,https://bsc-dataseed.bnbchain.org,56,127260686,127262022,2026-10-12T18:52:16.000Z,78399747235971000000000000,"at the block of the first read: http 200 {""code"":-32000,""message"":""missing trie node""}",2026-10-12T18:52:17.119Z
+bsc,https://bsc-dataseed1.defibit.io,56,127260686,127262026,2026-10-12T18:52:18.000Z,78399747235971000000000000,"at the block of the first read: http 200 {""code"":-32000,""message"":""missing trie node""}",2026-10-12T18:52:18.948Z
+bsc,https://bsc.publicnode.com,56,127260686,127262030,2026-10-12T18:52:20.000Z,78399747235971000000000000,"at the block of the first read: http 403 {""code"":-32602,""message"":""Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode""}",2026-10-12T18:52:20.352Z
+avalanche,https://avalanche-c-chain-rpc.publicnode.com,43114,97383132,97383730,2026-10-12T18:52:21.000Z,10913627956257000000000000,"at the block of the first read: http 200 {""code"":-32000,""message"":""missing trie node 2e0280bbf7df5be0b9d8659dc1d352f3230c54650d26ab229ed992d55bc05030 (path ) state 0x2e0280bbf7df5be0b9d8659dc1d352f3230",2026-10-12T18:52:22.315Z
+avalanche,https://avax.meowrpc.com,no answer,97383132,,,,TypeError,2026-10-12T18:52:23.256Z
+zircuit,https://zircuit1-mainnet.p2pify.com,no answer,35947146,,,,TypeError,2026-10-12T18:52:23.336Z
+zircuit,https://zircuit-rpc.publicnode.com,no answer,35947146,,,,TypeError,2026-10-12T18:52:23.586Z
+swell,https://swell-mainnet.alt.technology,no answer,29545229,,,,TypeError,2026-10-12T18:52:23.588Z
+swell,https://swellchain-rpc.publicnode.com,no answer,29545229,,,,TypeError,2026-10-12T18:52:23.853Z
+plasma,https://plasma.drpc.org,no answer,34889180,,,,"http 400 {""message"":""chain is not available on free plan, please upgrade to paid plan"",""code"":35}",2026-10-12T18:52:24.169Z
+plasma,https://plasma-rpc.publicnode.com,no answer,34889180,,,,TypeError,2026-10-12T18:52:24.423Z
+megaeth,https://megaeth.drpc.org,4326,29033495,29033495,2026-10-12T18:41:46.000Z,331249263550000000000000,,2026-10-12T18:52:24.940Z
+megaeth,https://rpc.megaeth.com,no answer,29033495,,,,TypeError,2026-10-12T18:52:24.942Z
+megaeth,https://megaeth-rpc.publicnode.com,no answer,29033495,,,,TypeError,2026-10-12T18:52:25.183Z
+tempo,https://tempo.drpc.org,4217,43832250,43832250,2026-10-12T18:41:46.000Z,22256021,,2026-10-12T18:52:25.667Z
+tempo,https://tempo-rpc.publicnode.com,4217,43832250,43833402,2026-10-12T18:52:25.000Z,22256021,"at the block of the first read: http 403 {""code"":-32602,""message"":""Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode""}",2026-10-12T18:52:27.012Z
+robinhood,https://robinhood-chain-rpc.publicnode.com,no answer,86892854,,,,TypeError,2026-10-12T18:52:27.685Z
+robinhood,https://robinhood-rpc.publicnode.com,4663,86892854,86899161,2026-10-12T18:52:28.000Z,372492882384583000000000000,"at the block of the first read: http 403 {""code"":-32602,""message"":""Archive requests require a personal token. Get one at: https://www.allnodes.com/publicnode""}",2026-10-12T18:52:28.502Z
+robinhood,https://robinhood.drpc.org,4663,86892854,86892854,2026-10-12T18:41:46.000Z,372492882384583000000000000,,2026-10-12T18:52:29.728Z
+bsc,https://api.routescan.io/v2/network/mainnet/evm/56/etherscan/api,,127260686,,,,tokensupply null,2026-10-12T18:52:30.084Z
+avalanche,https://api.routescan.io/v2/network/mainnet/evm/43114/etherscan/api,,97383132,97383736,,10913627956257000000000000,Routescan token supply at its latest block,2026-10-12T18:52:32.124Z
+zircuit,https://api.routescan.io/v2/network/mainnet/evm/48900/etherscan/api,,35947146,,,,tokensupply null,2026-10-12T18:52:33.575Z
+swell,https://api.routescan.io/v2/network/mainnet/evm/1923/etherscan/api,,29545229,,,,tokensupply null,2026-10-12T18:52:34.588Z
+plasma,https://api.routescan.io/v2/network/mainnet/evm/9745/etherscan/api,,34889180,34889747,,578451105774464000000000000,Routescan token supply at its latest block,2026-10-12T18:52:35.384Z
+megaeth,https://api.routescan.io/v2/network/mainnet/evm/4326/etherscan/api,,29033495,,,,tokensupply null,2026-10-12T18:52:36.550Z
+tempo,https://api.routescan.io/v2/network/mainnet/evm/4217/etherscan/api,,43832250,,,,tokensupply null,2026-10-12T18:52:37.547Z
+robinhood,https://api.routescan.io/v2/network/mainnet/evm/4663/etherscan/api,,86892854,,,,tokensupply null,2026-10-12T18:52:38.517Z

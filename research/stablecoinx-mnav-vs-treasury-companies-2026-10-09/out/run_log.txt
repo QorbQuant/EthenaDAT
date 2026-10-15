@@ -1,0 +1,183 @@
+Token-only mNAV at the October 9, 2026 close
+
+[ok] inputs/manifest.csv lists every input file and nothing else (23 files)
+[ok] inputs/carried/dashboard_series_2c7c5a5_october.csv matches its size and SHA-256 in the manifest (9064b1977d4274dd)
+[ok] inputs/carried/form4_director_awards_2026-10-02.csv matches its size and SHA-256 in the manifest (506ba025a1bcde39)
+[ok] inputs/carried/site_review_passages_2c7c5a5.txt matches its size and SHA-256 in the manifest (dbb33ae0f6030ab2)
+[ok] inputs/carried/stablecoinx_10q_facts_from_book_value_review.csv matches its size and SHA-256 in the manifest (c1b054ffe80c19a2)
+[ok] inputs/carried/usde_ena_tracking_chart_data_2c7c5a5.csv matches its size and SHA-256 in the manifest (4487bde7b50ea788)
+[ok] inputs/facts.csv matches its size and SHA-256 in the manifest (b2a649a78f57cc0f)
+[ok] inputs/filings/sec_documents_2026-10-12.csv matches its size and SHA-256 in the manifest (3ae8282637c5ca6f)
+[ok] inputs/filings/sec_fetch_log.csv matches its size and SHA-256 in the manifest (870f31744d2ec322)
+[ok] inputs/filings/sec_filings_2026-09-01_to_10-09.csv matches its size and SHA-256 in the manifest (2bab3300c1d2af86)
+[ok] inputs/filings/sec_quotes_2026-10-12.csv matches its size and SHA-256 in the manifest (dedbedd3a0e55352)
+[ok] inputs/filings/sec_window_documents_2026-10-12.csv matches its size and SHA-256 in the manifest (5dbc4512859b2598)
+[ok] inputs/filings/sec_window_filings_2026-10-12.csv matches its size and SHA-256 in the manifest (74126cf64eb429ae)
+[ok] inputs/filings/sec_window_flagged_2026-10-12.csv matches its size and SHA-256 in the manifest (5d2d0599fcd43b76)
+[ok] inputs/filings/sec_window_pdfs_2026-10-12.csv matches its size and SHA-256 in the manifest (0e026c64098002b7)
+[ok] inputs/filings/sec_window_review_2026-10-12.csv matches its size and SHA-256 in the manifest (6662dabcadfc72e8)
+[ok] inputs/prices/coingecko_via_defillama_2026-10-09_20utc.csv matches its size and SHA-256 in the manifest (756128a456215f11)
+[ok] inputs/prices/defillama_fetch_log.csv matches its size and SHA-256 in the manifest (c4155a7ed094d7ed)
+[ok] inputs/prices/kraken_1h_2026-10-09_19utc_20utc.csv matches its size and SHA-256 in the manifest (8203a50f9a25c406)
+[ok] inputs/prices/kraken_fetch_log.csv matches its size and SHA-256 in the manifest (66093f770b8c6060)
+[ok] inputs/prices/stockanalysis_closes_read_2026-10-12.csv matches its size and SHA-256 in the manifest (e1a4a9f56341e216)
+[ok] inputs/prices/yahoo_daily_2026-10-08_09.csv matches its size and SHA-256 in the manifest (4dc54b9ecc54f46c)
+[ok] inputs/prices/yahoo_fetch_log.csv matches its size and SHA-256 in the manifest (cf56482ef4679dc6)
+[ok] inputs/sources.csv matches its size and SHA-256 in the manifest (a7f23e8f702dfb2e)
+[ok] inputs/prices/yahoo_daily_2026-10-08_09.csv matches the digest the browser reported
+[ok] inputs/prices/yahoo_fetch_log.csv matches the digest the browser reported
+[ok] inputs/prices/kraken_1h_2026-10-09_19utc_20utc.csv matches the digest the browser reported
+[ok] inputs/prices/kraken_fetch_log.csv matches the digest the browser reported
+[ok] inputs/prices/coingecko_via_defillama_2026-10-09_20utc.csv matches the digest the browser reported
+[ok] inputs/prices/defillama_fetch_log.csv matches the digest the browser reported
+[ok] inputs/filings/sec_quotes_2026-10-12.csv matches the digest the browser reported
+[ok] inputs/filings/sec_documents_2026-10-12.csv matches the digest the browser reported
+[ok] inputs/filings/sec_filings_2026-09-01_to_10-09.csv matches the digest the browser reported
+[ok] inputs/filings/sec_fetch_log.csv matches the digest the browser reported
+[ok] inputs/filings/sec_window_documents_2026-10-12.csv matches the digest the browser reported
+[ok] inputs/filings/sec_window_flagged_2026-10-12.csv matches the digest the browser reported
+[ok] inputs/filings/sec_window_filings_2026-10-12.csv matches the digest the browser reported
+[ok] inputs/filings/sec_window_pdfs_2026-10-12.csv matches the digest the browser reported
+[ok] all 69 quoted passages were recorded as found word for word in their filings (69 of 69)
+[ok] all 24 filings were served with status 200 when the quotes were checked
+[ok] the 15 filings read at 15:47 UTC and again for the quote check have the same size and SHA-256
+[ok] USDE tokens appears in its quoted passage (3,029 million)
+[ok] USDE class_a_aug12 appears in its quoted passage (24,029,375)
+[ok] USDE director_awards comes from a carried file (form4)
+[ok] USDE cash_jun30 comes from a carried file (book_value_facts)
+[ok] USDE liabilities_jun30 comes from a carried file (book_value_facts)
+[ok] USDE class_b_aug12 appears in its quoted passage (3,157,754)
+[ok] USDE class_a_aug28 appears in its quoted passage (24,029,375 shares of Class A Common Stock (as of August 28, 2026))
+[ok] USDE warrants_aug28 appears in its quoted passage (19,124,586 shares of Class A Common Stock upon exercise of all outstanding Warrants)
+[ok] USDE rsus_aug28 appears in its quoted passage (78,635 shares of Class A Common Stock upon vesting)
+[ok] USDE sponsor_warrants appears in its quoted passage (7,624,586 Sponsor Warrants)
+[ok] MSTR tokens appears in its quoted passage (848,000)
+[ok] MSTR class_a_record appears in its quoted passage (402,337,658)
+[ok] MSTR class_b_record appears in its quoted passage (19,640,250)
+[ok] MSTR sold_sep21_27 appears in its quoted passage (1,469,165)
+[ok] MSTR sold_sep28_30 appears in its quoted passage (MSTR Stock - $ - $ - $ 18,844.4)
+[ok] MSTR sold_oct1_4 appears in its quoted passage (92,894)
+[ok] MSTR usd_reserve appears in its quoted passage ($4.88 billion)
+[ok] MSTR usd_cash appears in its quoted passage ($833.4 million)
+[ok] MSTR stre_sep15 appears in its quoted passage (7,750,000 shares of STRE Stock outstanding)
+[ok] ASST tokens appears in its quoted passage (29,462)
+[ok] ASST shares appears in its quoted passage (Effective Common Shares Outstanding (2)97,651,721100,938,986)
+[ok] ASST cash appears in its quoted passage ($284,700)
+[ok] ASST strc appears in its quoted passage ($50,202)
+[ok] ASST sata_shares appears in its quoted passage (13,498,082)
+[ok] ASST sata_shares_sep30 appears in its quoted passage (12,940,621 shares of SATA Stock outstanding)
+[ok] ASST sata_stated_sep30 appears in its quoted passage (SATA stated amount (in thousands)$1,294,062)
+[ok] ASST class_a_sep30 appears in its quoted passage (88,814,706 shares of Class A common stock)
+[ok] ASST class_b_sep30 appears in its quoted passage (9,198,036 shares of Class B common stock)
+[ok] ASST class_a_oct2 appears in its quoted passage (Class A common stock88,453,68591,708,804)
+[ok] ASST class_b_oct2 appears in its quoted passage (Class B common stock9,198,0369,230,182)
+[ok] ASST debt_sep30 appears in its quoted passage (Debt and Preferred Debt principal balance (in thousands)$—)
+[ok] FWDI tokens appears in its quoted passage (8,501,298)
+[ok] FWDI shares appears in its quoted passage (76,288,215)
+[ok] FWDI fully_diluted appears in its quoted passage (105,535,801)
+[ok] FWDI sol_price_sep30 appears in its quoted passage ($118.06)
+[ok] FWDI close_sep30_in_table appears in its quoted passage ($7.80)
+[ok] FWDI other_assets appears in its quoted passage ($26,927,436)
+[ok] FWDI cash appears in its quoted passage ($7,292,000)
+[ok] FWDI debt appears in its quoted passage (($167,500,000))
+[ok] FWDI nav appears in its quoted passage ($870,382,702)
+[ok] FWDI own_mnav_common appears in its quoted passage (0.684x)
+[ok] FWDI own_mnav_fully_diluted appears in its quoted passage (0.946x)
+[ok] HYPD shares_sep30 appears in its quoted passage (15,442,482)
+[ok] HYPD gross_hype_sep30 appears in its quoted passage (1.85 million Gross HYPE tokens)
+[ok] HYPD sold_q3 appears in its quoted passage (sold a total of 200,000 HYPE and HYPE liquid staking tokens)
+[ok] HYPD cash_sep30 appears in its quoted passage (held $14.5 million in cash, cash equivalents, and stablecoins)
+[ok] HYPD gross_hype_jun30 appears in its quoted passage (Gross HYPE Tokens(2) 2,042,113)
+[ok] HYPD hype_jun30 appears in its quoted passage (HYPE digital assets 74,119,231 1,141,174)
+[ok] HYPD hihype_jun30 appears in its quoted passage (HiHYPE at Carrying Value 8,828,972 398,277)
+[ok] HYPD khype_jun30 appears in its quoted passage (kHYPE at Carrying Value 15,897,330 455,434)
+[ok] HYPD kmhype_jun30 appears in its quoted passage (kmHYPE at Carrying Value 597,068 28,888)
+[ok] HYPD accretion_jun30 appears in its quoted passage (reconversion(11) 33,192,611 18,340)
+[ok] HYPD preferred_jun30 appears in its quoted passage (5,235,897)
+[ok] HYPD liquidation_preference_jun30 appears in its quoted passage ($50,740,000)
+[ok] HYPD conversion_ratio appears in its quoted passage (convertible into three shares of common stock)
+[ok] BMNR shares_jul9 appears in its quoted passage (603,226,394)
+[ok] BMNR tokens appears in its quoted passage (6,016,414)
+[ok] BMNR cash_oct4 appears in its quoted passage ($643 million)
+[ok] BMNR eth_aug16 appears in its quoted passage (5,815,164)
+[ok] BMNR cash_aug16 appears in its quoted passage ($78 million)
+[ok] BMNR buyback_since_jul1 appears in its quoted passage (20.8 million)
+[ok] PURR tokens_sep8 appears in its quoted passage (approximately 33.2 million HYPE Tokens)
+[ok] PURR shares_sep8 appears in its quoted passage (237,919,288 shares as of September 8, 2026)
+[ok] PURR shares_sep30 appears in its quoted passage (278,271,288)
+[ok] MPU ena_jun30 appears in its quoted passage (5,203,582)
+[ok] MPU ena_value_jun30 appears in its quoted passage (ENA 374,900)
+[ok] MPU digital_assets_jun30 appears in its quoted passage ($ 3,521,800)
+[ok] five Forms 4 each award 22,000 restricted Class A shares on September 30 (total 110000.0000)
+[ok] the awards total the 110,000 shares in the facts
+[ok] the prospectus count of August 28 equals the 10-Q cover count of August 12
+[ok] StablecoinX Class A shares are 24,029,375 plus 110,000 (24139375.0000)
+[ok] the book value review's 10-Q facts give the cash and liabilities used here
+[ok] the 10-Q's three amounts received at closing sum to 3,031,404,421 ENA (3031404420.94)
+[ok] the prospectus's 7,624,586 sponsor warrants are the two tranches the book value review carried
+[ok] the prospectus's 19,124,586 warrants are its approximately 11,500,000 public warrants plus the sponsor warrants
+[ok] Strategy's count is the record date's 421,977,908 plus 92,894 sold October 1 to 4 (422070802)
+[ok] Strive's effective common shares on October 2 are its Class A plus its Class B
+[ok] Strive's SATA stated amount at September 30 works out to $100 a share (100.0000)
+[ok] Strive reported no debt at September 30
+[ok] Forward's SOL value is its count times $118.06 to within 0.001% (1003663241.88 against 1,003,663,266)
+[ok] Forward's net asset value is the sum of its four lines (870382702)
+[ok] Forward's 0.684x and 0.946x are reproduced from its own table (0.6837 and 0.9458)
+[ok] Hyperion DeFi's June 30 gross HYPE tokens are its HYPE plus three liquid staking tokens and the reconversion amount (2042113)
+[ok] Hyperion DeFi's 5,235,897 preferred shares convert into 15,707,691 common shares
+note: Hyperion DeFi's gross HYPE fell from 2042113 at June 30 to about 1850000 at September 30 after it sold 200000 HYPE and liquid staking tokens, net of staking rewards
+[ok] Yahoo returned two sessions for each of six tickers
+[ok] USDE closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (12.79, 12.30)
+[ok] MSTR closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (151.47, 154.34)
+[ok] ASST closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (28.23, 27.80)
+[ok] FWDI closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (7.18, 7.34)
+[ok] HYPD closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (3.37, 3.40)
+[ok] BMNR closes on October 8 and 9 match in Yahoo and S&P Global's data on StockAnalysis (24.04, 24.03)
+[ok] Forward's table used its September 30 close
+[ok] Kraken returned both candles for all five tokens
+[ok] DefiLlama returned CoinGecko prices stamped exactly 20:00 UTC
+[ok] BTC on Kraken and CoinGecko within 0.25% at 20:00 UTC (0.052%)
+[ok] ETH on Kraken and CoinGecko within 0.25% at 20:00 UTC (0.059%)
+[ok] SOL on Kraken and CoinGecko within 0.25% at 20:00 UTC (0.164%)
+[ok] ENA on Kraken and CoinGecko within 0.25% at 20:00 UTC (0.184%)
+[ok] HYPE on Kraken and CoinGecko within 0.25% at 20:00 UTC (0.201%)
+[ok] the latest 8-K before the close is the one used for Strategy, Strive and Forward ({"ASST": "2026-10-05", "BMNR": "2026-10-07", "FWDI": "2026-10-01", "MSTR": "2026-10-05", "PURR": "2026-09-15", "USDE": "2026-09-17"})
+[ok] StablecoinX filed no 8-K or periodic report after September 17 and before the close
+[ok] Hyperion DeFi's filings from June 30 to the close include no prospectus or registration statement (10-Q, 4, 8-K, SCHEDULE 13G/A)
+[ok] none of Hyperion DeFi's 8-Ks from June 30 to the close reports a sale of equity, a change to holders' rights or a charter amendment (2026-07-01 5.07,9.01; 2026-07-08 5.02,9.01; 2026-08-12 2.02,7.01,9.01; 2026-10-02 1.02,2.02,7.01,8.01,9.01)
+[ok] every document in the window search was searched except two PDFs and four with almost no text, three image exhibits of BitMine and a list of subsidiaries (176 documents, 6 not searched)
+[ok] the two PDFs were read separately, and the annual report's latest date is August 27 with no HYPE holding after August 23
+[ok] documents read by both the window search and the quote check have the same SHA-256 (21 documents)
+[ok] every passage the window search flagged has one reading in the review file (149 passages)
+[ok] the only later count the search found is Hyperliquid Strategies' 33.2 million HYPE on September 8, which the article uses (4 passages)
+[ok] every other reading is one of the four kinds that leave the counts unchanged
+[ok] the dashboard's October 9 row uses the same counts and its mNAV recomputes (0.4747)
+[ok] the tracking review says the dashboard pairs each close with ENA's price at midnight UTC
+[ok] the lock-up waiver review says sales of ENA still need the Ethena Foundation's consent
+[ok] CoinGecko's prices move no mNAV by more than 0.001 (0.000997)
+[ok] Hyperion DeFi has the lowest mNAV of the five, StablecoinX the second lowest and Strive the highest (HYPD < USDE < FWDI < MSTR < ASST)
+[ok] the order is the same on CoinGecko prices
+[ok] BitMine's ETH rose by 201,250 between the two releases
+[ok] Hyperliquid Strategies' shares rose 17.0% from September 8 to September 30
+[ok] StablecoinX's ENA is 582 times Mega Matrix's (582.1)
+
+HYPD  HYPE mNAV 0.3404  NAV/share 9.99  implied 28.38
+USDE  ENA  mNAV 0.4641  NAV/share 26.50  implied 0.0980
+FWDI  SOL  mNAV 0.6077  NAV/share 12.08  implied 65.87
+MSTR  BTC  mNAV 0.9339  NAV/share 165.26  implied 76818.88
+ASST  BTC  mNAV 1.1580  NAV/share 24.01  implied 95244.85
+variant mstr_high_shares: 0.9372 shares 423539967
+variant usde_10q_count: 0.4638 
+variant usde_net: 0.4637 net 640288940
+variant hypd_as_converted: 0.6866 shares 31150173, September 30 common plus 3 x June 30 preferred
+variant asst_net: 1.9924 SATA 1349808200, net 1408414009, per share 13.95
+variant fwdi_own_oct9: 0.7105 NAV 788090113
+variant fwdi_token_sep30: 0.5929 
+variant fwdi_own_sep30_common: 0.6837 company figure 0.684x
+variant fwdi_token_fd_oct9: 0.8407 
+variant usde_dashboard_oct9: 0.4747 ENA 0.206502
+variant usde_breakeven_ena: 0.0980 
+variant bmnr_if_no_issuance: 0.9399 shares 582426394, ETH NAV 14891346620
+variant bmnr_per_10m_shares: 0.0161 
+
+All 159 checks passed.

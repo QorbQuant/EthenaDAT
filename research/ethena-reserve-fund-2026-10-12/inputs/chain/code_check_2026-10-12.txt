@@ -1,0 +1,10 @@
+Contract code of the fund's counterparties, read on 2026-10-12.
+
+At 2026-10-12T22:44:26Z the browser sent eth_getCode at the latest block to https://ethereum-rpc.publicnode.com
+for the fund itself, the Dev multisig and the 34 counterparties, other than the zero address and the fund, that
+counterparties.csv lists by address because Blockscout marked them as contracts, 36 addresses in all. 35 had
+contract code. One had code beginning 0xef0100, the designator of an EIP-7702 delegation, which an account that
+is not a contract sets in order to run another contract's code. It is the counterparty that sent the fund 0.01
+CANA, an unlisted token, in tx-109 on August 16, 2025. Its address is replaced by eoa-20 in
+transfers_blockscout_public.csv, transfers_routescan_public.csv and counterparties_public.csv, and this file
+does not repeat it. An earlier read of six of the same addresses that day found the same.

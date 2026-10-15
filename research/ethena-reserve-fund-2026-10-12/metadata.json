@@ -1,0 +1,19 @@
+{
+  "path": "/research/ethena-reserve-fund-2026-10-12/",
+  "title": "Ethena Reserve Fund Holdings and History, Oct 12, 2026",
+  "headline": "How big is Ethena's reserve fund, and where did its money come from?",
+  "name": "Ethena reserve fund",
+  "description": "Ethena's reserve fund held $62.10 million on October 12, 2026, or 1.31% of USDe's supply. USDtb, held directly and in a Curve pool, was 85.85% of it.",
+  "article": true,
+  "datePublished": "2026-10-15",
+  "dateModified": "2026-10-15",
+  "image": "/research-assets/ethena-reserve-fund-2026-10-12/chart_preview.png",
+  "imageAlt": "Stacked bar chart of Ethena's reserve fund at the end of each month from January 2024 to September 2026, in millions of dollars, split into USDtb, the Curve USDtb/USDC pool position, BUIDL and USTB, sDAI and sUSDS, Uniswap V3 positions, and other stablecoins and ETH. It rose from 1.0 in January 2024 to 60.3 in December 2024 and 62.1 in September 2026, held almost entirely in USDtb and the Curve pool from September 2025.",
+  "citation": [
+    "https://docs.ethena.fi/protocol-overview/reserve-fund",
+    "https://docs.ethena.fi/technical-design/key-addresses",
+    "https://gov.ethenafoundation.com/t/685",
+    "https://gov.ethenafoundation.com/t/775"
+  ],
+  "researchDataPath": "/research/ethena-reserve-fund-2026-10-12/#reproduce-the-numbers"
+}

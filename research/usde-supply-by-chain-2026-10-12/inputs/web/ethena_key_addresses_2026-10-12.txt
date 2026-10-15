@@ -1,0 +1,47 @@
+Ethena, Key Addresses, https://docs.ethena.fi/technical-design/key-addresses
+Read in a browser on 2026-10-12. The page showed "Last updated 24 days ago", and its time element carried datetime 2026-09-17T18:50:03.509Z (read 2026-10-12T19:15:48Z).
+Markdown version https://docs.ethena.fi/technical-design/key-addresses.md read 2026-10-12T19:15:20.116Z, HTTP 200, 12587 characters, SHA-256 c56a7822a09ae28367a92169bfb093e3c64031c452214d4aa7da3089a3c6dc33.
+Passages used, as the Markdown version gives them.
+
+Beyond Ethereum mainnet, Ethena tokens are available on the following chains:
+* TON
+* Aptos
+* Berachain
+* Solana
+* Mantle
+* Blast
+* Arbitrum
+* Optimism
+* Base
+* Zircuit
+* ZKSync
+* BNB
+* Linea
+* Manta
+* Scroll
+* Fraxtal
+* Mode
+* XLayer
+* Metis
+* Kava
+* Morph
+* Swell
+
+With the exceptions of Solana, ZKSync, and Zircuit, token addresses on all chains are identical, as summarized below:
+| Chain | ENA | USDe | sUSDe |
+| Most L2s (Other Than As Indicated Below) | 0x58538e6A46E07434d7E7375Bc268D3cb839C0133 | 0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34 | 0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2 |
+| Solana | 72QvBVwpxqmheEPfaCwWSWqEFsUy3rhWt6JhQBMNTwD1 | DEkqHyPN7GMRJ5cArtQFAWefqbZb33Hyf6s5iCwjEonT | Eh6XEPhSwoLv5wFApukmnaVSHQ6sAnoD9BmgmwQoN2sN |
+| TON | EQAFhZFZYye0llsl785OzOJG9QT6PXyYUdmiC4U95lBuHh1S | EQAIb6KmdfdDR7CN1GBqVJuP25iCnLKCvBlJ07Evuu2dzP5f | EQDQ5UUyPHrLcQJlPAczd_fjxn8SLrlNQwolBznxCdSlfQwr (tsUSDe on TON) |
+| Tempo | | 0x20c0000000000000000000002F52D5CC21A3207B, OFT: 0xf8b6aa0cee4e1ad87ee259dab5e556eb62297d7f | 0x20C000000000000000000000Bd95bFB69fBE6Ce3, OFT: 0x100c123770be9015321a9fcfa4ae3e77dcb2cf1a |
+| Aptos | | 0xf37a8864fe737eb8ec2c2931047047cbaed1beed3fb0e5b7c5526dafd3b9c2e9 | 0xb30a694a344edee467d9f82330bbe7c3b89f440a1ecd2da1f3bca266560fce69 |
+| ZKSync | 0x686b311F82b407f0be842652a98e5619F64cC25F | 0x39Fe7a0DACcE31Bd90418e3e659fb0b5f0B3Db0d | 0xAD17Da2f6Ac76746EF261E835C50b2651ce36DA8 |
+| Zircuit | 0x813635891aA06bd55036bbd8f7d1A34aB3de9a0F | 0x5d3a1Ff2b6BAb83b63cd9AD0787074081a52ef34 | 0x211Cc4DD073734dA055fbF44a2b4667d5E5fE5d2 |
+
+USDe Token Contract: <https://etherscan.io/address/0x4c9edd5852cd905f086c759e8383e09bff1e68b3>
+
+#### USDe PSM Custodian
+<https://etherscan.io/address/0xD7fCaDe52aFb60FbF0E1E5F72A683F43820f56A0>
+* Coinbase MPC custody. The same address is used on each chain where a PSM is deployed.
+* Holds pre-minted USDe inventory supporting Peg Stability Module (PSM) contracts on chains beyond Ethereum mainnet, enabling 1:1 swaps between USDe and supported stablecoins.
+* USDe held at this address is not in circulation and is excluded from circulating supply. It enters circulation only when swapped out against an equivalent value of backing assets received.
+* Backing assets held at this address are included in the protocol's backing, as they already back circulating USDe (i.e., USDe not held in the PSM).
