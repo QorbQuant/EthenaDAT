@@ -1499,8 +1499,21 @@
           <section id="pay-capital" class="full-section">
             <div class="full-section-top">
               <h2><span class="sx-section-num">02 /</span>Capital in motion</h2>
-              <p>Balances and transfers</p>
+              <p>Liquid wallets and Earn+</p>
             </div>
+            <div class="full-metrics" aria-label="Earn+ snapshot">
+              <div class="full-metric"><label>Earn+ balance</label><strong id="pay-earn-balance">N/A</strong><small>Active vault balance, including accrued returns</small></div>
+              <div class="full-metric"><label>Pending Earn+ withdrawals</label><strong id="pay-earn-pending">N/A</strong><small>Queued to return to liquid balances</small></div>
+            </div>
+            <p class="full-caption" id="pay-earn-status" role="status">Loading Earn+ accounting…</p>
+            <article class="full-chart-box" style="margin-bottom:24px">
+              <div class="full-chart-top"><h3>Earn+ balance</h3><span id="pay-earn-chart-value">N/A</span></div>
+              <p class="full-caption">Vault-reported balance excluding queued withdrawals · USDe units · UTC day-end; current day is partial</p>
+              <svg id="pay-earn-chart" class="full-chart" role="img" aria-label="Historical active Earn+ vault balance in USDe"></svg>
+              <div class="chart-tools-slot" data-export-slot="pay-earn-chart" aria-hidden="true"></div>
+              <div class="full-readout"></div>
+              <p class="full-caption">Whole-vault accounting, including pre-launch activity from October 25, 2026. Public launch: October 28. <a href="#pay-earn-methodology">How this is measured →</a></p>
+            </article>
             <div class="full-grid">
               <article class="full-chart-box">
                 <div class="full-chart-top">
@@ -1831,6 +1844,12 @@
             · <a href="/methodology/">Data methodology</a>
           </p>
           <section id="pay-methodology" class="full-last-section">
+            <details class="full-disclosure" id="pay-earn-methodology">
+              <summary>Earn+ balance methodology</summary>
+              <p>Earn+ uses the <a href="https://snowtrace.io/address/0x6AaB14C53980B9aA1Ce632a7e46a6E5E62e60f55">Ethena USD+ vault on Avalanche</a>. Active balance is the vault’s reported net asset value, less the gross value of shares queued for withdrawal. It includes accrued returns and is not cumulative deposited principal. Pending withdrawals are shown separately. These figures cover the whole vault, rather than only identified card-wallet holders, and are denominated in USDe without assuming a live dollar market price.</p>
+              <p>The vault operator periodically updates its external strategy valuation. We show that accounting timestamp separately from the onchain observation. Historical points use each UTC day’s final block; today’s point is partial. History includes pre-launch activity from October 25, 2026. Gross leveraged exposure and borrowed capital are excluded from the balance. Moving funds from a card wallet into Earn+ is an allocation between products, not card spending; the existing liquid-wallet transfer chart can include these movements.</p>
+              <p><a href="https://www.upshift.finance/blog/what-is-ethena-pay-earn-plus">Upshift’s Earn+ explanation ↗</a> · <a href="/earnplus.json">Download Earn+ history and source timestamps →</a></p>
+            </details>
             <details class="full-disclosure">
               <summary>Daily observations · last 10 days</summary>
               <div class="full-table-wrap">
@@ -1929,6 +1948,7 @@
     >
     <script defer src="/assets/d3.min.js"></script>
     <script defer src="/assets/data.js"></script>
+    <script defer src="/assets/earnplus.js"></script>
     <script defer src="/assets/share.js"></script>
     <script defer src="/assets/valuation.js"></script>
     <script defer src="/assets/research.js"></script>

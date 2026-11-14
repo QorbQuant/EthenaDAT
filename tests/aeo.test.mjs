@@ -113,7 +113,7 @@ test("missing feeds never fabricate zero or a download distribution", async () =
   }
 });
 test("partial days use the source cutoff, and delayed snapshots remain dated", () => {
-  const d = dataset("/data/ethenapay-spending/", feeds, {}, now + 7 * 86400000);
+  const d = dataset("/data/ethenapay-spending/", feeds, {}, Date.parse(pay.generated_at) + 7 * 86400000);
   assert.equal(d.stale, true);
   assert.equal(d.rows.at(-1).partial, true);
   assert.equal(d.sourceUpdatedAt, pay.generated_at);

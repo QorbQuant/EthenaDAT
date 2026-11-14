@@ -6,7 +6,9 @@ window.mountResearch = function (initialD, initialP) {
     P = initialP,
     S = D.series,
     H = P.headline,
-    T = P.series;
+    T = P.series,
+    E = null,
+    earnIndex = null;
   const blue = "#8aa9cf",
     copper = "#cf9b79",
     ink = "#eeeae3",
@@ -129,10 +131,11 @@ window.mountResearch = function (initialD, initialP) {
     registry.set(id, cfg);
     ChartShare.register(id, () => {
       const c = registry.get(id),
-        pay = c.group === "pay",
+        earn = c.group === "earn",
+        pay = c.group === "pay" || earn,
         scenario = c.group === "payoff";
       const view = pay ? F.fullPayView : undefined;
-      const date = pay
+      const date = earn ? c.rows.find(r => r.i === earnIndex)?.d : pay
         ? T.date[payIndex]
         : c.group === "perf"
           ? S.date[perfIndex]
@@ -151,6 +154,7 @@ window.mountResearch = function (initialD, initialP) {
               ? "spend events"
               : "distinct wallets per day",
         "pay-balance-chart": "USDe",
+        "pay-earn-chart": "USDe",
         "pay-flows-chart": "USDe; withdrawals plotted negative",
         "pay-created-chart": "wallets",
         "pay-active-chart": "distinct wallets per day",
@@ -164,7 +168,7 @@ window.mountResearch = function (initialD, initialP) {
             ? F.fullPayAgg
             : null
         : null;
-      const note = scenario
+      const note = earn ? "Vault-reported NAV less gross queued withdrawals. Includes accrued returns. Operator-reported valuation; current UTC day is partial." : scenario
         ? `Hypothetical expiry payoff; ignores early redemption, fees and taxes. USDE input $${Ethena.current(D).price}; USDEW input $${D.liveW?.price ?? S.usdew_close.at(-1)}; strike $${D.warrants.strike}.`
         : pay
           ? "Successful spend events are not transaction hashes. Wallets are not people. Latest day may be partial."
@@ -186,6 +190,7 @@ window.mountResearch = function (initialD, initialP) {
                 : (aggregation === "total" ? "cumulative " : "daily ") +
                   (view === "spend" ? "card spend" : "spend events")),
             "pay-balance-chart": "USDe in EthenaPay wallets",
+            "pay-earn-chart": "EthenaPay Earn+ balance",
             "pay-flows-chart": "EthenaPay deposits & withdrawals",
             "pay-created-chart": "EthenaPay wallets created",
             "pay-active-chart": "EthenaPay spending wallets",
@@ -219,7 +224,7 @@ window.mountResearch = function (initialD, initialP) {
             : id === "full-indexed"
               ? "Yahoo Finance / CoinGecko"
               : "Public filings / market data",
-          caveat: scenario
+          caveat: earn ? "Active vault balance; queued withdrawals excluded. USDe units." : scenario
             ? `Inputs: USDE $${Ethena.current(D).price.toFixed(2)} / USDEW $${(D.liveW?.price ?? S.usdew_close.at(-1)).toFixed(2)} / strike $${D.warrants.strike.toFixed(2)}. Excludes early redemption, fees & taxes.`
             : pay
               ? aggregation === "total"
@@ -230,7 +235,7 @@ window.mountResearch = function (initialD, initialP) {
                 : "Token NAV excludes other assets & liabilities. Quotes may be delayed.",
           timeZone: pay ? "UTC" : "America/New_York",
           annotationFormat: (v) =>
-            units[id].includes("USD") ? usd(v, 2) :
+            earn ? EarnPlus.amount(v) : units[id].includes("USD") ? usd(v, 2) :
             id === "full-mnav" ? v.toFixed(4) + "×" :
             v.toLocaleString("en-US", { maximumFractionDigits: id === "full-ena-per-share" ? 4 : 2 }),
           rows: c.rows,
@@ -262,7 +267,7 @@ window.mountResearch = function (initialD, initialP) {
           contextLabel: scenario ? "STOCK AT EXPIRY" : "OBSERVATION",
         },
         kind: scenario ? "SCENARIO" : "RECORDED DATA",
-        updated: (pay ? P : D).generated_at,
+        updated: (earn ? E : pay ? P : D).generated_at,
         period: scenario
           ? "Terminal stock-price scenarios (USD)"
           : c.rows[0].d + " to " + c.rows.at(-1).d,
@@ -454,7 +459,7 @@ window.mountResearch = function (initialD, initialP) {
       }
     });
     let selected =
-      c.group === "pay" ? payIndex : c.group === "perf" ? perfIndex : null;
+      c.group === "earn" ? earnIndex : c.group === "pay" ? payIndex : c.group === "perf" ? perfIndex : null;
     const obs = selected == null ? null : data.find((q) => q.i === selected);
     if (obs) {
       add(svg, "line", {
@@ -507,7 +512,8 @@ window.mountResearch = function (initialD, initialP) {
       if (c.group === "pay") {
         payIndex = q.i;
         updatePayObservation();
-      } else if (c.group === "perf") perfIndex = q.i;
+      } else if (c.group === "earn") earnIndex = q.i;
+      else if (c.group === "perf") perfIndex = q.i;
       else return;
       for (const [key, config] of registry)
         if (config.group === c.group) draw(key);
@@ -695,7 +701,17 @@ window.mountResearch = function (initialD, initialP) {
     $("#pay-observation-active").textContent = num(T.active_wallets[i]);
     $("#pay-date-input").value = i;
   }
+  function earnChart() {
+    if (F.fullPage !== "pay" || !EarnPlus.valid(E)) return;
+    const s = E.series, rr = sliced(s.date.map((d, i) => ({i, d, t: ts(d), partial: s.partial[i]})), F.fullPayRange);
+    if (!rr.length) return;
+    if (!rr.some(r => r.i === earnIndex)) earnIndex = rr.at(-1).i;
+    lineChart("pay-earn-chart", "EthenaPay Earn+ balance", rr,
+      [{name: "Active Earn+", data: sourceSeries(s.active_usde, rr), color: blue, fill: true}],
+      v => compact(v).replace(/^\$/, ""), "earn", true, null, v => EarnPlus.amount(v));
+  }
   function payCharts() {
+    earnChart();
     if (F.fullPage !== "pay" || !T.date.length) return;
     const rr = sliced(rP, F.fullPayRange),
       sel = rr.some((q) => q.i === payIndex);
@@ -1158,6 +1174,17 @@ window.mountResearch = function (initialD, initialP) {
   );
   return {
     switchPage,
+    updateEarn(next, failed = false) {
+      if (EarnPlus.valid(next)) {
+        const first = !E, day = E?.series.date[earnIndex], atEnd = !E || earnIndex === E.series.date.length - 1;
+        E = next;
+        earnIndex = first && shared.date && E.series.date.includes(shared.date)
+          ? E.series.date.indexOf(shared.date)
+          : atEnd ? E.series.date.length - 1 : E.series.date.indexOf(day);
+      }
+      for (const [id, text] of Object.entries(EarnPlus.view(E, Date.now(), failed))) $("#" + id).textContent = text;
+      earnChart();
+    },
     update(nextD, nextP) {
       const payDay = T.date[payIndex],
         atEnd = payIndex === T.date.length - 1;

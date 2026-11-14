@@ -56,6 +56,15 @@ jobs:
         if: steps.ethenapay.outcome == 'failure'
         run: echo "::warning title=EthenaPay refresh failed::Dune refresh did not succeed - the EthenaPay tab will go stale. See the step log above."
 
+      - name: Refresh Earn+ onchain balance and history
+        id: earnplus
+        continue-on-error: true
+        run: python fetch_earnplus.py
+
+      - name: Flag Earn+ failure
+        if: steps.earnplus.outcome == 'failure'
+        run: echo "::warning title=Earn+ refresh failed::Retaining the last verified Earn+ snapshot."
+
       # The site reads data.json and ethenapay.json from the GitHub raw feed at
       # runtime, so committing refreshed data is enough to update the live page.
       # Changes to docs/index.html itself still need `wrangler deploy` — the site
@@ -64,6 +73,6 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "github-actions[bot]@users.noreply.github.com"
-          git add output/ docs/data.json docs/ethenapay.json
+          git add output/ docs/data.json docs/ethenapay.json docs/earnplus.json
           git diff --cached --quiet || git commit -m "Auto-refresh data [skip ci]"
           git push

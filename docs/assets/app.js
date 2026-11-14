@@ -42,6 +42,8 @@
   let source = null,
     D = null,
     P = null,
+    E = null,
+    earnFailed = false,
     valuation = null,
     research = null,
     quotes = null,
@@ -113,7 +115,7 @@
     for (let i = 0; i < urls.length; i++) {
       try {
         const d = await json(urls[i] + "?t=" + Date.now());
-        if (!Ethena.valid(d, type)) throw Error("Invalid data");
+        if (!(type === "earn" ? EarnPlus.valid(d) : Ethena.valid(d, type))) throw Error("Invalid data");
         return { data: d, fallback: i > 0 };
       } catch {}
     }
@@ -247,6 +249,7 @@
     if (!research && (D || P))
       research = mountResearch(D || emptyD, P || emptyP);
     else research?.update(D || emptyD, P || emptyP);
+    research?.updateEarn(E, earnFailed);
     headlines();
     route(page);
   }
@@ -257,6 +260,7 @@
     const results = await Promise.allSettled([
       feed("data.json", "sx"),
       feed("ethenapay.json", "pay"),
+      page === "pay" ? feed("earnplus.json", "earn") : Promise.resolve(null),
     ]);
     for (let i = 0; i < 2; i++) {
       const result = results[i],
@@ -278,6 +282,15 @@
         else source = result.value.data;
       } else feeds[key].failed = true;
     }
+    if (results[2].status === "fulfilled" && results[2].value) {
+      const next = results[2].value.data;
+      if (!E || Date.parse(next.generated_at) >= Date.parse(E.generated_at)) {
+        changed ||= !E || E.generated_at !== next.generated_at;
+        E = next;
+        earnFailed = results[2].value.fallback;
+      } else earnFailed = true;
+    } else if (page === "pay") earnFailed = true;
+    research?.updateEarn(E, earnFailed);
     loading = false;
     refreshing = false;
     if (changed) render();
@@ -310,6 +323,7 @@
       P = Ethena.valid(initial.pay, "pay")
         ? Ethena.normalizePay(initial.pay)
         : null;
+      E = EarnPlus.valid(initial.earn) ? initial.earn : null;
       feeds = initial.feeds;
       loading = false;
     }
@@ -321,7 +335,7 @@
     requestAnimationFrame(() => {
       render();
       ChartShare.reveal();
-      if (!source || !P || feeds[page].fallback) refresh().then(refreshQuotes);
+      if (!source || !P || (page === "pay" && !E) || feeds[page].fallback) refresh().then(refreshQuotes);
       else refreshQuotes();
     }),
   );

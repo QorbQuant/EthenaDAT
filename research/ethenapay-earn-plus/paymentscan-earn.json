@@ -1,0 +1,173 @@
+[
+  {
+    "day": "2026-10-25",
+    "ethena_pay_earn_usde": 140190.15,
+    "ethena_pay_aave_usde": 0,
+    "aave_usde_per_nav": 0,
+    "nav_usde": 140190.66,
+    "aave_usde_supplied": 0,
+    "aave_debt_usde": 0
+  },
+  {
+    "day": "2026-10-26",
+    "ethena_pay_earn_usde": 391236.24,
+    "ethena_pay_aave_usde": 0,
+    "aave_usde_per_nav": 0,
+    "nav_usde": 391236.75,
+    "aave_usde_supplied": 0,
+    "aave_debt_usde": 0
+  },
+  {
+    "day": "2026-10-27",
+    "ethena_pay_earn_usde": 394163.83,
+    "ethena_pay_aave_usde": 1939555.51,
+    "aave_usde_per_nav": 4.92,
+    "nav_usde": 395367.33,
+    "aave_usde_supplied": 1945477.58,
+    "aave_debt_usde": 1673128.35
+  },
+  {
+    "day": "2026-10-28",
+    "ethena_pay_earn_usde": 3436428.11,
+    "ethena_pay_aave_usde": 6204425.08,
+    "aave_usde_per_nav": 1.81,
+    "nav_usde": 3452031.62,
+    "aave_usde_supplied": 6232597,
+    "aave_debt_usde": 3138152.57
+  },
+  {
+    "day": "2026-10-29",
+    "ethena_pay_earn_usde": 3483911.51,
+    "ethena_pay_aave_usde": 2906393.68,
+    "aave_usde_per_nav": 0.83,
+    "nav_usde": 3740996.05,
+    "aave_usde_supplied": 3120862.07,
+    "aave_debt_usde": 2777255.27
+  },
+  {
+    "day": "2026-10-30",
+    "ethena_pay_earn_usde": 3650920.25,
+    "ethena_pay_aave_usde": 5006560.02,
+    "aave_usde_per_nav": 1.37,
+    "nav_usde": 3655056.71,
+    "aave_usde_supplied": 5012232.4,
+    "aave_debt_usde": 2279752.02
+  },
+  {
+    "day": "2026-10-31",
+    "ethena_pay_earn_usde": 4027683.49,
+    "ethena_pay_aave_usde": 5636648.12,
+    "aave_usde_per_nav": 1.4,
+    "nav_usde": 4041362.4,
+    "aave_usde_supplied": 5655791.43,
+    "aave_debt_usde": 2635874.5
+  },
+  {
+    "day": "2026-11-01",
+    "ethena_pay_earn_usde": 4034348.4,
+    "ethena_pay_aave_usde": 22657039.32,
+    "aave_usde_per_nav": 5.62,
+    "nav_usde": 4057858.06,
+    "aave_usde_supplied": 22789070.33,
+    "aave_debt_usde": 19415440.12
+  },
+  {
+    "day": "2026-11-02",
+    "ethena_pay_earn_usde": 4441318.94,
+    "ethena_pay_aave_usde": 32273964.86,
+    "aave_usde_per_nav": 7.27,
+    "nav_usde": 4454535.4,
+    "aave_usde_supplied": 32370005.58,
+    "aave_debt_usde": 28358951.14
+  },
+  {
+    "day": "2026-11-03",
+    "ethena_pay_earn_usde": 4471463.69,
+    "ethena_pay_aave_usde": 32208989.36,
+    "aave_usde_per_nav": 7.2,
+    "nav_usde": 4499999.52,
+    "aave_usde_supplied": 32414539.61,
+    "aave_debt_usde": 28361724.98
+  },
+  {
+    "day": "2026-11-04",
+    "ethena_pay_earn_usde": 5978806.54,
+    "ethena_pay_aave_usde": 33776457.64,
+    "aave_usde_per_nav": 5.65,
+    "nav_usde": 6000109.98,
+    "aave_usde_supplied": 33896808.52,
+    "aave_debt_usde": 28508428.35
+  },
+  {
+    "day": "2026-11-05",
+    "ethena_pay_earn_usde": 6616836.68,
+    "ethena_pay_aave_usde": 34411108.11,
+    "aave_usde_per_nav": 5.2,
+    "nav_usde": 6681978.3,
+    "aave_usde_supplied": 34749879.57,
+    "aave_debt_usde": 28732047.95
+  },
+  {
+    "day": "2026-11-06",
+    "ethena_pay_earn_usde": 7032622.25,
+    "ethena_pay_aave_usde": 67894917.3,
+    "aave_usde_per_nav": 9.65,
+    "nav_usde": 7056338.34,
+    "aave_usde_supplied": 68123879.11,
+    "aave_debt_usde": 61994145.26
+  },
+  {
+    "day": "2026-11-07",
+    "ethena_pay_earn_usde": 7326942.51,
+    "ethena_pay_aave_usde": 67877388.44,
+    "aave_usde_per_nav": 9.26,
+    "nav_usde": 7353549.64,
+    "aave_usde_supplied": 68123879.11,
+    "aave_debt_usde": 62001312.01
+  },
+  {
+    "day": "2026-11-08",
+    "ethena_pay_earn_usde": 7409486.67,
+    "ethena_pay_aave_usde": 77361806.14,
+    "aave_usde_per_nav": 10.44,
+    "nav_usde": 7557565.23,
+    "aave_usde_supplied": 78907881.58,
+    "aave_debt_usde": 71807473.23
+  },
+  {
+    "day": "2026-11-09",
+    "ethena_pay_earn_usde": 7649139.27,
+    "ethena_pay_aave_usde": 79884635.05,
+    "aave_usde_per_nav": 10.44,
+    "nav_usde": 7660920.78,
+    "aave_usde_supplied": 80007676.61,
+    "aave_debt_usde": 72807097.81
+  },
+  {
+    "day": "2026-11-10",
+    "ethena_pay_earn_usde": 7929950.9,
+    "ethena_pay_aave_usde": 82810738.75,
+    "aave_usde_per_nav": 10.44,
+    "nav_usde": 8036520.77,
+    "aave_usde_supplied": 83923624.55,
+    "aave_debt_usde": 76371762.56
+  },
+  {
+    "day": "2026-11-11",
+    "ethena_pay_earn_usde": 8161514.53,
+    "ethena_pay_aave_usde": 85729341.12,
+    "aave_usde_per_nav": 10.5,
+    "nav_usde": 8174414.23,
+    "aave_usde_supplied": 85864840.75,
+    "aave_debt_usde": 78138124.98
+  },
+  {
+    "day": "2026-11-12",
+    "ethena_pay_earn_usde": 8648627.42,
+    "ethena_pay_aave_usde": 90709842.57,
+    "aave_usde_per_nav": 10.49,
+    "nav_usde": 8782014.91,
+    "aave_usde_supplied": 92108857.44,
+    "aave_debt_usde": 83791550.35
+  }
+]

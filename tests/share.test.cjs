@@ -126,3 +126,10 @@ test("empty exclusion reports an actionable error; hypothetical charts remain un
   d.visual.type = "scenario";
   assert.equal(prepareExport(d, { includeToday: false, annotate: true }), d);
 });
+test("Earn+ partial observations remain excluded after the calendar rolls into the next day", () => {
+  const d = exportFixture();
+  d.visual.rows.at(-1).partial = true;
+  const out = prepareExport(d, { includeToday: false }, new Date("2026-10-10T01:00:00Z"));
+  assert.equal(out.state.to, "2026-10-08");
+  assert.equal(out.visual.series[0].data.at(-1), 412);
+});

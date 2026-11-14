@@ -10,6 +10,7 @@ import { recordReferral } from "./referrals.mjs";
 import { tokenizedFlowsResponse } from "./tokenized-flows.mjs";
 import { tokenizedResponse } from "./tokenized.mjs";
 import Ethena from "../docs/assets/data.js";
+import EarnPlus from "../docs/assets/earnplus.js";
 import { lighterResponse } from "./lighter.mjs";
 import {
   ORIGIN,
@@ -43,13 +44,14 @@ export async function loadFeed(
   fetcher = fetch,
   cache = globalThis.caches?.default,
 ) {
+  const valid = (data) => type === "earn" ? EarnPlus.valid(data) : Ethena.valid(data, type);
   const key = new Request(ORIGIN + "/__feed/" + file);
   let cached;
   try {
     cached = await cache?.match(key);
     if (cached) {
       const data = await cached.json();
-      if (Ethena.valid(data, type)) return { data, fallback: false };
+      if (valid(data)) return { data, fallback: false };
     }
   } catch {}
   try {
@@ -59,7 +61,7 @@ export async function loadFeed(
     });
     if (!response.ok) throw Error("Feed HTTP " + response.status);
     const data = await response.json();
-    if (!Ethena.valid(data, type)) throw Error("Invalid feed");
+    if (!valid(data)) throw Error("Invalid feed");
     if (cache)
       ctx.waitUntil(
         cache.put(
@@ -77,7 +79,7 @@ export async function loadFeed(
   try {
     const response = await env.ASSETS.fetch(new Request(origin + "/" + file));
     const data = await response.json();
-    if (Ethena.valid(data, type)) return { data, fallback: true };
+    if (valid(data)) return { data, fallback: true };
   } catch {}
   return { data: null, fallback: true };
 }
@@ -90,6 +92,7 @@ export function renderDashboard(template, path, feeds, supplemental = {}) {
     modified = (active === "sx" ? D : P)?.generated_at;
   const extra = supplementalView(supplemental, D);
   if (active === "sx") Object.assign(ids, extra.ids);
+  if (active === "pay") Object.assign(ids, EarnPlus.view(feeds.earn?.data));
   let rewriter = new HTMLRewriter()
     .on("title", {
       element(e) {
@@ -182,6 +185,7 @@ export function renderDashboard(template, path, feeds, supplemental = {}) {
           `<script type="application/json" id="dashboard-bootstrap">${safeJSON({
             sx: D,
             pay: P,
+            earn: feeds.earn?.data || null,
             supplemental,
             feeds: {
               sx: { fallback: feeds.sx.fallback },
@@ -215,6 +219,13 @@ export function renderDashboard(template, path, feeds, supplemental = {}) {
           );
         },
       });
+  }
+  if (active === "pay" && EarnPlus.valid(feeds.earn?.data)) {
+    const s = feeds.earn.data.series;
+    rewriter = rewriter.on("#pay-earn-chart", { element(e) {
+      e.setAttribute("viewBox", "0 0 800 320");
+      e.setInnerContent(chart(s.date, s.active_usde, "Earn+ active balance (USDe)", true), { html: true });
+    }});
   }
   // Bootstrap must precede deferred scripts; those execute only after parsing.
   for (const [id, value] of Object.entries(ids))
@@ -396,13 +407,14 @@ export default {
       }
     } else if (content[path]) response = documentPage(path, content[path]);
     else if (PAGES[path]?.page) {
-      const [template, sx, pay, markets] = await Promise.all([
+      const [template, sx, pay, markets, earn] = await Promise.all([
         env.ASSETS.fetch(new Request(url.origin + "/")),
         loadFeed("data.json", "sx", env, url.origin, ctx),
         loadFeed("ethenapay.json", "pay", env, url.origin, ctx),
         loadSupplemental(ctx, PAGES[path].page === "sx" ? undefined : []),
+        PAGES[path].page === "pay" ? loadFeed("earnplus.json", "earn", env, url.origin, ctx) : null,
       ]);
-      response = renderDashboard(template, path, { sx, pay }, markets);
+      response = renderDashboard(template, path, { sx, pay, earn }, markets);
     } else {
       response = await env.ASSETS.fetch(request);
       if (response.status === 404)

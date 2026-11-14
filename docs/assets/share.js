@@ -92,7 +92,7 @@
       timeZone: v.timeZone || "UTC",
     }).format(now);
     const indices = v.rows.map((_, i) => i).filter((i) =>
-      options.includeToday !== false || v.rows[i].d < today);
+      options.includeToday !== false || (v.rows[i].d < today && !v.rows[i].partial));
     if (!indices.length) throw Error("No earlier observations in this range. Include the current day or choose a wider range.");
     const rows = indices.map(i => v.rows[i]);
     const selected = rows.reduce((best, row) =>
