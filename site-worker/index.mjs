@@ -45,6 +45,13 @@ export async function loadFeed(
   cache = globalThis.caches?.default,
 ) {
   const valid = (data) => type === "earn" ? EarnPlus.valid(data) : Ethena.valid(data, type);
+  if (env.LOCAL_DEV === "true") {
+    try {
+      const response = await env.ASSETS.fetch(new Request(origin + "/" + file));
+      const data = await response.json();
+      if (valid(data)) return { data, fallback: false };
+    } catch {}
+  }
   const key = new Request(ORIGIN + "/__feed/" + file);
   let cached;
   try {
@@ -224,7 +231,7 @@ export function renderDashboard(template, path, feeds, supplemental = {}) {
     const s = feeds.earn.data.series;
     rewriter = rewriter.on("#pay-earn-chart", { element(e) {
       e.setAttribute("viewBox", "0 0 800 320");
-      e.setInnerContent(chart(s.date, s.active_usde, "Earn+ active balance (USDe)", true), { html: true });
+      e.setInnerContent(chart(s.date, s.active_usde, "Earn+ balance and attributed USDe exposure", true, s.exposure_usde || []), { html: true });
     }});
   }
   // Bootstrap must precede deferred scripts; those execute only after parsing.

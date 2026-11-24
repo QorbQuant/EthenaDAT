@@ -1,0 +1,276 @@
+{
+  "source": "https://paymentscan.xyz/cards/ethena-pay",
+  "checkedOn": "2026-11-24",
+  "rows": [
+    {
+      "day": "2026-10-25",
+      "strategySuppliedUsde": "0",
+      "paymentscanSuppliedUsde": 0,
+      "suppliedDifference": 0.0,
+      "activeExposureUsde": "0",
+      "paymentscanActiveExposure": 0,
+      "exposureDifference": 0.0
+    },
+    {
+      "day": "2026-10-26",
+      "strategySuppliedUsde": "0",
+      "paymentscanSuppliedUsde": 0,
+      "suppliedDifference": 0.0,
+      "activeExposureUsde": "0",
+      "paymentscanActiveExposure": 0,
+      "exposureDifference": 0.0
+    },
+    {
+      "day": "2026-10-27",
+      "strategySuppliedUsde": "1945477.57961836216698025",
+      "paymentscanSuppliedUsde": 1945477.58,
+      "suppliedDifference": -0.0003816378302872181,
+      "activeExposureUsde": "1939557.99712450341994138143825433429561155967076775878049491",
+      "paymentscanActiveExposure": 1939555.51,
+      "exposureDifference": 2.487124503357336
+    },
+    {
+      "day": "2026-10-28",
+      "strategySuppliedUsde": "6232596.999988557252565125",
+      "paymentscanSuppliedUsde": 6232597,
+      "suppliedDifference": -1.1443160474300385e-05,
+      "activeExposureUsde": "6204425.99179780802134013937804101442798715690280091889946298",
+      "paymentscanActiveExposure": 6204425.08,
+      "exposureDifference": 0.9117978075519204
+    },
+    {
+      "day": "2026-10-29",
+      "strategySuppliedUsde": "3120862.067446904146533319",
+      "paymentscanSuppliedUsde": 3120862.07,
+      "suppliedDifference": -0.0025530955754220486,
+      "activeExposureUsde": "2906394.10275717057388467540865430916442687071723969996852077",
+      "paymentscanActiveExposure": 2906393.68,
+      "exposureDifference": 0.4227571706287563
+    },
+    {
+      "day": "2026-10-30",
+      "strategySuppliedUsde": "5012232.404931550922053546",
+      "paymentscanSuppliedUsde": 5012232.4,
+      "suppliedDifference": 0.004931550472974777,
+      "activeExposureUsde": "5006560.71315534483573756576987243836952869977174018255839493",
+      "paymentscanActiveExposure": 5006560.02,
+      "exposureDifference": 0.6931553455069661
+    },
+    {
+      "day": "2026-10-31",
+      "strategySuppliedUsde": "5655791.428338061646794608",
+      "paymentscanSuppliedUsde": 5655791.43,
+      "suppliedDifference": -0.0016619376838207245,
+      "activeExposureUsde": "5636648.83045978153271955647647232746365220383919370588944652",
+      "paymentscanActiveExposure": 5636648.12,
+      "exposureDifference": 0.7104597818106413
+    },
+    {
+      "day": "2026-11-01",
+      "strategySuppliedUsde": "22789070.327121615388906097",
+      "paymentscanSuppliedUsde": 22789070.33,
+      "suppliedDifference": -0.0028783828020095825,
+      "activeExposureUsde": "22657042.1589466650621165492154102730261343764691236864501574",
+      "paymentscanActiveExposure": 22657039.32,
+      "exposureDifference": 2.8389466665685177
+    },
+    {
+      "day": "2026-11-02",
+      "strategySuppliedUsde": "32370005.576133871334544872",
+      "paymentscanSuppliedUsde": 32370005.58,
+      "suppliedDifference": -0.003866128623485565,
+      "activeExposureUsde": "32273968.5403833399405970299045059280165110659919223503126465",
+      "paymentscanActiveExposure": 32273964.86,
+      "exposureDifference": 3.680383339524269
+    },
+    {
+      "day": "2026-11-03",
+      "strategySuppliedUsde": "32414539.608023657252570601",
+      "paymentscanSuppliedUsde": 32414539.61,
+      "suppliedDifference": -0.0019763410091400146,
+      "activeExposureUsde": "32208993.0118545092369258445280416169339291511872009688660603",
+      "paymentscanActiveExposure": 32208989.36,
+      "exposureDifference": 3.6518545113503933
+    },
+    {
+      "day": "2026-11-04",
+      "strategySuppliedUsde": "33896808.520373092523387072",
+      "paymentscanSuppliedUsde": 33896808.52,
+      "suppliedDifference": 0.0003730878233909607,
+      "activeExposureUsde": "33776460.5031370826150424297175058030635486380532578162541779",
+      "paymentscanActiveExposure": 33776457.64,
+      "exposureDifference": 2.8631370812654495
+    },
+    {
+      "day": "2026-11-05",
+      "strategySuppliedUsde": "34749879.57301260122825089",
+      "paymentscanSuppliedUsde": 34749879.57,
+      "suppliedDifference": 0.0030125975608825684,
+      "activeExposureUsde": "34411110.7452759005013311292945751280342758751418932265454442",
+      "paymentscanActiveExposure": 34411108.11,
+      "exposureDifference": 2.635275900363922
+    },
+    {
+      "day": "2026-11-06",
+      "strategySuppliedUsde": "68123879.105080251640098826",
+      "paymentscanSuppliedUsde": 68123879.11,
+      "suppliedDifference": -0.004919752478599548,
+      "activeExposureUsde": "67894922.1897901916615727353762223489084555001309622663186672",
+      "paymentscanActiveExposure": 67894917.3,
+      "exposureDifference": 4.889790192246437
+    },
+    {
+      "day": "2026-11-07",
+      "strategySuppliedUsde": "68123879.105080251640098826",
+      "paymentscanSuppliedUsde": 68123879.11,
+      "suppliedDifference": -0.004919752478599548,
+      "activeExposureUsde": "67877393.1398078013545901559598670940155289072042302009619352",
+      "paymentscanActiveExposure": 67877388.44,
+      "exposureDifference": 4.699807807803154
+    },
+    {
+      "day": "2026-11-08",
+      "strategySuppliedUsde": "78907881.575421918163272041",
+      "paymentscanSuppliedUsde": 78907881.58,
+      "suppliedDifference": -0.004578083753585815,
+      "activeExposureUsde": "77361811.4366393504186691539733150100768285447012248384268554",
+      "paymentscanActiveExposure": 77361806.14,
+      "exposureDifference": 5.2966393530368805
+    },
+    {
+      "day": "2026-11-09",
+      "strategySuppliedUsde": "80007676.605341044165897865",
+      "paymentscanSuppliedUsde": 80007676.61,
+      "suppliedDifference": -0.004658952355384827,
+      "activeExposureUsde": "79884640.3427789023273826273014609790611300928970813274489498",
+      "paymentscanActiveExposure": 79884635.05,
+      "exposureDifference": 5.29277890920639
+    },
+    {
+      "day": "2026-11-10",
+      "strategySuppliedUsde": "83923624.552118605505138867",
+      "paymentscanSuppliedUsde": 83923624.55,
+      "suppliedDifference": 0.0021186023950576782,
+      "activeExposureUsde": "82810744.0516030524059526483925072369246390503204753976642698",
+      "paymentscanActiveExposure": 82810738.75,
+      "exposureDifference": 5.301603049039841
+    },
+    {
+      "day": "2026-11-11",
+      "strategySuppliedUsde": "85864840.751758463576318613",
+      "paymentscanSuppliedUsde": 85864840.75,
+      "suppliedDifference": 0.0017584562301635742,
+      "activeExposureUsde": "85729346.4469494416536929804168315168598226454734555305452381",
+      "paymentscanActiveExposure": 85729341.12,
+      "exposureDifference": 5.326949432492256
+    },
+    {
+      "day": "2026-11-12",
+      "strategySuppliedUsde": "92108857.444445046253748448",
+      "paymentscanSuppliedUsde": 92108857.44,
+      "suppliedDifference": 0.0044450461864471436,
+      "activeExposureUsde": "90709847.8932726452546093460505561806987624771028260403852357",
+      "paymentscanActiveExposure": 90709842.57,
+      "exposureDifference": 5.32327264547348
+    },
+    {
+      "day": "2026-11-13",
+      "strategySuppliedUsde": "91681337.054801094031032626",
+      "paymentscanSuppliedUsde": 91681337.05,
+      "suppliedDifference": 0.0048010945320129395,
+      "activeExposureUsde": "90407138.9364088215088163774878416083369626850476751408441211",
+      "paymentscanActiveExposure": 90407133.76,
+      "exposureDifference": 5.176408812403679
+    },
+    {
+      "day": "2026-11-14",
+      "strategySuppliedUsde": "90967329.713155331904417281",
+      "paymentscanSuppliedUsde": 90967329.71,
+      "suppliedDifference": 0.003155335783958435,
+      "activeExposureUsde": "90724979.0425417786530432273042417948468583078725019295762087",
+      "paymentscanActiveExposure": 90724973.91,
+      "exposureDifference": 5.13254177570343
+    },
+    {
+      "day": "2026-11-15",
+      "strategySuppliedUsde": "90684111.438199328483135151",
+      "paymentscanSuppliedUsde": 90684111.44,
+      "suppliedDifference": -0.0018006712198257446,
+      "activeExposureUsde": "89219423.1190936447005335796296001868008111096769225473543283",
+      "paymentscanActiveExposure": 89219418,
+      "exposureDifference": 5.119093641638756
+    },
+    {
+      "day": "2026-11-16",
+      "strategySuppliedUsde": "90708174.185254238237474062",
+      "paymentscanSuppliedUsde": 90708174.19,
+      "suppliedDifference": -0.004745766520500183,
+      "activeExposureUsde": "86896580.1828710374476897891558476887802197980364786546532099",
+      "paymentscanActiveExposure": 86896575.06,
+      "exposureDifference": 5.122871041297913
+    },
+    {
+      "day": "2026-11-17",
+      "strategySuppliedUsde": "90848905.692926856676374196",
+      "paymentscanSuppliedUsde": 90848905.69,
+      "suppliedDifference": 0.002926856279373169,
+      "activeExposureUsde": "90380751.0303594603145595405987581814942462857341543452287381",
+      "paymentscanActiveExposure": 90380746.01,
+      "exposureDifference": 5.020359456539154
+    },
+    {
+      "day": "2026-11-18",
+      "strategySuppliedUsde": "97539136.365242985442891593",
+      "paymentscanSuppliedUsde": 97539136.37,
+      "suppliedDifference": -0.004757016897201538,
+      "activeExposureUsde": "97312454.9606668474540617273438726571013468790696721263477228",
+      "paymentscanActiveExposure": 97312449.61,
+      "exposureDifference": 5.350666850805283
+    },
+    {
+      "day": "2026-11-19",
+      "strategySuppliedUsde": "97539136.365242985442891593",
+      "paymentscanSuppliedUsde": 97539136.37,
+      "suppliedDifference": -0.004757016897201538,
+      "activeExposureUsde": "97406517.0942889718752508424847576421719881657081831077162262",
+      "paymentscanActiveExposure": 97406511.91,
+      "exposureDifference": 5.18428897857666
+    },
+    {
+      "day": "2026-11-20",
+      "strategySuppliedUsde": "97539136.365242985442891593",
+      "paymentscanSuppliedUsde": 97539136.37,
+      "suppliedDifference": -0.004757016897201538,
+      "activeExposureUsde": "96287797.1411755005919294528914348203488828647228911808417962",
+      "paymentscanActiveExposure": 96287792.05,
+      "exposureDifference": 5.0911754965782166
+    },
+    {
+      "day": "2026-11-21",
+      "strategySuppliedUsde": "97539136.365242985442891593",
+      "paymentscanSuppliedUsde": 97539136.37,
+      "suppliedDifference": -0.004757016897201538,
+      "activeExposureUsde": "93544773.4765972610272654509512782823990941091327724542783913",
+      "paymentscanActiveExposure": 93544768.47,
+      "exposureDifference": 5.006597265601158
+    },
+    {
+      "day": "2026-11-22",
+      "strategySuppliedUsde": "101125417.454258276454065589",
+      "paymentscanSuppliedUsde": 101125417.45,
+      "suppliedDifference": 0.004258275032043457,
+      "activeExposureUsde": "100955201.497371038886787469425305528179774076325322266801257",
+      "paymentscanActiveExposure": 100955196.19,
+      "exposureDifference": 5.307371035218239
+    },
+    {
+      "day": "2026-11-23",
+      "strategySuppliedUsde": "104363266.367379511780735798",
+      "paymentscanSuppliedUsde": 104363266.37,
+      "suppliedDifference": -0.002620488405227661,
+      "activeExposureUsde": "103421186.789117869273673165366843420121029695147307902397700",
+      "paymentscanActiveExposure": 103421181.43,
+      "exposureDifference": 5.359117865562439
+    }
+  ]
+}

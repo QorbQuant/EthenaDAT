@@ -46,11 +46,13 @@ def build(history, current):
     today = current["observedAt"][:10]
     observations = [(day, row, False) for day, row in sorted(history.items()) if day < today]
     observations.append((today, current, True))
-    keys = ["date", "active_usde", "pending_usde", "nav_usde", "block_number", "observed_at", "accounting_updated_at", "partial"]
+    keys = ["date", "active_usde", "pending_usde", "nav_usde", "block_number", "observed_at", "accounting_updated_at", "partial", "exposure_usde", "strategy_supplied_usde", "exposure_multiple"]
     series = {key: [] for key in keys}
     for day, row, partial in observations:
+        exposure = row.get("exposure") or {}
         vals = [day, float(row["activeEarnBalanceUsde"]), float(row["pendingWithdrawalGrossUsde"]),
-                float(row["vaultReportedNavUsde"]), row["blockNumber"], row["observedAt"], row["accountingUpdatedAt"], partial]
+                float(row["vaultReportedNavUsde"]), row["blockNumber"], row["observedAt"], row["accountingUpdatedAt"], partial,
+                *[float(exposure[key]) if key in exposure else None for key in ["activeExposureUsde", "strategySuppliedUsde", "exposureMultiple"]]]
         for key, value in zip(keys, vals):
             series[key].append(value)
     return dict(generated_at=current["observedAt"], chain_id=43114, vault=current["vault"],
@@ -68,11 +70,13 @@ def atomic(path, value):
 def main():
     history = json.loads(CACHE.read_text()) if CACHE.exists() else {}
     current = retry(collect)
+    if current.get("exposure") is None:
+        print("::warning title=Earn+ exposure unavailable::Vault accounting is valid, but strategy exposure could not be verified; publishing it as missing.", flush=True)
     today = current["observedAt"][:10]
     day = datetime.fromisoformat(START).date()
     missing = []
     while day.isoformat() < today:
-        if day.isoformat() not in history:
+        if day.isoformat() not in history or not history[day.isoformat()].get("exposure"):
             missing.append(day.isoformat())
         day += timedelta(days=1)
     # Small bounded concurrency for the one-time archive backfill.

@@ -179,7 +179,7 @@
               input.select();
             }
           } else {
-            exportModule ??= import("/assets/export.js?v=20261012-compact").catch((error) => {
+            exportModule ??= import("/assets/export.js?v=20261124-earn-exposure").catch((error) => {
               exportModule = null;
               throw error;
             });

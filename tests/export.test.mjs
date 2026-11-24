@@ -35,6 +35,27 @@ const fixture = () => ({
     selected: 2,
   },
 });
+test("Earn+ exports retain both balance and exposure, with readable labels and no stacking", async () => {
+  const e = JSON.parse(await readFile(new URL("../docs/earnplus.json", import.meta.url), "utf8"));
+  const s = e.series, d = fixture();
+  d.title = d.visual.title = "EthenaPay Earn+ exposure";
+  d.visual.rows = s.date.map((day, i) => ({d:day, t:Date.parse(day + "T00:00:00Z"), partial:s.partial[i]}));
+  d.visual.series = [
+    {name:"Earn+ balance", data:s.active_usde, color:"#8aa9cf", fill:true, fillOpacity:0.2},
+    {name:"USDe exposure", data:s.exposure_usde, color:"#cf9b79", fill:true, fillOpacity:0.16},
+  ];
+  d.visual.selected = d.visual.rows.at(-1).t;
+  d.visual.annotate = true;
+  d.visual.annotationFormat = v => (v / 1e6).toFixed(2) + "M USDe";
+  d.visual.axisFormat = v => (v / 1e6).toFixed(0) + "M";
+  const xml = renderCard(d, d3);
+  assert.match(xml, /Earn\+ balance/);
+  assert.match(xml, /USDe exposure/);
+  assert.match(xml, /opacity="0.16"/);
+  assert.match(xml, /opacity="0.2"/);
+  assert.doesNotMatch(xml, /NaN|Infinity|undefined/);
+  assert.equal(d.visual.series[1].data.at(-1), s.exposure_usde.at(-1));
+});
 test("share card keeps selected chart marker without header statistics", () => {
   const d = fixture(),
     xml = renderCard(d, d3);

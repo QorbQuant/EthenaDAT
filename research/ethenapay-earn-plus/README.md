@@ -85,3 +85,21 @@ python3 research/ethenapay-earn-plus/fetch_snapshot.py --output /tmp/earn-plus-c
 ```
 
 The standard-library collector pins every accounting read to one block, checks chain/asset/share token/implementation, preserves exact decimal strings, and fails closed if the implementation changes. Historical reads require an archive-capable RPC; the public Avalanche endpoint worked for the verified day-end block.
+
+
+## Exposure chart added November 24, 2026
+
+The same fixed-block collector now reads the enabled strategy account `0xe08af7283607f7884012c79fc585763eae5de506` on the Aave Ethena Ecosystem Spoke `0xaf22446124e566e54845f65b722e4dcbf12b650a`. The vault's `SubAccountEnabled` event identifies this account, and `whitelistedSubAccounts(account) == 2` is checked at every observation. The retired account `0x9f75c5b1da75ba108110a56023d0b367113af62b` was disabled before this chart's October 25 start.
+
+The reviewed Spoke implementation is `0x87d4385e72e668c2fc5bae9120069ff8312f7373`. Reserve 0 is verified as Avalanche USDe with 18 decimals. `getUserSuppliedAssets(0, strategy)` supplies the gross position. No 11x target multiplier is used.
+
+- Active attributed exposure = supplied USDe * active Earn+ balance / reported vault NAV.
+- Exposure multiple = supplied USDe / reported vault NAV, equal to attributed exposure / active balance when the latter is positive.
+- Both series are overlaid from zero, never stacked or summed as customer funds.
+- Exposure is denominated in USDe. It is not the net vault balance or independently marked USD.
+- On October 25 the Spoke had no listed reserves (`getReserveCount() == 0`), so gross exposure is a verified zero. A reverted/unknown reserve read is not interpreted as zero.
+- Missing exposure is stored as null. Valid vault accounting continues to publish if strategy reads fail or the reviewed implementation/account mapping changes. The chart leaves missing exposure as a gap and shows an unavailable label.
+
+The 30 completed daily positions through November 23 were independently read at the same block as each cached balance. All gross supplied figures matched Paymentscan's published `aave_usde_supplied` to the displayed cent. Maximum attributed-exposure difference was 5.36 USDe, consistent with the small previously observed balance-scope difference, but its cause remains unverified. See `exposure-reconciliation.json`. Paymentscan is a comparison source, not the production feed.
+
+Primary references: [Aave proposal 532](https://app.aave.com/governance/v3/proposal/?proposalId=532), the Spoke's verified Routescan ABI, and [Aave ISpoke interface](https://github.com/aave/aave-v4/blob/main/src/spoke/interfaces/ISpoke.sol).

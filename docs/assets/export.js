@@ -147,7 +147,7 @@ function seriesPlot(v, d3) {
             .x((p) => p.x)
             .y0(y(0))
             .y1((p) => y(p.value))(points) || ""
-        }" fill="${color}" opacity=".07"/>`;
+        }" fill="${color}" opacity="${s.fillOpacity ?? ".07"}"/>`;
       out += `<path d="${
         d3
           .line()

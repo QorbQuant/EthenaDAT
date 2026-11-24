@@ -168,7 +168,7 @@ window.mountResearch = function (initialD, initialP) {
             ? F.fullPayAgg
             : null
         : null;
-      const note = earn ? "Vault-reported NAV less gross queued withdrawals. Includes accrued returns. Operator-reported valuation; current UTC day is partial." : scenario
+      const note = earn ? "Earn+ balance excludes queued withdrawals. USDe exposure is Aave supplied USDe multiplied by active balance / reported vault NAV, including borrowed capital. Series are overlaid, not summed. Current UTC day is partial." : scenario
         ? `Hypothetical expiry payoff; ignores early redemption, fees and taxes. USDE input $${Ethena.current(D).price}; USDEW input $${D.liveW?.price ?? S.usdew_close.at(-1)}; strike $${D.warrants.strike}.`
         : pay
           ? "Successful spend events are not transaction hashes. Wallets are not people. Latest day may be partial."
@@ -190,7 +190,7 @@ window.mountResearch = function (initialD, initialP) {
                 : (aggregation === "total" ? "cumulative " : "daily ") +
                   (view === "spend" ? "card spend" : "spend events")),
             "pay-balance-chart": "USDe in EthenaPay wallets",
-            "pay-earn-chart": "EthenaPay Earn+ balance",
+            "pay-earn-chart": "EthenaPay Earn+ exposure",
             "pay-flows-chart": "EthenaPay deposits & withdrawals",
             "pay-created-chart": "EthenaPay wallets created",
             "pay-active-chart": "EthenaPay spending wallets",
@@ -224,7 +224,7 @@ window.mountResearch = function (initialD, initialP) {
             : id === "full-indexed"
               ? "Yahoo Finance / CoinGecko"
               : "Public filings / market data",
-          caveat: earn ? "Active vault balance; queued withdrawals excluded. USDe units." : scenario
+          caveat: earn ? "USDe exposure includes borrowed capital and is attributed to active vault balances. USDe units." : scenario
             ? `Inputs: USDE $${Ethena.current(D).price.toFixed(2)} / USDEW $${(D.liveW?.price ?? S.usdew_close.at(-1)).toFixed(2)} / strike $${D.warrants.strike.toFixed(2)}. Excludes early redemption, fees & taxes.`
             : pay
               ? aggregation === "total"
@@ -442,7 +442,7 @@ window.mountResearch = function (initialD, initialP) {
           add(g, "path", {
             d: area(points),
             fill: color,
-            "fill-opacity": 0.06,
+            "fill-opacity": s.fillOpacity ?? 0.06,
           });
         }
         const line = d3
@@ -706,8 +706,9 @@ window.mountResearch = function (initialD, initialP) {
     const s = E.series, rr = sliced(s.date.map((d, i) => ({i, d, t: ts(d), partial: s.partial[i]})), F.fullPayRange);
     if (!rr.length) return;
     if (!rr.some(r => r.i === earnIndex)) earnIndex = rr.at(-1).i;
-    lineChart("pay-earn-chart", "EthenaPay Earn+ balance", rr,
-      [{name: "Active Earn+", data: sourceSeries(s.active_usde, rr), color: blue, fill: true}],
+    lineChart("pay-earn-chart", "EthenaPay Earn+ exposure", rr,
+      [{name: "Earn+ balance", data: sourceSeries(s.active_usde, rr), color: blue, fill: true, fillOpacity: 0.2},
+       {name: "USDe exposure", data: sourceSeries(s.exposure_usde || s.date.map(() => null), rr), color: copper, fill: true, fillOpacity: 0.16}],
       v => compact(v).replace(/^\$/, ""), "earn", true, null, v => EarnPlus.amount(v));
   }
   function payCharts() {

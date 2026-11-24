@@ -7,7 +7,7 @@ import argparse
 import json
 import os
 from datetime import datetime, timezone
-from decimal import Decimal
+from decimal import Decimal, localcontext
 from pathlib import Path
 from functools import lru_cache
 from urllib.request import Request, urlopen
@@ -16,6 +16,9 @@ VAULT = "0x6aab14c53980b9aa1ce632a7e46a6e5e62e60f55"
 LP = "0xcb5c7b865da0867769c1263dc80088d93fd3fb79"
 USDE = "0x5d3a1ff2b6bab83b63cd9ad0787074081a52ef34"
 IMPLEMENTATION = "0x9477b3d072ee952690e52751e6ac1217d0c2882a"
+STRATEGY = "0xe08af7283607f7884012c79fc585763eae5de506"
+SPOKE = "0xaf22446124e566e54845f65b722e4dcbf12b650a"
+SPOKE_IMPLEMENTATION = "0x87d4385e72e668c2fc5bae9120069ff8312f7373"
 IMPLEMENTATION_SLOT = "0x360894a13ba1a3210667c828492db98dca3e2076cc3735a920a3ca505d382bbc"
 
 
@@ -27,6 +30,22 @@ def selector(rpc, signature):
     if "error" in value:
         raise RuntimeError("Function hashing failed")
     return value["result"][:10]
+
+
+
+def exposure_values(gross_raw, nav_raw, active_raw, decimals=18):
+    if not 0 <= active_raw <= nav_raw or gross_raw < 0:
+        raise ValueError("Invalid exposure allocation inputs")
+    if nav_raw == 0 and gross_raw != 0:
+        raise ValueError("Cannot attribute exposure against zero NAV")
+    with localcontext() as context:
+        context.prec = 60
+        gross = Decimal(gross_raw) / (Decimal(10) ** decimals)
+        allocated = gross * Decimal(active_raw) / Decimal(nav_raw) if nav_raw else Decimal(0)
+        multiple = Decimal(gross_raw) / Decimal(nav_raw) if nav_raw else Decimal(0)
+        return dict(strategySuppliedUsde=format(gross, "f"),
+                    activeExposureUsde=format(allocated, "f"),
+                    exposureMultiple=format(multiple, "f"))
 
 
 def collect(block=None, rpc=None):
@@ -79,7 +98,33 @@ def collect(block=None, rpc=None):
     def iso(stamp):
         return datetime.fromtimestamp(stamp, timezone.utc).isoformat()
 
+    exposure = None
+    try:
+        spoke_impl = "0x" + call("eth_getStorageAt", [SPOKE, IMPLEMENTATION_SLOT, tag])[-40:]
+        if spoke_impl != SPOKE_IMPLEMENTATION:
+            raise ValueError("Unreviewed Aave Spoke implementation")
+        if int(read(VAULT, "whitelistedSubAccounts(address)", STRATEGY[2:].rjust(64, "0")), 16) != 2:
+            raise ValueError("Reviewed strategy account is no longer enabled")
+        reserve_count = int(read(SPOKE, "getReserveCount()"), 16)
+        if reserve_count == 0:
+            # Before activation the Spoke had no listed reserves, so its
+            # supplied USDe is verifiably zero, not a failed observation.
+            supplied = 0
+        else:
+            reserve = read(SPOKE, "getReserve(uint256)", "0" * 64)
+            if "0x" + reserve[26:66] != USDE or int(reserve[194:258], 16) != decimals:
+                raise ValueError("Unexpected Aave reserve asset or decimals")
+            supplied = int(read(SPOKE, "getUserSuppliedAssets(uint256,address)", "0" * 64 + STRATEGY[2:].rjust(64, "0")), 16)
+        exposure = dict(strategyAccount=STRATEGY, spoke=SPOKE, reserveId=0, reserveCount=reserve_count,
+                        spokeImplementation=spoke_impl, observedAt=iso(observed),
+                        **exposure_values(supplied, nav, nav - pending_gross, decimals))
+    except Exception:
+        # Exposure is optional: an unreviewed strategy change or a failed read
+        # must never manufacture zero or discard otherwise valid vault accounting.
+        pass
+
     return dict(
+        exposure=exposure,
         chainId=43114, vault=VAULT, shareToken=LP, asset=USDE,
         implementation=implementation, blockNumber=int(tag, 16), blockHash=header["hash"],
         observedAt=iso(observed), accountingUpdatedAt=iso(updated),

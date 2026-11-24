@@ -1503,13 +1503,17 @@
             </div>
             <div class="full-metrics" aria-label="Earn+ snapshot">
               <div class="full-metric"><label>Earn+ balance</label><strong id="pay-earn-balance">N/A</strong><small>Active vault balance, including accrued returns</small></div>
+              <div class="full-metric"><label>USDe exposure</label><strong id="pay-earn-exposure">N/A</strong><small>Attributed gross supply, including borrowed capital</small></div>
+              <div class="full-metric"><label>USDe exposure / balance</label><strong id="pay-earn-multiple">N/A</strong><small>Observed position, not a target</small></div>
               <div class="full-metric"><label>Pending Earn+ withdrawals</label><strong id="pay-earn-pending">N/A</strong><small>Queued to return to liquid balances</small></div>
             </div>
             <p class="full-caption" id="pay-earn-status" role="status">Loading Earn+ accounting…</p>
             <article class="full-chart-box" style="margin-bottom:24px">
-              <div class="full-chart-top"><h3>Earn+ balance</h3><span id="pay-earn-chart-value">N/A</span></div>
-              <p class="full-caption">Vault-reported balance excluding queued withdrawals · USDe units · UTC day-end; current day is partial</p>
-              <svg id="pay-earn-chart" class="full-chart" role="img" aria-label="Historical active Earn+ vault balance in USDe"></svg>
+              <div class="full-chart-top"><h3>Earn+ exposure</h3><span id="pay-earn-chart-value">N/A</span></div>
+              <div class="full-legend"><span>Earn+ balance</span><span>USDe exposure</span></div>
+              <p class="full-caption" id="pay-earn-exposure-status">Active balance and attributed gross USDe exposure · includes borrowed capital</p>
+              <p class="full-caption">USDe units · UTC day-end; current day is partial</p>
+              <svg id="pay-earn-chart" class="full-chart" role="img" aria-label="Earn+ balance and leveraged USDe exposure over time"></svg>
               <div class="chart-tools-slot" data-export-slot="pay-earn-chart" aria-hidden="true"></div>
               <div class="full-readout"></div>
               <p class="full-caption">Whole-vault accounting, including pre-launch activity from October 25, 2026. Public launch: October 28. <a href="#pay-earn-methodology">How this is measured →</a></p>
@@ -1847,7 +1851,7 @@
             <details class="full-disclosure" id="pay-earn-methodology">
               <summary>Earn+ balance methodology</summary>
               <p>Earn+ uses the <a href="https://snowtrace.io/address/0x6AaB14C53980B9aA1Ce632a7e46a6E5E62e60f55">Ethena USD+ vault on Avalanche</a>. Active balance is the vault’s reported net asset value, less the gross value of shares queued for withdrawal. It includes accrued returns and is not cumulative deposited principal. Pending withdrawals are shown separately. These figures cover the whole vault, rather than only identified card-wallet holders, and are denominated in USDe without assuming a live dollar market price.</p>
-              <p>The vault operator periodically updates its external strategy valuation. We show that accounting timestamp separately from the onchain observation. Historical points use each UTC day’s final block; today’s point is partial. History includes pre-launch activity from October 25, 2026. Gross leveraged exposure and borrowed capital are excluded from the balance. Moving funds from a card wallet into Earn+ is an allocation between products, not card spending; the existing liquid-wallet transfer chart can include these movements.</p>
+              <p>The vault operator periodically updates its external strategy valuation. We show that accounting timestamp separately from the onchain observation. Historical points use each UTC day’s final block; today’s point is partial. History includes pre-launch activity from October 25, 2026. Gross leveraged exposure and borrowed capital are excluded from the balance. The exposure series reads USDe supplied by the vault’s enabled strategy account on Aave’s Ethena Ecosystem Spoke. It attributes that gross supply to active balances using active Earn+ balance / reported vault NAV, excluding the queued withdrawal share. The exposure multiple is supplied USDe / reported vault NAV. Both positions are read at the same block; this is observed exposure rather than the launch target. The two areas are overlaid, not stacked. Aave supply accrues onchain while vault NAV uses the operator’s latest reported valuation, so their valuation timestamps can differ. Missing or unreviewed strategy reads are shown as unavailable, not zero. Moving funds from a card wallet into Earn+ is an allocation between products, not card spending; the existing liquid-wallet transfer chart can include these movements.</p>
               <p><a href="https://www.upshift.finance/blog/what-is-ethena-pay-earn-plus">Upshift’s Earn+ explanation ↗</a> · <a href="/earnplus.json">Download Earn+ history and source timestamps →</a></p>
             </details>
             <details class="full-disclosure">

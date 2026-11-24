@@ -41,8 +41,34 @@ test("Earn+ dates distinguish old external accounting, delayed collection and a 
   const d = structuredClone(snapshot), i = d.series.date.length - 1;
   for (const k of ["active_usde", "pending_usde", "nav_usde"]) d.series[k][i] = 0;
   for (const k of ["activeEarnBalanceUsde", "pendingWithdrawalGrossUsde", "vaultReportedNavUsde"]) d.headline[k] = "0";
+  d.headline.exposure = null;
+  for (const k of ["exposure_usde", "strategy_supplied_usde", "exposure_multiple"]) if (d.series[k]) d.series[k][i] = null;
   assert.equal(EarnPlus.valid(d), true);
   assert.equal(EarnPlus.view(d, now)["pay-earn-balance"], "0.00 USDe");
+});
+test("Earn+ exposure is attributed to active balances and never summed into customer capital", () => {
+  const {series:s, headline:h} = snapshot;
+  assert.ok(s.exposure_usde.some(v => v > 1e8));
+  for (let i = 0; i < s.date.length; i++) {
+    if (s.exposure_usde[i] === null) continue;
+    const multiple = s.nav_usde[i] ? s.strategy_supplied_usde[i] / s.nav_usde[i] : 0;
+    assert.ok(Math.abs(s.exposure_usde[i] - s.active_usde[i] * multiple) < 1e-5);
+    assert.ok(s.exposure_usde[i] <= s.strategy_supplied_usde[i] + 1e-5);
+  }
+  assert.equal(h.exposure.observedAt, snapshot.generated_at);
+  assert.match(EarnPlus.view(snapshot)["pay-earn-multiple"], /×$/);
+  const broken = structuredClone(snapshot);
+  broken.series.exposure_usde[0] += 1000;
+  assert.equal(EarnPlus.valid(broken), false);
+});
+test("missing exposure leaves vault accounting available and is not rendered as zero", () => {
+  const d = structuredClone(snapshot), i = d.series.date.length - 1;
+  d.headline.exposure = null;
+  for (const k of ["exposure_usde", "strategy_supplied_usde", "exposure_multiple"]) d.series[k][i] = null;
+  assert.equal(EarnPlus.valid(d), true);
+  assert.equal(EarnPlus.view(d)["pay-earn-exposure"], "N/A");
+  assert.notEqual(EarnPlus.view(d)["pay-earn-balance"], "N/A");
+  assert.match(EarnPlus.view(d)["pay-earn-exposure-status"], /unavailable/);
 });
 test("Earn+ feed falls back independently after a failed upstream request", async () => {
   const env = { ASSETS: { fetch: async () => Response.json(snapshot) } };
